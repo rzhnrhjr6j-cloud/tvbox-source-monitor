@@ -1,0 +1,3 @@
+# The probe node re-uses the main application package, so it needs the same
+# runtime dependencies.  Nothing else.
+-r ../requirements.txt

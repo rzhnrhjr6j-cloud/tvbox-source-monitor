@@ -1,0 +1,75 @@
+# ===========================================================================
+# Scoring, stability and lifecycle thresholds (spec §9 - §11)
+# ===========================================================================
+
+weights:
+  availability: 0.20
+  search_success: 0.15
+  playback_success: 0.20
+  latency: 0.10
+  stability: 0.15
+  regional_consistency: 0.10
+  freshness: 0.10
+
+# score -> status (spec §9)
+status_thresholds:
+  active: 70          # >= 70 ACTIVE  (85+ is simply a strong ACTIVE)
+  primary: 85
+  degraded: 50        # >= 50 DEGRADED
+  # < degraded -> FAILED
+
+# --------------------------------------------------------------------------
+# stability = 50% 30d + 30% 7d + 20% recent   (spec §10)
+# Windows with no data are dropped and the weights re-normalised, so a brand
+# new source is not punished for having no history.
+# --------------------------------------------------------------------------
+stability:
+  windows:
+    - {name: month, days: 30, weight: 0.50}
+    - {name: week,  days: 7,  weight: 0.30}
+    - {name: recent, days: 1, weight: 0.20}
+  min_samples_recent: 1
+
+# freshness decay (spec §9 freshness term)
+decay:
+  half_life_days: 14
+
+# latency buckets -> score. avg_response_ms lower than `ms` scores `score`.
+latency:
+  buckets:
+    - {ms: 300,   score: 100}
+    - {ms: 800,   score: 85}
+    - {ms: 1500,  score: 70}
+    - {ms: 3000,  score: 50}
+    - {ms: 6000,  score: 25}
+    - {ms: 1000000, score: 0}
+
+# --------------------------------------------------------------------------
+# lifecycle counters (spec §11) - every number here is configurable
+# --------------------------------------------------------------------------
+lifecycle:
+  fail_1_keep: true            # 1 failure  -> keep, no penalty
+  fail_downgrade: 2            # 2-3 failures -> down-weight
+  fail_pause_output: 5         # 5 failures  -> pause output
+  fail_mark_failed: 12         # 12 failures -> FAILED
+  recover_min_success: 3       # 3 successes -> RECOVERING
+  recover_to_active: 5         # 5 successes -> ACTIVE
+  pause_output_after_consecutive_failures: 5
+
+# --------------------------------------------------------------------------
+# candidate admission (spec §6 / §27)
+# --------------------------------------------------------------------------
+candidate:
+  threshold: 55
+  weights:
+    reachable: 0.20
+    json_valid: 0.20
+    schema_valid: 0.20
+    https: 0.10
+    multi_reference: 0.15
+    initial_search: 0.15
+  # a candidate must be reachable at least this many times before promotion
+  min_reachable_observations: 1
+
+# how many hours an entry stays "fresh" for the discovery cache
+discovery_cache_hours: 6

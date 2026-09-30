@@ -1,0 +1,87 @@
+name: nightly-build
+
+# spec §20 / §21 - full rescore, retire, revive and rebuild at 04:00 CST.
+# GitHub cron is always UTC, so 20:00 UTC == 04:00 Asia/Shanghai.
+on:
+  schedule:
+    - cron: "0 20 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tvbox-data-write
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Tests
+        run: python -m pytest -q
+
+      - name: Build tvbox.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ALERT_GITHUB_REPO: ${{ github.repository }}
+          ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m app.main pipeline --stages health,build --json
+
+      - name: Verify the published config
+        run: |
+          set -euo pipefail
+          python - <<'EOF'
+          import json, pathlib
+          path = pathlib.Path("dist/tvbox.json")
+          if not path.is_file():
+              print("dist/tvbox.json missing - the safety valve kept the previous file")
+              raise SystemExit(0)
+          payload = json.loads(path.read_text(encoding="utf-8"))
+          urls = payload.get("urls") if isinstance(payload, dict) else payload
+          print(f"published items: {len(urls or [])}")
+          EOF
+
+      - name: Upload build artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 14
+
+      - name: Commit results back to the repository
+        run: |
+          set -euo pipefail
+          git config user.name  "tvbox-source-monitor[bot]"
+          git config user.email "tvbox-source-monitor@users.noreply.github.com"
+          git add -A data
+          if [ -d dist ]; then git add -A dist; fi
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+            exit 0
+          fi
+          git commit -m "chore(build): refresh tvbox.json and health reports"
+          # the DB is a shared artifact: rebase before pushing and retry
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((attempt * 5))
+          done
+          echo "could not push after 3 attempts" >&2
+          exit 1

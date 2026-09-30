@@ -1,0 +1,90 @@
+# ===========================================================================
+# Candidate discovery (spec §5 - §7, §26, §27)
+#
+# Compliance: only publicly reachable, openly licensed/authorised endpoints.
+# Discovery respects robots.txt, GitHub API rate limits, and never scans.
+# ===========================================================================
+
+discovery:
+  enabled_adapters: [manual, github, expansion]   # add `web` to enable网页抓取
+
+  # ---------- A. GitHub search adapter -----------------------------------
+  github:
+    enabled: true
+    api_base: https://api.github.com
+    # code search queries (spec §5.1.A)
+    code_queries:
+      - "filename:tvbox.json"
+      - "tvbox.json in:path"
+      - "影视仓 in:file extension:json"
+      - "tvbox api in:file extension:json"
+      - "csp in:file extension:json"
+      - "duocang in:file extension:json"
+      - "warehouse in:file extension:json"
+    repo_queries:
+      - "tvbox sources in:name,description,readme"
+      - "影视仓 in:name,description,readme"
+    per_page: 30
+    max_pages: 2
+    # stop paging when the remaining rate-limit budget drops below this
+    min_rate_limit_remaining: 5
+    # only these path shapes are treated as candidate configs
+    path_patterns:
+      - '\.json$'
+    # never treat these as sources
+    path_excludes:
+      - 'package(-lock)?\.json$'
+      - 'tsconfig.*\.json$'
+      - 'composer\.json$'
+      - '\.eslintrc'
+      - 'node_modules/'
+      - '\.vscode/'
+      - '\.github/'
+
+  # ---------- B. manual pool ---------------------------------------------
+  manual:
+    enabled: true
+    file: data/candidates.json
+    # ingest everything, admission decides what survives
+
+  # ---------- C. multi-source expansion (spec §5.1.C) --------------------
+  expansion:
+    enabled: true
+    # how deep to follow 多仓 -> 子源 -> 孙源
+    max_depth: 2
+    # refuse to expand a config whose urls[] array is larger than this
+    max_children: 200
+
+  # ---------- optional web adapter ---------------------------------------
+  web:
+    enabled: false
+    respect_robots: true
+    user_agent: "tvbox-source-monitor/1.0"
+    seed_pages: []
+    request_delay_seconds: 2.0
+
+# ---------- admission pipeline (spec §6) ---------------------------------
+admission:
+  require_https: false          # http sources are allowed but score lower
+  require_json_content_type: false   # many CDNs serve application/octet-stream
+  max_config_bytes: 5242880
+  # reject content that clearly is not a config
+  reject_html: true
+  reject_binary: true
+  # do not re-admit a source rejected for this many hours
+  reject_cooldown_hours: 24
+  # §27 lists an initial search probe as an admission signal.  It costs one
+  # extra request per candidate; turn it off for very large discovery runs.
+  initial_search: true
+  initial_search_timeout: 10
+  # hard ceiling on how many URLs a single discovery run will fetch
+  max_candidates_per_run: 300
+  # reject a candidate whose response body exceeds this many bytes
+  max_config_bytes: 5242880
+
+# ---------- dedup (spec §7) ----------------------------------------------
+dedup:
+  strip_query_params: true
+  drop_tracking_params: true
+  tracking_params: [utm_source, utm_medium, utm_campaign, utm_term, utm_content, spm, from, ref]
+  case_insensitive_host: true

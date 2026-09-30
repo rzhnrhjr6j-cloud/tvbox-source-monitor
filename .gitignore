@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+build/
+.idea/
+.vscode/
+.DS_Store
+
+# runtime artifacts that must NOT be committed
+data/*.db-wal
+data/*.db-shm
+data/rejected_candidates.json
+logs/
+pages_build/

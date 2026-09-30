@@ -1,0 +1,11 @@
+{
+  "_readme": [
+    "白名单：命中的 source 永不被自动淘汰（仍会检测、仍会记分，但决不会从输出里消失）。",
+    "匹配方式：归一化后的 URL 全等，或 host 全等，或 URL 前缀匹配。",
+    "source_id 也可以（sha256 归一化 URL）。"
+  ],
+  "urls": [],
+  "hosts": [],
+  "source_ids": [],
+  "url_prefixes": []
+}

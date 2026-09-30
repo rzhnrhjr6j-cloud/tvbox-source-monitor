@@ -1,0 +1,65 @@
+name: discover
+
+# spec §20 / §21 - find new candidate sources every 6 hours.
+on:
+  schedule:
+    - cron: "7 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tvbox-data-write
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run discovery
+        env:
+          # a token raises the GitHub search rate limit and is required by the
+          # code-search adapter (spec §26)
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python -m app.main discover --json
+
+      - name: Record the run
+        if: always()
+        run: python -m app.main report --limit 10 || true
+
+      - name: Commit results back to the repository
+        run: |
+          set -euo pipefail
+          git config user.name  "tvbox-source-monitor[bot]"
+          git config user.email "tvbox-source-monitor@users.noreply.github.com"
+          git add -A data
+          if [ -d dist ]; then git add -A dist; fi
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+            exit 0
+          fi
+          git commit -m "chore(discover): update candidate pool and discovery history"
+          # the DB is a shared artifact: rebase before pushing and retry
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((attempt * 5))
+          done
+          echo "could not push after 3 attempts" >&2
+          exit 1

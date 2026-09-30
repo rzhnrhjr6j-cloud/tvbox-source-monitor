@@ -1,0 +1,56 @@
+name: 源告警
+description: 由 tvbox-source-monitor 的告警引擎自动创建，人工也可以按这个格式提
+title: "[alert] "
+labels: ["alert", "automated"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这个模板通常由告警引擎自动填写（`config/notifications.yaml` 的
+        `channels.github_issue`）。源恢复后对应的 issue 会被自动关闭。
+  - type: input
+    id: source
+    attributes:
+      label: 源
+      description: source_id（`sources.id`，即规范化 URL 的 sha256）
+      placeholder: "a1b2c3..."
+    validations:
+      required: true
+  - type: input
+    id: region
+    attributes:
+      label: 地区
+      description: 出问题的地区代码
+      placeholder: "JP"
+    validations:
+      required: false
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 告警类型
+      options:
+        - source_failed
+        - source_recovered
+        - score_drop
+        - build_blocked
+        - node_down
+        - output_rollback
+        - 其它
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 详情
+      description: |
+        出错的检查层（L1_http / L2_config / L3_search / L4_detail / L5_playback）、
+        错误码、最近的探测摘要。
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: 相关产物
+      description: 如果涉及构建，贴上 `dist/health.json` 或 `dashboard.json` 的相关片段
+    validations:
+      required: false

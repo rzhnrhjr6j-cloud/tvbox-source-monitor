@@ -1,0 +1,17 @@
+[project]
+name = "tvbox-source-monitor"
+version = "1.0.0"
+description = "Automated source discovery, health checking and tvbox.json publishing for 影视仓 6.1.8"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31,<3", "PyYAML>=6.0,<7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=5.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.setuptools]
+packages = ["app"]

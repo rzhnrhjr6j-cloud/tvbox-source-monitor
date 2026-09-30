@@ -1,0 +1,108 @@
+# ===========================================================================
+# tvbox-source-monitor - application configuration
+# Every threshold lives in config (spec §35-14). Nothing is hard-coded.
+# Values may reference environment variables: ${VAR} or ${VAR:-default}
+# ===========================================================================
+
+app:
+  name: tvbox-source-monitor
+  version: "1.0.0"
+  user_agent: "tvbox-source-monitor/1.0 (+https://github.com/${GITHUB_REPOSITORY:-local})"
+  data_dir: data
+  dist_dir: dist
+  db_path: ${TVBOX_DB_PATH:-data/monitor.db}
+  log_level: ${TVBOX_LOG_LEVEL:-INFO}
+  # json = one JSON object per line (good for Actions logs), text = human readable
+  log_format: ${TVBOX_LOG_FORMAT:-json}
+  # hard ceiling for a single pipeline run (seconds); 0 disables
+  run_timeout_seconds: 1800
+  # raw probe rows older than this are pruned (spec §24: keep the DB small)
+  probe_retention_days: 120
+  # a FAILED source is kept in the DB this long (for history) before it is
+  # dropped from the candidate pool entirely
+  stale_source_days: 60
+
+http:
+  connect_timeout: 5
+  read_timeout: 10
+  total_timeout: 20          # spec §25
+  max_retries: 3             # bounded retry only, never unlimited (spec §25)
+  backoff_base: 0.5
+  backoff_max: 8
+  jitter: 0.3
+  max_response_bytes: 5242880   # 5 MiB, protects against endless bodies
+  max_redirects: 5
+  concurrency: 20            # spec §25: 20 sources per batch
+  verify_tls: true
+  # Hosts that must never be contacted, even if a source points at them.
+  blocked_cidrs:
+    - 127.0.0.0/8
+    - 10.0.0.0/8
+    - 172.16.0.0/12
+    - 192.168.0.0/16
+    - 169.254.0.0/16
+    - 0.0.0.0/8
+    - 100.64.0.0/10
+    - 192.0.0.0/24
+    - 198.18.0.0/15
+    - ::1/128
+    - fc00::/7
+    - fe80::/10
+  blocked_hosts:
+    - localhost
+    - metadata.google.internal
+    - 169.254.169.254
+
+# ---------------------------------------------------------------------------
+# Health-check layers L1-L5 (spec §8).  Timeouts are per-layer and always
+# bounded; a layer that cannot finish is recorded as a failure, never a hang.
+# ---------------------------------------------------------------------------
+checks:
+  # L3 fixed, non-private test keywords (spec §8 - must not use user data)
+  search_keywords:
+    - {label: common,  keyword: "爱情"}
+    - {label: chinese, keyword: "庆余年"}
+    - {label: english, keyword: "Avatar"}
+  # how many sites inside one config are tried before giving up on that config
+  max_sites_per_source: 5
+  search_timeout: 10
+  detail_timeout: 10
+  playback_timeout: 8
+  # L5 only reads this many bytes, then closes the connection
+  playback_probe_bytes: 1
+  playback_max_urls: 3
+  # health grading (spec §8)
+  grade:
+    require_search_for_active: true
+    require_playback_for_active: true
+    config_failure_is_fatal: true
+
+# ---------------------------------------------------------------------------
+# Output contract
+#
+# !! READ THIS !!  Spec §18 says the final field layout must be verified
+# against a real 影视仓 6.1.8 install, not guessed from blog posts.
+# This project therefore does NOT hard-code one layout. `format` selects a
+# built-in renderer, and `template` (optional) lets you override the exact
+# shape without touching code.
+# ---------------------------------------------------------------------------
+output:
+  format: multi              # multi | single | sites
+  include_degraded: false
+  include_experimental: true
+  pretty: true
+  sort_by: score             # score | name
+  min_score_primary: 85
+  min_stability_primary: 80
+  min_score_backup: 70
+  # a source younger than this many days may only go to EXPERIMENTAL (spec §28)
+  observation_days: 7
+  # safety valve (spec §19 / §30 / §32)
+  min_sources: 3
+  max_drop_ratio: 0.70
+  keep_backups: 30           # dist/backup/YYYYMMDD.json retention
+  # optional exact-shape override. Put "$each" in a one-element list to repeat
+  # per source; "$name" / "$url" / "$api" / "$id" / "$key" / "$score" / "$tier" /
+  # "$status" / "$type" and the top-level "$generated_at" / "$version" / "$count"
+  # are substituted.  See docs/配置说明.md.
+  template: null

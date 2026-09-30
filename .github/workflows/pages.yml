@@ -1,0 +1,90 @@
+name: pages
+
+# spec §20 / §21 - publish dist/ and dashboard/ to GitHub Pages.
+#
+# NOTE: a push made with the default GITHUB_TOKEN does NOT trigger other
+# workflows, so the nightly commit alone would never deploy.  workflow_run is
+# the reliable trigger; push is kept for human commits.
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["nightly-build", "health-check"]
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - "dist/**"
+      - "dashboard/**"
+      - ".github/workflows/pages.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    # skip when the upstream run failed and therefore left dist/ untouched
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble the published site
+        run: |
+          set -euo pipefail
+          rm -rf pages_build
+          mkdir -p pages_build
+          if [ -d dist ]; then cp -r dist/. pages_build/; fi
+          if [ -d dashboard ]; then
+            mkdir -p pages_build/dashboard
+            cp -r dashboard/. pages_build/dashboard/
+          fi
+          ls -la pages_build
+
+      - name: Add a root index that links the entry points
+        run: |
+          set -euo pipefail
+          cat > pages_build/index.html <<'HTML'
+          <!doctype html>
+          <html lang="zh-CN">
+            <head>
+              <meta charset="utf-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <title>tvbox-source-monitor</title>
+              <style>
+                body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                       max-width: 42rem; margin: 4rem auto; padding: 0 1.25rem; color: #1f2933; }
+                code { background: #f0f4f8; padding: .15rem .4rem; border-radius: .25rem; }
+                li { margin: .5rem 0; }
+              </style>
+            </head>
+            <body>
+              <h1>tvbox-source-monitor</h1>
+              <p>影视仓配置地址（固定，不需要改）：</p>
+              <p><code>tvbox.json</code></p>
+              <ul>
+                <li><a href="dashboard/">健康面板 Dashboard</a></li>
+                <li><a href="health.json">health.json</a></li>
+                <li><a href="dashboard.json">dashboard.json</a></li>
+              </ul>
+            </body>
+          </html>
+          HTML
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: pages_build
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

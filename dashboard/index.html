@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>影视仓源监控 · Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <h1>影视仓源监控</h1>
+        <span class="readonly" title="V1 面板只读：所有修改走 config/*.yaml、data/*.json 和 git commit">
+          只读面板
+        </span>
+      </div>
+      <p class="sub" id="generated-at">读取中…</p>
+    </header>
+    <main>
+      <p class="error" id="error" hidden></p>
+
+      <section class="cards" aria-label="源状态汇总">
+        <div class="card"><span class="card-label">Active</span><span class="card-value ok" id="stat-active">–</span></div>
+        <div class="card"><span class="card-label">Degraded</span><span class="card-value warn" id="stat-degraded">–</span></div>
+        <div class="card"><span class="card-label">Failed</span><span class="card-value bad" id="stat-failed">–</span></div>
+        <div class="card"><span class="card-label">Candidates</span><span class="card-value" id="stat-candidates">–</span></div>
+        <div class="card"><span class="card-label">已发布条数</span><span class="card-value" id="stat-output">–</span></div>
+      </section>
+
+      <section aria-label="地区健康度">
+        <h2>地区健康度</h2>
+        <div class="regions" id="regions"><p class="empty">暂无地区数据</p></div>
+      </section>
+
+      <section aria-label="最近构建">
+        <h2>最近构建</h2>
+        <div class="grid2">
+          <div class="panel">
+            <h3>Last Build</h3>
+            <p id="last-build">–</p>
+            <dl class="kv" id="last-build-detail"></dl>
+          </div>
+          <div class="panel">
+            <h3>Last Alert</h3>
+            <p id="last-alert">–</p>
+            <dl class="kv" id="last-alert-detail"></dl>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="源列表">
+        <div class="section-head">
+          <h2>Sources</h2>
+          <label class="filter">
+            <span class="sr-only">筛选</span>
+            <input type="search" id="filter" placeholder="按名称 / 域名 / 状态筛选…" autocomplete="off" />
+          </label>
+        </div>
+        <div class="table-wrap">
+          <table id="sources">
+            <thead>
+              <tr>
+                <th scope="col">名称</th>
+                <th scope="col">状态</th>
+                <th scope="col">分层</th>
+                <th scope="col">类型</th>
+                <th scope="col" class="num">分数</th>
+                <th scope="col" class="num">7d 可用率</th>
+                <th scope="col" class="num">30d 可用率</th>
+                <th scope="col" class="num">响应</th>
+                <th scope="col">地区</th>
+                <th scope="col">最近成功</th>
+                <th scope="col">最近失败</th>
+              </tr>
+            </thead>
+            <tbody id="sources-body"></tbody>
+          </table>
+        </div>
+        <p class="empty" id="sources-empty" hidden>没有匹配的源</p>
+      </section>
+
+      <section aria-label="构建历史">
+        <h2>构建历史</h2>
+        <div class="table-wrap">
+          <table id="builds">
+            <thead>
+              <tr>
+                <th scope="col">build_id</th>
+                <th scope="col">时间</th>
+                <th scope="col">已发布</th>
+                <th scope="col" class="num">条数</th>
+                <th scope="col" class="num">active</th>
+                <th scope="col" class="num">degraded</th>
+                <th scope="col" class="num">failed</th>
+                <th scope="col" class="num">新增</th>
+                <th scope="col" class="num">恢复</th>
+                <th scope="col" class="num">移除</th>
+                <th scope="col">备注</th>
+              </tr>
+            </thead>
+            <tbody id="builds-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        V1 面板为只读（spec §23）。修改源请编辑
+        <code>config/*.yaml</code> / <code>data/*.json</code> 后 git commit。
+      </p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

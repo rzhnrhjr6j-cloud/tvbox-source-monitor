@@ -1,0 +1,41 @@
+# ===========================================================================
+# Alerting (spec §16 / §17)
+# ===========================================================================
+
+notifications:
+  enabled: true
+  # Don't spam: same source + same failure kind is suppressed for this window.
+  suppress_window_hours: 24
+  # Only alert once a source reaches this many consecutive failures
+  alert_after_consecutive_failures: 5
+  # Alert when a source comes back
+  notify_on_recovery: true
+  # Alert when a build was blocked by the safety valve
+  notify_on_build_blocked: true
+  # Alert when a source's score drops by more than this in one run
+  score_drop_alert_delta: 25
+  # Never send more than this many alerts in a single run
+  max_alerts_per_run: 20
+
+  channels:
+    # Generic JSON webhook - works with Slack/Discord/Feishu/DingTalk relays
+    webhook:
+      enabled: false
+      url_env: ALERT_WEBHOOK_URL
+      timeout: 10
+
+    telegram:
+      enabled: false
+      bot_token_env: TELEGRAM_BOT_TOKEN
+      chat_id_env: TELEGRAM_CHAT_ID
+
+    github_issue:
+      enabled: true
+      repo_env: ALERT_GITHUB_REPO
+      token_env: GITHUB_TOKEN
+      labels: [alert, automated]
+      # close the issue automatically on recovery
+      close_on_recovery: true
+
+    # reserved for V2 (spec §16): dingtalk / wecom / feishu / slack
+    reserved: [dingtalk, wecom, feishu, slack]

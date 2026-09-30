@@ -1,0 +1,43 @@
+# ===========================================================================
+# Multi-region probing (spec §12 - §14)
+#
+# V1 ships two mechanisms:
+#   A. self-hosted runner + node/probe.py --once     (recommended long term)
+#   B. remote probe API      node/probe.py --serve   (called by this runner)
+# The GitHub runner itself always contributes the "local" region.
+# ===========================================================================
+
+regions:
+  # ---------- mechanism A: this runner acts as one region -----------------
+  local:
+    enabled: true
+    region: CN                 # change to HK/JP/US when you self-host a runner there
+    node_name: github-runner
+    weight: 1.0
+
+  # ---------- mechanism B: remote probe nodes ----------------------------
+  nodes: []
+  # - name: JP-01
+  #   region: JP
+  #   url: https://jp01.example.com/probe
+  #   token_env: PROBE_TOKEN_JP_01
+  #   secret_env: PROBE_SECRET_JP_01
+  #   weight: 1.0
+  #   timeout: 30
+
+  # ---------- mechanism A extra: run extra regions inside the same job ---
+  # node/probe.py --once --region HK  can be wired into the health-check
+  # workflow as extra jobs on self-hosted runners.
+  enabled_regions: [CN, HK, JP, US]
+
+  # ---------- quorum (spec §13) ------------------------------------------
+  quorum:
+    # ratio of responding nodes that must succeed for GLOBAL
+    global_success_ratio: 0.75
+    # minimum nodes that must report before a quorum decision is trusted
+    min_nodes_for_quorum: 2
+    # a region counts as "ok" when this share of its nodes succeeded
+    region_success_ratio: 0.5
+
+  # when a probe node is unreachable it is reported but does not fail the run
+  node_failure_tolerance: 1

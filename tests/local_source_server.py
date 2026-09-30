@@ -185,6 +185,23 @@ class _Handler(BaseHTTPRequestHandler):
         if path == "/notjson.json":
             return self._send(b"this is definitely not json", content_type="application/json")
 
+        if path == "/assets/spider.jar":
+            return self._send(b"PK\x03\x04 fake jar payload", content_type="application/octet-stream")
+
+        if path == "/withjar.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "spider": "./assets/spider.jar;md5;deadbeef",
+                        "sites": [dict(SITE_TEMPLATE, api=f"{self.base}/api.php/provide/vod/")],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
         return self._send(b"", 404, "text/plain")
 
 

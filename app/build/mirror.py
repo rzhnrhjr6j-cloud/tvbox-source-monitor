@@ -26,6 +26,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import urljoin
 
 from ..logging_setup import get_logger
 from ..models import Source
@@ -114,6 +115,41 @@ def _pick_name(config: Any, url: str, source: Source) -> str:
 # every one of those dead for the client, so the host is rewritten through an
 # acceleration proxy instead (cheaper than pulling ~20 MB of playlists a day).
 _RAW_HOST = re.compile(r"https://raw\.githubusercontent\.com/")
+
+# TVBox authors ship the crawler jar next to the config and point at it
+# relatively - "./spider.jar", "./jars/xm.jar;md5;...", sometimes disguised as
+# .txt or .png.  Measured on the published set: 277 such references across 24
+# sources.  We republish the config from a different directory, so the relative
+# path stops landing on the jar and the client reports "jar加载失败".
+_RELATIVE_REF = re.compile(r'("(?:spider|jar)"\s*:\s*")(\.{1,2}/[^"]*)"')
+
+
+def rewrite_relative(text: str, origin: str) -> tuple[str, int]:
+    """Resolve "./x.jar" references against the config's own origin URL.
+
+    Only paths that stay inside the origin directory are resolved, so a config
+    cannot point us at something above the directory it was published from.
+    """
+    if not origin:
+        return text, 0
+    count = 0
+
+    def replace(match: re.Match[str]) -> str:
+        nonlocal count
+        reference = match.group(2)
+        if reference.startswith(".."):
+            return match.group(0)
+        path, sep, digest = reference.partition(";md5;")
+        absolute = urljoin(origin, path)
+        if not absolute.startswith("http"):
+            return match.group(0)
+        if sep:
+            absolute = f"{absolute};md5;{digest}"
+        count += 1
+        return f'{match.group(1)}{absolute}"'
+
+    return _RELATIVE_REF.sub(replace, text), count
+
 
 # An already-proxied reference reads ``https://ghfast.top/https://raw.github…``,
 # so what marks it is the immediate ``<scheme>://<host>/`` prefix.  Anything
@@ -280,7 +316,8 @@ class ConfigMirror:
                 config = None
 
             # name extraction reads the origin text; the published copy gets
-            # its sibling references proxied
+            # its sibling references resolved, then proxied
+            text, resolved = rewrite_relative(text, url)
             text, rewrites = rewrite_inner(text, self.inner_proxy)
             content = text.encode("utf-8")
 
@@ -294,7 +331,7 @@ class ConfigMirror:
                 site_count=_site_count(config),
                 content=content,
                 origin=url,
-                inner_rewrites=rewrites,
+                inner_rewrites=resolved + rewrites,
             )
 
         self._drop_duplicate_content(plan)

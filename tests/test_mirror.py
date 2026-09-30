@@ -26,6 +26,7 @@ from app.build.mirror import (
     _pick_name,
     _site_count,
     rewrite_inner,
+    rewrite_relative,
 )
 from app.config import load_config
 from app.storage.sqlite import Store
@@ -165,6 +166,42 @@ def test_identical_bytes_are_published_once():
 # inner references
 # ---------------------------------------------------------------------------
 RAW = "https://raw.githubusercontent.com/4TVBox/TVBox/refs/heads/main/config.json"
+ORIGIN = "https://raw.githubusercontent.com/qist/tvbox/master/config.json"
+
+
+def test_relative_references_resolve_against_the_origin_and_keep_the_md5():
+    text, count = rewrite_relative('{"spider":"./jar/fan.txt;md5;abc"}', ORIGIN)
+    assert count == 1
+    assert "https://raw.githubusercontent.com/qist/tvbox/master/jar/fan.txt;md5;abc" in text
+
+
+def test_relative_references_never_escape_the_origin_directory():
+    payload = '{"spider":"../../etc/passwd"}'
+    text, count = rewrite_relative(payload, ORIGIN)
+    assert count == 0 and text == payload
+
+
+def test_relative_rewrite_leaves_absolute_and_unrelated_strings_alone():
+    payload = '{"spider":"https://x.com/a.jar","note":"./looks/like/a/path"}'
+    text, count = rewrite_relative(payload, ORIGIN)
+    assert count == 0 and text == payload
+
+
+def test_resolved_references_then_get_the_acceleration_prefix():
+    text, _ = rewrite_relative('{"spider":"./spider.jar"}', ORIGIN)
+    text, count = rewrite_inner(text, "https://gh-proxy.com/")
+    assert count == 1
+    assert "https://gh-proxy.com/https://raw.githubusercontent.com/qist/tvbox/master/spider.jar" in text
+
+
+def test_a_shipped_jar_is_resolved_over_a_real_socket(tmp_path):
+    """The published config must point at a file the client can actually fetch."""
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/withjar.json", source_id="7" * 64)])
+        body = plan.entries["7" * 64].content.decode("utf-8")
+        assert f"{server.base}/assets/spider.jar;md5;deadbeef" in body
+        assert "./assets/spider.jar" not in body
 
 
 def test_inner_raw_urls_get_the_proxy_prefix():

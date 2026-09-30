@@ -19,11 +19,11 @@ import pytest
 
 from app.build.builder import TVBOX_FILE, ConfigBuilder
 from app.models import Status
-from app.build.mirror import SOURCES_DIR, ConfigMirror, _clean_name, _pick_name
+from app.build.mirror import SOURCES_DIR, ConfigMirror, _clean_name, _pick_name, rewrite_inner
 from app.config import load_config
 from app.storage.sqlite import Store
 from app.utils.http_client import HttpClient
-from tests.local_source_server import LocalSourceServer
+from tests.local_source_server import INNER_RAW, LocalSourceServer
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -103,6 +103,81 @@ def test_dedupe_names_makes_every_label_unique_and_counts_sites():
     names = [entry.name for entry in plan.entries.values()]
     assert len(set(names)) == 3, names
     assert all("站" in name for name in names), names
+
+
+# ---------------------------------------------------------------------------
+# inner references
+# ---------------------------------------------------------------------------
+RAW = "https://raw.githubusercontent.com/4TVBox/TVBox/refs/heads/main/config.json"
+
+
+def test_inner_raw_urls_get_the_proxy_prefix():
+    """A config points at sibling configs and playlists; all of them were dead."""
+    text, count = rewrite_inner('{"urls":["%s"]}' % RAW, "https://gh-proxy.com/")
+    assert count == 1
+    assert f"https://gh-proxy.com/{RAW}" in text
+
+
+def test_an_already_proxied_reference_is_not_wrapped_twice():
+    once = f"https://gh-proxy.com/{RAW}"
+    text, count = rewrite_inner('{"urls":["%s"]}' % once, "https://gh-proxy.com/")
+    assert count == 0 and text.count("gh-proxy.com") == 1
+
+
+def test_rewrite_leaves_unrelated_hosts_alone():
+    payload = '{"lives":[{"url":"https://example.com/list.m3u8"}],"x":"http://a.b/c"}'
+    text, count = rewrite_inner(payload, "https://gh-proxy.com/")
+    assert count == 0 and text == payload
+
+
+def test_rewrite_handles_several_references_and_refs_heads_paths():
+    payload = f'{{"a":"{RAW}","b":"https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"}}'
+    text, count = rewrite_inner(payload, "https://ghfast.top/")
+    assert count == 2
+    assert "ghfast.top/https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8" in text
+
+
+def test_rewrite_is_off_when_no_proxy_is_configured():
+    text, count = rewrite_inner(f'{{"a":"{RAW}"}}', "")
+    assert count == 0 and text == f'{{"a":"{RAW}"}}'
+
+
+def test_a_proxied_neighbour_does_not_shelter_the_next_bare_reference():
+    """Only the prefix directly in front of a reference marks it as proxied.
+
+    Configs often list a proxied URL and a bare one side by side; the bare one
+    still has to be rewritten, otherwise it stays unreachable in China.
+    """
+    bare = "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"
+    payload = f'{{"urls":["https://ghfast.top/{RAW}","{bare}"]}}'
+    text, count = rewrite_inner(payload, "https://gh-proxy.com/")
+    assert count == 1
+    assert "gh-proxy.com/https://ghfast.top/" not in text
+    assert f"https://gh-proxy.com/{bare}" in text
+
+
+def test_disabling_rewrite_publishes_the_origin_bytes(tmp_path):
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True, "public_base": "https://me.github.io/repo",
+            "rewrite_inner": False,
+        })
+        plan = mirror.prepare([stub_source(f"{server.base}/inner.json", source_id="9" * 64)])
+        entry = plan.entries["9" * 64]
+        assert entry.inner_rewrites == 0
+        assert INNER_RAW.encode() in entry.content
+
+
+def test_enabling_rewrite_proxies_inner_references(tmp_path):
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True, "public_base": "https://me.github.io/repo",
+            "rewrite_inner": True, "inner_proxy": "https://gh-proxy.com/",
+        })
+        plan = mirror.prepare([stub_source(f"{server.base}/inner.json", source_id="8" * 64)])
+        entry = plan.entries["8" * 64]
+        assert entry.inner_rewrites == 2
+        assert entry.content.decode().count(f"https://gh-proxy.com/{INNER_RAW}") == 2
 
 
 # ---------------------------------------------------------------------------

@@ -100,6 +100,12 @@ make report      # 打印当前状态
 
 关掉它（`output.mirror.enabled: false`）就退回直连原始地址的旧行为。
 
+镜像只覆盖最外层一步。配置内部还指向别的文件——同级配置（`urls[]`）、直播源
+（`lives[]`）、少数脚本（`sites[]`），实测 24 份里共 86 处，也全在
+`raw.githubusercontent.com`。这些默认被套上 GitHub 加速前缀，否则影视仓把配置
+读进来了，里面每个子源还是打不开。开关是 `output.mirror.rewrite_inner` 和
+`output.mirror.inner_proxy`。
+
 ## 合规边界
 
 只处理公开可访问、你有权使用、明确授权的接口。不破解 DRM、不绕过鉴权或付费墙、

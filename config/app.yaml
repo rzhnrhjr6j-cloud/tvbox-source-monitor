@@ -125,3 +125,12 @@ output:
     on_failure: drop
     max_bytes: 2097152
     max_total_bytes: 33554432
+    # A config also points at sibling configs (urls[]), live playlists (lives[])
+    # and scripts - 86 such references across the 24 configs of the first real
+    # run, all on raw.githubusercontent.com.  Mirrored alone they stay dead for
+    # the client, so those hosts are rewritten through an acceleration proxy.
+    # Set rewrite_inner: false to publish the origin bytes untouched.
+    rewrite_inner: true
+    # alternatives, all verified reachable from CN: https://ghfast.top/
+    # https://ghproxy.net/   (jsdelivr cannot express refs/heads/<branch> paths)
+    inner_proxy: "https://gh-proxy.com/"

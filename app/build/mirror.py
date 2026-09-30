@@ -90,6 +90,47 @@ def _pick_name(config: Any, url: str, source: Source) -> str:
     return (source.name or source.id[:8]).strip()
 
 
+# A config does not only live at one URL.  In the wild it points at more
+# configs (``urls[]``), live playlists (``lives[]``) and scripts - measured on a
+# real run, 86 such references across 24 configs, all on
+# raw.githubusercontent.com.  Mirroring only the outer file would still leave
+# every one of those dead for the client, so the host is rewritten through an
+# acceleration proxy instead (cheaper than pulling ~20 MB of playlists a day).
+_RAW_HOST = re.compile(r"https://raw\.githubusercontent\.com/")
+
+# An already-proxied reference reads ``https://ghfast.top/https://raw.github…``,
+# so what marks it is the immediate ``<scheme>://<host>/`` prefix.  Anything
+# shorter would let a proxied neighbour earlier in the file shelter the next
+# bare reference from being rewritten.
+_PROXIED_PREFIX = re.compile(r"https?://[^\s\"'<>/\\]+/$")
+
+
+def rewrite_inner(text: str, proxy: str) -> tuple[str, int]:
+    """Prefix every bare raw.githubusercontent.com URL with ``proxy``.
+
+    Returns the new text and how many references were rewritten.  References
+    that already sit behind a proxy are left alone, so a config written by
+    someone who already did this is not wrapped twice.
+    """
+    if not proxy:
+        return text, 0
+    parts: list[str] = []
+    cursor = 0
+    count = 0
+    for match in _RAW_HOST.finditer(text):
+        start = match.start()
+        if _PROXIED_PREFIX.search(text[max(0, start - 80):start]):
+            continue
+        parts.append(text[cursor:start])
+        parts.append(proxy)
+        cursor = start
+        count += 1
+    if not count:
+        return text, 0
+    parts.append(text[cursor:])
+    return "".join(parts), count
+
+
 @dataclass
 class MirrorEntry:
     source_id: str
@@ -99,6 +140,7 @@ class MirrorEntry:
     site_count: int
     content: bytes
     origin: str
+    inner_rewrites: int = 0
 
 
 @dataclass
@@ -149,6 +191,12 @@ class ConfigMirror:
         return str(self.settings.get("on_failure", "drop")).lower()
 
     @property
+    def inner_proxy(self) -> str:
+        if not bool(self.settings.get("rewrite_inner", True)):
+            return ""
+        return str(self.settings.get("inner_proxy") or "").strip()
+
+    @property
     def max_bytes(self) -> int:
         return int(self.settings.get("max_bytes", 2 * 1024 * 1024))
 
@@ -187,12 +235,18 @@ class ConfigMirror:
                 plan.dropped.add(source.id)
                 continue
 
+            text = result.content.decode("utf-8", "replace")
             try:
-                config = json.loads(result.content.decode("utf-8", "replace"))
+                config = json.loads(text)
             except ValueError:
                 config = None
 
-            used += len(result.content)
+            # name extraction reads the origin text; the published copy gets
+            # its sibling references proxied
+            text, rewrites = rewrite_inner(text, self.inner_proxy)
+            content = text.encode("utf-8")
+
+            used += len(content)
             slug = source.id[:16]
             plan.entries[source.id] = MirrorEntry(
                 source_id=source.id,
@@ -200,8 +254,9 @@ class ConfigMirror:
                 name=_pick_name(config, url, source),
                 url=f"{base}/{SOURCES_DIR}/{slug}.json",
                 site_count=_site_count(config),
-                content=result.content,
+                content=content,
                 origin=url,
+                inner_rewrites=rewrites,
             )
 
         self._dedupe_names(plan)
@@ -245,4 +300,3 @@ class ConfigMirror:
                 except OSError:
                     pass
         return target
-

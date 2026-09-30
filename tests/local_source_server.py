@@ -26,6 +26,10 @@ SITE_TEMPLATE = {
 
 _RANGE_RE = re.compile(r"bytes=(\d+)-(\d*)", re.IGNORECASE)
 
+# A sibling reference of the kind real configs carry: always reachable from a
+# GitHub runner, never reachable from the client we publish for.
+INNER_RAW = "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"
+
 
 def build_config(base: str) -> dict:
     site = dict(SITE_TEMPLATE)
@@ -162,6 +166,21 @@ class _Handler(BaseHTTPRequestHandler):
         if path == "/broken.json":
             return self._send(b"<!doctype html><html><body>not a config</body></html>",
                               content_type="text/html; charset=utf-8")
+
+        if path == "/inner.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "sites": [dict(SITE_TEMPLATE, api=f"{self.base}/api.php/provide/vod/")],
+                        "urls": [{"name": "Child", "url": INNER_RAW}],
+                        "lives": [{"name": "Live", "url": INNER_RAW}],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
 
         if path == "/notjson.json":
             return self._send(b"this is definitely not json", content_type="application/json")

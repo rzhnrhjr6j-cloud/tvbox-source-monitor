@@ -20,6 +20,7 @@ client touches then lives on one host we control and can test.
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 import re
 from dataclasses import dataclass, field
@@ -34,7 +35,7 @@ LOGGER = get_logger("build.mirror")
 SOURCES_DIR = "sources"
 
 # [607KB/s|1290ms|稳] 360资源  ->  360资源
-_BRACKET_PREFIX = re.compile(r"^\s*[\[\(【][^\]\)】]{0,40}[\]\)】]\s*")
+_BRACKET_PREFIX = re.compile(r"^\s*[\[\(【（][^\]\)】）]{0,40}[\]\)】）]\s*")
 # pictographs, dingbats, flags, variation selectors - cosmetic noise in names
 _EMOJI = re.compile(
     "[\U0001f000-\U0001faff\U0001f1e6-\U0001f1ff\U00002600-\U000027bf"
@@ -275,6 +276,7 @@ class ConfigMirror:
                 inner_rewrites=rewrites,
             )
 
+        self._drop_duplicate_content(plan)
         self._dedupe_names(plan)
         return plan
 
@@ -283,6 +285,27 @@ class ConfigMirror:
             "stage": "build", "check": "mirror", "source_id": source.id,
             "source_name": source.name, "url": url, "error": reason,
         })
+
+    @staticmethod
+    def _drop_duplicate_content(plan: MirrorPlan) -> None:
+        """Publish identical bytes once.
+
+        Several discovered sources mirror the same upstream file.  Listing it
+        twice only pads the client's list with entries that behave identically.
+        """
+        seen: dict[str, str] = {}
+        for source_id in list(plan.entries):
+            entry = plan.entries[source_id]
+            digest = hashlib.sha256(entry.content).hexdigest()
+            first = seen.get(digest)
+            if first is None:
+                seen[digest] = source_id
+                continue
+            LOGGER.info("mirror dropped a duplicate config", extra={
+                "stage": "build", "check": "mirror", "source_id": source_id,
+                "source_name": entry.name, "error": f"identical to {first}"})
+            del plan.entries[source_id]
+            plan.dropped.add(source_id)
 
     @staticmethod
     def _dedupe_names(plan: MirrorPlan) -> None:

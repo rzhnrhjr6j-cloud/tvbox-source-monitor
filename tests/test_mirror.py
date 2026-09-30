@@ -122,6 +122,10 @@ def test_pick_name_falls_back_to_host_then_source_name():
     assert _pick_name({}, "not-a-url", stub_source("x", name="kept")) == "kept"
 
 
+def test_clean_name_strips_a_full_width_paren_prefix():
+    assert _clean_name("（微信公众号）宝盒没宝") == "宝盒没宝"
+
+
 def test_dedupe_names_makes_every_label_unique_and_counts_sites():
     """The original bug report: eight entries all literally called 'tvbox.json'."""
     from app.build.mirror import MirrorEntry, MirrorPlan
@@ -138,6 +142,23 @@ def test_dedupe_names_makes_every_label_unique_and_counts_sites():
     names = [entry.name for entry in plan.entries.values()]
     assert len(set(names)) == 3, names
     assert all("站" in name for name in names), names
+
+
+def test_identical_bytes_are_published_once():
+    """Discovered sources often mirror the same upstream file."""
+    from app.build.mirror import MirrorEntry, MirrorPlan
+
+    plan = MirrorPlan(enabled=True)
+    for index, body in enumerate([b'{"sites":[]}', b'{"sites":[]}', b'{"sites":[1]}']):
+        plan.entries[f"id{index}"] = MirrorEntry(
+            source_id=f"id{index}", slug=f"slug{index}", name=f"源{index}",
+            url=f"https://h/{SOURCES_DIR}/slug{index}.json", site_count=1,
+            content=body, origin="o",
+        )
+    ConfigMirror._drop_duplicate_content(plan)
+
+    assert set(plan.entries) == {"id0", "id2"}
+    assert plan.dropped == {"id1"}
 
 
 # ---------------------------------------------------------------------------

@@ -324,7 +324,9 @@ def test_a_bare_reference_is_hosted_even_with_no_proxy_in_front_of_it(tmp_path):
         assert body["spider"].startswith("https://me.github.io/repo/jars/")
         # the bytes are untouched, so the author's own digest still holds
         assert body["spider"].endswith(".jar;md5;beef")
-        assert body["parses"][0]["url"].startswith("https://me.github.io/repo/jars/")
+        # a parses[] entry is not a file: a type 0 entry is a web parser that
+        # takes a ?url= at play time, so a snapshot of it breaks VIP playback
+        assert body["parses"][0]["url"] == f"{server.base}/assets/parser.js"
         jarred = [s for s in body["sites"] if s.get("jar")]
         assert jarred and jarred[0]["jar"].startswith("https://me.github.io/repo/jars/")
         # an api endpoint is not a file: rewriting it would break the site

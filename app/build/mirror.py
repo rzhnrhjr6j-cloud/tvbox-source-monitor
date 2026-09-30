@@ -531,10 +531,14 @@ class ConfigMirror:
         field decided whether the whole list worked.
 
         A runner cannot see the client's network, so we stop guessing: whatever
-        the source names as a *file* - the crawler jar, the spider config, an
-        external parser - is fetched here and handed back on a host we have
-        confirmed the client reaches.  An ``api`` / ``ext`` endpoint is not a
-        file and is never rewritten.
+        the source names as a *file* - the crawler jar or the spider config -
+        is fetched here and handed back on a host we have confirmed the client
+        reaches.
+
+        Only those two.  ``parses[]`` looks like a file list and is not one:
+        a ``type: 0`` entry is a web parser that takes a ``?url=`` at play time,
+        and snapshotting it breaks VIP playback for every site that uses it.
+        For the same reason ``api`` / ``ext`` are never rewritten.
         """
         if not self.host_jars:
             return text, 0
@@ -591,9 +595,6 @@ class ConfigMirror:
             for row in config.get("sites") or []:
                 if isinstance(row, dict):
                     swap(row, "jar")
-            for parser in config.get("parses") or []:
-                if isinstance(parser, dict):
-                    swap(parser, "url")
         else:
             return text, 0
 

@@ -10,10 +10,13 @@ Run it after every rebuild:
 
     python3 tools/verify_client_reachability.py
 
-It fetches the published ``tvbox.json``, every child config, and every file the
-client would load when a source is opened (the crawler jar, the spider config,
-the external parsers), printing one line per source.  Exit code 1 means at
-least one source would fail to open.
+It fetches the published ``tvbox.json``, every child config, and every *file*
+the client would load when a source is opened - the crawler jar and the spider
+config - printing one line per source.  Exit code 1 means at least one source
+would fail to open.
+
+``api``, ``ext`` and ``parses[]`` are deliberately not checked: they are live
+endpoints, not files, and a bare GET of one is not a reachability signal.
 """
 
 from __future__ import annotations
@@ -57,17 +60,13 @@ def fetch(url: str, timeout: float) -> tuple[int, int]:
 def references(config) -> list[str]:
     """Every file the client loads when the source is opened."""
     if isinstance(config, list):
-        rows, spider, parsers = config, None, []
+        rows, spider = config, None
     else:
         rows = config.get("sites") or []
         spider = config.get("spider")
-        parsers = config.get("parses") or []
     found: list[str] = []
     if isinstance(spider, str):
         found.append(spider)
-    for parser in parsers:
-        if isinstance(parser, dict) and isinstance(parser.get("url"), str):
-            found.append(parser["url"])
     for row in rows:
         if isinstance(row, dict) and isinstance(row.get("jar"), str):
             found.append(row["jar"])

@@ -1,0 +1,119 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>cd解析_vip视频解析_视频解析网站_视频解析_vip解析-影视解析网</title>
+    <meta name="keywords" content="cd解析,vip视频解析,视频解析网站,视频解析,vip解析,vip视频在线解析,万能vip视频解析,vip视频全能解析,vip视频,手机vip视频解析,手机在线解析vip视频,优酷vip解析,爱奇艺vip解析,腾讯vip解析,乐视vip解析,芒果vip解析">
+  <meta name="description" content="cd解析网提供VIP视频解析，vip视频在线解析，vip解析，优酷vip解析，爱奇艺vip解析，腾讯vip解析，乐视vip解析，芒果vip解析，一个方便广大用户的视频解析网站">
+    <style>
+      /* 样式表中的 CSS 代码用于美化密码输入框和登录按钮 */
+      input[type="password"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: inset 0 1px 3px #ddd;
+        font-size: 16px;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+      }
+   
+   input[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+    </style>
+  </head>
+<body>
+
+
+
+  <!-- 将表单包装在居中对齐的 div 元素中 -->
+  
+  <html lang="en" >
+
+<head>
+<meta charset="UTF-8">
+<title>登录注册表单</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--图标库-->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css'>
+
+<!--响应式框架-->
+<link rel='stylesheet' href='https://vip.26db.cn/css/bootstrap.min.css'>
+
+<!--主要样式-->
+<link rel="stylesheet" href="https://vip.26db.cn/css/style.css">
+
+
+</head>
+
+<body>      
+ <div class="container" > 
+  <div class="card-wrap">
+	
+		<div class="card border-0 shadow card--welcome is-show" id="welcome">
+			<div class="card-body">
+				<h2 class="card-title">欢迎光临</h2>
+				<p>欢迎来到“cd解析-影视解析”</p>
+				<div class="btn-wrap"><a class="btn btn-lg btn-register js-btn" data-target="register">点击下面↓↓↓</a><a class="btn btn-lg btn-login js-btn" data-target="login">⇒<strong>进入cd解析</strong>⇐</a></div>
+			</div>
+		</div>
+		
+	
+		
+		<div class="card border-0 shadow card--login" id="login">
+			<div class="card-body">
+				<h2 class="card-title">欢迎使用cd解析-影视解析！</h2>
+				<p>cd解析使用说明</p>
+				
+				<p>服务器的运营成本实在太大，关停了3个月，现在不再免费对外开放，如果你实在需要，请购买秘钥后使用！另，程序只做技术讨论使用！</p>
+				<form  method="post">
+					<div class="form-group">
+						<label for="password">秘钥：<a href="/" target="_blank"><font color=red>点此获取</font></a>，错误将返回上一页</label>
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="password" name="password" id="password" placeholder="请输入您的秘钥" required autofocus>
+					</div>
+					<p><a href="#">重要：白嫖党过多，秘钥已经更新，购买过的用户在购买页直接登录就可获取新秘钥！</a></p>
+					<input type="submit" name="submit" value="登录">
+				</form>
+			</div>
+			<button class="btn btn-back js-btn" data-target="welcome"><i class="fas fa-angle-left"></i></button>
+		</div>
+		
+	</div>
+	</div>
+
+
+   <script src="https://vip.26db.cn/js/index.js"></script>
+   
+   <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d7fc785ad76b4f02a7e60fdcef974710";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
+  
+  

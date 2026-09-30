@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verify Yourself</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<meta charset="UTF-8"/>
+	<script type="text/javascript">
+	var isValidated=!1;window.addEventListener("pageshow",function(){isValidated&&window.location.reload()}),window.addEventListener("load",function(){var n=document.getElementById("input"),s=document.getElementById("handler"),d=document.getElementById("progress-bar"),o=!1,i=0,t=n.offsetLeft,u=s.offsetLeft,c=n.offsetWidth-s.offsetWidth-s.offsetLeft,a=!1;function e(e){e.preventDefault(),o=!0,i=null!=e.touches&&0<e.touches.length?e.touches[0].clientX-t:e.offsetX}function f(e){var t;o&&(t=e.x,null!=e.touches&&0<e.touches.length&&(t=e.touches[0].clientX),(t=t-n.offsetLeft-i)<u?t=u:c<t&&(t=c),s.style.cssText="margin-left: "+t+"px",0<t&&(d.style.cssText="width: "+(t+s.offsetWidth+4)+"px"))}function l(e){var t;o=o&&!1,s.offsetLeft<c-4?(s.style.cssText="margin-left: "+u+"px",n.style.cssText="background: #eee",d.style.cssText="width: 0px"):(s.style.cssText="margin-left: "+c+"px",n.style.cssText="background: #a5dc86",a||(isValidated=a=!0,(t=document.createElement("input")).setAttribute("name","nonce"),t.setAttribute("type","hidden"),t.setAttribute("value","1516706654054820480"),document.getElementById("ui-form").appendChild(t),document.getElementById("ui-form").submit()))}void 0!==document.ontouchstart?(s.addEventListener("touchstart",e),document.addEventListener("touchmove",f),document.addEventListener("touchend",l)):(s.addEventListener("mousedown",e),window.addEventListener("mousemove",f),window.addEventListener("mouseup",l))});
+	</script>
+	<style type="text/css">
+	form { max-width: 20em; margin: 5em auto; text-align: center; font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif; }
+ 		.ui-input {
+            height: 4em;
+            background: #eee;
+			border: 1px #ccc solid;
+            text-align: left;
+            position: relative;
+        }
+
+        .ui-input .ui-progress-bar {
+            background: #689F38;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+        }
+
+        .ui-handler, .ui-handler-placeholder {
+            width: 3.6em;
+            height: 3.6em;
+            margin: 0.2em;
+            background: #3f51b5;
+            border-radius: 0.6em;
+            display: inline-block;
+            cursor: pointer;
+            z-index: 10;
+            position: relative;
+        }
+
+        .ui-handler-placeholder {
+            background: none;
+            border: 1px #ccc dashed;
+            position: absolute;
+            right: -1px;
+            top: 0;
+            bottom: 0;
+        }
+
+        .ui-input img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            left: 8em;
+            opacity: 5%;
+        }
+    .ui-prompt { float: left; margin: 1em 0; padding: 0; line-height: 1.2; }
+	address { margin-top: 1em; padding-top: 0.5em; border-top: 1px #ccc solid; text-align: center; clear: both; }
+
+	</style>
+</head>
+<body><form method="POST" id="ui-form">
+	<input type="hidden" name="GOEDGE_WAF_CAPTCHA_ID" value="da921cde9407a37072382ebda1d6d0ef"/>
+	 <div class="ui-input" id="input">
+      	<div class="ui-progress-bar" id="progress-bar"></div>
+        <div class="ui-handler" id="handler"></div>
+		<div class="ui-handler-placeholder" id="handler-placeholder"></div>
+ 		<img alt="" src="data:image/jpeg;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAACHklEQVR4nO3cu4oUQRgF4EI3UhDXRNRQUFnBC97XwIcRfQf3ZfYdTAxMFMwMzUw18q6JCOpaxayBTItdDd3V9v99cOKt5pyZnWlmJiUAAAAAAAAAAAAAAAAAAAAAgOgO5pzLOdn6IEzvXs6bnL39PM+53PRETKaUv9eRLzm3G56LCWykPx/5XSPYbnY6Rncm/b383/mcc6vVARnXqfTvARjBwpUXfH1HcLPRGRlRebVf/tf3GcGnZASLVF7olUe4Z4LAakZQnglutDkmYzICjAAjINWP4HqbYzImI8AIqBvBx2QEi1Q7gmttjsmYjAAjoH4EV9sckzEZAUaAEZDqRvAh50qbYzKm5iMoH3F+kPNi/w/I9PmW+g2g5G3Ohc4mBziQ87jij8s8Ur6TcLqjz2r3Z3AxMixP1uus93AGFyLD8jPn6HqldR7N4EJk+AA21yutszODC5FhedbRZ7UjOS9ncDFSl/LO4WxHn4Mcy9nN+TqDC5N+5Y9yQ6j80sWmTJ47qe5GkFvCC3IxrW7s9CnfR8YWRvmBKT8w5Qem/MAuJeWHVcp/l5QfkvIDU35gyg+spnzfDF4Y5QdWfjtQ+UEpPzDlB1bKf5+UH5LyAzufVu/f+77P90mehSmfylV+UIdzfiRP+2GdSB754b1Oyg/tblJ+eGUEr9Kq+O85T3O2mp6IJo7nHGp9CAAAAAAAAAAAAAAAAAAAAADgf/ILsUB70laSdmQAAAAASUVORK5CYII="/>
+    </div>
+	<p class="ui-prompt">Slide to Unlock</p>
+</form>
+<address>Request ID: 17907925012721831000001</address>
+
+</body>
+</html>

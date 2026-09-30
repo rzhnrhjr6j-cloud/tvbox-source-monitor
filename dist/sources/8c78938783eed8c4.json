@@ -1,5 +1,5 @@
 {
-    "spider": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/7f309c1cfc08f1517a79.jar",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/spider.jar",
     "warningText": "【小布丁】提示：📢随缘维护切勿贩卖",
     "sites": [
         {
@@ -11,7 +11,7 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/兔小贝.json",
-            "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/90583683bd79fe45e9ff.jar"
+            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/jars/csp_XYQHiker_兔小贝.jar"
         },
         {
             "key": "csp_XYQHiker_兔小贝2",
@@ -22,7 +22,7 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/兔小贝2.json",
-            "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/90583683bd79fe45e9ff.jar"
+            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/jars/csp_XYQHiker_兔小贝.jar"
         },
         {
             "key": "csp_XYQHiker_童趣",
@@ -33,7 +33,7 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/播视童趣.json",
-            "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/90583683bd79fe45e9ff.jar"
+            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/jars/csp_XYQHiker_兔小贝.jar"
         },
         {
             "key": "幼儿启蒙",

@@ -1,5 +1,5 @@
 {
-  "spider": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/c30c0cc00b4f215e7538.jar",
+  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/spider.jar",
   "wallpaper": "https://bing.img.run/uhd.php",
   "sites": [
     {
@@ -711,7 +711,7 @@
     {
       "name": "Develop",
       "type": "0",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/17ec8494fa49cdf6037f.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt",
       "playerType": "2",
       "epg": "http://diyp5.112114.xyz/?ch={name}&date={date}",
       "logo": "https://epg.112114.xyz/logo/{name}.png"
@@ -719,7 +719,7 @@
     {
       "name": "Kimentanm",
       "type": "0",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/6bca02295ddf75141988.m3u",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
       "playerType": "2"
     }
   ],

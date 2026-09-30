@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>VIP视频解析接口-全网最稳的无广告免费接口</title>
+<meta name="keywords" content="VIP视频解析接口,优酷,乐视,芒果,爱奇艺,vip视频,在线解析,视频解析"/>
+<meta name="description" content="VIP解析口,支持优酷网VIP，乐视网VIP，芒果VIP，奇艺VIP，腾讯VIP"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<style type="text/css">
+.tishi{border:1px solid #EDCE7B;margin:5px 0;padding:10px;background-color:#FFFFEA;color:#000000;text-align:left;line-height:20px}
+.searchs{border:3px solid #efefef;border-radius:2px;color:#555;display:table;margin:10px auto;}
+.searchs .from{border:1px solid #ccc;display:inline-block;margin:0 auto;position:relative;}
+.searchs .text{background:#fff none repeat scroll 0 0;border:medium none;color:#333;display:inline;font-size:16px;height:34px;line-height:34px;outline:0 none;}
+.searchs .button{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background:#ff5555;border-color:#d7d7d7;border-image:none;border-style:solid;border-width:0 0 0 1px;color:#fff;cursor:pointer;display:inline;font-size:14px;height:42px;overflow:hidden;}
+.cf{margin:0px;}
+</style>
+<script type='text/javascript'>
+function sub(){window.location.href='/?url='+encodeURI(document.getElementByName('url'));return false;}
+</script>
+</head>
+<body>
+<h1 style="font-size:38px;font-weight: bold;text-align:center;">
+    <span style="color:#00a021;">纯净免费解析接口</span>
+</h1>
+<div class="main"><div style="padding:1px">
+<div class="tishi"><p style="color:#00a9f8"><b>解析接口不定期更新,如无法解析请切换通道</b></p>
+<p>快捷地址:https://tool.bitefu.net/video/?url=http://视频地址&type=通道(0,1,2,3)</p>
+</div>
+</div>
+<div class="searchs"><div class="from">
+<form class="form-search cf" target="_blank" action="" method="get" onSubmit='return sub();'>		
+	<input name="url" id="url" type="text" placeholder="请输入视频地址,双击清空." class="text" value="" ondblclick="this.value=''"/>  
+    <select name="type"><option value="0">通道1(免费VIP)</option><option value="1">通道2(无广告)</option><option value="2">通道3(优质无广告)</option><option value="3">通道4(优质无广告)</option><option value="4">通道5(无广告)</option><option value="5">通道6(高速无广告)</option><option value="6">通道7(弹幕)</option><option value="7">通道8(弹幕)</option><option value="8">通道9(无广告)</option><option value="9">通道10(无广告可换线)</option><option value="10">通道11(新增优质)</option><option value="11">通道12(新增优质)</option><option value="12">通道13(新增优质)</option><option value="13">通道14(新增优质)</option><option value="14">通道15(新增优质)</option><option value="15">通道16(腾讯)</option><option value="16">通道17(高速有广告)</option><option value="17">通道18(全能小广告)</option><option value="18">通道19(侧边广告)</option></select>
+    <input type="submit" id="post" class="button" value="立即播放"/>
+</form> 
+</div></div></div>
+<div>现以支持:腾讯，爱奇艺，优酷，乐视，土豆，芒果，搜狐，PPTV，P云，乐云，acfun，BiLiBiLi, 乐视云发行, Q云免审核，m3u8，mp4直连，高端云，秒拍，百度云，音悦</div>
+
+<script language="javascript" type="text/javascript" src="//js.users.51.la/3729735.js"></script>
+</body></html>

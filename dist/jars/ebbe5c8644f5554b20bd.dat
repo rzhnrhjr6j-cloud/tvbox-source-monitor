@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!-- IE内核 强制使用最新的引擎渲染网页 -->
+    <meta name="renderer" content="webkit">  <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0 ,maximum-scale=1.0, user-scalable=no">
+    <meta name="x5-fullscreen" content="true">  <!-- 手机H5兼容模式 -->
+    <meta name="x5-page-mode" content="app"> <!-- X5  全屏处理 -->
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">  <!-- UC 全屏应用模式 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/> <!--  苹果全屏应用模式 -->
+    <title>无尽播放器</title>
+    <script src="/dplayer/js/hls.js?v6"></script>
+    <script src="/dplayer/js/DPlayer.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "p2p-media-loader-core": "/dplayer/js/p2p-media-loader-core.es.min.js",
+            "p2p-media-loader-hlsjs": "/dplayer/js/p2p-media-loader-hlsjs.es.min.js"
+          }
+        }
+    </script>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .p2p-stats {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 16px;
+            z-index: 1000;
+            backdrop-filter: blur(3px);
+            background-image: -webkit-linear-gradient(left,
+                    #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%,
+                    #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%,
+                    #f7acbc 80%, #ffd400 90%, #3498db 100%);
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: masked-animation 3s infinite linear;
+        }
+
+        @keyframes masked-animation {
+            0% {
+                background-position: 100% 0;
+            }
+
+            /* 从右侧开始 */
+            100% {
+                background-position: -100% 0;
+            }
+
+            /* 移动到左侧 */
+        }
+
+        #player,
+        .dplayer {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
+    <!-- 新增：检测是否支持模块，如果不支持则降级加载 -->
+    <script>
+        var supportsModule = 'noModule' in document.createElement('script');
+        if (!supportsModule) {
+            console.warn("当前浏览器不支持模块加载，将使用普通播放模式。");
+            document.addEventListener("DOMContentLoaded", function () {
+                var modScript = document.querySelector('script[type="module"][src="/dplayer/js/p2p-video-demo.js"]');
+                if (modScript) {
+                    modScript.type = "";
+                }
+            });
+        }
+    </script>
+    <script type="module">
+        import { HlsJsP2PEngine } from "p2p-media-loader-hlsjs";
+        // 从URL获取参数函数
+        function getPar(par, local_url = window.location.href) {
+            try {
+                let uriSearch = new URL(local_url);
+                let searchParams = new URLSearchParams(uriSearch.search);
+                if (searchParams.has(par)) return searchParams.get(par);
+            } catch (e) {
+                console.error('获取参数错误: ' + local_url, e);
+            }
+            return "";
+        }
+        const videoContainer = document.querySelector("#player");
+        // 从URL参数获取视频地址
+        let videoUrl = getPar("url");
+        // 从URL参数获取封面图
+        let videoPic = getPar("pic");
+        let lastSubmittedUpload = 0;
+        function submitP2PUpload(uploadedBytes) {
+            const deltaUpload = uploadedBytes - lastSubmittedUpload;
+            if (deltaUpload <= 0) return;
+            const MAX_RETRIES = 3;
+            let retryCount = 0;
+            function sendRequest() {
+                const xhr = new XMLHttpRequest();
+                const apiUrl = 'http://p2p.niuniuzs.com/index.php' +
+                    '?p2pTraffic=' + encodeURIComponent(deltaUpload);
+                xhr.open('GET', apiUrl);
+                xhr.setRequestHeader('Accept', 'application/json');
+                xhr.timeout = 8000;
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.status === 'success') {
+                                lastSubmittedUpload = uploadedBytes;
+                                //console.log('提交成功:', deltaUpload);
+                            } else {
+                                // console.error('服务器错误:', response.message);
+                            }
+                        } catch (e) {
+                            //console.error('响应解析失败:', e);
+                            retry();
+                        }
+                    } else {
+                        //console.error('HTTP错误:', xhr.status);
+                        retry();
+                    }
+                };
+                xhr.onerror = xhr.ontimeout = function () {
+                    //console.warn(`请求失败，重试次数 ${retryCount}/${MAX_RETRIES}`);
+                    retry();
+                };
+                function retry() {
+                    if (retryCount < MAX_RETRIES) {
+                        retryCount++;
+                        setTimeout(sendRequest, 1000 * retryCount);
+                    } else {
+                        console.error('超过最大重试次数');
+                    }
+                }
+                xhr.send();
+            }
+            sendRequest();
+        }
+        // 如果未提供URL参数，使用默认地址或提示错误
+        if (videoUrl === "") {
+            alert("未设置播放链接，请在URL中添加?url=视频地址");
+            videoUrl = ""; // 设置为空，播放器会显示错误
+        }
+        // 清理URL中可能的额外参数
+        videoUrl = videoUrl.split("?")[0];
+        const statsContainer = document.querySelector(".p2p-stats");
+        // 检查URL中是否包含debug参数
+        function checkDebugParam() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.has('debug');
+        }
+        // 显示或隐藏统计面板
+        function toggleStatsPanel() {
+            const statsContainer = document.querySelector(".p2p-stats");
+            if (statsContainer.style.display === 'none' || statsContainer.style.display === '') {
+                statsContainer.style.display = 'block';
+            } else {
+                statsContainer.style.display = 'none';
+            }
+        }
+        function getSwarmId(url) {
+            try {
+                const parsedUrl = new URL(url);
+                const relativePath = parsedUrl.pathname + parsedUrl.search + parsedUrl.hash;
+                //console.log(`swarmId=${relativePath}`);
+                return relativePath;
+            } catch (e) {
+                //console.log(`swarmId=${url}`);
+                return url;
+            }
+        }
+        // 如果存在debug参数，则显示统计面板
+        if (checkDebugParam()) {
+            statsContainer.style.display = 'block';
+        }
+        // 仅在有视频URL时初始化播放器
+        if (videoUrl) {
+            //console.log("初始化播放器，视频地址:", videoUrl);
+            const player = new DPlayer({
+                container: videoContainer,
+                autoplay: true,
+                screenshot: true,
+                preload: 'auto',
+                mutex: true,
+                pic: videoPic,
+                contextmenu: [
+                    {
+                        text: 'P2P监控',
+                        click: () => toggleStatsPanel()
+                    }
+                ],
+                video: {
+                    url: videoUrl,
+                    pic: videoPic,
+                    type: "customHls",
+                    customType: {
+                        customHls: (video) => {
+                            try {
+                                const HlsWithP2P = HlsJsP2PEngine.injectMixin(window.Hls);
+								const hls = new HlsWithP2P({
+                                    p2p: {
+                                        core: {
+                                            swarmId: videoUrl,//不要修改
+                                            highDemandTimeWindow: 1800,//设置60秒意味着系统会优先处理最近指定时间内的分片请求  秒 (与 httpDownloadTimeWindow 设置一样的值)
+                                            simultaneousHttpDownloads: 3, //多线程加载
+                                            p2pNotReceivingBytesTimeoutMs: 10000, //P2P连接无数据接收的超时时间 毫秒
+                                            p2pDownloadTimeWindow: 3600, //从P2P下载的视频时长，单位秒。3600秒即1小时
+                                            httpNotReceivingBytesTimeoutMs: 20000, //HTTP超时时间 毫秒
+                                            httpDownloadTimeWindow: 1800, //从HTTP下载的视频时长
+                                            cachedSegmentExpiration: 86400000,// 缓存分片的过期时间，单位毫秒（24小时） 
+                                            cachedSegmentsCount: 2000,
+                                            announceTrackers:
+                                                ["wss://p2p2.niuniuzs.com","wss://p2p2.niuniuzs.com",],
+                                        },
+                                    },
+										hlsjsConfig: {
+											maxBufferLength: 3600,       // 最大缓冲长度(秒)
+											maxMaxBufferLength: 3600 ,    // 最大允许缓冲长度
+											startFragPrefetch: true,   // 启用分片预取
+											autoStartLoad: true,       // 自动开始加载
+											startLoad: 0,              // 从0秒开始加载视频
+											maxBufferSize: 1024*1024*1024, // 最大缓冲区大小 字节 
+										}
+                                });
+                                hls.attachMedia(video);
+                                hls.loadSource(videoUrl);
+                                hls.on(Hls.Events.BUFFER_APPENDED, (event, data) => {
+                                    //console.log(`预加载缓冲: ${data.frag.duration.toFixed(2)}秒`);
+                                });
+                                const p2pEngine = hls.p2pEngine;
+                                const statsData = {
+                                    peersCount: 0,
+                                    downloadedBytes: 0,
+                                    uploadedBytes: 0,
+                                    httpDownloadedBytes: 0,
+                                    peers: new Set(),
+                                };
+                                const updateStatsUI = () => {
+                                    const totalDownloaded = statsData.downloadedBytes + statsData.httpDownloadedBytes;
+                                    const p2pRatio = totalDownloaded === 0 ? 0 : Math.round((statsData.downloadedBytes / totalDownloaded) * 100);
+                                    document.getElementById('peers-count').textContent = statsData.peers.size;
+                                    document.getElementById('p2p-download').textContent =
+                                        `${(statsData.downloadedBytes / 1048576).toFixed(1)}MB`;
+                                    document.getElementById('p2p-upload').textContent =
+                                        `${(statsData.uploadedBytes / 1048576).toFixed(1)}MB`;
+                                    document.getElementById('p2p-ratio').textContent = `${p2pRatio}%`;
+
+                                };
+                                const handlePeerConnect = (params) => {
+                                    //console.log(`对等节点已连接: ${params.peerId}`);
+                                    statsData.peersCount++;
+                                    statsData.peers.add(params.peerId);
+                                    updateStatsUI();
+                                };
+                                const handlePeerClose = (params) => {
+                                    //console.log(`对等节点已断开: ${params.peerId}`);
+                                    statsData.peersCount = Math.max(0, statsData.peersCount - 1);
+                                    statsData.peers.delete(params.peerId);
+                                    updateStatsUI();
+                                };
+                                const handleChunkDownloaded = (bytesLength, downloadSource, peerId) => {
+                                    if (downloadSource === "p2p") {
+                                        //console.log(`从P2P下载了 ${bytesLength} 字节，来自节点 ${peerId}`);
+                                        statsData.downloadedBytes += bytesLength;
+                                        //submitP2PUpload(statsData.downloadedBytes);
+                                    } else if (downloadSource === "http") {
+                                        //console.log(`从HTTP下载了 ${bytesLength} 字节`);
+                                        statsData.httpDownloadedBytes += bytesLength;
+                                    }
+                                    updateStatsUI();
+                                };
+
+                                const handleChunkUploaded = (bytesLength, peerId) => {
+                                    //console.log(`上传了 ${bytesLength} 字节到节点 ${peerId}`);
+                                    statsData.uploadedBytes += bytesLength;
+                                    updateStatsUI();
+                                    //submitP2PUpload(statsData.uploadedBytes);
+                                };
+                                const handleSegmentLoaded = (params) => {
+                                    //console.log("Segment加载完成:", params);
+                                    if (params.downloadSource === "http") {
+                                        statsData.httpDownloadedBytes += params.bytesLength;
+                                        updateStatsUI();
+                                    }
+                                };
+                                p2pEngine.addEventListener("onPeerConnect", handlePeerConnect);
+                                p2pEngine.addEventListener("onPeerClose", handlePeerClose);
+                                p2pEngine.addEventListener("onChunkDownloaded", handleChunkDownloaded);
+                                p2pEngine.addEventListener("onChunkUploaded", handleChunkUploaded);
+                                p2pEngine.addEventListener("onSegmentLoaded", handleSegmentLoaded);
+                                setInterval(updateStatsUI, 1000);
+                                function formatBytes(bytes, decimals = 2) {
+                                    if (bytes === 0) return '0 Bytes';
+                                    const k = 1024;
+                                    const dm = decimals < 0 ? 0 : decimals;
+                                    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                                    const i = Math.floor(Math.log(bytes) / Math.log(k));
+                                    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+                                }
+                            } catch (e) {
+                                console.error("P2P播放不支持或初始化出错，切换至普通HLS播放。", e);
+                                if (window.Hls) {
+                                    const fallbackHls = new window.Hls();
+                                    fallbackHls.attachMedia(video);
+                                    fallbackHls.loadSource(videoUrl);
+                                } else {
+                                    alert("浏览器不支持HLS播放！");
+                                }
+                            }
+                        },
+                    },
+                },
+            });
+            player.play();
+            // 监听播放器错误
+            player.on('error', function (err) {
+                //console.log('播放器错误:', err);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="player"></div>
+        <!-- P2P统计面板 -->
+        <div class="p2p-stats" id="p2p-stats" style="display: none;">
+            <span id="p2p-status">🟢 P2P</span> |
+            节点: <span id="peers-count">0</span> |
+            加速: <span id="p2p-download">0MB</span> |
+            分享: <span id="p2p-upload">0MB</span> |
+            比率: <span id="p2p-ratio">0%</span>
+        </div>
+    </div>
+</body>
+
+</html>

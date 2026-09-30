@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>新浪解析播放器</title>
+    <!-- <meta name="referrer" content="never"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!-- IE内核 强制使用最新的引擎渲染网页 -->
+    <meta name="renderer" content="webkit"> <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="x5-fullscreen" content="true"> <!-- 手机H5兼容模式 -->
+    <meta name="x5-page-mode" content="app"> <!-- X5  全屏处理 -->
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application"> <!-- UC 全屏应用模式 -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> <!--  苹果全屏应用模式 -->
+    <script src="https://s2.pstatp.com/cdn/expire-1-M/hls.js/1.1.5/hls.min.js"></script>
+    <script src="https://s2.pstatp.com/cdn/expire-1-M/dplayer/1.25.1/DPlayer.min.js"></script>
+    <style>
+        :root {
+            --plyr-color-main: #00b2ff;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            background-color: black;
+        }
+    
+        #dplayer {
+            width: 100%;
+            height: 100%;
+        }
+    
+        .plyr--video {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="dplayer"></div>
+<script>
+
+        const vid = window.location.href.split("url=")[1];
+    
+        const videoConfig = {
+                url: vid,
+                type: 'hls'
+            };
+    
+        function customHls(video) {
+            const url = vid;
+            const hls = new Hls({
+                fragLoadingTimeOut: 10000,
+                backBufferLength: 600,
+                maxBufferLength: 120,
+                maxMaxBufferLength: 360
+            });
+            hls.loadSource(url);
+            hls.attachMedia(video);
+            window.hls = hls;
+        }
+    
+        if (window.Hls && Hls.isSupported()) {
+                videoConfig.customType = {
+                    hls: customHls
+                };
+            }
+    
+        new DPlayer({
+                container: document.getElementById('dplayer'),
+                autoplay: true,
+                video: videoConfig
+            });
+
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?16a77690da4333614b56b66a538a896b";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="vip视频解析,vip视频在线解析,vip解析,万能vip视频解析,vip视频全能解析,vip视频,手机vip视频解析,手机在线解析vip视频,优酷vip解析,爱奇艺vip解析,腾讯vip解析,乐视vip解析,芒果vip解析">
+    <meta name="description"
+        content="夜雨聆风视频解析VIP视频免费看，在线解析，vip视频解析，优酷vip解析，爱奇艺vip解析，腾讯vip解析，乐视vip解析，芒果vip解析方便广大用户VIP视频服务，">
+    <meta name="author" content="laoyee">
+    <link rel="icon" href="favicon.ico">
+    <title>夜雨聆风VIP视频解析</title>
+    <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css?ver=1.0.9">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script type="text/javascript">
+        var OriginTitile = document.title;
+        var titleTime;
+        document.addEventListener('visibilitychange',
+            function () {
+                if (document.hidden) {
+                    document.title = 'φ(>ω<*) 这有好东西哦~ ';
+                    clearTimeout(titleTime);
+                } else {
+                    document.title = '( • ̀ω•́ )✧biu~biu~~ ';
+                    titleTime = setTimeout(function () {
+                        document.title = OriginTitile;
+                    }, 2000);
+                }
+            });
+        console.log('laoyee', 'https://www.yeyulingfeng.com/');
+        console.log('版本：7.7');
+        console.log('更新：2023年05月12日');
+    </script>
+    <!-- 百度统计开始 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b727929ebdc9fa45fe30338d524c09f3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <!-- 百度end -->
+</head>
+
+
+
+<body>
+
+    <!-- 导航栏开始 -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+
+                    <span class="sr-only">夜雨聆风视频解析</span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                </button>
+
+                <a class="navbar-brand" href="/" title="夜雨聆风VIP视频解析"><img class="img-responsive" src="img/logo.png"></a>
+
+            </div>
+
+            <div id="navbar" class="collapse navbar-collapse">
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="active"><a href="index.html">首页</a></li>
+
+                    <li><a href="https://www.yeyulingfeng.com/9263.html">免费追剧APP</a></li>
+                    <li><a href="https://www.yeyulingfeng.com/6836.html">TV电视盒子</a></li>
+                   
+
+                    <li><a href="https://www.yeyulingfeng.com/tool/" target="_blank">更多工具</a></li>
+
+                    <!--<li><a style="color: #DAF7A6;" href="https://www.ak47s.cn/more/video.html" target="_blank">在线追剧</a>-->
+                    <!--</li>-->
+
+                    <!--<li><a   target="_blank" href="https://vip.yeyulingfeng.com/category-2.html">纪录片</a></li>-->
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- 导航栏结束 -->
+<!-- <div class="container">-->
+<!--<center><a  target="_blank" rel="noopener nofollow" href="https://www.kekexc.com/dp/13he/yeyvjiexi13/"><img src="https://img.bim99.cn/ssd/ssd4/20240406151257.jpg" width="100%" border="0" /></a></center>-->
+<!--</div>-->
+    <!-- 公告开始 -->
+
+
+
+
+
+
+
+
+
+
+<script src="https://css.diaifu.net/chunwenzhangzhan/js/jquery-1.8.3.min.js" ></script>     
+<script type="text/javascript">
+    $(document).ready(function () {
+        var UA = navigator.userAgent;
+        var isMobile = /Android|webOS|iPhone|iPod|BlackBerry/i.test(UA);
+        var img = document.createElement('img'); // 创建 img 标签
+        if (isMobile) {
+            console.log('---------移动端----------');
+            img.src = 'https://css.diaifu.net/4.gif'; // 替换为移动端图片的链接
+            img.style.width = '100%'; // 设置图片宽度，按需调整
+            img.style.height = 'auto'; // 保持图片比例
+        } else {
+            console.log('---------不是移动端----------');
+            img.src = 'https://css.diaifu.net/3.gif'; // 替换为桌面端图片的链接
+        }
+         
+
+        // setTimeout(() => {
+        //     $('#guanggao2')[0].appendChild(img); // 将图片插入到 guanggao2
+        // }, 3000);
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var UA = navigator.userAgent;
+        var isMobile = /Android|webOS|iPhone|iPod|BlackBerry/i.test(UA);
+        var img = document.createElement('img'); // 创建 img 标签
+        if (isMobile) {
+            console.log('---------移动端----------');
+            img.src = 'https://css.diaifu.net/4.gif'; // 替换为移动端图片的链接
+            img.style.width = '100%'; // 设置图片宽度，按需调整
+            img.style.height = 'auto'; // 保持图片比例
+        } else {
+            console.log('---------不是移动端----------');
+            img.src = 'https://css.diaifu.net/3.gif'; // 替换为桌面端图片的链接
+        }
+         
+
+        // setTimeout(() => {
+        //     $('#guanggao1')[0].appendChild(img); // 将图片插入到 guanggao2
+        // }, 3000);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+
+        <div class="starter-template">
+           
+
+            <p class="lead">免VIP会员无广告追剧 播放异常请刷新或切换线路</p>
+            
+
+        </div>
+
+        <style>
+            .imga1{
+                width: calc(100% );
+            }
+            .imgbox{
+                box-shadow: 0px 0px 10px #ccc;
+                position: relative;
+                cursor: pointer;
+                width: calc(100% - 20px);
+                border-radius: 12px;
+                overflow: hidden;
+
+            }
+            .imgtitle{
+                position: absolute;
+                color: #fff;
+                left: 0;
+                bottom: 20px;
+                text-align: center;
+                width:  calc(100% );
+                z-index: 200;
+            }
+            .img2{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 60px;
+                z-index: 200;
+            }
+            .model2{
+                position: absolute;
+                width:  calc(100% );
+                bottom: 0;
+                height: 86px;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+               
+                cursor: pointer;
+            }
+            .imgbox:hover{
+                box-shadow: 0px 0px 20px #ccc;
+                transform: scale(1.1);
+                
+            }
+
+            .box2{
+                display: none;
+            }
+            
+@media (min-width: 200px) and (max-width: 900px) {
+    .box1,
+    .box3{
+        display: none;
+    }
+
+    .box2{
+        display: block;
+    }
+ }
+
+ .box2{
+    margin-bottom: 10px;;
+ }
+ .box2_list{
+    position: relative;
+    width: 90%;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+ }
+ .box2_listimg{
+    width: 100%;
+ }
+ .box2_title{
+
+    position:absolute;
+    height: 45px;
+    background-color: #303238;
+    color: #fff;;
+    bottom: 0;
+    width: 100%;
+
+    padding-top: 10px;
+    padding-left: 10px;
+ }
+
+        </style>
+
+<a href="https://pan.quark.cn/s/f382160bd8f7">
+        <div class="box1">
+            <div style="display: flex;">
+                <div style="flex:1">
+                    <div class="imgbox">
+                        <div class="model2"></div>
+                        <img src="https://css.diaifu.net/yeyulingfeng/image/a1.png" class="imga1" alt="">
+                        <img src="https://css.diaifu.net/yeyulingfeng/image/b1.png" class="img2" alt="">
+                        <div class="imgtitle">
+                                性感美女写真
+                            </div>
+                    </div>
+                </div>
+                <div style="flex:1">
+                  <div class="imgbox">
+                    <div class="model2"></div>
+                            <img src="https://css.diaifu.net/yeyulingfeng/image/a2.png" class="imga1" alt="">
+                        <img src="https://css.diaifu.net/yeyulingfeng/image/b1.png" class="img2" alt="">
+
+                            <div class="imgtitle">
+                                韩国女团热舞
+                            </div>
+                    </div>
+                </div>
+                <div style="flex:1">
+                  <div class="imgbox">
+                    <div class="model2"></div>
+                            <img src="https://css.diaifu.net/yeyulingfeng/image/a3.png" class="imga1" alt="">
+                        <img src="https://css.diaifu.net/yeyulingfeng/image/b1.png" class="img2" alt="">
+
+                            <div class="imgtitle">
+                                车模视频
+                            </div>
+                    </div>
+                </div>
+             
+                <div style="flex:1">
+                  <div class="imgbox">
+                     <div class="model2"></div>
+                            <img src="https://css.diaifu.net/yeyulingfeng/image/a5.png" class="imga1" alt="">
+                        <img src="https://css.diaifu.net/yeyulingfeng/image/b1.png" class="img2" alt="">
+
+                            <div class="imgtitle">
+                                Ai性感美女
+                            </div>
+                    </div>
+                </div>
+                <div style="flex:1">
+                    <div class="imgbox">
+                      <div class="model2"></div>
+                              <img src="https://css.diaifu.net/yeyulingfeng/image/a4.png" class="imga1" alt="">
+                          <img src="https://css.diaifu.net/yeyulingfeng/image/b1.png" class="img2" alt="">
+  
+                              <div class="imgtitle">
+                                泳装美女视频
+                              </div>
+                      </div>
+                  </div>
+            </div>
+
+        </div>
+
+        <div class="box2">
+            <div style="display: flex;">
+                <div style="flex:1">
+                    <div class="box2_list">
+                         <img src="https://css.diaifu.net/yeyulingfeng/image/a1.png" class="box2_listimg" alt="">
+                         <div class="box2_title">
+                            韩国女团热舞
+                         </div>
+                        
+                    </div>
+                </div>
+                <div style="flex:1">
+                    <div class="box2_list">
+                         <img src="https://css.diaifu.net/yeyulingfeng/image/a2.png" class="box2_listimg" alt="">
+                         <div class="box2_title">
+                            韩国女团热舞
+                         </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </a>
+
+ <!-- <a id='guanggao2' href="https://pan.quark.cn/s/f25a94bc7115"  ></a> -->
+    </div>
+
+
+    <!-- 接口开始 -->
+
+    <div class="container">
+
+        <!-- AD -->
+
+        <!-- AD end -->
+
+        <!--<iframe src="jiekou.html?ver=120230512" style="width: 100%" height="590px; border-radius:1px 1px 1px 1px;"-->
+        <!--    frameborder="0" allowfullscreen="true" style="border-radius: 4px;"></iframe>-->
+
+    </div>
+
+    <!-- 接口结束 -->
+
+    <p class="bottomTitle" style="color:red;margin-top:12px;">
+        <span class="left">小编呕血收集打包精品资源</span>
+    </p>
+    <p class="bottomTitle" style="color:red;;margin-bottom:12px;">
+        <span class="left">随时会被网盘和谐,手慢无o(╥﹏╥)o</span>
+    </p>
+    
+     
+     <div class="container">
+
+
+
+
+
+
+         <!-- <a id='guanggao1' href="https://pan.quark.cn/s/f25a94bc7115"  ></a> -->
+        <!--复制这段代码，改图片和链接-->
+        <!--<div class="col-md-2 col-sm-4 col-xs-6"  >-->
+
+        <!--    <a href="https://pan.quark.cn/s/a58b65e28f72" target="_blank"  rel='nofollow' >-->
+
+        <!--        <img src="/1.png" alt="音乐资源" class="img-responsive">-->
+
+        <!--    </a> -->
+            
+
+        <!--</div>-->
+        <!--复制这段代码，改图片和链接--> <!--复制这段代码，改图片和链接-->
+        <!--<div class="col-md-2 col-sm-4 col-xs-6"  >-->
+
+            
+        <!--    <a href="https://pan.quark.cn/s/611b58053c4f" target="_blank" rel='nofollow' >-->
+
+        <!--        <img src="/2.png" alt="音乐资源" class="img-responsive">-->
+
+        <!--    </a>-->
+
+        <!--</div>-->
+        <!--复制这段代码，改图片和链接-->
+        <!--复制这段代码，改图片和链接--> <!--复制这段代码，改图片和链接-->
+        <!--<div class="col-md-2 col-sm-4 col-xs-6"  >-->
+
+            
+        <!--    <a href="https://pan.quark.cn/s/c393fc3ee5d2" target="_blank" rel='nofollow' >-->
+
+        <!--        <img src="/3.png" alt="精品短剧" class="img-responsive">-->
+
+        <!--    </a>-->
+
+        <!--</div>-->
+        <!--复制这段代码，改图片和链接-->
+        <!--复制这段代码，改图片和链接--> <!--复制这段代码，改图片和链接-->
+        <!--<div class="col-md-2 col-sm-4 col-xs-6"  >-->
+
+            
+        <!--    <a href="https://pan.quark.cn/s/bd3ef9c67499" target="_blank" rel='nofollow' >-->
+
+        <!--        <img src="/4.png" alt="经典电影人物篇" class="img-responsive">-->
+
+        <!--    </a>-->
+
+        <!--</div>-->
+        <!--复制这段代码，改图片和链接-->
+        
+        <!--复制这段代码，改图片和链接-->
+        <!--<div class="col-md-2 col-sm-4 col-xs-6"   >-->
+
+            
+        <!--    <a href="https://pan.quark.cn/s/136144cfb596" target="_blank" rel='nofollow' >-->
+
+        <!--        <img src="/5.png" alt="动画电影" class="img-responsive">-->
+
+        <!--    </a>-->
+
+        <!--</div>-->
+        <!--复制这段代码，改图片和链接-->
+        
+        <!--复制这段代码，改图片和链接-->
+        <!--<div class="col-md-2 col-sm-4 col-xs-6"   >-->
+
+            
+        <!--    <a href="https://pan.quark.cn/s/88b6b8311f5c" target="_blank" rel='nofollow' >-->
+
+        <!--        <img src="/6.png" alt="TOP电影" class="img-responsive">-->
+
+        <!--    </a>-->
+
+        <!--</div>-->
+        <!--复制这段代码，改图片和链接-->
+ 
+
+ 
+        
+        
+        
+        
+<!--这里是中间的横图-->
+        <div style="text-align:center; width:100%;;margin:0 auto">
+
+            <a href="https://vip.yeyulingfeng.com/"  target="_blank" rel="noopener"><img src="./img/eat.png"
+                    style="width:100%;"></a>
+
+        </div>
+
+    </div>
+<!--这里是中间的横图-->
+
+
+
+
+
+
+    <!-- 视频导航开始 -->
+<!-- <div class="container">
+<center><a href="
+http://down.kanqiu48.com/?agent=yeyulingfeng2&app=yeyulingfeng2app" target="_blank" rel="noopener nofollow"><img src="https://pic.yeyulingfeng.com/uploads/2023/12/QQ图片20231216154430.jpg" width="100%" border="0" /></a></center>
+</div>-->
+    <p class="bottomTitle">
+
+        <span class="left">支持以下视频站视频解析</span>
+        <a class="right" href="./course.html">使用教程</a>
+
+    </p>
+
+    <div class="container">
+
+        <a href="https://pan.quark.cn/s/f382160bd8f7">
+        <div class="box3" style="margin-top: 20px;margin-bottom: 20px;;">
+            <div style="display: flex;">
+                <div style="flex:1">
+                    <div class="imgbox">
+                        <div class="model2"></div>
+                        <img src="https://css.diaifu.net/yeyulingfeng/image/a1.png" class="imga1" alt="">
+                        <img src="https://css.diaifu.net/yeyulingfeng/image/b1.png" class="img2" alt="">
+                        <div class="imgtitle">
+                                性感美女写真
+                            </div>
+                    </div>
+                </div>
+                <div style="flex:1">
+                  <div class="imgbox">
+                    <div class="model2"></div>
+                            <img src="https://css.diaifu.net/yeyulingfeng/image/a2.png" class="imga1" alt="">
+                        <img src="https://css.diaifu.net/yeyulingfeng/image/b1.png" class="img2" alt="">
+
+                            <div class="imgtitle">
+                                韩国女团热舞
+                            </div>
+                    </div>
+                </div>
+                <div style="flex:1">
+                  <div class="imgbox">
+                    <div class="model2"></div>
+                            <img src="https://css.diaifu.net/yeyulingfeng/image/a3.png" class="imga1" alt="">
+                        <img src="https://css.diaifu.net/yeyulingfeng/image/b1.png" class="img2" alt="">
+
+                            <div class="imgtitle">
+                                车模视频
+                            </div>
+                    </div>
+                </div>
+             
+                <div style="flex:1">
+                  <div class="imgbox">
+                     <div class="model2"></div>
+                            <img src="https://css.diaifu.net/yeyulingfeng/image/a5.png" class="imga1" alt="">
+                        <img src="https://css.diaifu.net/yeyulingfeng/image/b1.png" class="img2" alt="">
+
+                            <div class="imgtitle">
+                                Ai性感美女
+                            </div>
+                    </div>
+                </div>
+                <div style="flex:1">
+                    <div class="imgbox">
+                      <div class="model2"></div>
+                              <img src="https://css.diaifu.net/yeyulingfeng/image/a4.png" class="imga1" alt="">
+                          <img src="https://css.diaifu.net/yeyulingfeng/image/b1.png" class="img2" alt="">
+  
+                              <div class="imgtitle">
+                                泳装美女视频
+                              </div>
+                      </div>
+                  </div>
+            </div>
+
+        </div>
+
+
+        <div class="box2">
+            <div style="display: flex;">
+                <div style="flex:1">
+                    <div class="box2_list">
+                         <img src="https://css.diaifu.net/yeyulingfeng/image/a3.png" class="box2_listimg" alt="">
+                         <div class="box2_title">
+                            车模高清性感视频
+                         </div>
+                        
+                    </div>
+                </div>
+                <div style="flex:1">
+                    <div class="box2_list">
+                         <img src="https://css.diaifu.net/yeyulingfeng/image/a4.png" class="box2_listimg" alt="">
+                         <div class="box2_title">
+                            泳装美女高清视频
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box2">
+            <div style="display: flex;">
+                <div style="flex:1">
+                    <div class="box2_list">
+                         <img src="https://css.diaifu.net/yeyulingfeng/image/a5.png" class="box2_listimg" alt="">
+                         <div class="box2_title">
+                            Ai性感美女写真
+                         </div>
+                        
+                    </div>
+                </div>
+                <div style="flex:1">
+                    
+                </div>
+            </div>
+        </div>
+
+</a>
+
+        <!-- 第一排 -->
+
+        <div class="col-md-2 col-sm-4 col-xs-6" style="">
+
+            <a href="https://film.qq.com/" target="_blank">
+
+                <img src="img/qqlogo.png" alt="腾讯视频" class="img-responsive">
+
+            </a>
+
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="https://film.sohu.com/" target="_blank">
+
+                <img src="img/sohu.png" alt="搜狐视频" class="img-responsive">
+
+            </a>
+
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="https://vip.iqiyi.com/" target="_blank">
+
+                <img src="img/aqy.png" alt="爱奇艺视频" class="img-responsive">
+
+            </a>
+
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="https://home.vip.youku.com/" target="_blank">
+
+                <img src="img/youkulogo.png" alt="优酷视频" class="img-responsive">
+
+            </a>
+
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="http://vip.le.com/" target="_blank">
+
+                <img src="img/letvlogo.png" alt="乐视视频" class="img-responsive">
+
+            </a>
+
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="http://vip.pptv.com/" target="_blank">
+
+                <img src="img/pptvlogo.png" alt="PP视频" class="img-responsive">
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 第二排 -->
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="https://www.bilibili.com/" target="_blank">
+
+                <img src="img/bilibili.png" alt="哔哩哔哩" class="img-responsive">
+
+            </a>
+
+        </div>
+
+
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="https://vip.1905.com/" target="_blank">
+
+                <img src="img/1905.png" alt="1905" class="img-responsive">
+
+            </a>
+
+        </div>
+
+
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="http://v.cctv.com/" target="_blank">
+
+                <img src="img/cntvlogo.png" alt="央视网" class="img-responsive">
+
+            </a>
+
+        </div>
+
+
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="https://www.mgtv.com/vip/" target="_blank">
+
+                <img src="img/mgtv.png" alt="芒果TV" class="img-responsive">
+
+            </a>
+
+        </div>
+
+
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="https://vip.wasu.cn/" target="_blank">
+
+                <img src="img/wasulogo.png" alt="华数TV" class="img-responsive">
+
+            </a>
+
+        </div>
+
+
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="http://www.fun.tv/vip" target="_blank">
+
+                <img src="img/fengxing.png" alt="风行网" class="img-responsive">
+
+            </a>
+
+            <br />
+
+        </div>
+        
+
+         
+
+    </div>
+    <!-- 视频导航结束 -->
+    
+    
+    
+    
+    
+
+    <!-- 底部开始 -->
+    <div class="container-fluid footer">
+        
+        <p>
+            <span class="copyright">
+                &copy; Copyright 2017-2023 <a href="https://www.yeyulingfeng.com">夜雨聆风</a> 
+                All Rights Reserved. 
+                <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备17022877号-5</a>
+                <a href="/category-2.html" target="_blank"> 纪录片</a>
+                <a href="/category-9.html" target="_blank"> 性感写真</a>
+                </span>
+        </p>
+     </div>
+
+    <!-- 底部结束 -->
+    <script src="https://lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://lib.baomitu.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/Javascript">
+        document.oncontextmenu = function(e) { return false } 
+        document.onselectstart = function(e) { return false }   
+    </script>
+    <!-- 网站底部蒲公英特效开始 -->
+    <div class="dandelion">
+        <span class="smalldan"></span>
+        <span class="bigdan"></span>
+    </div>
+    <style type="text/css">
+    </style>
+    <!-- 网站底部蒲公英特效结束 -->
+    <!--百度统计开始-->
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0186d2e060dc2b46444812cd667f6467";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <!--百度统计结束-->
+</body>
+
+</html>

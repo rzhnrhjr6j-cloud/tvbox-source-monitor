@@ -1,0 +1,20 @@
+
+
+<h1 style="text-align: center;color: white;">正在加载中,请稍等...</h1>
+<script>
+    document.body.style.backgroundColor = "#000";
+    
+    ads = "/html/html2/getplayer.html";
+    /**/
+    var sUserAgent = navigator.userAgent;
+    if (sUserAgent.indexOf('Android') > -1 || sUserAgent.indexOf('iPhone') > -1 || sUserAgent.indexOf('iPad') > -1 || sUserAgent.indexOf('iPod') > -1 || sUserAgent.indexOf('Symbian') > -1) {
+        ads = "/html/html2/getplayer_mb.html?1123213123"
+    }
+    if (location.href.indexOf(".m3u8") != -1) {
+        ads = "/html/html2/vjsplayer.html?1123213123"
+    }
+
+    fetch(ads).then(o => o.text()).then(o => {
+        document.write(o);
+    });
+</script>

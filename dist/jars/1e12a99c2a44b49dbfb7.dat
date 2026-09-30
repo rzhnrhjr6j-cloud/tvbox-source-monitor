@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江湖路远，后会无期</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #000000;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: "Microsoft Yahei", sans-serif;
+            color: #eeeeee;
+        }
+        /* 星空画布铺满全屏 */
+        #starCanvas{
+            position: fixed;
+            top:0;
+            left:0;
+            width:100vw;
+            height:100vh;
+            z-index: 0;
+        }
+        .wrap{
+            position: relative;
+            z-index: 1;
+            text-align:center;
+        }
+        .type-box {
+            font-size: 32px;
+            letter-spacing: 6px;
+            white-space: pre;
+        }
+        /* 闪烁光标 */
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 36px;
+            background: #eee;
+            animation: blink 0.8s infinite;
+            vertical-align: middle;
+        }
+        @keyframes blink {
+            0%, 50% {opacity:1;}
+            51%,100% {opacity:0;}
+        }
+        .tip {
+            margin-top: 40px;
+            font-size:16px;
+            color:#777;
+            letter-spacing:2px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+<div class="wrap">
+    <div class="type-box" id="text"></div>
+    <div class="tip">此去一别，不再相逢</div>
+</div>
+
+<script>
+// 打字机
+const str = "江湖路远，后会无期";
+const dom = document.getElementById("text");
+let index = 0;
+function type(){
+    if(index < str.length){
+        dom.innerText = str.slice(0, index+1);
+        index++;
+        setTimeout(type, 220);
+    }
+}
+const cursor = document.createElement("span");
+cursor.className = "cursor";
+dom.appendChild(cursor);
+type();
+
+// 星空粒子背景
+const canvas = document.getElementById('starCanvas');
+const ctx = canvas.getContext('2d');
+let stars = [];
+function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    createStars();
+}
+function createStars(){
+    stars = [];
+    const count = 120;
+    for(let i=0;i<count;i++){
+        stars.push({
+            x: Math.random()*canvas.width,
+            y: Math.random()*canvas.height,
+            r: Math.random()*1.2,
+            speed: Math.random()*0.4 + 0.1
+        })
+    }
+}
+function drawStars(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="#fff";
+    stars.forEach(s=>{
+        ctx.beginPath();
+        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+        ctx.fill();
+        s.y += s.speed;
+        if(s.y>canvas.height){
+            s.y = 0;
+            s.x = Math.random()*canvas.width;
+        }
+    })
+    requestAnimationFrame(drawStars);
+}
+resizeCanvas();
+drawStars();
+window.addEventListener('resize',resizeCanvas);
+</script>
+</body>
+</html>

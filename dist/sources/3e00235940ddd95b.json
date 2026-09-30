@@ -47,7 +47,7 @@
       {
         "type": 0,
         "name": "直播5",
-        "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/89bad0b6b32ffa72bfc1.m3u8",
+        "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/77c42510d84e2faba8ca.m3u8",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },

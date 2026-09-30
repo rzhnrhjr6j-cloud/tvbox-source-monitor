@@ -213,6 +213,9 @@ def test_sites_with_a_dead_jar_are_pruned_over_a_real_socket(tmp_path):
         body = json.loads(entry.content)
         assert [site["key"] for site in body["sites"]] == ["live-jar", "plain"]
         assert entry.site_count == 2
+        # the client loads a crawler the moment the source is opened, so a dead
+        # one has to go even when every surviving site talks http directly
+        assert "spider" not in body
 
 
 def test_a_config_whose_every_site_has_a_dead_jar_is_dropped(tmp_path):

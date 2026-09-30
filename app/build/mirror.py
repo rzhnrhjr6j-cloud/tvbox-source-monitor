@@ -397,9 +397,16 @@ class ConfigMirror:
                     "site_key": str(site.get("key") or "")[:40]})
                 continue
             kept.append(site)
-        if not dropped:
+        if not dropped and not spider_dead:
             return text, 0, len(config["sites"])
         config["sites"] = kept
+        if spider_dead:
+            # every site that needed the crawler has just been pruned, so the
+            # field would only make the client report "jar加载失败" the moment
+            # the source is opened
+            config.pop("spider", None)
+            LOGGER.info("dead spider removed", extra={
+                "stage": "build", "check": "mirror", "spider": str(spider)[:120]})
         return json.dumps(config, ensure_ascii=False, separators=(",", ":")), dropped, len(kept)
 
     # -- work --------------------------------------------------------------

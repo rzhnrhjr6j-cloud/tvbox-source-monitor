@@ -1,11 +1,7 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-09-30T19:10:04Z",
+  "generated_at": "2026-09-30T19:55:29Z",
   "urls": [
-    {
-      "name": "虎牙影库（28站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/3e00235940ddd95b.json"
-    },
     {
       "name": "精东（24站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/e5e22b7e79834be5.json"
@@ -71,15 +67,11 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/4c08ba472e57c070.json"
     },
     {
-      "name": "豆瓣 #1（36站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/4e11eb646f9a8770.json"
-    },
-    {
-      "name": "豆瓣 #2（39站）",
+      "name": "豆瓣 #1（39站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/5a29dc258ba183a7.json"
     },
     {
-      "name": "豆瓣 #3（24站）",
+      "name": "豆瓣 #2（22站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/6c8b100e71fd0836.json"
     },
     {
@@ -99,10 +91,6 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/f4b1a21dc6cec966.json"
     },
     {
-      "name": "影视仓 #1（37站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/3074a5d052fba2ec.json"
-    },
-    {
       "name": "玩偶哥哥┃4K弹幕（54站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/b4aeb5e06b27585f.json"
     },
@@ -111,16 +99,12 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/0afb24d439f6c57f.json"
     },
     {
-      "name": "┃热门┃推荐（40站）",
+      "name": "┃热门┃推荐（39站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/3d6178cf1a32e9c8.json"
     },
     {
       "name": "┃公众号┃肥猫宝贝（9站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/50b8b7395c344418.json"
-    },
-    {
-      "name": "南瓜┃App #1（32站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/4683ada86ba4f770.json"
     },
     {
       "name": "T4测试（27站）",
@@ -163,12 +147,8 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/004681325430d056.json"
     },
     {
-      "name": "【公众号：王二小放牛娃】（179站）",
+      "name": "【公众号：王二小放牛娃】（171站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/8548863b45b39eec.json"
-    },
-    {
-      "name": "官方公众号：TVBox（79站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/b80942ed3a6f7d2c.json"
     },
     {
       "name": "豆瓣┃榜单（13站）",
@@ -179,32 +159,24 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/53184a6ffbe13387.json"
     },
     {
-      "name": "世界┃聚合（78站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/8fff398bf1b8e5f9.json"
-    },
-    {
       "name": "网盘哔哩扫码（23站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/71698741fb6ab42e.json"
     },
     {
-      "name": "豆瓣 #4（153站）",
+      "name": "豆瓣 #3（153站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/98dd8daf51db1da4.json"
     },
     {
-      "name": "豆瓣 #5（8站）",
+      "name": "豆瓣 #4（8站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/c54c667b379946a1.json"
     },
     {
-      "name": "豆瓣 #6（67站）",
+      "name": "豆瓣 #5（67站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/0cd4b7263f2c4141.json"
     },
     {
-      "name": "豆瓣 #7（165站）",
+      "name": "豆瓣 #6（164站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/38e25ff2312824c6.json"
-    },
-    {
-      "name": "1TG频道搜索（154站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/eb6574c29d5c819b.json"
     },
     {
       "name": "公众号｜四次元分享 #1（8站）",
@@ -223,11 +195,11 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/8c78938783eed8c4.json"
     },
     {
-      "name": "豆瓣 #8（159站）",
+      "name": "豆瓣 #7（159站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/add402550b81beaf.json"
     },
     {
-      "name": "豆瓣 #9（8站）",
+      "name": "豆瓣 #8（8站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/1577ad7d3285bccc.json"
     },
     {
@@ -243,7 +215,7 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/63ae672c760a6a1a.json"
     },
     {
-      "name": "豆瓣 #10（152站）",
+      "name": "豆瓣 #9（151站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/efb4aaa4871527c1.json"
     },
     {
@@ -287,7 +259,7 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/e53524eeab2613a6.json"
     },
     {
-      "name": "南瓜┃App #2（37站）",
+      "name": "南瓜┃App（37站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/e6047ccc6ded8c3e.json"
     },
     {
@@ -307,16 +279,12 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/75baea90f10f4c7e.json"
     },
     {
-      "name": "豆瓣 #11（25站）",
+      "name": "豆瓣 #10（25站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/8294679cff217c3a.json"
     },
     {
       "name": "┃MV┃视频（2站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/509e0310bb5a1f49.json"
-    },
-    {
-      "name": "海外看（72站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/47498a3213439547.json"
     },
     {
       "name": "豆瓣┃[js]（43站）",
@@ -325,10 +293,6 @@
     {
       "name": "豆瓣┃搜索（86站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/dc91978ac2718386.json"
-    },
-    {
-      "name": "影视仓 #2（33站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/b9813eac6f18c6cf.json"
     },
     {
       "name": "豆瓣 • 公众号:微风的小星（105站）",
@@ -343,16 +307,16 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/719649e4735b0e87.json"
     },
     {
+      "name": "公众号:挺好分享（46站）",
+      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/66962c74ee814b9f.json"
+    },
+    {
       "name": "豆了（159站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/745561a3739c9b0c.json"
     },
     {
       "name": "凌川初心公益接口（20站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/608363ac92aef198.json"
-    },
-    {
-      "name": "公众号:挺好分享（46站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/66962c74ee814b9f.json"
     }
   ]
 }

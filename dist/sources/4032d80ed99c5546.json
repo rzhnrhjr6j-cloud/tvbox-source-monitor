@@ -5,7 +5,7 @@
         {
             "name": "DD",
             "type": 0,
-            "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/Dong-learn9/AutoTV/master/output/result.txt",
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Dong-learn9/AutoTV/master/output/result.txt",
             "playerType": 1,
             "epg": "https://e.erw.cc/e.xml",
             "logo": "https://gitlab.com/fanmingming/live/-/raw/main/tv/{name}.png"
@@ -29,7 +29,7 @@
         {
             "name": "LF",
             "type": 0,
-            "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/lalifeier/IPTV/main/txt/IPTV.txt",
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/lalifeier/IPTV/main/txt/IPTV.txt",
             "playerType": 1,
             "epg": "https://epg.112114.eu.org/?ch={name}&date={date}",
             "logo": "https://live.fanmingming.com/tv/{name}.png"

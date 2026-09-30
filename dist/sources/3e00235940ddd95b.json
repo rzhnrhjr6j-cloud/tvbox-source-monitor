@@ -75,7 +75,7 @@
       {
         "type": 0,
         "name": "直播9",
-        "url": "https://gh.llkk.cc/https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.m3u",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.m3u",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
@@ -110,7 +110,7 @@
       {
         "type": 0,
         "name": "直播18+",
-        "url": "https://gh.llkk.cc/https://raw.githubusercontent.com/kilvn/iptv/refs/heads/master/iptv%2B.m3u",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/kilvn/iptv/refs/heads/master/iptv%2B.m3u",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },

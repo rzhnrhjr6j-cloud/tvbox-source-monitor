@@ -1,0 +1,47 @@
+{
+  "vodPic": "https://s1.ax1x.com/2023/05/04/p9tgI81.png",
+  "drives": [
+    {
+      "name": "ECVE",
+      "server": "https://pan.ecve.cn"
+    },
+    {
+      "name": "mediy",
+      "server": "https://pan.mediy.cn/"
+    },    
+    {
+      "name": "小雅",
+      "server": "http://alist.xiaoya.pro"
+    },
+    {
+      "name": "觸光",
+      "server": "https://pan.ichuguang.com"
+    },
+    {
+      "name": "一只魚",
+      "server": "https://vtok.pp.ua/"
+    },
+    {
+      "name": "範本",
+      "server": "http://127.0.0.1:5244",
+      "search": true,
+      "hidden": false,
+      "login": {
+        "username": "admin",
+        "password": "123456"
+      }
+      
+    },
+    {
+      "name": "本地",
+      "server": "http://127.0.0.1:5244",
+      "search": true,
+      "hidden": false,
+      "login": {
+        "username": "admin",
+        "password": "123456"
+      }
+      
+    }
+  ]
+}

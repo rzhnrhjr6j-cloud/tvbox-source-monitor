@@ -50,7 +50,7 @@
       "filterable": 1
     },
     {"key":"csp_xBPQ_TVB云播","name":"TVB云播","type":3,"api": "csp_XBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"http://www.tvyb03.com/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html"},
-    {"key":"csp_xpath_hanjutv","name":"韩剧TV","type":3,"api":"csp_XPath","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://gh-proxy.com/https://raw.githubusercontent.com/swbqm/dyzy/main/json/%E9%9F%A9%E5%89%A7TV(XP).json"},
+    {"key":"csp_xpath_hanjutv","name":"韩剧TV","type":3,"api":"csp_XPath","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/ab7facf25716b72295bb.json"},
     {
       "key": "csp_XYQ_lu1",
       "name": "️电视直播",
@@ -1945,5 +1945,5 @@
     "cms.qdwght.com"
   ],
   "wallpaper": "http://www.kf666888.cn/api/tvbox/img",
-  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/swbqm/dyzy/main/jar/20221108.jar;md5;0B0EF0D93F6361333B36A28C6EC22757"
+  "spider": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/07b988c879a889c5f22b.jar;md5;0B0EF0D93F6361333B36A28C6EC22757"
 }

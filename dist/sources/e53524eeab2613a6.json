@@ -1,5 +1,5 @@
 {
-  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/ewctt/tvbox/main/jar/ok.jar;md5;1bc1d832b86b666f818fda06260aebad",
+  "spider": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/30b6afc78cb093a9e469.jar;md5;1bc1d832b86b666f818fda06260aebad",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=wall",
   "logo": "./lib/ol.txt",
   "sites": [
@@ -1101,7 +1101,7 @@
     {
       "name": "范明明",
       "type": 0,
-      "url": "http://127.0.0.1:9978/proxy?do=live&url=https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u",
+      "url": "http://127.0.0.1:9978/proxy?do=live&url=https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/935849a6e2f083884a45.m3u",
       "playerType": 2,
       "timeout": 10
     },

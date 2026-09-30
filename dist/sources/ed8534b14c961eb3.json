@@ -2,7 +2,7 @@
     "logo": "./assets/logo2025121201.png",
     "warningText": "禁止任何商业用途，仅限个人学习爬虫原理使用！",
     "wallpaper": "https://tu.ltyuanfang.cn/api/fengjing.php",
-    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/jar/dongli-spider.jar",
+    "spider": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/ecd497ec1f3314b2bd92.jar",
     "sites": [
         {
             "key": "Douban",
@@ -901,7 +901,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xyq254245/xyqonlinerule/refs/heads/main/XYQHiker/%E5%85%94%E5%B0%8F%E8%B4%9D.json",
+            "ext": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/e0317d5e350a6049df90.json",
             "jar": "https://v6.gh-proxy.org/https://github.com/xyq254245/xyqonlinerule/blob/main/custom_spider.jar"
         },
         {
@@ -912,7 +912,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xyq254245/xyqonlinerule/refs/heads/main/XYQHiker/%E5%85%94%E5%B0%8F%E8%B4%9D2.json",
+            "ext": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/59fcfa86698833b7099e.json",
             "jar": "https://v6.gh-proxy.org/https://github.com/xyq254245/xyqonlinerule/blob/main/custom_spider.jar"
         },
         {
@@ -923,7 +923,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xyq254245/xyqonlinerule/refs/heads/main/XYQHiker/age%E5%8A%A8%E6%BC%AB.json",
+            "ext": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/a7acaef66da38f412ba3.json",
             "jar": "https://v6.gh-proxy.org/https://github.com/xyq254245/xyqonlinerule/blob/main/custom_spider.jar"
         },
         {
@@ -1312,7 +1312,7 @@
         {
             "name": "Kimentanm",
             "type": 0,
-            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
+            "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/6bca02295ddf75141988.m3u",
             "playerType": 2
         },
         {
@@ -1342,7 +1342,7 @@
             "name": "develop202",
             "type": "0",
             "pass": true,
-            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt",
+            "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/17ec8494fa49cdf6037f.txt",
             "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
         },
@@ -1350,7 +1350,7 @@
             "name": "EPG直播",
             "type": "0",
             "pass": true,
-            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Wirili/IPTV/main/live.txt",
+            "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/737f294f3d8fe3127fc2.txt",
             "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
         },
@@ -1358,7 +1358,7 @@
             "name": "电视直播",
             "type": "0",
             "pass": true,
-            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Supprise0901/TVBox_live/main/live.txt",
+            "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/3ababde2b13a75136d0b.txt",
             "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
         },
@@ -1381,7 +1381,7 @@
             "name": "YanG",
             "type": "0",
             "pass": true,
-            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u",
+            "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/f945658ede25eef57fd7.m3u",
             "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
         },
@@ -1389,7 +1389,7 @@
             "name": "suxuang",
             "type": "0",
             "pass": true,
-            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
+            "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/8f89d38f88c6e6cd90b0.m3u",
             "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
         }

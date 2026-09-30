@@ -1,0 +1,29 @@
+{
+  "spider": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/b1319f66baa8856ea5e1.jar;md5;13c9d9596894051bb29b2e586fa81acf",
+  "sites": [
+    {
+      "key": "douyu",
+      "name": "斗鱼",
+      "type": 3,
+      "api": "csp_Douyu",
+      "searchable": 1,
+      "playerType": 1,
+      "changeable": 0,
+      "style": {
+        "type": "rect",
+        "ratio": 1.755
+      },
+      "ext": ""
+    },
+    {
+      "key": "py_justLive",
+      "name": "justLive",
+      "type": 3,
+      "api": "./py/plugin/py_justLive.py",
+      "searchable": 1,
+      "playerType": 1,
+      "changeable": 0,
+      "ext": ""
+    }
+  ]
+}

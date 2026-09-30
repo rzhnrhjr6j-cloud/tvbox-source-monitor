@@ -1,5 +1,5 @@
 {
-  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/qq1719248506/Video-interface/main/jar/spider.jar",
+  "spider": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/74d9c9d0d247e8239edb.jar",
   "sites": [
     {
       "key": "豆瓣",
@@ -131,7 +131,7 @@
       "name": "移动",
       "type": 3,
       "api": "csp_YDjisu",
-	  "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/qq1719248506/Video-interface/main/jar/og.jar",	
+	  "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/aef0aa738bd6fb798bf0.jar",	
       "searchable": 1,
       "changeable": 1
     },	  

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-09-30T18:40:38Z",
+  "generated_at": "2026-09-30T19:10:04Z",
   "urls": [
     {
       "name": "虎牙影库（28站）",
@@ -75,7 +75,11 @@
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/4e11eb646f9a8770.json"
     },
     {
-      "name": "豆瓣 #2（24站）",
+      "name": "豆瓣 #2（39站）",
+      "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/5a29dc258ba183a7.json"
+    },
+    {
+      "name": "豆瓣 #3（24站）",
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/6c8b100e71fd0836.json"
     },
     {
@@ -85,10 +89,6 @@
     {
       "name": "爱壹帆 (海外)（8站）",
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/4c797849c754f8a8.json"
-    },
-    {
-      "name": "豆瓣 #3（39站）",
-      "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/5a29dc258ba183a7.json"
     },
     {
       "name": "黑木耳资源（32站）",
@@ -135,11 +135,11 @@
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/a6e1934f1e86714b.json"
     },
     {
-      "name": "小雅TvBox #1（1站）",
+      "name": "小雅TvBox（1站）",
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/39db17a602a1f883.json"
     },
     {
-      "name": "loopool/fan #1（1站）",
+      "name": "loopool/fan（1站）",
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/d62e83b4ffe76f74.json"
     },
     {
@@ -299,7 +299,7 @@
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f4ca0bb321d2f018.json"
     },
     {
-      "name": "免费丨接口 #1（33站）",
+      "name": "免费丨接口（33站）",
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/d3a5a0d751ed22db.json"
     },
     {
@@ -315,28 +315,8 @@
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/509e0310bb5a1f49.json"
     },
     {
-      "name": "免费丨接口 #2（33站）",
-      "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/faa07983f167c489.json"
-    },
-    {
       "name": "海外看（72站）",
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/47498a3213439547.json"
-    },
-    {
-      "name": "小雅TvBox #2（1站）",
-      "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/7f18cdee8cfebadb.json"
-    },
-    {
-      "name": "loopool/fan #2（1站）",
-      "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/c6730288b4323d47.json"
-    },
-    {
-      "name": "影视仓 #2（37站）",
-      "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/d84907fa73c910af.json"
-    },
-    {
-      "name": "豆瓣推荐 #3（48站）",
-      "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/85bf82df559a1885.json"
     },
     {
       "name": "豆瓣┃[js]（43站）",
@@ -347,7 +327,7 @@
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/dc91978ac2718386.json"
     },
     {
-      "name": "影视仓 #3（33站）",
+      "name": "影视仓 #2（33站）",
       "url": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b9813eac6f18c6cf.json"
     },
     {

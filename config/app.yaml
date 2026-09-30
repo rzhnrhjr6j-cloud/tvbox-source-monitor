@@ -134,3 +134,8 @@ output:
     # alternatives, all verified reachable from CN: https://ghfast.top/
     # https://ghproxy.net/   (jsdelivr cannot express refs/heads/<branch> paths)
     inner_proxy: "https://gh-proxy.com/"
+    # A second entry point serving the same list from a host mainland China
+    # reaches more reliably than github.io.  "auto" derives
+    # https://cdn.jsdelivr.net/gh/<owner>/<repo>@main/dist from GITHUB_REPOSITORY;
+    # "off" disables it; anything else is used as the base verbatim.
+    alt_base: "auto"

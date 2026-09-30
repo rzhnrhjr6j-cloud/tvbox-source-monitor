@@ -27,6 +27,7 @@ from .validator import ValidationResult, validate_output
 LOGGER = get_logger("build")
 
 TVBOX_FILE = "tvbox.json"
+ALT_FILE = "tvbox-cdn.json"
 HEALTH_FILE = "health.json"
 DASHBOARD_FILE = "dashboard.json"
 LAST_GOOD_FILE = "last-known-good.json"
@@ -285,6 +286,7 @@ class ConfigBuilder:
             self.mirror.write(result.mirror)
 
         _atomic_write_json(path, result.output, pretty=bool(self.output_cfg.get("pretty", True)))
+        self._publish_alt(path)
         _atomic_write_json(self.dist_dir / HEALTH_FILE, result.health, pretty=True)
         _atomic_write_json(self.dist_dir / DASHBOARD_FILE, result.dashboard, pretty=True)
 
@@ -338,6 +340,25 @@ class ConfigBuilder:
 
     def record_blocked(self, result: BuildResult) -> None:
         self.store.record_build(result.build)
+
+    def _publish_alt(self, path: Path) -> Path | None:
+        """Publish a second entry point whose urls point at a different host.
+
+        Same list, different base: a client that cannot resolve github.io can
+        still load the whole thing through the alternate host.
+        """
+        primary = self.mirror.public_base
+        alt = self.mirror.alt_base
+        if not primary or not alt:
+            return None
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return None
+        if not _retarget_urls(data, primary, alt):
+            return None
+        _atomic_write_json(self.dist_dir / ALT_FILE, data, pretty=bool(self.output_cfg.get("pretty", True)))
+        return self.dist_dir / ALT_FILE
 
     # -- artefacts ---------------------------------------------------------
     def _backup(self, path: Path) -> None:
@@ -523,6 +544,25 @@ def _alert_summary(alert) -> dict[str, Any]:
         "severity": alert.severity,
         "channels": alert.channels,
     }
+
+
+def _retarget_urls(data: Any, primary: str, alt: str) -> int:
+    """Point every url of a rendered multi-source list at ``alt``.
+
+    Only urls that actually sit under ``primary`` are touched, so a source the
+    mirror could not fetch (and therefore left pointing somewhere else) is not
+    silently rewritten.  Returns how many were swapped.
+    """
+    urls = data.get("urls") if isinstance(data, dict) else None
+    if not isinstance(urls, list):
+        return 0
+    swapped = 0
+    for item in urls:
+        value = item.get("url") if isinstance(item, dict) else None
+        if isinstance(value, str) and value.startswith(f"{primary}/"):
+            item["url"] = alt + value[len(primary):]
+            swapped += 1
+    return swapped
 
 
 def count_output_items(output: Any) -> int:

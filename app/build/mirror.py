@@ -208,6 +208,27 @@ class ConfigMirror:
         return str(self.settings.get("on_failure", "drop")).lower()
 
     @property
+    def alt_base(self) -> str:
+        """A second host to publish the same list under, or "" for none.
+
+        github.io answers a GitHub runner and answers this machine, but carrier
+        DNS in mainland China resolves it to hijacked pages often enough that a
+        client never sees our JSON and reports "解析配置失败" instead.  jsDelivr
+        fronts the same repository through domestic CDN nodes, so the published
+        list is also served from there with every url swapped over.
+        """
+        configured = str(self.settings.get("alt_base", "auto")).strip()
+        if configured.lower() in ("", "off", "none", "false"):
+            return ""
+        if configured.lower() != "auto":
+            return configured.rstrip("/")
+        repository = os.environ.get("GITHUB_REPOSITORY", "").strip()
+        if "/" not in repository:
+            return ""
+        owner, repo = repository.split("/", 1)
+        return f"https://cdn.jsdelivr.net/gh/{owner}/{repo}@main/dist"
+
+    @property
     def inner_proxy(self) -> str:
         if not bool(self.settings.get("rewrite_inner", True)):
             return ""

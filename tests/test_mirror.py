@@ -17,7 +17,7 @@ from pathlib import Path
 
 import pytest
 
-from app.build.builder import TVBOX_FILE, ConfigBuilder
+from app.build.builder import TVBOX_FILE, ConfigBuilder, _retarget_urls
 from app.models import Status
 from app.build.mirror import (
     SOURCES_DIR,
@@ -258,6 +258,41 @@ def test_mirror_is_inert_without_a_publish_target(tmp_path, monkeypatch):
 # ---------------------------------------------------------------------------
 # fetching / rewriting
 # ---------------------------------------------------------------------------
+def test_alt_base_derives_jsdelivr_from_the_repository(tmp_path, monkeypatch):
+    monkeypatch.setenv("GITHUB_REPOSITORY", "owner/repo")
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://owner.github.io/repo"})
+    assert mirror.alt_base == "https://cdn.jsdelivr.net/gh/owner/repo@main/dist"
+
+
+def test_alt_base_can_be_switched_off(tmp_path, monkeypatch):
+    monkeypatch.setenv("GITHUB_REPOSITORY", "owner/repo")
+    mirror = make_mirror(tmp_path, {"enabled": True, "alt_base": "off"})
+    assert mirror.alt_base == ""
+
+
+def test_alt_base_is_empty_without_a_repository(tmp_path, monkeypatch):
+    monkeypatch.delenv("GITHUB_REPOSITORY", raising=False)
+    mirror = make_mirror(tmp_path, {"enabled": True})
+    assert mirror.alt_base == ""
+
+
+def test_retarget_urls_swaps_only_urls_under_the_primary_base():
+    data = {"urls": [
+        {"name": "甲", "url": "https://me.github.io/repo/sources/aa.json"},
+        {"name": "乙", "url": "https://elsewhere.example/x.json"},
+        {"name": "丙", "url": "https://me.github.io/repo/sources/bb.json"},
+    ]}
+    assert _retarget_urls(data, "https://me.github.io/repo", "https://cdn.example/d") == 2
+    assert data["urls"][0]["url"] == "https://cdn.example/d/sources/aa.json"
+    assert data["urls"][1]["url"] == "https://elsewhere.example/x.json"
+    assert data["urls"][2]["url"] == "https://cdn.example/d/sources/bb.json"
+
+
+def test_retarget_urls_ignores_a_shape_without_urls():
+    assert _retarget_urls({"sites": []}, "https://a", "https://b") == 0
+    assert _retarget_urls("nonsense", "https://a", "https://b") == 0
+
+
 def test_prepare_fetches_real_bytes_and_rewrites_the_url(tmp_path):
     with LocalSourceServer() as server:
         mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})

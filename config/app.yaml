@@ -134,6 +134,13 @@ output:
     # alternatives, all verified reachable from CN: https://ghfast.top/
     # https://ghproxy.net/   (jsdelivr cannot express refs/heads/<branch> paths)
     inner_proxy: "https://gh-proxy.com/"
+    # A site whose crawler jar is gone cannot open in the client - 影视仓
+    # reports "jar加载失败" and the user reads it as a broken list.  Only a hard
+    # 404/410 on the jar is treated as gone, so a slow host is never mistaken
+    # for a dead one.  Set false to publish every site as the author wrote it.
+    prune_dead_jars: true
+    jar_timeout: 15
+    max_jar_probes: 300
     # A second entry point serving the same list from a host mainland China
     # reaches more reliably than github.io.  "auto" derives
     # https://cdn.jsdelivr.net/gh/<owner>/<repo>@main/dist from GITHUB_REPOSITORY;

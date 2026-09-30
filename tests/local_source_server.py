@@ -202,6 +202,49 @@ class _Handler(BaseHTTPRequestHandler):
                 content_type="application/json; charset=utf-8",
             )
 
+        # A config whose crawler jars have gone away, the way a deleted author
+        # repository looks to the client: four sites, three of which cannot open
+        # - one on a 404 jar, one on a dead top-level spider (csp_* sites need
+        # it even though they carry no jar of their own), one on a live jar.
+        if path == "/deadjars.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "spider": f"{self.base}/assets/missing.jar",
+                        "sites": [
+                            dict(SITE_TEMPLATE, key="dead-jar", name="Dead Jar",
+                                 api="csp_DeadJar",
+                                 jar=f"{self.base}/assets/missing.jar"),
+                            dict(SITE_TEMPLATE, key="live-jar", name="Live Jar",
+                                 api="csp_LiveJar",
+                                 jar=f"{self.base}/assets/spider.jar"),
+                            dict(SITE_TEMPLATE, key="csp", name="Csp Site", api="csp_Dead"),
+                            dict(SITE_TEMPLATE, key="plain", name="Plain Site",
+                                 api=f"{self.base}/api.php/provide/vod/"),
+                        ],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        if path == "/alljarsdead.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "sites": [dict(SITE_TEMPLATE, key="only", name="Only Site",
+                                       api=f"{self.base}/api.php/provide/vod/",
+                                       jar=f"{self.base}/assets/missing.jar")],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
         return self._send(b"", 404, "text/plain")
 
 

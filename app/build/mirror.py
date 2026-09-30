@@ -26,7 +26,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 from ..logging_setup import get_logger
 from ..models import Source
@@ -34,6 +34,12 @@ from ..models import Source
 LOGGER = get_logger("build.mirror")
 
 SOURCES_DIR = "sources"
+
+# A site whose crawler jar is gone cannot open in the client; 影视仓 reports it
+# as "jar加载失败".  Only a hard 404/410 counts as gone - a timeout or a 5xx is
+# as likely to be our probe as the jar, and hiding a working site is worse than
+# showing a broken one, since the next nightly build gets another chance.
+_DEAD_JAR_STATUS = frozenset({404, 410})
 
 # [607KB/s|1290ms|稳] 360资源  ->  360资源
 _BRACKET_PREFIX = re.compile(r"^\s*[\[\(【（][^\]\)】）]{0,40}[\]\)】）]\s*")
@@ -157,19 +163,45 @@ def rewrite_relative(text: str, origin: str) -> tuple[str, int]:
 # bare reference from being rewritten.
 _PROXIED_PREFIX = re.compile(r"https?://[^\s\"'<>/\\]+/$")
 
+# An author's own proxy hop arrives in two shapes: wrapping the whole URL
+# (``https://<host>/https://raw.github…``) or standing in for the scheme
+# (``https://<host>/raw.github…``).  Measured on the published set: 21 such
+# references through 5 hosts, and the busiest of them (``daili.korice.eu.org``,
+# 12 references) had gone dark - the client reported "jar加载失败" for each one.
+# A hop we cannot vouch for is therefore replaced, not trusted.
+_PROXIED_REF = re.compile(
+    r"https?://(?P<host>[^\s\"'<>/\\]+)/(?:https?://)?(?=raw\.githubusercontent\.com/)"
+)
+
 
 def rewrite_inner(text: str, proxy: str) -> tuple[str, int]:
-    """Prefix every bare raw.githubusercontent.com URL with ``proxy``.
+    """Point every raw.githubusercontent.com URL at ``proxy``.
 
-    Returns the new text and how many references were rewritten.  References
-    that already sit behind a proxy are left alone, so a config written by
-    someone who already did this is not wrapped twice.
+    Returns the new text and how many references were rewritten.  A reference
+    already sitting behind somebody else's proxy is re-pointed at ``proxy``
+    rather than left alone; our own prefix is left untouched so a second run
+    cannot wrap it twice.
     """
     if not proxy:
         return text, 0
+
+    ours = urlsplit(proxy).netloc
+    hits = 0
+
+    def normalize(match: re.Match[str]) -> str:
+        nonlocal hits
+        # a prefix that ends in "://" already carries the inner scheme, so it
+        # is in the shape we want - but only if it is our own proxy
+        if match.group("host") == ours and match.group(0).endswith("://"):
+            return match.group(0)
+        hits += 1
+        return f"{proxy}https://"
+
+    text = _PROXIED_REF.sub(normalize, text)
+
     parts: list[str] = []
     cursor = 0
-    count = 0
+    bare = 0
     for match in _RAW_HOST.finditer(text):
         start = match.start()
         if _PROXIED_PREFIX.search(text[max(0, start - 80):start]):
@@ -177,11 +209,11 @@ def rewrite_inner(text: str, proxy: str) -> tuple[str, int]:
         parts.append(text[cursor:start])
         parts.append(proxy)
         cursor = start
-        count += 1
-    if not count:
-        return text, 0
-    parts.append(text[cursor:])
-    return "".join(parts), count
+        bare += 1
+    if bare:
+        parts.append(text[cursor:])
+        text = "".join(parts)
+    return text, hits + bare
 
 
 @dataclass
@@ -275,8 +307,100 @@ class ConfigMirror:
         return int(self.settings.get("max_bytes", 2 * 1024 * 1024))
 
     @property
+    def prune_dead_jars(self) -> bool:
+        """Drop sites whose crawler jar is definitively gone (see _DEAD_JAR_STATUS)."""
+        return bool(self.settings.get("prune_dead_jars", True))
+
+    @property
+    def jar_timeout(self) -> float:
+        return float(self.settings.get("jar_timeout", 15))
+
+    @property
+    def max_jar_probes(self) -> int:
+        return int(self.settings.get("max_jar_probes", 300))
+
+    @property
     def max_total_bytes(self) -> int:
         return int(self.settings.get("max_total_bytes", 32 * 1024 * 1024))
+
+    # -- jar liveness ------------------------------------------------------
+    def _jar_alive(self, reference: str, cache: dict[str, bool]) -> bool:
+        """Is the crawler jar behind ``reference`` still downloadable?
+
+        A ``;md5;`` suffix and anything that is not plain HTTP (``clan://``, a
+        bare ``csp_`` key, the client's own 127.0.0.1:9978 file server) is not
+        ours to test, so those are reported alive and left untouched.
+        """
+        url = reference.split(";md5;")[0].strip()
+        if not url.startswith(("http://", "https://")):
+            return True
+        if url in cache:
+            return cache[url]
+        if len(cache) >= self.max_jar_probes:
+            return True
+        client = self.http
+        result = client.probe_first_bytes(
+            url, 1, timeout=(client.connect_timeout, self.jar_timeout)
+        )
+        alive = result.status not in _DEAD_JAR_STATUS
+        cache[url] = alive
+        if not alive:
+            LOGGER.info("jar gone", extra={
+                "stage": "build", "check": "mirror", "jar": url,
+                "status": result.status})
+        return alive
+
+    def _prune_dead_jars(
+        self, text: str, cache: dict[str, bool]
+    ) -> tuple[str, int, int | None]:
+        """Remove sites the client could not open.
+
+        Returns ``(text, dropped, remaining)``.  ``remaining`` is ``None`` when
+        the config is not a shape we can prune, so the caller falls back to its
+        own count instead of reporting zero.
+        """
+        if not self.prune_dead_jars:
+            return text, 0, None
+        try:
+            config = json.loads(text)
+        except ValueError:
+            return text, 0, None
+        if not isinstance(config, dict) or not isinstance(config.get("sites"), list):
+            return text, 0, None
+
+        # a dead top-level spider takes every csp_* site down with it, even
+        # though those sites carry no jar of their own
+        spider = config.get("spider")
+        spider_dead = isinstance(spider, str) and not self._jar_alive(spider, cache)
+
+        kept: list[Any] = []
+        dropped = 0
+        for site in config["sites"]:
+            if not isinstance(site, dict):
+                kept.append(site)
+                continue
+            api = str(site.get("api") or "").strip()
+            jar = site.get("jar")
+            if isinstance(jar, str):
+                # a jar the site names itself is authoritative - the client
+                # loads it whatever the api looks like
+                dead = not self._jar_alive(jar, cache)
+            else:
+                # a site that talks to an http endpoint needs no crawler, so a
+                # dead spider is only fatal to one that inherits it
+                dead = spider_dead and not api.startswith(("http://", "https://"))
+            if dead:
+                dropped += 1
+                LOGGER.info("site dropped for a dead jar", extra={
+                    "stage": "build", "check": "mirror",
+                    "site_name": str(site.get("name") or "")[:60],
+                    "site_key": str(site.get("key") or "")[:40]})
+                continue
+            kept.append(site)
+        if not dropped:
+            return text, 0, len(config["sites"])
+        config["sites"] = kept
+        return json.dumps(config, ensure_ascii=False, separators=(",", ":")), dropped, len(kept)
 
     # -- work --------------------------------------------------------------
     def prepare(self, sources: Iterable[Source]) -> MirrorPlan:
@@ -287,6 +411,7 @@ class ConfigMirror:
         base = self.public_base
         budget = self.max_total_bytes
         used = 0
+        jar_cache: dict[str, bool] = {}
 
         for source in sources:
             url = (source.raw_url or source.url or "").strip()
@@ -319,6 +444,14 @@ class ConfigMirror:
             # its sibling references resolved, then proxied
             text, resolved = rewrite_relative(text, url)
             text, rewrites = rewrite_inner(text, self.inner_proxy)
+            text, pruned, remaining = self._prune_dead_jars(text, jar_cache)
+            if remaining == 0:
+                LOGGER.warning("every site had a dead jar", extra={
+                    "stage": "build", "check": "mirror", "source_id": source.id,
+                    "url": url, "error": "DEAD_JARS_ONLY"})
+                if self.on_failure != "keep":
+                    plan.dropped.add(source.id)
+                continue
             content = text.encode("utf-8")
 
             used += len(content)
@@ -328,7 +461,7 @@ class ConfigMirror:
                 slug=slug,
                 name=_pick_name(config, url, source),
                 url=f"{base}/{SOURCES_DIR}/{slug}.json",
-                site_count=_site_count(config),
+                site_count=remaining if remaining is not None else _site_count(config),
                 content=content,
                 origin=url,
                 inner_rewrites=resolved + rewrites,

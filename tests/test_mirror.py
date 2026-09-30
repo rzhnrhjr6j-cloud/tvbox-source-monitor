@@ -204,6 +204,37 @@ def test_a_shipped_jar_is_resolved_over_a_real_socket(tmp_path):
         assert "./assets/spider.jar" not in body
 
 
+def test_sites_with_a_dead_jar_are_pruned_over_a_real_socket(tmp_path):
+    """A jar that 404s would make 影视仓 answer "jar加载失败" on that entry."""
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/deadjars.json", source_id="8" * 64)])
+        entry = plan.entries["8" * 64]
+        body = json.loads(entry.content)
+        assert [site["key"] for site in body["sites"]] == ["live-jar", "plain"]
+        assert entry.site_count == 2
+
+
+def test_a_config_whose_every_site_has_a_dead_jar_is_dropped(tmp_path):
+    """Nothing to offer is worse than nothing: the entry must not be published."""
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/alljarsdead.json", source_id="9" * 64)])
+        assert "9" * 64 in plan.dropped
+        assert "9" * 64 not in plan.entries
+
+
+def test_jar_pruning_can_be_switched_off(tmp_path):
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True, "public_base": "https://me.github.io/repo",
+            "prune_dead_jars": False,
+        })
+        plan = mirror.prepare([stub_source(f"{server.base}/deadjars.json", source_id="b" * 64)])
+        body = json.loads(plan.entries["b" * 64].content)
+        assert len(body["sites"]) == 4
+
+
 def test_inner_raw_urls_get_the_proxy_prefix():
     """A config points at sibling configs and playlists; all of them were dead."""
     text, count = rewrite_inner('{"urls":["%s"]}' % RAW, "https://gh-proxy.com/")
@@ -239,14 +270,40 @@ def test_a_proxied_neighbour_does_not_shelter_the_next_bare_reference():
     """Only the prefix directly in front of a reference marks it as proxied.
 
     Configs often list a proxied URL and a bare one side by side; the bare one
-    still has to be rewritten, otherwise it stays unreachable in China.
+    still has to be rewritten, otherwise it stays unreachable in China.  The
+    neighbour is re-pointed at our proxy on the way through - theirs may be
+    gone, and the client cannot reach the origin either way.
     """
     bare = "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"
     payload = f'{{"urls":["https://ghfast.top/{RAW}","{bare}"]}}'
     text, count = rewrite_inner(payload, "https://gh-proxy.com/")
-    assert count == 1
-    assert "gh-proxy.com/https://ghfast.top/" not in text
+    assert count == 2
+    assert "ghfast.top" not in text
+    assert f"https://gh-proxy.com/{RAW}" in text
     assert f"https://gh-proxy.com/{bare}" in text
+
+
+def test_a_foreign_proxy_is_replaced_by_ours():
+    """An author's hop can itself be gone; a dead middleman 404s the client.
+
+    daili.korice.eu.org carried 12 references of the published set and no
+    longer answered, which is one whole family of "jar加载失败" reports.
+    """
+    payload = f'{{"urls":["https://daili.korice.eu.org/{RAW}"]}}'
+    text, count = rewrite_inner(payload, "https://gh-proxy.com/")
+    assert count == 1
+    assert "daili.korice.eu.org" not in text
+    assert f"https://gh-proxy.com/{RAW}" in text
+
+
+def test_a_schemeless_foreign_proxy_is_replaced_by_ours():
+    """Some proxies drop the inner scheme: "<host>/raw.githubusercontent.com/…"."""
+    schemeless = RAW.replace("https://", "", 1)
+    payload = f'{{"urls":["https://hub.gitmirror.example/{schemeless}"]}}'
+    text, count = rewrite_inner(payload, "https://gh-proxy.com/")
+    assert count == 1
+    assert "gitmirror.example" not in text
+    assert f"https://gh-proxy.com/{RAW}" in text
 
 
 def test_disabling_rewrite_publishes_the_origin_bytes(tmp_path):

@@ -19,7 +19,14 @@ import pytest
 
 from app.build.builder import TVBOX_FILE, ConfigBuilder
 from app.models import Status
-from app.build.mirror import SOURCES_DIR, ConfigMirror, _clean_name, _pick_name, rewrite_inner
+from app.build.mirror import (
+    SOURCES_DIR,
+    ConfigMirror,
+    _clean_name,
+    _pick_name,
+    _site_count,
+    rewrite_inner,
+)
 from app.config import load_config
 from app.storage.sqlite import Store
 from app.utils.http_client import HttpClient
@@ -80,6 +87,34 @@ def test_pick_name_falls_back_to_owner_slash_repo():
     config = {"sites": [{"name": "English Only"}]}
     name = _pick_name(config, "https://raw.githubusercontent.com/bluefriendCN/set/main/mx.json", stub_source("x"))
     assert name == "bluefriendCN/set"
+
+
+@pytest.mark.parametrize(
+    "config, expected",
+    [
+        ({"urls": [{"name": "🚀天微影视VIP线🚀"}, {"name": "其他"}]}, "天微影视VIP线"),
+        ({"urls": [{"name": "English"}, {"name": "💫影视仓口Pro"}]}, "影视仓口Pro"),
+        ([{"name": "茅台资源站采集接口"}], "茅台资源站采集接口"),
+    ],
+)
+def test_pick_name_reads_child_rows_of_a_multi_warehouse(config, expected):
+    """Multi-warehouse configs carry no sites, but their children are Chinese."""
+    name = _pick_name(config, "https://raw.githubusercontent.com/o/r/main/c.json", stub_source("x"))
+    assert name == expected
+
+
+@pytest.mark.parametrize(
+    "config, expected",
+    [
+        ({"sites": [{}, {}]}, 2),
+        ({"urls": [{}, {}, {}]}, 3),
+        ([{}, {}], 2),
+        ({}, 0),
+        ("nonsense", 0),
+    ],
+)
+def test_site_count_covers_sites_children_and_bare_arrays(config, expected):
+    assert _site_count(config) == expected
 
 
 def test_pick_name_falls_back_to_host_then_source_name():

@@ -52,10 +52,19 @@ def _clean_name(raw: str) -> str:
 
 
 def _site_count(config: Any) -> int:
+    """How many rows the config offers.
+
+    A single-warehouse config carries sites; a multi-warehouse one carries
+    child configs in ``urls``; a few ship a bare array.  All three are what the
+    client ends up listing, so all three count.
+    """
+    if isinstance(config, list):
+        return len(config)
     if isinstance(config, dict):
-        sites = config.get("sites")
-        if isinstance(sites, list):
-            return len(sites)
+        for key in ("sites", "urls"):
+            rows = config.get(key)
+            if isinstance(rows, list):
+                return len(rows)
     return 0
 
 
@@ -63,18 +72,25 @@ def _pick_name(config: Any, url: str, source: Source) -> str:
     """A short, human, ideally-Chinese label for the 影视仓 list.
 
     A config is a bundle of sites, so the most honest label is the source from
-    which it came.  We prefer a usable Chinese site name (that is what the
-    client actually sees inside), fall back to ``owner/repo`` for GitHub
-    configs, and to the host otherwise.
+    which it came.  We prefer a usable Chinese row name - and for a
+    multi-warehouse config that means a child row, which is Chinese far more
+    often than the GitHub path is.  Failing that we fall back to ``owner/repo``
+    for GitHub configs, and to the host otherwise.
     """
-    sites = config.get("sites") if isinstance(config, dict) else None
-    if isinstance(sites, list):
-        for site in sites:
-            if not isinstance(site, dict):
-                continue
-            candidate = _clean_name(site.get("name") or "")
-            if 2 <= len(candidate) <= 14 and _HAS_CJK.search(candidate):
-                return candidate
+    rows: list = []
+    if isinstance(config, list):
+        rows = config
+    elif isinstance(config, dict):
+        for key in ("sites", "urls"):
+            value = config.get(key)
+            if isinstance(value, list):
+                rows.extend(value)
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        candidate = _clean_name(row.get("name") or "")
+        if 2 <= len(candidate) <= 14 and _HAS_CJK.search(candidate):
+            return candidate
     if isinstance(config, dict):
         for key in ("name", "title"):
             candidate = _clean_name(config.get(key) or "")

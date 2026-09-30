@@ -105,7 +105,7 @@ function renderRegions(data) {
     bar.appendChild(fill);
     box.appendChild(bar);
 
-    box.appendChild(el('div', num(entry.successes) + ' / ' + num(entry.checks) + ' 次探测成功', 'region-meta'));
+    box.appendChild(el('div', num(entry.successes) + ' / ' + num(entry.checks) + ' 次配置取回成功（HTTP + 配置解析）', 'region-meta'));
     target.appendChild(box);
   }
 }

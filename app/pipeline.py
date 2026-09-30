@@ -281,7 +281,7 @@ class Pipeline:
     # -- stage 3: build ----------------------------------------------------
     def run_build(self) -> dict[str, Any]:
         previous = self._read_previous()
-        builder = ConfigBuilder(self.cfg, self.store, git_sha=self.git_sha)
+        builder = ConfigBuilder(self.cfg, self.store, git_sha=self.git_sha, client=self.client)
         result = builder.build(previous_output=previous)
 
         if result.published:

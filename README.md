@@ -29,6 +29,7 @@ https://<你的用户名>.github.io/<你的仓库名>/tvbox.json
 | 安全阀 | 构建不合法时**保持旧版 JSON 字节不变**，并留 `last-known-good` + 每日备份 |
 | 告警 | GitHub Issues / Webhook / Telegram，同一问题 24h 内去重 |
 | 面板 | GitHub Pages 上的只读 Dashboard |
+| 国内可达 | 把每个源配置镜像到自己的 Pages，影视仓只访问 `github.io`，不再碰 `raw.githubusercontent.com` |
 
 ## 本地快速开始
 
@@ -86,6 +87,18 @@ make report      # 打印当前状态
 规格 §18 明确要求**用真实影视仓 6.1.8 的配置核对字段布局，不得照抄网络文章**。
 所以这里没有写死：`output.format` 可选 `multi` / `single` / `sites`，
 必要时用 `output.template` 精确覆盖形状（不需要改代码）。写法见 `docs/配置说明.md`。
+
+## 为什么需要「镜像」
+
+发现的源绝大多数托管在 `raw.githubusercontent.com`，**国内直连打不开**。
+而健康检测跑在 GitHub 的海外机器上，它永远测不出这一点——所以系统会把
+一堆海外能通、国内全废的源当合格源发出去。
+
+启用 `output.mirror` 后，每次构建会把配置内容下载下来、存进 `dist/sources/`，
+`tvbox.json` 里指向 `https://<用户名>.github.io/<仓库名>/sources/...`。
+影视仓只需要访问一个域名，而这个域名的国内可达性是验证过的。
+
+关掉它（`output.mirror.enabled: false`）就退回直连原始地址的旧行为。
 
 ## 合规边界
 

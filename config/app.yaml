@@ -106,3 +106,22 @@ output:
   # "$status" / "$type" and the top-level "$generated_at" / "$version" / "$count"
   # are substituted.  See docs/配置说明.md.
   template: null
+
+  # -------------------------------------------------------------------------
+  # Mirror (spec §18 / §37)
+  #
+  # Discovered configs mostly live on raw.githubusercontent.com.  Probes run on
+  # GitHub runners, which always reach it; the client (影视仓 in mainland China)
+  # does not.  When enabled, every published config is downloaded here, stored
+  # under dist/sources/, and tvbox.json points at <user>.github.io/<repo>/
+  # sources/... instead - one host we know is reachable from the client.
+  # -------------------------------------------------------------------------
+  mirror:
+    enabled: true
+    # empty = derive from GITHUB_REPOSITORY as https://<owner>.github.io/<repo>
+    public_base: ""
+    # drop = do not publish a source we could not mirror (it would be dead in
+    # the client anyway); keep = fall back to the original URL
+    on_failure: drop
+    max_bytes: 2097152
+    max_total_bytes: 33554432

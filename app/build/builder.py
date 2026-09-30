@@ -19,7 +19,9 @@ from typing import Any, Iterable
 
 from ..logging_setup import get_logger
 from ..models import BuildRecord, Event, Source, SourceEvent, Status, Tier
+from ..utils.http_client import HttpClient
 from ..utils.timeutil import age_days, to_iso, utcnow
+from .mirror import ConfigMirror, MirrorPlan
 from .validator import ValidationResult, validate_output
 
 LOGGER = get_logger("build")
@@ -42,6 +44,7 @@ class BuildResult:
     health: dict[str, Any] = field(default_factory=dict)
     dashboard: dict[str, Any] = field(default_factory=dict)
     tiers: dict[str, list[str]] = field(default_factory=dict)
+    mirror: Any = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -66,12 +69,14 @@ class BuildResult:
 
 
 class ConfigBuilder:
-    def __init__(self, cfg, store, git_sha: str = ""):
+    def __init__(self, cfg, store, git_sha: str = "", client: HttpClient | None = None):
         self.cfg = cfg
         self.store = store
         self.output_cfg = cfg.section("output")
         self.dist_dir = cfg.path("app.dist_dir", "dist")
         self.git_sha = git_sha
+        self.client = client or HttpClient(cfg.section("http"))
+        self.mirror = ConfigMirror(cfg, self.dist_dir, self.client)
 
     # -- selection ---------------------------------------------------------
     def eligible(self) -> tuple[list[Source], dict[str, int]]:
@@ -119,31 +124,37 @@ class ConfigBuilder:
         return tiers
 
     # -- rendering ---------------------------------------------------------
-    def render(self, tiers: dict[str, list[Source]]) -> dict[str, Any] | list[Any]:
+    def render(
+        self,
+        tiers: dict[str, list[Source]],
+        url_map: dict[str, str] | None = None,
+        name_map: dict[str, str] | None = None,
+    ) -> dict[str, Any] | list[Any]:
         sources = tiers[Tier.PRIMARY] + tiers[Tier.BACKUP] + tiers[Tier.EXPERIMENTAL]
         sort_by = str(self.output_cfg.get("sort_by", "score"))
         if sort_by == "name":
             sources = sorted(sources, key=lambda item: (item.name or item.id))
+        name_of, url_of = _naming(url_map, name_map)
 
         template = self.output_cfg.get("template")
         if isinstance(template, dict) and template:
-            return self._render_template(template, sources)
+            return self._render_template(template, sources, url_map, name_map)
 
         fmt = str(self.output_cfg.get("format", "multi"))
         if fmt == "multi":
             return {
                 "version": str(self.cfg.get("app.version", "1.0")),
                 "generated_at": to_iso(),
-                "urls": [{"name": _display_name(source), "url": _fetch_url(source)} for source in sources],
+                "urls": [{"name": name_of(source), "url": url_of(source)} for source in sources],
             }
         if fmt == "sites":
             return {
                 "sites": [
                     {
                         "key": source.id[:16],
-                        "name": _display_name(source),
+                        "name": name_of(source),
                         "type": 3,
-                        "api": _fetch_url(source),
+                        "api": url_of(source),
                         "searchable": 1,
                         "quickSearch": 1,
                         "filterable": 1,
@@ -156,9 +167,9 @@ class ConfigBuilder:
                 "sites": [
                     {
                         "key": source.id[:16],
-                        "name": _display_name(source),
+                        "name": name_of(source),
                         "type": 3,
-                        "api": _fetch_url(source),
+                        "api": url_of(source),
                         "searchable": 1,
                         "quickSearch": 1,
                         "filterable": 1,
@@ -170,15 +181,36 @@ class ConfigBuilder:
             }
         raise ValueError(f"unsupported output.format: {fmt}")
 
-    def _render_template(self, template: dict[str, Any], sources: list[Source]) -> Any:
+    def _render_template(
+        self,
+        template: dict[str, Any],
+        sources: list[Source],
+        url_map: dict[str, str] | None = None,
+        name_map: dict[str, str] | None = None,
+    ) -> Any:
         """Delegate to the tiny explicit expander (see _expand_template)."""
-        return _expand_template(template, sources)
+        return _expand_template(template, sources, url_map, name_map)
 
     # -- build -------------------------------------------------------------
     def build(self, previous_output: Any | None = None) -> BuildResult:
         eligible, counts = self.eligible()
         tiers = self.assign_tiers(eligible)
-        output = self.render(tiers)
+
+        # spec §18 / §37: re-serve every config from our own Pages host.  The
+        # probes run on GitHub's runners and therefore cannot tell that
+        # raw.githubusercontent.com is unreachable for the client in mainland
+        # China; mirroring is what makes the published URLs actually loadable.
+        plan = self.mirror.prepare(
+            [source for bucket in tiers.values() for source in bucket]
+        )
+        if plan.dropped:
+            for bucket in tiers.values():
+                bucket[:] = [source for source in bucket if source.id not in plan.dropped]
+            LOGGER.warning("sources dropped: not mirrorable", extra={
+                "stage": "build", "check": "mirror", "count": len(plan.dropped)})
+        url_map = {source_id: entry.url for source_id, entry in plan.entries.items()}
+        name_map = {source_id: entry.name for source_id, entry in plan.entries.items()}
+        output = self.render(tiers, url_map, name_map)
 
         items = count_output_items(output)
         build_id = f"{utcnow().strftime('%Y%m%d-%H%M%S')}"
@@ -219,6 +251,7 @@ class ConfigBuilder:
             output=output,
             validation=validation,
             tiers={name: [source.id for source in bucket] for name, bucket in tiers.items()},
+            mirror=plan,
         )
         if not validation.ok:
             record.published = False
@@ -247,6 +280,9 @@ class ConfigBuilder:
 
         if path.is_file():
             self._backup(path)
+
+        if isinstance(result.mirror, MirrorPlan) and result.mirror.enabled:
+            self.mirror.write(result.mirror)
 
         _atomic_write_json(path, result.output, pretty=bool(self.output_cfg.get("pretty", True)))
         _atomic_write_json(self.dist_dir / HEALTH_FILE, result.health, pretty=True)
@@ -454,6 +490,20 @@ class ConfigBuilder:
 # ---------------------------------------------------------------------------
 # helpers
 # ---------------------------------------------------------------------------
+def _naming(url_map: dict[str, str] | None, name_map: dict[str, str] | None):
+    """Resolve a source to the name/url it should be published under."""
+    urls = url_map or {}
+    names = name_map or {}
+
+    def name_of(source: Source) -> str:
+        return names.get(source.id) or _display_name(source)
+
+    def url_of(source: Source) -> str:
+        return urls.get(source.id) or _fetch_url(source)
+
+    return name_of, url_of
+
+
 def _display_name(source: Source) -> str:
     return (source.name or source.id[:8]).strip()
 
@@ -486,7 +536,12 @@ def count_output_items(output: Any) -> int:
     return 0
 
 
-def _expand_template(template: dict[str, Any], sources: list[Source]) -> Any:
+def _expand_template(
+    template: dict[str, Any],
+    sources: list[Source],
+    url_map: dict[str, str] | None = None,
+    name_map: dict[str, str] | None = None,
+) -> Any:
     """Tiny explicit template expander.
 
     Supported placeholders inside string values:
@@ -497,9 +552,9 @@ def _expand_template(template: dict[str, Any], sources: list[Source]) -> Any:
 
     def render_item(item_template: dict[str, Any], source: Source) -> dict[str, Any]:
         mapping = {
-            "$name": _display_name(source),
-            "$url": _fetch_url(source),
-            "$api": _fetch_url(source),
+            "$name": name_of(source),
+            "$url": url_of(source),
+            "$api": url_of(source),
             "$id": source.id,
             "$key": source.id[:16],
             "$score": source.score,
@@ -525,7 +580,7 @@ def _expand_template(template: dict[str, Any], sources: list[Source]) -> Any:
                 .replace("$count", str(len(sources)))
             )
         elif isinstance(value, dict):
-            result[key] = _expand_template(value, sources)
+            result[key] = _expand_template(value, sources, url_map, name_map)
         else:
             result[key] = value
     return result

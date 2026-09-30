@@ -141,15 +141,20 @@ output:
     prune_dead_jars: true
     jar_timeout: 15
     max_jar_probes: 300
-    # Anything fetched through a third-party accelerator was the single thing
-    # that made 影视仓 answer "jar加载失败" on a real client, while a crawler on
-    # a host it could reach loaded fine.  Publish every proxied reference from
-    # our own Pages host instead - crawlers, live playlists and child configs -
-    # because the client already reaches it for the config itself.
-    # Files are named after their own bytes, so identical files are not re-added.
+    # 影视仓 answers "解析配置失败" / "jar加载失败" the moment the source's own
+    # spider cannot be loaded, and 4356 of the 4868 published sites were crawler
+    # sites - so one unhosted reference takes a whole source down.  A runner
+    # cannot see the client's network, so we stop guessing and re-serve every
+    # file reference (spider, sites[].jar, parses[].url, proxied live playlists)
+    # from a host the client demonstrably reaches.  An api/ext endpoint is not a
+    # file and is never rewritten.  Files are named after their own bytes, so
+    # identical files are not re-added and any ;md5; check still holds.
     host_jars: true
     jar_max_bytes: 12582912
     jar_total_bytes: 268435456
+    # ceiling for the whole hosting pass, in seconds; past it the remaining
+    # references keep the author's URL rather than timing the build out
+    host_seconds: 1200
     # A second entry point serving the same list from a host mainland China
     # reaches more reliably than github.io.  "auto" derives
     # https://cdn.jsdelivr.net/gh/<owner>/<repo>@main/dist from GITHUB_REPOSITORY;

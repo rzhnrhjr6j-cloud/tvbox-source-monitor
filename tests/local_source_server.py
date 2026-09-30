@@ -269,6 +269,49 @@ class _Handler(BaseHTTPRequestHandler):
                 content_type="application/json; charset=utf-8",
             )
 
+        if path == "/assets/parser.js":
+            return self._send(b"var parser = 1;", content_type="application/javascript")
+
+        # A config that names its crawler and its parsers on whatever host the
+        # author felt like, with no acceleration proxy in front of them.  Those
+        # hosts are invisible to a runner, so every reference has to be
+        # re-served or the source is a coin flip on the client.
+        if path == "/bare.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "spider": f"{self.base}/assets/spider.jar;md5;beef",
+                        "parses": [
+                            {"name": "P", "type": 1, "url": f"{self.base}/assets/parser.js"}
+                        ],
+                        "lives": [{"name": "L", "type": 0, "url": "http://127.0.0.1:9978/live.txt"}],
+                        "sites": [
+                            dict(SITE_TEMPLATE, key="jarred", name="Jarred",
+                                 jar=f"{self.base}/assets/spider.jar"),
+                            dict(SITE_TEMPLATE, key="plain", name="Plain",
+                                 api=f"{self.base}/api.php/provide/vod/"),
+                        ],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        # Some authors ship a bare array of sites instead of an object.
+        if path == "/barearray.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    [dict(SITE_TEMPLATE, key="only", name="Only",
+                          jar=f"{self.base}/assets/spider.jar")],
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
         return self._send(b"", 404, "text/plain")
 
 

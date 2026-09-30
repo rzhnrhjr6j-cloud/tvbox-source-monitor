@@ -199,9 +199,11 @@ def test_a_shipped_jar_is_resolved_over_a_real_socket(tmp_path):
     with LocalSourceServer() as server:
         mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
         plan = mirror.prepare([stub_source(f"{server.base}/withjar.json", source_id="7" * 64)])
-        body = plan.entries["7" * 64].content.decode("utf-8")
-        assert f"{server.base}/assets/spider.jar;md5;deadbeef" in body
-        assert "./assets/spider.jar" not in body
+        body = json.loads(plan.entries["7" * 64].content)
+        # a relative reference is resolved against the origin, then re-served
+        assert body["spider"].startswith("https://me.github.io/repo/jars/")
+        assert body["spider"].endswith(".jar;md5;deadbeef")
+        assert "./assets/spider.jar" not in json.dumps(body)
 
 
 def test_sites_with_a_dead_jar_are_pruned_over_a_real_socket(tmp_path):
@@ -304,6 +306,53 @@ def test_child_configs_and_live_playlists_are_hosted_too(tmp_path):
         for child in (body["urls"][0], body["lives"][0]):
             assert child["url"].startswith("https://me.github.io/repo/jars/")
         assert "raw.githubusercontent.com" not in entry.content.decode("utf-8")
+
+
+def test_a_bare_reference_is_hosted_even_with_no_proxy_in_front_of_it(tmp_path):
+    """The reference the client cannot reach has no accelerator to blame.
+
+    Measured on the published set: 4356 of 4868 sites were crawler sites, and
+    影视仓 reports 解析失败 the moment a source's own spider will not load - so
+    one unhosted spider takes a whole source down, not one row.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/bare.json", source_id="e" * 64)])
+        entry = plan.entries["e" * 64]
+        body = json.loads(entry.content)
+
+        assert body["spider"].startswith("https://me.github.io/repo/jars/")
+        # the bytes are untouched, so the author's own digest still holds
+        assert body["spider"].endswith(".jar;md5;beef")
+        assert body["parses"][0]["url"].startswith("https://me.github.io/repo/jars/")
+        jarred = [s for s in body["sites"] if s.get("jar")]
+        assert jarred and jarred[0]["jar"].startswith("https://me.github.io/repo/jars/")
+        # an api endpoint is not a file: rewriting it would break the site
+        assert any(str(s.get("api", "")).startswith(f"{server.base}/api.php")
+                   for s in body["sites"])
+        # the client's own file server is not ours to mirror
+        assert body["lives"][0]["url"] == "http://127.0.0.1:9978/live.txt"
+
+
+def test_a_bare_array_config_is_wrapped_for_the_client(tmp_path):
+    """A bare array is the one shape the client's config parser rejects."""
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/barearray.json", source_id="f" * 64)])
+        body = json.loads(plan.entries["f" * 64].content)
+        assert isinstance(body, dict)
+        assert body["sites"][0]["jar"].startswith("https://me.github.io/repo/jars/")
+
+
+def test_bare_hosting_can_be_switched_off(tmp_path):
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True, "public_base": "https://me.github.io/repo", "host_jars": False,
+        })
+        plan = mirror.prepare([stub_source(f"{server.base}/bare.json", source_id="e" * 64)])
+        body = json.loads(plan.entries["e" * 64].content)
+        assert body["spider"].startswith(server.base)
+        assert plan.jars == {}
 
 
 def test_inner_raw_urls_get_the_proxy_prefix():

@@ -23,6 +23,7 @@ import json
 import hashlib
 import os
 import re
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
@@ -339,6 +340,17 @@ class ConfigMirror:
         return int(self.settings.get("jar_total_bytes", 256 * 1024 * 1024))
 
     @property
+    def host_seconds(self) -> float:
+        """Wall-clock ceiling for the whole hosting pass.
+
+        A reference that hangs costs a full timeout, and a config can name a
+        few hundred of them.  Once the ceiling is reached the rest keep the
+        author's URL: a partially hosted list still opens, a nightly build that
+        runs into the job limit publishes nothing.
+        """
+        return float(self.settings.get("host_seconds", 900))
+
+    @property
     def jar_timeout(self) -> float:
         return float(self.settings.get("jar_timeout", 15))
 
@@ -441,6 +453,15 @@ class ConfigMirror:
         """Download ``url`` and publish it under a name derived from its bytes."""
         if state["used"] >= self.jar_total_bytes:
             return None
+        if state.get("started") is None:
+            state["started"] = time.monotonic()
+        elif time.monotonic() - state["started"] > self.host_seconds:
+            if not state.get("warned"):
+                state["warned"] = 1
+                LOGGER.warning("hosting budget spent", extra={
+                    "stage": "build", "check": "mirror",
+                    "error": f"host_seconds>{self.host_seconds}"})
+            return None
         result = self.http.get(url, max_bytes=self.jar_max_bytes)
         if not result.ok or not result.content:
             LOGGER.warning("reference left on the proxy", extra={
@@ -497,6 +518,89 @@ class ConfigMirror:
         pattern = re.compile(re.escape(prefix) + r"([^\s\"'<>]+)")
         return pattern.sub(replace, text), count
 
+    def _localise_structured(
+        self, text: str, plan: MirrorPlan, state: dict[str, int]
+    ) -> tuple[str, int]:
+        """Serve every file reference the client loads from our own host.
+
+        ``_localise_refs`` only rewrites references that already carry a proxy
+        prefix.  A reference straight at ``kstore.space``, ``bgithub.xyz`` or
+        ``hz.cz`` is just as likely to be unreachable from the client, and the
+        client reports the source as 解析失败 / jar加载失败 the moment it is
+        opened - four fifths of the catalogue were crawler sites, so that one
+        field decided whether the whole list worked.
+
+        A runner cannot see the client's network, so we stop guessing: whatever
+        the source names as a *file* - the crawler jar, the spider config, an
+        external parser - is fetched here and handed back on a host we have
+        confirmed the client reaches.  An ``api`` / ``ext`` endpoint is not a
+        file and is never rewritten.
+        """
+        if not self.host_jars:
+            return text, 0
+        base = self.public_base
+        if not base:
+            return text, 0
+        try:
+            config = json.loads(text)
+        except ValueError:
+            return text, 0
+
+        cache: dict[str, str | None] = {}
+        count = 0
+
+        def localise(value: Any) -> str | None:
+            if not isinstance(value, str):
+                return None
+            head, tail = value, ""
+            found = _REF_TAIL.search(value)
+            if found:
+                head, tail = value[:found.start()], found.group(0)
+            url = head.strip()
+            if not url.startswith(("http://", "https://")):
+                return None
+            if url.startswith(base + "/"):
+                return None
+            if url not in cache:
+                cache[url] = self._host_file(url, plan, state)
+            name = cache[url]
+            if not name:
+                return None
+            return f"{base}/{JARS_DIR}/{name}{tail}"
+
+        def swap(container: dict[str, Any], key: str) -> None:
+            nonlocal count
+            replacement = localise(container.get(key))
+            if replacement:
+                container[key] = replacement
+                count += 1
+
+        rows: list[Any]
+        wrapped = False
+        if isinstance(config, list):
+            # a few authors ship a bare array; wrap it so the client's config
+            # parser sees the object shape it expects
+            rows = config
+            for row in rows:
+                if isinstance(row, dict):
+                    swap(row, "jar")
+            config = {"sites": rows}
+            wrapped = True
+        elif isinstance(config, dict):
+            swap(config, "spider")
+            for row in config.get("sites") or []:
+                if isinstance(row, dict):
+                    swap(row, "jar")
+            for parser in config.get("parses") or []:
+                if isinstance(parser, dict):
+                    swap(parser, "url")
+        else:
+            return text, 0
+
+        if not count and not wrapped:
+            return text, 0
+        return json.dumps(config, ensure_ascii=False, separators=(",", ":")), count
+
     # -- work --------------------------------------------------------------
     def prepare(self, sources: Iterable[Source]) -> MirrorPlan:
         plan = MirrorPlan()
@@ -507,7 +611,7 @@ class ConfigMirror:
         budget = self.max_total_bytes
         used = 0
         jar_cache: dict[str, bool] = {}
-        jar_state = {"used": 0}
+        jar_state: dict[str, Any] = {"used": 0}
 
         for source in sources:
             url = (source.raw_url or source.url or "").strip()
@@ -549,6 +653,8 @@ class ConfigMirror:
                     plan.dropped.add(source.id)
                 continue
             text, hosted = self._localise_refs(text, plan, jar_state)
+            text, bare_hosted = self._localise_structured(text, plan, jar_state)
+            hosted += bare_hosted
             content = text.encode("utf-8")
 
             used += len(content)

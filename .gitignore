@@ -6,7 +6,7 @@ venv/
 .pytest_cache/
 .mypy_cache/
 *.egg-info/
-build/
+/build/
 .idea/
 .vscode/
 .DS_Store
@@ -15,5 +15,5 @@ build/
 data/*.db-wal
 data/*.db-shm
 data/rejected_candidates.json
-logs/
-pages_build/
+/logs/
+/pages_build/

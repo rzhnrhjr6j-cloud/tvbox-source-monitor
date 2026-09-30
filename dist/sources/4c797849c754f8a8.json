@@ -1,0 +1,259 @@
+{
+  "_meta": {
+    "repo": "jiusanzhou/tvbox",
+    "branch": "main",
+    "base": "pages",
+    "commit": "4047b34",
+    "generated_at": "2026-09-29T13:13:09.316Z",
+    "site_count": 8,
+    "sites": [
+      {
+        "key": "aiyifan_api",
+        "hash": "f5a26a1a",
+        "tags": [
+          "overseas-only",
+          "signed",
+          "proxied"
+        ],
+        "updated_at": "2026-09-29T13:12:59.771Z"
+      },
+      {
+        "key": "bfzy",
+        "hash": "8e529b20",
+        "tags": [
+          "cn",
+          "maccms"
+        ],
+        "type": 1,
+        "updated_at": "2026-09-29T13:12:59.771Z"
+      },
+      {
+        "key": "ddys",
+        "hash": "6e848abf",
+        "tags": [],
+        "updated_at": "2026-09-29T13:12:59.772Z"
+      },
+      {
+        "key": "ffzy",
+        "hash": "d48b3a50",
+        "tags": [
+          "cn",
+          "maccms"
+        ],
+        "type": 1,
+        "updated_at": "2026-09-29T13:12:59.772Z"
+      },
+      {
+        "key": "haohua",
+        "hash": "f11a10b0",
+        "tags": [
+          "cn",
+          "maccms"
+        ],
+        "type": 1,
+        "updated_at": "2026-09-29T13:12:59.772Z"
+      },
+      {
+        "key": "hongniu",
+        "hash": "c4cb6351",
+        "tags": [
+          "cn",
+          "maccms"
+        ],
+        "type": 1,
+        "updated_at": "2026-09-29T13:12:59.772Z"
+      },
+      {
+        "key": "liangzi",
+        "hash": "c9516047",
+        "tags": [
+          "cn",
+          "maccms"
+        ],
+        "type": 1,
+        "updated_at": "2026-09-29T13:12:59.772Z"
+      },
+      {
+        "key": "yinghua",
+        "hash": "8242bff6",
+        "tags": [
+          "cn",
+          "maccms"
+        ],
+        "type": 1,
+        "updated_at": "2026-09-29T13:12:59.772Z"
+      }
+    ]
+  },
+  "spider": "",
+  "wallpaper": "https://picsum.photos/1920/1080",
+  "sites": [
+    {
+      "key": "aiyifan_api",
+      "name": "🌏 爱壹帆 (海外)",
+      "type": 3,
+      "api": "https://zoe.im/tvbox/sites/aiyifan/spider.js?v=f5a26a1a&t=1790687589311",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "categories": [
+        "电影",
+        "剧集",
+        "综艺",
+        "动漫",
+        "短剧",
+        "纪录片"
+      ]
+    },
+    {
+      "key": "bfzy",
+      "name": "🔥 暴风",
+      "type": 1,
+      "api": "https://bfzyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "ddys",
+      "name": "🎞 低端影视",
+      "type": 3,
+      "api": "https://zoe.im/tvbox/sites/ddys/spider.js?v=6e848abf&t=1790687589312",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "categories": [
+        "电影",
+        "剧集",
+        "动漫",
+        "综艺",
+        "纪录片"
+      ]
+    },
+    {
+      "key": "ffzy",
+      "name": "⚡ 非凡资源",
+      "type": 1,
+      "api": "https://cj.ffzyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "haohua",
+      "name": "🦁 豪华",
+      "type": 1,
+      "api": "https://www.haohuazy.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "hongniu",
+      "name": "🐂 红牛",
+      "type": 1,
+      "api": "https://www.hongniuzy3.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "liangzi",
+      "name": "🔬 量子",
+      "type": 1,
+      "api": "https://cj.lziapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "yinghua",
+      "name": "🌸 樱花",
+      "type": 1,
+      "api": "https://api.apiyhzy.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    }
+  ],
+  "parses": [
+    {
+      "name": "Web",
+      "type": 3,
+      "url": "Web"
+    },
+    {
+      "name": "Json并发",
+      "type": 2,
+      "url": "Parallel"
+    },
+    {
+      "name": "Json轮询",
+      "type": 2,
+      "url": "Sequence"
+    }
+  ],
+  "lives": [
+    {
+      "name": "🇨🇳 央视卫视地方 (vbskycn)",
+      "type": 0,
+      "url": "https://zoe.im/tvbox/shared/lives/vbskycn-iptv4.m3u"
+    },
+    {
+      "name": "🌍 全球直播",
+      "type": 0,
+      "url": "https://zoe.im/tvbox/shared/lives/Global.m3u"
+    },
+    {
+      "name": "📺 IPTV 综合",
+      "type": 0,
+      "url": "https://zoe.im/tvbox/shared/lives/IPTV.m3u"
+    },
+    {
+      "name": "🇭🇰 港澳台",
+      "type": 0,
+      "url": "https://zoe.im/tvbox/shared/lives/GNTV.m3u"
+    },
+    {
+      "name": "🏞 湖南本地",
+      "type": 0,
+      "url": "https://zoe.im/tvbox/shared/lives/Hunan.txt"
+    },
+    {
+      "name": "📻 广播电台",
+      "type": 0,
+      "url": "https://zoe.im/tvbox/shared/lives/Radio.m3u"
+    },
+    {
+      "name": "🎙 央视备用 (CUTV)",
+      "type": 0,
+      "url": "https://zoe.im/tvbox/shared/lives/CUTV.txt"
+    },
+    {
+      "name": "🎬 欧洲 (HBO/Cinemax/AMC)",
+      "type": 0,
+      "url": "https://zoe.im/tvbox/shared/lives/CZ-SK.m3u"
+    },
+    {
+      "name": "🔞 Adult",
+      "type": 0,
+      "url": "https://zoe.im/tvbox/shared/lives/Adult.m3u"
+    }
+  ],
+  "flags": [
+    "youku",
+    "qq",
+    "iqiyi",
+    "qiyi",
+    "letv",
+    "sohu",
+    "tudou",
+    "pptv",
+    "mgtv",
+    "wasu",
+    "bilibili",
+    "renrenmi"
+  ],
+  "ijk": [],
+  "ads": []
+}

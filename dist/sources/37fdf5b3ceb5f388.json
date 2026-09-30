@@ -1,5 +1,5 @@
 {
-    "spider": "./jars/t4.jar",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/MrArven/TVBoxConfig/main/jars/t4.jar",
     "wallpaper": "https://深色壁纸.xxooo.cf/",
     "logo": "./config/logo/奔跑的小黑兔.gif",
     "sites": [
@@ -191,7 +191,7 @@
             "type": 3,
             "api": "csp_SuBaiBai",
             "playerType": 2,
-            "jar": "./jars/xm.jar",
+            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/MrArven/TVBoxConfig/main/jars/xm.jar",
             "ext": "https://subaibai.com/"
         },
         {
@@ -203,7 +203,7 @@
             "api": "csp_Fantuan",
             "playerType": 2,
             "filterable": 1,
-            "jar": "./jars/xm.jar",
+            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/MrArven/TVBoxConfig/main/jars/xm.jar",
             "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "https://fantuan.vip/"
         },

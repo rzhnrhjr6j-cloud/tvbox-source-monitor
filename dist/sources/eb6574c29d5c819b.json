@@ -745,7 +745,7 @@
       "key": "Kuaikan",
       "name": "🥝快看┃qj直连",
       "type": "3",
-      "jar": "./jars/qj8.jar;md5;9bb70df776325973562070580f4a29f6",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/805598571/77/main/jars/qj8.jar;md5;9bb70df776325973562070580f4a29f6",
       "api": "csp_Kuaikan",
       "searchable": "1",
       "quickSearch": "1",

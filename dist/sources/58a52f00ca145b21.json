@@ -1,5 +1,5 @@
 {
-    "spider":  "./spider.jar",
+    "spider":  "https://gh-proxy.com/https://raw.githubusercontent.com/YuheYo/TVB/main/spider.jar",
     "logo":  "https://file.icve.com.cn/file_doc/945/35/EC508FBD046D33EC4832BB76B63B6C94.gif",
     "danmaku":  "http://127.0.0.1:2525/danmu?name={name}\u0026epid={episode}",
     "wallpaper":  "http://127.0.0.1:9978/proxy?do=AowuWapper\u0026mode=2",
@@ -559,7 +559,7 @@
                       "name":  "🧩橘汁|快速",
                       "key":  "Woshinidie",
                       "type":  3,
-                      "jar":  "./jars/Woshinidie.jar",
+                      "jar":  "https://gh-proxy.com/https://raw.githubusercontent.com/YuheYo/TVB/main/jars/Woshinidie.jar",
                       "api":  "csp_Woshinidie",
                       "searchable":  1,
                       "quickSearch":  1,

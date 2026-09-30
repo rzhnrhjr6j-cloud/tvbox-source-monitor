@@ -1,5 +1,5 @@
 {
-  "spider": "./fty.jar;md5;dcf87c6876047e7d41ce0b45a6b176e5",
+  "spider": "http://cnmb.cc.cd/jk/fty.jar;md5;dcf87c6876047e7d41ce0b45a6b176e5",
 "wallpaper":"https://深色壁纸.xxooo.cf/",
 
 "sites":[
@@ -14,7 +14,7 @@
             "type": 3,
             "api": "csp_AIdanmu",
             "index": 1,
-            "jar": "./xnfdanmu.jar;md5;39f1ae73f00f05c34c4f502cc58f5b9d",
+            "jar": "http://cnmb.cc.cd/jk/xnfdanmu.jar;md5;39f1ae73f00f05c34c4f502cc58f5b9d",
             "ext":
             {
                 "apiUrls":

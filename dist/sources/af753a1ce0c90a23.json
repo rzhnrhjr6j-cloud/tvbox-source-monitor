@@ -1,6 +1,6 @@
 {
 	"wallpaper": "https://www.dmoe.cc/random.php",
-	"spider": "./custom_spider.jar;md5;0580a958620d930a381f592c3260d9f2",
+	"spider": "https://gh-proxy.com/https://raw.githubusercontent.com/lyliangyuxuan/-/main/custom_spider.jar;md5;0580a958620d930a381f592c3260d9f2",
 	"lives": [{
 		"group": "redirect",
 		"channels": [{

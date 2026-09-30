@@ -1,5 +1,5 @@
 {
-  "spider": "./jar/spider.jar",
+  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/qq1719248506/Video-interface/main/jar/spider.jar",
   "sites": [
     {
       "key": "豆瓣",
@@ -131,7 +131,7 @@
       "name": "移动",
       "type": 3,
       "api": "csp_YDjisu",
-	  "jar": "./jar/og.jar",	
+	  "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/qq1719248506/Video-interface/main/jar/og.jar",	
       "searchable": 1,
       "changeable": 1
     },	  

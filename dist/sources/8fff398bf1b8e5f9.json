@@ -833,7 +833,7 @@
             "type": 3,
             "api": "csp_XBPQ",
             "playerType": "1",
-            "jar": "./jars/ss.jar",
+            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/Wuxiao139/Tvbox/main/jars/ss.jar",
             "ext": {
                 "数组": "class=\"top&&</li",
                 "请求头": "AppleCoreMedia/1.0.0.17D50 (iPhone; U; CPU OS 13_3_2 like Mac OS X; zh_cn)",

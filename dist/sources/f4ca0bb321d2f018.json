@@ -1,5 +1,5 @@
 {
-    "spider": "./fix0516.jar",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/yw88075/tvbox/main/XYQTVBox/qiaoji/fix0516.jar",
     "wallpaper": "http://www.kf666888.cn/api/tvbox/img",
     "lives": [{
         "group": "redirect",

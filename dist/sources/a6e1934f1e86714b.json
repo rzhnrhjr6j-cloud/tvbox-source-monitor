@@ -1,6 +1,6 @@
 {
     "wallpaper": "https://www.dmoe.cc/random.php",
-    "spider": "./custom_spider.jar",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/tv189ymail/2023/main/BDB/text/custom_spider.jar",
     "lives": [
         {
             "group": "自定义",

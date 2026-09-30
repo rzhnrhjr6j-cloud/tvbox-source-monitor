@@ -1,5 +1,5 @@
 {
-    "spider": "./spider2.jar",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/spider2.jar",
     "wallpaper": "http://127.0.0.1:9978/proxy?do=wallpaper",
     "logo": "http://127.0.0.1:9978/file/TVBox/logo.png",
     "sites": [

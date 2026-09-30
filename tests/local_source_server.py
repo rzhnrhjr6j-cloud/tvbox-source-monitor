@@ -26,6 +26,8 @@ SITE_TEMPLATE = {
 
 _RANGE_RE = re.compile(r"bytes=(\d+)-(\d*)", re.IGNORECASE)
 
+MIRRORED_JAR = b"PK\x03\x04 a crawler jar reached through the proxy"
+
 # A sibling reference of the kind real configs carry: always reachable from a
 # GitHub runner, never reachable from the client we publish for.
 INNER_RAW = "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"
@@ -239,6 +241,28 @@ class _Handler(BaseHTTPRequestHandler):
                         "sites": [dict(SITE_TEMPLATE, key="only", name="Only Site",
                                        api=f"{self.base}/api.php/provide/vod/",
                                        jar=f"{self.base}/assets/missing.jar")],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        # Stands in for an acceleration proxy: /proxy/<anything> answers with a
+        # jar, the way https://<proxy>/https://raw.github…/x.jar does, so the
+        # jar-hosting path can be exercised without reaching GitHub.
+        if path.startswith("/proxy/"):
+            if not state["config_up"]:
+                return self._send(b"", 503, "text/plain")
+            return self._send(MIRRORED_JAR, content_type="application/octet-stream")
+
+        if path == "/proxiedjar.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "spider": "https://raw.githubusercontent.com/Some/Repo/main/spider.jar;md5;cafe",
+                        "sites": [dict(SITE_TEMPLATE, key="csp", name="Csp Site", api="csp_X")],
                     },
                     ensure_ascii=False,
                 ).encode("utf-8"),

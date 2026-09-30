@@ -21,13 +21,15 @@ from ..logging_setup import get_logger
 from ..models import BuildRecord, Event, Source, SourceEvent, Status, Tier
 from ..utils.http_client import HttpClient
 from ..utils.timeutil import age_days, to_iso, utcnow
-from .mirror import ConfigMirror, MirrorPlan
+from .mirror import SOURCES_DIR, ConfigMirror, MirrorPlan
 from .validator import ValidationResult, validate_output
 
 LOGGER = get_logger("build")
 
 TVBOX_FILE = "tvbox.json"
 ALT_FILE = "tvbox-cdn.json"
+# where the alternate host gets its own copy of the per-source configs
+ALT_DIR = "cdn"
 HEALTH_FILE = "health.json"
 DASHBOARD_FILE = "dashboard.json"
 LAST_GOOD_FILE = "last-known-good.json"
@@ -357,8 +359,39 @@ class ConfigBuilder:
             return None
         if not _retarget_urls(data, primary, alt):
             return None
+        if self._write_alt_sources(primary, alt):
+            # those copies name our jars, and they now live beside them
+            needle = f"{alt}/{SOURCES_DIR}/"
+            for item in data.get("urls") or []:
+                value = item.get("url") if isinstance(item, dict) else None
+                if isinstance(value, str) and value.startswith(needle):
+                    item["url"] = f"{alt}/{ALT_DIR}/{SOURCES_DIR}/" + value[len(needle):]
         _atomic_write_json(self.dist_dir / ALT_FILE, data, pretty=bool(self.output_cfg.get("pretty", True)))
         return self.dist_dir / ALT_FILE
+
+    def _write_alt_sources(self, primary: str, alt: str) -> int:
+        """Copy every mirrored config with our own urls pointed at ``alt``.
+
+        A client on the alternate host must not have to reach the primary one
+        for its crawler, so each copy names ``alt`` for the jars as well.
+        """
+        source_dir = self.dist_dir / SOURCES_DIR
+        if not source_dir.is_dir():
+            return 0
+        target = self.dist_dir / ALT_DIR / SOURCES_DIR
+        target.mkdir(parents=True, exist_ok=True)
+        written = set()
+        for path in source_dir.glob("*.json"):
+            text = path.read_text(encoding="utf-8")
+            (target / path.name).write_text(text.replace(primary, alt), encoding="utf-8")
+            written.add(path.name)
+        for stale in target.glob("*.json"):
+            if stale.name not in written:
+                try:
+                    stale.unlink()
+                except OSError:
+                    pass
+        return len(written)
 
     # -- artefacts ---------------------------------------------------------
     def _backup(self, path: Path) -> None:

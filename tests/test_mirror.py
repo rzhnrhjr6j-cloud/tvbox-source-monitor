@@ -31,7 +31,7 @@ from app.build.mirror import (
 from app.config import load_config
 from app.storage.sqlite import Store
 from app.utils.http_client import HttpClient
-from tests.local_source_server import INNER_RAW, LocalSourceServer
+from tests.local_source_server import INNER_RAW, MIRRORED_JAR, LocalSourceServer
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -238,6 +238,74 @@ def test_jar_pruning_can_be_switched_off(tmp_path):
         assert len(body["sites"]) == 4
 
 
+def test_a_proxied_jar_is_published_on_our_own_host(tmp_path):
+    """The client reaches the config's host, so the crawler comes from there too.
+
+    A third-party accelerator in the path was the one thing that separated a
+    source that opens from "jar加载失败" on a real client.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True, "public_base": "https://me.github.io/repo",
+            "inner_proxy": f"{server.base}/proxy/",
+        })
+        plan = mirror.prepare([stub_source(f"{server.base}/proxiedjar.json", source_id="c" * 64)])
+        entry = plan.entries["c" * 64]
+        body = json.loads(entry.content)
+        assert body["spider"].startswith("https://me.github.io/repo/jars/")
+        # the bytes are untouched, so the client's own digest check still holds
+        assert body["spider"].endswith(".jar;md5;cafe")
+        assert "raw.githubusercontent.com" not in entry.content.decode("utf-8")
+        assert list(plan.jars.values()) == [MIRRORED_JAR]
+
+
+def test_the_hosted_jar_lands_on_disk_and_stale_ones_are_removed(tmp_path):
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True, "public_base": "https://me.github.io/repo",
+            "inner_proxy": f"{server.base}/proxy/",
+        })
+        jdir = tmp_path / "dist" / "jars"
+        jdir.mkdir(parents=True)
+        (jdir / "stale.jar").write_bytes(b"nobody points at me")
+        plan = mirror.prepare([stub_source(f"{server.base}/proxiedjar.json", source_id="c" * 64)])
+        mirror.write(plan)
+        (name,) = plan.jars
+        assert (jdir / name).read_bytes() == MIRRORED_JAR
+        assert not (jdir / "stale.jar").exists()
+
+
+def test_jar_hosting_can_be_switched_off(tmp_path):
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True, "public_base": "https://me.github.io/repo",
+            "inner_proxy": f"{server.base}/proxy/", "host_jars": False,
+        })
+        plan = mirror.prepare([stub_source(f"{server.base}/proxiedjar.json", source_id="c" * 64)])
+        body = json.loads(plan.entries["c" * 64].content)
+        assert body["spider"].startswith(f"{server.base}/proxy/")
+        assert plan.jars == {}
+
+
+def test_child_configs_and_live_playlists_are_hosted_too(tmp_path):
+    """They sit behind the same accelerator, so they fail for the same reason.
+
+    Measured on the published set: 163 distinct playlists and child configs
+    against 65 crawlers, so covering only jars would have left live TV broken.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True, "public_base": "https://me.github.io/repo",
+            "inner_proxy": f"{server.base}/proxy/",
+        })
+        plan = mirror.prepare([stub_source(f"{server.base}/inner.json", source_id="d" * 64)])
+        entry = plan.entries["d" * 64]
+        body = json.loads(entry.content)
+        for child in (body["urls"][0], body["lives"][0]):
+            assert child["url"].startswith("https://me.github.io/repo/jars/")
+        assert "raw.githubusercontent.com" not in entry.content.decode("utf-8")
+
+
 def test_inner_raw_urls_get_the_proxy_prefix():
     """A config points at sibling configs and playlists; all of them were dead."""
     text, count = rewrite_inner('{"urls":["%s"]}' % RAW, "https://gh-proxy.com/")
@@ -322,10 +390,12 @@ def test_disabling_rewrite_publishes_the_origin_bytes(tmp_path):
 
 
 def test_enabling_rewrite_proxies_inner_references(tmp_path):
+    """The proxy prefix is what marks a reference as ours to re-host later."""
     with LocalSourceServer() as server:
         mirror = make_mirror(tmp_path, {
             "enabled": True, "public_base": "https://me.github.io/repo",
             "rewrite_inner": True, "inner_proxy": "https://gh-proxy.com/",
+            "host_jars": False,
         })
         plan = mirror.prepare([stub_source(f"{server.base}/inner.json", source_id="8" * 64)])
         entry = plan.entries["8" * 64]

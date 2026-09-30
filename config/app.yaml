@@ -141,6 +141,15 @@ output:
     prune_dead_jars: true
     jar_timeout: 15
     max_jar_probes: 300
+    # Anything fetched through a third-party accelerator was the single thing
+    # that made 影视仓 answer "jar加载失败" on a real client, while a crawler on
+    # a host it could reach loaded fine.  Publish every proxied reference from
+    # our own Pages host instead - crawlers, live playlists and child configs -
+    # because the client already reaches it for the config itself.
+    # Files are named after their own bytes, so identical files are not re-added.
+    host_jars: true
+    jar_max_bytes: 12582912
+    jar_total_bytes: 268435456
     # A second entry point serving the same list from a host mainland China
     # reaches more reliably than github.io.  "auto" derives
     # https://cdn.jsdelivr.net/gh/<owner>/<repo>@main/dist from GITHUB_REPOSITORY;

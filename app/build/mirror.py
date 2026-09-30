@@ -34,6 +34,18 @@ from ..models import Source
 LOGGER = get_logger("build.mirror")
 
 SOURCES_DIR = "sources"
+JARS_DIR = "jars"
+
+# How a reference ends inside the author's own text: the client's own digest,
+# or the "$"-suffixed params TVBox appends.  Neither is part of the URL.
+_REF_TAIL = re.compile(r"(\$.*|;md5;.*)$")
+_SAFE_SUFFIX = re.compile(r"^\.[A-Za-z0-9]{1,5}$")
+
+
+def _extension(url: str) -> str:
+    """Keep the author's own file suffix so nothing about the name changes."""
+    suffix = os.path.splitext(urlsplit(url).path)[1]
+    return suffix if _SAFE_SUFFIX.match(suffix) else ".dat"
 
 # A site whose crawler jar is gone cannot open in the client; 影视仓 reports it
 # as "jar加载失败".  Only a hard 404/410 counts as gone - a timeout or a 5xx is
@@ -226,6 +238,7 @@ class MirrorEntry:
     content: bytes
     origin: str
     inner_rewrites: int = 0
+    hosted: int = 0
 
 
 @dataclass
@@ -235,6 +248,7 @@ class MirrorPlan:
     enabled: bool = False
     entries: dict[str, MirrorEntry] = field(default_factory=dict)
     dropped: set[str] = field(default_factory=set)
+    jars: dict[str, bytes] = field(default_factory=dict)
 
     def url_for(self, source_id: str) -> str | None:
         entry = self.entries.get(source_id)
@@ -310,6 +324,19 @@ class ConfigMirror:
     def prune_dead_jars(self) -> bool:
         """Drop sites whose crawler jar is definitively gone (see _DEAD_JAR_STATUS)."""
         return bool(self.settings.get("prune_dead_jars", True))
+
+    @property
+    def host_jars(self) -> bool:
+        """Re-serve the proxied crawler jars from our own host (see _localise_jars)."""
+        return bool(self.settings.get("host_jars", True))
+
+    @property
+    def jar_max_bytes(self) -> int:
+        return int(self.settings.get("jar_max_bytes", 12 * 1024 * 1024))
+
+    @property
+    def jar_total_bytes(self) -> int:
+        return int(self.settings.get("jar_total_bytes", 256 * 1024 * 1024))
 
     @property
     def jar_timeout(self) -> float:
@@ -409,6 +436,67 @@ class ConfigMirror:
                 "stage": "build", "check": "mirror", "spider": str(spider)[:120]})
         return json.dumps(config, ensure_ascii=False, separators=(",", ":")), dropped, len(kept)
 
+    # -- jar hosting -------------------------------------------------------
+    def _host_file(self, url: str, plan: MirrorPlan, state: dict[str, int]) -> str | None:
+        """Download ``url`` and publish it under a name derived from its bytes."""
+        if state["used"] >= self.jar_total_bytes:
+            return None
+        result = self.http.get(url, max_bytes=self.jar_max_bytes)
+        if not result.ok or not result.content:
+            LOGGER.warning("reference left on the proxy", extra={
+                "stage": "build", "check": "mirror", "reference": url,
+                "error": result.error_code or f"HTTP_{result.status}"})
+            return None
+        blob = result.content
+        if state["used"] + len(blob) > self.jar_total_bytes:
+            return None
+        name = f"{hashlib.sha256(blob).hexdigest()[:20]}{_extension(url)}"
+        plan.jars[name] = blob
+        state["used"] += len(blob)
+        return name
+
+    def _localise_refs(self, text: str, plan: MirrorPlan, state: dict[str, int]) -> tuple[str, int]:
+        """Serve every proxied reference from our own host.
+
+        A third party in the path is one more thing that can be blocked, and on
+        a real client it was the whole difference: a spider served from
+        gitee.com loaded, while everything served through an acceleration proxy
+        came back "jar加载失败".  The client already reaches the host the config
+        itself comes from, so the files go there too - crawlers, live playlists
+        and child configs alike - under a name taken from their bytes, which
+        keeps any ``;md5;`` check intact because the bytes are never touched.
+        """
+        if not self.host_jars:
+            return text, 0
+        base = self.public_base
+        prefix = self.inner_proxy
+        if not base or not prefix:
+            return text, 0
+        count = 0
+        seen: dict[str, str | None] = {}
+
+        def replace(match: re.Match[str]) -> str:
+            nonlocal count
+            reference = match.group(1)
+            tail = ""
+            found = _REF_TAIL.search(reference)
+            if found:
+                reference, tail = reference[:found.start()], found.group(0)
+            url = reference.strip()
+            if not url.startswith("http"):
+                return match.group(0)
+            # fetch through the proxy hop the text actually carries: the bare
+            # origin is the one host the client - and often we - cannot reach
+            name = seen.get(url) if url in seen else self._host_file(f"{prefix}{url}", plan, state)
+            seen[url] = name
+            if not name:
+                return match.group(0)
+            count += 1
+            return f"{base}/{JARS_DIR}/{name}{tail}"
+
+        pattern = re.compile(re.escape(prefix) + r"([^\s\"'<>]+)")
+        return pattern.sub(replace, text), count
+
     # -- work --------------------------------------------------------------
     def prepare(self, sources: Iterable[Source]) -> MirrorPlan:
         plan = MirrorPlan()
@@ -419,6 +507,7 @@ class ConfigMirror:
         budget = self.max_total_bytes
         used = 0
         jar_cache: dict[str, bool] = {}
+        jar_state = {"used": 0}
 
         for source in sources:
             url = (source.raw_url or source.url or "").strip()
@@ -459,6 +548,7 @@ class ConfigMirror:
                 if self.on_failure != "keep":
                     plan.dropped.add(source.id)
                 continue
+            text, hosted = self._localise_refs(text, plan, jar_state)
             content = text.encode("utf-8")
 
             used += len(content)
@@ -472,6 +562,7 @@ class ConfigMirror:
                 content=content,
                 origin=url,
                 inner_rewrites=resolved + rewrites,
+                hosted=hosted,
             )
 
         self._drop_duplicate_content(plan)
@@ -536,4 +627,23 @@ class ConfigMirror:
                     stale.unlink()
                 except OSError:
                     pass
+        self._write_jars(plan)
         return target
+
+    def _write_jars(self, plan: MirrorPlan) -> None:
+        """Publish the hosted jars, and drop the ones nothing points at."""
+        jdir = self.dist_dir / JARS_DIR
+        if plan.jars:
+            jdir.mkdir(parents=True, exist_ok=True)
+        if not jdir.exists():
+            return
+        for name, blob in plan.jars.items():
+            path = jdir / name
+            if not path.exists() or path.stat().st_size != len(blob):
+                path.write_bytes(blob)
+        for stale in jdir.glob("*.jar"):
+            if stale.name not in plan.jars:
+                try:
+                    stale.unlink()
+                except OSError:
+                    pass

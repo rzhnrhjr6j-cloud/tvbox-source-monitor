@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-09-30T07:46:45Z",
+  "urls": [
+    {
+      "name": "api.json",
+      "url": "https://raw.githubusercontent.com/jzx51980/iptv/main/api.json"
+    },
+    {
+      "name": "jj.json",
+      "url": "https://raw.githubusercontent.com/dlgt7/TVbox-interface/main/jj.json"
+    },
+    {
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json"
+    },
+    {
+      "name": "zytvbox.json",
+      "url": "https://raw.githubusercontent.com/wokaotianshi123/jgcj/main/zytvbox.json"
+    },
+    {
+      "name": "2026.json",
+      "url": "https://raw.githubusercontent.com/2124662895/yydhj/mainvhh/2026.json"
+    },
+    {
+      "name": "api.json",
+      "url": "https://raw.githubusercontent.com/Lili924/Lili924/main/api.json"
+    },
+    {
+      "name": "dc3.json",
+      "url": "https://raw.githubusercontent.com/guot55/yg/main/dc3.json"
+    },
+    {
+      "name": "dfvdv.json",
+      "url": "https://raw.githubusercontent.com/2124662895/yydhj/mainvhh/dfvdv.json"
+    },
+    {
+      "name": "myd.json",
+      "url": "https://raw.githubusercontent.com/hyf1966/mytv/main/tvbox/myd.json"
+    },
+    {
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/main/tvbox.json"
+    },
+    {
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/qirenzhidao/tvbox18/main/tvbox.json"
+    },
+    {
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/TVBox/tvbox.json"
+    },
+    {
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/woniuxs/TVBOX/main/TV/tvbox.json"
+    },
+    {
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/Py-Ctrl/Tvbox/main/tvbox.json"
+    },
+    {
+      "name": "xl.json",
+      "url": "https://raw.githubusercontent.com/loopool/fan/main/xl.json"
+    },
+    {
+      "name": "ys.json",
+      "url": "https://raw.githubusercontent.com/hsh58/ds/master/ys.json"
+    },
+    {
+      "name": "HCGA.json",
+      "url": "https://raw.githubusercontent.com/2008hanbing/box/main/HCGA.json"
+    },
+    {
+      "name": "my.json",
+      "url": "https://raw.githubusercontent.com/shichuanenhui/TvBox/main/my.json"
+    },
+    {
+      "name": "box.json",
+      "url": "https://raw.githubusercontent.com/FreeDTV/FreeD/master/box.json"
+    },
+    {
+      "name": "box.json",
+      "url": "https://raw.githubusercontent.com/AndroidSoftwares/box/main/box.json"
+    },
+    {
+      "name": "m.json",
+      "url": "https://raw.githubusercontent.com/jyoketsu/tv/main/m.json"
+    },
+    {
+      "name": "mx.json",
+      "url": "https://raw.githubusercontent.com/bluefriendCN/set/main/mx.json"
+    },
+    {
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/gxnas/TvBox/main/tvbox.json"
+    },
+    {
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json"
+    }
+  ]
+}

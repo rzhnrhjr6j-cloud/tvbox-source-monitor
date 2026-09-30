@@ -1,0 +1,542 @@
+{
+  "generated_at": "2026-09-30T07:46:45Z",
+  "build_id": "20260930-074645",
+  "summary": {
+    "sources": {
+      "active": 24,
+      "degraded": 74
+    },
+    "candidates": 0,
+    "tiers": {
+      "primary": 0,
+      "backup": 0,
+      "experimental": 24
+    },
+    "output_items": 24
+  },
+  "regions": {
+    "CN": {
+      "checks": 98,
+      "successes": 98,
+      "availability_percent": 100.0
+    }
+  },
+  "sources": [
+    {
+      "id": "3e00235940ddd95bb0544e6ab28c791b8d01632f3722c1ea2b8b30891b47e310",
+      "name": "api.json",
+      "url": "https://raw.githubusercontent.com/jzx51980/iptv/main/api.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:12Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 159.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "e5e22b7e79834be5f8f9f9d48bc1f8b7b746fd466ac42300038de2a46d1c91b3",
+      "name": "jj.json",
+      "url": "https://raw.githubusercontent.com/dlgt7/TVbox-interface/main/jj.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:29Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 134.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "9a4330fc96a7854ad56b9bb8e59884047426d9b0a71545af9c8f818825b628d8",
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:14Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 139.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "4618ce298bbe0402d7728d5dc1f158ec329f19cfe5a3af254f90fe2d337fe789",
+      "name": "zytvbox.json",
+      "url": "https://raw.githubusercontent.com/wokaotianshi123/jgcj/main/zytvbox.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:20Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 297.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "3448aff4adfaa79e29651928e4e0cd6110764f2687727883ea989cb484daa6b0",
+      "name": "2026.json",
+      "url": "https://raw.githubusercontent.com/2124662895/yydhj/mainvhh/2026.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:08Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 295.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "2abe3baa8765832f0c4ff598337c957440df9c51a76ce44269f59906dc1748ca",
+      "name": "api.json",
+      "url": "https://raw.githubusercontent.com/Lili924/Lili924/main/api.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:08Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 126.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "2ad323b9a45bf9a7e5aa6ed6d4ae0340d2aaa7c865eaa3bd97e449ff36f2dbd0",
+      "name": "dc3.json",
+      "url": "https://raw.githubusercontent.com/guot55/yg/main/dc3.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 130.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "44d62f5e13a2eed6785d8aa828920151d4f8be9ca41ed6845a3dd8b82bb949da",
+      "name": "dfvdv.json",
+      "url": "https://raw.githubusercontent.com/2124662895/yydhj/mainvhh/dfvdv.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 89.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "dfacba3e27c5d5b514f866d1eefff13fe6f22aa0508510c384ab6dac11ac5f98",
+      "name": "myd.json",
+      "url": "https://raw.githubusercontent.com/hyf1966/mytv/main/tvbox/myd.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 117.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "0331f85d5f7fb8238a8218d5b753b6cd420a3618a91aca742401d2d34033e22e",
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/main/tvbox.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 286.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "5e8eb46ab169b4a3a435e024960ab2006619ee3e42abce5f954969e3f224cedb",
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/qirenzhidao/tvbox18/main/tvbox.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 260.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "ecbd7d7164f5ecefaa88d69c027b6f522006a6622cc939566cea10e5721e8284",
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/TVBox/tvbox.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 104.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "91d0a52ffacd54234b703c7a9ef38c2f40f03e47a21a026d53f3ec6fa30ffb15",
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/woniuxs/TVBOX/main/TV/tvbox.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 120.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "7754ab1e9c20160d7262afa0a51ecfc424ca9ef4edc7d00b3696552a290b1618",
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/Py-Ctrl/Tvbox/main/tvbox.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 158.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "4325f95ee30435b361d7e763ac042ba05181a29c2c08f4c2436323dd1f04ddac",
+      "name": "xl.json",
+      "url": "https://raw.githubusercontent.com/loopool/fan/main/xl.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 130.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "4c08ba472e57c070313c843833afe3302104dfa46691c0fa8464f85b44e0e451",
+      "name": "ys.json",
+      "url": "https://raw.githubusercontent.com/hsh58/ds/master/ys.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 92.308,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 269.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "da84f015e8928b0e9d61b1b0622c1ce5c64235cdb8dc481e68c296449e03f22d",
+      "name": "HCGA.json",
+      "url": "https://raw.githubusercontent.com/2008hanbing/box/main/HCGA.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 90.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:08Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 327.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "c3a00da1d269f666cd61122526fe77d57992c3b5de5ab2c45ec72decfa9d3412",
+      "name": "my.json",
+      "url": "https://raw.githubusercontent.com/shichuanenhui/TvBox/main/my.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "multi",
+      "score": 90.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:09Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 304.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "4e11eb646f9a8770c4dbe8c745cb46667fc438d05bb7b19f024544935a241d04",
+      "name": "box.json",
+      "url": "https://raw.githubusercontent.com/FreeDTV/FreeD/master/box.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 75.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:11Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 130.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "5a29dc258ba183a7edcdc8ce5f019b75b4d4cb85231dfe60ccb0ede462532e86",
+      "name": "box.json",
+      "url": "https://raw.githubusercontent.com/AndroidSoftwares/box/main/box.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 75.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:11Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 131.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "6c8b100e71fd08367bda99faff5ff1024865c4e8b43956a1a9e688eac1b14656",
+      "name": "m.json",
+      "url": "https://raw.githubusercontent.com/jyoketsu/tv/main/m.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 75.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:27Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 144.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "090c5f9cf76ef229362a1d0bbc746cb80d0460d34930e2a41d034b1c1291138a",
+      "name": "mx.json",
+      "url": "https://raw.githubusercontent.com/bluefriendCN/set/main/mx.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 75.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:11Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 135.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "8cc472cb46b3f350b202fcba2b2e520ea474aa48ec510575e7a57b703decae0a",
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/gxnas/TvBox/main/tvbox.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 75.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:14Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 117.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "4c797849c754f8a81fa6eec1f432ad2de91c4dbd944c06cd789ae705b1dbb5c5",
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 75.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-09-30T07:45:14Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 123.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    }
+  ],
+  "alerts": [],
+  "build_history": [],
+  "nodes": [
+    {
+      "name": "github-runner",
+      "region": "CN",
+      "enabled": true,
+      "last_seen_at": null,
+      "last_ok_at": null,
+      "consecutive_failures": 0
+    }
+  ]
+}

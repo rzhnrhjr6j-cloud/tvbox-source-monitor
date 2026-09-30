@@ -2,7 +2,7 @@
     "urls": [
         {
             "name": "自建",
-            "url": "https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/main/tvbox2.json"
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/main/tvbox2.json"
         },
         {
             "name": "短剧一",
@@ -26,7 +26,7 @@
         },
         {
             "name": "雷蒙",
-            "url": "https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/lemj.json"
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/lemj.json"
         },
         {
             "name": "肥猫",
@@ -38,7 +38,7 @@
         },
         {
             "name": "潇洒",
-            "url": "https://raw.githubusercontent.com/PizazzGY/TVBox/main/api.json"
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/PizazzGY/TVBox/main/api.json"
         },
         {
             "name": "小米",
@@ -46,7 +46,7 @@
         },
         {
             "name": "香雅情",
-            "url": "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json"
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json"
         },
         {
             "name": "RAY线路",
@@ -58,7 +58,7 @@
         },
         {
             "name": "南风",
-            "url": "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json"
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json"
         },
         {
             "name": "技巧",
@@ -66,7 +66,7 @@
         },
         {
             "name": "高饭",
-            "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/0821.json"
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/0821.json"
         },
         {
             "name": "王小二",

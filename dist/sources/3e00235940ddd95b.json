@@ -19,49 +19,49 @@
       {
         "type": 0,
         "name": "直播1",
-        "url": "https://raw.githubusercontent.com/maitel2020/iptv-self-use/refs/heads/main/iptv.m3u",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/maitel2020/iptv-self-use/refs/heads/main/iptv.m3u",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "直播2",
-        "url": "https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "直播3",
-        "url": "https://raw.githubusercontent.com/Wirili/IPTV/refs/heads/main/live.txt",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Wirili/IPTV/refs/heads/main/live.txt",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "直播4",
-        "url": "https://raw.githubusercontent.com/Wirili/IPTV/refs/heads/main/live2.txt",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Wirili/IPTV/refs/heads/main/live2.txt",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "直播5",
-        "url": "https://raw.githubusercontent.com/hujingguang/ChinaIPTV/main/cnTV_AutoUpdate.m3u8",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/hujingguang/ChinaIPTV/main/cnTV_AutoUpdate.m3u8",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "直播6",
-        "url": "https://raw.githubusercontent.com/xiongjian83/TvBox/refs/heads/main/live.txt",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/xiongjian83/TvBox/refs/heads/main/live.txt",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "直播7",
-        "url": "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
@@ -82,7 +82,7 @@
       {
         "type": 0,
         "name": "live-自制-IPv4",
-        "url": "https://raw.githubusercontent.com/jzx51980/iptv-api/refs/heads/master/output/ipv4/result.m3u",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/jzx51980/iptv-api/refs/heads/master/output/ipv4/result.m3u",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
@@ -96,7 +96,7 @@
       {
         "type": 0,
         "name": "范明明",
-        "url": "https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
@@ -117,14 +117,14 @@
       {
         "type": 0,
         "name": "综合1",
-        "url": "https://raw.githubusercontent.com/dxawi/0/main/tvlive.txt",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/dxawi/0/main/tvlive.txt",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "综合2",
-        "url": "https://raw.githubusercontent.com/yoursmile66/TVBox/main/live.txt",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/yoursmile66/TVBox/main/live.txt",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
@@ -138,49 +138,49 @@
       {
         "type": 0,
         "name": "全球直播2",
-        "url": "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "全球直播3",
-        "url": "https://raw.githubusercontent.com/LITUATUI/M3UPT/main/M3U/M3UPT.m3u",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/LITUATUI/M3UPT/main/M3U/M3UPT.m3u",
         "epg": "https://github.com/LITUATUI/M3UPT/raw/main/EPG/epg-pt.xml.gz",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "全球直播4",
-        "url": "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/MergedPlaylist.m3u8",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Drewski2423/DrewLive/main/MergedPlaylist.m3u8",
         "epg": "https://tinyurl.com/allsource2423-epg",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "油管1",
-        "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/yo21.txt",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/yo21.txt",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "油管2",
-        "url": "https://raw.githubusercontent.com/YuanHsing/YouTube_to_m3u/main/youtube.m3u",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/YuanHsing/YouTube_to_m3u/main/youtube.m3u",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "成人1",
-        "url": "https://raw.githubusercontent.com/Moexin/IPTV/refs/heads/Files/Adult.m3u",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Moexin/IPTV/refs/heads/Files/Adult.m3u",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       },
       {
         "type": 0,
         "name": "成人2",
-        "url": "https://raw.githubusercontent.com/KaigeCai/live/refs/heads/main/sex.m3u",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/KaigeCai/live/refs/heads/main/sex.m3u",
         "epg": "https://epg.zbds.top?ch={name}&date={date}",
         "logo": "https://tb.zbds.top/logo/{name}.png"
       }

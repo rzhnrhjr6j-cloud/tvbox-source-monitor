@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-09-30T15:23:12Z",
+  "generated_at": "2026-09-30T15:37:15Z",
   "urls": [
     {
       "name": "虎牙影库（28站）",
@@ -71,15 +71,11 @@
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/4c08ba472e57c070.json"
     },
     {
-      "name": "豆瓣 #1（36站）",
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/4e11eb646f9a8770.json"
-    },
-    {
-      "name": "豆瓣 #2（39站）",
+      "name": "豆瓣 #1（39站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/5a29dc258ba183a7.json"
     },
     {
-      "name": "豆瓣 #3（24站）",
+      "name": "豆瓣 #2（24站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/6c8b100e71fd0836.json"
     },
     {
@@ -89,6 +85,10 @@
     {
       "name": "爱壹帆 (海外)（8站）",
       "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/4c797849c754f8a8.json"
+    },
+    {
+      "name": "豆瓣 #3（36站）",
+      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/sources/4e11eb646f9a8770.json"
     },
     {
       "name": "黑木耳资源（32站）",

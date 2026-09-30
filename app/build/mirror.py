@@ -464,7 +464,11 @@ class ConfigMirror:
             return None
         result = self.http.get(url, max_bytes=self.jar_max_bytes)
         if not result.ok or not result.content:
-            LOGGER.warning("reference left on the proxy", extra={
+            # not ours to fetch is also not the client's: a runner has better
+            # reach than a phone in mainland China, so a reference it cannot
+            # pull is one the client will report as a broken row.
+            state.setdefault("unavailable", set()).add(url)
+            LOGGER.warning("reference could not be fetched", extra={
                 "stage": "build", "check": "mirror", "reference": url,
                 "error": result.error_code or f"HTTP_{result.status}"})
             return None
@@ -602,6 +606,55 @@ class ConfigMirror:
             return text, 0
         return json.dumps(config, ensure_ascii=False, separators=(",", ":")), count
 
+    def _prune_unavailable(
+        self, text: str, state: dict[str, Any]
+    ) -> tuple[str, int, bool]:
+        """Drop what we could not fetch, so the client never shows it.
+
+        Returns ``(text, dropped_sites, drop_source)``.  A crawler the client
+        loads on open decides whether the whole entry works - 影视仓 answers
+        "解析配置失败" - so an unfetchable spider takes the source with it.  A
+        crawler a single row names is only that row's problem.
+        """
+        unavailable = state.get("unavailable") or set()
+        if not unavailable:
+            return text, 0, False
+        try:
+            config = json.loads(text)
+        except ValueError:
+            return text, 0, False
+
+        def gone(reference: Any) -> bool:
+            if not isinstance(reference, str) or not reference.startswith(("http://", "https://")):
+                return False
+            return reference.split(";md5;")[0].strip() in unavailable
+
+        dropped = 0
+        if isinstance(config, list):
+            kept = [row for row in config
+                    if not (isinstance(row, dict) and gone(row.get("jar")))]
+            dropped = len(config) - len(kept)
+            if not dropped:
+                return text, 0, False
+            config = {"sites": kept}
+        elif isinstance(config, dict):
+            if gone(config.get("spider")):
+                return text, 0, True
+            rows = config.get("sites")
+            if isinstance(rows, list):
+                kept = [row for row in rows
+                        if not (isinstance(row, dict) and gone(row.get("jar")))]
+                dropped = len(rows) - len(kept)
+                if not dropped:
+                    return text, 0, False
+                config["sites"] = kept
+                # a spider nothing can reach is only noise once its rows are gone
+                if not kept and gone(config.get("spider")):
+                    config.pop("spider", None)
+        if not dropped:
+            return text, 0, False
+        return json.dumps(config, ensure_ascii=False, separators=(",", ":")), dropped, False
+
     # -- work --------------------------------------------------------------
     def prepare(self, sources: Iterable[Source]) -> MirrorPlan:
         plan = MirrorPlan()
@@ -656,6 +709,25 @@ class ConfigMirror:
             text, hosted = self._localise_refs(text, plan, jar_state)
             text, bare_hosted = self._localise_structured(text, plan, jar_state)
             hosted += bare_hosted
+            if self.prune_dead_jars and self.host_jars:
+                text, unfetched, drop_source = self._prune_unavailable(text, jar_state)
+                if drop_source:
+                    LOGGER.warning("source dropped for an unreachable spider", extra={
+                        "stage": "build", "check": "mirror", "source_id": source.id,
+                        "url": url, "error": "SPIDER_UNAVAILABLE"})
+                    if self.on_failure != "keep":
+                        plan.dropped.add(source.id)
+                    continue
+                if unfetched:
+                    pruned += unfetched
+                    remaining = (remaining - unfetched) if remaining is not None else None
+                if remaining == 0:
+                    LOGGER.warning("every site had an unreachable jar", extra={
+                        "stage": "build", "check": "mirror", "source_id": source.id,
+                        "url": url, "error": "UNREACHABLE_JARS_ONLY"})
+                    if self.on_failure != "keep":
+                        plan.dropped.add(source.id)
+                    continue
             content = text.encode("utf-8")
 
             used += len(content)

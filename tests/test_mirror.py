@@ -357,6 +357,39 @@ def test_bare_hosting_can_be_switched_off(tmp_path):
         assert plan.jars == {}
 
 
+def test_a_source_whose_spider_cannot_be_fetched_is_not_published(tmp_path):
+    """影视仓 loads the spider as it opens the source, so there is no partial win.
+
+    A host that refuses to answer is invisible to the 404-based prune, and the
+    runner's reach is better than the client's, so a failed fetch here is the
+    only signal that this entry would open as "解析配置失败".
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/unreachablespider.json", source_id="1a" * 32)])
+        assert "1a" * 32 in plan.dropped
+        assert "1a" * 32 not in plan.entries
+
+
+def test_a_row_whose_jar_cannot_be_fetched_is_dropped(tmp_path):
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/unreachablejar.json", source_id="2b" * 32)])
+        entry = plan.entries["2b" * 32]
+        assert [site["key"] for site in json.loads(entry.content)["sites"]] == ["live-row"]
+        assert entry.site_count == 1
+
+
+def test_nothing_is_dropped_when_pruning_is_off(tmp_path):
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True, "public_base": "https://me.github.io/repo",
+            "prune_dead_jars": False,
+        })
+        plan = mirror.prepare([stub_source(f"{server.base}/unreachablespider.json", source_id="3c" * 32)])
+        assert "3c" * 32 in plan.entries
+
+
 def test_inner_raw_urls_get_the_proxy_prefix():
     """A config points at sibling configs and playlists; all of them were dead."""
     text, count = rewrite_inner('{"urls":["%s"]}' % RAW, "https://gh-proxy.com/")

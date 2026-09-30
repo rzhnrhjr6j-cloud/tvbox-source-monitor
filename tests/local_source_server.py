@@ -312,6 +312,41 @@ class _Handler(BaseHTTPRequestHandler):
                 content_type="application/json; charset=utf-8",
             )
 
+        # A spider on a host that refuses to answer.  A runner sees no 404, so
+        # nothing else in the pipeline can tell that the client will open this
+        # source and be told 解析配置失败; only a failed fetch reveals it.
+        if path == "/unreachablespider.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "spider": "http://127.0.0.1:9/spider.jar",
+                        "sites": [dict(SITE_TEMPLATE, key="inherits", name="Inherits")],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        if path == "/unreachablejar.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "sites": [
+                            dict(SITE_TEMPLATE, key="dead-row", name="Dead Row",
+                                 jar="http://127.0.0.1:9/gone.jar"),
+                            dict(SITE_TEMPLATE, key="live-row", name="Live Row",
+                                 jar=f"{self.base}/assets/spider.jar"),
+                        ],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
         return self._send(b"", 404, "text/plain")
 
 

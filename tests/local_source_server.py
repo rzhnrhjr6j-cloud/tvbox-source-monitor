@@ -187,6 +187,52 @@ class _Handler(BaseHTTPRequestHandler):
         if path == "/notjson.json":
             return self._send(b"this is definitely not json", content_type="application/json")
 
+        # A multi-warehouse child: its crawler, its csp script and one of its
+        # site jars are named relative to the directory it was published from,
+        # the way every real one is.  Copying the bytes elsewhere breaks all
+        # three at once.
+        if path == "/assets/childconfig.json":
+            return self._send(
+                json.dumps(
+                    {
+                        "spider": "./spider.jar;md5;beef",
+                        "sites": [
+                            {"key": "csp", "name": "Csp", "api": "./parser.js", "type": 3},
+                            {"key": "plain", "name": "Plain",
+                             "api": "https://api.example.com/provide/vod/"},
+                            {"key": "jarred", "name": "Jarred", "api": "csp_Jarred",
+                             "jar": "./spider.jar"},
+                        ],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        # The same soft 404 as the fake jar, at a child-config URL: HTTP 200
+        # with an HTML body, so only the bytes reveal it.
+        if path == "/assets/htmlchild.json":
+            return self._send(
+                b"<!DOCTYPE html><html><body>404 Not Found</body></html>",
+                content_type="text/html; charset=utf-8",
+            )
+
+        if path == "/multihome.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "urls": [
+                            {"name": "Good Child", "url": f"{self.base}/assets/childconfig.json"},
+                            {"name": "Dead Child", "url": f"{self.base}/assets/htmlchild.json"},
+                        ]
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
         if path == "/assets/fakejar.jar":
             # a deleted author repo behind a soft 404: HTTP 200, HTML body
             return self._send(

@@ -175,6 +175,22 @@ _RAW_HOST = re.compile(r"https://raw\.githubusercontent\.com/")
 _RELATIVE_REF = re.compile(r'("(?:spider|jar)"\s*:\s*")(\.{1,2}/[^"]*)"')
 
 
+# A multi-warehouse child names its crawler, its csp scripts and its site jars
+# the same way the parent does, and those references are just as relative.  We
+# republish the child from our own host, so every one of them has to be resolved
+# and re-served or the child is a list of rows that cannot open.
+_CHILD_REF = re.compile(r'"(spider|jar|api)"(\s*:\s*")([^"]*)"')
+
+# A host that answers 200 with an error page is the shape a deleted author
+# repository leaves behind.  The client does not read HTML as a config; it
+# reports 解析配置失败 and moves on.
+_HTML_HEADS = (b"<!doctype", b"<html", b"<head", b"<!--", b"<meta", b"<body")
+
+
+def _looks_like_html(blob: bytes) -> bool:
+    return blob.lstrip()[:64].lower().startswith(_HTML_HEADS)
+
+
 def rewrite_relative(text: str, origin: str) -> tuple[str, int]:
     """Resolve "./x.jar" references against the config's own origin URL.
 
@@ -493,8 +509,12 @@ class ConfigMirror:
         return json.dumps(config, ensure_ascii=False, separators=(",", ":")), dropped, len(kept)
 
     # -- jar hosting -------------------------------------------------------
-    def _host_file(self, url: str, plan: MirrorPlan, state: dict[str, int]) -> str | None:
-        """Download ``url`` and publish it under a name derived from its bytes."""
+    def _fetch_blob(self, url: str, state: dict[str, Any]) -> bytes | None:
+        """Fetch a reference we intend to re-serve.
+
+        Every check that stops us paying for the same dead file twice lives
+        here, so the jar pass and the child-config pass cannot drift apart.
+        """
         if url in state.get("unavailable", ()):
             # the same dead jar sits in dozens of configs; paying its timeout
             # once per config is what emptied the hosting budget
@@ -530,7 +550,22 @@ class ConfigMirror:
                 "stage": "build", "check": "mirror", "reference": url,
                 "error": result.error_code or f"HTTP_{result.status}"})
             return None
-        blob = result.content
+        return result.content
+
+    def _publish(self, blob: bytes, url: str, plan: MirrorPlan, state: dict[str, Any],
+                 *, suffix: str | None = None) -> str | None:
+        if state["used"] + len(blob) > self.jar_total_bytes:
+            return None
+        name = f"{hashlib.sha256(blob).hexdigest()[:20]}{suffix or _extension(url)}"
+        plan.jars[name] = blob
+        state["used"] += len(blob)
+        return name
+
+    def _host_file(self, url: str, plan: MirrorPlan, state: dict[str, Any]) -> str | None:
+        """Download ``url`` and publish it under a name derived from its bytes."""
+        blob = self._fetch_blob(url, state)
+        if blob is None:
+            return None
         if _extension(url) == ".jar" and not _looks_like_a_jar(blob):
             # a 200 that is not a jar is a broken row, not a working one
             state.setdefault("unavailable", set()).add(url)
@@ -538,12 +573,90 @@ class ConfigMirror:
                 "stage": "build", "check": "mirror", "reference": url,
                 "error": "NOT_A_JAR"})
             return None
-        if state["used"] + len(blob) > self.jar_total_bytes:
+        return self._publish(blob, url, plan, state)
+
+    def _host_child(self, url: str, plan: MirrorPlan, state: dict[str, Any],
+                    depth: int) -> str | None:
+        """Publish a multi-warehouse child so the client can really open it.
+
+        A child is a config in its own right: its crawler, its csp scripts and
+        its jars are named the way the parent names them, and half of those
+        references are relative to the directory the child was published from.
+        Copying the bytes to our own host without touching them moves the file
+        and breaks every reference in it - which is what turned all twelve
+        multi-warehouse sources into "解析配置失败" the moment they were opened.
+        """
+        blob = self._fetch_blob(url, state)
+        if blob is None:
             return None
-        name = f"{hashlib.sha256(blob).hexdigest()[:20]}{_extension(url)}"
-        plan.jars[name] = blob
-        state["used"] += len(blob)
-        return name
+        if _looks_like_html(blob):
+            state.setdefault("unavailable", set()).add(url)
+            LOGGER.warning("child config is an error page", extra={
+                "stage": "build", "check": "mirror", "reference": url,
+                "error": "CHILD_IS_HTML"})
+            return None
+        origin = url
+        prefix = self.inner_proxy
+        if prefix and origin.startswith(prefix):
+            origin = origin[len(prefix):]
+        text, hosted = self._localise_child_refs(blob.decode("utf-8-sig", "replace"),
+                                                 origin, plan, state)
+        if depth > 0:
+            text, deeper = self._localise_structured(text, plan, state, depth - 1)
+            hosted += deeper
+        if hosted:
+            blob = text.encode("utf-8")
+        starts_json = blob.lstrip()[:1] in (b"{", b"[")
+        return self._publish(blob, url, plan, state,
+                             suffix=".json" if starts_json else None)
+
+    def _localise_child_refs(self, text: str, origin: str, plan: MirrorPlan,
+                             state: dict[str, Any]) -> tuple[str, int]:
+        """Re-serve the files a child config names, relative or not.
+
+        ``spider`` and ``jar`` are always files.  ``api`` is only a file when it
+        is written as a relative path (``./js/drpy.min.js``); anything else is a
+        spider key or a JSON endpoint, and snapshotting an endpoint pins a live
+        service and breaks VIP playback - the exact mistake the ``parses`` pass
+        made once already.
+        """
+        base = self.public_base
+        if not base:
+            return text, 0
+        cache: dict[str, str | None] = {}
+        count = 0
+
+        def replace(match: re.Match[str]) -> str:
+            nonlocal count
+            key, sep, value = match.group(1), match.group(2), match.group(3)
+            head, tail = value, ""
+            found = _REF_TAIL.search(value)
+            if found:
+                head, tail = value[:found.start()], found.group(0)
+            url = head.strip()
+            relative = url.startswith(("./", "../"))
+            if relative:
+                if url.startswith(".."):
+                    return match.group(0)
+                absolute = urljoin(origin, url)
+                if not absolute.startswith("http"):
+                    return match.group(0)
+                url = absolute
+            elif key == "api" or not url.startswith(("http://", "https://")):
+                return match.group(0)
+            if url.startswith(base + "/"):
+                return match.group(0)
+            if url not in cache:
+                cache[url] = self._host_file(url, plan, state)
+            name = cache[url]
+            if not name:
+                # we cannot re-serve it, but the client may still reach the
+                # origin; a relative path would land on *our* directory instead
+                return f'"{key}"{sep}{url}{tail}"' if relative else match.group(0)
+            count += 1
+            return f'"{key}"{sep}{base}/{JARS_DIR}/{name}{tail}"'
+
+        return _CHILD_REF.sub(replace, text), count
 
     def _localise_refs(self, text: str, plan: MirrorPlan, state: dict[str, int]) -> tuple[str, int]:
         """Serve every proxied reference from our own host.
@@ -588,7 +701,7 @@ class ConfigMirror:
         return pattern.sub(replace, text), count
 
     def _localise_structured(
-        self, text: str, plan: MirrorPlan, state: dict[str, int]
+        self, text: str, plan: MirrorPlan, state: dict[str, Any], depth: int = 1
     ) -> tuple[str, int]:
         """Serve every file reference the client loads from our own host.
 
@@ -648,19 +761,28 @@ class ConfigMirror:
                 container[key] = replacement
                 count += 1
 
-        def swap_rows(container: dict[str, Any], key: str) -> None:
+        def swap_children(container: dict[str, Any]) -> None:
+            """Descend one level: a child is a config, not an opaque file."""
             nonlocal count
-            rows = container.get(key)
-            if not isinstance(rows, list):
+            children = container.get("urls")
+            if not isinstance(children, list):
                 return
-            for index, row in enumerate(rows):
-                if isinstance(row, dict):
-                    swap(row, "url")
+            for index, child in enumerate(children):
+                target = child.get("url") if isinstance(child, dict) else child
+                if not isinstance(target, str) or not target.startswith(("http://", "https://")):
+                    continue
+                if target.startswith(base + "/"):
+                    continue
+                if target not in cache:
+                    cache[target] = self._host_child(target, plan, state, depth)
+                name = cache[target]
+                if not name:
+                    continue
+                if isinstance(child, dict):
+                    child["url"] = f"{base}/{JARS_DIR}/{name}"
                 else:
-                    replacement = localise(row)
-                    if replacement:
-                        rows[index] = replacement
-                        count += 1
+                    children[index] = f"{base}/{JARS_DIR}/{name}"
+                count += 1
 
         rows: list[Any]
         wrapped = False
@@ -679,8 +801,8 @@ class ConfigMirror:
                 if isinstance(row, dict):
                     swap(row, "jar")
             # a multi-warehouse config hands the client a second list; those
-            # children are files in exactly the same sense the spider is
-            swap_rows(config, "urls")
+            # children are configs in their own right and get opened up
+            swap_children(config)
         else:
             return text, 0
 

@@ -381,6 +381,33 @@ def test_a_row_whose_jar_cannot_be_fetched_is_dropped(tmp_path):
         assert entry.site_count == 1
 
 
+def test_a_multi_warehouse_child_is_opened_up_not_just_copied(tmp_path):
+    """A child config is a config, not an opaque file.
+
+    Publishing its bytes from our own host moves the directory underneath it,
+    so every relative reference in it - the crawler, the csp script, the site
+    jars - stops landing on the file.  All twelve multi-warehouse sources were
+    a list of rows that could not open for exactly this reason.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/multihome.json", source_id="5e" * 32)])
+        published = json.loads(plan.entries["5e" * 32].content)
+
+        # the HTML child is a deleted repository, not a config
+        assert [c["name"] for c in published["urls"]] == ["Good Child"]
+
+        hosted = published["urls"][0]["url"]
+        assert hosted.startswith("https://me.github.io/repo/jars/")
+        child = json.loads(plan.jars[hosted.rsplit("/", 1)[-1]].decode("utf-8"))
+
+        assert child["spider"].startswith("https://me.github.io/repo/jars/")
+        assert child["sites"][0]["api"].startswith("https://me.github.io/repo/jars/")
+        assert child["sites"][2]["jar"].startswith("https://me.github.io/repo/jars/")
+        # an http api is a live endpoint and is never snapshotted
+        assert child["sites"][1]["api"] == "https://api.example.com/provide/vod/"
+
+
 def test_an_unreachable_reference_is_fetched_only_once(tmp_path):
     """The same dead jar sits in dozens of configs; its timeout is paid once."""
     mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})

@@ -182,10 +182,19 @@ def test_relative_references_never_escape_the_origin_directory():
     assert count == 0 and text == payload
 
 
-def test_relative_rewrite_leaves_absolute_and_unrelated_strings_alone():
-    payload = '{"spider":"https://x.com/a.jar","note":"./looks/like/a/path"}'
+def test_relative_rewrite_resolves_any_key_and_leaves_absolute_alone():
+    """A relative value is a path whatever its key is called.
+
+    ``lives[].url`` names a playlist, ``logo`` an image and the ``json`` member
+    of an ``ext`` object another config.  The four-key allow list this used to
+    be let every one of them stay relative, so they all 404'd on our host.
+    """
+    payload = ('{"spider":"https://x.com/a.jar",'
+               '"lives":[{"name":"live","url":"./lives/live.txt"}]}')
     text, count = rewrite_relative(payload, ORIGIN)
-    assert count == 0 and text == payload
+    assert count == 1
+    assert "https://raw.githubusercontent.com/qist/tvbox/master/lives/live.txt" in text
+    assert "https://x.com/a.jar" in text
 
 
 def test_resolved_references_then_get_the_acceleration_prefix():
@@ -427,6 +436,52 @@ def test_a_child_js_ext_is_resolved_not_left_on_our_directory(tmp_path):
         assert by_key["jsext"]["ext"].startswith("https://me.github.io/repo/jars/")
         assert by_key["jsext"]["ext"].endswith(".js")
         assert by_key["liveext"]["ext"] == "https://api.example.com/ext?type=1"
+
+
+def test_a_comment_headed_shell_still_opens_its_children(tmp_path):
+    """A ``//`` header must not stop the children from being opened.
+
+    Dozens of authors put one in front of the JSON, comment out a dead spider
+    line and leave a trailing comma.  A strict parse decided whether the
+    multi-warehouse pass ran at all, so those shells published with their
+    children untouched and every relative reference in them 404'd on our host.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/commentedshell.json", source_id="3c" * 32)])
+        published = json.loads(plan.entries["3c" * 32].content)
+
+        hosted = published["urls"][0]["url"]
+        assert hosted.startswith("https://me.github.io/repo/jars/")
+        child = json.loads(plan.jars[hosted.rsplit("/", 1)[-1]].decode("utf-8"))
+        assert child["spider"].startswith("https://me.github.io/repo/jars/")
+
+
+def test_a_relative_live_playlist_is_resolved_not_left_on_our_directory(tmp_path):
+    """``lives[].url`` names a file as well, and it is relative just as often."""
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/relativelive.json", source_id="2b" * 32)])
+        live = json.loads(plan.entries["2b" * 32].content)["lives"][0]
+        assert live["url"] == f"{server.base}/assets/live.txt"
+
+
+def test_a_child_resolves_a_relative_reference_under_any_key(tmp_path):
+    """A child's files are not all called spider, jar, api or ext.
+
+    ``lives[].url`` is a playlist and an ``ext`` object nests its own ``json``
+    path; both are relative to the directory the child was published from, and
+    the child pass only knew the four key names it had been taught.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/multihome.json", source_id="1a" * 32)])
+        published = json.loads(plan.entries["1a" * 32].content)
+        child = json.loads(plan.jars[published["urls"][0]["url"].rsplit("/", 1)[-1]].decode("utf-8"))
+
+        assert child["lives"][0]["url"].startswith("https://me.github.io/repo/jars/")
+        by_key = {site["key"]: site for site in child["sites"]}
+        assert by_key["jsondict"]["ext"]["json"].startswith("https://me.github.io/repo/jars/")
 
 
 def test_a_child_keeps_an_absolute_path_when_we_cannot_reserve_it(tmp_path):

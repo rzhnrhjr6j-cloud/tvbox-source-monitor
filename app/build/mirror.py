@@ -178,14 +178,16 @@ _RAW_HOST = re.compile(r"https://raw\.githubusercontent\.com/")
 # snapshotting an endpoint pins a live service - but "./lib/drpy2.min.js" is a
 # file, and a relative path points the client at *our* directory.  Measured on
 # the published set: 1011 such references across 31 sources, every one a 404.
-_RELATIVE_REF = re.compile(r'("(?:spider|jar|api|ext)"\s*:\s*")(\.{1,2}/[^"]*)"')
+_RELATIVE_REF = re.compile(
+    r'("(?:[A-Za-z_][A-Za-z0-9_]*)"\s*:\s*")(\.{1,2}/[^"]*)"'
+)
 
 
 # A multi-warehouse child names its crawler, its csp scripts and its site jars
 # the same way the parent does, and those references are just as relative.  We
 # republish the child from our own host, so every one of them has to be resolved
 # and re-served or the child is a list of rows that cannot open.
-_CHILD_REF = re.compile(r'"(spider|jar|api|ext)"(\s*:\s*")([^"]*)"')
+_CHILD_REF = re.compile(r'"([A-Za-z_][A-Za-z0-9_]*)"(\s*:\s*")([^"]*)"')
 
 # A host that answers 200 with an error page is the shape a deleted author
 # repository leaves behind.  The client does not read HTML as a config; it
@@ -210,6 +212,55 @@ _IMAGE_HEADS = (
 # live set - "你好！" and "后会有期！！" - are 9 and 19 bytes.  The threshold
 # sits just above them so a short live playlist still travels.
 _MIN_CHILD_BYTES = 24
+
+
+def _strip_json_noise(text: str) -> str:
+    """Take out what a lenient parser skips and a strict one chokes on.
+
+    Strings are copied through untouched, so a ``https://`` inside one is never
+    mistaken for the start of a comment.
+    """
+    out: list[str] = []
+    index = 0
+    length = len(text)
+    while index < length:
+        char = text[index]
+        if char == '"':
+            end = index + 1
+            while end < length:
+                if text[end] == "\\":
+                    end += 2
+                    continue
+                if text[end] == '"':
+                    break
+                end += 1
+            out.append(text[index:end + 1])
+            index = end + 1
+            continue
+        if char == "/" and text.startswith("//", index):
+            stop = text.find("\n", index)
+            index = length if stop < 0 else stop
+            continue
+        if char == "/" and text.startswith("/*", index):
+            stop = text.find("*/", index + 2)
+            index = length if stop < 0 else stop + 2
+            continue
+        out.append(char)
+        index += 1
+    return re.sub(r",(\s*[}\]])", r"\1", "".join(out))
+
+
+def _load_config(text: str) -> Any:
+    """Parse a config the way the client parses one.
+
+    Authors put a ``//`` header in front of the JSON, comment out a dead
+    ``"spider"`` line and leave trailing commas behind; the client strips all
+    three before it parses, so a strict parse here would refuse files that open
+    perfectly well.  It also decides whether a multi-warehouse parent ever gets
+    its children opened at all - the comment-headed ones published with their
+    children still naming "./lib/drpy2.min.js".
+    """
+    return json.loads(_strip_json_noise(text.lstrip("\ufeff")))
 
 
 def _looks_like_a_config(blob: bytes) -> bool:
@@ -503,7 +554,7 @@ class ConfigMirror:
         if not self.prune_dead_jars:
             return text, 0, None
         try:
-            config = json.loads(text)
+            config = _load_config(text)
         except ValueError:
             return text, 0, None
         if not isinstance(config, dict) or not isinstance(config.get("sites"), list):
@@ -711,7 +762,9 @@ class ConfigMirror:
                 if not absolute.startswith("http"):
                     return match.group(0)
                 url = absolute
-            elif key in ("api", "ext") or not url.startswith(("http://", "https://")):
+            elif key not in ("spider", "jar") or not url.startswith(("http://", "https://")):
+                # an absolute api/ext/url/logo is a live endpoint, a spider key
+                # or a remote picture, and snapshotting one pins a live service
                 return match.group(0)
             if url.startswith(base + "/"):
                 return match.group(0)
@@ -803,7 +856,7 @@ class ConfigMirror:
         if not base:
             return text, 0
         try:
-            config = json.loads(text)
+            config = _load_config(text)
         except ValueError:
             return text, 0
 
@@ -915,7 +968,7 @@ class ConfigMirror:
         if not unavailable:
             return text, 0, False
         try:
-            config = json.loads(text)
+            config = _load_config(text)
         except ValueError:
             return text, 0, False
 
@@ -996,7 +1049,7 @@ class ConfigMirror:
 
             text = result.content.decode("utf-8", "replace")
             try:
-                config = json.loads(text)
+                config = _load_config(text)
             except ValueError:
                 config = None
 
@@ -1043,7 +1096,7 @@ class ConfigMirror:
                     continue
             final = None
             try:
-                final = json.loads(text)
+                final = _load_config(text)
             except ValueError:
                 final = None
             if isinstance(final, dict) and not (

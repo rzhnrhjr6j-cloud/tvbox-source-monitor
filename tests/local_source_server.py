@@ -216,7 +216,10 @@ class _Handler(BaseHTTPRequestHandler):
                              "type": 3, "ext": "./js/extscript.js"},
                             {"key": "liveext", "name": "LiveExt", "api": "csp_LiveExt",
                              "type": 3, "ext": "https://api.example.com/ext?type=1"},
+                            {"key": "jsondict", "name": "JsonDict", "api": "csp_JsonDict",
+                             "type": 3, "ext": {"json": "./cfg.json"}},
                         ],
+                        "lives": [{"name": "Live", "type": 0, "url": "./live.txt"}],
                     },
                     ensure_ascii=False,
                 ).encode("utf-8"),
@@ -313,6 +316,42 @@ class _Handler(BaseHTTPRequestHandler):
 
         # A host that answers every path with its error page, a cover image or a
         # two-character greeting.  None of the three is a config.
+        # A parent that carries a ``//`` header, a commented-out spider line
+        # and a trailing comma - the shape dozens of authors ship.
+        if path == "/commentedshell.json":
+            body = (
+                "//以下来源于网络，仅供学习使用\n"
+                "{\n"
+                '//"spider": "./dead.jar",\n'
+                f'"urls": [{{"name": "Commented Child", "url": "{self.base}/assets/childconfig.json"}}],\n'
+                "}\n"
+            )
+            return self._send(body.encode("utf-8"),
+                              content_type="application/json; charset=utf-8")
+
+        # A top-level source whose live playlist is named relatively.
+        if path == "/relativelive.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "sites": [{"key": "plain", "name": "Plain",
+                                   "api": "https://api.example.com/provide/vod/"}],
+                        "lives": [{"name": "Live", "type": 0, "url": "./assets/live.txt"}],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        if path == "/assets/live.txt":
+            return self._send("#EXTM3U\n#EXTINF:-1,CCTV1\nhttp://live.example.com/1.m3u8\n".encode("utf-8"),
+                              content_type="text/plain; charset=utf-8")
+
+        if path == "/assets/cfg.json":
+            return self._send(b'{"list": []}', content_type="application/json; charset=utf-8")
+
         if path == "/assets/tinychild.json":
             return self._send("你好！".encode("utf-8"),
                               content_type="application/json; charset=utf-8")

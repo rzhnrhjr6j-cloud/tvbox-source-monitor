@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-01T05:01:55Z",
-  "build_id": "20261001-050155",
+  "generated_at": "2026-10-01T05:39:35Z",
+  "build_id": "20261001-053935",
   "summary": {
     "sources": {
       "active": 97,
@@ -16,8 +16,8 @@
   },
   "regions": {
     "CN": {
-      "checks": 2156,
-      "successes": 2136,
+      "checks": 2254,
+      "successes": 2233,
       "availability_percent": 99.07
     }
   },
@@ -33,13 +33,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:53Z",
+      "last_success_at": "2026-10-01T05:15:55Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 374.72727272727275,
+      "avg_response_ms": 370.6521739130435,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -54,13 +54,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:48Z",
+      "last_success_at": "2026-10-01T05:15:43Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 345.72727272727275,
+      "avg_response_ms": 337.1304347826087,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -75,13 +75,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:49Z",
+      "last_success_at": "2026-10-01T05:15:49Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 409.04545454545456,
+      "avg_response_ms": 403.17391304347825,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -96,13 +96,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 408.5,
+      "avg_response_ms": 408.30434782608694,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -117,13 +117,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 373.5,
+      "avg_response_ms": 368.4347826086956,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -138,13 +138,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 377.09090909090907,
+      "avg_response_ms": 372.82608695652175,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -159,13 +159,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 364.95454545454544,
+      "avg_response_ms": 361.8695652173913,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -180,13 +180,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 399.40909090909093,
+      "avg_response_ms": 397.0869565217391,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -201,13 +201,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 346.90909090909093,
+      "avg_response_ms": 344.30434782608694,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -222,13 +222,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 380.6363636363636,
+      "avg_response_ms": 377.1304347826087,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -243,13 +243,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 387.90909090909093,
+      "avg_response_ms": 387.60869565217394,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -264,13 +264,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 355.6818181818182,
+      "avg_response_ms": 352.04347826086956,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -285,13 +285,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 350.1818181818182,
+      "avg_response_ms": 346.5652173913044,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -306,13 +306,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 349.6818181818182,
+      "avg_response_ms": 346.1304347826087,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -327,13 +327,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 395.22727272727275,
+      "avg_response_ms": 387.5652173913044,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -344,17 +344,17 @@
       "status": "active",
       "tier": "experimental",
       "type": "single",
-      "score": 75.909,
+      "score": 75.87,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:45Z",
+      "last_success_at": "2026-10-01T05:15:43Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 293.45454545454544,
+      "avg_response_ms": 292.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -365,17 +365,17 @@
       "status": "active",
       "tier": "experimental",
       "type": "single",
-      "score": 75.909,
+      "score": 75.87,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:59Z",
+      "last_success_at": "2026-10-01T05:15:58Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 207.36363636363637,
+      "avg_response_ms": 201.56521739130434,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -386,17 +386,17 @@
       "status": "active",
       "tier": "experimental",
       "type": "single",
-      "score": 75.909,
+      "score": 75.87,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:45Z",
+      "last_success_at": "2026-10-01T05:15:43Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 113.27272727272727,
+      "avg_response_ms": 110.56521739130434,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -407,17 +407,17 @@
       "status": "active",
       "tier": "experimental",
       "type": "single",
-      "score": 75.909,
+      "score": 75.87,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:47Z",
+      "last_success_at": "2026-10-01T05:15:45Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 131.86363636363637,
+      "avg_response_ms": 128.56521739130434,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -432,13 +432,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:47Z",
+      "last_success_at": "2026-10-01T05:15:46Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 145.86363636363637,
+      "avg_response_ms": 148.69565217391303,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -453,13 +453,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 150.86363636363637,
+      "avg_response_ms": 151.56521739130434,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -474,13 +474,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 145.4090909090909,
+      "avg_response_ms": 141.6086956521739,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -495,13 +495,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 131.63636363636363,
+      "avg_response_ms": 128.47826086956522,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -516,13 +516,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 135.3181818181818,
+      "avg_response_ms": 131.7826086956522,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -537,13 +537,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 138.0,
+      "avg_response_ms": 135.04347826086956,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -558,13 +558,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 154.72727272727272,
+      "avg_response_ms": 150.91304347826087,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -579,13 +579,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 155.54545454545453,
+      "avg_response_ms": 152.17391304347825,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -600,13 +600,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 114.18181818181819,
+      "avg_response_ms": 111.3913043478261,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -621,13 +621,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 117.45454545454545,
+      "avg_response_ms": 114.34782608695652,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -642,13 +642,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 134.0,
+      "avg_response_ms": 131.17391304347825,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -663,13 +663,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:42Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 135.4090909090909,
+      "avg_response_ms": 132.7391304347826,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -684,13 +684,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 159.13636363636363,
+      "avg_response_ms": 155.04347826086956,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -705,13 +705,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 147.0,
+      "avg_response_ms": 143.82608695652175,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -726,13 +726,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 142.54545454545453,
+      "avg_response_ms": 138.69565217391303,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -747,13 +747,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 194.0909090909091,
+      "avg_response_ms": 189.2173913043478,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -768,13 +768,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 122.13636363636364,
+      "avg_response_ms": 119.43478260869566,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -789,13 +789,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 116.22727272727273,
+      "avg_response_ms": 113.65217391304348,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -810,13 +810,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 119.77272727272727,
+      "avg_response_ms": 116.78260869565217,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -831,13 +831,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 177.3181818181818,
+      "avg_response_ms": 179.30434782608697,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -852,13 +852,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 159.3181818181818,
+      "avg_response_ms": 161.08695652173913,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -873,13 +873,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 116.04545454545455,
+      "avg_response_ms": 114.47826086956522,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -894,13 +894,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 124.81818181818181,
+      "avg_response_ms": 121.82608695652173,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -915,13 +915,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 123.86363636363636,
+      "avg_response_ms": 120.95652173913044,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -936,13 +936,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 180.04545454545453,
+      "avg_response_ms": 174.69565217391303,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -957,13 +957,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 148.77272727272728,
+      "avg_response_ms": 145.6086956521739,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -978,13 +978,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 116.77272727272727,
+      "avg_response_ms": 114.17391304347827,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -999,13 +999,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 131.45454545454547,
+      "avg_response_ms": 129.08695652173913,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1020,13 +1020,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 122.77272727272727,
+      "avg_response_ms": 120.1304347826087,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1041,13 +1041,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 134.36363636363637,
+      "avg_response_ms": 131.82608695652175,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1062,13 +1062,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 156.22727272727272,
+      "avg_response_ms": 151.8695652173913,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1083,13 +1083,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 127.13636363636364,
+      "avg_response_ms": 124.43478260869566,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1104,13 +1104,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 126.31818181818181,
+      "avg_response_ms": 123.47826086956522,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1125,13 +1125,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 187.1818181818182,
+      "avg_response_ms": 181.82608695652175,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1146,13 +1146,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 145.0,
+      "avg_response_ms": 141.30434782608697,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1167,13 +1167,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:48Z",
+      "last_success_at": "2026-10-01T05:15:52Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 117.22727272727273,
+      "avg_response_ms": 114.78260869565217,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1188,13 +1188,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:43Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 130.27272727272728,
+      "avg_response_ms": 128.2608695652174,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1209,13 +1209,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:40:20Z",
+      "last_success_at": "2026-10-01T05:17:18Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 114.22727272727273,
+      "avg_response_ms": 111.69565217391305,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1230,13 +1230,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 170.63636363636363,
+      "avg_response_ms": 166.6086956521739,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1251,13 +1251,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 156.04545454545453,
+      "avg_response_ms": 158.47826086956522,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1272,13 +1272,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 132.45454545454547,
+      "avg_response_ms": 129.52173913043478,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1293,13 +1293,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 130.1818181818182,
+      "avg_response_ms": 127.95652173913044,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1314,13 +1314,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 124.72727272727273,
+      "avg_response_ms": 122.1304347826087,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1335,13 +1335,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 139.54545454545453,
+      "avg_response_ms": 136.43478260869566,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1356,13 +1356,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 110.9090909090909,
+      "avg_response_ms": 108.21739130434783,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1377,13 +1377,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 118.04545454545455,
+      "avg_response_ms": 114.78260869565217,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1398,13 +1398,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 91.68181818181819,
+      "avg_response_ms": 89.95652173913044,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1419,13 +1419,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 95.54545454545455,
+      "avg_response_ms": 93.47826086956522,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1440,13 +1440,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 155.95454545454547,
+      "avg_response_ms": 153.2608695652174,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1461,13 +1461,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 126.9090909090909,
+      "avg_response_ms": 123.6086956521739,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1482,13 +1482,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 112.5909090909091,
+      "avg_response_ms": 110.43478260869566,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1503,13 +1503,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 107.54545454545455,
+      "avg_response_ms": 105.3913043478261,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1524,13 +1524,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 107.72727272727273,
+      "avg_response_ms": 104.8695652173913,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1545,13 +1545,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 159.5909090909091,
+      "avg_response_ms": 155.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1566,13 +1566,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:44Z",
+      "last_success_at": "2026-10-01T05:15:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 103.9090909090909,
+      "avg_response_ms": 101.52173913043478,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1587,13 +1587,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:45Z",
+      "last_success_at": "2026-10-01T05:15:44Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 611.5,
+      "avg_response_ms": 676.1739130434783,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1608,13 +1608,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:45Z",
+      "last_success_at": "2026-10-01T05:15:43Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 1128.7272727272727,
+      "avg_response_ms": 1125.0434782608695,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1629,13 +1629,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:45Z",
+      "last_success_at": "2026-10-01T05:15:43Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 1010.0454545454545,
+      "avg_response_ms": 998.7826086956521,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1646,38 +1646,17 @@
       "status": "active",
       "tier": "experimental",
       "type": "single",
-      "score": 55.409,
-      "stability_score": 95.455,
-      "availability_7d": 95.455,
-      "availability_30d": 95.455,
-      "last_success_at": "2026-10-01T04:38:47Z",
+      "score": 55.478,
+      "stability_score": 95.652,
+      "availability_7d": 95.652,
+      "availability_30d": 95.652,
+      "last_success_at": "2026-10-01T05:15:46Z",
       "last_failure_at": "2026-09-30T14:04:27Z",
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 951.2272727272727,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "608363ac92aef1989f7393774f36fd3d34ac877349721ce97fc906547e2a3b38",
-      "name": "初心🍑",
-      "url": "https://raw.giteeusercontent.com/wpider/original-aspiration/raw/master/%E5%88%9D%E5%BF%83.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 55.0,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:47Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 2975.9545454545455,
+      "avg_response_ms": 962.9130434782609,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1692,18 +1671,49 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-01T04:38:46Z",
+      "last_success_at": "2026-10-01T05:15:45Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 2670.0,
+      "avg_response_ms": 2666.1304347826085,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "608363ac92aef1989f7393774f36fd3d34ac877349721ce97fc906547e2a3b38",
+      "name": "初心🍑",
+      "url": "https://raw.giteeusercontent.com/wpider/original-aspiration/raw/master/%E5%88%9D%E5%BF%83.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 52.5,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-01T05:15:47Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 3057.7391304347825,
       "consecutive_failure": 0,
       "whitelisted": false
     }
   ],
   "alerts": [
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-01T05:17:18Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
     {
       "kind": "source_failed",
       "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
@@ -2066,6 +2076,20 @@
     }
   ],
   "build_history": [
+    {
+      "build_id": "20261001-050155",
+      "generated_at": "2026-10-01T05:01:55Z",
+      "published": true,
+      "fallback": false,
+      "items": 80,
+      "active": 97,
+      "degraded": 0,
+      "failed": 1,
+      "new": 3,
+      "recovered": 0,
+      "removed": 1,
+      "blocked_reason": ""
+    },
     {
       "build_id": "20261001-030812",
       "generated_at": "2026-10-01T03:08:12Z",

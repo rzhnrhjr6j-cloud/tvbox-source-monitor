@@ -408,6 +408,27 @@ def test_a_multi_warehouse_child_is_opened_up_not_just_copied(tmp_path):
         assert child["sites"][1]["api"] == "https://api.example.com/provide/vod/"
 
 
+def test_a_child_js_ext_is_resolved_not_left_on_our_directory(tmp_path):
+    """``ext`` is how a js spider names its script, and it is relative too.
+
+    The child pass resolved ``spider``, ``jar`` and ``api`` and stopped there, so
+    an ``ext`` such as "./1226lib/闪雷影视.js" stayed relative and landed on
+    *our* directory - a 404 for every row that used it.  Measured on the
+    published set: 71 such references across two children of one multi-warehouse
+    source.  A live-site ``ext`` is a parameter, not a file, and is left alone.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/multihome.json", source_id="4d" * 32)])
+        published = json.loads(plan.entries["4d" * 32].content)
+        child = json.loads(plan.jars[published["urls"][0]["url"].rsplit("/", 1)[-1]].decode("utf-8"))
+
+        by_key = {site["key"]: site for site in child["sites"]}
+        assert by_key["jsext"]["ext"].startswith("https://me.github.io/repo/jars/")
+        assert by_key["jsext"]["ext"].endswith(".js")
+        assert by_key["liveext"]["ext"] == "https://api.example.com/ext?type=1"
+
+
 def test_a_child_keeps_an_absolute_path_when_we_cannot_reserve_it(tmp_path):
     """A relative script we cannot mirror must not stay relative.
 

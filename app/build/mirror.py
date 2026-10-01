@@ -185,7 +185,7 @@ _RELATIVE_REF = re.compile(r'("(?:spider|jar|api|ext)"\s*:\s*")(\.{1,2}/[^"]*)"'
 # the same way the parent does, and those references are just as relative.  We
 # republish the child from our own host, so every one of them has to be resolved
 # and re-served or the child is a list of rows that cannot open.
-_CHILD_REF = re.compile(r'"(spider|jar|api)"(\s*:\s*")([^"]*)"')
+_CHILD_REF = re.compile(r'"(spider|jar|api|ext)"(\s*:\s*")([^"]*)"')
 
 # A host that answers 200 with an error page is the shape a deleted author
 # repository leaves behind.  The client does not read HTML as a config; it
@@ -677,11 +677,17 @@ class ConfigMirror:
                              state: dict[str, Any]) -> tuple[str, int]:
         """Re-serve the files a child config names, relative or not.
 
-        ``spider`` and ``jar`` are always files.  ``api`` is only a file when it
-        is written as a relative path (``./js/drpy.min.js``); anything else is a
-        spider key or a JSON endpoint, and snapshotting an endpoint pins a live
+        ``spider`` and ``jar`` are always files.  ``api`` and ``ext`` are only
+        files when written as a relative path (``./js/drpy.min.js``,
+        ``./1226lib/闪雷影视.js``); anything else is a spider key, a JSON
+        endpoint or a live-site parameter, and snapshotting one pins a live
         service and breaks VIP playback - the exact mistake the ``parses`` pass
         made once already.
+
+        ``ext`` is how a js spider names its script, and on the published set it
+        was the last relative reference the child pass left behind: 71 of them
+        across two children of one multi-warehouse source, every one a 404 on
+        our own host because the child was republished into another directory.
         """
         base = self.public_base
         if not base:
@@ -705,7 +711,7 @@ class ConfigMirror:
                 if not absolute.startswith("http"):
                     return match.group(0)
                 url = absolute
-            elif key == "api" or not url.startswith(("http://", "https://")):
+            elif key in ("api", "ext") or not url.startswith(("http://", "https://")):
                 return match.group(0)
             if url.startswith(base + "/"):
                 return match.group(0)

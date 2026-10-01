@@ -212,12 +212,22 @@ class _Handler(BaseHTTPRequestHandler):
                              "api": "https://api.example.com/provide/vod/"},
                             {"key": "jarred", "name": "Jarred", "api": "csp_Jarred",
                              "jar": "./spider.jar"},
+                            {"key": "jsext", "name": "JsExt", "api": "csp_JsExt",
+                             "type": 3, "ext": "./js/extscript.js"},
+                            {"key": "liveext", "name": "LiveExt", "api": "csp_LiveExt",
+                             "type": 3, "ext": "https://api.example.com/ext?type=1"},
                         ],
                     },
                     ensure_ascii=False,
                 ).encode("utf-8"),
                 content_type="application/json; charset=utf-8",
             )
+
+        # The script a js spider names through ``ext``, one directory over from
+        # the config the way an author publishes it.
+        if path == "/assets/js/extscript.js":
+            return self._send(b"var rule = { version: 2 };",
+                              content_type="application/javascript")
 
         # The same soft 404 as the fake jar, at a child-config URL: HTTP 200
         # with an HTML body, so only the bytes reveal it.

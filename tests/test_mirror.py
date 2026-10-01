@@ -484,6 +484,32 @@ def test_a_child_resolves_a_relative_reference_under_any_key(tmp_path):
         assert by_key["jsondict"]["ext"]["json"].startswith("https://me.github.io/repo/jars/")
 
 
+def test_a_script_behind_the_proxy_hop_resolves_against_the_real_file(tmp_path):
+    """``urljoin`` collapses the hop's second slash, so the sibling 404s.
+
+    A script met through the acceleration hop was resolved against
+    "https://<proxy>/https://raw…/x.js", and urljoin turns that into
+    "https://<proxy>/https:/raw…/cheerio.min.js" - a URL that was never well
+    formed and that the proxy answers 404 for.  Measured on a real build log:
+    24 of 48 module scripts shipped with their imports still relative.
+    """
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+    asked: list[str] = []
+
+    def fake_host_file(url, plan, state, script_depth=1):
+        asked.append(url)
+        return "abc123.js"
+
+    mirror._host_file = fake_host_file
+    hop = "https://gh-proxy.com/https://raw.githubusercontent.com/a/b/lib/x.js"
+    out = mirror._localise_script_refs(
+        b'import cheerio from "./cheerio.min.js";', hop, MirrorPlan(), {"used": 0}, 1
+    )
+
+    assert asked == ["https://raw.githubusercontent.com/a/b/lib/cheerio.min.js"]
+    assert 'from "https://me.github.io/repo/jars/abc123.js"' in out.decode()
+
+
 def test_a_js_spider_gets_its_sibling_modules_hosted_too(tmp_path):
     """A drpy script is a module, and its imports are relative as well.
 

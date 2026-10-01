@@ -225,6 +225,25 @@ _IMAGE_HEADS = (
 _MIN_CHILD_BYTES = 24
 
 
+_PROXY_HOP = re.compile(r"https?://[^\s\"'<>/\\]+/(?=(?:https?://|raw\.githubusercontent\.com/))")
+
+
+def _unwrap_proxy(url: str) -> str:
+    """Drop one acceleration hop so a relative path resolves against the file.
+
+    ``urljoin`` cannot be trusted with a hop in front of a URL: it collapses
+    the second ``//``, so "./cheerio.min.js" against
+    ``https://<proxy>/https://raw…/x.js`` resolves to
+    ``https://<proxy>/https:/raw…/cheerio.min.js`` - a URL that was never well
+    formed and that the proxy answers 404 for.
+    """
+    match = _PROXY_HOP.match(url)
+    if not match:
+        return url
+    rest = url[match.end():]
+    return rest if rest.startswith("http") else f"https://{rest}"
+
+
 def _strip_json_noise(text: str) -> str:
     """Take out what a lenient parser skips and a strict one chokes on.
 
@@ -683,7 +702,7 @@ class ConfigMirror:
             specifier = match.group(3)
             if specifier.startswith(".."):
                 return match.group(0)
-            target = urljoin(url, specifier)
+            target = urljoin(_unwrap_proxy(url), specifier)
             if not target.startswith("http"):
                 return match.group(0)
             if target not in cache:
@@ -740,10 +759,7 @@ class ConfigMirror:
                 "error": "CHILD_IS_HTML" if _looks_like_html(blob)
                          else "CHILD_IS_NOT_A_CONFIG"})
             return None
-        origin = url
-        prefix = self.inner_proxy
-        if prefix and origin.startswith(prefix):
-            origin = origin[len(prefix):]
+        origin = _unwrap_proxy(url)
         original = blob.decode("utf-8-sig", "replace")
         text, hosted = self._localise_child_refs(original, origin, plan, state)
         if depth > 0:

@@ -523,7 +523,7 @@ def test_mirror_is_inert_without_a_publish_target(tmp_path, monkeypatch):
 def test_alt_base_derives_jsdelivr_from_the_repository(tmp_path, monkeypatch):
     monkeypatch.setenv("GITHUB_REPOSITORY", "owner/repo")
     mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://owner.github.io/repo"})
-    assert mirror.alt_base == "https://cdn.jsdelivr.net/gh/owner/repo@main/dist"
+    assert mirror.alt_base == "https://fastly.jsdelivr.net/gh/owner/repo@main/dist"
 
 
 def test_alt_base_can_be_switched_off(tmp_path, monkeypatch):

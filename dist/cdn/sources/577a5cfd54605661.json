@@ -1,5 +1,5 @@
 {
-    "spider": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/3b56c43633c9a752fb64.jar",
+    "spider": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/3b56c43633c9a752fb64.jar",
     "wallpaper": "http://bobohome.ignorelist.com:20247/bing",
     "logo": "http://127.0.0.1:9978/file/TVBox/logo.png",
     "sites": [

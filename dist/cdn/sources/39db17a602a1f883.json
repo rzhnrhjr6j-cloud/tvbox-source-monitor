@@ -4,7 +4,7 @@
             "name": "小雅TvBox",
             "type": 3,
             "api": "csp_TvBox",
-            "ext": "https://cdn.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/48953dd90126b10245e8.js"
+            "ext": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/48953dd90126b10245e8.js"
         }
     ]
 }

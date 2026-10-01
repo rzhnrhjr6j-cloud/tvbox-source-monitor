@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+
+<html>
+    
+	<head>
+		<title>TVBOX 影视仓 CatBox takage99</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	
+	<html>  
+  <style>  
+    /* 弹出框的样式 */  
+    .modal {  
+      display: none; /* 默认隐藏 */  
+      position: fixed; /* 固定定位 */  
+      z-index: 9999; /* 层级最高 */  
+      left: 0;  
+      top: 0;  
+      width: 100%; /* 全屏宽度 */  
+      height: 100%; /* 全屏高度 */  
+      overflow: auto; /* 启用滚动条 */  
+      background-color: rgb(0,0,0); /* 黑色背景 */  
+      background-color: rgba(0,0,0,0.4); /* 黑色背景，半透明 */  
+    }  
+  
+    /* 弹窗内容的样式 */  
+    .modal-content {  
+      background-color: rgba(0,0,0,0);  
+      margin: 15% auto; /* 15% 从顶部开始，居中 */  
+      padding: 20px;  
+
+      width: 80%; /* 弹窗宽度 */  
+      max-width: 600px; /* 最大宽度 */  
+    }  
+  
+    /* 图片样式 */  
+    .modal-content img {  
+      width: 100%;  
+      height: 100%;  
+    }  
+  
+    /* 关闭按钮的样式 */  
+    .close {  
+      color: #aaaaaa;  
+      float: right;  
+      font-size: 28px;  
+      font-weight: bold;  
+    }  
+  
+    .close:hover,  
+    .close:focus {  
+      color: #000;  
+      text-decoration: none;  
+      cursor: pointer;  
+    }  
+  </style>  
+</head>  
+<body onload="showPopup()">  
+  
+<!-- 弹出框结构 -->  
+<div id="myModal" class="modal">  
+  <div class="modal-content">  
+    <span class="close" onclick="closePopup()">&times;</span>  
+    <img src="images/qrcode.png" alt="弹窗图片">  
+  </div>  
+</div>  
+  
+<script>  
+// 显示弹窗的函数  
+function showPopup() {  
+  var modal = document.getElementById("myModal");  
+  modal.style.display = "block";  
+}  
+  
+// 关闭弹窗的函数  
+function closePopup() {  
+  var modal = document.getElementById("myModal");  
+  modal.style.display = "none";  
+}  
+  
+// 点击弹窗以外的地方也可以关闭弹窗  
+window.onclick = function(event) {  
+  if (event.target == document.getElementById("myModal")) {  
+    closePopup();  
+  }  
+}  
+</script>  
+			<div id="wrapper">
+  
+			    
+					<header id="header" class="alt">
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">首页</a></li>
+							<li><a href="landing.html">配置地址</a></li>
+							<li><a href="generic.html">直播源</a></li>
+							<li><a href="elements.html">本地包</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner" class="major">
+						<div class="inner">
+							<header class="major">
+								<h1>夜来映幕挂山村,影机奏响东方红</h1>
+                                <h4>点击下方名称即可复制。</h4>
+                                <h4></h4>
+                                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                    <style>  .copy-link {  
+                                        color: white;  
+                                        cursor: pointer;  
+                                        
+                                    }  
+                                    </style>  
+                                    <a href="#" class="copy-link" onclick="copyLinkToClipboard('https://盒子迷.top/禁止贩卖'); return false;">  
+                                         盒子迷  
+                                    </a>、  
+                                    <a href="#" class="copy-link" onclick="copyLinkToClipboard('https://安卓哥.com'); return false;">  
+                                         安卓哥   
+                                    </a>、  
+                                    <a href="#" class="copy-link" onclick="copyLinkToClipboard('http://饭太硬.top/tv'); return false;">  
+                                         饭太硬 
+                                    </a>、 
+                                     <a href="#" class="copy-link" onclick="copyLinkToClipboard('http://43.242.202.173:25253/tvbox/saodiseng.php?id=369258147'); return false;">  
+                                         扫地僧 
+                                    </a>
+                                    <br>
+                                    <br>
+                                    <a href="#" class="copy-link" onclick="copyLinkToClipboard('http://我不是.肥猫.live/接口禁止贩卖'); return false;">  
+                                         肥猫
+                                    </a>、  
+                                     <a href="#" class="copy-link" onclick="copyLinkToClipboard('https://xhdwc.tk/0'); return false;">  
+                                         dxawi0
+                                    </a>、  
+                                     <a href="#" class="copy-link" onclick="copyLinkToClipboard('http://m.nxog.top/nxog/ou1.php?url=http://tv.nxog.top&b=欧歌'); return false;">  
+                                         欧歌多仓
+                                    </a>、 
+                                   
+                                    <script>  
+                                    function copyLinkToClipboard(link) {  
+                                        navigator.clipboard.writeText(link)  
+                                        .then(() => {  
+                                            console.log('链接已复制到剪贴板');  
+                                            alert('链接已复制到剪贴板'); // 使用alert来提示用户  
+                                            })  
+                                            .catch(err => {  
+                                                console.error('无法复制链接到剪贴板', err);  
+                                                alert('无法复制链接到剪贴板'); // 使用alert来显示错误信息  
+                                                });  
+                                                return false; // 防止链接的默认点击行为  
+                                                }  
+                                                </script>  
+                            </header>
+                                        <div class="content">
+                <!-- <p>A responsive site template designed by HTML5 UP<br />
+                    and released under the Creative Commons.</p> -->
+                <ul class="actions">
+                    <li><a href="https://souluoshou.lanzoum.com/b01lt4b4b" class="button next scrolly">CatBox</a></li>
+                </ul>
+                <ul class="actions">
+                     <li><a href="https://souluoshou.lanzoum.com/b01lt4b0h" class="button next scrolly">takagen</a></li>
+                </ul>
+                <ul class="actions">
+                    <li><a href="https://souluoshou.lanzoum.com/b01loi7pc" class="button next scrolly">影 视 仓></a></li>
+								</ul>
+								<ul class="actions">
+                    <li><a href="https://souluoshou.lanzoum.com/b01lw3vdc" class="button next scrolly">FongMi></a></li>
+                </ul>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

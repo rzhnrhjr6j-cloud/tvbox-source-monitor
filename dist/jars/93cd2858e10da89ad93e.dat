@@ -1,0 +1,193 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=icon href=/favicon.ico><title>时光星球运营管理系统</title><!--[if lt IE 11]><script>window.location.href='/html/ie.html';</script><![endif]--><style>html,
+        body,
+        #app {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .chromeframe {
+            margin: 0.2em 0;
+            background: #ccc;
+            color: #000;
+            padding: 0.2em 0;
+        }
+        
+        #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999999;
+        }
+        
+        #loader {
+            display: block;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #FFF;
+            -webkit-animation: spin 2s linear infinite;
+            -ms-animation: spin 2s linear infinite;
+            -moz-animation: spin 2s linear infinite;
+            -o-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+            z-index: 1001;
+        }
+        
+        #loader:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #FFF;
+            -webkit-animation: spin 3s linear infinite;
+            -moz-animation: spin 3s linear infinite;
+            -o-animation: spin 3s linear infinite;
+            -ms-animation: spin 3s linear infinite;
+            animation: spin 3s linear infinite;
+        }
+        
+        #loader:after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #FFF;
+            -moz-animation: spin 1.5s linear infinite;
+            -o-animation: spin 1.5s linear infinite;
+            -ms-animation: spin 1.5s linear infinite;
+            -webkit-animation: spin 1.5s linear infinite;
+            animation: spin 1.5s linear infinite;
+        }
+        
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        
+        #loader-wrapper .loader-section {
+            position: fixed;
+            top: 0;
+            width: 51%;
+            height: 100%;
+            background: #7171C6;
+            z-index: 1000;
+            -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+            transform: translateX(0);
+        }
+        
+        #loader-wrapper .loader-section.section-left {
+            left: 0;
+        }
+        
+        #loader-wrapper .loader-section.section-right {
+            right: 0;
+        }
+        
+        .loaded #loader-wrapper .loader-section.section-left {
+            -webkit-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+            -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+        }
+        
+        .loaded #loader-wrapper .loader-section.section-right {
+            -webkit-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+            transform: translateX(100%);
+            -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+        }
+        
+        .loaded #loader {
+            opacity: 0;
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+        
+        .loaded #loader-wrapper {
+            visibility: hidden;
+            -webkit-transform: translateY(-100%);
+            -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
+            -webkit-transition: all 0.3s 1s ease-out;
+            transition: all 0.3s 1s ease-out;
+        }
+        
+        .no-js #loader-wrapper {
+            display: none;
+        }
+        
+        .no-js h1 {
+            color: #222222;
+        }
+        
+        #loader-wrapper .load_title {
+            font-family: 'Open Sans';
+            color: #FFF;
+            font-size: 19px;
+            width: 100%;
+            text-align: center;
+            z-index: 9999999999999;
+            position: absolute;
+            top: 60%;
+            opacity: 1;
+            line-height: 30px;
+        }
+        
+        #loader-wrapper .load_title span {
+            font-weight: normal;
+            font-style: italic;
+            font-size: 13px;
+            color: #FFF;
+            opacity: 0.5;
+        }
+        
+        .web-office-default-container {
+            width: 82% !important;
+            height: 87% !important;
+            left: 205px !important;
+            top: 89px !important;
+            iframe {
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }</style><link href=/static/css/chunk-libs.ea078ece.css rel=stylesheet><link href=/static/css/app.6ca2083c.css rel=stylesheet></head><body><div id=app><div id=loader-wrapper><div id=loader></div><div class="loader-section section-left"></div><div class="loader-section section-right"></div><div class=load_title>正在加载系统资源，请耐心等待</div></div></div><script>(function(c){function e(e){for(var u,d,f=e[0],a=e[1],b=e[2],t=0,r=[];t<f.length;t++)d=f[t],Object.prototype.hasOwnProperty.call(h,d)&&h[d]&&r.push(h[d][0]),h[d]=0;for(u in a)Object.prototype.hasOwnProperty.call(a,u)&&(c[u]=a[u]);o&&o(e);while(r.length)r.shift()();return k.push.apply(k,b||[]),n()}function n(){for(var c,e=0;e<k.length;e++){for(var n=k[e],u=!0,d=1;d<n.length;d++){var f=n[d];0!==h[f]&&(u=!1)}u&&(k.splice(e--,1),c=a(a.s=n[0]))}return c}var u={},d={runtime:0},h={runtime:0},k=[];function f(c){return a.p+"static/js/"+({}[c]||c)+"."+{"chunk-003afec6":"d7f0ff64","chunk-005cb0c7":"b62c3358","chunk-00902f16":"cdd9fb02","chunk-0238e9b0":"ab4057c1","chunk-02d37482":"55cb2d19","chunk-0562bfd7":"f8fde710","chunk-2208efe8":"0e5064e5","chunk-ab8493c0":"82eb537e","chunk-44da3f76":"f8bdd1bf","chunk-1bbc4ebb":"5cbe79a3","chunk-64078b06":"f3a3c7b5","chunk-60c94b67":"fcf84aa9","chunk-033b6396":"e67802cd","chunk-03f99ff8":"31660a74","chunk-04621586":"1df3b9b9","chunk-089541d6":"edbd62de","chunk-0d316d5c":"b5dfabcd","chunk-0d9fc2f1":"2d60c6ef","chunk-0f3e6c00":"91601b4a","chunk-13318d5e":"f9e70035","chunk-13b2a991":"1cf891c4","chunk-9acf1c96":"f6435aca","chunk-dec8c3a8":"b8ce20ef","chunk-145195a4":"2fadfcc7","chunk-185cf313":"26118fce","chunk-1c87b656":"3d185a9a","chunk-2b02de32":"6e0da405","chunk-6f21db84":"422a33dd","chunk-1c9deffc":"8ea650c9","chunk-1db4e81f":"44ed3f33","chunk-210ca3e9":"0d927e2b","chunk-210ce324":"54aa8be5","chunk-8e4435fe":"875e683b","chunk-2516b444":"a1ac6666","chunk-263ce65c":"89d86bf6","chunk-2727631f":"6831c909","chunk-28c1a5ee":"61c3b696","chunk-2d0a4b5b":"b747cb58","chunk-2d0b1626":"97c8c87c","chunk-2d0b2b28":"9e271da6","chunk-7d9a040c":"2558d9bf","chunk-2d0b6563":"bed76934","chunk-1c590b5a":"81a14feb","chunk-44093faa":"7282005b","chunk-2d0bce05":"4efb331f","chunk-2d0c0500":"4d7a4251","chunk-2d0c8e18":"ec8ee47b","chunk-2d0da2ea":"aebbe243","chunk-2d0f012d":"ddeb06bb","chunk-2d20955d":"26228c6e","chunk-2d212f5b":"51dac5ce","chunk-2d22252c":"3fd4d7f5","chunk-2d229afd":"0ce1c620","chunk-2d230898":"2a73a5ef","chunk-2ee6c07a":"f4c2dbae","chunk-0280cad0":"d6b0b692","chunk-1565c94a":"8aa3ecf8","chunk-17ee1abe":"17145906","chunk-2d0d38ff":"0b214f4e","chunk-2d0de3b1":"0f723eba","chunk-2d212b99":"eadf8bea","chunk-548b6580":"083138bd","chunk-39413ce8":"3248116b","chunk-3a08d90c":"8e2608f6","chunk-3a93282a":"7a0b9b9c","chunk-3b07e117":"a1ada1c0","chunk-3b69bc00":"f800f2b7","chunk-3d402e1d":"0f22c2d1","chunk-447cad0c":"aa286636","chunk-4535cf4c":"5c78f452","chunk-45f94870":"d629f70c","chunk-46f2cf5c":"d196cba2","chunk-47169c88":"9245b204","chunk-0132f831":"a06a314b","chunk-0e6b74b6":"4a006e8d","chunk-22425499":"dc869911","chunk-4cb96352":"d8373acc","chunk-69cfa8fc":"edcc308e","chunk-6c306530":"8122e2b7","chunk-f4845968":"78fa5a50","chunk-2d0e2366":"00afd6b9","chunk-65989782":"70f6b76a","chunk-ed37dce4":"42cfa7e2","chunk-2d2102b6":"1d997a85","chunk-31eae13f":"cf8570f6","chunk-60006966":"f94961b1","chunk-774cc61d":"57895ceb","chunk-72e552b4":"d77a2e86","chunk-6d2c7c73":"02a886ea","chunk-78d2d26b":"46b96a8f","chunk-479d96c8":"beb1aea7","chunk-48efde72":"c012ae11","chunk-4906b976":"454f662c","chunk-49864e75":"6082c9e6","chunk-498e8e86":"102553d1","chunk-4d2f853f":"69949364","chunk-4f55a4ac":"8cf42a6c","chunk-52f07a84":"210263c5","chunk-56b611b1":"b700feba","chunk-582b2a7a":"d544a83f","chunk-5a1c9639":"6c52114d","chunk-5b83c289":"dc76859d","chunk-27d58c84":"0b1653db","chunk-61408335":"c6d64dec","chunk-6190eb30":"536637bb","chunk-6746b265":"cd591cb6","chunk-68702101":"1d7921e2","chunk-695e8401":"9677f84d","chunk-6aed2746":"559af970","chunk-723def06":"9d89db14","chunk-7272da79":"4a04b2de","chunk-74562182":"d2bf9dfb","chunk-7c3c0076":"fa931932","chunk-7d16949a":"e268c03a","chunk-7e203972":"544f47c0","chunk-8142c71e":"68b066a2","chunk-8579d4da":"b30546dc","chunk-8ee3fc10":"c9982da3","chunk-a770d534":"119a6e22","chunk-a9bdf55a":"af61d7e5","chunk-ad957a5e":"ef4d199b","chunk-ae40ba0c":"ca749093","chunk-b4457aa6":"9bbd0f0c","chunk-be6caf1c":"1a2702f6","chunk-d189cd38":"4e98d4ae","chunk-d19c1a98":"b2623df7","chunk-d836a26a":"996b00a9","chunk-e1a6d904":"d6e2be6f","chunk-e648d5fe":"e5317ef1","chunk-e93180e8":"a41def82"}[c]+".js"}function a(e){if(u[e])return u[e].exports;var n=u[e]={i:e,l:!1,exports:{}};return c[e].call(n.exports,n,n.exports,a),n.l=!0,n.exports}a.e=function(c){var e=[],n={"chunk-003afec6":1,"chunk-0562bfd7":1,"chunk-2208efe8":1,"chunk-ab8493c0":1,"chunk-44da3f76":1,"chunk-1bbc4ebb":1,"chunk-64078b06":1,"chunk-60c94b67":1,"chunk-033b6396":1,"chunk-089541d6":1,"chunk-0d316d5c":1,"chunk-0d9fc2f1":1,"chunk-0f3e6c00":1,"chunk-9acf1c96":1,"chunk-dec8c3a8":1,"chunk-145195a4":1,"chunk-185cf313":1,"chunk-6f21db84":1,"chunk-1c9deffc":1,"chunk-1db4e81f":1,"chunk-28c1a5ee":1,"chunk-7d9a040c":1,"chunk-1c590b5a":1,"chunk-44093faa":1,"chunk-2ee6c07a":1,"chunk-0280cad0":1,"chunk-1565c94a":1,"chunk-17ee1abe":1,"chunk-3a93282a":1,"chunk-3b07e117":1,"chunk-3d402e1d":1,"chunk-447cad0c":1,"chunk-4535cf4c":1,"chunk-45f94870":1,"chunk-46f2cf5c":1,"chunk-0e6b74b6":1,"chunk-4cb96352":1,"chunk-65989782":1,"chunk-ed37dce4":1,"chunk-774cc61d":1,"chunk-72e552b4":1,"chunk-6d2c7c73":1,"chunk-479d96c8":1,"chunk-48efde72":1,"chunk-4906b976":1,"chunk-49864e75":1,"chunk-4f55a4ac":1,"chunk-52f07a84":1,"chunk-56b611b1":1,"chunk-5a1c9639":1,"chunk-5b83c289":1,"chunk-61408335":1,"chunk-6190eb30":1,"chunk-6746b265":1,"chunk-695e8401":1,"chunk-6aed2746":1,"chunk-723def06":1,"chunk-7272da79":1,"chunk-74562182":1,"chunk-7c3c0076":1,"chunk-7d16949a":1,"chunk-8142c71e":1,"chunk-a770d534":1,"chunk-a9bdf55a":1,"chunk-ae40ba0c":1,"chunk-b4457aa6":1,"chunk-be6caf1c":1,"chunk-d189cd38":1,"chunk-d836a26a":1,"chunk-e648d5fe":1,"chunk-e93180e8":1};d[c]?e.push(d[c]):0!==d[c]&&n[c]&&e.push(d[c]=new Promise((function(e,n){for(var u="static/css/"+({}[c]||c)+"."+{"chunk-003afec6":"1f256d0f","chunk-005cb0c7":"31d6cfe0","chunk-00902f16":"31d6cfe0","chunk-0238e9b0":"31d6cfe0","chunk-02d37482":"31d6cfe0","chunk-0562bfd7":"d161a3d9","chunk-2208efe8":"7978c4e9","chunk-ab8493c0":"fd67c7b5","chunk-44da3f76":"b622f493","chunk-1bbc4ebb":"bdbdca12","chunk-64078b06":"6a831dc6","chunk-60c94b67":"1be21f03","chunk-033b6396":"dcc3f2f5","chunk-03f99ff8":"31d6cfe0","chunk-04621586":"31d6cfe0","chunk-089541d6":"2b5da5ac","chunk-0d316d5c":"f18fa864","chunk-0d9fc2f1":"1181a16b","chunk-0f3e6c00":"6a2ea6f1","chunk-13318d5e":"31d6cfe0","chunk-13b2a991":"31d6cfe0","chunk-9acf1c96":"068d0f89","chunk-dec8c3a8":"c2e558eb","chunk-145195a4":"b638faf7","chunk-185cf313":"7d4e42d7","chunk-1c87b656":"31d6cfe0","chunk-2b02de32":"31d6cfe0","chunk-6f21db84":"8a32d0f2","chunk-1c9deffc":"3dcaea16","chunk-1db4e81f":"d390db36","chunk-210ca3e9":"31d6cfe0","chunk-210ce324":"31d6cfe0","chunk-8e4435fe":"31d6cfe0","chunk-2516b444":"31d6cfe0","chunk-263ce65c":"31d6cfe0","chunk-2727631f":"31d6cfe0","chunk-28c1a5ee":"9ee79812","chunk-2d0a4b5b":"31d6cfe0","chunk-2d0b1626":"31d6cfe0","chunk-2d0b2b28":"31d6cfe0","chunk-7d9a040c":"290e53a6","chunk-2d0b6563":"31d6cfe0","chunk-1c590b5a":"dc0e621d","chunk-44093faa":"23645da5","chunk-2d0bce05":"31d6cfe0","chunk-2d0c0500":"31d6cfe0","chunk-2d0c8e18":"31d6cfe0","chunk-2d0da2ea":"31d6cfe0","chunk-2d0f012d":"31d6cfe0","chunk-2d20955d":"31d6cfe0","chunk-2d212f5b":"31d6cfe0","chunk-2d22252c":"31d6cfe0","chunk-2d229afd":"31d6cfe0","chunk-2d230898":"31d6cfe0","chunk-2ee6c07a":"84f98409","chunk-0280cad0":"bbfd831f","chunk-1565c94a":"a69308a4","chunk-17ee1abe":"ecea2c5f","chunk-2d0d38ff":"31d6cfe0","chunk-2d0de3b1":"31d6cfe0","chunk-2d212b99":"31d6cfe0","chunk-548b6580":"31d6cfe0","chunk-39413ce8":"31d6cfe0","chunk-3a08d90c":"31d6cfe0","chunk-3a93282a":"6d7c0300","chunk-3b07e117":"fb551b95","chunk-3b69bc00":"31d6cfe0","chunk-3d402e1d":"6d3a9b71","chunk-447cad0c":"56d050b1","chunk-4535cf4c":"ba76132b","chunk-45f94870":"7c74be68","chunk-46f2cf5c":"17fbdb6b","chunk-47169c88":"31d6cfe0","chunk-0132f831":"31d6cfe0","chunk-0e6b74b6":"74496202","chunk-22425499":"31d6cfe0","chunk-4cb96352":"9d903f50","chunk-69cfa8fc":"31d6cfe0","chunk-6c306530":"31d6cfe0","chunk-f4845968":"31d6cfe0","chunk-2d0e2366":"31d6cfe0","chunk-65989782":"78b49577","chunk-ed37dce4":"78b49577","chunk-2d2102b6":"31d6cfe0","chunk-31eae13f":"31d6cfe0","chunk-60006966":"31d6cfe0","chunk-774cc61d":"ec9cc045","chunk-72e552b4":"6dfe926d","chunk-6d2c7c73":"77139a2a","chunk-78d2d26b":"31d6cfe0","chunk-479d96c8":"e8c1661b","chunk-48efde72":"45267fe4","chunk-4906b976":"3a41df9f","chunk-49864e75":"86fcb3db","chunk-498e8e86":"31d6cfe0","chunk-4d2f853f":"31d6cfe0","chunk-4f55a4ac":"5a402cd2","chunk-52f07a84":"237a2e8b","chunk-56b611b1":"b777b0ed","chunk-582b2a7a":"31d6cfe0","chunk-5a1c9639":"a1dac8fa","chunk-5b83c289":"ce2a2394","chunk-27d58c84":"31d6cfe0","chunk-61408335":"20b33cd6","chunk-6190eb30":"c3b88392","chunk-6746b265":"3e10cd59","chunk-68702101":"31d6cfe0","chunk-695e8401":"c0b2bccf","chunk-6aed2746":"f97961b7","chunk-723def06":"237a2e8b","chunk-7272da79":"391e55b7","chunk-74562182":"018138ac","chunk-7c3c0076":"70e7bad1","chunk-7d16949a":"8814d919","chunk-7e203972":"31d6cfe0","chunk-8142c71e":"115fa795","chunk-8579d4da":"31d6cfe0","chunk-8ee3fc10":"31d6cfe0","chunk-a770d534":"67905b1f","chunk-a9bdf55a":"271d030f","chunk-ad957a5e":"31d6cfe0","chunk-ae40ba0c":"f18fa864","chunk-b4457aa6":"5c9b721c","chunk-be6caf1c":"2898decd","chunk-d189cd38":"9f39f96c","chunk-d19c1a98":"31d6cfe0","chunk-d836a26a":"32399c43","chunk-e1a6d904":"31d6cfe0","chunk-e648d5fe":"bbc9fa95","chunk-e93180e8":"f3724d9c"}[c]+".css",h=a.p+u,k=document.getElementsByTagName("link"),f=0;f<k.length;f++){var b=k[f],t=b.getAttribute("data-href")||b.getAttribute("href");if("stylesheet"===b.rel&&(t===u||t===h))return e()}var r=document.getElementsByTagName("style");for(f=0;f<r.length;f++){b=r[f],t=b.getAttribute("data-href");if(t===u||t===h)return e()}var o=document.createElement("link");o.rel="stylesheet",o.type="text/css",o.onload=e,o.onerror=function(e){var u=e&&e.target&&e.target.src||h,k=new Error("Loading CSS chunk "+c+" failed.\n("+u+")");k.code="CSS_CHUNK_LOAD_FAILED",k.request=u,delete d[c],o.parentNode.removeChild(o),n(k)},o.href=h;var i=document.getElementsByTagName("head")[0];i.appendChild(o)})).then((function(){d[c]=0})));var u=h[c];if(0!==u)if(u)e.push(u[2]);else{var k=new Promise((function(e,n){u=h[c]=[e,n]}));e.push(u[2]=k);var b,t=document.createElement("script");t.charset="utf-8",t.timeout=120,a.nc&&t.setAttribute("nonce",a.nc),t.src=f(c);var r=new Error;b=function(e){t.onerror=t.onload=null,clearTimeout(o);var n=h[c];if(0!==n){if(n){var u=e&&("load"===e.type?"missing":e.type),d=e&&e.target&&e.target.src;r.message="Loading chunk "+c+" failed.\n("+u+": "+d+")",r.name="ChunkLoadError",r.type=u,r.request=d,n[1](r)}h[c]=void 0}};var o=setTimeout((function(){b({type:"timeout",target:t})}),12e4);t.onerror=t.onload=b,document.head.appendChild(t)}return Promise.all(e)},a.m=c,a.c=u,a.d=function(c,e,n){a.o(c,e)||Object.defineProperty(c,e,{enumerable:!0,get:n})},a.r=function(c){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(c,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(c,"__esModule",{value:!0})},a.t=function(c,e){if(1&e&&(c=a(c)),8&e)return c;if(4&e&&"object"===typeof c&&c&&c.__esModule)return c;var n=Object.create(null);if(a.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:c}),2&e&&"string"!=typeof c)for(var u in c)a.d(n,u,function(e){return c[e]}.bind(null,u));return n},a.n=function(c){var e=c&&c.__esModule?function(){return c["default"]}:function(){return c};return a.d(e,"a",e),e},a.o=function(c,e){return Object.prototype.hasOwnProperty.call(c,e)},a.p="/",a.oe=function(c){throw console.error(c),c};var b=window["webpackJsonp"]=window["webpackJsonp"]||[],t=b.push.bind(b);b.push=e,b=b.slice();for(var r=0;r<b.length;r++)e(b[r]);var o=t;n()})([]);</script><script src=/static/js/chunk-elementUI.ac18d8bf.js></script><script src=/static/js/chunk-libs.56e91ec1.js></script><script src=/static/js/app.824ec46c.js></script></body></html>

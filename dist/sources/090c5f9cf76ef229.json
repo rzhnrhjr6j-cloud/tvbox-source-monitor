@@ -6,7 +6,7 @@
     {
       "name":"Live",
       "type":0,
-      "url": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/44be7d980c0cb51cb7ea.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/44be7d980c0cb51cb7ea.txt",
       "epg": "https://epg.cdn.loc.cc/?ch={name}&date={date}",
       "logo":"https://logo.wyfc.qzz.io/{name}.png"
     }

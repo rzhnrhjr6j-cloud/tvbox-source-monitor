@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FongMi - 影视APP - 下载</title>
+<style>
+  :root {
+    --text: #f4f7ff;
+    --text-dim: rgba(244, 247, 255, 0.72);
+    --glass: rgba(255, 255, 255, 0.12);
+    --glass-strong: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.28);
+    --accent: #7dd3fc;
+    --warn: #fde68a;
+    --shadow: 0 8px 32px rgba(10, 14, 50, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; min-height: 100%; }
+
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    background: #1b1f4b;
+    background-image:
+      radial-gradient(60vmax 60vmax at 10% 10%, #5b4bdb 0%, transparent 60%),
+      radial-gradient(55vmax 55vmax at 90% 20%, #0ea5a4 0%, transparent 60%),
+      radial-gradient(60vmax 60vmax at 50% 100%, #d946a8 0%, transparent 60%);
+    background-attachment: fixed;
+    padding: 48px 16px 64px;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  h1 {
+    margin: 0 0 4px;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .glass {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass { background: rgba(40, 44, 100, 0.85); }
+  }
+
+  .glass h2 {
+    margin: 0 0 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  ul { margin: 0; padding: 0; list-style: none; }
+
+  .glass li { padding: 3px 0; color: var(--text-dim); }
+  .glass li::marker { content: ""; }
+
+  .tips li {
+    position: relative;
+    padding-left: 18px;
+  }
+  .tips li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.85em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--warn);
+  }
+
+  .config-row {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    margin: 6px 0;
+  }
+
+  .copy-btn {
+    flex: none;
+    padding: 0 18px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-strong);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .copy-btn:hover { background: rgba(255, 255, 255, 0.32); }
+  .copy-btn.done {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0b2a3a;
+    font-weight: 600;
+  }
+
+  .config {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.95rem;
+    word-break: break-all;
+    user-select: all;
+  }
+
+  .path {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .links a {
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--glass-strong);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+  .links a:hover { background: rgba(255, 255, 255, 0.3); text-decoration: none; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-dim);
+    font-size: 0.92rem;
+  }
+
+  .downloads {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .dl {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .dl:hover {
+    background: rgba(255, 255, 255, 0.24);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  .dl .name { font-weight: 600; }
+  .dl .hint { font-size: 0.85rem; color: var(--text-dim); }
+  .dl.rec { border-color: rgba(125, 211, 252, 0.7); background: rgba(125, 211, 252, 0.16); }
+  .dl.rec .name::after {
+    content: "推荐";
+    margin-left: 8px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #0b2a3a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    vertical-align: 1px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 520px) {
+    body { padding: 32px 12px 48px; }
+    .glass { padding: 18px 18px; border-radius: 18px; }
+    .downloads { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dl { transition: none; }
+    .dl:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>FongMi - 影视APP - 下载</h1>
+
+  <section class="glass">
+    <h2>使用教程</h2>
+    <ul>
+      <li>下载软件后直接复制👇</li>
+      <li>
+        <div class="config-row">
+          <span class="config" id="config-url">https://tv.菜妮丝.top</span>
+          <button type="button" class="copy-btn" id="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>到 <span class="path">设置</span> - <span class="path">点播</span> - 使用配置接口</li>
+    </ul>
+    <div class="links">
+      <a target="_blank" rel="noopener" href="https://ys.菜妮丝.top">在线观影</a>
+      <a target="_blank" rel="noopener" href="https://m.172.org.cn/ProductEn/Index/f59a02b8a031c5c7">领取流量卡</a>
+    </div>
+  </section>
+
+  <section class="glass">
+    <h2>温馨提示</h2>
+    <ul class="tips">
+      <li>本站没有任何群和公众号</li>
+      <li>接口完全免费，切勿付费购买。</li>
+      <li>请勿相信视频中任何广告</li>
+    </ul>
+  </section>
+
+  <section class="glass">
+    <h2>本次更新</h2>
+    <ul>
+      <li># 電視版 5.6.8</li>
+<li>* 恢復直播雙擊開啟選單。</li>
+<li>* 音量增強上限提高至 20 dB。</li>
+<li>* 改善解碼設定與播放指令編輯介面。</li>
+<li>* 更新提示顯示電視版專屬的版本說明。</li>
+<li>* 改善 Dolby Vision Profile 7 解碼、mpv 字幕及原生播放元件。</li>
+<li># 手機版 5.6.8</li>
+<li>* 音量增強上限提高至 20 dB。</li>
+<li>* 改善解碼設定與播放指令編輯介面。</li>
+<li>* 改善雙指縮放邊界、回彈與倍率提示。</li>
+<li>* 更新提示顯示手機版專屬的版本說明。</li>
+<li>* 改善 Dolby Vision Profile 7 解碼、mpv 字幕及原生播放元件。</li>
+    </ul>
+    <div class="meta">
+      <span>当前版本：5.6.8</span>
+      <span>更新时间：2026-09-29 13:57:18</span>
+    </div>
+  </section>
+
+  <section class="glass">
+    <h2>下载地址</h2>
+    <div class="downloads">
+      <a class="dl" target="_blank" rel="noopener" href="https://cns.菜妮丝.top/https://github.com/FongMi/Release/releases/download/5.6.8/mobile-armeabi_v7a.apk">
+        <span class="name">手机版-32</span>
+        <span class="hint">点击下载</span>
+      </a>
+      <a class="dl rec" target="_blank" rel="noopener" href="https://cns.菜妮丝.top/https://github.com/FongMi/Release/releases/download/5.6.8/mobile-arm64_v8a.apk">
+        <span class="name">手机版-64</span>
+        <span class="hint">点击下载</span>
+      </a>
+      <a class="dl rec" target="_blank" rel="noopener" href="https://cns.菜妮丝.top/https://github.com/FongMi/Release/releases/download/5.6.8/leanback-armeabi_v7a.apk">
+        <span class="name">电视版-32</span>
+        <span class="hint">点击下载</span>
+      </a>
+      <a class="dl" target="_blank" rel="noopener" href="https://cns.菜妮丝.top/https://github.com/FongMi/Release/releases/download/5.6.8/leanback-arm64_v8a.apk">
+        <span class="name">电视版-64</span>
+        <span class="hint">点击下载</span>
+      </a>
+    </div>
+  </section>
+</div>
+<script>
+  (function () {
+    var btn = document.getElementById('copy-btn');
+    var text = document.getElementById('config-url').textContent.trim();
+    var timer;
+
+    function done(ok) {
+      btn.textContent = ok ? '已复制' : '请手动复制';
+      btn.classList.toggle('done', ok);
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        btn.textContent = '复制';
+        btn.classList.remove('done');
+      }, 1800);
+    }
+
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      done(ok);
+    }
+
+    btn.addEventListener('click', function () {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+      } else {
+        fallback();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-	"spider": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/3f4bd8cb55afcf52afac.jar",
+	"spider": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/3f4bd8cb55afcf52afac.jar",
 	"wallpaper": "https://tuapi.eees.cc/api.php?category=fengjing&type=302",
 	"sites": [
 		{
@@ -125,7 +125,7 @@
 			"name": "🅱哔哩┃合集",
 			"type": 3,
 			"api": "csp_Bili",
-			"jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/67169b06bbce198a4b97.jar",
+			"jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/67169b06bbce198a4b97.jar",
 			"style": {
 				"type": "list",
 				"ratio": 1.1
@@ -410,7 +410,7 @@
 			"api": "csp_Feiyang",
 			"url": "tv.m3u",
 			"ext": "https://gh-proxy.com/https://raw.githubusercontent.com/lystv/fmapp/ok/apk/allinone/v7/allinone",
-			"jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/3d530a7d545fffb38df6.jar"
+			"jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/3d530a7d545fffb38df6.jar"
 		}
 	]
 }

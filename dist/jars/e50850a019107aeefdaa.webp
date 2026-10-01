@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一个简洁的接口与资源导航页">
+  <title>嗷呜接口主页</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <canvas class="meteor-canvas" id="meteorCanvas" aria-hidden="true"></canvas>
+
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="site-title">
+      <div class="hero__content">
+        <h1 id="site-title">嗷呜的小屋</h1>
+        <p class="hero__slogan" id="dailySaying">又是美好的一天，当然要开心啦。</p>
+      </div>
+      <img class="hero__logo" src="./assets/logo.gif" alt="嗷呜导航 logo">
+    </section>
+
+    <section class="panel" aria-labelledby="api-title">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">点击即可复制</p>
+          <h2 id="api-title">空壳接口</h2>
+        </div>
+        <span class="section-count" id="apiCount"></span>
+      </div>
+      <div class="api-grid" id="apiGrid"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="resource-title">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">常用入口</p>
+          <h2 id="resource-title">免费资源推荐</h2>
+        </div>
+        <span class="section-count">精选导航</span>
+      </div>
+      <div class="resource-grid" id="resourceGrid"></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">已复制</div>
+
+  <footer class="site-footer">
+    <p>© <span id="currentYear"></span> 嗷呜导航</p>
+  </footer>
+
+  <script src="./script.php"></script>
+</body>
+</html>

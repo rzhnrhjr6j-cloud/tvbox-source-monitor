@@ -1,5 +1,5 @@
 {
-  "spider": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/01187a35a707f33e184f.jar",
+  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/01187a35a707f33e184f.jar",
   "wallpaper": "https://tuapi.eees.cc/api.php?category=biying&type=302",
   "logo": "http://rihou.cc:567/1.gif",
   "lives": [
@@ -22,7 +22,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/a823437ec1b8ca6a82c9.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/a823437ec1b8ca6a82c9.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
     },
     {
       "key": "影视",
@@ -30,7 +30,7 @@
       "type": 3,
       "api": "./lib/sdtv.js",
       "ext": "./lib/sdtv.txt",
-      "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/fc0c408f75566908acf4.jar"
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/fc0c408f75566908acf4.jar"
     },
     {
       "key": "春盈",
@@ -38,7 +38,7 @@
       "type": 3,
       "api": "./lib/sdtv.js",
       "ext": "./lib/517sdtv.txt",
-      "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/fc0c408f75566908acf4.jar"
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/fc0c408f75566908acf4.jar"
     },
     {
       "key": "Youtube",
@@ -49,7 +49,7 @@
       "quickSearch": 0,
       "changeable": 0,
       "timeout": 60,
-      "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/1137fdac52abfcf53c4e.jar",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/1137fdac52abfcf53c4e.jar",
       "ext": {
         "json": "./lib/youtube.json",
         "type": "直播#新闻#剧集#电影#综艺#纪录片#音乐#体育#动物#风光#放松#4K#HDR#movie#music#documentary#bbc documentary#national geographic documentary",
@@ -70,7 +70,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/63344691801bbe14e312.jar",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/63344691801bbe14e312.jar",
       "ext": "./lib/Bili短剧.json"
     },
     {
@@ -78,7 +78,7 @@
       "name": "葡萄短剧",
       "type": 3,
       "api": "csp_XBPQ",
-      "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/6b727c38e839f6f31a12.jar",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/6b727c38e839f6f31a12.jar",
       "ext": {
         "数组": "class=\"stui-vodlist__box&&</li",
         "分类url": "https://www.putaojuchang.com/show/{cateId}/area/{area}/class/{class}/by/{by}/page/{catePg}/year/{year}.html",
@@ -94,7 +94,7 @@
       "quickSearch": 1,
       "filterable": 1,
       "ext": "./lib/农民影视.json",
-      "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/a823437ec1b8ca6a82c9.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/a823437ec1b8ca6a82c9.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
     },
     {
       "key": "MV",
@@ -105,7 +105,7 @@
       "quickSearch": 1,
       "filterable": 1,
       "ext": "./lib/Bili.json",
-      "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/a823437ec1b8ca6a82c9.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/a823437ec1b8ca6a82c9.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
     },
     {
       "key": "csp_qiumi",
@@ -121,7 +121,7 @@
       "changeable": 0,
       "api": "./lib/JRKAN2.js",
       "ext": "./lib/JRKAN.js",
-      "jar": "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/jars/fb0dacb10c9ddbc3d51e.jar;md5;31e6192040d63714d063d5a5aba287a9"
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/fb0dacb10c9ddbc3d51e.jar;md5;31e6192040d63714d063d5a5aba287a9"
     },
     {
       "key": "cps_阿里",

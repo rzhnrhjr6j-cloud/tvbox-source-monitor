@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-01T01:28:21Z",
+  "generated_at": "2026-10-01T01:53:50Z",
   "urls": [
     {
       "name": "精东（24站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/e5e22b7e79834be5.json"
     },
     {
-      "name": "360┃直连（10站）",
+      "name": "360资源（10站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/9a4330fc96a7854a.json"
     },
     {
@@ -283,7 +283,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/509e0310bb5a1f49.json"
     },
     {
-      "name": "豆瓣┃[js]（43站）",
+      "name": "豆瓣┃[js]（39站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/4032d80ed99c5546.json"
     },
     {

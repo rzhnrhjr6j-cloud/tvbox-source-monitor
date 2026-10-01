@@ -66,6 +66,11 @@ def _looks_like_a_jar(blob: bytes) -> bool:
 # showing a broken one, since the next nightly build gets another chance.
 _DEAD_JAR_STATUS = frozenset({404, 410})
 
+# A reference on a host that cannot be reached at all will not be reachable for
+# its siblings either.  Status codes are deliberately absent: a 404 is one file
+# that is gone, not a host that is.
+_DEAD_HOST_ERRORS = frozenset({"DNS_ERROR", "CONNECT_ERROR", "TLS_ERROR", "SSRF_BLOCKED"})
+
 # [607KB/s|1290ms|稳] 360资源  ->  360资源
 _BRACKET_PREFIX = re.compile(r"^\s*[\[\(【（][^\]\)】）]{0,40}[\]\)】）]\s*")
 # pictographs, dingbats, flags, variation selectors - cosmetic noise in names
@@ -475,6 +480,17 @@ class ConfigMirror:
     # -- jar hosting -------------------------------------------------------
     def _host_file(self, url: str, plan: MirrorPlan, state: dict[str, int]) -> str | None:
         """Download ``url`` and publish it under a name derived from its bytes."""
+        if url in state.get("unavailable", ()):
+            # the same dead jar sits in dozens of configs; paying its timeout
+            # once per config is what emptied the hosting budget
+            return None
+        host = urlsplit(url).hostname or ""
+        if host and host in state.get("dead_hosts", ()):
+            # a host that does not resolve, refuses the connection or fails the
+            # TLS handshake will not serve its *other* files either.  One
+            # timeout per host, not one per jar on it.
+            state.setdefault("unavailable", set()).add(url)
+            return None
         if state["used"] >= self.jar_total_bytes:
             return None
         if state.get("started") is None:
@@ -492,6 +508,8 @@ class ConfigMirror:
             # reach than a phone in mainland China, so a reference it cannot
             # pull is one the client will report as a broken row.
             state.setdefault("unavailable", set()).add(url)
+            if host and result.error_code in _DEAD_HOST_ERRORS:
+                state.setdefault("dead_hosts", set()).add(host)
             LOGGER.warning("reference could not be fetched", extra={
                 "stage": "build", "check": "mirror", "reference": url,
                 "error": result.error_code or f"HTTP_{result.status}"})

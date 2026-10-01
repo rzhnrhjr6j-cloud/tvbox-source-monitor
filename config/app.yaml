@@ -164,7 +164,7 @@ output:
     jar_total_bytes: 268435456
     # ceiling for the whole hosting pass, in seconds; past it the remaining
     # references keep the author's URL rather than timing the build out
-    host_seconds: 1200
+    host_seconds: 2400
     # A second entry point serving the same list from a host mainland China
     # reaches more reliably than github.io.  "auto" derives
     # https://cdn.jsdelivr.net/gh/<owner>/<repo>@main/dist from GITHUB_REPOSITORY;

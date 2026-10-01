@@ -20,6 +20,7 @@ import pytest
 from app.build.builder import TVBOX_FILE, ConfigBuilder, _retarget_urls
 from app.models import Status
 from app.build.mirror import (
+    MirrorPlan,
     SOURCES_DIR,
     ConfigMirror,
     _clean_name,
@@ -378,6 +379,38 @@ def test_a_row_whose_jar_cannot_be_fetched_is_dropped(tmp_path):
         entry = plan.entries["2b" * 32]
         assert [site["key"] for site in json.loads(entry.content)["sites"]] == ["live-row"]
         assert entry.site_count == 1
+
+
+def test_an_unreachable_reference_is_fetched_only_once(tmp_path):
+    """The same dead jar sits in dozens of configs; its timeout is paid once."""
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+    state: dict = {"used": 0}
+    plan = MirrorPlan()
+    calls: list[str] = []
+    real_get = mirror.http.get
+
+    def counting_get(url, **kwargs):
+        calls.append(url)
+        return real_get(url, **kwargs)
+
+    mirror.http.get = counting_get
+    assert mirror._host_file("http://127.0.0.1:9/gone.jar", plan, state) is None
+    assert mirror._host_file("http://127.0.0.1:9/gone.jar", plan, state) is None
+    assert calls == ["http://127.0.0.1:9/gone.jar"]
+    assert state["unavailable"] == {"http://127.0.0.1:9/gone.jar"}
+
+
+def test_a_dead_host_is_not_probed_once_per_file(tmp_path):
+    """One DNS failure means every file on that host is unreachable."""
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+    state: dict = {"used": 0, "dead_hosts": {"gone.example"}}
+    plan = MirrorPlan()
+    assert mirror._host_file("https://gone.example/a.jar", plan, state) is None
+    assert mirror._host_file("https://gone.example/b.jar", plan, state) is None
+    assert not plan.jars
+    assert state["unavailable"] == {
+        "https://gone.example/a.jar", "https://gone.example/b.jar",
+    }
 
 
 def test_a_row_whose_jar_is_html_is_dropped(tmp_path):

@@ -1,5 +1,5 @@
 {
-    "spider": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/e4de6593640e22f63445.jar",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/if-z/A-Z/main/spider.jar",
     "wallpaper": "http://127.0.0.1:9978/file/TVBox/wallpaper.jpg",
     "logo": "http://127.0.0.1:9978/file/TVBox/logo.png",
     "homeLogo": "http://127.0.0.1:9978/file/TVBox/logo.png",

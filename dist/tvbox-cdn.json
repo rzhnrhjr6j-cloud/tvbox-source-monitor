@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-01T03:08:12Z",
+  "generated_at": "2026-10-01T05:01:55Z",
   "urls": [
     {
       "name": "精东（24站）",
@@ -83,10 +83,6 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/8cc472cb46b3f350.json"
     },
     {
-      "name": "豆瓣推荐 #1（48站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f4b1a21dc6cec966.json"
-    },
-    {
       "name": "玩偶哥哥┃4K弹幕（54站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b4aeb5e06b27585f.json"
     },
@@ -115,11 +111,11 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/a6e1934f1e86714b.json"
     },
     {
-      "name": "小雅TvBox（1站）",
+      "name": "小雅TvBox #1（1站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/39db17a602a1f883.json"
     },
     {
-      "name": "loopool/fan（1站）",
+      "name": "loopool/fan #1（1站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/d62e83b4ffe76f74.json"
     },
     {
@@ -235,7 +231,7 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/c3ee97ab1cf71b01.json"
     },
     {
-      "name": "豆瓣推荐 #2（1站）",
+      "name": "豆瓣推荐（1站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/58a52f00ca145b21.json"
     },
     {
@@ -267,7 +263,7 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f4ca0bb321d2f018.json"
     },
     {
-      "name": "免费丨接口（33站）",
+      "name": "免费丨接口 #1（33站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/d3a5a0d751ed22db.json"
     },
     {
@@ -281,6 +277,18 @@
     {
       "name": "┃MV┃视频（2站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/509e0310bb5a1f49.json"
+    },
+    {
+      "name": "免费丨接口 #2（33站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/faa07983f167c489.json"
+    },
+    {
+      "name": "小雅TvBox #2（1站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/7f18cdee8cfebadb.json"
+    },
+    {
+      "name": "loopool/fan #2（1站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/c6730288b4323d47.json"
     },
     {
       "name": "豆瓣┃[js]（39站）",
@@ -307,12 +315,12 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/745561a3739c9b0c.json"
     },
     {
-      "name": "公众号:挺好分享（46站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/66962c74ee814b9f.json"
-    },
-    {
       "name": "凌川初心公益接口（20站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/608363ac92aef198.json"
+    },
+    {
+      "name": "公众号:挺好分享（46站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/66962c74ee814b9f.json"
     }
   ]
 }

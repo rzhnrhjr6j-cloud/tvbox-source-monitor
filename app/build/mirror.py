@@ -189,6 +189,17 @@ _RELATIVE_REF = re.compile(
 # and re-served or the child is a list of rows that cannot open.
 _CHILD_REF = re.compile(r'"([A-Za-z_][A-Za-z0-9_]*)"(\s*:\s*")([^"]*)"')
 
+# A drpy script is a module, and its ``import`` specifiers are relative to the
+# script's own URL.  We republish the script under a name taken from its bytes,
+# in another directory, so "./cheerio.min.js" landed on a file that does not
+# exist.  Measured on the published set: 66 of 1082 scripts import a sibling
+# that way, 190 references in total.  The siblings travel too, and the
+# specifier becomes absolute so the answer cannot depend on which directory the
+# client believes the script lives in.
+_SCRIPT_REF = re.compile(
+    r"""((?:\bfrom|\bimport|\brequire\s*\()\s*\(?\s*)(["'])(\.{1,2}/[^"']+)\2"""
+)
+
 # A host that answers 200 with an error page is the shape a deleted author
 # repository leaves behind.  The client does not read HTML as a config; it
 # reports 解析配置失败 and moves on.
@@ -654,7 +665,41 @@ class ConfigMirror:
         state["used"] += len(blob)
         return name
 
-    def _host_file(self, url: str, plan: MirrorPlan, state: dict[str, Any]) -> str | None:
+    def _localise_script_refs(self, blob: bytes, url: str, plan: MirrorPlan,
+                              state: dict[str, Any], depth: int) -> bytes:
+        """Re-serve the sibling modules a script imports."""
+        base = self.public_base
+        if not base:
+            return blob
+        try:
+            text = blob.decode("utf-8")
+        except UnicodeDecodeError:
+            return blob
+        cache: dict[str, str | None] = state.setdefault("script_refs", {})
+        count = 0
+
+        def replace(match: re.Match[str]) -> str:
+            nonlocal count
+            specifier = match.group(3)
+            if specifier.startswith(".."):
+                return match.group(0)
+            target = urljoin(url, specifier)
+            if not target.startswith("http"):
+                return match.group(0)
+            if target not in cache:
+                cache[target] = self._host_file(target, plan, state, depth - 1)
+            name = cache[target]
+            if not name:
+                return match.group(0)
+            count += 1
+            quote = match.group(2)
+            return f"{match.group(1)}{quote}{base}/{JARS_DIR}/{name}{quote}"
+
+        rewritten = _SCRIPT_REF.sub(replace, text)
+        return rewritten.encode("utf-8") if count else blob
+
+    def _host_file(self, url: str, plan: MirrorPlan, state: dict[str, Any],
+                   script_depth: int = 1) -> str | None:
         """Download ``url`` and publish it under a name derived from its bytes."""
         blob = self._fetch_blob(url, state)
         if blob is None:
@@ -666,6 +711,8 @@ class ConfigMirror:
                 "stage": "build", "check": "mirror", "reference": url,
                 "error": "NOT_A_JAR"})
             return None
+        if script_depth > 0 and _extension(url) == ".js":
+            blob = self._localise_script_refs(blob, url, plan, state, script_depth)
         return self._publish(blob, url, plan, state)
 
     def _host_child(self, url: str, plan: MirrorPlan, state: dict[str, Any],

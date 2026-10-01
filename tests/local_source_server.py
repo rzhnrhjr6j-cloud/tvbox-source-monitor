@@ -352,6 +352,40 @@ class _Handler(BaseHTTPRequestHandler):
         if path == "/assets/cfg.json":
             return self._send(b'{"list": []}', content_type="application/json; charset=utf-8")
 
+        # A child whose crawler is a drpy module importing two siblings.
+        if path == "/modulechildren.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps({"urls": [{"name": "Module Child",
+                                      "url": f"{self.base}/assets/modulechild.json"}]},
+                           ensure_ascii=False).encode("utf-8"),
+                content_type="application/json; charset=utf-8")
+
+        if path == "/assets/modulechild.json":
+            return self._send(
+                json.dumps({
+                    "spider": "./module.js",
+                    "sites": [{"key": "plain", "name": "Plain",
+                               "api": "https://api.example.com/provide/vod/"}],
+                }, ensure_ascii=False).encode("utf-8"),
+                content_type="application/json; charset=utf-8")
+
+        if path == "/assets/module.js":
+            return self._send(
+                b'import cheerio from "./cheerio.min.js";\n'
+                b'import "./crypto-js.js";\n'
+                b'const rule = { version: 1 };\n',
+                content_type="application/javascript")
+
+        if path == "/assets/cheerio.min.js":
+            return self._send(b'module.exports = {};',
+                              content_type="application/javascript")
+
+        if path == "/assets/crypto-js.js":
+            return self._send(b'export const CryptoJS = {};',
+                              content_type="application/javascript")
+
         if path == "/assets/tinychild.json":
             return self._send("你好！".encode("utf-8"),
                               content_type="application/json; charset=utf-8")

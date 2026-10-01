@@ -484,6 +484,27 @@ def test_a_child_resolves_a_relative_reference_under_any_key(tmp_path):
         assert by_key["jsondict"]["ext"]["json"].startswith("https://me.github.io/repo/jars/")
 
 
+def test_a_js_spider_gets_its_sibling_modules_hosted_too(tmp_path):
+    """A drpy script is a module, and its imports are relative as well.
+
+    The engine resolves ``import`` against the script's own URL, and we publish
+    the script under a content-hash name in another directory - so
+    "./cheerio.min.js" landed on a file that does not exist.  Measured on the
+    published set: 66 of 1082 scripts import a sibling that way.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/modulechildren.json", source_id="8e" * 32)])
+        published = json.loads(plan.entries["8e" * 32].content)
+        child = json.loads(plan.jars[published["urls"][0]["url"].rsplit("/", 1)[-1]].decode("utf-8"))
+
+        script = plan.jars[child["spider"].rsplit("/", 1)[-1]].decode("utf-8")
+        assert 'from "https://me.github.io/repo/jars/' in script
+        assert 'import "https://me.github.io/repo/jars/' in script
+        assert '"./cheerio.min.js"' not in script
+        assert '"./crypto-js.js"' not in script
+
+
 def test_a_child_keeps_an_absolute_path_when_we_cannot_reserve_it(tmp_path):
     """A relative script we cannot mirror must not stay relative.
 

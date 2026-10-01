@@ -1,5 +1,5 @@
 {
-  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b1319f66baa8856ea5e1.jar;md5;13c9d9596894051bb29b2e586fa81acf",
+  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/SuperTreasure/tvbox/master/jar/custom_spider.jar;md5;13c9d9596894051bb29b2e586fa81acf",
   "sites": [
     {
       "key": "douyu",
@@ -19,7 +19,7 @@
       "key": "py_justLive",
       "name": "justLive",
       "type": 3,
-      "api": "./py/plugin/py_justLive.py",
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/SuperTreasure/tvbox/master/py/plugin/py_justLive.py",
       "searchable": 1,
       "playerType": 1,
       "changeable": 0,

@@ -607,8 +607,8 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "api": "./lib/file.html?id=2c9a91099696ce4301974da3916550ff&file=drpy2.min.js",
-      "ext": "./lib/ddys.txt",
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/ewctt/tvbox/main/lib/file.html?id=2c9a91099696ce4301974da3916550ff&file=drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ewctt/tvbox/main/lib/ddys.txt",
       "timeout": 15
     },
     {
@@ -1101,7 +1101,7 @@
     {
       "name": "范明明",
       "type": 0,
-      "url": "http://127.0.0.1:9978/proxy?do=live&url=https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/935849a6e2f083884a45.m3u",
+      "url": "http://127.0.0.1:9978/proxy?do=live&url=https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u",
       "playerType": 2,
       "timeout": 10
     },

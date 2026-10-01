@@ -1,5 +1,5 @@
 {
-  "spider": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/01187a35a707f33e184f.jar",
+  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/nzk0722.jar",
   "wallpaper": "https://tuapi.eees.cc/api.php?category=biying&type=302",
   "logo": "http://rihou.cc:567/1.gif",
   "lives": [
@@ -22,23 +22,23 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "jar": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/a823437ec1b8ca6a82c9.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/0819.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
     },
     {
       "key": "影视",
       "name": "猫TV直播",
       "type": 3,
-      "api": "./lib/sdtv.js",
-      "ext": "./lib/sdtv.txt",
-      "jar": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/fc0c408f75566908acf4.jar"
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/sdtv.js",
+      "ext": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/a29f262391b27cebe4e7.txt",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/sdtv.jar"
     },
     {
       "key": "春盈",
       "name": "春盈直播",
       "type": 3,
-      "api": "./lib/sdtv.js",
-      "ext": "./lib/517sdtv.txt",
-      "jar": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/fc0c408f75566908acf4.jar"
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/sdtv.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/517sdtv.txt",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/sdtv.jar"
     },
     {
       "key": "Youtube",
@@ -49,7 +49,7 @@
       "quickSearch": 0,
       "changeable": 0,
       "timeout": 60,
-      "jar": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/1137fdac52abfcf53c4e.jar",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/pg.jar",
       "ext": {
         "json": "./lib/youtube.json",
         "type": "直播#新闻#剧集#电影#综艺#纪录片#音乐#体育#动物#风光#放松#4K#HDR#movie#music#documentary#bbc documentary#national geographic documentary",
@@ -70,15 +70,15 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "jar": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/63344691801bbe14e312.jar",
-      "ext": "./lib/Bili短剧.json"
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/XYQH.jar",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/Bili短剧.json"
     },
     {
       "key": "XBPQ_葡萄",
       "name": "葡萄短剧",
       "type": 3,
       "api": "csp_XBPQ",
-      "jar": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/6b727c38e839f6f31a12.jar",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/HCCX.jar",
       "ext": {
         "数组": "class=\"stui-vodlist__box&&</li",
         "分类url": "https://www.putaojuchang.com/show/{cateId}/area/{area}/class/{class}/by/{by}/page/{catePg}/year/{year}.html",
@@ -93,8 +93,8 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/农民影视.json",
-      "jar": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/a823437ec1b8ca6a82c9.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/农民影视.json",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/0819.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
     },
     {
       "key": "MV",
@@ -104,8 +104,8 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/Bili.json",
-      "jar": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/a823437ec1b8ca6a82c9.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/Bili.json",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/0819.jar;md5;380A08E7735A86D85AAA24E9A1C77AF3"
     },
     {
       "key": "csp_qiumi",
@@ -119,9 +119,9 @@
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "api": "./lib/JRKAN2.js",
-      "ext": "./lib/JRKAN.js",
-      "jar": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/fb0dacb10c9ddbc3d51e.jar;md5;31e6192040d63714d063d5a5aba287a9"
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/JRKAN2.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/JRKAN.js",
+      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/JRKAN.jar;md5;31e6192040d63714d063d5a5aba287a9"
     },
     {
       "key": "cps_阿里",
@@ -140,7 +140,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/量子资源网.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/量子资源网.json"
     },
     {
       "key": "csp_非凡",
@@ -150,7 +150,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/非凡资源网.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/非凡资源网.json"
     },
     {
       "key": "csp_厂长",
@@ -160,7 +160,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/厂长影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/厂长影视.json"
     },
     {
       "key": "csp_低端",
@@ -170,7 +170,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/低端影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/低端影视.json"
     },
     {
       "key": "csp_圣城",
@@ -180,7 +180,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/圣城影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/圣城影视.json"
     },
     {
       "key": "csp_Free",
@@ -190,7 +190,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/Free影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/Free影视.json"
     },
     {
       "key": "csp_789",
@@ -200,7 +200,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/789影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/789影视.json"
     },
     {
       "key": "csp_徕米",
@@ -210,7 +210,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/徕米影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/徕米影视.json"
     },
     {
       "key": "csp_xBPQ_奇优",
@@ -220,7 +220,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/奇优影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/奇优影视.json"
     },
     {
       "key": "csp_农民",
@@ -230,7 +230,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/农民影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/农民影视.json"
     },
     {
       "key": "csp_大米",
@@ -240,7 +240,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/大米星球.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/大米星球.json"
     },
     {
       "key": "csp_TVB",
@@ -250,7 +250,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/TVB云播.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/TVB云播.json"
     },
     {
       "key": "csp_速映",
@@ -260,7 +260,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/速映影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/速映影视.json"
     },
     {
       "key": "csp_北川",
@@ -270,7 +270,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/北川影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/北川影视.json"
     },
     {
       "key": "csp_策驰",
@@ -280,7 +280,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/策驰影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/策驰影视.json"
     },
     {
       "key": "csp_345",
@@ -290,7 +290,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/345看片.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/345看片.json"
     },
     {
       "key": "csp_91",
@@ -300,7 +300,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/91影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/91影视.json"
     },
     {
       "key": "csp_七年",
@@ -310,7 +310,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/七年影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/七年影视.json"
     },
     {
       "key": "csp_酷茶",
@@ -320,7 +320,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/酷茶影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/酷茶影视.json"
     },
     {
       "key": "csp_007",
@@ -330,7 +330,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/007影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/007影视.json"
     },
     {
       "key": "csp_明帝",
@@ -340,7 +340,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/明帝影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/明帝影视.json"
     },
     {
       "key": "csp_苹果",
@@ -350,7 +350,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/苹果影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/苹果影视.json"
     },
     {
       "key": "csp_光棍",
@@ -360,7 +360,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/光棍影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/光棍影视.json"
     },
     {
       "key": "csp_米爱",
@@ -370,7 +370,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/米爱影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/米爱影视.json"
     },
     {
       "key": "csp_灰太狼",
@@ -380,7 +380,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/灰太狼影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/灰太狼影视.json"
     },
     {
       "key": "mtv_xp_动漫巴士",
@@ -390,7 +390,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/动漫巴士.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/动漫巴士.json"
     },
     {
       "key": "mtv_xp_维奇动漫",
@@ -400,7 +400,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./lib/维奇动漫.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/维奇动漫.json"
     }
   ],
   "parses": [

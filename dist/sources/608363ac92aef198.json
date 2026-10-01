@@ -29,7 +29,7 @@
             "key": "布布",
             "name": "♨️布布｜4K",
             "type": 3,
-            "api": "./js/布布.js",
+            "api": "https://raw.giteeusercontent.com/wpider/original-aspiration/raw/master/js/布布.js",
             "style": {
                 "type": "rect",
                 "ratio": 1.33

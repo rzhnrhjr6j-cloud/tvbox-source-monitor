@@ -1,5 +1,5 @@
 {
-  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/094c65c812a0fba43ff9.jar",
+  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/maliao0517/-/main/xykgz.jar",
   "wallpaper": "https://wp.upx8.com/api.php",
   "warningText": "资源来自网络，无盈利纯技术分享！[所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买]",
   "logo": "./logo.gif",
@@ -38,7 +38,7 @@
       "key": "金牌影视",
       "name": "🍄金牌ଉ影视",
       "type": 3,
-      "api": "./金牌影视.py",
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maliao0517/-/main/金牌影视.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
@@ -55,7 +55,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "./农民影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maliao0517/-/main/农民影视.json"
     },
     {
       "key": "蝴蝶",
@@ -173,7 +173,7 @@
       "key": "猎手影视",
       "name": "🍄猎手ଉ影院",
       "type": 3,
-      "api": "./猎手影视.py",
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maliao0517/-/main/猎手影视.py",
       "searchable": 1,
       "changeable": 1,
       "quickSearch": 1,
@@ -224,7 +224,7 @@
        "changeable": "0",
        "api": "csp_DuopanGuard",
        "filterable": 1,
-       "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/2d21ebbfcd55eb617fd5.jar",
+       "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/maliao0517/-/main/csp_woog.jar",
        "ext": {
              "site_urls": [
                  "https://woog.nxog.eu.org",
@@ -243,7 +243,7 @@
       "type": 3,
       "api": "csp_qiao2",
       "playerType": 2,
-      "ext": "./cksp.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maliao0517/-/main/cksp.json"
     },
     {
       "key": "星芽短剧",
@@ -258,7 +258,7 @@
       "key": "哔哩视频",
       "name": "🍄哔哩ଉ视频",
       "type": 3,
-      "api": "./哔哩视频.py",
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maliao0517/-/main/哔哩视频.py",
       "ext": {
           "json": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             }
@@ -443,7 +443,7 @@
         {
       "name": "音乐MTV",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/434e3230a4c7ea6d8fad.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/lystv/short/main/影视/tvb/MTV.txt",
       "playerType": 2,
       "ua": "okhttp/5.0.0-alpha.14",
       "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",

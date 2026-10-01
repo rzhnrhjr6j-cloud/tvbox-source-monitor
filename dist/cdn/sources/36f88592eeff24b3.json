@@ -180,71 +180,71 @@
             "key": "腾讯弹幕",
             "name": "腾讯｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/腾讯弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/腾讯弹幕.js"
         },
         {
             "key": "优酷弹幕",
             "name": "优酷｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/优酷弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/优酷弹幕.js"
         },
         {
             "key": "芒果弹幕",
             "name": "芒果｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/芒果弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/芒果弹幕.js"
         },
         {
             "key": "爱奇艺弹幕",
             "name": "爱奇艺｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/爱奇艺弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/爱奇艺弹幕.js"
         },
         {
             "key": "米兔弹幕",
             "name": "米兔｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/米兔弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/米兔弹幕.js"
         },
         {
             "key": "小熊弹幕",
             "name": "小熊｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/小熊弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/小熊弹幕.js"
         },
         {
             "key": "巨人弹幕",
             "name": "巨人｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/巨人弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/巨人弹幕.js"
         },
         {
             "key": "追剧弹幕",
             "name": "追剧｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/追剧弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/追剧弹幕.js"
         },
         {
             "key": "梦米弹幕",
             "name": "梦米｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/梦米弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/梦米弹幕.js"
         },
         {
             "key": "小虎斑弹幕",
             "name": "小虎斑｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/小虎斑弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/小虎斑弹幕.js"
         },
         {
             "key": "三六零弹幕",
@@ -586,7 +586,7 @@
             "name": "吉吉｜短剧",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/吉吉短剧.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/吉吉短剧.json"
         },
         {
             "key": "爱我短剧",
@@ -596,14 +596,14 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XBPQ/爱我短剧.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/爱我短剧.json"
         },
         {
             "key": "短剧网",
             "name": "短剧网｜短剧",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/短剧网.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/短剧网.json"
         },
         {
             "key": "短剧屋",
@@ -613,7 +613,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/短剧屋.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XYQHiker/短剧屋.json"
         },
         {
             "key": "韩小圈",
@@ -628,7 +628,7 @@
             "key": "新视觉影视",
             "name": "新视觉｜APP",
             "type": 3,
-            "api": "./PY/新视觉.py",
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/PY/新视觉.py",
             "searchable": 1,
             "changeable": 1,
             "quickSearch": 1,
@@ -669,7 +669,7 @@
             "key": "九龙影视",
             "name": "九龙｜APP",
             "type": 3,
-            "api": "./PY/九龙影视.py",
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/PY/九龙影视.py",
             "searchable": 1,
             "changeable": 1,
             "quickSearch": 1,
@@ -680,7 +680,7 @@
             "key": "猎手影视",
             "name": "猎手｜APP",
             "type": 3,
-            "api": "./PY/猎手影视.py",
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/PY/猎手影视.py",
             "searchable": 1,
             "changeable": 1,
             "quickSearch": 1,
@@ -806,8 +806,8 @@
             "key": "采集之王",
             "name": "采集｜合集",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/采集之王.js?type=url&params=../JSON/采集静态.json$1$1"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/采集之王.js?type=url&params=../JSON/采集静态.json$1$1"
         },
         {
             "key": "厂长资源",
@@ -900,7 +900,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XBPQ/可可影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/可可影视.json"
         },
         {
             "key": "海纳影视",
@@ -910,35 +910,35 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XBPQ/海纳影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/海纳影视.json"
         },
         {
             "key": "面包影视",
             "name": "面包｜影视",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/面包影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/面包影视.json"
         },
         {
             "key": "永乐影视",
             "name": "永乐｜影视",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/永乐影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/永乐影视.json"
         },
         {
             "key": "雪糕影视",
             "name": "雪糕｜影视",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/雪糕影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/雪糕影视.json"
         },
         {
             "key": "流光影视",
             "name": "流光｜影视",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/流光影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/流光影视.json"
         },
         {
             "key": "金牌影视",
@@ -994,49 +994,49 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/电影牛.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XYQHiker/电影牛.json"
         },
         {
             "key": "剧圈圈",
             "name": "剧圈圈｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/剧圈圈.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/剧圈圈.js"
         },
         {
             "key": "追剧迷",
             "name": "追剧迷｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/追剧迷.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/追剧迷.js"
         },
         {
             "key": "看了么",
             "name": "看了么｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/看了么.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/看了么.js"
         },
         {
             "key": "茶杯狐",
             "name": "茶杯狐｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/茶杯狐.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/茶杯狐.js"
         },
         {
             "key": "魔力高清",
             "name": "魔力｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/魔力高清.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/魔力高清.js"
         },
         {
             "key": "碟调影视",
             "name": "碟调｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/碟调影视.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/碟调影视.js"
         },
         {
             "key": "奇趣影视",
@@ -1046,7 +1046,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/奇趣影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XYQHiker/奇趣影视.json"
         },
         {
             "key": "1905",
@@ -1287,22 +1287,22 @@
             "key": "56动漫",
             "name": "56｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/56动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/56动漫.js"
         },
         {
             "key": "NT动漫",
             "name": "NT｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/NT动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/NT动漫.js"
         },
         {
             "key": "Anime1",
             "name": "Anime1｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/Anime1.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/Anime1.js"
         },
         {
             "key": "哆啦新番社",
@@ -1315,91 +1315,91 @@
             "style": {
                 "type": "list"
             },
-            "ext": "./XBPQ/哆啦新番社.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/哆啦新番社.json"
         },
         {
             "key": "动画片",
             "name": "动画片｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/动画片大全.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/动画片大全.js"
         },
         {
             "key": "路漫漫",
             "name": "路漫漫｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/路漫漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/路漫漫.js"
         },
         {
             "key": "动漫岛",
             "name": "动漫岛｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/动漫岛.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/动漫岛.js"
         },
         {
             "key": "去看吧",
             "name": "去看吧｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/去看吧.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/去看吧.js"
         },
         {
             "key": "爱弹幕",
             "name": "爱弹幕｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/爱弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/爱弹幕.js"
         },
         {
             "key": "异世界",
             "name": "异世界｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/异世界.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/异世界.js"
         },
         {
             "key": "好看动漫",
             "name": "好看｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/好看动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/好看动漫.js"
         },
         {
             "key": "奇米动漫",
             "name": "奇米｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/奇米动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/奇米动漫.js"
         },
         {
             "key": "怡萱动漫",
             "name": "怡萱｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/怡萱动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/怡萱动漫.js"
         },
         {
             "key": "花子动漫",
             "name": "花子｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/花子动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/花子动漫.js"
         },
         {
             "key": "动漫巴士",
             "name": "巴士｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/动漫巴士.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/动漫巴士.js"
         },
         {
             "key": "樱花动漫",
             "name": "樱花｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/樱花动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/樱花动漫.js"
         },
         {
             "key": "搜索弹幕",
@@ -1503,7 +1503,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XBPQ/修罗影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/修罗影视.json"
         },
         {
             "key": "80S",
@@ -1538,8 +1538,8 @@
             "key": "磁力熊",
             "name": "磁力熊｜磁力",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/磁力熊.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/磁力熊.js"
         },
         {
             "key": "美剧迷",
@@ -1567,7 +1567,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/电影港.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XYQHiker/电影港.json"
         },
         {
             "key": "布谷TV",
@@ -1577,7 +1577,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XBPQ/布谷TV.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XBPQ/布谷TV.json"
         },
         {
             "key": "BT天堂",
@@ -1587,7 +1587,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/BT天堂.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/XYQHiker/BT天堂.json"
         },
         {
             "key": "Mp4电影",
@@ -1685,8 +1685,8 @@
             "key": "短剧合集",
             "name": "短剧｜合集",
             "type": 3,
-            "api": "./JS/quark.min.js",
-            "ext": "./JS/短剧合集.js",
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/quark.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/alantang1977/TVBoxOSC/main/JS/短剧合集.js",
             "style": {
                 "type": "list"
             }

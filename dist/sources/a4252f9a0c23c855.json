@@ -468,29 +468,29 @@
             "key": "腾讯视频",
             "name": "腾讯｜视频",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/腾讯视频.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/腾讯视频.js"
         },
         {
             "key": "优酷视频",
             "name": "优酷｜视频",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/优酷视频.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/优酷视频.js"
         },
         {
             "key": "芒果视频",
             "name": "芒果｜视频",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/芒果视频.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/芒果视频.js"
         },
         {
             "key": "爱奇艺",
             "name": "爱奇艺｜视频",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/爱奇艺.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/爱奇艺.js"
         },
         {
             "key": "三六零",
@@ -854,7 +854,7 @@
             "key": "星芽短剧",
             "name": "星芽｜短剧",
             "type": 3,
-            "api": "./py/星芽短剧.py",
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/py/星芽短剧.py",
             "searchable": 1,
             "changeable": 1,
             "quickSearch": 1,
@@ -864,7 +864,7 @@
             "key": "剧王短剧",
             "name": "剧王｜短剧",
             "type": 3,
-            "api": "./py/剧王短剧.py",
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/py/剧王短剧.py",
             "searchable": 1,
             "changeable": 1,
             "quickSearch": 1,
@@ -955,35 +955,35 @@
             "name": "韩剧｜影视",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/韩剧看看.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/XBPQ/韩剧看看.json"
         },
         {
             "key": "小镇影视",
             "name": "小镇｜影视",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/小镇影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/XBPQ/小镇影视.json"
         },
         {
             "key": "面包影视",
             "name": "面包｜影视",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/面包影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/XBPQ/面包影视.json"
         },
         {
             "key": "永乐影视",
             "name": "永乐｜影视",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/永乐影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/XBPQ/永乐影视.json"
         },
         {
             "key": "采集之王",
             "name": "采集｜合集",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/采集之王.js?type=url&params=../json/采集静态.json$1$1"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/采集之王.js?type=url&params=../json/采集静态.json$1$1"
         },
         {
             "key": "1905",
@@ -1002,21 +1002,21 @@
             "style": {
                 "type": "list"
             },
-            "ext": "./XBPQ/哆啦新番社.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/XBPQ/哆啦新番社.json"
         },
         {
             "key": "Anime1",
             "name": "A1｜动漫",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/Anime1.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/Anime1.js"
         },
         {
             "key": "NT动漫",
             "name": "NT｜动漫",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/NT动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/NT动漫.js"
         },
         {
             "key": "漫国动漫",
@@ -1156,42 +1156,42 @@
             "name": "樱花｜动漫",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/樱花动漫.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/XBPQ/樱花动漫.json"
         },
         {
             "key": "巴士动漫",
             "name": "巴士｜动漫",
             "type": 3,
             "api": "csp_XYQHiker",
-            "ext": "./XYQHiker/巴士动漫.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/XYQHiker/巴士动漫.json"
         },
         {
             "key": "花子动漫",
             "name": "花子｜动漫",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/花子动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/花子动漫.js"
         },
         {
             "key": "爱动漫",
             "name": "爱动漫｜动漫",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/爱动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/爱动漫.js"
         },
         {
             "key": "路漫漫",
             "name": "路漫漫｜动漫",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/路漫漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/路漫漫.js"
         },
         {
             "key": "去看吧",
             "name": "去看吧｜动漫",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/去看吧.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/js/去看吧.js"
         },
         {
             "key": "荐片",
@@ -1227,7 +1227,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XBPQ/雪花.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/XBPQ/雪花.json"
         },
         {
             "key": "80S",
@@ -1275,7 +1275,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/电影港.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/XYQHiker/电影港.json"
         },
         {
             "key": "电影天堂",
@@ -1298,7 +1298,7 @@
                 "type": "list",
                 "ratio": 1.433
             },
-            "ext": "./json/aliShare.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/aliShare.json"
         },
         {
             "key": "夸克云盘",
@@ -1312,7 +1312,7 @@
                 "type": "list",
                 "ratio": 1.433
             },
-            "ext": "./json/quarkShare.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/quarkShare.json"
         },
         {
             "key": "UC云盘",
@@ -1326,7 +1326,7 @@
                 "type": "list",
                 "ratio": 1.433
             },
-            "ext": "./json/ucShare.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/ucShare.json"
         },
         {
             "key": "百度云盘",
@@ -1418,7 +1418,7 @@
             "style": {
                 "type": "list"
             },
-            "ext": "./json/alist.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/alist.json"
         },
         {
             "key": "88看球",
@@ -1440,7 +1440,7 @@
             "key": "爱听音乐",
             "name": "爱听｜音乐",
             "type": 3,
-            "api": "./py/爱听音乐.py"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/py/爱听音乐.py"
         },
         {
             "key": "六月听书",
@@ -1473,13 +1473,13 @@
             "key": "网络直播",
             "name": "网络｜直播",
             "type": 3,
-            "api": "./py/网络直播.py"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/py/网络直播.py"
         },
         {
             "key": "哔哩直播",
             "name": "哔哩｜直播",
             "type": 3,
-            "api": "./py/哔哩直播.py"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/py/哔哩直播.py"
         },
         {
             "key": "哔哩合集",
@@ -1671,7 +1671,7 @@
             "name": "养生｜知识",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "./XBPQ/养生堂.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/XBPQ/养生堂.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.597

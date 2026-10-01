@@ -586,8 +586,8 @@
       "key": "虎牙js",
       "name": "🐯虎牙┃直播",
       "type": 3,
-      "api": "./FTY/drpy2.min.js",
-      "ext": "./FTY/虎牙.js",
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/main/FTY/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/main/FTY/虎牙.js",
       "style": {
         "type": "rect",
         "ratio": 1.755
@@ -602,8 +602,8 @@
       "key": "斗鱼js",
       "name": "🐟斗鱼┃直播",
       "type": 3,
-      "api": "./FTY/drpy2.min.js",
-      "ext": "./FTY/斗鱼直播.js",
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/main/FTY/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/main/FTY/斗鱼直播.js",
       "style": {
         "type": "rect",
         "ratio": 1.755
@@ -618,8 +618,8 @@
       "key": "dr_兔小贝",
       "name": "📚儿童┃启蒙",
       "type": 3,
-      "api": "./FTY/drpy2.min.js",
-      "ext": "./FTY/%E5%85%94%E5%B0%8F%E8%B4%9D.js",
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/main/FTY/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/main/FTY/%E5%85%94%E5%B0%8F%E8%B4%9D.js",
       "style": {
         "type": "rect",
         "ratio": 1.597
@@ -657,7 +657,7 @@
     {
       "name": "切换直播源(2)",
       "type": 0,
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/17ec8494fa49cdf6037f.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt",
       "playerType": 2,
       "epg": "http://diyp5.112114.xyz/?ch={name}&date={date}",
       "logo": "https://epg.112114.xyz/logo/{name}.png"

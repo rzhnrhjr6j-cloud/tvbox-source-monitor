@@ -1,5 +1,5 @@
 {
-    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/7f309c1cfc08f1517a79.jar",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/spider.jar",
     "warningText": "【小布丁】提示：📢随缘维护切勿贩卖",
     "sites": [
         {
@@ -10,8 +10,8 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/兔小贝.json",
-            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/90583683bd79fe45e9ff.jar"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/兔小贝.json",
+            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/jars/csp_XYQHiker_兔小贝.jar"
         },
         {
             "key": "csp_XYQHiker_兔小贝2",
@@ -21,8 +21,8 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/兔小贝2.json",
-            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/90583683bd79fe45e9ff.jar"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/兔小贝2.json",
+            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/jars/csp_XYQHiker_兔小贝.jar"
         },
         {
             "key": "csp_XYQHiker_童趣",
@@ -32,8 +32,8 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/播视童趣.json",
-            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/90583683bd79fe45e9ff.jar"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/播视童趣.json",
+            "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/jars/csp_XYQHiker_兔小贝.jar"
         },
         {
             "key": "幼儿启蒙",
@@ -43,7 +43,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/幼儿启蒙.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/幼儿启蒙.json",
             "jar": ""
         },
         {
@@ -54,7 +54,7 @@
             "searchable": 0,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "./json/益智动画.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/益智动画.json",
             "jar": ""
         },
         {
@@ -65,7 +65,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/幼小衔接.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/幼小衔接.json",
             "jar": ""
         },
         {
@@ -76,7 +76,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/小灯塔百科.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/小灯塔百科.json",
             "jar": ""
         },
         {
@@ -87,7 +87,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/小灯塔科学.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/小灯塔科学.json",
             "jar": ""
         },
         {
@@ -98,7 +98,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/小灯塔地理.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/小灯塔地理.json",
             "jar": ""
         },
         {
@@ -109,7 +109,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/小灯塔国学.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/小灯塔国学.json",
             "jar": ""
         },
         {
@@ -120,7 +120,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/小灯塔人文.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/小灯塔人文.json",
             "jar": ""
         },
         {
@@ -131,7 +131,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童拼音.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/儿童拼音.json",
             "jar": ""
         },
         {
@@ -142,7 +142,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童识字.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/儿童识字.json",
             "jar": ""
         },
         {
@@ -153,7 +153,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童英语.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/儿童英语.json",
             "jar": ""
         },
         {
@@ -164,7 +164,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童硬笔.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/儿童硬笔.json",
             "jar": ""
         },
         {
@@ -175,7 +175,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童思维.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/儿童思维.json",
             "jar": ""
         },
         {
@@ -186,7 +186,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童口才.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/儿童口才.json",
             "jar": ""
         },
         {
@@ -197,7 +197,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童编程.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/儿童编程.json",
             "jar": ""
         },
         {
@@ -208,7 +208,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童武术.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/儿童武术.json",
             "jar": ""
         },
         {
@@ -219,7 +219,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/兴趣培养.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/兴趣培养.json",
             "jar": ""
         },
         {
@@ -230,7 +230,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/哔哩哔哩小学.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/哔哩哔哩小学.json",
             "jar": ""
         },
         {
@@ -241,7 +241,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/哔哩哔哩初中.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/哔哩哔哩初中.json",
             "jar": ""
         },
         {
@@ -252,36 +252,36 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/哔哩哔哩高中.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/哔哩哔哩高中.json",
             "jar": ""
         },
         {
             "key": "腾讯",
             "name": "🎅🏻 | 少儿频道1",
             "type": 3,
-            "api": "./api/drpy2.min.js",
-            "ext": "./js/腾讯.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/api/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/js/腾讯.js"
         },
         {
             "key": "芒果",
             "name": "👼🏻 | 少儿频道2",
             "type": 3,
-            "api": "./api/drpy2.min.js",
-            "ext": "./js/忙果.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/api/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/js/忙果.js"
         },
         {
             "key": "奇艺",
             "name": "🧚 | 少儿频道3",
             "type": 3,
-            "api": "./api/drpy2.min.js",
-            "ext": "./js/异兽.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/api/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/js/异兽.js"
         },
         {
             "key": "优酷",
             "name": "🧜‍| 少儿频道4",
             "type": 3,
-            "api": "./api/drpy2.min.js",
-            "ext": "./js/优酷.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/api/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/js/优酷.js"
         },
         {
             "key": "py_cctv_1",
@@ -291,7 +291,7 @@
             "searchable": 0,
             "quickSearch": 0,
             "filterable": 1,
-            "ext": "./py/py_cctv_1.py"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/py/py_cctv_1.py"
         },
         {
             "key": "ysjd",
@@ -301,7 +301,7 @@
             "searchable": 0,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "./json/央视经典.json",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/aying-jie/shaoer/main/json/央视经典.json",
             "jar": ""
         },
         {

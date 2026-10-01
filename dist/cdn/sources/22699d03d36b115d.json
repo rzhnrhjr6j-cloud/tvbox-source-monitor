@@ -518,29 +518,29 @@
       "key": "腾讯视频",
       "name": "腾讯｜视频",
       "type": "3",
-      "api": "./js/drpy2.min.js",
-      "ext": "./js/腾讯视频.js"
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/js/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/js/腾讯视频.js"
     },
     {
       "key": "优酷视频",
       "name": "优酷｜视频",
       "type": "3",
-      "api": "./js/drpy2.min.js",
-      "ext": "./js/优酷视频.js"
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/js/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/js/优酷视频.js"
     },
     {
       "key": "芒果视频",
       "name": "芒果｜视频",
       "type": "3",
-      "api": "./js/drpy2.min.js",
-      "ext": "./js/芒果视频.js"
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/js/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/js/芒果视频.js"
     },
     {
       "key": "爱奇艺",
       "name": "爱奇艺｜视频",
       "type": "3",
-      "api": "./js/drpy2.min.js",
-      "ext": "./js/爱奇艺.js"
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/js/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/js/爱奇艺.js"
     },
     {
       "key": "三六零",
@@ -592,7 +592,7 @@
       "key": "星芽短剧",
       "name": "星芽｜短剧",
       "type": "3",
-      "api": "./py/星芽短剧.py",
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/py/星芽短剧.py",
       "searchable": "1",
       "changeable": "1",
       "quickSearch": "1",
@@ -603,7 +603,7 @@
       "key": "剧王短剧",
       "name": "剧王｜短剧",
       "type": "3",
-      "api": "./py/剧王短剧.py",
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/py/剧王短剧.py",
       "searchable": "1",
       "changeable": "1",
       "quickSearch": "1",
@@ -674,28 +674,28 @@
       "name": "小镇｜影视",
       "type": "3",
       "api": "csp_XBPQ",
-      "ext": "./XBPQ/小镇影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/XBPQ/小镇影视.json"
     },
     {
       "key": "面包影视",
       "name": "面包｜影视",
       "type": "3",
       "api": "csp_XBPQ",
-      "ext": "./XBPQ/面包影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/XBPQ/面包影视.json"
     },
     {
       "key": "永乐影视",
       "name": "永乐｜影视",
       "type": "3",
       "api": "csp_XBPQ",
-      "ext": "./XBPQ/永乐影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/XBPQ/永乐影视.json"
     },
     {
       "key": "剧圈影视",
       "name": "剧圈｜影视",
       "type": "3",
       "api": "csp_XYQHiker",
-      "ext": "./XYQHiker/剧圈影视.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/Microbeta365/TVBox/main/XYQHiker/剧圈影视.json"
     },
     {
       "key": "1905",
@@ -711,7 +711,7 @@
     {
       "name": "Develop",
       "type": "0",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/17ec8494fa49cdf6037f.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt",
       "playerType": "2",
       "epg": "http://diyp5.112114.xyz/?ch={name}&date={date}",
       "logo": "https://epg.112114.xyz/logo/{name}.png"
@@ -719,7 +719,7 @@
     {
       "name": "Kimentanm",
       "type": "0",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/6bca02295ddf75141988.m3u",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
       "playerType": "2"
     }
   ],

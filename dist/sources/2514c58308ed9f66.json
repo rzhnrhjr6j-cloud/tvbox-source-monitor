@@ -1,6 +1,6 @@
 {
     "wallpaper": "http://p9.qhimg.com/bdr/__85/t01b895c2571882becf.jpg",
-    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/ef11c362c63f903b025b.jar",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/davidlee6628/ssr/main/custom_spider.jar",
     "lives": [
         {
             "group": "redirect",

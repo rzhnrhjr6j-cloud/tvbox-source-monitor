@@ -1,5 +1,5 @@
 {
-    "spider": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/e4de6593640e22f63445.jar;md5;a81afc9c6a39cbd3de57dd8fca9031e3",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/spider.jar;md5;a81afc9c6a39cbd3de57dd8fca9031e3",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
         {
@@ -72,8 +72,8 @@
             "key": "天堂短剧",
             "name": "天堂｜短剧",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/天堂短剧.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/天堂短剧.js"
         },
         {
             "key": "爱你短剧",
@@ -83,7 +83,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/爱你短剧.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XYQHiker/爱你短剧.json"
         },
         {
             "key": "河马短剧",
@@ -93,7 +93,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/河马短剧.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XYQHiker/河马短剧.json"
         },
         {
             "key": "短剧屋",
@@ -103,7 +103,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/短剧屋.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XYQHiker/短剧屋.json"
         },
         {
             "key": "韩小圈",
@@ -203,10 +203,10 @@
             "key": "采集之王",
             "name": "采集｜合集",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
             "searchable": 1,
             "quickSearch": 1,
-            "ext": "./JS/采集之王.js?type=url&params=../JSON/采集静态.json$1$1"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/采集之王.js?type=url&params=../JSON/采集静态.json$1$1"
         },
         {
             "key": "厂长资源",
@@ -397,7 +397,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XBPQ/新视觉.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XBPQ/新视觉.json"
         },
         {
             "key": "电影牛",
@@ -407,105 +407,105 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/电影牛.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XYQHiker/电影牛.json"
         },
         {
             "key": "爱奇艺",
             "name": "爱奇艺｜视频",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/爱奇艺.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/爱奇艺.js"
         },
         {
             "key": "三六零",
             "name": "三六零｜视频",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/三六零.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/三六零.js"
         },
         {
             "key": "剧圈圈",
             "name": "剧圈圈｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/剧圈圈.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/剧圈圈.js"
         },
         {
             "key": "追剧迷",
             "name": "追剧迷｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/追剧迷.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/追剧迷.js"
         },
         {
             "key": "看了么",
             "name": "看了么｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/看了么.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/看了么.js"
         },
         {
             "key": "茶杯狐",
             "name": "茶杯狐｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/茶杯狐.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/茶杯狐.js"
         },
         {
             "key": "魔力高清",
             "name": "魔力｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/魔力高清.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/魔力高清.js"
         },
         {
             "key": "腾讯视频",
             "name": "腾讯｜视频",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/腾讯视频.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/腾讯视频.js"
         },
         {
             "key": "优酷视频",
             "name": "优酷｜视频",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/优酷视频.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/优酷视频.js"
         },
         {
             "key": "芒果视频",
             "name": "芒果｜视频",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/芒果视频.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/芒果视频.js"
         },
         {
             "key": "搜狗视频",
             "name": "搜狗｜视频",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/搜狗视频.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/搜狗视频.js"
         },
         {
             "key": "哔哩视频",
             "name": "哔哩｜视频",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/哔哩视频.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/哔哩视频.js"
         },
         {
             "key": "碟调影视",
             "name": "碟调｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/碟调影视.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/碟调影视.js"
         },
         {
             "key": "畅梦影视",
             "name": "畅梦｜影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/畅梦影视.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/畅梦影视.js"
         },
         {
             "key": "五五影视",
@@ -515,7 +515,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XBPQ/五五影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XBPQ/五五影视.json"
         },
         {
             "key": "子子影视",
@@ -525,7 +525,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/子子影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XYQHiker/子子影视.json"
         },
         {
             "key": "奇趣影视",
@@ -535,7 +535,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/奇趣影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XYQHiker/奇趣影视.json"
         },
         {
             "key": "蚂蚁资源",
@@ -776,120 +776,120 @@
             "key": "56动漫",
             "name": "56｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/56动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/56动漫.js"
         },
         {
             "key": "58动漫",
             "name": "58｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/58动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/58动漫.js"
         },
         {
             "key": "NT动漫",
             "name": "NT｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/NT动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/NT动漫.js"
         },
         {
             "key": "Anime1",
             "name": "Anime1｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/Anime1.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/Anime1.js"
         },
         {
             "key": "动画片",
             "name": "动画片｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/动画片大全.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/动画片大全.js"
         },
         {
             "key": "路漫漫",
             "name": "路漫漫｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/路漫漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/路漫漫.js"
         },
         {
             "key": "动漫岛",
             "name": "动漫岛｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/动漫岛.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/动漫岛.js"
         },
         {
             "key": "去看吧",
             "name": "去看吧｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/去看吧.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/去看吧.js"
         },
         {
             "key": "爱弹幕",
             "name": "爱弹幕｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/爱弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/爱弹幕.js"
         },
         {
             "key": "异世界",
             "name": "异世界｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/异世界.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/异世界.js"
         },
         {
             "key": "好看动漫",
             "name": "好看｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/好看动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/好看动漫.js"
         },
         {
             "key": "奇米动漫",
             "name": "奇米｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/奇米动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/奇米动漫.js"
         },
         {
             "key": "怡萱动漫",
             "name": "怡萱｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/怡萱动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/怡萱动漫.js"
         },
         {
             "key": "花子动漫",
             "name": "花子｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/花子动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/花子动漫.js"
         },
         {
             "key": "动漫巴士",
             "name": "巴士｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/动漫巴士.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/动漫巴士.js"
         },
         {
             "key": "樱花动漫",
             "name": "樱花｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/樱花动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/樱花动漫.js"
         },
         {
             "key": "大米动漫",
             "name": "大米｜动漫",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/大米动漫.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/大米动漫.js"
         },
         {
             "key": "南瓜弹幕",
@@ -1000,36 +1000,36 @@
             "key": "悠悠弹幕",
             "name": "悠悠｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/悠悠弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/悠悠弹幕.js"
         },
         {
             "key": "星河弹幕",
             "name": "星河｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/星河弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/星河弹幕.js"
         },
         {
             "key": "小熊弹幕",
             "name": "小熊｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/小熊弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/小熊弹幕.js"
         },
         {
             "key": "巨人弹幕",
             "name": "巨人｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/巨人弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/巨人弹幕.js"
         },
         {
             "key": "小虎斑弹幕",
             "name": "小虎斑｜弹幕",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/小虎斑弹幕.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/小虎斑弹幕.js"
         },
         {
             "key": "三六零弹幕",
@@ -1475,14 +1475,14 @@
             "searchable": 1,
             "quickSearch": 0,
             "changeable": 0,
-            "ext": "./XPath/音范丝.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XPath/音范丝.json"
         },
         {
             "key": "磁力熊",
             "name": "磁力熊｜磁力",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/磁力熊.js"
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/磁力熊.js"
         },
         {
             "key": "美剧迷",
@@ -1510,7 +1510,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/电影港.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XYQHiker/电影港.json"
         },
         {
             "key": "小白网",
@@ -1521,7 +1521,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XBPQ/小白网.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XBPQ/小白网.json"
         },
         {
             "key": "布谷TV",
@@ -1531,7 +1531,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XBPQ/布谷TV.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XBPQ/布谷TV.json"
         },
         {
             "key": "BT天堂",
@@ -1541,7 +1541,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/BT天堂.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XYQHiker/BT天堂.json"
         },
         {
             "key": "Mp4电影",
@@ -1560,7 +1560,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/高清MP4.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XYQHiker/高清MP4.json"
         },
         {
             "key": "哔嘀影视",
@@ -1570,7 +1570,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./XYQHiker/哔嘀影视.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/XYQHiker/哔嘀影视.json"
         },
         {
             "key": "酷吧电影",
@@ -1659,8 +1659,8 @@
             "key": "短剧合集",
             "name": "短剧｜合集",
             "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/短剧合集.js",
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/js/drpy2.min.js",
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/js/短剧合集.js",
             "style": {
                 "type": "list"
             }

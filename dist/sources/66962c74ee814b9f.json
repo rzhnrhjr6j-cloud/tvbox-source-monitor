@@ -397,8 +397,8 @@
       "key": "虎牙js",
       "name": "🐯虎牙┃直播",
       "type": 3,
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/虎牙.js",
+      "api": "http://ztha.top/TVBox/lib/drpy2.min.js",
+      "ext": "http://ztha.top/TVBox/lib/虎牙.js",
       "style": {
         "type": "rect",
         "ratio": 1.755
@@ -413,8 +413,8 @@
       "key": "斗鱼js",
       "name": "🐟斗鱼┃直播",
       "type": 3,
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/斗鱼直播.js",
+      "api": "http://ztha.top/TVBox/lib/drpy2.min.js",
+      "ext": "http://ztha.top/TVBox/lib/斗鱼直播.js",
       "style": {
         "type": "rect",
         "ratio": 1.755
@@ -520,8 +520,8 @@
       "key": "dr_兔小贝",
       "name": "📚儿童┃启蒙",
       "type": 3,
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/兔小贝.js",
+      "api": "http://ztha.top/TVBox/lib/drpy2.min.js",
+      "ext": "http://ztha.top/TVBox/lib/兔小贝.js",
       "style": {
         "type": "rect",
         "ratio": 1.597

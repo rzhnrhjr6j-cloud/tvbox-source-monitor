@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+import ipaddress
 import os
 import re
 import time
@@ -70,6 +71,20 @@ _DEAD_JAR_STATUS = frozenset({404, 410})
 # its siblings either.  Status codes are deliberately absent: a 404 is one file
 # that is gone, not a host that is.
 _DEAD_HOST_ERRORS = frozenset({"DNS_ERROR", "CONNECT_ERROR", "TLS_ERROR", "SSRF_BLOCKED"})
+
+
+def _is_address_literal(host: str) -> bool:
+    """A bare address is not a host we can reason about.
+
+    ``127.0.0.1:9978`` is the client's own file server and a LAN address is a
+    box next to the user - a runner failing to reach either says nothing about
+    the client, so neither may poison the host cache for its siblings.
+    """
+    try:
+        ipaddress.ip_address(host)
+    except ValueError:
+        return False
+    return True
 
 # [607KB/s|1290ms|稳] 360资源  ->  360资源
 _BRACKET_PREFIX = re.compile(r"^\s*[\[\(【（][^\]\)】）]{0,40}[\]\)】）]\s*")
@@ -485,7 +500,7 @@ class ConfigMirror:
             # once per config is what emptied the hosting budget
             return None
         host = urlsplit(url).hostname or ""
-        if host and host in state.get("dead_hosts", ()):
+        if host and not _is_address_literal(host) and host in state.get("dead_hosts", ()):
             # a host that does not resolve, refuses the connection or fails the
             # TLS handshake will not serve its *other* files either.  One
             # timeout per host, not one per jar on it.
@@ -508,7 +523,8 @@ class ConfigMirror:
             # reach than a phone in mainland China, so a reference it cannot
             # pull is one the client will report as a broken row.
             state.setdefault("unavailable", set()).add(url)
-            if host and result.error_code in _DEAD_HOST_ERRORS:
+            if (host and not _is_address_literal(host)
+                    and result.error_code in _DEAD_HOST_ERRORS):
                 state.setdefault("dead_hosts", set()).add(host)
             LOGGER.warning("reference could not be fetched", extra={
                 "stage": "build", "check": "mirror", "reference": url,

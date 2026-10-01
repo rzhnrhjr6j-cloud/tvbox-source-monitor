@@ -172,7 +172,13 @@ _RAW_HOST = re.compile(r"https://raw\.githubusercontent\.com/")
 # .txt or .png.  Measured on the published set: 277 such references across 24
 # sources.  We republish the config from a different directory, so the relative
 # path stops landing on the jar and the client reports "jar加载失败".
-_RELATIVE_REF = re.compile(r'("(?:spider|jar)"\s*:\s*")(\.{1,2}/[^"]*)"')
+#
+# ``api`` is the same story when it names a script.  The csp pass leaves that
+# key alone on purpose - most of the time it is a live JSON endpoint, and
+# snapshotting an endpoint pins a live service - but "./lib/drpy2.min.js" is a
+# file, and a relative path points the client at *our* directory.  Measured on
+# the published set: 1011 such references across 31 sources, every one a 404.
+_RELATIVE_REF = re.compile(r'("(?:spider|jar|api|ext)"\s*:\s*")(\.{1,2}/[^"]*)"')
 
 
 # A multi-warehouse child names its crawler, its csp scripts and its site jars
@@ -191,6 +197,40 @@ def _looks_like_html(blob: bytes) -> bool:
     if blob[:3] == b"\xef\xbb\xbf":
         blob = blob[3:]
     return blob.lstrip()[:64].lower().startswith(_HTML_HEADS)
+
+
+# The other two shapes a host retries into when the path it used to serve is
+# gone: a cover image, or a CDN's one-pixel placeholder.
+_IMAGE_HEADS = (
+    b"\x89PNG\r\n\x1a\n", b"\xff\xd8\xff", b"GIF87a", b"GIF89a", b"RIFF", b"WEBP",
+)
+
+# Below this a body cannot be a config.  An empty one is 12 bytes of JSON
+# (``{"sites":[]}``), and the two greetings an expired CDN answered with on the
+# live set - "你好！" and "后会有期！！" - are 9 and 19 bytes.  The threshold
+# sits just above them so a short live playlist still travels.
+_MIN_CHILD_BYTES = 24
+
+
+def _looks_like_a_config(blob: bytes) -> bool:
+    """Report whether ``blob`` is a shape the client can open as a config.
+
+    A multi-warehouse child URL that has been taken down rarely answers 404 -
+    measured on the live twelve multi-warehouse sources, 139 children answered
+    200 with 5 HTML error pages, 8 two-character greetings, a cover image and
+    three pictures.  The client reads none of them as a config and reports
+    解析配置失败, so the child is dropped instead of republished.
+
+    Everything else is deliberately left alone.  Authors ship configs the
+    client decrypts itself - ``key**base64``, the ``$#246#$`` envelope, a ``//``
+    comment header in front of the JSON - and dropping those would hide a
+    source that opens perfectly well.
+    """
+    if _looks_like_html(blob):
+        return False
+    if any(blob.startswith(magic) for magic in _IMAGE_HEADS):
+        return False
+    return len(blob.lstrip()) >= _MIN_CHILD_BYTES
 
 
 def rewrite_relative(text: str, origin: str) -> tuple[str, int]:
@@ -591,11 +631,16 @@ class ConfigMirror:
         blob = self._fetch_blob(url, state)
         if blob is None:
             return None
-        if _looks_like_html(blob):
+        if not _looks_like_a_config(blob):
             state.setdefault("unavailable", set()).add(url)
-            LOGGER.warning("child config is an error page", extra={
+            # remembered apart from "we could not fetch it": this one is
+            # provably not a config, so the parent drops the row rather than
+            # leaving the client a child that can only fail
+            state.setdefault("not_a_config", set()).add(url)
+            LOGGER.warning("child config is not a config", extra={
                 "stage": "build", "check": "mirror", "reference": url,
-                "error": "CHILD_IS_HTML"})
+                "error": "CHILD_IS_HTML" if _looks_like_html(blob)
+                         else "CHILD_IS_NOT_A_CONFIG"})
             return None
         origin = url
         prefix = self.inner_proxy
@@ -706,6 +751,12 @@ class ConfigMirror:
             url = reference.strip()
             if not url.startswith("http"):
                 return match.group(0)
+            if f"{prefix}{url}".startswith(base + "/"):
+                # our own published copy.  A child we just re-served carries
+                # the same raw.githubusercontent prefix, and fetching it back
+                # would ask the site for a file this run has not pushed yet -
+                # a 404 that then prunes the child we just finished hosting.
+                return match.group(0)
             # fetch through the proxy hop the text actually carries: the bare
             # origin is the one host the client - and often we - cannot reach
             name = seen.get(url) if url in seen else self._host_file(f"{prefix}{url}", plan, state)
@@ -785,22 +836,38 @@ class ConfigMirror:
             children = container.get("urls")
             if not isinstance(children, list):
                 return
-            for index, child in enumerate(children):
+            kept: list[Any] = []
+            not_a_config = state.get("not_a_config") or set()
+            for child in children:
                 target = child.get("url") if isinstance(child, dict) else child
                 if not isinstance(target, str) or not target.startswith(("http://", "https://")):
+                    kept.append(child)
                     continue
                 if target.startswith(base + "/"):
+                    kept.append(child)
                     continue
                 if target not in cache:
                     cache[target] = self._host_child(target, plan, state, depth)
                 name = cache[target]
                 if not name:
+                    if target in not_a_config:
+                        # an error page or a picture, not a config: the row
+                        # could only ever report 解析配置失败, so it does not
+                        # travel with the list
+                        count += 1
+                        continue
+                    # we could not reach it, but the client still might: the
+                    # author's own URL beats no row at all
+                    kept.append(child)
                     continue
                 if isinstance(child, dict):
                     child["url"] = f"{base}/{JARS_DIR}/{name}"
+                    kept.append(child)
                 else:
-                    children[index] = f"{base}/{JARS_DIR}/{name}"
+                    kept.append(f"{base}/{JARS_DIR}/{name}")
                 count += 1
+            if len(kept) != len(children):
+                container["urls"] = kept
 
         rows: list[Any]
         wrapped = False
@@ -939,8 +1006,15 @@ class ConfigMirror:
                 if self.on_failure != "keep":
                     plan.dropped.add(source.id)
                 continue
-            text, hosted = self._localise_refs(text, plan, jar_state)
+            # the children go first.  _localise_refs snapshots every URL that
+            # carries the proxy hop, and after rewrite_inner above that is
+            # exactly what a multi-warehouse child URL looks like: running it
+            # first republished the child's bytes verbatim under our own path,
+            # which moved the directory its "./jar/x.jar" references were
+            # written against.  Twelve shells shipped that way, and every one
+            # answered 解析配置失败 the moment the client opened it.
             text, bare_hosted = self._localise_structured(text, plan, jar_state)
+            text, hosted = self._localise_refs(text, plan, jar_state)
             hosted += bare_hosted
             if self.prune_dead_jars and self.host_jars:
                 text, unfetched, drop_source = self._prune_unavailable(text, jar_state)
@@ -961,6 +1035,21 @@ class ConfigMirror:
                     if self.on_failure != "keep":
                         plan.dropped.add(source.id)
                     continue
+            final = None
+            try:
+                final = json.loads(text)
+            except ValueError:
+                final = None
+            if isinstance(final, dict) and not (
+                    final.get("sites") or final.get("lives") or final.get("urls")):
+                # every child was an error page, or every row lost its jar:
+                # there is nothing left for the client to open
+                LOGGER.warning("source has nothing the client can open", extra={
+                    "stage": "build", "check": "mirror", "source_id": source.id,
+                    "url": url, "error": "NO_OPENABLE_ROWS"})
+                if self.on_failure != "keep":
+                    plan.dropped.add(source.id)
+                continue
             content = text.encode("utf-8")
 
             used += len(content)

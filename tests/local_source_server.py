@@ -98,6 +98,16 @@ class _Handler(BaseHTTPRequestHandler):
         parts = urlsplit(self.path)
         path, query = parts.path, parse_qs(parts.query)
 
+        if path.startswith("/proxy/"):
+            # An acceleration proxy hands back whatever the URL behind it names.
+            # A proxied path that points back at this server's asset tree is
+            # served as that path; everything else falls through to the canned
+            # body the /proxy/ route below answers with, the way a real proxy
+            # answers for a file this server does not hold.
+            inner = urlsplit(path[len("/proxy/"):]).path or "/"
+            if inner.startswith("/assets/"):
+                path = inner
+
         if state.get("request_log") is not None:
             state["request_log"].append(self.path)
         if state.get("delay"):
@@ -271,6 +281,77 @@ class _Handler(BaseHTTPRequestHandler):
                 ).encode("utf-8"),
                 content_type="application/json; charset=utf-8",
             )
+
+        # The shape the real multi-warehouse sources have: the child URL carries
+        # an acceleration-proxy hop, which is what rewrite_inner leaves behind
+        # for every raw.githubusercontent reference.
+        if path == "/proxiedshell.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "urls": [
+                            {"name": "Proxied Child",
+                             "url": f"{self.base}/proxy/{self.base}/assets/childconfig.json"},
+                        ]
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        # A host that answers every path with its error page, a cover image or a
+        # two-character greeting.  None of the three is a config.
+        if path == "/assets/tinychild.json":
+            return self._send("你好！".encode("utf-8"),
+                              content_type="application/json; charset=utf-8")
+
+        if path == "/assets/picturechild.png":
+            return self._send(
+                b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01"
+                b"\x08\x00\x00\x00\x00:~\x9bU",
+                content_type="image/png",
+            )
+
+        if path == "/junkchildren.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "urls": [
+                            {"name": "Good Child", "url": f"{self.base}/assets/childconfig.json"},
+                            {"name": "Greeting", "url": f"{self.base}/assets/tinychild.json"},
+                            {"name": "Picture", "url": f"{self.base}/assets/picturechild.png"},
+                            {"name": "Error Page", "url": f"{self.base}/assets/htmlchild.json"},
+                        ]
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        # A source whose csp script is named relatively, the way 31 of the
+        # published sources name theirs.
+        if path == "/relativeapi.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "sites": [
+                            {"key": "js", "name": "Js", "type": 3, "api": "./lib/drpy2.min.js"},
+                        ]
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        if path == "/lib/drpy2.min.js":
+            return self._send(b"var rule = { version: 1 };",
+                              content_type="application/javascript")
 
         if path == "/assets/fakejar.jar":
             # a deleted author repo behind a soft 404: HTTP 200, HTML body

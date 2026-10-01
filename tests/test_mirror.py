@@ -427,6 +427,62 @@ def test_a_child_keeps_an_absolute_path_when_we_cannot_reserve_it(tmp_path):
         assert child["sites"][0]["api"] == f"{server.base}/assets/missing.js"
 
 
+def test_a_child_behind_the_proxy_hop_is_opened_up_not_snapshotted(tmp_path):
+    """The real breakage: the child URL carries our proxy hop.
+
+    rewrite_inner points every raw.githubusercontent reference at the proxy, and
+    _localise_refs snapshots everything behind the hop as if it were a file.  Run
+    in that order, the child's bytes were republished verbatim - so its
+    "./spider.jar" resolved against *our* directory.  Twelve live multi-warehouse
+    sources shipped that way, and every one of them answered 解析配置失败 the
+    moment the client opened it.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True,
+            "public_base": "https://me.github.io/repo",
+            "inner_proxy": f"{server.base}/proxy/",
+        })
+        plan = mirror.prepare([stub_source(f"{server.base}/proxiedshell.json", source_id="7a" * 32)])
+        published = json.loads(plan.entries["7a" * 32].content)
+
+        hosted = published["urls"][0]["url"]
+        assert hosted.startswith("https://me.github.io/repo/jars/")
+        child = json.loads(plan.jars[hosted.rsplit("/", 1)[-1]].decode("utf-8"))
+        assert child["spider"].startswith("https://me.github.io/repo/jars/")
+        assert child["sites"][0]["api"].startswith("https://me.github.io/repo/jars/")
+        assert child["sites"][2]["jar"].startswith("https://me.github.io/repo/jars/")
+
+
+def test_a_shell_drops_a_child_that_is_a_picture_or_a_greeting(tmp_path):
+    """A 200 is not proof of a config either.
+
+    A child URL that has been taken down answers with the host's error page, a
+    cover image or a two-character greeting.  The client reports 解析配置失败
+    for each one, so the row does not travel with the list.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/junkchildren.json", source_id="8b" * 32)])
+        published = json.loads(plan.entries["8b" * 32].content)
+        assert [child["name"] for child in published["urls"]] == ["Good Child"]
+
+
+def test_a_relative_csp_script_is_resolved_not_left_on_our_directory(tmp_path):
+    """``./lib/drpy2.min.js`` is a file, not a spider key.
+
+    31 of the published sources name their csp script that way - 1011 references
+    in total.  We republish the config from another directory, so a relative
+    path lands on our host and 404s.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/relativeapi.json", source_id="9c" * 32)])
+        site = json.loads(plan.entries["9c" * 32].content)["sites"][0]
+        assert site["api"] == f"{server.base}/lib/drpy2.min.js"
+        assert not site["api"].startswith("./")
+
+
 def test_an_unreachable_reference_is_fetched_only_once(tmp_path):
     """The same dead jar sits in dozens of configs; its timeout is paid once."""
     mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})

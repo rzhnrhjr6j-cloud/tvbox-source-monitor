@@ -380,6 +380,21 @@ def test_a_row_whose_jar_cannot_be_fetched_is_dropped(tmp_path):
         assert entry.site_count == 1
 
 
+def test_a_row_whose_jar_is_html_is_dropped(tmp_path):
+    """A 200 is not proof of a jar.
+
+    豆瓣┃[js] shipped a ``.jar`` whose host answered 200 with an HTML error
+    page.  Every status probe called it alive; the client called it
+    "解析配置失败".  Only the bytes can separate the two, so the row goes.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/fakejar.json", source_id="4d" * 32)])
+        entry = plan.entries["4d" * 32]
+        assert [site["key"] for site in json.loads(entry.content)["sites"]] == ["live-row"]
+        assert entry.site_count == 1
+
+
 def test_nothing_is_dropped_when_pruning_is_off(tmp_path):
     with LocalSourceServer() as server:
         mirror = make_mirror(tmp_path, {

@@ -48,6 +48,18 @@ def _extension(url: str) -> str:
     suffix = os.path.splitext(urlsplit(url).path)[1]
     return suffix if _SAFE_SUFFIX.match(suffix) else ".dat"
 
+
+# A crawler jar is a ZIP - or, for a couple of authors, a bare DEX.  A host
+# that answers 200 with an HTML error page (a deleted repo behind a soft 404)
+# looks alive to every status-based probe, and the client still reports
+# "jar加载失败" the moment the source is opened.  Only the bytes can tell.
+_JAR_MAGIC = (b"PK\x03\x04", b"PK\x05\x06", b"dex\n")
+
+
+def _looks_like_a_jar(blob: bytes) -> bool:
+    """Report whether ``blob`` starts with a container a client can load."""
+    return any(blob.startswith(magic) for magic in _JAR_MAGIC)
+
 # A site whose crawler jar is gone cannot open in the client; 影视仓 reports it
 # as "jar加载失败".  Only a hard 404/410 counts as gone - a timeout or a 5xx is
 # as likely to be our probe as the jar, and hiding a working site is worse than
@@ -485,6 +497,13 @@ class ConfigMirror:
                 "error": result.error_code or f"HTTP_{result.status}"})
             return None
         blob = result.content
+        if _extension(url) == ".jar" and not _looks_like_a_jar(blob):
+            # a 200 that is not a jar is a broken row, not a working one
+            state.setdefault("unavailable", set()).add(url)
+            LOGGER.warning("reference is not a jar", extra={
+                "stage": "build", "check": "mirror", "reference": url,
+                "error": "NOT_A_JAR"})
+            return None
         if state["used"] + len(blob) > self.jar_total_bytes:
             return None
         name = f"{hashlib.sha256(blob).hexdigest()[:20]}{_extension(url)}"

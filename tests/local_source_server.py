@@ -187,6 +187,13 @@ class _Handler(BaseHTTPRequestHandler):
         if path == "/notjson.json":
             return self._send(b"this is definitely not json", content_type="application/json")
 
+        if path == "/assets/fakejar.jar":
+            # a deleted author repo behind a soft 404: HTTP 200, HTML body
+            return self._send(
+                b"<!DOCTYPE html><html><body>404 Not Found</body></html>",
+                content_type="text/html; charset=utf-8",
+            )
+
         if path == "/assets/spider.jar":
             return self._send(b"PK\x03\x04 fake jar payload", content_type="application/octet-stream")
 
@@ -323,6 +330,26 @@ class _Handler(BaseHTTPRequestHandler):
                     {
                         "spider": "http://127.0.0.1:9/spider.jar",
                         "sites": [dict(SITE_TEMPLATE, key="inherits", name="Inherits")],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        # A row whose jar answers 200 with HTML instead of a ZIP - the shape
+        # that reads as alive to a status probe and as 解析配置失败 to the client.
+        if path == "/fakejar.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "sites": [
+                            dict(SITE_TEMPLATE, key="fake-row", name="Fake Row",
+                                 jar=f"{self.base}/assets/fakejar.jar"),
+                            dict(SITE_TEMPLATE, key="live-row", name="Live Row",
+                                 jar=f"{self.base}/assets/spider.jar"),
+                        ],
                     },
                     ensure_ascii=False,
                 ).encode("utf-8"),

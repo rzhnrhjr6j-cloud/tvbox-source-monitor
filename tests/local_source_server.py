@@ -233,6 +233,45 @@ class _Handler(BaseHTTPRequestHandler):
                 content_type="application/json; charset=utf-8",
             )
 
+        # A child whose script cannot be re-served: the client may still reach
+        # the origin even when we cannot, and resolving the path absolutely is
+        # strictly better than leaving "./x.js" pointing at our own directory.
+        if path == "/assets/deadrefchild.json":
+            return self._send(
+                json.dumps(
+                    {
+                        "spider": "./spider.jar",
+                        "sites": [{"key": "a", "name": "A", "api": "./missing.js"}],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        # The same error page behind a UTF-8 BOM, which is how a Chinese host
+        # usually serves one.
+        if path == "/assets/bomhtmlchild.json":
+            return self._send(
+                b"\xef\xbb\xbf<!DOCTYPE html><html><body>404</body></html>",
+                content_type="text/html; charset=utf-8",
+            )
+
+        if path == "/multihome2.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "urls": [
+                            {"name": "Dead Ref", "url": f"{self.base}/assets/deadrefchild.json"},
+                            {"name": "Bom Html", "url": f"{self.base}/assets/bomhtmlchild.json"},
+                        ]
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
         if path == "/assets/fakejar.jar":
             # a deleted author repo behind a soft 404: HTTP 200, HTML body
             return self._send(

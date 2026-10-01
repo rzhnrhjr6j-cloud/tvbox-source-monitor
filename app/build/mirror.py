@@ -188,6 +188,8 @@ _HTML_HEADS = (b"<!doctype", b"<html", b"<head", b"<!--", b"<meta", b"<body")
 
 
 def _looks_like_html(blob: bytes) -> bool:
+    if blob[:3] == b"\xef\xbb\xbf":
+        blob = blob[3:]
     return blob.lstrip()[:64].lower().startswith(_HTML_HEADS)
 
 
@@ -599,13 +601,29 @@ class ConfigMirror:
         prefix = self.inner_proxy
         if prefix and origin.startswith(prefix):
             origin = origin[len(prefix):]
-        text, hosted = self._localise_child_refs(blob.decode("utf-8-sig", "replace"),
-                                                 origin, plan, state)
+        original = blob.decode("utf-8-sig", "replace")
+        text, hosted = self._localise_child_refs(original, origin, plan, state)
         if depth > 0:
             text, deeper = self._localise_structured(text, plan, state, depth - 1)
             hosted += deeper
-        if hosted:
+        if text != original:
+            # compare against the text, not against the hosted count: a
+            # relative reference we could not re-serve is still rewritten to
+            # its absolute origin, and dropping that change would put the
+            # relative path back on our own directory
             blob = text.encode("utf-8")
+        if hosted:
+            # the same pruning the top-level config gets, so a child never
+            # lists a row whose jar we could not mirror
+            pruned, dropped, drop_child = self._prune_unavailable(
+                blob.decode("utf-8", "replace"), state)
+            if drop_child:
+                LOGGER.warning("child config dropped for an unreachable spider", extra={
+                    "stage": "build", "check": "mirror", "reference": url,
+                    "error": "CHILD_SPIDER_UNAVAILABLE"})
+                return None
+            if dropped:
+                blob = pruned.encode("utf-8")
         starts_json = blob.lstrip()[:1] in (b"{", b"[")
         return self._publish(blob, url, plan, state,
                              suffix=".json" if starts_json else None)

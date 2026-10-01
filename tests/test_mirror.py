@@ -408,6 +408,25 @@ def test_a_multi_warehouse_child_is_opened_up_not_just_copied(tmp_path):
         assert child["sites"][1]["api"] == "https://api.example.com/provide/vod/"
 
 
+def test_a_child_keeps_an_absolute_path_when_we_cannot_reserve_it(tmp_path):
+    """A relative script we cannot mirror must not stay relative.
+
+    Leaving "./missing.js" in place points the client at *our* directory, which
+    is a guaranteed 404.  The origin may still be reachable from the client, so
+    the reference is resolved even when the file is not re-served.
+    """
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = mirror.prepare([stub_source(f"{server.base}/multihome2.json", source_id="6f" * 32)])
+        published = json.loads(plan.entries["6f" * 32].content)
+
+        # the BOM-prefixed error page is a deleted repo, not a config
+        assert [c["name"] for c in published["urls"]] == ["Dead Ref"]
+        child = json.loads(plan.jars[published["urls"][0]["url"].rsplit("/", 1)[-1]].decode("utf-8"))
+        assert child["spider"].startswith("https://me.github.io/repo/jars/")
+        assert child["sites"][0]["api"] == f"{server.base}/assets/missing.js"
+
+
 def test_an_unreachable_reference_is_fetched_only_once(tmp_path):
     """The same dead jar sits in dozens of configs; its timeout is paid once."""
     mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})

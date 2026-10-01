@@ -30,7 +30,10 @@ import sys
 import urllib.error
 import urllib.request
 
-DEFAULT_ENTRY = "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor/tvbox.json"
+DEFAULT_ENTRY = (
+    "https://gh-proxy.com/https://raw.githubusercontent.com/"
+    "rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/tvbox.json"
+)
 TAIL = re.compile(r"(\$.*|;md5;.*)$")
 OK = {200, 206, 301, 302, 303, 307, 308}
 

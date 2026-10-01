@@ -118,8 +118,18 @@ output:
   # -------------------------------------------------------------------------
   mirror:
     enabled: true
-    # empty = derive from GITHUB_REPOSITORY as https://<owner>.github.io/<repo>
+    # explicit base for every published URL; empty = derive from git_mirror
     public_base: ""
+    # Which host the client actually downloads from.  Measured from a mainland
+    # connection: github.io delivers a 460KB crawler jar in 9.5s on average
+    # (34s worst), a GitHub mirror in 1.5s - and the client downloads the
+    # spider the moment a source is opened, so the slow host is what
+    # "解析配置失败" was.  Empty = publish on <owner>.github.io/<repo>, which is
+    # kept as the fallback entry.
+    # verified reachable from CN: https://gh-proxy.com/  https://ghproxy.net/
+    #                              https://ghfast.top/
+    git_mirror: "https://gh-proxy.com/"
+    git_ref: "main"
     # drop = do not publish a source we could not mirror (it would be dead in
     # the client anyway); keep = fall back to the original URL
     on_failure: drop

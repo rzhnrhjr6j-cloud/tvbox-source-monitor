@@ -491,8 +491,19 @@ def test_enabling_rewrite_proxies_inner_references(tmp_path):
 # configuration
 # ---------------------------------------------------------------------------
 def test_public_base_is_derived_from_the_repository(tmp_path, monkeypatch):
+    """github.io is the fallback; the mirror is what the client downloads from.
+
+    Measured from a mainland connection: github.io delivered a 460KB crawler jar
+    in 9.5s on average and 34s at worst, the mirror in 1.5s.  The client
+    downloads the spider as it opens a source, so the slow host was the whole
+    difference between a list that opens and "解析配置失败".
+    """
     monkeypatch.setenv("GITHUB_REPOSITORY", "someone/tvbox-source-monitor")
     assert make_mirror(tmp_path, {"enabled": True}).public_base == (
+        "https://gh-proxy.com/https://raw.githubusercontent.com/"
+        "someone/tvbox-source-monitor/main/dist"
+    )
+    assert make_mirror(tmp_path, {"enabled": True, "git_mirror": ""}).public_base == (
         "https://someone.github.io/tvbox-source-monitor"
     )
 

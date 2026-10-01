@@ -279,12 +279,22 @@ class ConfigMirror:
         configured = str(self.settings.get("public_base") or "").strip()
         if configured:
             return configured.rstrip("/")
-        # <owner>.github.io/<repo> is where the pages workflow publishes dist/
         repository = os.environ.get("GITHUB_REPOSITORY", "").strip()
-        if "/" in repository:
-            owner, repo = repository.split("/", 1)
-            return f"https://{owner}.github.io/{repo}"
-        return ""
+        if "/" not in repository:
+            return ""
+        owner, repo = repository.split("/", 1)
+        # Measured from a mainland connection: github.io serves a 460KB crawler
+        # jar at ~50KB/s - 9.5s on average and 34s at worst - while the same
+        # bytes through a GitHub mirror come back in 1.5s.  The client opens a
+        # source by downloading its spider, so the slow host is what "解析配置失败"
+        # actually was.  Every entry, child config and jar therefore goes
+        # through the mirror; <owner>.github.io stays as the fallback entry.
+        mirror = str(self.settings.get("git_mirror") or "").strip()
+        if mirror:
+            ref = str(self.settings.get("git_ref") or "main").strip() or "main"
+            return (f"{mirror.rstrip('/')}/https://raw.githubusercontent.com/"
+                    f"{owner}/{repo}/{ref}/dist")
+        return f"https://{owner}.github.io/{repo}"
 
     @property
     def on_failure(self) -> str:
@@ -309,7 +319,9 @@ class ConfigMirror:
         if "/" not in repository:
             return ""
         owner, repo = repository.split("/", 1)
-        return f"https://cdn.jsdelivr.net/gh/{owner}/{repo}@main/dist"
+        # fastly answered in 0.40s from a mainland connection where the bare
+        # cdn.jsdelivr.net host averaged 7.07s with 24s spikes
+        return f"https://fastly.jsdelivr.net/gh/{owner}/{repo}@main/dist"
 
     @property
     def inner_proxy(self) -> str:
@@ -583,6 +595,20 @@ class ConfigMirror:
                 container[key] = replacement
                 count += 1
 
+        def swap_rows(container: dict[str, Any], key: str) -> None:
+            nonlocal count
+            rows = container.get(key)
+            if not isinstance(rows, list):
+                return
+            for index, row in enumerate(rows):
+                if isinstance(row, dict):
+                    swap(row, "url")
+                else:
+                    replacement = localise(row)
+                    if replacement:
+                        rows[index] = replacement
+                        count += 1
+
         rows: list[Any]
         wrapped = False
         if isinstance(config, list):
@@ -599,6 +625,9 @@ class ConfigMirror:
             for row in config.get("sites") or []:
                 if isinstance(row, dict):
                     swap(row, "jar")
+            # a multi-warehouse config hands the client a second list; those
+            # children are files in exactly the same sense the spider is
+            swap_rows(config, "urls")
         else:
             return text, 0
 
@@ -640,6 +669,14 @@ class ConfigMirror:
         elif isinstance(config, dict):
             if gone(config.get("spider")):
                 return text, 0, True
+            children = config.get("urls")
+            if isinstance(children, list):
+                kept_children = [
+                    child for child in children
+                    if not gone(child.get("url") if isinstance(child, dict) else child)
+                ]
+                dropped += len(children) - len(kept_children)
+                config["urls"] = kept_children
             rows = config.get("sites")
             if isinstance(rows, list):
                 kept = [row for row in rows
@@ -648,9 +685,12 @@ class ConfigMirror:
                 if not dropped:
                     return text, 0, False
                 config["sites"] = kept
-                # a spider nothing can reach is only noise once its rows are gone
-                if not kept and gone(config.get("spider")):
-                    config.pop("spider", None)
+            # everything the config pointed at is gone, so there is nothing
+            # left for the client to open
+            if not config.get("sites") and not config.get("urls"):
+                return text, 0, True
+            if not config.get("sites") and gone(config.get("spider")):
+                config.pop("spider", None)
         if not dropped:
             return text, 0, False
         return json.dumps(config, ensure_ascii=False, separators=(",", ":")), dropped, False

@@ -1649,7 +1649,7 @@
             "indexs": 0,
             "ext": {
                 "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
-                "share": "./JS/alishare.txt"
+                "share": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/JS/alishare.txt"
             },
             "style": {
                 "type": "list"
@@ -2080,7 +2080,7 @@
         {
             "name": "直播1",
             "type": 0,
-            "url": "./live.txt",
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/maoystv/api/main/live.txt",
             "playerType": 1,
             "epg": "http://epg.112114.xyz/?ch={name}&date={date}"
         },

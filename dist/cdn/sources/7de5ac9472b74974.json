@@ -29,7 +29,7 @@
       "name": "猫TV直播",
       "type": 3,
       "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/sdtv.js",
-      "ext": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/a29f262391b27cebe4e7.txt",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/sdtv.txt",
       "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/sdtv.jar"
     },
     {
@@ -51,7 +51,7 @@
       "timeout": 60,
       "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/pg.jar",
       "ext": {
-        "json": "./lib/youtube.json",
+        "json": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/%E5%A4%87%E4%BB%BD/tvboxTW/%E6%9C%AC%E5%9C%B0%E3%80%90D%E4%BD%AC%E7%BA%BF%E8%B7%AF%E3%80%91/lib/youtube.json",
         "type": "直播#新闻#剧集#电影#综艺#纪录片#音乐#体育#动物#风光#放松#4K#HDR#movie#music#documentary#bbc documentary#national geographic documentary",
         "keywords": "排行榜,HOT,TRENDS,热门话题,热门趋势,热门综艺,热门电影,热门电视剧,小姐姐",
         "codecs": "",

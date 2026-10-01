@@ -460,7 +460,7 @@
                 "ratio": 1.433
             },
             "ext": {
-                "json": "./json/哔哩视频.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/哔哩视频.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             }
         },
@@ -1495,7 +1495,7 @@
                 "ratio": 1.433
             },
             "ext": {
-                "json": "./json/哔哩合集.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/哔哩合集.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             }
         },
@@ -1508,7 +1508,7 @@
             "quickSearch": 0,
             "filterable": 0,
             "ext": {
-                "json": "./json/哔哩哔哩演唱会.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/哔哩哔哩演唱会.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             },
             "style": {
@@ -1525,7 +1525,7 @@
             "quickSearch": 0,
             "filterable": 0,
             "ext": {
-                "json": "./json/哔哩哔哩听书.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/哔哩哔哩听书.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             },
             "style": {
@@ -1542,7 +1542,7 @@
             "quickSearch": 0,
             "filterable": 0,
             "ext": {
-                "json": "./json/哔哩哔哩相声.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/哔哩哔哩相声.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             },
             "style": {
@@ -1559,7 +1559,7 @@
             "quickSearch": 0,
             "filterable": 0,
             "ext": {
-                "json": "./json/哔哩哔哩小品.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/哔哩哔哩小品.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             },
             "style": {
@@ -1576,7 +1576,7 @@
             "quickSearch": 0,
             "filterable": 0,
             "ext": {
-                "json": "./json/哔哩哔哩戏曲.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/哔哩哔哩戏曲.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             },
             "style": {
@@ -1593,7 +1593,7 @@
             "quickSearch": 0,
             "filterable": 1,
             "ext": {
-                "json": "./json/少儿教育.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/少儿教育.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             },
             "style": {
@@ -1610,7 +1610,7 @@
             "quickSearch": 0,
             "filterable": 1,
             "ext": {
-                "json": "./json/小学课堂.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/小学课堂.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             },
             "style": {
@@ -1627,7 +1627,7 @@
             "quickSearch": 0,
             "filterable": 1,
             "ext": {
-                "json": "./json/初中课堂.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/初中课堂.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             },
             "style": {
@@ -1644,7 +1644,7 @@
             "quickSearch": 0,
             "filterable": 1,
             "ext": {
-                "json": "./json/高中课堂.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/xu211A/xu211A.github.io/main/json/高中课堂.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             },
             "style": {

@@ -1757,7 +1757,7 @@
             "indexs": 0,
             "ext": {
                 "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
-                "share": "./JS/alishare.txt"
+                "share": "https://gh-proxy.com/https://raw.githubusercontent.com/murong507/PizazzGY/main/JS/alishare.txt"
             },
             "style": {
                 "type": "list"
@@ -2034,7 +2034,7 @@
         {
             "name": "live",
             "type": 0,
-            "url": "./live.txt",
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/murong507/PizazzGY/main/live.txt",
             "playerType": 1,
             "epg": "http://epg.112114.eu.org/?ch={name}&date={date}"
         }

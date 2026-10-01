@@ -364,7 +364,7 @@
       "quickSearch": 0,
       "changeable": 0,
       "ext": {
-        "json": "./lib/5af5fbe12a88b7c45aa1c21e6551826c.txt"
+        "json": "http://ztha.top/TVBox/lib/5af5fbe12a88b7c45aa1c21e6551826c.txt"
       }
     },
     {
@@ -497,7 +497,7 @@
       "quickSearch": 0,
       "changeable": 0,
       "ext": {
-        "json": "./lib/0075389dca9afadd4614e9713765ff17.txt"
+        "json": "http://ztha.top/TVBox/lib/0075389dca9afadd4614e9713765ff17.txt"
       }
     },
     {
@@ -513,7 +513,7 @@
       "quickSearch": 0,
       "changeable": 0,
       "ext": {
-        "json": "./lib/6496356286589c68f52c2f99c0c674c7.txt"
+        "json": "http://ztha.top/TVBox/lib/6496356286589c68f52c2f99c0c674c7.txt"
       }
     },
     {
@@ -543,7 +543,7 @@
       "quickSearch": 0,
       "changeable": 0,
       "ext": {
-        "json": "./lib/89370c8ddf36b5e1beb4d71adb921bda.txt"
+        "json": "http://ztha.top/TVBox/lib/89370c8ddf36b5e1beb4d71adb921bda.txt"
       }
     },
     {
@@ -559,7 +559,7 @@
       "quickSearch": 0,
       "changeable": 0,
       "ext": {
-        "json": "./lib/d7a21cf34ede56f5c686ecfba5fc7e3f.txt"
+        "json": "http://ztha.top/TVBox/lib/d7a21cf34ede56f5c686ecfba5fc7e3f.txt"
       }
     },
     {
@@ -575,7 +575,7 @@
       "quickSearch": 0,
       "changeable": 0,
       "ext": {
-        "json": "./lib/8f55d520f8d70056695740ef151744a7.txt"
+        "json": "http://ztha.top/TVBox/lib/8f55d520f8d70056695740ef151744a7.txt"
       }
     }
   ],
@@ -604,7 +604,7 @@
     {
       "name": "develop202",
       "type": 0,
-      "url": "./lib/interface.txt",
+      "url": "http://ztha.top/TVBox/lib/interface.txt",
       "playerType": 2,
       "epg": "http://diyp5.112114.xyz/?ch={name}&date={date}",
       "logo": "https://epg.112114.xyz/logo/{name}.png"
@@ -612,37 +612,37 @@
     {
       "name": "Kimentanm",
       "type": 0,
-      "url": "./lib/iptv.m3u",
+      "url": "http://ztha.top/TVBox/lib/iptv.m3u",
       "playerType": 2
     },
     {
       "name": "挺好直播",
       "type": 0,
-      "url": "./tv/thtv.txt",
+      "url": "http://ztha.top/TVBox/tv/thtv.txt",
       "playerType": 2
     },
     {
       "name": "MV",
       "type": 0,
-      "url": "./tv/MV.txt",
+      "url": "http://ztha.top/TVBox/tv/MV.txt",
       "playerType": 2
     },
     {
       "name": "范明明（需开启V6网络）",
       "type": 0,
-      "url": "./lib/3d75a78a0fc7ede372c03598d6d10367.m3u",
+      "url": "http://ztha.top/TVBox/lib/3d75a78a0fc7ede372c03598d6d10367.m3u",
       "playerType": 2
     },
     {
       "name": "世界杯",
       "type": 0,
-      "url": "./lib/fwc.m3u",
+      "url": "http://ztha.top/TVBox/lib/fwc.m3u",
       "playerType": 2
     },
     {
       "name": "虎牙一起看",
       "type": 0,
-      "url": "./lib/huyayqk.m3u",
+      "url": "http://ztha.top/TVBox/lib/huyayqk.m3u",
       "playerType": 2,
       "timeout": 10,
       "ua": "okHttp/Mod-1.5.0.0"
@@ -650,7 +650,7 @@
     {
       "name": "斗鱼一起看",
       "type": 0,
-      "url": "./lib/douyuyqk.m3u",
+      "url": "http://ztha.top/TVBox/lib/douyuyqk.m3u",
       "playerType": 2,
       "timeout": 10,
       "ua": "okHttp/Mod-1.5.0.0"
@@ -658,7 +658,7 @@
     {
       "name": "B站直播",
       "type": 0,
-      "url": "./lib/bililive.m3u",
+      "url": "http://ztha.top/TVBox/lib/bililive.m3u",
       "playerType": 2,
       "timeout": 10,
       "ua": "okHttp/Mod-1.5.0.0"
@@ -666,7 +666,7 @@
     {
       "name": "YY轮播",
       "type": 0,
-      "url": "./lib/yylunbo.m3u",
+      "url": "http://ztha.top/TVBox/lib/yylunbo.m3u",
       "playerType": 2,
       "timeout": 10,
       "ua": "okHttp/Mod-1.5.0.0"

@@ -2,7 +2,7 @@
   "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/maliao0517/-/main/xykgz.jar",
   "wallpaper": "https://wp.upx8.com/api.php",
   "warningText": "资源来自网络，无盈利纯技术分享！[所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买]",
-  "logo": "./logo.gif",
+  "logo": "https://gh-proxy.com/https://raw.githubusercontent.com/maliao0517/-/main/logo.gif",
   "sites": [
     {
       "key": "豆瓣",
@@ -277,7 +277,7 @@
       },
       "ext": {
         "cookie": "http://127.0.0.1:9978/file/tvbox/bili_cookie.txt",
-        "json": "./演唱会.json"
+        "json": "https://gh-proxy.com/https://raw.githubusercontent.com/maliao0517/-/main/演唱会.json"
       },
       "timeout": 20
     },

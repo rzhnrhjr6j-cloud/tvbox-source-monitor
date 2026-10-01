@@ -471,7 +471,7 @@
                 "ratio": 1.433
             },
             "ext": {
-                "json": "./json/哔哩合集.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/jiangsu123-N/test/main/json/哔哩合集.json",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
             }
         },

@@ -2,7 +2,7 @@
     "spider": "https://raw.giteeusercontent.com/wpider/original-aspiration/raw/master/spider.jar",
     "notice": "💘欢迎使用在线接口，凌川初心公益💘",
     "wallpaper": "",
-    "logo": "./log/初心.jpg",
+    "logo": "https://raw.giteeusercontent.com/wpider/original-aspiration/raw/master/log/初心.jpg",
     "sites": [
         {
             "name": "凌川初心公益接口",

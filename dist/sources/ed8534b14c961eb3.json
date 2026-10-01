@@ -1,5 +1,5 @@
 {
-    "logo": "./assets/logo2025121201.png",
+    "logo": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/assets/logo2025121201.png",
     "warningText": "禁止任何商业用途，仅限个人学习爬虫原理使用！",
     "wallpaper": "https://tu.ltyuanfang.cn/api/fengjing.php",
     "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/jar/dongli-spider.jar",
@@ -682,7 +682,7 @@
                 "ratio": 1.433
             },
             "ext": {
-                "json": "./config/bilibili.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/bilibili.json",
                 "cookie": ""
             }
         },
@@ -695,7 +695,7 @@
             "quickSearch": 0,
             "filterable": 0,
             "ext": {
-                "json": "./config/blych.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/blych.json",
                 "cookie": ""
             },
             "style": {
@@ -712,7 +712,7 @@
             "quickSearch": 0,
             "filterable": 0,
             "ext": {
-                "json": "./config/blts.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/blts.json",
                 "cookie": ""
             },
             "style": {
@@ -729,7 +729,7 @@
             "quickSearch": 0,
             "filterable": 0,
             "ext": {
-                "json": "./config/blxs.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/blxs.json",
                 "cookie": ""
             },
             "style": {
@@ -746,7 +746,7 @@
             "quickSearch": 0,
             "filterable": 0,
             "ext": {
-                "json": "./config/blxp.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/blxp.json",
                 "cookie": ""
             },
             "style": {
@@ -763,7 +763,7 @@
             "quickSearch": 0,
             "filterable": 0,
             "ext": {
-                "json": "./config/blxq.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/blxq.json",
                 "cookie": ""
             },
             "style": {
@@ -780,7 +780,7 @@
             "quickSearch": 0,
             "filterable": 1,
             "ext": {
-                "json": "./config/sejy.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/sejy.json",
                 "cookie": ""
             },
             "style": {
@@ -797,7 +797,7 @@
             "quickSearch": 0,
             "filterable": 1,
             "ext": {
-                "json": "./config/xxkt.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/xxkt.json",
                 "cookie": ""
             },
             "style": {
@@ -814,7 +814,7 @@
             "quickSearch": 0,
             "filterable": 1,
             "ext": {
-                "json": "./config/czkt.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/czkt.json",
                 "cookie": ""
             },
             "style": {
@@ -831,7 +831,7 @@
             "quickSearch": 0,
             "filterable": 1,
             "ext": {
-                "json": "./config/gzkt.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/gzkt.json",
                 "cookie": ""
             },
             "style": {
@@ -853,7 +853,7 @@
                 "ratio": 1.597
             },
             "ext": {
-                "json": "./config/blys.json",
+                "json": "https://gh-proxy.com/https://raw.githubusercontent.com/chitue/dongliTV/main/config/blys.json",
                 "cookie": ""
             }
         },

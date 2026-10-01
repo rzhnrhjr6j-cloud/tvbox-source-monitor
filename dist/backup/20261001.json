@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-01T05:39:35Z",
+  "generated_at": "2026-10-01T07:41:00Z",
   "urls": [
     {
       "name": "精东（24站）",
@@ -39,12 +39,16 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/dfacba3e27c5d5b5.json"
     },
     {
-      "name": "自建（22站）",
+      "name": "自建 #1（22站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/0331f85d5f7fb823.json"
     },
     {
       "name": "app线路（7站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5e8eb46ab169b4a3.json"
+    },
+    {
+      "name": "自建 #2（22站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/ecbd7d7164f5ecef.json"
     },
     {
       "name": "蜗牛影视（20站）",
@@ -111,11 +115,11 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/a6e1934f1e86714b.json"
     },
     {
-      "name": "小雅TvBox #1（1站）",
+      "name": "小雅TvBox（1站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/39db17a602a1f883.json"
     },
     {
-      "name": "loopool/fan #1（1站）",
+      "name": "loopool/fan（1站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/d62e83b4ffe76f74.json"
     },
     {
@@ -131,7 +135,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/ed8534b14c961eb3.json"
     },
     {
-      "name": "本地视频 #2（3站）",
+      "name": "本地视频 #2（4站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/af753a1ce0c90a23.json"
     },
     {
@@ -143,7 +147,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8548863b45b39eec.json"
     },
     {
-      "name": "豆瓣┃榜单（13站）",
+      "name": "豆瓣┃榜单（41站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/4973be57555659cf.json"
     },
     {
@@ -159,8 +163,12 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/98dd8daf51db1da4.json"
     },
     {
-      "name": "豆瓣 #4（8站）",
+      "name": "豆瓣 #4（38站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/c54c667b379946a1.json"
+    },
+    {
+      "name": "兔小贝（1站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/17b840d41e1d5b0e.json"
     },
     {
       "name": "豆瓣 #5（67站）",
@@ -171,7 +179,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/38e25ff2312824c6.json"
     },
     {
-      "name": "公众号｜四次元分享 #1（8站）",
+      "name": "公众号｜四次元分享 #1（26站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b6365a1d81fa7030.json"
     },
     {
@@ -191,7 +199,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/add402550b81beaf.json"
     },
     {
-      "name": "豆瓣 #8（8站）",
+      "name": "豆瓣 #8（44站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/1577ad7d3285bccc.json"
     },
     {
@@ -281,14 +289,6 @@
     {
       "name": "免费丨接口 #2（33站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/faa07983f167c489.json"
-    },
-    {
-      "name": "小雅TvBox #2（1站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/7f18cdee8cfebadb.json"
-    },
-    {
-      "name": "loopool/fan #2（1站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/c6730288b4323d47.json"
     },
     {
       "name": "豆瓣┃[js]（39站）",

@@ -1,7 +1,7 @@
 {
   "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/ewctt/tvbox/main/jar/ok.jar;md5;1bc1d832b86b666f818fda06260aebad",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=wall",
-  "logo": "./lib/ol.txt",
+  "logo": "https://gh-proxy.com/https://raw.githubusercontent.com/ewctt/tvbox/main/lib/ol.txt",
   "sites": [
     {
       "key": "豆瓣",
@@ -729,7 +729,7 @@
         "ratio": 1.433
       },
       "ext": {
-        "json": "./lib/bili.txt"
+        "json": "https://gh-proxy.com/https://raw.githubusercontent.com/ewctt/tvbox/main/lib/bili.txt"
       },
       "timeout": 20
     },
@@ -746,7 +746,7 @@
         "ratio": 1.433
       },
       "ext": {
-        "json": "./lib/biliych.txt"
+        "json": "https://gh-proxy.com/https://raw.githubusercontent.com/ewctt/tvbox/main/lib/biliych.txt"
       },
       "timeout": 20
     },
@@ -763,7 +763,7 @@
         "ratio": 1.433
       },
       "ext": {
-        "json": "./lib/bilixs.txt"
+        "json": "https://gh-proxy.com/https://raw.githubusercontent.com/ewctt/tvbox/main/lib/bilixs.txt"
       },
       "timeout": 20
     },
@@ -780,7 +780,7 @@
         "ratio": 1.433
       },
       "ext": {
-        "json": "./lib/bilixp.txt"
+        "json": "https://gh-proxy.com/https://raw.githubusercontent.com/ewctt/tvbox/main/lib/bilixp.txt"
       },
       "timeout": 20
     },

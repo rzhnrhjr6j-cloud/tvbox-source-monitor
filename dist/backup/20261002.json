@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-02T00:25:05Z",
+  "generated_at": "2026-10-01T10:39:43Z",
   "urls": [
     {
       "name": "精东（24站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/e5e22b7e79834be5.json"
     },
     {
-      "name": "360┃采集（10站）",
+      "name": "360资源（10站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/9a4330fc96a7854a.json"
     },
     {
@@ -67,7 +67,11 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/4c08ba472e57c070.json"
     },
     {
-      "name": "豆瓣 #1（22站）",
+      "name": "豆瓣 #1（39站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5a29dc258ba183a7.json"
+    },
+    {
+      "name": "豆瓣 #2（22站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/6c8b100e71fd0836.json"
     },
     {
@@ -81,14 +85,6 @@
     {
       "name": "黑木耳资源（32站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8cc472cb46b3f350.json"
-    },
-    {
-      "name": "豆瓣 #2（39站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5a29dc258ba183a7.json"
-    },
-    {
-      "name": "豆瓣推荐 #1（48站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/f4b1a21dc6cec966.json"
     },
     {
       "name": "玩偶哥哥┃4K弹幕（54站）",
@@ -243,7 +239,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/c3ee97ab1cf71b01.json"
     },
     {
-      "name": "豆瓣推荐 #2（1站）",
+      "name": "豆瓣推荐（1站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/58a52f00ca145b21.json"
     },
     {
@@ -293,10 +289,6 @@
     {
       "name": "免费丨接口 #2（33站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/faa07983f167c489.json"
-    },
-    {
-      "name": "豆瓣推荐 #3（48站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/85bf82df559a1885.json"
     },
     {
       "name": "豆瓣┃[js]（39站）",

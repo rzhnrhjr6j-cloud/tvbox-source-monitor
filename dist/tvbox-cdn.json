@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-03T00:14:54Z",
+  "generated_at": "2026-10-03T23:21:40Z",
   "urls": [
     {
       "name": "精东（24站）",
@@ -11,11 +11,7 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/9a4330fc96a7854a.json"
     },
     {
-      "name": "茅台资源站采集接口（39站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/4618ce298bbe0402.json"
-    },
-    {
-      "name": "幸福年年（21站）",
+      "name": "幸福年年 #1（21站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/3448aff4adfaa79e.json"
     },
     {
@@ -29,6 +25,10 @@
     {
       "name": "宝盒没宝（31站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/2ad323b9a45bf9a7.json"
+    },
+    {
+      "name": "幸福年年 #2（17站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/44d62f5e13a2eed6.json"
     },
     {
       "name": "饭太硬 #1（4站）",
@@ -67,6 +67,10 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/4c08ba472e57c070.json"
     },
     {
+      "name": "茅台资源站采集接口（39站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/4618ce298bbe0402.json"
+    },
+    {
       "name": "豆瓣 #1（39站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/5a29dc258ba183a7.json"
     },
@@ -85,6 +89,10 @@
     {
       "name": "黑木耳资源（32站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/8cc472cb46b3f350.json"
+    },
+    {
+      "name": "影视仓（hsck.cc）（5站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/9316156320a200ea.json"
     },
     {
       "name": "豆瓣推荐 #1（48站）",
@@ -247,8 +255,16 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/58a52f00ca145b21.json"
     },
     {
+      "name": "豆瓣｜首页 #7（178站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/9903afb857b37a65.json"
+    },
+    {
       "name": "泥巴（82站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/487f8df6df5e8033.json"
+    },
+    {
+      "name": "推荐┃豆瓣（20站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/73bf11765e03c2b6.json"
     },
     {
       "name": "搜索 | 豆瓣[js]（298站）",
@@ -307,7 +323,7 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/dc91978ac2718386.json"
     },
     {
-      "name": "豆瓣 • 公众号:微风的小星（105站）",
+      "name": "豆瓣 • 公众号:微风的小星（115站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f7643b059bd80135.json"
     },
     {

@@ -5,10 +5,48 @@
   ],
   "verified": [
     {
+      "source_id": "090c5f9cf76ef229362a1d0bbc746cb80d0460d34930e2a41d034b1c1291138a",
+      "config_url": "https://raw.githubusercontent.com/bluefriendCN/set/main/mx.json",
+      "verified_at": "2026-10-04T14:26:00Z",
+      "site_count": 1,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "146c94fa27de2fc726e418cfbc7c60d7effee79eda8f002e5ca51ffc58e5e7e9",
+      "config_url": "https://raw.githubusercontent.com/qirenzhidao/tvbox18/main/app.json",
+      "verified_at": "2026-10-04T13:56:40Z",
+      "site_count": 4,
+      "loadable_count": 1,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "1cb1bfdf5195d634d0db5a083fc41c5adecf5a2ffe3053a616a3dff94bb0136d",
+      "config_url": "https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json",
+      "verified_at": "2026-10-04T14:26:43Z",
+      "site_count": 18,
+      "loadable_count": 14,
+      "playable_count": 1,
+      "playable_keys": [
+        "XMVideo"
+      ]
+    },
+    {
       "source_id": "36fba71c34b2646bff3cb6453a3ded6d6a13ff18dd3c72f723eecc426d46a464",
       "config_url": "https://raw.githubusercontent.com/Newtxin/tvbox/main/002.json",
       "verified_at": "2026-10-04T13:00:35Z",
       "site_count": 20,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "46ab63ae5391c82188ba3678c0dfcaa373f426c4f4f2a4859ea8dae2bcc90e89",
+      "config_url": "https://raw.githubusercontent.com/guot55/yg/main/pg/cs.json",
+      "verified_at": "2026-10-04T13:56:40Z",
+      "site_count": 1,
       "loadable_count": 0,
       "playable_count": 0,
       "playable_keys": []
@@ -25,8 +63,8 @@
     {
       "source_id": "4e11eb646f9a8770c4dbe8c745cb46667fc438d05bb7b19f024544935a241d04",
       "config_url": "https://raw.githubusercontent.com/FreeDTV/FreeD/master/box.json",
-      "verified_at": "2026-10-04T12:38:52Z",
-      "site_count": 19,
+      "verified_at": "2026-10-04T14:28:45Z",
+      "site_count": 18,
       "loadable_count": 0,
       "playable_count": 0,
       "playable_keys": []
@@ -52,11 +90,29 @@
       ]
     },
     {
+      "source_id": "61ef06882d38576ca555f929aed155422a62310908101ce405a109357118f229",
+      "config_url": "https://raw.githubusercontent.com/larry-biu/tvbox-config/main/config.json",
+      "verified_at": "2026-10-04T14:26:00Z",
+      "site_count": 15,
+      "loadable_count": 8,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
       "source_id": "6a29688ff01d5c44ce66c52434d7a951ba2345dd49ed5a0a46fd076022d50d84",
       "config_url": "https://raw.githubusercontent.com/xinyi1984/xytv/master/wex.json",
       "verified_at": "2026-10-04T13:00:35Z",
       "site_count": 20,
       "loadable_count": 1,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "6c8b100e71fd08367bda99faff5ff1024865c4e8b43956a1a9e688eac1b14656",
+      "config_url": "https://raw.githubusercontent.com/jyoketsu/tv/main/m.json",
+      "verified_at": "2026-10-04T14:28:45Z",
+      "site_count": 35,
+      "loadable_count": 0,
       "playable_count": 0,
       "playable_keys": []
     },
@@ -88,6 +144,17 @@
       "playable_keys": []
     },
     {
+      "source_id": "dd96b03685e0e6b211f4af986de39d0e8138ceeb2a9ea84326d0ef044be87ade",
+      "config_url": "https://raw.githubusercontent.com/wzxxcz/xcz202508281/main/jj.json",
+      "verified_at": "2026-10-04T13:56:40Z",
+      "site_count": 1,
+      "loadable_count": 1,
+      "playable_count": 1,
+      "playable_keys": [
+        "csp_XMVideo"
+      ]
+    },
+    {
       "source_id": "dfc7dc060a2e295a36e36d44b8f0b022b2535510ebb939c7d35c7708f304e940",
       "config_url": "https://raw.githubusercontent.com/pkj99/demo/main/media/tvbox.json",
       "verified_at": "2026-10-04T12:38:52Z",
@@ -113,6 +180,15 @@
       "verified_at": "2026-10-04T12:50:31Z",
       "site_count": 20,
       "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "f011d6caeb3d76ae65675a8fdcf74a05f3d22781dda7ed65bc233d93b7c9046d",
+      "config_url": "https://raw.githubusercontent.com/qirenzhidao/tvbox18/main/tv.json",
+      "verified_at": "2026-10-04T13:56:40Z",
+      "site_count": 16,
+      "loadable_count": 2,
       "playable_count": 0,
       "playable_keys": []
     },

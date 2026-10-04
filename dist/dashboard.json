@@ -1,29 +1,50 @@
 {
-  "generated_at": "2026-10-04T13:01:47Z",
-  "build_id": "20261004-130147",
+  "generated_at": "2026-10-04T14:28:10Z",
+  "build_id": "20261004-142810",
   "summary": {
     "sources": {
-      "active": 125,
-      "candidate": 1,
-      "degraded": 91,
+      "active": 123,
+      "candidate": 4,
+      "degraded": 114,
       "failed": 1
     },
-    "candidates": 1,
+    "candidates": 4,
     "tiers": {
       "primary": 0,
       "backup": 0,
-      "experimental": 3
+      "experimental": 4
     },
-    "output_items": 3
+    "output_items": 4
   },
   "regions": {
     "CN": {
-      "checks": 1431,
-      "successes": 1420,
-      "availability_percent": 99.23
+      "checks": 1452,
+      "successes": 1441,
+      "availability_percent": 99.24
     }
   },
   "sources": [
+    {
+      "id": "1cb1bfdf5195d634d0db5a083fc41c5adecf5a2ffe3053a616a3dff94bb0136d",
+      "name": "fun.json",
+      "url": "https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T12:22:23Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 275.6666666666667,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
     {
       "id": "e5e22b7e79834be5f8f9f9d48bc1f8b7b746fd466ac42300038de2a46d1c91b3",
       "name": "jj.json",
@@ -35,13 +56,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-04T12:05:26Z",
+      "last_success_at": "2026-10-04T12:23:46Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 375.2083333333333,
+      "avg_response_ms": 372.3125,
       "consecutive_failure": 0,
       "whitelisted": true
     },
@@ -56,13 +77,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-04T12:03:55Z",
+      "last_success_at": "2026-10-04T12:22:19Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 290.3125,
+      "avg_response_ms": 286.1666666666667,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -77,13 +98,13 @@
       "stability_score": 98.334,
       "availability_7d": 97.917,
       "availability_30d": 97.917,
-      "last_success_at": "2026-10-04T12:04:16Z",
+      "last_success_at": "2026-10-04T12:22:28Z",
       "last_failure_at": "2026-09-30T14:04:27Z",
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 943.6666666666666,
+      "avg_response_ms": 954.7083333333334,
       "consecutive_failure": 0,
       "whitelisted": true
     }
@@ -94,7 +115,7 @@
       "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
       "region": "CN",
       "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T12:05:39Z",
+      "created_at": "2026-10-04T12:24:00Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -592,20 +613,6 @@
   ],
   "build_history": [
     {
-      "build_id": "20261004-124353",
-      "generated_at": "2026-10-04T12:43:53Z",
-      "published": true,
-      "fallback": false,
-      "items": 2,
-      "active": 125,
-      "degraded": 91,
-      "failed": 1,
-      "new": 0,
-      "recovered": 0,
-      "removed": 2,
-      "blocked_reason": ""
-    },
-    {
       "build_id": "20261004-112153",
       "generated_at": "2026-10-04T11:21:53Z",
       "published": true,
@@ -1006,6 +1013,20 @@
       "active": 24,
       "degraded": 73,
       "failed": 1,
+      "new": 0,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
+    {
+      "build_id": "20260930-083217",
+      "generated_at": "2026-09-30T08:32:17Z",
+      "published": true,
+      "fallback": false,
+      "items": 24,
+      "active": 24,
+      "degraded": 74,
+      "failed": 0,
       "new": 0,
       "recovered": 0,
       "removed": 0,

@@ -1,7 +1,11 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-04T13:01:47Z",
+  "generated_at": "2026-10-04T14:28:10Z",
   "urls": [
+    {
+      "name": "精品 | 采集（83站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/1cb1bfdf5195d634.json"
+    },
     {
       "name": "精东（24站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/e5e22b7e79834be5.json"

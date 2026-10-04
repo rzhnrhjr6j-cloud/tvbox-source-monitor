@@ -1,10 +1,14 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-04T12:43:53Z",
+  "generated_at": "2026-10-04T13:01:47Z",
   "urls": [
     {
       "name": "精东（24站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/e5e22b7e79834be5.json"
+    },
+    {
+      "name": "豆瓣（39站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5a29dc258ba183a7.json"
     },
     {
       "name": "豆了（159站）",

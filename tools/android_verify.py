@@ -32,7 +32,9 @@ paired by position with the configs.
 from __future__ import annotations
 
 import argparse
+import copy
 import functools
+import hashlib
 import http.server
 import json
 import os
@@ -40,9 +42,11 @@ import shutil
 import socketserver
 import subprocess
 import sys
+import tempfile
 import threading
 from pathlib import Path
 from typing import Any, Mapping
+from urllib.parse import urljoin
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -127,6 +131,116 @@ def is_url(value: str) -> bool:
 def strip_md5(value: str) -> str:
     """Drop the optional ``;md5`` suffix TVBox uses for jar cache busting."""
     return value.split(";", 1)[0]
+
+
+_ORIGIN_MARKERS = ("raw.githubusercontent.com/", "github.com/", "gitee.com/")
+_JAR_MIRRORS = ("", "https://ghfast.top/", "https://gh-proxy.com/", "https://hk.gh-proxy.org/")
+
+
+def unwrap_proxy_url(value: str) -> str:
+    """Return the innermost known origin URL from a proxied jar URL."""
+    text = value.strip()
+    for marker in _ORIGIN_MARKERS:
+        index = text.find(marker)
+        if index < 0:
+            continue
+        start = text.rfind("http", 0, index)
+        if start >= 0:
+            return text[start:]
+    return text
+
+
+def jar_download_urls(value: str) -> list[str]:
+    """Candidate host download URLs for a TVBox jar value, suffix removed.
+
+    The original URL is tried first.  GitHub proxies are only fallbacks, so a
+    mirrored jar always matches the bytes the config author published.
+    """
+    origin = unwrap_proxy_url(strip_md5(value))
+    candidates: list[str] = []
+    # The proxy prefixes only understand GitHub upstreams.  Applying them to a
+    # Gitee/self-hosted jar would turn a reachable URL into a guaranteed 404.
+    prefixes = _JAR_MIRRORS if "github" in origin else ("",)
+    for prefix in prefixes:
+        candidate = f"{prefix}{origin}" if prefix else origin
+        if candidate not in candidates:
+            candidates.append(candidate)
+    return candidates
+
+
+def _looks_like_jar(value: str) -> bool:
+    base = strip_md5(value).split("?", 1)[0].strip().lower()
+    return base.endswith(".jar")
+
+
+def _jar_metadata(value: str) -> str:
+    return value[len(strip_md5(value)) :]
+
+
+def mirror_document_jars(
+    document: Mapping[str, Any],
+    *,
+    fetch: Any,
+    url_for: Any,
+    jars_dir: Path,
+    base_url: str = "",
+) -> tuple[dict, list[dict]]:
+    """Download every jar referenced by a config and rewrite it to a local URL.
+
+    ``fetch(url)`` must return the jar bytes or raise.  Download failures stay
+    in ``errors`` and leave the original remote URL in place - they are never
+    reported as playable, only as a mirroring gap.
+    """
+    mirrored = copy.deepcopy(dict(document))
+    jars_dir.mkdir(parents=True, exist_ok=True)
+    errors: list[dict] = []
+    cache: dict[str, str] = {}
+
+    def rewrite(value: Any) -> Any:
+        text = str(value or "")
+        if not _looks_like_jar(text):
+            return value
+        metadata = _jar_metadata(text)
+        base = strip_md5(text)
+        if is_url(base):
+            origin = unwrap_proxy_url(base)
+        elif base_url:
+            origin = urljoin(base_url, base)
+        else:
+            return value
+        if origin in cache:
+            return cache[origin] + metadata
+        content: bytes | None = None
+        attempt_errors: list[str] = []
+        for candidate in jar_download_urls(origin):
+            try:
+                content = fetch(candidate)
+                break
+            except Exception as error:  # noqa: BLE001 - try the next mirror
+                attempt_errors.append(f"{candidate}: {error}")
+        if content is None:
+            errors.append(
+                {"url": origin, "error": " | ".join(attempt_errors) or "download failed"}
+            )
+            return value
+        digest = hashlib.sha256(origin.encode("utf-8")).hexdigest()[:16]
+        path = jars_dir / f"{digest}.jar"
+        if not path.exists():
+            path.write_bytes(content)
+        local = url_for(path)
+        cache[origin] = local
+        return local + metadata
+
+    if "spider" in mirrored:
+        mirrored["spider"] = rewrite(mirrored["spider"])
+    if "jar" in mirrored:
+        mirrored["jar"] = rewrite(mirrored["jar"])
+    sites = mirrored.get("sites")
+    if isinstance(sites, list):
+        for site in sites:
+            if isinstance(site, dict) and "jar" in site:
+                site["jar"] = rewrite(site["jar"])
+    return mirrored, errors
 
 
 def is_spider_site(api: object) -> bool:
@@ -405,6 +519,39 @@ def verify_isolated_target(options: argparse.Namespace, target: dict) -> dict:
     return merge_isolated_reports(target["url"], target["identity"], keys, outcomes)
 
 
+def _host_fetch(options: argparse.Namespace):
+    """Return a fetch(url) -> bytes callable using the verifier's timeouts."""
+    connect_seconds = max(1.0, options.connect_timeout_ms / 1000)
+    read_seconds = max(1.0, options.read_timeout_ms / 1000)
+
+    def fetch(url: str) -> bytes:
+        client = HttpClient(
+            {
+                "connect_timeout": connect_seconds,
+                "read_timeout": read_seconds,
+                "total_timeout": max(10.0, connect_seconds + read_seconds),
+                "max_retries": 0,
+                "user_agent": "tvbox-source-monitor/android-verify",
+            }
+        )
+        try:
+            result = client.request(
+                "GET",
+                url,
+                timeout=(connect_seconds, read_seconds),
+                max_bytes=64 * 1024 * 1024,
+            )
+        finally:
+            client.close()
+        if not result.ok:
+            raise RuntimeError(result.error_summary() or f"HTTP {result.status}")
+        if not result.content:
+            raise RuntimeError("empty jar response")
+        return result.content
+
+    return fetch
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--serial", default=DEFAULT_SERIAL)
@@ -422,6 +569,11 @@ def main() -> int:
         "--isolate-sites",
         action="store_true",
         help="run each spider site in its own instrumentation so one crash cannot hide the rest",
+    )
+    parser.add_argument(
+        "--mirror-jars",
+        action="store_true",
+        help="download every jar on the host and serve it to the device from loopback",
     )
     parser.add_argument("--max-sites", type=int, default=20, help="max jar/CMS sites per config")
     parser.add_argument("--connect-timeout-ms", type=int, default=10000)
@@ -446,28 +598,94 @@ def main() -> int:
         parser.error("pass at least one --config-url or --config-file")
 
     local_files = [Path(item) for item in options.config_file]
-    root = local_files[0].resolve().parent if local_files else None
     all_passed = True
     reports = []
 
     origin: LocalOrigin | None = None
+    tempdir: tempfile.TemporaryDirectory | None = None
+    root: Path | None = None
     try:
+        if options.mirror_jars:
+            tempdir = tempfile.TemporaryDirectory(prefix="tvbox-mirror-")
+            root = Path(tempdir.name)
+            (root / "jars").mkdir(parents=True, exist_ok=True)
+        elif local_files:
+            root = local_files[0].resolve().parent
         if root is not None:
             origin = LocalOrigin(root)
             origin.__enter__()
             adb(options.serial, "reverse", f"tcp:{origin.port}", f"tcp:{origin.port}", check=False)
-        targets = [{"url": url, "identity": url} for url in options.config_url]
-        if origin is not None:
-            targets += [
+        specs = [{"url": url, "identity": url} for url in options.config_url]
+        if options.mirror_jars:
+            specs += [
+                {"url": str(path), "identity": path.name, "local_path": path}
+                for path in local_files
+            ]
+        elif origin is not None:
+            specs += [
                 {"url": origin.url_for(path), "identity": path.name, "local_path": path}
                 for path in local_files
             ]
         for index, identity in enumerate(options.source_url):
-            if index < len(targets):
-                targets[index]["identity"] = identity
+            if index < len(specs):
+                specs[index]["identity"] = identity
+        targets: list[dict] = []
+        if options.mirror_jars:
+            if origin is None or root is None:
+                raise RuntimeError("jar mirroring requires a local origin")
+            fetch = _host_fetch(options)
+            for index, spec in enumerate(specs):
+                document, error = load_config_document(
+                    spec,
+                    connect_timeout_ms=max(1000, options.connect_timeout_ms),
+                    read_timeout_ms=max(1000, options.read_timeout_ms),
+                )
+                if document is None:
+                    targets.append(
+                        {
+                            "url": spec["url"],
+                            "identity": spec["identity"],
+                            "load_error": error,
+                        }
+                    )
+                    continue
+                base_url = "" if spec.get("local_path") else strip_md5(str(spec["url"]))
+                mirrored, jar_errors = mirror_document_jars(
+                    document,
+                    fetch=fetch,
+                    url_for=origin.url_for,
+                    jars_dir=root / "jars",
+                    base_url=base_url,
+                )
+                if jar_errors:
+                    print(
+                        json.dumps({"jarMirrorErrors": jar_errors}, ensure_ascii=False),
+                        flush=True,
+                    )
+                mirrored_path = root / f"config-{index}.json"
+                mirrored_path.write_text(
+                    json.dumps(mirrored, ensure_ascii=False), encoding="utf-8"
+                )
+                targets.append(
+                    {
+                        "url": origin.url_for(mirrored_path),
+                        "identity": spec["identity"],
+                        "local_path": mirrored_path,
+                    }
+                )
+        else:
+            targets = specs
         for target in targets:
             try:
-                if options.isolate_sites:
+                if target.get("load_error"):
+                    verdict = {
+                        "configUrl": target["url"],
+                        "ok": False,
+                        "stage": "config_load",
+                        "error": target["load_error"],
+                        "sites": [],
+                    }
+                elif options.isolate_sites:
                     verdict = verify_isolated_target(options, target)
                 else:
                     verdict = verify(
@@ -496,6 +714,8 @@ def main() -> int:
         if origin is not None:
             adb(options.serial, "reverse", "--remove", f"tcp:{origin.port}", check=False)
             origin.__exit__(None, None, None)
+        if tempdir is not None:
+            tempdir.cleanup()
 
     if options.out:
         _write_reports(Path(options.out), reports)

@@ -1,55 +1,86 @@
 {
-  "generated_at": "2026-10-04T13:01:47Z",
-  "build_id": "20261004-130147",
+  "generated_at": "2026-10-04T14:28:10Z",
+  "build_id": "20261004-142810",
   "summary": {
     "sources": {
-      "active": 125,
-      "candidate": 1,
-      "degraded": 91,
+      "active": 123,
+      "candidate": 4,
+      "degraded": 114,
       "failed": 1
     },
-    "output_items": 3,
+    "output_items": 4,
     "tiers": {
       "primary": 0,
       "backup": 0,
-      "experimental": 3
+      "experimental": 4
     },
     "checks": {
-      "drop_ratio": -0.5,
-      "items": 3,
+      "drop_ratio": -0.3333,
+      "items": 4,
       "min_sources": 2,
       "max_drop_ratio": 1.0
     }
   },
   "regions": {
     "CN": {
-      "checks": 1431,
-      "successes": 1420,
-      "availability_percent": 99.23
+      "checks": 1452,
+      "successes": 1441,
+      "availability_percent": 99.24
     }
   },
   "last_build": {
-    "build_id": "20261004-130147",
-    "generated_at": "2026-10-04T13:01:47Z",
+    "build_id": "20261004-142810",
+    "generated_at": "2026-10-04T14:28:10Z",
     "git_sha": "",
-    "active": 125,
-    "degraded": 91,
+    "active": 123,
+    "degraded": 114,
     "failed": 1,
     "new": 1,
     "recovered": 0,
-    "removed": 0
+    "removed": 1
   },
   "last_alert": {
     "kind": "source_failed",
     "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
     "region": "CN",
     "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-    "created_at": "2026-10-04T12:05:39Z",
+    "created_at": "2026-10-04T12:24:00Z",
     "resolved_at": null,
     "severity": "critical",
     "channels": []
   },
   "sources": [
+    {
+      "id": "1cb1bfdf5195d634d0db5a083fc41c5adecf5a2ffe3053a616a3dff94bb0136d",
+      "name": "fun.json",
+      "url": "https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json",
+      "type": "single",
+      "status": "active",
+      "tier": "experimental",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "search_score": 100.0,
+      "playback_score": 100.0,
+      "latency_score": 100.0,
+      "regional_score": 50.0,
+      "freshness_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "avg_response_ms": 275.6666666666667,
+      "last_success_at": "2026-10-04T12:22:23Z",
+      "last_failure_at": null,
+      "last_check_at": "2026-10-04T12:22:23Z",
+      "consecutive_failure": 0,
+      "consecutive_success": 3,
+      "global_status": "UNKNOWN",
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "whitelisted": false,
+      "error_code": null,
+      "error_stage": ""
+    },
     {
       "id": "e5e22b7e79834be5f8f9f9d48bc1f8b7b746fd466ac42300038de2a46d1c91b3",
       "name": "jj.json",
@@ -66,10 +97,10 @@
       "freshness_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "avg_response_ms": 375.2083333333333,
-      "last_success_at": "2026-10-04T12:05:26Z",
+      "avg_response_ms": 372.3125,
+      "last_success_at": "2026-10-04T12:23:46Z",
       "last_failure_at": null,
-      "last_check_at": "2026-10-04T12:05:26Z",
+      "last_check_at": "2026-10-04T12:23:46Z",
       "consecutive_failure": 0,
       "consecutive_success": 48,
       "global_status": "UNKNOWN",
@@ -97,10 +128,10 @@
       "freshness_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "avg_response_ms": 290.3125,
-      "last_success_at": "2026-10-04T12:03:55Z",
+      "avg_response_ms": 286.1666666666667,
+      "last_success_at": "2026-10-04T12:22:19Z",
       "last_failure_at": null,
-      "last_check_at": "2026-10-04T12:03:55Z",
+      "last_check_at": "2026-10-04T12:22:19Z",
       "consecutive_failure": 0,
       "consecutive_success": 48,
       "global_status": "UNKNOWN",
@@ -128,10 +159,10 @@
       "freshness_score": 100.0,
       "availability_7d": 97.917,
       "availability_30d": 97.917,
-      "avg_response_ms": 943.6666666666666,
-      "last_success_at": "2026-10-04T12:04:16Z",
+      "avg_response_ms": 954.7083333333334,
+      "last_success_at": "2026-10-04T12:22:28Z",
       "last_failure_at": "2026-09-30T14:04:27Z",
-      "last_check_at": "2026-10-04T12:04:16Z",
+      "last_check_at": "2026-10-04T12:22:28Z",
       "consecutive_failure": 0,
       "consecutive_success": 42,
       "global_status": "UNKNOWN",
@@ -140,7 +171,7 @@
       ],
       "regions_failed": [],
       "whitelisted": true,
-      "error_code": "SEARCH_NO_JSON",
+      "error_code": "HTTP_567",
       "error_stage": "L3_search"
     }
   ]

@@ -140,15 +140,17 @@ task_tree:
   phase: P1
   release: 1.1.0
   status: VERIFYING
-  objective: 让构建只发布近期搜索 100 分、播放 100 分且播放响应为非 HTML 媒体类型的源，避免把大量不可播源继续发给客户端。
+  objective: 让构建只发布近期搜索 100 分、播放 100 分且播放响应为非 HTML 媒体类型的源，同时保留用户实机验证过的人工白名单源，避免把大量不可播源继续发给客户端。
   goal_refs:
   - GOAL-001
   - GOAL-002
   - GOAL-003
   requirement_ids:
   - REQ-104
+  - REQ-105
   acceptance_criteria:
   - AC-104
+  - AC-105
   scope_tags:
   - data
   - release
@@ -158,6 +160,7 @@ task_tree:
   - compatibility
   change_request_ids:
   - CR-004
+  - CR-005
   dependencies:
   - T-002
   allowed_paths:

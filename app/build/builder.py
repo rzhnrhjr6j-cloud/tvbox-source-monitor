@@ -107,6 +107,10 @@ class ConfigBuilder:
         gate = self.output_cfg.get("quality_gate") or {}
         if not isinstance(gate, dict) or not bool(gate.get("enabled", False)):
             return True
+        # A whitelist entry is a manual, user-verified override.  Keep it
+        # publishable even when automated probes cannot prove playback.
+        if source.whitelisted:
+            return True
         if not bool(gate.get("allow_multi", False)) and str(source.type or "").lower() == "multi":
             return False
 

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-04T09:57:33Z",
-  "build_id": "20261004-095733",
+  "generated_at": "2026-10-04T10:34:27Z",
+  "build_id": "20261004-103427",
   "summary": {
     "sources": {
       "active": 100,
@@ -11,9 +11,9 @@
     "tiers": {
       "primary": 0,
       "backup": 0,
-      "experimental": 3
+      "experimental": 4
     },
-    "output_items": 3
+    "output_items": 4
   },
   "regions": {
     "CN": {
@@ -42,7 +42,7 @@
       "regions_failed": [],
       "avg_response_ms": 371.3333333333333,
       "consecutive_failure": 0,
-      "whitelisted": false
+      "whitelisted": true
     },
     {
       "id": "9a4330fc96a7854ad56b9bb8e59884047426d9b0a71545af9c8f818825b628d8",
@@ -85,6 +85,27 @@
       "avg_response_ms": 393.75555555555553,
       "consecutive_failure": 0,
       "whitelisted": false
+    },
+    {
+      "id": "745561a3739c9b0c759e443e7bee2ffeee9488f9a7c4709f69066cfa851187f8",
+      "name": "🫘豆包",
+      "url": "https://17264.kstore.space/%E8%B1%86%E5%8C%85.jpg",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 56.289,
+      "stability_score": 98.222,
+      "availability_7d": 97.778,
+      "availability_30d": 97.778,
+      "last_success_at": "2026-10-04T05:52:12Z",
+      "last_failure_at": "2026-09-30T14:04:27Z",
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 959.3111111111111,
+      "consecutive_failure": 0,
+      "whitelisted": true
     }
   ],
   "alerts": [
@@ -590,6 +611,34 @@
     }
   ],
   "build_history": [
+    {
+      "build_id": "20261004-103359",
+      "generated_at": "2026-10-04T10:33:59Z",
+      "published": true,
+      "fallback": false,
+      "items": 4,
+      "active": 100,
+      "degraded": 1,
+      "failed": 1,
+      "new": 1,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
+    {
+      "build_id": "20261004-095733",
+      "generated_at": "2026-10-04T09:57:33Z",
+      "published": true,
+      "fallback": false,
+      "items": 3,
+      "active": 100,
+      "degraded": 1,
+      "failed": 1,
+      "new": 0,
+      "recovered": 0,
+      "removed": 83,
+      "blocked_reason": ""
+    },
     {
       "build_id": "20261003-232140",
       "generated_at": "2026-10-03T23:21:40Z",

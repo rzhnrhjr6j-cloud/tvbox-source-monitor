@@ -46,6 +46,7 @@ def seed_source(
     playback_score: float = 100,
     source_type: str = "single",
     probe: ProbeResult | None = None,
+    whitelisted: bool = False,
 ) -> Source:
     source = Source(
         id=source_id,
@@ -59,6 +60,7 @@ def seed_source(
         search_score=search_score,
         playback_score=playback_score,
         first_seen_at=to_iso(utcnow() - timedelta(days=30)),
+        whitelisted=whitelisted,
     )
     store.upsert_source(source)
     if probe is not None:
@@ -103,6 +105,24 @@ def test_quality_gate_rejects_html_as_playback(tmp_path):
         store.close()
 
     assert eligible == []
+
+
+def test_whitelisted_source_bypasses_playback_gate(tmp_path):
+    cfg = build_config(tmp_path)
+    store = Store(cfg.path("app.db_path", ensure_parent=True))
+    try:
+        seed_source(
+            store,
+            search_score=0,
+            playback_score=0,
+            probe=None,
+            whitelisted=True,
+        )
+        eligible, _ = ConfigBuilder(cfg, store).eligible()
+    finally:
+        store.close()
+
+    assert [source.id for source in eligible] == ["s1"]
 
 
 def test_hls_playback_evidence_publishes_and_bypasses_drop_ratio(tmp_path):

@@ -94,7 +94,7 @@ requirements:
     source: adoption audit
   - id: REQ-104
     title: "只发布有真实播放证据的源"
-    statement: "构建发布时，源必须在近期探测中同时通过搜索和播放，且播放响应 Content-Type 必须是可播放媒体类型；只有配置可解析不能再进入发布产物。"
+    statement: "构建发布时，除人工白名单明确保留的源外，源必须在近期探测中同时通过搜索和播放，且播放响应 Content-Type 必须是可播放媒体类型；只有配置可解析不能再进入发布产物。"
     status: ACTIVE
     priority: MUST
     release: 1.1.0
@@ -103,3 +103,14 @@ requirements:
     non_goals: [修改源发现范围, 放宽客户端兼容性验证]
     acceptance_criteria: [AC-104]
     source: "2026-10-04 真实手机测试反馈：多数源不可播"
+  - id: REQ-105
+    title: "保留人工验证过的可播源"
+    statement: "用户实机验证过可播放的源可以加入人工白名单；白名单源绕过自动播放门槛继续发布，但检测、评分和镜像仍照常执行。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-001, GOAL-002, GOAL-003]
+    scope_tags: [data, release, testing]
+    non_goals: [声称白名单源已通过自动播放探测, 扩大未经验证的源]
+    acceptance_criteria: [AC-105]
+    source: "2026-10-04 用户要求保留手机实测可播的豆了和精东"

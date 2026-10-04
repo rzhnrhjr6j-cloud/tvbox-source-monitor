@@ -28,3 +28,11 @@ changes:
     affected_tasks: [T-005]
     impact_analysis: "只改变构建发布筛选，不改源发现和探测流程；首次严格裁剪需绕过旧的跌幅安全阀，否则新入口会被旧发布量挡住。"
     evidence_ids: [E-008, E-009]
+  - id: CR-005
+    title: "保留人工验证过的可播源"
+    status: IMPLEMENTED
+    target_release: 1.1.0
+    requirement_ids: [REQ-105]
+    affected_tasks: [T-005]
+    impact_analysis: "在自动播放门槛前增加明确的人工白名单例外；源仍需通过镜像准备，检测和评分流程不变。"
+    evidence_ids: [E-010]

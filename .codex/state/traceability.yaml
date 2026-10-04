@@ -1,32 +1,108 @@
 requirements:
-  REQ-001: [T-001]
-  REQ-104: [T-005]
+  REQ-001:
+  - T-001
+  REQ-201: []
+  REQ-202: []
+  REQ-203: []
+  REQ-204: []
+  REQ-101:
+  - T-002
+  REQ-102:
+  - T-003
+  REQ-103:
+  - T-004
+  REQ-104:
+  - T-005
+  REQ-105:
+  - T-005
 tasks:
   T-001:
-    requirement_ids: [REQ-001]
-    evidence_ids: [E-001, E-002, E-003, E-004, E-005, E-006]
+    requirements:
+    - REQ-001
+    evidence:
+    - E-001
+    - E-002
+    - E-003
+    - E-004
+    - E-005
+    - E-006
   T-002:
-    requirement_ids: [REQ-101]
-    evidence_ids: [E-007]
+    requirements:
+    - REQ-101
+    evidence:
+    - E-007
+  T-003:
+    requirements:
+    - REQ-102
+    evidence: []
+  T-004:
+    requirements:
+    - REQ-103
+    evidence: []
   T-005:
-    requirement_ids: [REQ-104]
-    evidence_ids: [E-008, E-009]
+    requirements:
+    - REQ-104
+    - REQ-105
+    evidence:
+    - E-008
+    - E-009
+    - E-010
 evidence:
-  E-001: [AC-001]
-  E-002: [AC-002]
-  E-003: [AC-003]
-  E-004: [AC-004]
-  E-005: [AC-002]
-  E-006: [AC-002]
-  E-007: [AC-101]
-  E-008: [AC-104]
-  E-009: [AC-104]
+  E-001:
+    task_id: T-001
+    criterion_ids:
+    - AC-001
+    status: PASS
+  E-002:
+    task_id: T-001
+    criterion_ids:
+    - AC-002
+    status: PASS
+  E-003:
+    task_id: T-001
+    criterion_ids:
+    - AC-003
+    status: PASS
+  E-004:
+    task_id: T-001
+    criterion_ids:
+    - AC-004
+    status: PASS
+  E-005:
+    task_id: T-001
+    criterion_ids:
+    - AC-002
+    status: PASS
+  E-006:
+    task_id: T-001
+    criterion_ids:
+    - AC-002
+    status: PASS
+  E-007:
+    task_id: T-002
+    criterion_ids:
+    - AC-101
+    status: PARTIAL
+  E-008:
+    task_id: T-005
+    criterion_ids:
+    - AC-104
+    status: PASS
+  E-009:
+    task_id: T-005
+    criterion_ids:
+    - AC-104
+    status: PASS
+  E-010:
+    task_id: T-005
+    criterion_ids:
+    - AC-105
+    status: PASS
 releases:
-  "1.0.0":
-    baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201
-    state: DEVELOPMENT
-    tasks: [T-001]
-  "1.1.0":
-    baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201
-    state: DEVELOPMENT
-    tasks: [T-002, T-005]
+  1.1.0:
+  - T-002
+  - T-003
+  - T-004
+  - T-005
+  1.0.0:
+  - T-001

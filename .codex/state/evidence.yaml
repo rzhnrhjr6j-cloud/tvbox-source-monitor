@@ -91,7 +91,7 @@ evidence:
     status: PASS
     level: TEST
     title: "播放级发布门槛测试通过"
-    statement: "聚焦测试 4 passed；随后全量 make test 退出码 0。覆盖无播放证据不发布、text/html 不算播放、HLS 媒体可发布、关闭门槛保持旧行为。"
+    statement: "聚焦测试 5 passed；随后全量 make test 退出码 0。覆盖无播放证据不发布、text/html 不算播放、HLS 媒体可发布、关闭门槛保持旧行为，以及人工白名单绕过自动门槛。"
     command: ".venv/bin/python -m pytest -q tests/test_build_quality_gate.py && make test"
     artifacts:
       - tests/test_build_quality_gate.py
@@ -104,12 +104,27 @@ evidence:
     criterion_ids: [AC-104]
     status: PASS
     level: INTEGRATION
-    title: "真实数据库严格构建通过"
-    statement: "make build 从 100 个候选中筛出 3 个有近期搜索和播放证据的源：jj.json、tvbox.json、zytvbox.json；validation.ok=true，items=3，min_sources=3，并生成 last-known-good.json 与每日备份。"
+    title: "首次真实数据库严格构建通过"
+    statement: "首次 make build 从 100 个候选中筛出 3 个有近期搜索和播放证据的源：jj.json、tvbox.json、zytvbox.json；validation.ok=true，items=3，min_sources=3。后续 E-010 使用人工白名单重建为 4 个源。"
     command: make build
     artifacts:
       - dist/tvbox.json
       - dist/health.json
       - dist/last-known-good.json
       - dist/backup/20261004.json
+    recorded_at: 2026-10-04
+  - id: E-010
+    task_id: T-005
+    requirement_ids: [REQ-105]
+    criterion_ids: [AC-105]
+    status: PASS
+    level: INTEGRATION
+    title: "人工白名单源保留验证通过"
+    statement: "将用户实机验证过的“精东（24站）”和“豆了（159站）”写入 data/whitelist.json 并在数据库标记 whitelisted=1；带 GITHUB_REPOSITORY 的真实数据库镜像构建发布 4 个源，validation.ok=true，两个白名单源均出现在 dist/tvbox.json。"
+    command: "GITHUB_REPOSITORY=rzhnrhjr6j-cloud/tvbox-source-monitor make build"
+    artifacts:
+      - app/build/builder.py
+      - data/whitelist.json
+      - data/monitor.db
+      - dist/tvbox.json
     recorded_at: 2026-10-04

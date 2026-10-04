@@ -16,6 +16,7 @@ import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import urlparse
 
 from ..logging_setup import get_logger
 from ..models import BuildRecord, Event, Source, SourceEvent, Status, Tier
@@ -92,6 +93,7 @@ class ConfigBuilder:
             source for source in candidates
             if not source.paused and self._passes_quality_gate(source)
         ]
+        eligible = self._dedupe_by_content(eligible)
         rejected = len(candidates) - len(eligible)
         if rejected:
             LOGGER.info("quality gate filtered sources", extra={
@@ -102,6 +104,105 @@ class ConfigBuilder:
                 "rejected": rejected,
             })
         return eligible, counts
+
+    # -- content-level de-duplication --------------------------------------
+    def _domain_fingerprint(self, source: Source) -> set[str]:
+        """The set of API hosts a config points at - its real identity.
+
+        Two config files that expose the same 80 CMS sites through different
+        raw URLs are one source, not two.  A failed fetch yields an empty set
+        so a network blip never silently drops a source.
+        """
+        url = source.raw_url or source.url
+        if not url:
+            return set()
+        try:
+            result = self.client.get_json(
+                url,
+                timeout=(self.client.connect_timeout, self.client.read_timeout),
+                max_bytes=int(self.cfg.get("admission.max_config_bytes", 5 * 1024 * 1024)),
+            )
+        except Exception as exc:  # noqa: BLE001 - dedup is best-effort
+            LOGGER.warning("fingerprint fetch failed", extra={
+                "stage": "build", "check": "content_dedup",
+                "source_id": source.id, "error": str(exc)[:200],
+            })
+            return set()
+        if not result.ok:
+            return set()
+        try:
+            payload = json.loads(result.text)
+        except (TypeError, ValueError):
+            return set()
+        if not isinstance(payload, dict):
+            return set()
+        hosts: set[str] = set()
+        for site in payload.get("sites") or []:
+            if not isinstance(site, dict):
+                continue
+            api = site.get("api")
+            if not isinstance(api, str):
+                continue
+            hostname = urlparse(api).hostname
+            if hostname:
+                hosts.add(hostname.lower())
+        return hosts
+
+    def _dedupe_by_content(self, sources: list[Source]) -> list[Source]:
+        """Keep one config per distinct API-host fingerprint.
+
+        Mirrored copies of the same "精品资源" list dominated the first widened
+        discovery run: 12 of 16 published entries pointed at the same batch of
+        CMS hosts.  The whitelisted (user-verified) entry is always kept, and a
+        strictly larger superset is kept alongside it because it adds sites.
+        """
+        gate = self.output_cfg.get("quality_gate") or {}
+        threshold = float(gate.get("content_overlap_threshold", 0.8))
+        if threshold <= 0 or len(sources) < 2:
+            return sources
+        fingerprints = {source.id: self._domain_fingerprint(source) for source in sources}
+        ordered = sorted(
+            sources,
+            key=lambda item: (0 if item.whitelisted else 1, -len(fingerprints[item.id]), item.id),
+        )
+        kept: list[Source] = []
+        kept_fps: list[set[str]] = []
+        for source in ordered:
+            fp = fingerprints[source.id]
+            duplicate = False
+            replaced = False
+            for index, previous in enumerate(kept_fps):
+                if not fp or not previous:
+                    continue
+                overlap = len(fp & previous) / min(len(fp), len(previous))
+                if overlap < threshold:
+                    continue
+                if len(fp) <= len(previous):
+                    duplicate = True
+                    break
+                if kept[index].whitelisted:
+                    # the verified entry stays; this superset still adds sites
+                    continue
+                kept[index] = source
+                kept_fps[index] = fp
+                replaced = True
+                break
+            if duplicate:
+                LOGGER.info("content duplicate dropped", extra={
+                    "stage": "build", "check": "content_dedup",
+                    "source_id": source.id, "hosts": len(fp),
+                })
+                continue
+            if replaced:
+                continue
+            kept.append(source)
+            kept_fps.append(fp)
+        if len(kept) < len(sources):
+            LOGGER.info("content dedup finished", extra={
+                "stage": "build", "check": "content_dedup",
+                "before": len(sources), "after": len(kept),
+            })
+        return kept
 
     def _passes_quality_gate(self, source: Source) -> bool:
         gate = self.output_cfg.get("quality_gate") or {}

@@ -111,6 +111,10 @@ output:
     min_playback_score: 100
     probe_max_age_days: 7
     allow_multi: false
+    # Two configs whose API-host sets overlap this much are the same source
+    # wearing a different URL.  Keep the larger one; a whitelisted
+    # (user-verified) entry is always kept as well.  0 disables the check.
+    content_overlap_threshold: 0.8
     # The first strict run may intentionally shrink the list a lot.  Keep the
     # minimum-source check, but do not let the old drop-ratio valve block it.
     bypass_drop_ratio: true

@@ -29,6 +29,14 @@
       "name": "Lightconer"
     },
     {
+      "url": "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/feimao.json",
+      "name": "feimao"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Honghe-snow/honghetv/main/%E4%BA%91%E6%9C%B5.json",
+      "name": "云朵"
+    },
+    {
       "url": "https://raw.githubusercontent.com/yw88075/tvbox/main/yw.json",
       "name": "yw"
     },
@@ -83,6 +91,18 @@
     {
       "url": "https://raw.githubusercontent.com/13174771/tvboxlist/main/jsm.json",
       "name": "tvboxlist"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/jiaoshihao/tvboxs/main/000.json",
+      "name": "jiaoshihao"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hy5528/tvbox/main/sub/x.json",
+      "name": "hy5528"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hoheiya9527/TvboxSelf/main/src_backup.json",
+      "name": "hoheiya"
     }
   ]
 }

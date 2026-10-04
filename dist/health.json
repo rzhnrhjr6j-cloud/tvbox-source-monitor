@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-10-04T18:11:32Z",
-  "build_id": "20261004-181132",
+  "generated_at": "2026-10-04T19:15:01Z",
+  "build_id": "20261004-191501",
   "summary": {
     "sources": {
       "active": 234,
-      "degraded": 106,
+      "degraded": 110,
       "failed": 1
     },
-    "output_items": 11,
+    "output_items": 14,
     "tiers": {
       "primary": 0,
       "backup": 0,
-      "experimental": 11
+      "experimental": 14
     },
     "checks": {
-      "drop_ratio": -0.1,
-      "items": 11,
+      "drop_ratio": -0.1667,
+      "items": 14,
       "min_sources": 2,
       "max_drop_ratio": 1.0
     }
   },
   "regions": {
     "CN": {
-      "checks": 2389,
-      "successes": 2375,
-      "availability_percent": 99.41
+      "checks": 2394,
+      "successes": 2380,
+      "availability_percent": 99.42
     }
   },
   "last_build": {
-    "build_id": "20261004-181132",
-    "generated_at": "2026-10-04T18:11:32Z",
+    "build_id": "20261004-191501",
+    "generated_at": "2026-10-04T19:15:01Z",
     "git_sha": "",
     "active": 234,
-    "degraded": 106,
+    "degraded": 110,
     "failed": 1,
-    "new": 1,
+    "new": 2,
     "recovered": 0,
     "removed": 0
   },
   "last_alert": {
     "kind": "source_failed",
     "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-    "region": "CN",
+    "region": "",
     "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-    "created_at": "2026-10-04T17:12:23Z",
+    "created_at": "2026-10-04T19:07:40Z",
     "resolved_at": null,
     "severity": "critical",
     "channels": []
@@ -267,6 +267,37 @@
       "error_stage": "L3_search"
     },
     {
+      "id": "8233a0b487b35cbf8eb21e6b82eb91f0041874d8e142d0b1298c7f6315d4b7cd",
+      "name": "hy5528",
+      "url": "https://raw.githubusercontent.com/hy5528/tvbox/main/sub/x.json",
+      "type": "single",
+      "status": "degraded",
+      "tier": "experimental",
+      "score": 58.5,
+      "stability_score": 100.0,
+      "search_score": 0.0,
+      "playback_score": 0.0,
+      "latency_score": 85.0,
+      "regional_score": 50.0,
+      "freshness_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "avg_response_ms": 574.0,
+      "last_success_at": "2026-10-04T19:07:39Z",
+      "last_failure_at": null,
+      "last_check_at": "2026-10-04T19:07:39Z",
+      "consecutive_failure": 0,
+      "consecutive_success": 1,
+      "global_status": "UNKNOWN",
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "whitelisted": false,
+      "error_code": "DNS_ERROR",
+      "error_stage": "L3_search"
+    },
+    {
       "id": "36622d48d4f698b8c06ae4c3aa6e64b97325326c5383e9b14cda2a1f86704190",
       "name": "iahob",
       "url": "https://raw.githubusercontent.com/iahob/tvbox-config/main/api/data.json",
@@ -288,6 +319,37 @@
       "last_check_at": "2026-10-04T17:10:53Z",
       "consecutive_failure": 0,
       "consecutive_success": 4,
+      "global_status": "UNKNOWN",
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "whitelisted": false,
+      "error_code": "SEARCH_NO_JSON",
+      "error_stage": "L3_search"
+    },
+    {
+      "id": "da03426545491a938a97066ee3132090749b63ced337c75d517d77e013ae804f",
+      "name": "jiaoshihao",
+      "url": "https://raw.githubusercontent.com/jiaoshihao/tvboxs/main/000.json",
+      "type": "single",
+      "status": "degraded",
+      "tier": "experimental",
+      "score": 58.5,
+      "stability_score": 100.0,
+      "search_score": 0.0,
+      "playback_score": 0.0,
+      "latency_score": 85.0,
+      "regional_score": 50.0,
+      "freshness_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "avg_response_ms": 607.0,
+      "last_success_at": "2026-10-04T19:07:40Z",
+      "last_failure_at": null,
+      "last_check_at": "2026-10-04T19:07:40Z",
+      "consecutive_failure": 0,
+      "consecutive_success": 1,
       "global_status": "UNKNOWN",
       "regions_ok": [
         "CN"
@@ -326,6 +388,37 @@
       "regions_failed": [],
       "whitelisted": false,
       "error_code": "DNS_ERROR",
+      "error_stage": "L3_search"
+    },
+    {
+      "id": "02ae88698f53bd31a27fdd98b176317fc061e1a4d579ee789f7cd15bd6d4bbb9",
+      "name": "云朵.json",
+      "url": "https://raw.githubusercontent.com/Honghe-snow/honghetv/main/%E4%BA%91%E6%9C%B5.json",
+      "type": "single",
+      "status": "degraded",
+      "tier": "experimental",
+      "score": 58.5,
+      "stability_score": 100.0,
+      "search_score": 0.0,
+      "playback_score": 0.0,
+      "latency_score": 85.0,
+      "regional_score": 50.0,
+      "freshness_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "avg_response_ms": 402.25,
+      "last_success_at": "2026-10-04T18:42:42Z",
+      "last_failure_at": null,
+      "last_check_at": "2026-10-04T18:42:42Z",
+      "consecutive_failure": 0,
+      "consecutive_success": 4,
+      "global_status": "UNKNOWN",
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "whitelisted": false,
+      "error_code": "HTTP_404",
       "error_stage": "L3_search"
     },
     {

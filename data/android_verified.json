@@ -5,6 +5,17 @@
   ],
   "verified": [
     {
+      "source_id": "02ae88698f53bd31a27fdd98b176317fc061e1a4d579ee789f7cd15bd6d4bbb9",
+      "config_url": "https://raw.githubusercontent.com/Honghe-snow/honghetv/main/云朵.json",
+      "verified_at": "2026-10-04T18:31:46Z",
+      "site_count": 25,
+      "loadable_count": 8,
+      "playable_count": 1,
+      "playable_keys": [
+        "农民"
+      ]
+    },
+    {
       "source_id": "090c5f9cf76ef229362a1d0bbc746cb80d0460d34930e2a41d034b1c1291138a",
       "config_url": "https://raw.githubusercontent.com/bluefriendCN/set/main/mx.json",
       "verified_at": "2026-10-04T14:26:00Z",
@@ -25,9 +36,9 @@
     {
       "source_id": "16ddbf15d95f3944d6370305b2f6cf14e3ec191ebac3f42fb806ff1f65dafe2d",
       "config_url": "https://raw.githubusercontent.com/yw88075/tvbox/main/yw.json",
-      "verified_at": "2026-10-04T17:45:36Z",
-      "site_count": 20,
-      "loadable_count": 20,
+      "verified_at": "2026-10-04T18:26:38Z",
+      "site_count": 60,
+      "loadable_count": 60,
       "playable_count": 0,
       "playable_keys": []
     },
@@ -63,6 +74,15 @@
       "verified_at": "2026-10-04T17:45:36Z",
       "site_count": 20,
       "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "34f4f39d6bfc7de3145b28a6f7f2331518b531d8149affd256fb906ccb20b2eb",
+      "config_url": "https://raw.githubusercontent.com/raychan239/tvbox/main/subs/fm-pan.json",
+      "verified_at": "2026-10-04T18:57:05Z",
+      "site_count": 10,
+      "loadable_count": 10,
       "playable_count": 0,
       "playable_keys": []
     },
@@ -208,6 +228,15 @@
       "playable_keys": []
     },
     {
+      "source_id": "63ae672c760a6a1a5b602eb88ca6f42552ecc8095d76db24c18dcdd986f038d2",
+      "config_url": "https://raw.githubusercontent.com/jenmay01/testtv/main/api.json",
+      "verified_at": "2026-10-04T18:31:53Z",
+      "site_count": 25,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
       "source_id": "6a29688ff01d5c44ce66c52434d7a951ba2345dd49ed5a0a46fd076022d50d84",
       "config_url": "https://raw.githubusercontent.com/xinyi1984/xytv/master/wex.json",
       "verified_at": "2026-10-04T13:00:35Z",
@@ -244,6 +273,19 @@
       "playable_keys": []
     },
     {
+      "source_id": "8233a0b487b35cbf8eb21e6b82eb91f0041874d8e142d0b1298c7f6315d4b7cd",
+      "config_url": "https://raw.githubusercontent.com/hy5528/tvbox/main/sub/x.json",
+      "verified_at": "2026-10-04T18:53:56Z",
+      "site_count": 41,
+      "loadable_count": 25,
+      "playable_count": 3,
+      "playable_keys": [
+        "MTV1",
+        "热播影视",
+        "Dm84"
+      ]
+    },
+    {
       "source_id": "876a4f1bf4eda6f103a3997c1f0766edc21fdccb099b4882e5ab657b0f3a4c07",
       "config_url": "https://raw.githubusercontent.com/which0113/freefish-api/master/app.json",
       "verified_at": "2026-10-04T13:00:35Z",
@@ -271,6 +313,15 @@
       "playable_keys": []
     },
     {
+      "source_id": "967b6b2257a78c795f8c28c1ecdfb2a128706171e144934cea75f5347e8f2bf8",
+      "config_url": "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/4k.json",
+      "verified_at": "2026-10-04T18:30:18Z",
+      "site_count": 25,
+      "loadable_count": 2,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
       "source_id": "9b8336890147c23d6bf899f91692b89d5bac64f700ad3cfb504e68c0e8591c06",
       "config_url": "https://raw.githubusercontent.com/956065487/zhiboyuan/main/0821.json",
       "verified_at": "2026-10-04T17:45:36Z",
@@ -289,6 +340,22 @@
       "playable_keys": []
     },
     {
+      "source_id": "aa9e15287a28b5bc88f14d3e982e1e6727099244b10b58c81f25154d68e9f1dd",
+      "config_url": "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/feimao.json",
+      "verified_at": "2026-10-04T18:35:11Z",
+      "site_count": 25,
+      "loadable_count": 25,
+      "playable_count": 6,
+      "playable_keys": [
+        "潮流",
+        "蔬菜",
+        "csp_Jpys",
+        "荐片",
+        "csp_Gz360",
+        "csp_Dm84"
+      ]
+    },
+    {
       "source_id": "b63ac8eea01ca1fd822d3d437e207a7e59f4d2cbafa68d884b0577487afaefc4",
       "config_url": "https://raw.githubusercontent.com/AA257265/265/main/XBP.json",
       "verified_at": "2026-10-04T14:59:30Z",
@@ -298,6 +365,15 @@
       "playable_keys": [
         "布卡"
       ]
+    },
+    {
+      "source_id": "b79022d831a890db44a0a626fa043d74f136848c1a2616048fbc72be17b425e2",
+      "config_url": "https://raw.githubusercontent.com/jiaoshihao/tvbox-lite/main/boxMain.json",
+      "verified_at": "2026-10-04T19:06:50Z",
+      "site_count": 1,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
     },
     {
       "source_id": "b805de89511b345c927332960fd978ced1363384c75576cbfbe90b97c71223fc",
@@ -341,6 +417,19 @@
       "loadable_count": 1,
       "playable_count": 0,
       "playable_keys": []
+    },
+    {
+      "source_id": "da03426545491a938a97066ee3132090749b63ced337c75d517d77e013ae804f",
+      "config_url": "https://raw.githubusercontent.com/jiaoshihao/tvboxs/main/000.json",
+      "verified_at": "2026-10-04T18:52:42Z",
+      "site_count": 46,
+      "loadable_count": 11,
+      "playable_count": 3,
+      "playable_keys": [
+        "柠檬",
+        "天天",
+        "西瓜"
+      ]
     },
     {
       "source_id": "dd96b03685e0e6b211f4af986de39d0e8138ceeb2a9ea84326d0ef044be87ade",
@@ -399,6 +488,20 @@
       "loadable_count": 4,
       "playable_count": 0,
       "playable_keys": []
+    },
+    {
+      "source_id": "f5bd906efdf3510954bd42f32574ecadda0ff0c565f6ecb34087c46766ded1a0",
+      "config_url": "https://raw.githubusercontent.com/hoheiya9527/TvboxSelf/main/src_backup.json",
+      "verified_at": "2026-10-04T18:57:46Z",
+      "site_count": 18,
+      "loadable_count": 18,
+      "playable_count": 4,
+      "playable_keys": [
+        "潮流",
+        "蔬菜",
+        "荐片",
+        "csp_Gz360"
+      ]
     },
     {
       "source_id": "ff7f65e27d87615c3db1ef8b8700386740b27bb7598d8419e5235fba6e1c7051",

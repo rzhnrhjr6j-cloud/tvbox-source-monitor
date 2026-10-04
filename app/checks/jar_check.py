@@ -136,10 +136,29 @@ def passes(
     return True
 
 
+def _at_least_as_strong(record: AndroidRecord, previous: AndroidRecord) -> bool:
+    """Whether a fresh verdict may replace the stored one.
+
+    A verification run may only sample the first N sites, so a narrow re-run can
+    report zero playable sites while the stored verdict already proved that a
+    site further down the list streams media.  Letting that narrow run overwrite
+    the stronger verdict would silently unpublish a working source, so the file
+    keeps the best verdict seen within the freshness window.
+    """
+    if record.playable_count != previous.playable_count:
+        return record.playable_count > previous.playable_count
+    if record.loadable_count != previous.loadable_count:
+        return record.loadable_count > previous.loadable_count
+    return True
+
+
 def write_evidence(path: Path | str, records: list[AndroidRecord]) -> None:
-    """Merge new verdicts into the file, newest per source wins."""
+    """Merge new verdicts into the file, keeping the strongest per source."""
     existing = load_evidence(path)
     for record in records:
+        previous = existing.get(record.source_id)
+        if previous is not None and not _at_least_as_strong(record, previous):
+            continue
         existing[record.source_id] = record
     ordered = sorted(existing.values(), key=lambda item: item.source_id)
     payload = {

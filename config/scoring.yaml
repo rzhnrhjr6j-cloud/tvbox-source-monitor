@@ -62,12 +62,15 @@ lifecycle:
 candidate:
   threshold: 55
   weights:
-    reachable: 0.20
-    json_valid: 0.20
-    schema_valid: 0.20
-    https: 0.10
-    multi_reference: 0.15
-    initial_search: 0.15
+    reachable: 0.18
+    json_valid: 0.18
+    schema_valid: 0.18
+    https: 0.09
+    multi_reference: 0.135
+    initial_search: 0.135
+    # 多站/多仓聚合配置优先：单站脚本和直播列表制造了大量噪音，而聚合配置
+    # 一次就能带出一批站点。这一项是纯加分，不改其它门槛。
+    aggregate_config: 0.10
   # a candidate must be reachable at least this many times before promotion
   min_reachable_observations: 1
 

@@ -142,6 +142,9 @@ def parse_text(text: str) -> ConfigDoc:
     """Parse a fetched config body.  Raises :class:`ParseError`."""
     if text is None:
         raise ParseError("EMPTY_BODY")
+    # 有些配置仓库用带 BOM 的 UTF-8 保存 JSON；不先剥掉 BOM，json.loads
+    # 会直接报 Unexpected UTF-8 BOM，把一份好配置误判成 INVALID_JSON。
+    text = text.lstrip("\ufeff")
     stripped = text.strip()
     if not stripped:
         raise ParseError("EMPTY_BODY")

@@ -76,3 +76,36 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
 8. Exit criteria and handoff
    - 本地 `make build` 发布 3 个源：“精东（24站）”“豆瓣（39站）”“豆了（159站）”。
    - 待办：提交推送并触发线上工作流后，核对线上 `tvbox.json` 三项均可下载；由用户手机复测三个源。
+
+## T-007 - 发布入口镜像修复、强证据保留与扩源
+
+1. Objective and non-goals
+   - Objective: 修好手机端打不开的发布入口，防止窄抽样真机结果覆盖已证实的强证据，并继续扩大手机端真正可播的源。
+   - Non-goals: 不伪造真机结果，不把未在设备上验证的源说成可播，不放宽 L6 门禁凑数量。
+2. Current state / constraints
+   - `build` 不带 `GITHUB_REPOSITORY` 时，`dist/tvbox.json` 指向 `raw.githubusercontent.com` 原点，手机端打不开；镜像副本在 `dist/sources/`。
+   - 批量真机验证只抽前 N 站，弱结果会覆盖同源全量跑出的强结果，导致可播源被错误撤下。
+   - 数据库：total 341，active 234 / degraded 106 / failed 1。
+   - 真机证据：`data/android_verified.json` 40 条。
+3. Requirements and acceptance criteria
+   - REQ-701 / AC-701：发布命令显式带 `GITHUB_REPOSITORY`，构建产物 URL 全部走可用镜像，主入口与 CDN 条目/文件一致。
+   - REQ-702 / AC-702：`write_evidence` 只允许不弱于既有记录的结果覆盖，同强度允许刷新时间戳。
+   - REQ-703 / AC-703：`jsm` 全量真机跑出的 `playable=1` 不再被 20 站窄抽样覆盖，重建后回归发布。
+   - REQ-704 / AC-704：继续对高产区候选（Lightconer、bigtangxi、yw、ewctt、cluntop、菜妮丝等）补全量或放宽抽样真机证据。
+4. Design / architecture impact
+   - `app/checks/jar_check.py`：新增 `_at_least_as_strong`，`write_evidence` 按 playable/loadable 强弱合并。
+   - `tests/test_android_gate.py`：覆盖弱结果不覆盖、强结果覆盖、同 playable 更多 loadable、同强度刷新时间戳。
+   - `config/discovery.yaml`、`config/scoring.yaml`、`app/discovery/aggregator.py`、`app/parsers/json_parser.py`、`data/candidates.json`：扩充发现查询、seed 仓库和候选池。
+5. Implementation steps with task IDs
+   - CR-008：修复发布入口镜像 URL、保留更强真机证据、扩充发现与候选池。进行中。
+   - T-007：对新增可播证据源重建并推送。待办。
+6. Validation strategy and evidence IDs
+   - 聚焦测试 86 项通过，全量 `pytest` 通过。
+   - 本地重建发布 11 条，`dist/tvbox.json` 与 `dist/tvbox-cdn.json` 条目一致，`dist/sources/` 与 `dist/cdn/sources/` 文件数一致且 11 条 URL 均走 `gh-proxy.com` 镜像。
+   - 证据：E-015 发布入口镜像核对；E-016 强证据保留单测；E-017 全量测试；E-018 11 源重建。
+7. Rollback / recovery plan
+   - 发布失败保留上一版 `tvbox.json`；证据合并不删历史记录，必要时从 Git 历史恢复旧文件。
+   - `require_android_jar=false` 或 `android_satisfies_playback=false` 可回退 L6 门禁。
+8. Exit criteria and handoff
+   - 新产物推送并触发 Pages，线上 `tvbox.json` 可下载、URL 指向镜像。
+   - 用户手机复测新入口；未在设备上验证的源不得预先声称可播。

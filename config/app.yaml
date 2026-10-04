@@ -131,9 +131,10 @@ output:
     android_evidence_file: android_verified.json
     # A mainland client can reach a media host even when the CI runner cannot.
     # When a jar source has fresh real-device playback evidence, let it stand
-    # in for the runner-side L5 playback probe; search evidence is still
-    # required separately.
+    # in for the runner-side L5 playback probe and a failed best-effort L3
+    # search probe.
     android_satisfies_playback: true
+    android_satisfies_search: true
     # The first strict run may intentionally shrink the list a lot.  Keep the
     # minimum-source check, but do not let the old drop-ratio valve block it.
     bypass_drop_ratio: true

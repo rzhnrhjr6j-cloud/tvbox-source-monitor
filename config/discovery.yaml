@@ -43,6 +43,18 @@ discovery:
       - "filename:ys.json tvbox"
       - "filename:zb.json tvbox"
       - "filename:duo.json tvbox"
+      # Maintained clusters that keep appearing after real-device verification.
+      # Short names and image suffixes are intentional: several live configs
+      # are published as Chinese-named .json/.png files.
+      - "filename:哈基米.json"
+      - "filename:哈基米.png"
+      - "filename:哈吉米.json"
+      - "filename:hjm.json"
+      - "filename:XBP.json"
+      - "668yun.top in:file"
+      - "kayyw.com in:file"
+      - "kstore.space in:file"
+      - "mpimg.cn in:file"
       - "tvbox.json in:path"
       - "影视仓 in:file extension:json"
       - "tvbox api in:file extension:json"
@@ -51,6 +63,16 @@ discovery:
       - "csp in:file extension:json"
       - "duocang in:file extension:json"
       - "warehouse in:file extension:json"
+      # 2026-10-05 GitHub 两轮扫库的结果：泛词命中一堆单站脚本，下面这组
+      # 「文件形状 + 关键字段」组合才是多站聚合配置的高产区。
+      - 'filename:api.json "sites" "csp_"'
+      - 'filename:box.json "sites" "parses"'
+      - 'filename:tvbox.json "sites" "lives"'
+      - 'filename:jsm.json "sites"'
+      - '"urls" "tvbox" extension:json'
+      - '"csp_" "sites" extension:json'
+      - '"jar" "sites" "parses" extension:json'
+      - '"多仓" "urls" extension:json'
     repo_queries:
       - "tvbox sources in:name,description,readme"
       - "tvbox 接口 in:name,description,readme"
@@ -62,6 +84,16 @@ discovery:
     max_pages: 2
     # stop paging when the remaining rate-limit budget drops below this
     min_rate_limit_remaining: 5
+    # GitHub caps /search/code at 10 requests/minute for token users and
+    # /search/repositories at 30.  The query list above is long, so the adapter
+    # paces itself (and waits out a reset when a bucket empties) instead of
+    # burning the whole quota in the first few seconds and dropping every query
+    # after it.  9/min leaves headroom under the hard 10/min code-search cap.
+    search_requests_per_minute: 9
+    max_search_wait_seconds: 75
+    # hard wall-clock ceiling for the code-search loop so a long query list can
+    # never push the scheduled workflow past its own timeout
+    max_code_search_seconds: 780
     # 只展开最近还在动的仓库。几个月没更新的配置，里面接口基本都死了，
     # 客户端读出来就是「解析失败」。
     max_repo_age_days: 180
@@ -70,9 +102,58 @@ discovery:
     # repo search 命中后最多展开多少个仓库的目录树。第一轮真实运行只给了
     # 5 个仓库、24 个配置；提高到 15 个只多几次 API 调用，是性价比最高的扩量。
     max_repos_for_trees: 15
+    # 真机播放验证过的活跃仓库，直接枚举目录树，不再靠搜索词碰运气。
+    # 这些仓库里出过真实可播的源（见 data/android_verified.json），
+    # 比继续加搜索词命中率高。每仓库固定消耗 2 次 core API 调用
+    # （默认分支 + 目录树），core 预算 5000/h，不会挤占搜索桶。
+    # 单仓库上限：不设的话 yuanwangokk-1/TV-BOX 这种仓库会独占
+    # 300 个候选的整轮预算，其它种子仓库根本轮不到。
+    seed_max_per_repo: 40
+    # 每轮只枚举一部分种子仓库，其余下一轮轮换。所有种子仓库都跑满的话，
+    # 300 个候选额度会被它们吃光，GitHub 搜索发现的新仓库永远排不上。
+    seed_repos_per_run: 5
+    seed_repos:
+      # 已有真机播放证据、确认能出活源的仓库
+      - iahob/tvbox-config
+      - Honghe-snow/honghetv
+      - jenmay01/testtv
+      - qirenzhidao/tvbox18
+      - AA257265/265
+      - cluntop/tvbox
+      - dlgt7/TVbox-interface
+      - AndroidSoftwares/box
+      - gaotianliuyun/gao
+      - yuanwangokk-1/TV-BOX
+      # 本次 check 里搜索/播放分最高的仓库，整仓枚举找同作者的新配置
+      - woshishiq1/hipy-drpy2
+      - KAN314go/21
+      - ninemui/9muiBOX
+      - FreeDTV/FreeD
+      # 2026-10-05 GitHub 两轮扫库挑出的高产仓库：每仓至少一份多站聚合配置，
+      # 站点数和 csp 命中数都明显高于泛搜结果。
+      - Lightconer/tvbox-ysc-config
+      - qist/tvbox
+      - bigtangxi/yule
+      - hanfu2022/StableTV
+      - dxzhang456/mylist
+      - cluntop/tv
+      - yw88075/tvbox
+      - ewctt/tvbox
+      - s14685/tv
+      - 956065487/zhiboyuan
+      - kimwang1978/tvbox
+      - lubin776/tvbox-api-backup
+      - ZHOUYU86/tvbox-sources
+      - niuber/niuber
+      - kukuqi666/TVBoxOS-Mobile
+      - yangxiaoge/tvbox_cust
+      - 13174771/tvboxlist
     # only these path shapes are treated as candidate configs
     path_patterns:
       - '\.json$'
+      # Some live TVBox configs are deliberately served with an image suffix.
+      # Admission still validates the body, so binary files are rejected.
+      - '(?i)(哈基米|哈吉米|哈唧米|hjm|xbp)\.(png|jpe?g)$'
     # never treat these as sources
     path_excludes:
       - 'package(-lock)?\.json$'

@@ -205,6 +205,9 @@ class DiscoveryAggregator:
             "https": bool(parsed and parsed.scheme == "https"),
             "multi_reference": references >= 2,
             "initial_search": True,
+            # 多仓 wrapper 或站点数 >= 2 的聚合配置优先于单站脚本：一次收录
+            # 能带出多个 CMS，单站脚本和直播列表则最容易变成死源。
+            "aggregate_config": doc.is_multi or len(doc.sites) >= 2,
         }
         if initial_search_ok is not None:
             signals["initial_search"] = initial_search_ok
@@ -266,6 +269,13 @@ class DiscoveryAggregator:
                 outcome.name = existing.name
                 outcome.schema = existing.schema
                 outcome.type = existing.type
+                # The manual pool now carries real names, but these sources
+                # were first admitted when every string entry was named
+                # "manual".  Backfill the placeholder on re-seen.
+                if candidate.name and existing.name in (None, "", "manual"):
+                    existing.name = candidate.name
+                    self.store.upsert_source(existing)
+                    outcome.name = existing.name
                 return outcome
             if parent_id is None:
                 outcome.reason = "RECENTLY_REJECTED"
@@ -317,7 +327,10 @@ class DiscoveryAggregator:
             existing.schema = doc.schema or existing.schema
             existing.type = outcome.type
             existing.candidate_score = outcome.score
-            if not existing.name:
+            # ``manual`` is the placeholder the string-form candidate pool
+            # used to store.  Now that the pool carries real names, replace
+            # the placeholder on re-seen so clients stop showing "manual".
+            if outcome.name and existing.name in (None, "", "manual"):
                 existing.name = outcome.name
             existing.touch()
             if self.policy.is_whitelisted(candidate.url):

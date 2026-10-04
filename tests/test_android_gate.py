@@ -8,7 +8,7 @@ local-verdict gate that stands in for that step.
 from __future__ import annotations
 
 import json
-from datetime import timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from app.build.builder import ConfigBuilder
@@ -63,6 +63,7 @@ def build_config(
     *,
     require_android_jar: bool,
     android_satisfies_playback: bool = True,
+    android_satisfies_search: bool = True,
 ):
     return load_config(
         explicit_root=ROOT,
@@ -80,6 +81,7 @@ def build_config(
                     "enabled": True,
                     "require_android_jar": require_android_jar,
                     "android_satisfies_playback": android_satisfies_playback,
+                    "android_satisfies_search": android_satisfies_search,
                     "content_overlap_threshold": 0,
                 },
             },
@@ -91,6 +93,8 @@ def seed_source(
     store: Store,
     source_id: str = "s1",
     *,
+    status: Status = Status.ACTIVE,
+    search_success: bool = True,
     playback_url_obtained: bool = True,
     playback_probe_success: bool = True,
     playback_content_type: str = "application/vnd.apple.mpegurl",
@@ -101,7 +105,7 @@ def seed_source(
         raw_url=f"https://example.com/{source_id}.json",
         name=source_id,
         type="single",
-        status=Status.ACTIVE,
+        status=status,
         score=100,
         stability_score=100,
         first_seen_at=to_iso(utcnow() - timedelta(days=30)),
@@ -111,7 +115,7 @@ def seed_source(
         region="CN",
         http_ok=True,
         config_parse_success=True,
-        search_success=True,
+        search_success=search_success,
         detail_success=True,
         detail_has_playlist=True,
         playback_url_obtained=playback_url_obtained,
@@ -150,6 +154,41 @@ def test_evidence_round_trips(tmp_path):
     evidence = load_evidence(tmp_path / "data" / "android_verified.json")
     assert evidence["s1"].loadable_count == 40
     assert evidence["s1"].playable_count == 2
+
+
+def test_narrow_rerun_cannot_overwrite_stronger_verdict(tmp_path):
+    # 全量跑出过 playable=1，之后只抽前 20 站的跑出 0，不能把强证据冲掉。
+    record(tmp_path, "s1", loadable=59, playable=1)
+    record(tmp_path, "s1", loadable=20, playable=0)
+    evidence = load_evidence(tmp_path / "data" / "android_verified.json")
+    assert evidence["s1"].loadable_count == 59
+    assert evidence["s1"].playable_count == 1
+
+
+def test_stronger_rerun_replaces_weaker_verdict(tmp_path):
+    record(tmp_path, "s1", loadable=20, playable=0)
+    record(tmp_path, "s1", loadable=59, playable=1)
+    evidence = load_evidence(tmp_path / "data" / "android_verified.json")
+    assert evidence["s1"].loadable_count == 59
+    assert evidence["s1"].playable_count == 1
+
+
+def test_same_playable_more_loadable_replaces_verdict(tmp_path):
+    record(tmp_path, "s1", loadable=20, playable=1)
+    record(tmp_path, "s1", loadable=59, playable=1)
+    evidence = load_evidence(tmp_path / "data" / "android_verified.json")
+    assert evidence["s1"].loadable_count == 59
+
+
+def test_equal_verdict_refreshes_timestamp(tmp_path):
+    record(tmp_path, "s1", loadable=59, playable=1, days_old=10)
+    record(tmp_path, "s1", loadable=59, playable=1, days_old=0)
+    evidence = load_evidence(tmp_path / "data" / "android_verified.json")
+    verified = datetime.fromisoformat(evidence["s1"].verified_at)
+    if verified.tzinfo is None:
+        verified = verified.replace(tzinfo=timezone.utc)
+    assert abs((utcnow() - verified).total_seconds()) < 60
+    assert evidence["s1"].loadable_count == 59
 
 
 def test_jar_config_without_evidence_is_dropped_when_gate_on(tmp_path):
@@ -252,6 +291,69 @@ def test_android_playable_does_not_substitute_for_cms_playback(tmp_path):
     try:
         seed_source(store, playback_probe_success=False, playback_content_type="")
         eligible, _ = ConfigBuilder(cfg, store, client=FakeClient(CMS_CONFIG)).eligible()
+    finally:
+        store.close()
+    assert eligible == []
+
+
+def test_android_playable_substitutes_failed_search(tmp_path):
+    cfg = build_config(tmp_path, require_android_jar=True)
+    record(tmp_path, "s1", loadable=40, playable=1)
+    store = Store(cfg.path("app.db_path", ensure_parent=True))
+    try:
+        seed_source(store, search_success=False)
+        eligible, _ = ConfigBuilder(cfg, store, client=FakeClient(JAR_CONFIG)).eligible()
+    finally:
+        store.close()
+    assert [source.id for source in eligible] == ["s1"]
+
+
+def test_android_playable_does_not_substitute_search_when_option_off(tmp_path):
+    cfg = build_config(
+        tmp_path,
+        require_android_jar=True,
+        android_satisfies_search=False,
+    )
+    record(tmp_path, "s1", loadable=40, playable=1)
+    store = Store(cfg.path("app.db_path", ensure_parent=True))
+    try:
+        seed_source(store, search_success=False)
+        eligible, _ = ConfigBuilder(cfg, store, client=FakeClient(JAR_CONFIG)).eligible()
+    finally:
+        store.close()
+    assert eligible == []
+
+
+def test_android_playable_does_not_substitute_search_for_cms(tmp_path):
+    cfg = build_config(tmp_path, require_android_jar=True)
+    record(tmp_path, "s1", loadable=40, playable=1)
+    store = Store(cfg.path("app.db_path", ensure_parent=True))
+    try:
+        seed_source(store, search_success=False)
+        eligible, _ = ConfigBuilder(cfg, store, client=FakeClient(CMS_CONFIG)).eligible()
+    finally:
+        store.close()
+    assert eligible == []
+
+
+def test_degraded_jar_with_android_playback_is_still_a_candidate(tmp_path):
+    cfg = build_config(tmp_path, require_android_jar=True)
+    record(tmp_path, "s1", loadable=40, playable=1)
+    store = Store(cfg.path("app.db_path", ensure_parent=True))
+    try:
+        seed_source(store, status=Status.DEGRADED, search_success=False)
+        eligible, _ = ConfigBuilder(cfg, store, client=FakeClient(JAR_CONFIG)).eligible()
+    finally:
+        store.close()
+    assert [source.id for source in eligible] == ["s1"]
+
+
+def test_degraded_jar_without_android_playback_stays_filtered(tmp_path):
+    cfg = build_config(tmp_path, require_android_jar=True)
+    store = Store(cfg.path("app.db_path", ensure_parent=True))
+    try:
+        seed_source(store, status=Status.DEGRADED, search_success=False)
+        eligible, _ = ConfigBuilder(cfg, store, client=FakeClient(JAR_CONFIG)).eligible()
     finally:
         store.close()
     assert eligible == []

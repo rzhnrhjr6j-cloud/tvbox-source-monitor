@@ -1,1 +1,88 @@
-{"urls": ["http://127.0.0.1:60281/config.json"]}
+{
+  "urls": [
+    {
+      "url": "https://raw.githubusercontent.com/iahob/tvbox-config/main/api/data.json",
+      "name": "iahob"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Honghe-snow/honghetv/main/hjm.json",
+      "name": "红河"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/jenmay01/testtv/main/%E5%93%88%E5%9F%BA%E7%B1%B3.png",
+      "name": "哈基米"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/qirenzhidao/tvbox18/main/pg/jsm.json",
+      "name": "jsm"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AA257265/265/main/XBP.json",
+      "name": "XBP"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bigtangxi/yule/main/Jjsm.json",
+      "name": "bigtangxi"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/%E5%8D%95%E4%BB%93%E8%81%9A%E5%90%88.json",
+      "name": "Lightconer"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yw88075/tvbox/main/yw.json",
+      "name": "yw"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ewctt/tvbox/main/box.json",
+      "name": "ewctt"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/s14685/tv/main/vip.json",
+      "name": "s14685"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/956065487/zhiboyuan/main/0821.json",
+      "name": "zhiboyuan"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/niubihu1/tvbox-/main/368.json",
+      "name": "niubihu"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/meilipanduola/hz/main/tvbox.json",
+      "name": "hz"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KTogithub/TVBox/main/pg/jsm.json",
+      "name": "KTogithub"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kimwang1978/tvbox/main/%E8%8F%9C%E5%A6%AE%E4%B8%9D/api.json",
+      "name": "菜妮丝"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zeee-u/lzh03/main/jsm.json",
+      "name": "lzh03"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/13998394872/TVBox/main/PF.json",
+      "name": "TVBox-PF"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lubin776/tvbox-api-backup/main/tvbox/X4%E8%8F%A0%E8%8F%9C%E5%9B%AD.json",
+      "name": "X4菠菜园"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/songlees355-wq/okay/main/tvbox.json",
+      "name": "okay"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/cluntop/tv/main/box.json",
+      "name": "cluntop-tv"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/13174771/tvboxlist/main/jsm.json",
+      "name": "tvboxlist"
+    }
+  ]
+}

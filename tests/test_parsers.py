@@ -59,6 +59,14 @@ def test_parse_text_roundtrip():
     assert doc.is_multi is False
 
 
+def test_parse_text_tolerates_a_utf8_bom():
+    # 部分配置仓库用带 BOM 的 UTF-8 保存 JSON（如 s14685/tv vip.json），
+    # 不能被误判成 INVALID_JSON。
+    doc = parse_text("\ufeff" + json.dumps(SINGLE))
+    assert doc.schema == SCHEMA_SINGLE
+    assert len(doc.sites) == 1
+
+
 @pytest.mark.parametrize("body,code", [
     ("", "EMPTY_BODY"),
     ("   ", "EMPTY_BODY"),

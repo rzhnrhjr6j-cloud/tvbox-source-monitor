@@ -107,6 +107,12 @@ class ConfigBuilder:
         if bool(self.output_cfg.get("include_degraded", False)):
             statuses.extend([Status.DEGRADED, Status.RECOVERING])
         candidates = self.store.list_sources(statuses=statuses)
+        if not bool(self.output_cfg.get("include_degraded", False)) and self._android_gate_enabled():
+            seen = {source.id for source in candidates}
+            candidates.extend(
+                source for source in self.store.list_sources(statuses=[Status.DEGRADED])
+                if source.id not in seen and self._android_playback_verified(source)
+            )
         counts = self.store.count_by_status()
         eligible = [
             source for source in candidates
@@ -212,9 +218,16 @@ class ConfigBuilder:
         """
         if source.whitelisted:
             return True
-        gate = self.output_cfg.get("quality_gate") or {}
         if not self._content_profile(source).has_jar:
             return True
+        return self._android_playback_verified(source)
+
+    def _android_playback_verified(self, source: Source) -> bool:
+        gate = self.output_cfg.get("quality_gate") or {}
+        if not self._android_gate_enabled():
+            return False
+        if not self._content_profile(source).has_jar:
+            return False
         return android_passes(
             source.id,
             self._android_evidence_map(),
@@ -232,16 +245,20 @@ class ConfigBuilder:
         """
         if not bool(gate.get("android_satisfies_playback", False)):
             return False
-        if not self._android_gate_enabled():
+        return self._android_playback_verified(source)
+
+    def _android_substitutes_search(self, source: Source, gate: dict[str, Any]) -> bool:
+        """True when fresh real-device playback evidence can replace L3.
+
+        The HTTP search probe depends on one site's search endpoint and can
+        fail on DNS or a temporary upstream error even when the Android client
+        has already streamed media from the same config.  Real-device playback
+        is the stronger signal, but this exception stays limited to jar/csp
+        configs with a fresh, playable Android verdict.
+        """
+        if not bool(gate.get("android_satisfies_search", False)):
             return False
-        if not self._content_profile(source).has_jar:
-            return False
-        return android_passes(
-            source.id,
-            self._android_evidence_map(),
-            max_age_days=float(gate.get("android_evidence_max_age_days", 30)),
-            require_playable=True,
-        )
+        return self._android_playback_verified(source)
 
     def _dedupe_by_content(self, sources: list[Source]) -> list[Source]:
         """Keep one config per distinct API-host fingerprint.
@@ -320,7 +337,8 @@ class ConfigBuilder:
         latest = probes[0]
         if bool(gate.get("require_search", True)):
             latest_search_score = 100 if latest.search_success else 0
-            if not _score_at_least(latest_search_score, gate.get("min_search_score", 100)):
+            search_ok = _score_at_least(latest_search_score, gate.get("min_search_score", 100))
+            if not search_ok and not self._android_substitutes_search(source, gate):
                 return False
         if bool(gate.get("require_playback", True)):
             latest_playback_score = (

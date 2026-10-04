@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-04T18:48:17Z",
+  "generated_at": "2026-10-04T19:15:01Z",
   "urls": [
     {
       "name": "精品 | 采集（83站）",
@@ -31,8 +31,16 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b63ac8eea01ca1fd.json"
     },
     {
-      "name": "分享本地（169站）",
+      "name": "神秘的┃哥哥们（59站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8233a0b487b35cbf.json"
+    },
+    {
+      "name": "分享本地 #1（169站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/36622d48d4f698b8.json"
+    },
+    {
+      "name": "分享本地 #2（168站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/da03426545491a93.json"
     },
     {
       "name": "豆瓣 #3（88站）",

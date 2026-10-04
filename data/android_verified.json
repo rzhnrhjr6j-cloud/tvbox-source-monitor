@@ -43,6 +43,19 @@
       "playable_keys": []
     },
     {
+      "source_id": "17a834c4e8c9bc6e1da0f93ee966b8d086df9624b3b8c9c2076f4be81b2146ac",
+      "config_url": "https://raw.githubusercontent.com/lubin776/tvbox-api-backup/main/tvbox/%E6%91%B8%E9%B1%BC.json",
+      "verified_at": "2026-10-04T19:36:14Z",
+      "site_count": 20,
+      "loadable_count": 20,
+      "playable_count": 3,
+      "playable_keys": [
+        "KanJu",
+        "长泽",
+        "zhiqiu"
+      ]
+    },
+    {
       "source_id": "1cb1bfdf5195d634d0db5a083fc41c5adecf5a2ffe3053a616a3dff94bb0136d",
       "config_url": "https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json",
       "verified_at": "2026-10-04T14:26:43Z",
@@ -295,6 +308,15 @@
       "playable_keys": []
     },
     {
+      "source_id": "8f8f4b19f4816269e9a477276ff8289cb9a566787956d9c7edf8f87852022b03",
+      "config_url": "https://raw.githubusercontent.com/lubin776/0/main/tvbox/%E9%9B%86%E5%A4%9A.json",
+      "verified_at": "2026-10-04T19:36:14Z",
+      "site_count": 20,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
       "source_id": "91ceb5d68b716aeaa37f3b7d255b22050a81e0a3ce4b2405896282ac20f0885e",
       "config_url": "https://raw.githubusercontent.com/cluntop/tv/main/box.json",
       "verified_at": "2026-10-04T17:45:36Z",
@@ -327,6 +349,27 @@
       "verified_at": "2026-10-04T17:45:36Z",
       "site_count": 20,
       "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "9d8d967110c5392515230bee1c3cd4dc6ae600c108ba99653b5a955facd63ee9",
+      "config_url": "https://raw.githubusercontent.com/huangxiong1992/jt/main/vip.json",
+      "verified_at": "2026-10-04T19:40:48Z",
+      "site_count": 6,
+      "loadable_count": 4,
+      "playable_count": 2,
+      "playable_keys": [
+        "热播",
+        "瓜子"
+      ]
+    },
+    {
+      "source_id": "a17c1fda1d77a7dec5b93685a7f67e9c7504d58a19a9f3da590db7fb58637940",
+      "config_url": "https://raw.githubusercontent.com/guot55/yg/main/pg/bh.json",
+      "verified_at": "2026-10-04T19:40:48Z",
+      "site_count": 20,
+      "loadable_count": 20,
       "playable_count": 0,
       "playable_keys": []
     },
@@ -410,6 +453,30 @@
       ]
     },
     {
+      "source_id": "bb44d7c7145de6e2abdc08825568e8c086058d212437dd97893045486e8cff8b",
+      "config_url": "https://raw.githubusercontent.com/hjcmcn/z/main/921.json",
+      "verified_at": "2026-10-04T19:40:48Z",
+      "site_count": 20,
+      "loadable_count": 17,
+      "playable_count": 5,
+      "playable_keys": [
+        "天天",
+        "柠檬",
+        "热播",
+        "荐片",
+        "旺旺"
+      ]
+    },
+    {
+      "source_id": "c02fd5ffbdafe70bcfd5c0dc0755ec146591014ed8df0d652c39c641bf779738",
+      "config_url": "https://raw.githubusercontent.com/qist/tvbox/master/367.json",
+      "verified_at": "2026-10-04T19:27:13Z",
+      "site_count": 12,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
       "source_id": "c3ee97ab1cf71b017f0df3225dd36cd758f9bb41a3ee1ce32b31c66faf60424b",
       "config_url": "https://raw.githubusercontent.com/mxysmxys/imxys/main/api.json",
       "verified_at": "2026-10-04T12:38:52Z",
@@ -488,6 +555,17 @@
       "loadable_count": 4,
       "playable_count": 0,
       "playable_keys": []
+    },
+    {
+      "source_id": "f207435f85a00d747da25bffb023b7feb6705edf8d8cf99a20d8e31dfda2a7c1",
+      "config_url": "https://raw.githubusercontent.com/13998394872/TVBox/main/PG.json",
+      "verified_at": "2026-10-04T19:36:14Z",
+      "site_count": 20,
+      "loadable_count": 19,
+      "playable_count": 1,
+      "playable_keys": [
+        "cilixiong"
+      ]
     },
     {
       "source_id": "f5bd906efdf3510954bd42f32574ecadda0ff0c565f6ecb34087c46766ded1a0",

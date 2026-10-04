@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-04T19:15:01Z",
+  "generated_at": "2026-10-04T19:47:46Z",
   "urls": [
     {
       "name": "精品 | 采集（83站）",
@@ -27,8 +27,16 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/5b34c1370113faa4.json"
     },
     {
+      "name": "豆瓣 | 索引（149站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f207435f85a00d74.json"
+    },
+    {
       "name": "豆瓣 #2（242站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b63ac8eea01ca1fd.json"
+    },
+    {
+      "name": "┃豆瓣┃仅供测试（90站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/bb44d7c7145de6e2.json"
     },
     {
       "name": "神秘的┃哥哥们（59站）",
@@ -43,15 +51,15 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/da03426545491a93.json"
     },
     {
-      "name": "豆瓣 #3（88站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/5f08d2430c93869b.json"
+      "name": "┆片单┆精选（96站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/17a834c4e8c9bc6e.json"
     },
     {
       "name": "云盒独家维护【请勿相信广告】（53站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/02ae88698f53bd31.json"
     },
     {
-      "name": "豆瓣 #4（172站）",
+      "name": "豆瓣 #3（172站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/498de39ba7bfc819.json"
     },
     {

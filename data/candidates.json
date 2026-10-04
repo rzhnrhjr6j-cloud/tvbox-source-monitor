@@ -103,6 +103,98 @@
     {
       "url": "https://raw.githubusercontent.com/hoheiya9527/TvboxSelf/main/src_backup.json",
       "name": "hoheiya"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/13998394872/TVBox/main/FM.json",
+      "name": "TVBox-FM"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zengjian03/han/master/18/%E7%BA%AF%E7%A6%8F%E5%88%A9.json",
+      "name": "han-fuli"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/s14685/tv/main/tb.json",
+      "name": "tv-tb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/leexuben/TVBOX-merge/main/FuLi.json",
+      "name": "leexuben-fuli"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xlc520/MaoTV/main/mao/020101.json",
+      "name": "maotv-020101"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/franksun1211/TXT/main/HTB/CFL/CFL.json",
+      "name": "franksun-cfl"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DodgeZhang/tvbox/main/yuanwang/config.json",
+      "name": "dodgez-yuanwang"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yigedashu/xwck/main/20260103.json",
+      "name": "xwck-20260103"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lubin776/tvbox-api-backup/main/tvbox/X4%E8%8F%A0%E8%8F%9Cpro.json",
+      "name": "lubin-X4pro"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DodgeZhang/tvbox/main/moyu/my.json",
+      "name": "dodgez-moyu"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ne7359/tvurl/main/0825.json",
+      "name": "tvurl-0825"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/qist/tvbox/master/367.json",
+      "name": "qist-367"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ZTHA000/tvbox/main/th/api.json",
+      "name": "ZTHA-th-api"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/TVBoxOSC/%E6%9C%AC%E5%9C%B0%E4%BB%93/%E5%BD%B1%E8%A7%86/api.json",
+      "name": "yuanwangokk-api"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alantang1977/pg/main/py.json",
+      "name": "alantang-py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lubin776/tvbox-api-backup/main/tvbox/%E6%91%B8%E9%B1%BC.json",
+      "name": "lubin-moyu"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mhmdxahmd/mafly/main/%E5%90%84TVBOX/fish.json",
+      "name": "mafly-fish"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/13998394872/TVBox/main/PG.json",
+      "name": "TVBox-PG"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lubin776/0/main/tvbox/%E9%9B%86%E5%A4%9A.json",
+      "name": "lubin-jiduo"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hjcmcn/z/main/921.json",
+      "name": "hjcmcn-921"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/guot55/yg/main/pg/bh.json",
+      "name": "guot55-bh"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/heroaku/TVboxo/main/7080.json",
+      "name": "heroaku-7080"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huangxiong1992/jt/main/vip.json",
+      "name": "jt-vip"
     }
   ]
 }

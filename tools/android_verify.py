@@ -11,10 +11,16 @@ Usage::
 
     python3 tools/android_verify.py --config-url https://.../dist/sources/x.json
     python3 tools/android_verify.py --config-file dist/sources/x.json --out /tmp/v.json
+    python3 tools/android_verify.py --config-url https://.../x.json --isolate-sites
 
 Local files are served to the device over ``adb reverse`` so candidates that
 have not been published yet can be verified too.  Exit code is 0 when at least
 one site in every config reached a media URL, 1 otherwise.
+
+``--isolate-sites`` runs one instrumentation per ``csp_*`` / jar site.  A
+broken native library can SIGABRT the verifier process before it writes a
+verdict; isolating each site keeps that crash from hiding every later site in
+the same config.
 
 ``--record`` merges the verdicts into ``data/android_verified.json`` so the
 builder's L6 Android gate can consult them.  The file is keyed by
@@ -36,12 +42,14 @@ import subprocess
 import sys
 import threading
 from pathlib import Path
+from typing import Any, Mapping
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app.checks.jar_check import AndroidRecord, write_evidence  # noqa: E402
 from app.utils.timeutil import to_iso  # noqa: E402
 from app.utils.urls import source_id_for  # noqa: E402
+from app.utils.http_client import HttpClient  # noqa: E402
 
 DEFAULT_SERIAL = "emulator-5554"
 TEST_PACKAGE = "com.tvbox.verifier.test"
@@ -116,6 +124,130 @@ def is_url(value: str) -> bool:
     return value.startswith("http://") or value.startswith("https://")
 
 
+def strip_md5(value: str) -> str:
+    """Drop the optional ``;md5`` suffix TVBox uses for jar cache busting."""
+    return value.split(";", 1)[0]
+
+
+def is_spider_site(api: object) -> bool:
+    """Match the Android verifier's definition of a jar/CMS spider site."""
+    text = str(api or "")
+    if not text or text.startswith("http"):
+        return False
+    if text.startswith("csp_") or text.startswith("Csp_"):
+        return True
+    return "." not in text
+
+
+def spider_site_keys(config: Mapping[str, Any]) -> list[str]:
+    """Return unique site keys in the same order Android visits them.
+
+    An empty string marks a spider site with no key.  Those cannot be selected
+    with ``siteKey``; callers must record them as unverified instead of
+    silently dropping them.
+    """
+    sites = config.get("sites") if isinstance(config, Mapping) else None
+    if not isinstance(sites, list):
+        return []
+    keys: list[str] = []
+    for item in sites:
+        if not isinstance(item, Mapping) or not is_spider_site(item.get("api")):
+            continue
+        key = str(item.get("key") or "")
+        if key not in keys:
+            keys.append(key)
+    return keys
+
+
+def load_config_document(
+    target: Mapping[str, Any],
+    *,
+    connect_timeout_ms: int,
+    read_timeout_ms: int,
+) -> tuple[dict | None, str]:
+    """Load a candidate config on the host for site enumeration."""
+    local_path = target.get("local_path")
+    try:
+        if local_path:
+            text = Path(str(local_path)).read_text(encoding="utf-8")
+        else:
+            url = strip_md5(str(target.get("url") or ""))
+            connect_seconds = max(1.0, connect_timeout_ms / 1000)
+            read_seconds = max(1.0, read_timeout_ms / 1000)
+            client = HttpClient(
+                {
+                    "connect_timeout": connect_seconds,
+                    "read_timeout": read_seconds,
+                    "total_timeout": max(5.0, connect_seconds + read_seconds),
+                    "max_retries": 1,
+                    "user_agent": "tvbox-source-monitor/android-verify",
+                }
+            )
+            try:
+                result = client.get_json(
+                    url,
+                    timeout=(connect_seconds, read_seconds),
+                )
+            finally:
+                client.close()
+            if not result.ok:
+                return None, f"config fetch failed: {result.error_summary()}"
+            text = result.text
+        document = json.loads(text)
+    except Exception as error:  # noqa: BLE001 - return the reason to the report
+        return None, f"config load failed: {error}"
+    if not isinstance(document, dict):
+        return None, "config root is not an object"
+    return document, ""
+
+
+def merge_isolated_reports(
+    config_url: str,
+    identity: str,
+    site_keys: list[str],
+    outcomes: list[dict | BaseException],
+) -> dict:
+    """Merge per-site instrumentation verdicts without inventing playback."""
+    sites: list[dict] = []
+    for key, outcome in zip(site_keys, outcomes):
+        if isinstance(outcome, BaseException):
+            sites.append(
+                {
+                    "key": key,
+                    "ok": False,
+                    "loadOk": False,
+                    "playOk": False,
+                    "stage": "instrumentation_crash",
+                    "error": str(outcome),
+                }
+            )
+            continue
+        found = list(outcome.get("sites") or [])
+        if not found:
+            sites.append(
+                {
+                    "key": key,
+                    "ok": False,
+                    "loadOk": False,
+                    "playOk": False,
+                    "stage": str(outcome.get("stage") or "no_site_result"),
+                    "error": str(outcome.get("error") or "NO_SITE_RESULT"),
+                }
+            )
+        else:
+            sites.extend(found)
+    playable = any(bool(site.get("playOk")) for site in sites)
+    return {
+        "configUrl": config_url,
+        "identity": identity,
+        "ok": playable,
+        "siteCount": len(site_keys),
+        "sites": sites,
+        "stage": "done" if playable else "NO_PLAYABLE_SITE",
+        "error": "" if playable else "NO_PLAYABLE_SITE",
+    }
+
+
 def verify(
     serial: str,
     config_url: str,
@@ -154,9 +286,28 @@ def verify(
     # A previous run may have left a result behind.  Delete it before the
     # instrumentation starts so a timeout can never be mistaken for a verdict.
     adb(serial, "shell", "run-as", "com.tvbox.verifier", "rm", "-f", DEVICE_RESULT, check=False)
-    adb(serial, *args, check=False, timeout=instrument_timeout)
-    raw = adb(serial, "shell", "run-as", "com.tvbox.verifier", "cat", DEVICE_RESULT).stdout
-    return json.loads(raw)
+    completed = adb(serial, *args, check=False, timeout=instrument_timeout)
+    cat = adb(
+        serial,
+        "shell",
+        "run-as",
+        "com.tvbox.verifier",
+        "cat",
+        DEVICE_RESULT,
+        check=False,
+    )
+    raw = cat.stdout or ""
+    if cat.returncode != 0 or not raw.strip():
+        detail = f"{completed.stdout or ''}\n{completed.stderr or ''}".strip()
+        detail = " ".join(detail.split())[-600:]
+        raise RuntimeError(
+            "instrumentation produced no verdict "
+            f"(rc={completed.returncode}, cat_rc={cat.returncode}): {detail}"
+        )
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError as error:
+        raise RuntimeError(f"instrumentation returned invalid JSON: {raw[:300]!r}") from error
 
 
 def summarize(verdict: dict) -> dict:
@@ -172,6 +323,88 @@ def summarize(verdict: dict) -> dict:
     }
 
 
+def verify_isolated_target(options: argparse.Namespace, target: dict) -> dict:
+    """Run one instrumentation per site so one native crash stays contained."""
+    document, error = load_config_document(
+        target,
+        connect_timeout_ms=max(1000, options.connect_timeout_ms),
+        read_timeout_ms=max(1000, options.read_timeout_ms),
+    )
+    if document is None:
+        return {
+            "configUrl": target["url"],
+            "ok": False,
+            "stage": "config_load",
+            "error": error,
+            "siteCount": 0,
+            "sites": [],
+        }
+    keys = spider_site_keys(document)
+    if not keys:
+        # No spider sites to isolate (for example a direct jar/class config):
+        # keep the original whole-config behavior.
+        return verify(
+            options.serial,
+            target["url"],
+            options.keyword,
+            options.site_key,
+            max_sites=max(1, options.max_sites),
+            connect_timeout_ms=max(1000, options.connect_timeout_ms),
+            read_timeout_ms=max(1000, options.read_timeout_ms),
+            instrument_timeout=max(10, options.instrument_timeout),
+        )
+
+    outcomes: list[dict | BaseException] = []
+    for key in keys:
+        if not key:
+            outcomes.append(RuntimeError("site has no key; cannot isolate"))
+            continue
+        try:
+            outcome = verify(
+                options.serial,
+                target["url"],
+                options.keyword,
+                key,
+                max_sites=1,
+                connect_timeout_ms=max(1000, options.connect_timeout_ms),
+                read_timeout_ms=max(1000, options.read_timeout_ms),
+                instrument_timeout=max(10, options.instrument_timeout),
+            )
+            outcomes.append(outcome)
+            summary = summarize(outcome)
+            print(
+                json.dumps(
+                    {
+                        "siteKey": key,
+                        "loadableCount": summary["loadableCount"],
+                        "playableCount": summary["playableCount"],
+                        "playableKeys": summary["playableKeys"],
+                        "stage": outcome.get("stage", ""),
+                    },
+                    ensure_ascii=False,
+                ),
+                flush=True,
+            )
+        except Exception as crash:  # noqa: BLE001 - one bad site must not stop the rest
+            outcomes.append(crash)
+            print(
+                json.dumps({"siteKey": key, "ok": False, "error": str(crash)}, ensure_ascii=False),
+                flush=True,
+            )
+        finally:
+            # A native crash can leave the instrumentation process wedged;
+            # start every site from a clean app process.
+            adb(
+                options.serial,
+                "shell",
+                "am",
+                "force-stop",
+                "com.tvbox.verifier",
+                check=False,
+            )
+    return merge_isolated_reports(target["url"], target["identity"], keys, outcomes)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--serial", default=DEFAULT_SERIAL)
@@ -185,6 +418,11 @@ def main() -> int:
     )
     parser.add_argument("--keyword", default="爱情")
     parser.add_argument("--site-key", default="")
+    parser.add_argument(
+        "--isolate-sites",
+        action="store_true",
+        help="run each spider site in its own instrumentation so one crash cannot hide the rest",
+    )
     parser.add_argument("--max-sites", type=int, default=20, help="max jar/CMS sites per config")
     parser.add_argument("--connect-timeout-ms", type=int, default=10000)
     parser.add_argument("--read-timeout-ms", type=int, default=20000)
@@ -221,7 +459,7 @@ def main() -> int:
         targets = [{"url": url, "identity": url} for url in options.config_url]
         if origin is not None:
             targets += [
-                {"url": origin.url_for(path), "identity": path.name}
+                {"url": origin.url_for(path), "identity": path.name, "local_path": path}
                 for path in local_files
             ]
         for index, identity in enumerate(options.source_url):
@@ -229,16 +467,19 @@ def main() -> int:
                 targets[index]["identity"] = identity
         for target in targets:
             try:
-                verdict = verify(
-                    options.serial,
-                    target["url"],
-                    options.keyword,
-                    options.site_key,
-                    max_sites=max(1, options.max_sites),
-                    connect_timeout_ms=max(1000, options.connect_timeout_ms),
-                    read_timeout_ms=max(1000, options.read_timeout_ms),
-                    instrument_timeout=max(10, options.instrument_timeout),
-                )
+                if options.isolate_sites:
+                    verdict = verify_isolated_target(options, target)
+                else:
+                    verdict = verify(
+                        options.serial,
+                        target["url"],
+                        options.keyword,
+                        options.site_key,
+                        max_sites=max(1, options.max_sites),
+                        connect_timeout_ms=max(1000, options.connect_timeout_ms),
+                        read_timeout_ms=max(1000, options.read_timeout_ms),
+                        instrument_timeout=max(10, options.instrument_timeout),
+                    )
             except Exception as error:  # noqa: BLE001 - report, do not crash the run
                 verdict = {"configUrl": target["url"], "ok": False, "error": str(error), "sites": []}
             verdict["identity"] = target["identity"]

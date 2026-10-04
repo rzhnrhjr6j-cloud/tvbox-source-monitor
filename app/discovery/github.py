@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import os
 import re
+from datetime import datetime, timedelta, timezone
 from typing import Any, Iterable
 from urllib.parse import quote
 
@@ -40,11 +41,20 @@ class GitHubAdapter:
         self.path_patterns = [re.compile(item) for item in (section.get("path_patterns") or [r"\.json$"])]
         self.path_excludes = [re.compile(item) for item in (section.get("path_excludes") or [])]
         self.max_repos_for_trees = int(section.get("max_repos_for_trees", 5))
+        self.min_stars = max(0, int(section.get("min_stars", 0)))
+        raw_age = section.get("max_repo_age_days")
+        self.max_repo_age_days = max(0, int(raw_age)) if raw_age not in (None, "") else 0
         self.client = client
         self.token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
         self.rate_remaining: int | None = None
         self._branches: dict[str, str] = {}
-        self.stats: dict[str, Any] = {"code_queries": 0, "repo_queries": 0, "files": 0, "skipped": 0}
+        self.stats: dict[str, Any] = {
+            "code_queries": 0,
+            "repo_queries": 0,
+            "files": 0,
+            "skipped": 0,
+            "skipped_repos": 0,
+        }
 
     # -- plumbing ----------------------------------------------------------
     @property
@@ -96,6 +106,29 @@ class GitHubAdapter:
         if any(pattern.search(lowered) for pattern in self.path_excludes):
             return False
         return any(pattern.search(path) for pattern in self.path_patterns)
+
+    def _repo_is_worth_expanding(self, item: dict[str, Any]) -> bool:
+        """Reject repos that are too quiet to contain live endpoints.
+
+        A config from a repository nobody has pushed to in months is almost
+        always a graveyard of dead APIs; the client reads those as
+        "解析失败".  Missing metadata is treated permissively so a search that
+        does not report a field never filters a real candidate out.
+        """
+        stars = item.get("stargazers_count")
+        if isinstance(stars, int) and stars < self.min_stars:
+            return False
+        if self.max_repo_age_days > 0:
+            pushed = str(item.get("pushed_at") or "")
+            if not pushed:
+                return False
+            try:
+                when = datetime.strptime(pushed, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            except ValueError:
+                return True
+            if datetime.now(timezone.utc) - when > timedelta(days=self.max_repo_age_days):
+                return False
+        return True
 
     def _default_branch(self, full_name: str) -> str:
         if full_name in self._branches:
@@ -181,8 +214,12 @@ class GitHubAdapter:
             if not payload:
                 continue
             for item in payload.get("items") or []:
-                if isinstance(item, dict) and item.get("full_name"):
-                    seen_repos.append(str(item["full_name"]))
+                if not isinstance(item, dict) or not item.get("full_name"):
+                    continue
+                if not self._repo_is_worth_expanding(item):
+                    self.stats["skipped_repos"] += 1
+                    continue
+                seen_repos.append(str(item["full_name"]))
 
         for full_name in seen_repos[: self.max_repos_for_trees]:
             if not self._budget_ok():

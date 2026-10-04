@@ -13,21 +13,42 @@ discovery:
     enabled: true
     api_base: https://api.github.com
     # code search queries (spec §5.1.A)
+    #
+    # 有效源很少叫 tvbox.json。社区里活跃的聚合仓库常用
+    # box.json / fun.json / jsm.json / api.json 这些文件名，只搜 tvbox.json
+    # 会漏掉绝大多数正在维护的多仓。两类都搜。
     code_queries:
       - "filename:tvbox.json"
+      - "filename:box.json tvbox"
+      - "filename:fun.json 影视"
+      - "filename:api.json tvbox"
+      - "filename:jsm.json"
       - "tvbox.json in:path"
       - "影视仓 in:file extension:json"
       - "tvbox api in:file extension:json"
+      - "影视仓 接口 in:file extension:json"
+      - "多仓 in:file extension:json"
       - "csp in:file extension:json"
       - "duocang in:file extension:json"
       - "warehouse in:file extension:json"
     repo_queries:
       - "tvbox sources in:name,description,readme"
+      - "tvbox 接口 in:name,description,readme"
       - "影视仓 in:name,description,readme"
+      - "影视仓 多仓 in:name,description,readme"
+      - "tvbox spider in:name,description,readme"
     per_page: 30
     max_pages: 2
     # stop paging when the remaining rate-limit budget drops below this
     min_rate_limit_remaining: 5
+    # 只展开最近还在动的仓库。几个月没更新的配置，里面接口基本都死了，
+    # 客户端读出来就是「解析失败」。
+    max_repo_age_days: 180
+    # 0 star 的多数是个人备份；门槛压低，新项目只要有 1 颗星也放行。
+    min_stars: 1
+    # repo search 命中后最多展开多少个仓库的目录树。第一轮真实运行只给了
+    # 5 个仓库、24 个配置；提高到 15 个只多几次 API 调用，是性价比最高的扩量。
+    max_repos_for_trees: 15
     # only these path shapes are treated as candidate configs
     path_patterns:
       - '\.json$'

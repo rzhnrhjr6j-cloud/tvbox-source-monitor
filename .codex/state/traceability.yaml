@@ -47,6 +47,7 @@ tasks:
     - E-008
     - E-009
     - E-010
+    - E-011
 evidence:
   E-001:
     task_id: T-001
@@ -94,6 +95,11 @@ evidence:
     - AC-104
     status: PASS
   E-010:
+    task_id: T-005
+    criterion_ids:
+    - AC-105
+    status: PASS
+  E-011:
     task_id: T-005
     criterion_ids:
     - AC-105

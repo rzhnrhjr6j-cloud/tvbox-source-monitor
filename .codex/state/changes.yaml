@@ -36,3 +36,11 @@ changes:
     affected_tasks: [T-005]
     impact_analysis: "在自动播放门槛前增加明确的人工白名单例外；源仍需通过镜像准备，检测和评分流程不变。"
     evidence_ids: [E-010]
+  - id: CR-006
+    title: "撤掉手机实测 jar 解析失败的源"
+    status: IMPLEMENTED
+    target_release: 1.1.0
+    requirement_ids: [REQ-105]
+    affected_tasks: [T-005]
+    impact_analysis: "把手机实测失败的 360 和茅台加入黑名单，同步标记数据库；发布下限从 3 调到 2，只保留精东和豆了两个人工验证可播源。"
+    evidence_ids: [E-011]

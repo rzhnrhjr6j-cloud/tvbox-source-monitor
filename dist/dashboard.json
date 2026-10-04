@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-04T10:34:27Z",
-  "build_id": "20261004-103427",
+  "generated_at": "2026-10-04T10:38:44Z",
+  "build_id": "20261004-103844",
   "summary": {
     "sources": {
       "active": 100,
@@ -11,9 +11,9 @@
     "tiers": {
       "primary": 0,
       "backup": 0,
-      "experimental": 4
+      "experimental": 2
     },
-    "output_items": 4
+    "output_items": 2
   },
   "regions": {
     "CN": {
@@ -43,48 +43,6 @@
       "avg_response_ms": 371.3333333333333,
       "consecutive_failure": 0,
       "whitelisted": true
-    },
-    {
-      "id": "9a4330fc96a7854ad56b9bb8e59884047426d9b0a71545af9c8f818825b628d8",
-      "name": "tvbox.json",
-      "url": "https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 93.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-04T05:52:12Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 336.1111111111111,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "4618ce298bbe0402d7728d5dc1f158ec329f19cfe5a3af254f90fe2d337fe789",
-      "name": "zytvbox.json",
-      "url": "https://raw.githubusercontent.com/wokaotianshi123/jgcj/main/zytvbox.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 89.944,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-04T05:52:16Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 393.75555555555553,
-      "consecutive_failure": 0,
-      "whitelisted": false
     },
     {
       "id": "745561a3739c9b0c759e443e7bee2ffeee9488f9a7c4709f69066cfa851187f8",
@@ -611,6 +569,20 @@
     }
   ],
   "build_history": [
+    {
+      "build_id": "20261004-103427",
+      "generated_at": "2026-10-04T10:34:27Z",
+      "published": true,
+      "fallback": false,
+      "items": 4,
+      "active": 100,
+      "degraded": 1,
+      "failed": 1,
+      "new": 0,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
     {
       "build_id": "20261004-103359",
       "generated_at": "2026-10-04T10:33:59Z",

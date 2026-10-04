@@ -1,18 +1,10 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-04T10:34:27Z",
+  "generated_at": "2026-10-04T10:38:44Z",
   "urls": [
     {
       "name": "精东（24站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/e5e22b7e79834be5.json"
-    },
-    {
-      "name": "360┃采集（10站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/9a4330fc96a7854a.json"
-    },
-    {
-      "name": "茅台资源站采集接口（39站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/4618ce298bbe0402.json"
     },
     {
       "name": "豆了（159站）",

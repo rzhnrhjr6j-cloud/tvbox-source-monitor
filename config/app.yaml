@@ -98,7 +98,7 @@ output:
   # a source younger than this many days may only go to EXPERIMENTAL (spec §28)
   observation_days: 7
   # safety valve (spec §19 / §30 / §32)
-  min_sources: 3
+  min_sources: 2
   max_drop_ratio: 0.70
   keep_backups: 30           # dist/backup/YYYYMMDD.json retention
   # Only publish sources with recent evidence that they can actually search

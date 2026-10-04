@@ -128,3 +128,18 @@ evidence:
       - data/monitor.db
       - dist/tvbox.json
     recorded_at: 2026-10-04
+  - id: E-011
+    task_id: T-005
+    requirement_ids: [REQ-105]
+    criterion_ids: [AC-105]
+    status: PASS
+    level: INTEGRATION
+    title: "手机实测失败源已从发布清单撤下"
+    statement: "用户手机实测 360 和茅台均因 jar 解析失败不可用；将两个 source_id 写入 data/blacklist.json 并在数据库标记 blacklisted=1、paused=1，发布下限调整为 2。真实数据库镜像构建发布精东和豆了两个源，validation.ok=true。"
+    command: "GITHUB_REPOSITORY=rzhnrhjr6j-cloud/tvbox-source-monitor make build"
+    artifacts:
+      - data/blacklist.json
+      - config/app.yaml
+      - data/monitor.db
+      - dist/tvbox.json
+    recorded_at: 2026-10-04

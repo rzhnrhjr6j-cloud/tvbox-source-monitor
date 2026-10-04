@@ -34,13 +34,14 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
    - 首次严格裁剪通过 `bypass_drop_ratio` 绕过旧的跌幅安全阀，但仍保留 `min_sources`。
 5. Implementation steps with task IDs
    - T-005：登记变更，修改配置和构建筛选，补白名单例外测试，运行 `make test`，用真实 DB 重建产物。已完成。
+   - CR-006：根据手机实测反馈，把 360 和茅台加入黑名单，发布下限调整为 2，只保留精东和豆了。已完成。
 6. Validation strategy and evidence IDs
    - 单元/端到端测试覆盖：无播放证据不发布、`text/html` 不算播放、HLS Content-Type 可发布、门槛关闭保持旧行为。
    - 白名单测试覆盖：没有搜索和播放证据时，人工白名单源仍可发布。
-   - 证据：E-007 手机实测；E-008 聚焦测试与全量测试；E-009 首次严格构建；E-010 白名单重建。
+   - 证据：E-007 手机实测；E-008 聚焦测试与全量测试；E-009 首次严格构建；E-010 白名单重建；E-011 失败源撤下与双源重建。
 7. Rollback / recovery plan
    - 将 `output.quality_gate.enabled` 设为 `false` 可恢复旧筛选行为。
    - 发布失败继续保留上一版 `tvbox.json`。
 8. Exit criteria and handoff
-   - 测试通过，严格入口由真实 DB 生成 4 个源，其中包含人工白名单的“精东（24站）”和“豆了（159站）”，本地退出条件已满足。
-   - 待办：提交并发布新产物后，由用户在手机上复测固定入口，确认实际可播性。
+   - 测试通过，严格入口由真实 DB 生成 2 个源：“精东（24站）”和“豆了（159站）”。
+   - 待办：提交并发布新产物后，由用户在手机上复测固定入口，确认这两个源仍可播。

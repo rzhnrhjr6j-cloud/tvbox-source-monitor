@@ -5,7 +5,13 @@
   ],
   "urls": [],
   "hosts": [],
-  "source_ids": [],
+  "source_ids": [
+    "9a4330fc96a7854ad56b9bb8e59884047426d9b0a71545af9c8f818825b628d8",
+    "4618ce298bbe0402d7728d5dc1f158ec329f19cfe5a3af254f90fe2d337fe789"
+  ],
   "url_prefixes": [],
-  "reason": {}
+  "reason": {
+    "https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json": "user-verified jar parsing failure",
+    "https://raw.githubusercontent.com/wokaotianshi123/jgcj/main/zytvbox.json": "user-verified jar parsing failure"
+  }
 }

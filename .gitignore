@@ -17,3 +17,5 @@ data/*.db-shm
 data/rejected_candidates.json
 /logs/
 /pages_build/
+# Codex Project Control Framework
+.codex/backups/

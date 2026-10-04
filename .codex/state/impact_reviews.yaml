@@ -1,0 +1,12 @@
+reviews:
+- change_request_id: CR-004
+  status: PASS
+  risk: MEDIUM
+  summary: 只收紧发布筛选，不改源发现和探测流程；首次严格裁剪会显著减少发布数量但保留 min_sources 门槛
+  reason: 聚焦测试和真实数据库构建均已通过
+  timestamp: '2026-10-04T17:59:15+08:00'
+  affected_tasks:
+  - T-005
+  requirement_ids:
+  - REQ-104
+  target_release: 1.1.0

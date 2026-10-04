@@ -1,0 +1,22 @@
+session:
+  id: SESSION-2026-10-04-PLAYBACK-GATE
+  current_task: T-005
+  status: WAITING_USER_VERIFICATION
+  objective: "把发布门槛从配置可解析提升为真实搜索和播放通过，减少手机端不可播源。"
+  completed:
+    - "真实手机测试已登记为 T-002 的 PARTIAL 证据"
+    - "CR-004、REQ-104、AC-104、T-005 已登记"
+    - "播放级门槛已实现，聚焦测试 4 passed，全量 make test 退出码 0"
+    - "真实数据库构建通过，从 100 个候选中发布 3 个有播放证据的源"
+  in_progress:
+    - "等待真实手机复测新的严格发布入口"
+  discovered_changes: []
+  discovered_issues:
+    - "CN 地区检测不是真实大陆节点。"
+    - "影视仓 6.1.8 输出格式尚未实机验证。"
+    - "发布链路依赖 gh-proxy.com 和 jsdelivr。"
+    - "旧线上 86 个输出源全部为 experimental。"
+    - "配置可解析不等于真实可播，旧发布门槛漏掉了大多数不可播源。"
+  blockers:
+    - "新的严格发布产物尚未提交并推送到线上，手机仍会访问旧入口。"
+  next_task: T-005

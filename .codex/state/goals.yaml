@@ -1,0 +1,24 @@
+mission:
+  id: MISSION-001
+  statement: "用自动化流水线持续发现、校验、体检、评分并发布公开可访问的 TVBox/影视仓源，并在构建或源池异常时安全回退。"
+  non_negotiables:
+    - "海外 runner 的探测结果不能冒充中国大陆可达性。"
+    - "构建失败不得覆盖已知可用的线上发布文件。"
+    - "不得绕过鉴权、DRM、付费墙或访问授权。"
+goals:
+  - id: GOAL-001
+    title: "自动维护可用源池"
+    statement: "自动发现、准入、体检、评分和淘汰公开源，减少手工维护。"
+    status: ACTIVE
+  - id: GOAL-002
+    title: "保持发布入口稳定"
+    statement: "通过固定 tvbox.json 地址持续发布，并在异常时保留上一版可用产物。"
+    status: ACTIVE
+  - id: GOAL-003
+    title: "让结论可审计可回退"
+    statement: "所有源状态、版本、风险和未验证项都能沿控制层追溯。"
+    status: ACTIVE
+  - id: GOAL-004
+    title: "避免虚假的可达性结论"
+    statement: "地区检测结果必须来自真实地区节点，不能只靠海外 runner 推断。"
+    status: ACTIVE

@@ -1,0 +1,115 @@
+evidence:
+  - id: E-001
+    task_id: T-001
+    requirement_ids: [REQ-001]
+    criterion_ids: [AC-001]
+    status: PASS
+    level: STATIC
+    title: "稳定基线和版本映射已核对"
+    statement: "HEAD=062fc3af25fd6c41a0cf2e166942f76b40d09201；pyproject.toml 与 config/app.yaml 均为 1.0.0；data/monitor.db 的 schema_version=3；仓库无 1.0.0 tag。"
+    artifacts:
+      - pyproject.toml
+      - config/app.yaml
+      - data/monitor.db
+    recorded_at: 2026-10-04
+  - id: E-002
+    task_id: T-001
+    requirement_ids: [REQ-001]
+    criterion_ids: [AC-002]
+    status: PASS
+    level: STATIC
+    title: "实际能力地图已重建"
+    statement: "README、代码图、配置和工作流显示：发现/准入、L1-L5 检查、评分/生命周期、地区仲裁、构建/镜像/安全阀、告警、面板和定时自动化均已实现。"
+    artifacts:
+      - README.md
+      - app/
+      - .github/workflows/
+      - dashboard/
+    recorded_at: 2026-10-04
+  - id: E-003
+    task_id: T-001
+    requirement_ids: [REQ-001]
+    criterion_ids: [AC-003]
+    status: PASS
+    level: STATIC
+    title: "已知缺陷、风险和未验证项已记录"
+    statement: "审计记录了假 CN 地区、6.1.8 输出未实机验证、第三方代理依赖和全部 experimental 四项主要问题。"
+    artifacts:
+      - .codex/ADOPTION_AUDIT.md
+      - .codex/state/risks.yaml
+      - .codex/state/issues.yaml
+    recorded_at: 2026-10-04
+  - id: E-004
+    task_id: T-001
+    requirement_ids: [REQ-001]
+    criterion_ids: [AC-004]
+    status: PASS
+    level: STATIC
+    title: "后续任务和 backlog 已建立"
+    statement: "T-002、T-003、T-004 已写入 backlog，推荐下一任务为真实影视仓 6.1.8 输出格式验证。"
+    artifacts:
+      - .codex/state/tasks.yaml
+      - .codex/state/changes.yaml
+      - .codex/ADOPTION_AUDIT.md
+    recorded_at: 2026-10-04
+  - id: E-005
+    task_id: T-001
+    requirement_ids: [REQ-001]
+    criterion_ids: [AC-002]
+    status: PASS
+    level: UNIT
+    title: "本地测试套件通过"
+    statement: "2026-10-04 运行 make test，进程退出码 0。"
+    command: make test
+    recorded_at: 2026-10-04
+  - id: E-006
+    task_id: T-001
+    requirement_ids: [REQ-001]
+    criterion_ids: [AC-002]
+    status: PASS
+    level: SCENARIO
+    title: "十项验收 demo 通过"
+    statement: "2026-10-04 运行 make demo，结果 10/10 通过；demo 明确提示 6.1.8 字段布局仍需真实客户端核对。"
+    command: make demo
+    recorded_at: 2026-10-04
+  - id: E-007
+    task_id: T-002
+    requirement_ids: [REQ-101]
+    criterion_ids: [AC-101]
+    status: PARTIAL
+    level: REAL_CLIENT
+    title: "真实手机端加载测试"
+    statement: "用户用手机实测旧固定入口，只有少数源可用；说明外层入口可加载，但旧输出把大量不可播源当成可发布内容。"
+    artifacts:
+      - dist/tvbox.json
+      - dist/health.json
+    recorded_at: 2026-10-04
+  - id: E-008
+    task_id: T-005
+    requirement_ids: [REQ-104]
+    criterion_ids: [AC-104]
+    status: PASS
+    level: TEST
+    title: "播放级发布门槛测试通过"
+    statement: "聚焦测试 4 passed；随后全量 make test 退出码 0。覆盖无播放证据不发布、text/html 不算播放、HLS 媒体可发布、关闭门槛保持旧行为。"
+    command: ".venv/bin/python -m pytest -q tests/test_build_quality_gate.py && make test"
+    artifacts:
+      - tests/test_build_quality_gate.py
+      - app/build/builder.py
+      - config/app.yaml
+    recorded_at: 2026-10-04
+  - id: E-009
+    task_id: T-005
+    requirement_ids: [REQ-104]
+    criterion_ids: [AC-104]
+    status: PASS
+    level: INTEGRATION
+    title: "真实数据库严格构建通过"
+    statement: "make build 从 100 个候选中筛出 3 个有近期搜索和播放证据的源：jj.json、tvbox.json、zytvbox.json；validation.ok=true，items=3，min_sources=3，并生成 last-known-good.json 与每日备份。"
+    command: make build
+    artifacts:
+      - dist/tvbox.json
+      - dist/health.json
+      - dist/last-known-good.json
+      - dist/backup/20261004.json
+    recorded_at: 2026-10-04

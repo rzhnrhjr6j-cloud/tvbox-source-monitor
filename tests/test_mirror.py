@@ -46,7 +46,13 @@ def make_cfg(tmp_path: Path, mirror: dict | None = None):
                 "db_path": str(tmp_path / "data" / "monitor.db"),
                 "dist_dir": str(tmp_path / "dist"),
             },
-            "output": {"min_sources": 1, "observation_days": 0, "mirror": dict(mirror or {})},
+            "output": {
+                "min_sources": 1,
+                "observation_days": 0,
+                "mirror": dict(mirror or {}),
+                # These tests exercise mirroring, not playback admission.
+                "quality_gate": {"enabled": False},
+            },
         },
     )
 

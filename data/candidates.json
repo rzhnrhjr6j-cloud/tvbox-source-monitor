@@ -1,16 +1,1 @@
-{
-  "_readme": [
-    "手工候选池 (spec §5.1.B)。把你有权使用的公开点播源/接口地址塞进 urls[] 即可。",
-    "系统会自动走 admission 流水线：normalize -> reachable -> content-type -> JSON parse -> schema detect -> candidate score。",
-    "不达 candidate.threshold 的会进 data/rejected_candidates.json，不会进入正式检测池。",
-    "支持三种条目：",
-    "  1) 纯字符串  'https://example.com/config.json'",
-    "  2) 对象      {\"url\": \"...\", \"name\": \"可选名字\", \"note\": \"可选备注\", \"tags\": [\"手动\"]}",
-    "  3) 多仓配置  直接塞多仓地址，expansion adapter 会自动拆子源。"
-  ],
-  "_examples": [
-    "https://example.com/path/to/your-authorized-config.json",
-    {"url": "https://example.com/another.json", "name": "my-authorized-source", "tags": ["手动"]}
-  ],
-  "urls": []
-}
+{"urls": ["http://127.0.0.1:60281/config.json"]}

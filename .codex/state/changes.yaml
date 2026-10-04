@@ -1,0 +1,30 @@
+changes:
+  - id: CR-001
+    title: "真实影视仓 6.1.8 输出格式验证"
+    status: BACKLOG
+    target_release: 1.1.0
+    requirement_ids: [REQ-101]
+    affected_tasks: [T-002]
+    impact_analysis: "可能需要调整 output.format 或 output.template；不改变源发现和检测逻辑。"
+  - id: CR-002
+    title: "真实中国大陆探针节点"
+    status: BACKLOG
+    target_release: 1.1.0
+    requirement_ids: [REQ-102]
+    affected_tasks: [T-003]
+    impact_analysis: "涉及 regions 配置、quorum、健康报告和可能的 self-hosted runner。"
+  - id: CR-003
+    title: "第三方镜像依赖降级方案"
+    status: BACKLOG
+    target_release: 1.1.0
+    requirement_ids: [REQ-103]
+    affected_tasks: [T-004]
+    impact_analysis: "涉及镜像 URL 生成、回退顺序、监测和构建失败策略。"
+  - id: CR-004
+    title: "增加播放级发布门槛"
+    status: IMPLEMENTED
+    target_release: 1.1.0
+    requirement_ids: [REQ-104]
+    affected_tasks: [T-005]
+    impact_analysis: "只改变构建发布筛选，不改源发现和探测流程；首次严格裁剪需绕过旧的跌幅安全阀，否则新入口会被旧发布量挡住。"
+    evidence_ids: [E-008, E-009]

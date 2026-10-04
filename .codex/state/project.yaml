@@ -1,0 +1,30 @@
+project:
+  id: PROJECT-001
+  name: tvbox-source-monitor
+  mission: "用自动化流水线持续发现、校验、体检、评分并发布公开可访问的 TVBox/影视仓源，并在构建或源池异常时安全回退。"
+control:
+  current_product_version: 1.1.0
+  current_requirement_baseline: R1.0
+  current_code_version: v1.0.0
+  current_database_version: DB-3
+  current_phase: P1
+  current_task: T-005
+  stable_baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201
+  development_baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201+control
+  wip_limit: 2
+scope:
+  in_scope:
+  - "公开 TVBox/影视仓源配置的发现、准入、健康检测、评分和生命周期维护"
+  - "镜像、生成、安全回退和 GitHub Pages 固定入口发布"
+  - "定时自动化、只读面板、告警和控制层审计"
+  out_of_scope:
+  - "绕过 DRM、鉴权、付费墙或访问授权"
+  - "未经真实地区节点验证就宣称中国大陆可达"
+  - "在接管审计中直接修改业务代码或线上发布产物"
+progress:
+  adoption_audit: DONE
+  control_initialized: true
+  stable_baseline_recorded: true
+next_action:
+  task_id: T-002
+  objective: "发布新的严格入口后，用真实手机复测 jj.json、tvbox.json、zytvbox.json 的实际可播性。"

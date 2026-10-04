@@ -101,6 +101,25 @@ output:
   min_sources: 3
   max_drop_ratio: 0.70
   keep_backups: 30           # dist/backup/YYYYMMDD.json retention
+  # Only publish sources with recent evidence that they can actually search
+  # and play, not merely that their config parses.
+  quality_gate:
+    enabled: true
+    require_search: true
+    require_playback: true
+    min_search_score: 100
+    min_playback_score: 100
+    probe_max_age_days: 7
+    allow_multi: false
+    # The first strict run may intentionally shrink the list a lot.  Keep the
+    # minimum-source check, but do not let the old drop-ratio valve block it.
+    bypass_drop_ratio: true
+    accepted_playback_content_types:
+      - application/vnd.apple.mpegurl
+      - application/x-mpegurl
+      - audio/mpegurl
+      - video/
+      - audio/
   # optional exact-shape override. Put "$each" in a one-element list to repeat
   # per source; "$name" / "$url" / "$api" / "$id" / "$key" / "$score" / "$tier" /
   # "$status" / "$type" and the top-level "$generated_at" / "$version" / "$count"

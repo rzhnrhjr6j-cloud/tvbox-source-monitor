@@ -1,0 +1,32 @@
+requirements:
+  REQ-001: [T-001]
+  REQ-104: [T-005]
+tasks:
+  T-001:
+    requirement_ids: [REQ-001]
+    evidence_ids: [E-001, E-002, E-003, E-004, E-005, E-006]
+  T-002:
+    requirement_ids: [REQ-101]
+    evidence_ids: [E-007]
+  T-005:
+    requirement_ids: [REQ-104]
+    evidence_ids: [E-008, E-009]
+evidence:
+  E-001: [AC-001]
+  E-002: [AC-002]
+  E-003: [AC-003]
+  E-004: [AC-004]
+  E-005: [AC-002]
+  E-006: [AC-002]
+  E-007: [AC-101]
+  E-008: [AC-104]
+  E-009: [AC-104]
+releases:
+  "1.0.0":
+    baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201
+    state: DEVELOPMENT
+    tasks: [T-001]
+  "1.1.0":
+    baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201
+    state: DEVELOPMENT
+    tasks: [T-002, T-005]

@@ -88,7 +88,50 @@ class ConfigBuilder:
             statuses.extend([Status.DEGRADED, Status.RECOVERING])
         candidates = self.store.list_sources(statuses=statuses)
         counts = self.store.count_by_status()
-        return [source for source in candidates if not source.paused], counts
+        eligible = [
+            source for source in candidates
+            if not source.paused and self._passes_quality_gate(source)
+        ]
+        rejected = len(candidates) - len(eligible)
+        if rejected:
+            LOGGER.info("quality gate filtered sources", extra={
+                "stage": "build",
+                "check": "quality_gate",
+                "candidates": len(candidates),
+                "eligible": len(eligible),
+                "rejected": rejected,
+            })
+        return eligible, counts
+
+    def _passes_quality_gate(self, source: Source) -> bool:
+        gate = self.output_cfg.get("quality_gate") or {}
+        if not isinstance(gate, dict) or not bool(gate.get("enabled", False)):
+            return True
+        if not bool(gate.get("allow_multi", False)) and str(source.type or "").lower() == "multi":
+            return False
+
+        probes = self.store.probes_for(
+            source.id,
+            days=float(gate.get("probe_max_age_days", 7)),
+            limit=1,
+        )
+        if not probes:
+            return False
+        latest = probes[0]
+        if bool(gate.get("require_search", True)):
+            latest_search_score = 100 if latest.search_success else 0
+            if not _score_at_least(latest_search_score, gate.get("min_search_score", 100)):
+                return False
+        if bool(gate.get("require_playback", True)):
+            latest_playback_score = (
+                100 if latest.playback_url_obtained and latest.playback_probe_success else 0
+            )
+            if not _score_at_least(latest_playback_score, gate.get("min_playback_score", 100)):
+                return False
+            accepted = gate.get("accepted_playback_content_types") or []
+            if not _content_type_allowed(latest.playback_content_type, accepted):
+                return False
+        return True
 
     def assign_tiers(self, sources: Iterable[Source]) -> dict[str, list[Source]]:
         observation_days = float(self.output_cfg.get("observation_days", 7))
@@ -231,7 +274,7 @@ class ConfigBuilder:
             output,
             previous=previous_output,
             min_sources=int(self.output_cfg.get("min_sources", 3)),
-            max_drop_ratio=float(self.output_cfg.get("max_drop_ratio", 0.70)),
+            max_drop_ratio=self._effective_max_drop_ratio(),
         )
 
         record = BuildRecord(
@@ -273,6 +316,16 @@ class ConfigBuilder:
         result.health = self._health(result, tiers, counts)
         result.dashboard = self._dashboard(result, tiers, counts)
         return result
+
+    def _effective_max_drop_ratio(self) -> float:
+        gate = self.output_cfg.get("quality_gate") or {}
+        if (
+            isinstance(gate, dict)
+            and bool(gate.get("enabled", False))
+            and bool(gate.get("bypass_drop_ratio", False))
+        ):
+            return 1.0
+        return float(self.output_cfg.get("max_drop_ratio", 0.70))
 
     def publish(self, result: BuildResult) -> Path | None:
         """Atomic publish.  Never call this when ``result.published`` is False."""
@@ -544,6 +597,25 @@ class ConfigBuilder:
 # ---------------------------------------------------------------------------
 # helpers
 # ---------------------------------------------------------------------------
+def _score_at_least(value: Any, minimum: Any) -> bool:
+    try:
+        return float(value or 0) >= float(minimum)
+    except (TypeError, ValueError):
+        return False
+
+
+def _content_type_allowed(value: str | None, accepted: Iterable[str]) -> bool:
+    content_type = str(value or "").split(";", 1)[0].strip().lower()
+    rules = [str(item or "").split(";", 1)[0].strip().lower() for item in accepted]
+    if not rules:
+        return True
+    return any(
+        content_type.startswith(rule) if rule.endswith("/") else content_type == rule
+        for rule in rules
+        if rule
+    )
+
+
 def _naming(url_map: dict[str, str] | None, name_map: dict[str, str] | None):
     """Resolve a source to the name/url it should be published under."""
     urls = url_map or {}

@@ -1,0 +1,10 @@
+semantic:
+  allowed_scope_tags: [governance, data, api, ui, testing, compatibility, regions, resilience, release]
+  forbidden_scope_tags: [security-exploit, credential-theft]
+  forbidden_terms: [credential-theft]
+  protected_invariants:
+    - "safety valve 必须保留上一份可用发布文件。"
+    - "未由真实地区节点证明的结果不得标成中国大陆可达。"
+    - "不得绕过 DRM、鉴权、付费墙或访问授权。"
+path_rules:
+  global_forbidden_paths: [.git/, .env, .extract.env]

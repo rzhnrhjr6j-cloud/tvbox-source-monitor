@@ -1,0 +1,105 @@
+requirement_baseline:
+  id: R1.0
+  status: RECONSTRUCTED
+  established_at: 2026-10-04
+  source: legacy adoption audit
+requirements:
+  - id: REQ-001
+    title: "接管审计与基线治理"
+    statement: "接管既有项目时，先重建稳定基线、版本、能力、风险、证据和后续任务。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.0.0
+    goal_refs: [GOAL-001]
+    scope_tags: [governance]
+    non_goals: [修复源池质量问题, 修改发布产物, 增加业务功能]
+    acceptance_criteria: [AC-001, AC-002, AC-003, AC-004]
+    source: adoption audit
+  - id: REQ-201
+    title: "自动发现和准入公开源"
+    statement: "系统能从公开入口发现候选源，并完成格式、可达性和基础结构准入。"
+    status: BASELINE
+    priority: MUST
+    release: 1.0.0
+    goal_refs: [GOAL-001]
+    scope_tags: [data]
+    non_goals: []
+    acceptance_criteria: []
+    source: reconstructed from README and app/discovery
+  - id: REQ-202
+    title: "健康检测、评分和生命周期"
+    statement: "系统能执行分层健康检测，按评分和稳定性维护源状态，并在连续失败或恢复时调整输出。"
+    status: BASELINE
+    priority: MUST
+    release: 1.0.0
+    goal_refs: [GOAL-001]
+    scope_tags: [data, testing]
+    non_goals: []
+    acceptance_criteria: []
+    source: reconstructed from README, app/checks and app/scoring
+  - id: REQ-203
+    title: "安全构建和 Pages 发布"
+    statement: "系统能生成固定入口的 tvbox.json，并在构建不合法时保留 last-known-good。"
+    status: BASELINE
+    priority: MUST
+    release: 1.0.0
+    goal_refs: [GOAL-002]
+    scope_tags: [data, release]
+    non_goals: []
+    acceptance_criteria: []
+    source: reconstructed from README, app/build and workflows
+  - id: REQ-204
+    title: "自动调度、告警和只读面板"
+    statement: "系统通过 GitHub Actions 定时运行，提供状态面板，并支持可选的告警通道。"
+    status: BASELINE
+    priority: SHOULD
+    release: 1.0.0
+    goal_refs: [GOAL-002, GOAL-003]
+    scope_tags: [api, ui]
+    non_goals: []
+    acceptance_criteria: []
+    source: reconstructed from README, workflows and dashboard
+  - id: REQ-101
+    title: "用真实影视仓 6.1.8 验证输出格式"
+    statement: "必须用真实客户端核对 tvbox.json 字段布局，而不是依赖 demo 或网络文章。"
+    status: PLANNED
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-002, GOAL-003]
+    scope_tags: [compatibility, testing]
+    non_goals: [猜测字段布局]
+    acceptance_criteria: [AC-101]
+    source: adoption audit
+  - id: REQ-102
+    title: "建立真实中国大陆探测节点"
+    statement: "用真实大陆节点验证源可达性，避免把海外 runner 的成功当成大陆可达。"
+    status: PLANNED
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-004]
+    scope_tags: [regions, testing]
+    non_goals: [仅修改地区标签]
+    acceptance_criteria: [AC-102]
+    source: adoption audit
+  - id: REQ-103
+    title: "降低第三方镜像依赖风险"
+    statement: "记录、监测或替换 gh-proxy.com / jsdelivr 等发布链路依赖，降低单点失效影响。"
+    status: PLANNED
+    priority: SHOULD
+    release: 1.1.0
+    goal_refs: [GOAL-002]
+    scope_tags: [resilience, testing]
+    non_goals: [静默取消镜像]
+    acceptance_criteria: [AC-103]
+    source: adoption audit
+  - id: REQ-104
+    title: "只发布有真实播放证据的源"
+    statement: "构建发布时，源必须在近期探测中同时通过搜索和播放，且播放响应 Content-Type 必须是可播放媒体类型；只有配置可解析不能再进入发布产物。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-001, GOAL-002, GOAL-003]
+    scope_tags: [data, release, testing]
+    non_goals: [修改源发现范围, 放宽客户端兼容性验证]
+    acceptance_criteria: [AC-104]
+    source: "2026-10-04 真实手机测试反馈：多数源不可播"

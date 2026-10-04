@@ -1,0 +1,35 @@
+reviews:
+- task_id: T-001
+  release: 1.0.0
+  status: PASS
+  goal_refs:
+  - GOAL-001
+  requirement_ids:
+  - REQ-001
+  scope_tags:
+  - governance
+  rationale: 该任务只重建接管基线和控制状态，直接服务于可审计、可继续维护的目标。
+  non_goals: 不修复源池质量、不修改业务代码、不重发线上产物。
+  drift_found: false
+  change_request_required: false
+  reviewed_at: 2026-10-04
+- task_id: T-005
+  release: 1.1.0
+  status: PASS_WITH_WARNING
+  reviewer: codex
+  timestamp: '2026-10-04T17:58:58+08:00'
+  summary: 播放级发布门槛直接服务于只发布真实可播源的目标，未改发现、地区或客户端格式范围
+  reason: 兼容性验证仍由 T-002 承担；本轮只限制构建发布筛选
+  requirement_ids:
+  - REQ-104
+  goal_refs:
+  - GOAL-001
+  - GOAL-002
+  - GOAL-003
+  scope_tags:
+  - data
+  - release
+  - testing
+  non_goal_tags:
+  - regions
+  - compatibility

@@ -1,0 +1,17 @@
+framework:
+  name: codex-project-control
+  version: 1.4.0
+  template_schema: 2
+  managed_paths:
+  - .codex/CODEX_START.md
+  - .codex/PLANS.md
+  - .codex/framework.yaml
+  - .codex/rules/
+  - .codex/templates/
+  - .codex/VERSION_CONTROL.yaml
+  - .codex/MODULE_MAP.yaml
+  - scripts/
+  preserved_paths:
+  - .codex/state/
+  - .codex/PROJECT_CONTROL.md
+  - AGENTS.md

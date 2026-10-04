@@ -1,0 +1,29 @@
+decisions:
+  - id: DEC-001
+    date: 2026-10-04
+    title: "接管采用 legacy baseline"
+    decision: "把提交 062fc3af25fd6c41a0cf2e166942f76b40d09201 记为 1.0.0 稳定基线，并由 .codex 开始管理。"
+    reason: "代码、配置与数据库显示产品版本 1.0.0，但仓库没有 1.0.0 Git tag。"
+    status: ACCEPTED
+    evidence: [E-001]
+  - id: DEC-002
+    date: 2026-10-04
+    title: "不把当前基线标成 RELEASED"
+    decision: "当前 release 状态保持 DEVELOPMENT。"
+    reason: "没有匹配 Git tag，且真实影视仓 6.1.8 输出格式尚未验证。"
+    status: ACCEPTED
+    evidence: [E-001, E-003]
+  - id: DEC-003
+    date: 2026-10-04
+    title: "接管阶段不改业务代码"
+    decision: "本轮只落控制层、审计报告、脚本和文档，不触碰 app/config/data/dist/tests。"
+    reason: "先建立可审计基线，再处理兼容性和地区检测缺陷。"
+    status: ACCEPTED
+    evidence: [E-001, E-004]
+  - id: DEC-004
+    date: 2026-10-04
+    title: "真实客户端格式验证优先"
+    decision: "下一任务设为 T-002，用真实影视仓 6.1.8 验证输出格式。"
+    reason: "固定入口能否被客户端加载，是产品成立的前置条件。"
+    status: ACCEPTED
+    evidence: [E-003, E-004]

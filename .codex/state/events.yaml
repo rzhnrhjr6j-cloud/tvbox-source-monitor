@@ -1,0 +1,19 @@
+events:
+- id: EVT-001
+  date: 2026-10-04
+  type: ADOPTED
+  statement: tvbox-source-monitor 接入 codex-project-control V1.4.0。
+- id: EVT-002
+  date: 2026-10-04
+  type: BASELINE_RECORDED
+  statement: 记录稳定基线 062fc3af25fd6c41a0cf2e166942f76b40d09201，产品 1.0.0，数据库 DB-3。
+- id: EVT-003
+  date: 2026-10-04
+  type: AUDIT_COMPLETED
+  statement: 接管审计完成，已知风险与 backlog 已写入控制层。
+- timestamp: '2026-10-04T17:58:21+08:00'
+  kind: TASK
+  target_id: T-005
+  from: IN_PROGRESS
+  to: VERIFYING
+  reason: 聚焦测试 4 passed，全量 make test 退出码 0，真实数据库构建发布 3 个有搜索和播放证据的源，等待手机复测新入口

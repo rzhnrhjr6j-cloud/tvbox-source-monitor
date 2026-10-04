@@ -1,0 +1,62 @@
+risks:
+  - id: RISK-001
+    title: "CN 地区标签与实际网络位置不一致"
+    statement: "config/regions.yaml 将 GitHub 海外 runner 标为 CN，且远程 nodes 为空。"
+    severity: HIGH
+    likelihood: HIGH
+    impact: "可能把大陆不可达的源判为可用，直接损害固定入口的可信度。"
+    status: OPEN
+    evidence: [E-003]
+    mitigation: "接入真实大陆探针节点，区分 runner 地区与客户端地区。"
+  - id: RISK-002
+    title: "影视仓 6.1.8 输出格式未实机验证"
+    statement: "demo 只检查了当前模板形状，没有用真实客户端完成端到端加载。"
+    severity: HIGH
+    likelihood: MEDIUM
+    impact: "客户端可能无法解析或加载最终 tvbox.json。"
+    status: OPEN
+    evidence: [E-003, E-006]
+    mitigation: "执行 T-002，用真实客户端验证字段布局。"
+  - id: RISK-003
+    title: "发布链路依赖第三方代理"
+    statement: "主镜像与内部资源改写依赖 gh-proxy.com，备用入口依赖 jsdelivr。"
+    severity: HIGH
+    likelihood: MEDIUM
+    impact: "第三方代理失效或限流时，源配置可能在客户端无法加载。"
+    status: OPEN
+    evidence: [E-003]
+    mitigation: "执行 T-004，建立监测、回退和替换方案。"
+  - id: RISK-004
+    title: "当前输出全部是 experimental"
+    statement: "dist/health.json 显示 primary=0、backup=0、experimental=86。"
+    severity: MEDIUM
+    likelihood: HIGH
+    impact: "客户端无法获得稳定层和备用层提示，源池整体质量分层没有真正形成。"
+    status: OPEN
+    evidence: [E-002, E-003]
+    mitigation: "继续积累观测数据，并检查评分阈值、观察期和源稳定性。"
+  - id: RISK-005
+    title: "把可解析误当成可播放"
+    statement: "102 个最近探测源中 101 个 HTTP 和配置解析通过，但只有 4 个真正播放通过；旧构建会把其中大部分发布出去。"
+    severity: HIGH
+    likelihood: LOW
+    impact: "手机端入口能打开，但多数源无法播放，直接失去可用性。"
+    status: MITIGATED
+    evidence: [E-007, E-008, E-009]
+    mitigation: "已增加近期搜索和播放双 100 分门槛，并校验播放 Content-Type；剩余验证是新的线上入口在真实手机端可用。"
+assumptions:
+  - id: ASM-001
+    statement: "GitHub Actions 四个调度工作流和两个 Secret 当前可用。"
+    confidence: HIGH
+    status: VERIFIED
+    verification: "2026-10-04 使用 gh run list 和 gh secret list 核对：health-check、discover、nightly-build、pages 最近运行成功；GH_TOKEN、ALERT_GITHUB_REPO 存在。"
+  - id: ASM-002
+    statement: "gh-proxy.com 和 jsdelivr 对真实中国大陆客户端稳定可用。"
+    confidence: LOW
+    status: UNVERIFIED
+    verification: "缺真实大陆客户端或节点证据，只有配置注释和海外 runner 结果。"
+  - id: ASM-003
+    statement: "现有测试和 demo 覆盖主要本地链路。"
+    confidence: MEDIUM
+    status: PARTIALLY_VERIFIED
+    verification: "make test 与 make demo 通过，但两者都不能替代真实客户端和真实大陆网络验证。"

@@ -1,0 +1,26 @@
+current_release:
+  product_version: 1.1.0
+  requirement_baseline: R1.0
+  code_version: v1.0.0
+  database_version: DB-3
+  state: DEVELOPMENT
+  git_tag: null
+  stable_baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201
+  notes: "1.1.0 开发中；播放级发布门槛已实现并通过本地测试与真实数据库构建，等待线上入口手机复测。"
+releases:
+  - product_version: 1.1.0
+    requirement_baseline: R1.0
+    code_version: v1.0.0
+    database_version: DB-3
+    state: DEVELOPMENT
+    git_tag: null
+    stable_baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201
+    notes: "播放级发布门槛；尚未发布和手机复测"
+  - product_version: 1.0.0
+    requirement_baseline: R1.0
+    code_version: v1.0.0
+    database_version: DB-3
+    state: DEVELOPMENT
+    git_tag: null
+    stable_baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201
+    notes: "adoption baseline, not a tagged release"

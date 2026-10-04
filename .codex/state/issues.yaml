@@ -1,0 +1,37 @@
+issues:
+  - id: ISSUE-001
+    title: "CN 区域结论不真实"
+    severity: HIGH
+    status: OPEN
+    task_id: T-003
+    statement: "唯一运行中的地区是 GitHub ubuntu-latest runner，但配置标为 CN。"
+    source: "config/regions.yaml, dist/health.json"
+  - id: ISSUE-002
+    title: "真实客户端兼容性未证实"
+    severity: HIGH
+    status: OPEN
+    task_id: T-002
+    statement: "输出格式字段布局尚未用影视仓 6.1.8 实机核对。"
+    source: "config/app.yaml, README.md, scripts/demo.py"
+  - id: ISSUE-003
+    title: "第三方代理是发布单点"
+    severity: HIGH
+    status: OPEN
+    task_id: T-004
+    statement: "主流程依赖 gh-proxy.com，备用入口依赖 jsdelivr。"
+    source: "config/app.yaml"
+  - id: ISSUE-004
+    title: "输出源没有 primary/backup 分层"
+    severity: MEDIUM
+    status: OPEN
+    statement: "当前线上 86 个源全部为 experimental。"
+    source: "dist/health.json"
+  - id: ISSUE-005
+    title: "发布门槛缺少真实播放证据"
+    severity: HIGH
+    status: MITIGATED
+    task_id: T-005
+    statement: "线上发布只看源状态，导致配置可解析但实际不可播的源继续进入 tvbox.json。"
+    source: "2026-10-04 用户手机实测；dist/health.json"
+    evidence: [E-008, E-009]
+    mitigation: "构建已增加近期搜索和播放双证据门槛，并用真实数据库生成 3 个可播放候选。"

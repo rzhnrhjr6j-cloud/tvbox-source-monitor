@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+import subprocess,sys
+from pathlib import Path
+R=Path(__file__).resolve().parents[1]
+failed=0
+for label,cmd in [('VALIDATE',['./scripts/validate-project.sh']),('SCOPE',['./scripts/check-scope.sh']),('EVIDENCE',['./scripts/check-tests.sh'])]:
+    print()
+    print('===',label,'===')
+    failed += subprocess.run(cmd,cwd=R).returncode != 0
+print()
+print('HEALTH:','FAIL' if failed else 'PASS')
+sys.exit(1 if failed else 0)

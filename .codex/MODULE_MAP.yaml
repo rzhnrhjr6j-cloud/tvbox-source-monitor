@@ -1,0 +1,53 @@
+modules: []
+modules:
+  - id: MOD-001
+    name: source-discovery
+    files:
+      - app/discovery/
+      - app/parsers/
+    affects:
+      - data/candidates.json
+      - data/monitor.db
+  - id: MOD-002
+    name: health-and-scoring
+    files:
+      - app/checks/
+      - app/scoring/
+      - app/policy.py
+    affects:
+      - data/monitor.db
+      - dist/health.json
+  - id: MOD-003
+    name: region-quorum
+    files:
+      - app/regions/
+      - node/probe.py
+      - config/regions.yaml
+    affects:
+      - data/monitor.db
+      - dist/health.json
+  - id: MOD-004
+    name: build-mirror-and-safety
+    files:
+      - app/build/
+      - config/app.yaml
+    affects:
+      - dist/tvbox.json
+      - dist/sources/
+      - dist/backup/
+  - id: MOD-005
+    name: storage-and-alerts
+    files:
+      - app/storage/
+      - app/alerts/
+    affects:
+      - data/monitor.db
+      - GitHub Issues / Webhook / Telegram
+  - id: MOD-006
+    name: scheduled-automation
+    files:
+      - .github/workflows/
+      - deploy.sh
+    affects:
+      - GitHub Actions
+      - GitHub Pages

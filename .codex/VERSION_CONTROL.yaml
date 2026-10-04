@@ -1,0 +1,12 @@
+product_version: 1.0.0
+requirement_baseline: R1.0
+code_version: v1.0.0
+database_version: DB-3
+state: DEVELOPMENT
+stable_baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201
+development_baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201+control
+git_tag: null
+rules:
+  new_feature_requires_change_request: true
+  release_verifying_freezes_new_features: true
+  released_requires_git_tag: true

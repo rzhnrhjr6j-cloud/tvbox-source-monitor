@@ -1,0 +1,174 @@
+task_tree:
+- id: T-001
+  title: 完成 legacy 接管审计并建立控制基线
+  phase: P0
+  release: 1.0.0
+  status: DONE
+  objective: 重建当前稳定基线、版本映射、能力地图、风险、未验证项、证据和后续任务。
+  goal_refs:
+  - GOAL-001
+  requirement_ids:
+  - REQ-001
+  acceptance_criteria:
+  - AC-001
+  - AC-002
+  - AC-003
+  - AC-004
+  scope_tags:
+  - governance
+  non_goal_tags:
+  - data
+  - api
+  - ui
+  - compatibility
+  - regions
+  - resilience
+  change_request_ids: []
+  dependencies: []
+  allowed_paths:
+  - .codex/
+  - scripts/
+  - docs/
+  - AGENTS.md
+  - .gitignore
+  forbidden_paths:
+  - .git/
+  - app/
+  - config/
+  - data/
+  - dist/
+  - dashboard/
+  - node/
+  - tests/
+  evidence_ids:
+  - E-001
+  - E-002
+  - E-003
+  - E-004
+  - E-005
+  - E-006
+- id: T-002
+  title: 用真实影视仓 6.1.8 验证输出格式
+  phase: P1
+  release: 1.1.0
+  status: BACKLOG
+  objective: 在真实客户端验证 dist/tvbox.json 的字段布局和固定地址加载行为；不通过则调整 output.format 或 template。
+  goal_refs:
+  - GOAL-002
+  - GOAL-003
+  requirement_ids:
+  - REQ-101
+  acceptance_criteria:
+  - AC-101
+  scope_tags:
+  - compatibility
+  - testing
+  non_goal_tags:
+  - data
+  - regions
+  - resilience
+  change_request_ids:
+  - CR-001
+  dependencies: []
+  allowed_paths:
+  - config/
+  - tests/
+  - docs/
+  forbidden_paths:
+  - .git/
+- id: T-003
+  title: 建立真实中国大陆探测节点
+  phase: P1
+  release: 1.1.0
+  status: BACKLOG
+  objective: 部署或接入至少一个真实大陆探针节点，并把地区结论、quorum 和面板标签改为可证。
+  goal_refs:
+  - GOAL-004
+  requirement_ids:
+  - REQ-102
+  acceptance_criteria:
+  - AC-102
+  scope_tags:
+  - regions
+  - testing
+  non_goal_tags:
+  - data
+  - compatibility
+  - resilience
+  change_request_ids:
+  - CR-002
+  dependencies: []
+  allowed_paths:
+  - app/
+  - config/
+  - node/
+  - tests/
+  - docs/
+  forbidden_paths:
+  - .git/
+- id: T-004
+  title: 降低第三方镜像依赖风险
+  phase: P1
+  release: 1.1.0
+  status: BACKLOG
+  objective: 评估 gh-proxy.com 和 jsdelivr 的可用性、回退顺序和监测方式，形成可执行降级方案。
+  goal_refs:
+  - GOAL-002
+  requirement_ids:
+  - REQ-103
+  acceptance_criteria:
+  - AC-103
+  scope_tags:
+  - resilience
+  - testing
+  non_goal_tags:
+  - data
+  - compatibility
+  - regions
+  change_request_ids:
+  - CR-003
+  dependencies: []
+  allowed_paths:
+  - app/
+  - config/
+  - tests/
+  - docs/
+  forbidden_paths:
+  - .git/
+- id: T-005
+  title: 增加播放级发布门槛
+  phase: P1
+  release: 1.1.0
+  status: VERIFYING
+  objective: 让构建只发布近期搜索 100 分、播放 100 分且播放响应为非 HTML 媒体类型的源，避免把大量不可播源继续发给客户端。
+  goal_refs:
+  - GOAL-001
+  - GOAL-002
+  - GOAL-003
+  requirement_ids:
+  - REQ-104
+  acceptance_criteria:
+  - AC-104
+  scope_tags:
+  - data
+  - release
+  - testing
+  non_goal_tags:
+  - regions
+  - compatibility
+  change_request_ids:
+  - CR-004
+  dependencies:
+  - T-002
+  allowed_paths:
+  - app/build/builder.py
+  - config/app.yaml
+  - data/
+  - dist/
+  - tests/
+  - .codex/
+  - docs/
+  - .gitignore
+  - AGENTS.md
+  forbidden_paths:
+  - .git/

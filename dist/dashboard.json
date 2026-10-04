@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-10-04T19:47:46Z",
-  "build_id": "20261004-194746",
+  "generated_at": "2026-10-04T23:38:01Z",
+  "build_id": "20261004-233801",
   "summary": {
     "sources": {
-      "active": 234,
-      "degraded": 133,
+      "active": 241,
+      "degraded": 153,
       "failed": 1
     },
     "candidates": 0,
     "tiers": {
       "primary": 0,
       "backup": 0,
-      "experimental": 16
+      "experimental": 26
     },
-    "output_items": 16
+    "output_items": 26
   },
   "regions": {
     "CN": {
-      "checks": 2417,
-      "successes": 2403,
-      "availability_percent": 99.42
+      "checks": 2444,
+      "successes": 2430,
+      "availability_percent": 99.43
     }
   },
   "sources": [
@@ -87,6 +87,69 @@
       "whitelisted": false
     },
     {
+      "id": "906b514cd945261a7ebc563d04cb196f5f15cf2f5ba122fcc458b34f164adaf4",
+      "name": "aa123jg-wyykFL",
+      "url": "https://raw.githubusercontent.com/aa123jg/tvbox-FL/main/wyykFL/wyykFL.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 73.5,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T23:18:47Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 636.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "9517a432613509daa5ec2d6ac44c591afc63def6861729030bb45881556bd5ab",
+      "name": "ljf0521-ziyong1",
+      "url": "https://raw.githubusercontent.com/ljf0521/tvnew/HEAD/ziyong1.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 73.5,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T23:19:02Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 651.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "0380ba7a3de24907889e1b393054a5c0a8fb2415d734207fb1c503ef978e878f",
+      "name": "wfvw126-xjsp",
+      "url": "https://raw.githubusercontent.com/wfvw126/zb/main/xjsp.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 73.5,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T23:18:12Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 791.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
       "id": "2651a7041e6d9d3ae63e3490401c8c26468bb47627b7086c24c12a18e5a31a07",
       "name": "Lightconer",
       "url": "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/%E5%8D%95%E4%BB%93%E8%81%9A%E5%90%88.json",
@@ -150,6 +213,27 @@
       "whitelisted": false
     },
     {
+      "id": "5b1d2f5ab24fa0b30c3e530503bceffc91f64ca2353f0c701a1faf64f06c158a",
+      "name": "AA999OK-18005",
+      "url": "https://raw.githubusercontent.com/AA999OK/TVBOX/HEAD/CK/18005/jav.json",
+      "status": "degraded",
+      "tier": "experimental",
+      "type": "single",
+      "score": 58.5,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T23:18:52Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 639.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
       "id": "f207435f85a00d747da25bffb023b7feb6705edf8d8cf99a20d8e31dfda2a7c1",
       "name": "TVBox-PG",
       "url": "https://raw.githubusercontent.com/13998394872/TVBox/main/PG.json",
@@ -188,6 +272,27 @@
       ],
       "regions_failed": [],
       "avg_response_ms": 484.5,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "51e5e3f010574b4359e2d7250eded06526a734d67e21f47247fe7695db7fc6d1",
+      "name": "cxelva-a",
+      "url": "https://raw.githubusercontent.com/cxelva/xpg/main/lib/a.json",
+      "status": "degraded",
+      "tier": "experimental",
+      "type": "single",
+      "score": 58.5,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T23:18:48Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 752.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -276,6 +381,27 @@
       "whitelisted": false
     },
     {
+      "id": "8f8896b5d0d2bcb3f42fc685798704e90c45deab603b5771981fff6233d9b0db",
+      "name": "jingyi251-aa",
+      "url": "https://raw.githubusercontent.com/jingyi251/a/main/lz/aa.json",
+      "status": "degraded",
+      "tier": "experimental",
+      "type": "single",
+      "score": 58.5,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T23:17:12Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 768.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
       "id": "17a834c4e8c9bc6e1da0f93ee966b8d086df9624b3b8c9c2076f4be81b2146ac",
       "name": "lubin-moyu",
       "url": "https://raw.githubusercontent.com/lubin776/tvbox-api-backup/main/tvbox/%E6%91%B8%E9%B1%BC.json",
@@ -293,6 +419,27 @@
       ],
       "regions_failed": [],
       "avg_response_ms": 567.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "84df2f9d9ed6af8068f2c6f2434faa49f780e06ddf14a4623ff0d09e1270b172",
+      "name": "wen9180-jar",
+      "url": "https://raw.githubusercontent.com/wen9180/ziyong/main/jar.json",
+      "status": "degraded",
+      "tier": "experimental",
+      "type": "single",
+      "score": 58.5,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T23:17:27Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 754.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -339,6 +486,69 @@
       "whitelisted": false
     },
     {
+      "id": "99021c663c4591c7452c0d7fb03b7a5421330f00f2766894a9208eb78c19e53c",
+      "name": "kongguojun-pro",
+      "url": "https://raw.githubusercontent.com/kongguojun/668/master/pro.json",
+      "status": "degraded",
+      "tier": "experimental",
+      "type": "single",
+      "score": 57.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T23:17:13Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 847.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "f0aebbef65fb47a6159b4a53a5612537c04952b1758edcb51bfb6ee539df4224",
+      "name": "liuwei0704-csdy",
+      "url": "https://raw.githubusercontent.com/liuwei0704/66/master/csdy.json",
+      "status": "degraded",
+      "tier": "experimental",
+      "type": "single",
+      "score": 57.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T23:17:14Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 837.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "3cb4d2deb32481c026018e54e598be05ed973380898021dd5ea651744c5ab233",
+      "name": "zheng197600-0821",
+      "url": "https://raw.githubusercontent.com/zheng197600/tvbox/main/0821.json",
+      "status": "degraded",
+      "tier": "experimental",
+      "type": "single",
+      "score": 57.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T23:17:29Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 838.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
       "id": "745561a3739c9b0c759e443e7bee2ffeee9488f9a7c4709f69066cfa851187f8",
       "name": "🫘豆包",
       "url": "https://17264.kstore.space/%E8%B1%86%E5%8C%85.jpg",
@@ -361,6 +571,276 @@
     }
   ],
   "alerts": [
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:19:02Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:18:55Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:18:52Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:18:51Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:18:50Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:18:49Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:18:48Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:18:47Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:18:41Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:18:12Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:18:05Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:58Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:52Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:47Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:46Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:32Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:31Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:30Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:29Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:28Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:27Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:26Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:14Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:13Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:12Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:11Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T23:17:10Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
     {
       "kind": "source_failed",
       "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
@@ -590,279 +1070,79 @@
       "resolved_at": null,
       "severity": "info",
       "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "fbedd85daf6b8c9ac477c51f69094c902b002a668ddf01f066ac3bbf128fb6d7",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 9zyfun.json",
-      "created_at": "2026-10-04T16:31:14Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "83abf45907e4fd50732355caa2be5355baa322a81a8151782142e39899047c76",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 9zyfun.json",
-      "created_at": "2026-10-04T16:31:14Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "c1a17b5adce5ebb7224e6bd958f7a38985b25e63b794dd05e048f20ee9e50be0",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 内部接口【不外传】",
-      "created_at": "2026-10-04T16:09:39Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T16:09:39Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "5f08d2430c93869bad2855672bd7a934bd799fc0edf17ffe26dd6dbc1768851b",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / jsm.json",
-      "created_at": "2026-10-04T15:45:30Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T15:45:30Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T15:44:50Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T12:24:00Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T11:14:41Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "9316156320a200ea234b52c153bd41e66b54718570d54a1efb83286438c794ab",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 影视.json",
-      "created_at": "2026-10-04T11:10:18Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T11:10:18Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T05:53:45Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T00:05:15Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "73bf11765e03c2b6d74afa5c001d51e8a046f4425f9990a2c5f8082f6584eba8",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / fty.json",
-      "created_at": "2026-10-03T22:47:15Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-03T22:47:15Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-03T21:15:42Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-03T17:59:00Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "9903afb857b37a65b9be644b0cb582b0fb835e4467e38c27e7e7f5c96ec0ccd7",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / api.json",
-      "created_at": "2026-10-03T13:57:34Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-03T13:57:34Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-03T08:35:47Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-03T02:22:18Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-02T23:39:19Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-02T23:18:18Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-02T19:19:43Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-02T13:53:34Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-02T07:02:05Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-02T01:07:18Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
     }
   ],
   "build_history": [
+    {
+      "build_id": "20261004-230007",
+      "generated_at": "2026-10-04T23:00:07Z",
+      "published": true,
+      "fallback": false,
+      "items": 16,
+      "active": 234,
+      "degraded": 133,
+      "failed": 1,
+      "new": 0,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
+    {
+      "build_id": "20261004-225157",
+      "generated_at": "2026-10-04T22:51:57Z",
+      "published": true,
+      "fallback": false,
+      "items": 16,
+      "active": 234,
+      "degraded": 133,
+      "failed": 1,
+      "new": 0,
+      "recovered": 0,
+      "removed": 1,
+      "blocked_reason": ""
+    },
+    {
+      "build_id": "20261004-222032",
+      "generated_at": "2026-10-04T22:20:32Z",
+      "published": true,
+      "fallback": false,
+      "items": 17,
+      "active": 234,
+      "degraded": 133,
+      "failed": 1,
+      "new": 1,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
+    {
+      "build_id": "20261004-214803",
+      "generated_at": "2026-10-04T21:48:03Z",
+      "published": true,
+      "fallback": false,
+      "items": 16,
+      "active": 234,
+      "degraded": 133,
+      "failed": 1,
+      "new": 1,
+      "recovered": 0,
+      "removed": 1,
+      "blocked_reason": ""
+    },
+    {
+      "build_id": "20261004-194746",
+      "generated_at": "2026-10-04T19:47:46Z",
+      "published": true,
+      "fallback": false,
+      "items": 16,
+      "active": 234,
+      "degraded": 133,
+      "failed": 1,
+      "new": 3,
+      "recovered": 0,
+      "removed": 1,
+      "blocked_reason": ""
+    },
     {
       "build_id": "20261004-191501",
       "generated_at": "2026-10-04T19:15:01Z",
@@ -1205,76 +1485,6 @@
       "published": true,
       "fallback": false,
       "items": 80,
-      "active": 97,
-      "degraded": 0,
-      "failed": 1,
-      "new": 0,
-      "recovered": 0,
-      "removed": 0,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261001-090052",
-      "generated_at": "2026-10-01T09:00:52Z",
-      "published": true,
-      "fallback": false,
-      "items": 80,
-      "active": 97,
-      "degraded": 0,
-      "failed": 1,
-      "new": 0,
-      "recovered": 0,
-      "removed": 0,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261001-074100",
-      "generated_at": "2026-10-01T07:41:00Z",
-      "published": true,
-      "fallback": false,
-      "items": 80,
-      "active": 97,
-      "degraded": 0,
-      "failed": 1,
-      "new": 2,
-      "recovered": 0,
-      "removed": 2,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261001-053935",
-      "generated_at": "2026-10-01T05:39:35Z",
-      "published": true,
-      "fallback": false,
-      "items": 80,
-      "active": 97,
-      "degraded": 0,
-      "failed": 1,
-      "new": 0,
-      "recovered": 0,
-      "removed": 0,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261001-050155",
-      "generated_at": "2026-10-01T05:01:55Z",
-      "published": true,
-      "fallback": false,
-      "items": 80,
-      "active": 97,
-      "degraded": 0,
-      "failed": 1,
-      "new": 3,
-      "recovered": 0,
-      "removed": 1,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261001-030812",
-      "generated_at": "2026-10-01T03:08:12Z",
-      "published": true,
-      "fallback": false,
-      "items": 78,
       "active": 97,
       "degraded": 0,
       "failed": 1,

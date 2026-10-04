@@ -662,13 +662,21 @@ class ConfigMirror:
             return None
         result = self.http.get(url, max_bytes=self.jar_max_bytes)
         if not result.ok or not result.content:
-            # not ours to fetch is also not the client's: a runner has better
-            # reach than a phone in mainland China, so a reference it cannot
-            # pull is one the client will report as a broken row.
+            # Cache the reference so no later config pays the same timeout, but
+            # do not confuse "we could not fetch it" with "it is gone".  Only a
+            # response that settles the question - a 404/410, or a 2xx with an
+            # empty body - may take the row away.  A timeout, a 5xx or a
+            # refused connection is as likely to be our runner (or the proxy it
+            # dials through) as the reference: the phone reaches hosts the
+            # runner cannot, and treating a jitter as death silently dropped
+            # sources that played fine once published.  Everything else keeps
+            # the author's own URL and gets another chance next build.
             state.setdefault("unavailable", set()).add(url)
             if (host and not _is_address_literal(host)
                     and result.error_code in _DEAD_HOST_ERRORS):
                 state.setdefault("dead_hosts", set()).add(host)
+            if result.status in _DEAD_JAR_STATUS or (result.ok and not result.content):
+                state.setdefault("gone", set()).add(url)
             LOGGER.warning("reference could not be fetched", extra={
                 "stage": "build", "check": "mirror", "reference": url,
                 "error": result.error_code or f"HTTP_{result.status}"})
@@ -726,6 +734,7 @@ class ConfigMirror:
         if _extension(url) == ".jar" and not _looks_like_a_jar(blob):
             # a 200 that is not a jar is a broken row, not a working one
             state.setdefault("unavailable", set()).add(url)
+            state.setdefault("gone", set()).add(url)
             LOGGER.warning("reference is not a jar", extra={
                 "stage": "build", "check": "mirror", "reference": url,
                 "error": "NOT_A_JAR"})
@@ -754,6 +763,7 @@ class ConfigMirror:
             # provably not a config, so the parent drops the row rather than
             # leaving the client a child that can only fail
             state.setdefault("not_a_config", set()).add(url)
+            state.setdefault("gone", set()).add(url)
             LOGGER.warning("child config is not a config", extra={
                 "stage": "build", "check": "mirror", "reference": url,
                 "error": "CHILD_IS_HTML" if _looks_like_html(blob)
@@ -1020,15 +1030,22 @@ class ConfigMirror:
     def _prune_unavailable(
         self, text: str, state: dict[str, Any]
     ) -> tuple[str, int, bool]:
-        """Drop what we could not fetch, so the client never shows it.
+        """Drop only what is *proven* gone, so the client never shows it.
+
+        ``state["gone"]`` holds the references we saw a final answer for - a
+        404/410, a jar whose bytes are not a jar, a child that is not a config.
+        ``state["unavailable"]`` is the *fetch cache* (a timeout we paid once so
+        the next config does not pay it again); it is deliberately not consulted
+        here, because "we could not reach it" is not "it is dead" - the phone
+        reaches hosts the runner cannot.
 
         Returns ``(text, dropped_sites, drop_source)``.  A crawler the client
         loads on open decides whether the whole entry works - 影视仓 answers
-        "解析配置失败" - so an unfetchable spider takes the source with it.  A
-        crawler a single row names is only that row's problem.
+        "解析配置失败" - so a gone spider takes the source with it.  A crawler a
+        single row names is only that row's problem.
         """
-        unavailable = state.get("unavailable") or set()
-        if not unavailable:
+        gone_refs = state.get("gone") or set()
+        if not gone_refs:
             return text, 0, False
         try:
             config = _load_config(text)
@@ -1038,7 +1055,7 @@ class ConfigMirror:
         def gone(reference: Any) -> bool:
             if not isinstance(reference, str) or not reference.startswith(("http://", "https://")):
                 return False
-            return reference.split(";md5;")[0].strip() in unavailable
+            return reference.split(";md5;")[0].strip() in gone_refs
 
         dropped = 0
         if isinstance(config, list):

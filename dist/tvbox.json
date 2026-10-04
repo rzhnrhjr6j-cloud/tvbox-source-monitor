@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-04T19:47:46Z",
+  "generated_at": "2026-10-04T23:38:01Z",
   "urls": [
     {
       "name": "精品 | 采集（83站）",
@@ -11,20 +11,36 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/e5e22b7e79834be5.json"
     },
     {
-      "name": "豆瓣 #1（21站）",
+      "name": "豆瓣 #1（23站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b9c97ff3dac729ba.json"
     },
     {
-      "name": "┃公众号：熊猫是只肥猫┃（149站）",
+      "name": "┃网络电视┃（17站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/906b514cd945261a.json"
+    },
+    {
+      "name": "丝袜资源1080P（35站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/9517a432613509da.json"
+    },
+    {
+      "name": "熊猫视频（30站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/0380ba7a3de24907.json"
+    },
+    {
+      "name": "┃公众号：熊猫是只肥猫┃（165站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/2651a7041e6d9d3a.json"
     },
     {
-      "name": "温州鼓词（110站）",
+      "name": "温州鼓词（111站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b805de89511b345c.json"
     },
     {
       "name": "豆瓣┃影视（104站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5b34c1370113faa4.json"
+    },
+    {
+      "name": "推荐┃豆瓣（127站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5b1d2f5ab24fa0b3.json"
     },
     {
       "name": "豆瓣 | 索引（149站）",
@@ -35,11 +51,15 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b63ac8eea01ca1fd.json"
     },
     {
+      "name": "黄果短剧（翻墙）（44站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/51e5e3f010574b43.json"
+    },
+    {
       "name": "┃豆瓣┃仅供测试（90站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/bb44d7c7145de6e2.json"
     },
     {
-      "name": "神秘的┃哥哥们（59站）",
+      "name": "神秘的┃哥哥们（61站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8233a0b487b35cbf.json"
     },
     {
@@ -51,8 +71,16 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/da03426545491a93.json"
     },
     {
+      "name": "豆瓣热榜（373站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8f8896b5d0d2bcb3.json"
+    },
+    {
       "name": "┆片单┆精选（96站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/17a834c4e8c9bc6e.json"
+    },
+    {
+      "name": "巧┃橘汁|APP（224站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/84df2f9d9ed6af80.json"
     },
     {
       "name": "云盒独家维护【请勿相信广告】（53站）",
@@ -61,6 +89,18 @@
     {
       "name": "豆瓣 #3（172站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/498de39ba7bfc819.json"
+    },
+    {
+      "name": "GJ收藏整理推荐（148站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/99021c663c4591c7.json"
+    },
+    {
+      "name": "健教中心,全接口AI过滤广告（144站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/f0aebbef65fb47a6.json"
+    },
+    {
+      "name": "CNS豆瓣（192站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/3cb4d2deb32481c0.json"
     },
     {
       "name": "豆了（159站）",

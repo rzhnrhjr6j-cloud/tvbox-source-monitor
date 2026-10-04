@@ -195,6 +195,126 @@
     {
       "url": "https://raw.githubusercontent.com/huangxiong1992/jt/main/vip.json",
       "name": "jt-vip"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AlanTse1314/bizhangjieCatVodSpider/main/json/index18.json",
+      "name": "bizhangjie-index18"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zjng/TV-API/main/18%2B.json",
+      "name": "zjng-18plus"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/jingyi251/a/main/lz/aa.json",
+      "name": "jingyi251-aa"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kongguojun/668/master/pro.json",
+      "name": "kongguojun-pro"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/liuwei0704/66/master/csdy.json",
+      "name": "liuwei0704-csdy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/%E5%8D%81%E5%85%AB.json",
+      "name": "woshishiq1-shiba"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/wen9180/ziyong/main/jar.json",
+      "name": "wen9180-jar"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/wen9180/ziyong/main/py.json",
+      "name": "wen9180-py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zheng197600/tvbox/main/0821.json",
+      "name": "zheng197600-0821"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lubin776/0/main/tvbox/%E6%84%BF%E6%9C%9B18.json",
+      "name": "lubin776-yuanwang18"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yigedashu/xwck/main/xwll9+9.json",
+      "name": "yigedashu-xwll9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ysczg/ysc/main/lib/onlinejuhe.json",
+      "name": "ysczg-onlinejuhe"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AA999OK/TVBOX/main/CK/18015/fun.json",
+      "name": "AA999OK-18015"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DodgeZhang/tvbox/main/huangju/config.json",
+      "name": "DodgeZhang-huangju"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Journey4U/SVIP/main/s18.json",
+      "name": "Journey4U-s18"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xiaoran67/update/main/assets/subscribe/tvbox/json/a/xxxk.json",
+      "name": "xiaoran67-xxxk"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/cluntop/tv/main/fun.json",
+      "name": "cluntop-tv-fun"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ewctt/tvbox/main/fun.json",
+      "name": "ewctt-fun"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/793641910/binge/main/json/LuTie.json",
+      "name": "binge-LuTie"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/iuse63/otherbox/main/jav.json",
+      "name": "iuse63-jav"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/wfvw126/zb/main/xjsp.json",
+      "name": "wfvw126-xjsp"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chengxue2020/Cat-ports/main/18/2/fan18.json",
+      "name": "chengxue2020-fan18"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aa123jg/tvbox-FL/main/wyykFL/wyykFL.json",
+      "name": "aa123jg-wyykFL"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/cxelva/xpg/main/lib/a.json",
+      "name": "cxelva-a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xinzhao2/fg/main/index18.json",
+      "name": "xinzhao2-index18"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/qist/tvbox/HEAD/0827.json",
+      "name": "qist-0827"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hkuc/tvbox-config/HEAD/tv/6/0827.json",
+      "name": "hkuc-0827"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AA999OK/TVBOX/HEAD/CK/18005/jav.json",
+      "name": "AA999OK-18005"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/jj00780078/jj00780078.github.io/HEAD/fun.json",
+      "name": "jj00780078-fun"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ljf0521/tvnew/HEAD/ziyong1.json",
+      "name": "ljf0521-ziyong1"
     }
   ]
 }

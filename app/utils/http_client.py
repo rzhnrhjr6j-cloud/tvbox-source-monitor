@@ -184,17 +184,19 @@ class HttpClient:
         stop_after_bytes: int | None = None,
         timeout: tuple[float, float] | None = None,
         allow_redirects: bool = True,
+        max_retries: int | None = None,
     ) -> HttpResult:
         ceiling = self.max_response_bytes if max_bytes is None else max_bytes
         read_timeout = timeout[1] if timeout else self.read_timeout
         connect_timeout = timeout[0] if timeout else self.connect_timeout
         deadline = time.monotonic() + self.total_timeout
+        retry_limit = self.max_retries if max_retries is None else max(0, int(max_retries))
 
         result = HttpResult(url=url)
         last_error: str | None = None
         run_started = time.monotonic()
 
-        for attempt in range(1, self.max_retries + 2):
+        for attempt in range(1, retry_limit + 2):
             result.attempts = attempt
             if time.monotonic() >= deadline:
                 result.error_code = ERR_TOO_SLOW
@@ -230,7 +232,7 @@ class HttpClient:
             except BaseException as exc:  # noqa: BLE001 - classify() decides
                 code, retryable = _classify(exc)
                 last_error = code
-                if not retryable or attempt > self.max_retries:
+                if not retryable or attempt > retry_limit:
                     result.error_code = code
                     result.error_message = f"{type(exc).__name__}: {exc}"[:500]
                     result.dns_ok = code != ERR_DNS
@@ -245,7 +247,7 @@ class HttpClient:
                 retryable = attempt_result.error_code in (ERR_CONNECT, ERR_TIMEOUT, ERR_REQUEST)
                 if attempt_result.status in RETRY_STATUSES:
                     retryable = True
-                if retryable and attempt <= self.max_retries and time.monotonic() < deadline:
+                if retryable and attempt <= retry_limit and time.monotonic() < deadline:
                     retry_after = None
                     raw_retry = attempt_result.headers.get("retry-after")
                     if raw_retry:
@@ -261,7 +263,7 @@ class HttpClient:
                 )
                 return attempt_result
 
-            if attempt_result.status in RETRY_STATUSES and attempt <= self.max_retries and time.monotonic() < deadline:
+            if attempt_result.status in RETRY_STATUSES and attempt <= retry_limit and time.monotonic() < deadline:
                 retry_after = None
                 raw_retry = attempt_result.headers.get("retry-after")
                 if raw_retry:

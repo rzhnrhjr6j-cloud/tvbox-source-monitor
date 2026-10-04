@@ -17,6 +17,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
 
+from ..checks.jar_reachability import check_jar_reachability
 from ..checks.search_check import check_search
 from ..logging_setup import get_logger
 from ..models import DiscoveryRecord, Event, Source, SourceEvent, Status
@@ -87,6 +88,10 @@ class DiscoveryAggregator:
         self.reject_cooldown = float(self.admission.get("reject_cooldown_hours", 24))
         self.initial_search = bool(self.admission.get("initial_search", True))
         self.initial_search_timeout = float(self.admission.get("initial_search_timeout", 10))
+        self.jar_reachability = bool(self.admission.get("jar_reachability_precheck", True))
+        self.jar_reachability_timeout = float(self.admission.get("jar_reachability_timeout", 6))
+        self.jar_reachability_max_probes = int(self.admission.get("jar_reachability_max_probes", 120))
+        self._jar_probe_cache: dict[str, str] = {}
         self.rejected_path: Path = cfg.path("app.data_dir") / REJECTED_FILE
         self.adapters = self._build_adapters()
 
@@ -303,6 +308,21 @@ class DiscoveryAggregator:
             outcome.reason = f"BELOW_THRESHOLD:{outcome.score:.1f}<{threshold:.0f}"
             self._record(candidate, outcome, admitted=False)
             return outcome
+
+        if self.jar_reachability:
+            reachability = check_jar_reachability(
+                doc.raw,
+                self.client,
+                timeout=self.jar_reachability_timeout,
+                max_probes=self.jar_reachability_max_probes,
+                cache=self._jar_probe_cache,
+            )
+            if reachability.rejected:
+                outcome.reason = "ALL_JARS_DEAD"
+                self._record(candidate, outcome, admitted=False)
+                return outcome
+            if reachability.checked or reachability.alive:
+                outcome.signals["jar_reachable"] = reachability.alive > 0
 
         outcome.admitted = True
 

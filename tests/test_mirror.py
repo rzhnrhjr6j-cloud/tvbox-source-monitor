@@ -373,27 +373,30 @@ def test_bare_hosting_can_be_switched_off(tmp_path):
         assert plan.jars == {}
 
 
-def test_a_source_whose_spider_cannot_be_fetched_is_not_published(tmp_path):
-    """影视仓 loads the spider as it opens the source, so there is no partial win.
+def test_a_source_whose_spider_cannot_be_fetched_keeps_the_author_url(tmp_path):
+    """A refused connection is not a dead reference.
 
-    A host that refuses to answer is invisible to the 404-based prune, and the
-    runner's reach is better than the client's, so a failed fetch here is the
-    only signal that this entry would open as "解析配置失败".
+    The runner dials through a proxy the phone does not use, so it fails on
+    hosts a client reaches fine (and vice versa).  Treating that jitter as
+    death silently dropped sources that played once published - 豆了 was the
+    one users noticed.  The source stays, pointing at the author's own URL.
     """
     with LocalSourceServer() as server:
         mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
         plan = mirror.prepare([stub_source(f"{server.base}/unreachablespider.json", source_id="1a" * 32)])
-        assert "1a" * 32 in plan.dropped
-        assert "1a" * 32 not in plan.entries
+        assert "1a" * 32 in plan.entries
+        assert json.loads(plan.entries["1a" * 32].content)["spider"] == "http://127.0.0.1:9/spider.jar"
 
 
-def test_a_row_whose_jar_cannot_be_fetched_is_dropped(tmp_path):
+def test_a_row_whose_jar_cannot_be_fetched_keeps_the_author_url(tmp_path):
     with LocalSourceServer() as server:
         mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
         plan = mirror.prepare([stub_source(f"{server.base}/unreachablejar.json", source_id="2b" * 32)])
         entry = plan.entries["2b" * 32]
-        assert [site["key"] for site in json.loads(entry.content)["sites"]] == ["live-row"]
-        assert entry.site_count == 1
+        sites = json.loads(entry.content)["sites"]
+        assert [site["key"] for site in sites] == ["dead-row", "live-row"]
+        assert sites[0]["jar"] == "http://127.0.0.1:9/gone.jar"
+        assert entry.site_count == 2
 
 
 def test_a_multi_warehouse_child_is_opened_up_not_just_copied(tmp_path):
@@ -629,6 +632,54 @@ def test_an_unreachable_reference_is_fetched_only_once(tmp_path):
     assert mirror._host_file("http://127.0.0.1:9/gone.jar", plan, state) is None
     assert calls == ["http://127.0.0.1:9/gone.jar"]
     assert state["unavailable"] == {"http://127.0.0.1:9/gone.jar"}
+    # cached so we do not pay the timeout twice, but not marked dead: the
+    # client may still reach a host our runner (or its proxy) cannot
+    assert not state.get("gone")
+
+
+def test_a_definitive_404_is_the_only_thing_recorded_as_gone(tmp_path):
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+        plan = MirrorPlan()
+        state: dict = {"used": 0}
+        missing = f"{server.base}/missing.jar"
+        assert mirror._host_file(missing, plan, state) is None
+        assert state["gone"] == {missing}
+
+
+def test_prune_unavailable_only_drops_proven_gone(tmp_path):
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+    text = json.dumps({
+        "sites": [
+            {"key": "dead", "api": "csp_X", "jar": "https://a.example/x.jar"},
+            {"key": "flaky", "api": "csp_Y", "jar": "https://b.example/y.jar"},
+        ]
+    })
+    state = {
+        "gone": {"https://a.example/x.jar"},
+        "unavailable": {"https://b.example/y.jar"},
+    }
+
+    pruned, dropped, drop_source = mirror._prune_unavailable(text, state)
+
+    assert drop_source is False
+    assert dropped == 1
+    assert [site["key"] for site in json.loads(pruned)["sites"]] == ["flaky"]
+
+
+def test_budget_exhaustion_keeps_the_source_with_the_author_url(tmp_path):
+    """A budget stop is our choice, not the reference's death."""
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True, "public_base": "https://me.github.io/repo",
+            "jar_total_bytes": 0,
+        })
+        plan = mirror.prepare([stub_source(f"{server.base}/fakejar.json", source_id="5e" * 32)])
+        assert "5e" * 32 in plan.entries
+        assert not plan.jars
+        sites = json.loads(plan.entries["5e" * 32].content)["sites"]
+        assert [site["key"] for site in sites] == ["fake-row", "live-row"]
+        assert sites[1]["jar"] == f"{server.base}/assets/spider.jar"
 
 
 def test_a_dead_host_is_not_probed_once_per_file(tmp_path):
@@ -642,6 +693,7 @@ def test_a_dead_host_is_not_probed_once_per_file(tmp_path):
     assert state["unavailable"] == {
         "https://gone.example/a.jar", "https://gone.example/b.jar",
     }
+    assert not state.get("gone")
 
 
 def test_a_row_whose_jar_is_html_is_dropped(tmp_path):

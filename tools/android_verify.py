@@ -146,8 +146,29 @@ def unwrap_proxy_url(value: str) -> str:
             continue
         start = text.rfind("http", 0, index)
         if start >= 0:
-            return text[start:]
+            origin = text[start:]
+            if origin.startswith("https:/") and not origin.startswith("https://"):
+                return "https://" + origin[len("https:/") :]
+            if origin.startswith("http:/") and not origin.startswith("http://"):
+                return "http://" + origin[len("http:/") :]
+            return origin
     return text
+
+
+def resolve_config_base_url(url: str, identity: str = "") -> str:
+    """Return the unwrapped source URL used to resolve relative jar paths.
+
+    A config served through a GitHub proxy cannot be used as a ``urljoin``
+    base: the relative path would be resolved after the proxy prefix and the
+    inner URL would lose a slash.  Prefer the real source identity captured by
+    ``--source-url``; fall back to the config URL only when it is itself a
+    usable source address.
+    """
+    for value in (identity, url):
+        candidate = strip_md5(str(value or ""))
+        if is_url(candidate):
+            return unwrap_proxy_url(candidate)
+    return ""
 
 
 def jar_download_urls(value: str) -> list[str]:
@@ -649,7 +670,10 @@ def main() -> int:
                         }
                     )
                     continue
-                base_url = "" if spec.get("local_path") else strip_md5(str(spec["url"]))
+                base_url = resolve_config_base_url(
+                    str(spec.get("url") or ""),
+                    str(spec.get("identity") or ""),
+                )
                 mirrored, jar_errors = mirror_document_jars(
                     document,
                     fetch=fetch,

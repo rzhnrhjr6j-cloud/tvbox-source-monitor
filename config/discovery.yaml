@@ -200,6 +200,14 @@ admission:
   # extra request per candidate; turn it off for very large discovery runs.
   initial_search: true
   initial_search_timeout: 10
+  # Most stale csp_*/jar configs point at a host that is already gone.  Probe
+  # explicit jar references before admitting the candidate, but only reject
+  # when every probeable reference is definitively dead.  Timeouts, 5xx,
+  # relative paths, and unknown responses pass through to the normal build
+  # gate.  This keeps the bounded candidate budget for likely-live configs.
+  jar_reachability_precheck: true
+  jar_reachability_timeout: 6
+  jar_reachability_max_probes: 120
   # hard ceiling on how many URLs a single discovery run will fetch
   max_candidates_per_run: 300
   # reject a candidate whose response body exceeds this many bytes

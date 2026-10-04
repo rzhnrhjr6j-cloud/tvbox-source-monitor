@@ -1,0 +1,173 @@
+[
+    {
+        "name": "我的网盘",
+        "folders": [
+            {
+                "shareId": "",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "豆瓣TOP250部",
+        "folders": [
+            {
+                "shareId": "c0503fdee6644",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "电影",
+        "folders": [
+            {
+                "shareId": "7db3447d6fe84",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "动漫",
+        "folders": [
+            {
+                "shareId": "1c5408644d2b4",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "电视剧",
+        "folders": [
+            {
+                "shareId": "c218497809fe4",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "短剧",
+        "folders": [
+            {
+                "shareId": "b511169d57e54",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "柏林之声",
+        "folders": [
+            {
+                "shareId": "169fb8c3df7e4",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "合集",
+        "folders": [
+            {
+                "shareId": "6ef760613aab4",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "网络资源合集",
+        "folders": [
+            {
+                "shareId": "13a3cab489884",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "灵武大陆",
+        "folders": [
+            {
+                "shareId": "c04704ed399e4",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "百炼飞升录",
+        "folders": [
+            {
+                "shareId": "c8f8d01dfa4d4",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "隐世宗门掌教",
+        "folders": [
+            {
+                "shareId": "c0291f09b9d74",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "剑来",
+        "folders": [
+            {
+                "shareId": "fb56519ed9ad4",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "你的名字",
+        "folders": [
+            {
+                "shareId": "af6b2a0f7f084",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "夏目友人帐",
+        "folders": [
+            {
+                "shareId": "83fa0f23f1bf4",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "动画片合集梦蓝字幕组",
+        "folders": [
+            {
+                "shareId": "9ad6c76778614",
+                "folder": "0"
+            }
+        ]
+    },
+    {
+        "name": "日剧",
+        "folders": [
+            {
+                "shareId": "391b86c09cd24",
+                "folder": "9df4921d548841199e625765413f8bd6"
+            }
+        ]
+    },
+    {
+        "name": "韩剧",
+        "folders": [
+            {
+                "shareId": "21f04a22052f4",
+                "folder": "950f5ca7d5e54d528c0dae1fddec5c78"
+            }
+        ]
+    },
+    {
+        "name": "音乐",
+        "folders": [
+            {
+                "shareId": "369e30038dae4",
+                "folder": "1b8a55dc18a54fb7aea8ed2b6fd6ad53"
+            }
+        ]
+    }
+]

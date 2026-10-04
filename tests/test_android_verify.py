@@ -9,6 +9,7 @@ from tools.android_verify import (
     load_config_document,
     merge_isolated_reports,
     mirror_document_jars,
+    resolve_config_base_url,
     spider_site_keys,
     summarize,
     unwrap_proxy_url,
@@ -103,6 +104,18 @@ def test_unwrap_proxy_url_finds_the_original_origin():
     assert unwrap_proxy_url(f"https://ghfast.top/{original}") == original
     assert unwrap_proxy_url(original) == original
     assert unwrap_proxy_url("https://cdn.example/x.jar") == "https://cdn.example/x.jar"
+    assert (
+        unwrap_proxy_url("https://gh-proxy.com/https:/raw.githubusercontent.com/o/r/main/pg.jar")
+        == "https://raw.githubusercontent.com/o/r/main/pg.jar"
+    )
+
+
+def test_resolve_config_base_url_prefers_real_source_identity():
+    original = "https://raw.githubusercontent.com/owner/repo/main/cfg.json"
+    proxied = f"https://gh-proxy.com/{original}"
+    assert resolve_config_base_url(proxied, original) == original
+    assert resolve_config_base_url(proxied, "candidate-name") == original
+    assert resolve_config_base_url("/tmp/cfg.json", "candidate-name") == ""
 
 
 def test_jar_download_urls_puts_origin_first_and_keeps_all_fallbacks():
@@ -168,3 +181,27 @@ def test_mirror_document_jars_keeps_remote_url_when_download_fails(tmp_path):
     assert mirrored["spider"] == remote
     assert len(errors) == 1
     assert errors[0]["url"] == remote
+
+
+def test_relative_jar_resolves_from_unwrapped_proxy_config(tmp_path):
+    calls: list[str] = []
+
+    def fetch(url: str) -> bytes:
+        calls.append(url)
+        return b"jar-bytes"
+
+    proxied = (
+        "https://gh-proxy.com/https://raw.githubusercontent.com/owner/repo/main/cfg.json"
+    )
+    base_url = resolve_config_base_url(proxied)
+    mirrored, errors = mirror_document_jars(
+        {"sites": [{"key": "a", "api": "csp_A", "jar": "./jar/pg.jar"}]},
+        fetch=fetch,
+        url_for=lambda path: f"http://127.0.0.1:9/{path.name}",
+        jars_dir=tmp_path / "jars",
+        base_url=base_url,
+    )
+
+    assert errors == []
+    assert calls == ["https://raw.githubusercontent.com/owner/repo/main/jar/pg.jar"]
+    assert mirrored["sites"][0]["jar"].startswith("http://127.0.0.1:9/")

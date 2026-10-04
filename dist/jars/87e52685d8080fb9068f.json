@@ -1,0 +1,816 @@
+[
+  {
+    "name": "推荐",
+    "list": [
+      {
+        "name": "404",
+        "url": "",
+        "icon": "https://www.xn--rgv465a.top/icon/404.png",
+        "version": ""
+      }
+    ]
+  },
+  {
+    "name": "本地包",
+    "list": [
+      {
+        "name": "欧歌多线路半本地包02-28",
+        "url": "http://123.yy.xn--dkw.xn--6qq986b3xl/tvbox.zip",
+        "icon": "http://127.0.0.1:9978/file/tvbox/.版本号.png",
+        "version": "当前版本防止域名被屏蔽用"
+      },
+      {
+        "name": "潇洒单线路",
+        "url": " https://gitee.com/PizazzXS/another-d/raw/master/单线路.zip",
+        "icon": "http://127.0.0.1:9978/file/TVBoxOSC/tvbox/.版本.png",
+        "version": "当前版本自行更新"
+      },
+      {
+        "name": "潇洒多线路",
+        "url": "https://gitee.com/PizazzXS/another-d/raw/master/多线路.zip",
+        "icon": "",
+        "version": "当前版本自行更新"
+      },
+      {
+        "name": "小虎斑",
+        "url": "http://zling.online:10101/小虎斑.zip",
+        "icon": "https://img0.baidu.com/it/u=3403550249,2192222310&fm=253&fmt=auto?w=800&h=804",
+        "version": "1.2"
+      },
+      {
+        "name": "雷蒙影视0324",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/LEM0324.zip",
+        "version": "20230324",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P1.jpg",
+        "copy": "clan://localhost/Download/lem/lem.json"
+      },
+      {
+        "name": "雷蒙影视0205",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/LEM0205.zip",
+        "version": "20240205",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P1.jpg",
+        "copy": "clan://localhost/Download/lem/lem.json"
+      },
+      {
+        "name": "雷蒙影视0121",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/LEM0121.zip",
+        "version": "20240121",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P1.jpg",
+        "copy": "clan://localhost/Download/lem/lem.json"
+      },
+      {
+        "name": "雷蒙影视1211",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/LEM1211.zip",
+        "version": "20231211",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P1.jpg",
+        "copy": "clan://localhost/Download/lem/lem.json"
+      },
+      {
+        "name": "雷蒙影视JS0414",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/LEMJ0414.zip",
+        "version": "20240414",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P11.jpg",
+        "copy": "clan://localhost/Download/lemj/lemj.json"
+      },
+      {
+        "name": "PNDGRV0414",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/PG0414.zip",
+        "version": "20240414",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P9.jpg",
+        "copy": "clan://localhost/Download/PG/jsm.json"
+      },
+      {
+        "name": "PNDGRV0410",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/PG0410.zip",
+        "version": "20240410",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P9.jpg",
+        "copy": "clan://localhost/Download/PG/jsm.json"
+      },
+      {
+        "name": "PNDGRV0401",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/PG0401.zip",
+        "version": "20240401",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P9.jpg",
+        "copy": "clan://localhost/Download/PG/jsm.json"
+      },
+      {
+        "name": "PNDGRV0324",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/PG0324.zip",
+        "version": "20240324",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P9.jpg",
+        "copy": "clan://localhost/Download/PG/jsm.json"
+      },
+      {
+        "name": "PNDGRV0323",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/PG0323.zip",
+        "version": "20240323",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P9.jpg",
+        "copy": "clan://localhost/Download/PG/jsm.json"
+      },
+      {
+        "name": "WEX0414",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/WEX0414.zip",
+        "version": "20240414",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P2.jpg",
+        "copy": "clan://localhost/Download/wex/wex.json"
+      },
+      {
+        "name": "WEX0326",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/WEX0326.zip",
+        "version": "20240326",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P2.jpg",
+        "copy": "clan://localhost/Download/wex/wex.json"
+      },
+      {
+        "name": "WEX0324",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/WEX0324.zip",
+        "version": "20240324",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P2.jpg",
+        "copy": "clan://localhost/Download/wex/wex.json"
+      },
+      {
+        "name": "WATSON0109",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/WATSON0109.zip",
+        "version": "20240109",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P10.jpg",
+        "copy": "clan://localhost/Download/JS/js.json"
+      },
+      {
+        "name": "WATSON1223",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/WATSON1223.zip",
+        "version": "20231223",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P10.jpg",
+        "copy": "clan://localhost/Download/JS/js.json"
+      },
+      {
+        "name": "WATSON1206",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/WATSON1206.zip",
+        "version": "20231206",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P10.jpg",
+        "copy": "clan://localhost/Download/JS/js.json"
+      },
+      {
+        "name": "WATSON1123",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/WATSON1123.zip",
+        "version": "20231123",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P10.jpg",
+        "copy": "clan://localhost/Download/JS/js.json"
+      },
+      {
+        "name": "WATSON1115",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/WATSON1115.zip",
+        "version": "20231115",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P10.jpg",
+        "copy": "clan://localhost/Download/JS/js.json"
+      },
+      {
+        "name": "香雅情1202",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/XYQ1202.zip",
+        "version": "20231202",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P8.jpg",
+        "copy": "clan://localhost/Download/XYQTVBox/XYQTVBox.json"
+      },
+      {
+        "name": "香雅情1129",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/XYQ1129.zip",
+        "version": "20231129",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P8.jpg",
+        "copy": "clan://localhost/Download/XYQTVBox/XYQTVBox.json"
+      },
+      {
+        "name": "香雅情1124",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/main/PAK/XYQ1124.zip",
+        "version": "20231124",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/P8.jpg",
+        "copy": "clan://localhost/Download/XYQTVBox/XYQTVBox.json"
+      }
+    ]
+  },
+  {
+    "name": "肥羊",
+    "list": [
+      {
+        "name": "稳定版-32-1.0",
+        "url": "https://jihulab.com/fourd/FourD/-/raw/main/formal/32/allinone.zip",
+        "icon": "http://127.0.0.1:9978/file/TVBox/.allinone.png",
+        "version": "当前版本胖羊专用"
+      },
+      {
+        "name": "稳定版-64-1.0",
+        "url": "https://jihulab.com/fourd/FourD/-/raw/main/formal/64/allinone.zip",
+        "icon": "http://127.0.0.1:9978/file/TVBox/.allinone.png",
+        "version": "当前版本胖羊专用"
+      },
+      {
+        "name": "测试版-32-2.17",
+        "url": "https://jihulab.com/fourd/FourD/-/raw/main/beta/32/allinone.zip",
+        "icon": "http://127.0.0.1:9978/file/TVBox/.allinone.png",
+        "version": "测试版本胖羊专用"
+      },
+      {
+        "name": "测试版-64-2.17",
+        "url": "https://jihulab.com/fourd/FourD/-/raw/main/beta/64/allinone.zip",
+        "icon": "http://127.0.0.1:9978/file/TVBox/.allinone.png",
+        "version": "测试版本胖羊专用"
+      },
+      {
+        "name": "Allinone v7-32",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lystv/fmapp/bcf44fe6472569df1b026f418a12d1677d3b0a32/apk/allinone/v7/allinone",
+        "icon": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lystv/fmapp/img/log/feiyang.jpg",
+        "version": "pg20241212-2119"
+      },
+      {
+        "name": "Allinone v8-64",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lystv/fmapp/bcf44fe6472569df1b026f418a12d1677d3b0a32/apk/allinone/v8/allinone",
+        "icon": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lystv/fmapp/img/log/feiyang.jpg",
+        "version": "pg20241212-2119"
+      },
+      {
+        "name": "Allinone",
+        "url": "https://pan.ly93.cc/f/GNMJhj/allinone.zip",
+        "icon": "http://我不是.摸鱼儿.com/picture.php",
+        "version": "32位"
+      },
+      {
+        "name": "Allinone",
+        "url": "https://pan.ly93.cc/f/o49rim/allinone.zip",
+        "icon": "http://我不是.摸鱼儿.com/picture.php",
+        "version": "64位"
+      }
+    ]
+  },
+  {
+    "name": "推荐APPS",
+    "list": [
+      {
+        "name": "OurTV",
+        "url": "https://cors.isteed.cc/https://github.com/andandroidor/ourtv/releases/download/3.6.0/OurTV_3.6.0_android_tv.apk",
+        "version": "3.6.0",
+        "icon": "http://pic.baobeiy.com/up/2024-9/202499813206306.png"
+      },
+      {
+        "name": "天光云影",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/refs/heads/main/APP/mytv-android-tv-3.3.7-all-sdk21-original.apk",
+        "version": "3.3.7",
+        "icon": "https://itopdog.xyxza.com/gameggg/imgfile/20241107/07154337hlir.png"
+      },
+      {
+        "name": "Z视介",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/refs/heads/main/APP/mytv-android-tv-3.3.7-all-sdk21-disguised.apk",
+        "version": "3.3.7",
+        "icon": "https://itopdog.xyxza.com/gameggg/imgfile/20241107/07154337hlir.png"
+      },
+      {
+        "name": "CloudStream",
+        "url": "https://cors.isteed.cc/https://github.com/recloudstream/cloudstream/releases/download/pre-release/app-prerelease-release.apk",
+        "version": "Pre-Release",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/recloudstream/cloudstream/refs/heads/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+      },
+      {
+        "name": "CloudStream",
+        "url": "https://cors.isteed.cc/https://github.com/recloudstream/cloudstream/releases/download/v4.4.0/4.4.0.apk",
+        "version": "4.4.0",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/recloudstream/cloudstream/refs/heads/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+      },
+      {
+        "name": "影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lystv/fmapp/refs/heads/ok/apk/release/leanback-java-arm64_v8a.apk",
+        "version": "JAVA v8a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lystv/fmapp/refs/heads/ok/apk/release/leanback-java-armeabi_v7a.apk",
+        "version": "JAVA v7a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lystv/fmapp/refs/heads/ok/apk/release/leanback-python-arm64_v8a.apk",
+        "version": "PYTHON v8a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lystv/fmapp/refs/heads/ok/apk/release/leanback-python-armeabi_v7a.apk",
+        "version": "PYTHON v7a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "OK PRO",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lystv/fmapp/refs/heads/main/apk/pro/leanback-pro.apk",
+        "version": "TV",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "OK PRO",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lystv/fmapp/refs/heads/main/apk/pro/mobile-pro.apk",
+        "version": "MOBILE",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "FongMi影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/Release/fongmi/apk/release/leanback-java-arm64_v8a.apk",
+        "version": "JAVA v8a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "FongMi影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/Release/fongmi/apk/release/leanback-java-armeabi_v7a.apk",
+        "version": "JAVA v7a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "FongMi影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/Release/fongmi/apk/release/leanback-python-arm64_v8a.apk",
+        "version": "PYTHON v8a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "FongMi影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/Release/fongmi/apk/release/leanback-python-armeabi_v7a.apk",
+        "version": "PYTHON v7a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "OK影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/Release/main/apk/release/leanback-java-arm64_v8a.apk",
+        "version": "JAVA v8a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "OK影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/Release/main/apk/release/leanback-java-armeabi_v7a.apk",
+        "version": "JAVA v7a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "OK影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/Release/main/apk/release/leanback-python-arm64_v8a.apk",
+        "version": "PYTHON v8a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      },
+      {
+        "name": "OK影视",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/Release/main/apk/release/leanback-python-armeabi_v7a.apk",
+        "version": "PYTHON v7a",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/FongMi/TV/release/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+      }
+    ]
+  },
+  {
+    "name": "Android应用商店",
+    "list": [
+      {
+        "name": "阅读",
+        "url": "https://www.xn--rgv465a.top/apps/阅读 app 3.25.01021946 原包名.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/RD.png",
+        "version": "Ver.3.25-0102"
+      },
+      {
+        "name": "musicfree",
+        "url": "https://www.xn--rgv465a.top/apps/musicfree0.4.4-app-arm64-v8a-release.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/mf.png",
+        "version": "Ver.0.4.4"
+      },
+      {
+        "name": "Fongmi影视",
+        "url": "https://www.xn--rgv465a.top/apps/FM版3.0.0-leanback-python-arm64_v8a.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ys.png",
+        "version": "电视版3.0.0"
+      },
+      {
+        "name": "Fongmi影视",
+        "url": "https://www.xn--rgv465a.top/apps/FM版3.0.0-mobile-python-arm64_v8a.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ys.png",
+        "version": "手机版3.0.0"
+      },
+      {
+        "name": "Fongmi影视",
+        "url": "https://www.xn--rgv465a.top/apps/FM版3.0.0-电视端-海信版.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ys.png",
+        "version": "海信版3.0.0"
+      },
+      {
+        "name": "OK影视",
+        "url": "https://www.xn--rgv465a.top/apps/OK版 5.1+电视正式版2.4.1.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ys.png",
+        "version": "电视版2.4.1"
+      },
+      {
+        "name": "OK影视",
+        "url": "https://www.xn--rgv465a.top/apps/OK版 手机(平板)正式版2.4.1.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ys.png",
+        "version": "手机版2.4.1"
+      },
+      {
+        "name": "OK影视",
+        "url": "https://www.xn--rgv465a.top/apps/OK版影视-海信专版-2.3.5.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ys.png",
+        "version": "电视版2.3.5海信版"
+      },
+      {
+        "name": "OK影视",
+        "url": "https://fm.caioa.link/main/apk/kitkat/leanback.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ys.png",
+        "version": "电视版-安卓4.x版"
+      },
+      {
+        "name": "影视仓",
+        "url": "https://www.xn--rgv465a.top/apps/影视仓电视版6.0.6.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ysc.png",
+        "version": "电视版6.0.6"
+      },
+      {
+        "name": "影视仓",
+        "url": "https://www.xn--rgv465a.top/apps/影视仓手机版3.0.7.1.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ysc-yx.png",
+        "version": "手机版3.0.7.1"
+      },
+      {
+        "name": "影视仓",
+        "url": "https://www.xn--rgv465a.top/apps/影视仓_5.0.34.3_海信.apks",
+        "icon": "https://www.xn--rgv465a.top/icon/ysc.png",
+        "version": "电视版5.0.34.3海信版"
+      },
+      {
+        "name": "影视仓",
+        "url": "https://www.xn--rgv465a.top/apps/影视仓V3-3.0.32_支持安卓4.1.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ysc.png",
+        "version": "电视版3.0.32-安卓4.x版"
+      },
+      {
+        "name": "影视仓",
+        "url": "https://www.xn--rgv465a.top/apps/影视仓_2.0.35_短视频_opt.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ysc-dsp.png",
+        "version": "手机版2.0.35-短视频版"
+      },
+      {
+        "name": "影视仓",
+        "url": "https://www.xn--rgv465a.top/apps/影视仓_2.0.35-游戏版_opt.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/ysc-yx.png",
+        "version": "手机版2.0.35-游戏版"
+      },
+      {
+        "name": "影迷",
+        "url": "https://www.xn--rgv465a.top/apps/影迷_2.5.2.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/yingmi.png",
+        "version": "手机版2.5.2"
+      },
+      {
+        "name": "宝盒",
+        "url": "https://www.xn--rgv465a.top/apps/宝盒3.10.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/baohe.png",
+        "version": "电视版3.10"
+      },
+      {
+        "name": "EasyBox",
+        "url": "https://www.xn--rgv465a.top/apps/EasyBox_1.3.9.3.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/easybox.png",
+        "version": "手机版1.3.9.3"
+      },
+      {
+        "name": "Tvbox",
+        "url": "https://www.xn--rgv465a.top/apps/TVBox_q215613905_20240925-0957.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/tvboxq.png",
+        "version": "Ver.20240925"
+      },
+      {
+        "name": "DIYP",
+        "url": "https://www.xn--rgv465a.top/apps/DIYP影音0606台标集成正式版.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/diyp.png",
+        "version": " "
+      },
+      {
+        "name": "Catbox",
+        "url": "https://www.xn--rgv465a.top/apps/CatBox_v20240201_0751.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/catbox.png",
+        "version": "Ver.240201"
+      },
+      {
+        "name": "派大星直播",
+        "url": "https://www.xn--rgv465a.top/apps/派大星直播_1.0.6_.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/pdx.png",
+        "version": "Ver.1.0.6"
+      },
+      {
+        "name": "1DM+",
+        "url": "https://www.xn--rgv465a.top/apps/1DM+_16.0.1.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/1dm.png",
+        "version": "Ver.16.0.1"
+      },
+      {
+        "name": "甲壳虫ADB助手",
+        "url": "https://www.xn--rgv465a.top/apps/jkcadb1.3.1.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/jkc.png",
+        "version": "Ver.1.3.1"
+      },
+      {
+        "name": "文件管理器+",
+        "url": "https://www.xn--rgv465a.top/apps/文件管理器+v3.4.0_build_2103040-Mod.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/file.png",
+        "version": "手机版Ver.3.4.0"
+      },
+      {
+        "name": "小白文件管理器",
+        "url": "https://www.xn--rgv465a.top/apps/xiaobaifile.tv.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/xiaobai.png",
+        "version": "TV版"
+      },
+      {
+        "name": "SingBox",
+        "url": "https://www.xn--rgv465a.top/apps/SingBox-1.8.8-arm64-v8a.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/singbox.png",
+        "version": "手机版1.8.8"
+      },
+      {
+        "name": "Clash",
+        "url": "https://www.xn--rgv465a.top/apps/clash_v3.0.3.premium.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/clash.png",
+        "version": "手机版3.0.3"
+      },
+      {
+        "name": "阿里云盘",
+        "url": "https://www.xn--rgv465a.top/apps/阿里云盘旧版本.apk",
+        "icon": "https://www.xn--rgv465a.top/icon/alyp.png",
+        "version": "可一键获取token"
+      }
+    ]
+  },
+  {
+    "name": "Windows应用商店",
+    "list": [
+      {
+        "name": "zyfun",
+        "url": "https://www.xn--rgv465a.top/apps/zyfun-win-3.3.10-x64.exe",
+        "icon": "https://www.xn--rgv465a.top/icon/zyfun.png",
+        "version": "Ver.3.3.10"
+      },
+      {
+        "name": "zyplayer",
+        "url": "https://www.xn--rgv465a.top/apps/zyplayer-win-3.3.0-x64.exe",
+        "icon": "https://www.xn--rgv465a.top/icon/zyplayer.png",
+        "version": "Ver.3.3.0"
+      },
+      {
+        "name": "musicfree",
+        "url": "https://www.xn--rgv465a.top/apps/MusicFree-0.0.6-win32-x64-setup.exe",
+        "icon": "https://www.xn--rgv465a.top/icon/mf.png",
+        "version": "Ver.0.0.6"
+      }
+    ]
+  },
+  {
+    "name": "配置整理",
+    "list": [
+      {
+        "name": "整理cait4xbpq",
+        "url": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/img/7.png",
+        "version": "box线路",
+        "icon": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/img/7.png",
+        "copy": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/cait4xbpq.json"
+      },
+      {
+        "name": "整理XBPQ",
+        "url": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/img/ICONSGIF.gif",
+        "version": "box线路",
+        "icon": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/img/ICONSGIF.gif",
+        "copy": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/XBPQ.json"
+      },
+      {
+        "name": "整理js",
+        "url": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/img/logo500x200.png",
+        "version": "box线路",
+        "icon": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/img/logo500x200.png",
+        "copy": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/js.json"
+      },
+      {
+        "name": "整理jar",
+        "url": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/img/logo500x200-1.png",
+        "version": "box线路",
+        "icon": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/img/logo500x200-1.png",
+        "copy": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/jar.json"
+      },
+      {
+        "name": "整理py",
+        "url": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/img/5.bmp",
+        "version": "box线路",
+        "icon": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/img/5.bmp",
+        "copy": "https://github.moeyy.xyz/https://raw.githubusercontent.com/wen9180/ziyong/refs/heads/main/py.json"
+      },
+      {
+        "name": "雷蒙影视主线",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/COVER1.png",
+        "version": "CrimeTV",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/COVER1.png",
+        "copy": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/雷蒙影视.bmp"
+      },
+      {
+        "name": "雷蒙影视网盘",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/COVER2.png",
+        "version": "CrimeTV",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/COVER2.png",
+        "copy": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/雷蒙影视WP.bmp"
+      },
+      {
+        "name": "雷蒙影视规则",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/COVER3.png",
+        "version": "CrimeTV",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/COVER3.png",
+        "copy": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/雷蒙影视JS.bmp"
+      },
+      {
+        "name": "雷蒙影视采集",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/COVER4.png",
+        "version": "CrimeTV",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/COVER4.png",
+        "copy": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/雷蒙影视VOD.bmp"
+      },
+      {
+        "name": "CloudStream",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/recloudstream/extensions/refs/heads/master/repo.json",
+        "version": "CloudStream",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/recloudstream/cloudstream/refs/heads/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+        "copy": "https://raw.githubusercontent.com/recloudstream/extensions/refs/heads/master/repo.json"
+      },
+      {
+        "name": "CloudStream Rowdy",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/Rowdy-Avocado/Rowdycado-Extensions/builds/repo.json",
+        "version": "CloudStream",
+        "icon": "https://cors.isteed.cc/https://avatars.githubusercontent.com/u/160370304?s=200&v=4",
+        "copy": "https://raw.githubusercontent.com/Rowdy-Avocado/Rowdycado-Extensions/builds/repo.json"
+      },
+      {
+        "name": "CloudStream Rowdy 18+",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/Rowdy-Avocado/18plus-Extensions/builds/repo.json",
+        "version": "CloudStream",
+        "icon": "https://cors.isteed.cc/https://avatars.githubusercontent.com/u/160370304?s=200&v=4",
+        "copy": "https://raw.githubusercontent.com/Rowdy-Avocado/18plus-Extensions/builds/repo.json"
+      },
+      {
+        "name": "CloudStream Phisher",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/refs/heads/builds/repo.json",
+        "version": "CloudStream",
+        "icon": "https://cors.isteed.cc/https://avatars.githubusercontent.com/u/153359846?v=4",
+        "copy": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/refs/heads/builds/repo.json"
+      },
+      {
+        "name": "CloudStream Phisher 18+",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/phisher98/CXXX/builds/CXXX.json",
+        "version": "CloudStream",
+        "icon": "https://cors.isteed.cc/https://avatars.githubusercontent.com/u/153359846?v=4",
+        "copy": "https://raw.githubusercontent.com/phisher98/CXXX/builds/CXXX.json"
+      }
+    ]
+  },
+  {
+    "name": "v7a插件",
+    "list": [
+      {
+        "name": "av1",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libgav1JNI.so",
+        "version": "EXO",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "荐片",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libjpa.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "磁力-1",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libxl_stat.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "磁力-2",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libxl_thunder_sdk.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "晴天",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libmitv.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "P2P",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libp2p.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "P3P",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libp3p.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "P4P",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libp4p.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "P5P",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libp5p.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "P6P",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libp6p.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "P7P",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libp7p.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "P8P",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libp8p.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "P9P",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/armeabi-v7a/libp9p.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      }
+    ]
+  },
+  {
+    "name": "v8a插件",
+    "list": [
+      {
+        "name": "av1",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/arm64-v8a/libgav1JNI.so",
+        "version": "EXO",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "荐片",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/arm64-v8a/libjpa.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "磁力-1",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/arm64-v8a/libxl_stat.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      },
+      {
+        "name": "磁力-2",
+        "url": "https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/RLS/main/so/arm64-v8a/libxl_thunder_sdk.so",
+        "icon": "https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"
+      }
+    ]
+  },
+  {
+    "name": "文档教程",
+    "list": [
+      {
+        "name": "无界接口可用情况测试",
+        "url": "https://www.xn--rgv465a.top/text/course/无界接口可用情况测试.xlsx",
+        "icon": "https://www.xn--rgv465a.top/icon/excel.png",
+        "version": "excel"
+      },
+      {
+        "name": "HarmonyOS next 5.0使用无界接口教程",
+        "url": "https://www.xn--rgv465a.top/text/course/HarmonyOS next 5.0使用无界接口教程.docx",
+        "icon": "https://www.xn--rgv465a.top/icon/word.png",
+        "version": "word"
+      },
+      {
+        "name": "zyplayer配置教程",
+        "url": "https://www.xn--rgv465a.top/text/course/zyplayer配置教程.docx",
+        "icon": "https://www.xn--rgv465a.top/icon/word.png",
+        "version": "word"
+      },
+      {
+        "name": "无界阅读书源订阅使用教程",
+        "url": "https://www.xn--rgv465a.top/text/course/无界阅读书源订阅使用教程.pdf",
+        "icon": "https://www.xn--rgv465a.top/icon/pdf.png",
+        "version": "pdf"
+      },
+      {
+        "name": "电视盒子投影安装第三方应用方法",
+        "url": "https://www.xn--rgv465a.top/text/course/常见品牌电视、盒子、投影安装第三方应用的方法.docx",
+        "icon": "https://www.xn--rgv465a.top/icon/word.png",
+        "version": "word"
+      },
+      {
+        "name": "源.接口.线路.单仓.多仓科普",
+        "url": "https://www.xn--rgv465a.top/6GVNtw/text/course/一图读懂什么是源、接口、线路、直播源、点播源、仓库、单仓、多仓.docx",
+        "icon": "https://www.xn--rgv465a.top/icon/word.png",
+        "version": "word"
+      },
+      {
+        "name": "多线直播切换方法",
+        "url": "https://www.xn--rgv465a.top/text/course/多线直播切换方法.docx",
+        "icon": "https://www.xn--rgv465a.top/icon/word.png",
+        "version": "word"
+      },
+      {
+        "name": "本地包使用教程",
+        "url": "https://www.xn--rgv465a.top/text/course/本地包使用教程.docx",
+        "icon": "https://www.xn--rgv465a.top/icon/word.png",
+        "version": "word"
+      }
+    ]
+  }
+]

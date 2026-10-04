@@ -115,6 +115,25 @@ output:
     # wearing a different URL.  Keep the larger one; a whitelisted
     # (user-verified) entry is always kept as well.  0 disables the check.
     content_overlap_threshold: 0.8
+    # L6: a config whose csp_*/jar site cannot be DexClassLoader'd on Android
+    # is dead in the client ("jar解析失败") even when L1-L5 all pass.  A CI
+    # runner has no emulator, so the verdict is recorded locally by
+    # `tools/android_verify.py --record` into data/android_verified.json and
+    # read back here.  CI has no emulator but it does read the committed
+    # verdict file, so a jar source without fresh real-device evidence is
+    # dropped instead of being shipped as "jar解析失败".
+    require_android_jar: true
+    # a verdict older than this is stale and the jar config falls back to
+    # whatever L1-L5 can prove
+    android_evidence_max_age_days: 30
+    # require at least one site to reach a real media URL, not merely load
+    require_android_playable: true
+    android_evidence_file: android_verified.json
+    # A mainland client can reach a media host even when the CI runner cannot.
+    # When a jar source has fresh real-device playback evidence, let it stand
+    # in for the runner-side L5 playback probe; search evidence is still
+    # required separately.
+    android_satisfies_playback: true
     # The first strict run may intentionally shrink the list a lot.  Keep the
     # minimum-source check, but do not let the old drop-ratio valve block it.
     bypass_drop_ratio: true

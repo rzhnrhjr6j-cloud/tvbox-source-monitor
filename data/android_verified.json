@@ -1,0 +1,129 @@
+{
+  "_readme": [
+    "由 tools/android_verify.py --record 写入：真机/模拟器上 DexClassLoader 每个 csp_*/jar 站点的结果。",
+    "source_id 是归一化配置 URL 的 sha256；loadable_count>0 表示客户端不会再报 「jar解析失败」，playable_count>0 表示至少一个站点真的吐出了媒体 URL。"
+  ],
+  "verified": [
+    {
+      "source_id": "36fba71c34b2646bff3cb6453a3ded6d6a13ff18dd3c72f723eecc426d46a464",
+      "config_url": "https://raw.githubusercontent.com/Newtxin/tvbox/main/002.json",
+      "verified_at": "2026-10-04T13:00:35Z",
+      "site_count": 20,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "4ccd75614fb67845030e4eab86d595c448e22a8547a67ad3d8c4d708a6de76a0",
+      "config_url": "https://raw.githubusercontent.com/zyscdx/tvbox/main/fan.json",
+      "verified_at": "2026-10-04T13:00:35Z",
+      "site_count": 20,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "4e11eb646f9a8770c4dbe8c745cb46667fc438d05bb7b19f024544935a241d04",
+      "config_url": "https://raw.githubusercontent.com/FreeDTV/FreeD/master/box.json",
+      "verified_at": "2026-10-04T12:38:52Z",
+      "site_count": 19,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "53184a6ffbe13387bf3937cf9dc8a490884747555604958a522ec839fa14d97a",
+      "config_url": "https://raw.githubusercontent.com/SuperTreasure/tvbox/master/api.json",
+      "verified_at": "2026-10-04T12:38:52Z",
+      "site_count": 1,
+      "loadable_count": 1,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "5a29dc258ba183a7edcdc8ce5f019b75b4d4cb85231dfe60ccb0ede462532e86",
+      "config_url": "https://raw.githubusercontent.com/AndroidSoftwares/box/main/box.json",
+      "verified_at": "2026-10-04T12:29:01Z",
+      "site_count": 19,
+      "loadable_count": 17,
+      "playable_count": 1,
+      "playable_keys": [
+        "动漫巴士"
+      ]
+    },
+    {
+      "source_id": "6a29688ff01d5c44ce66c52434d7a951ba2345dd49ed5a0a46fd076022d50d84",
+      "config_url": "https://raw.githubusercontent.com/xinyi1984/xytv/master/wex.json",
+      "verified_at": "2026-10-04T13:00:35Z",
+      "site_count": 20,
+      "loadable_count": 1,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "876a4f1bf4eda6f103a3997c1f0766edc21fdccb099b4882e5ab657b0f3a4c07",
+      "config_url": "https://raw.githubusercontent.com/which0113/freefish-api/master/app.json",
+      "verified_at": "2026-10-04T13:00:35Z",
+      "site_count": 18,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "b80942ed3a6f7d2c2767fb52f60fa7dbcb56d334da16312cbe607c691f9257eb",
+      "config_url": "https://raw.githubusercontent.com/momoyuyuer/TVBoxpro/main/api.json",
+      "verified_at": "2026-10-04T12:50:31Z",
+      "site_count": 20,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "c3ee97ab1cf71b017f0df3225dd36cd758f9bb41a3ee1ce32b31c66faf60424b",
+      "config_url": "https://raw.githubusercontent.com/mxysmxys/imxys/main/api.json",
+      "verified_at": "2026-10-04T12:38:52Z",
+      "site_count": 7,
+      "loadable_count": 1,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "dfc7dc060a2e295a36e36d44b8f0b022b2535510ebb939c7d35c7708f304e940",
+      "config_url": "https://raw.githubusercontent.com/pkj99/demo/main/media/tvbox.json",
+      "verified_at": "2026-10-04T12:38:52Z",
+      "site_count": 4,
+      "loadable_count": 4,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "e5e22b7e79834be5f8f9f9d48bc1f8b7b746fd466ac42300038de2a46d1c91b3",
+      "config_url": "https://raw.githubusercontent.com/dlgt7/TVbox-interface/main/jj.json",
+      "verified_at": "2026-10-04T12:31:48Z",
+      "site_count": 1,
+      "loadable_count": 1,
+      "playable_count": 1,
+      "playable_keys": [
+        "csp_XMVideo"
+      ]
+    },
+    {
+      "source_id": "eb6574c29d5c819b8911c54b5ee891def23df9d9ba831424661ac29c7edc72e9",
+      "config_url": "https://raw.githubusercontent.com/805598571/77/main/api.json",
+      "verified_at": "2026-10-04T12:50:31Z",
+      "site_count": 20,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "ff7f65e27d87615c3db1ef8b8700386740b27bb7598d8419e5235fba6e1c7051",
+      "config_url": "https://raw.githubusercontent.com/CatVodTV/CatTV.github.io/master/xm.json",
+      "verified_at": "2026-10-04T12:38:52Z",
+      "site_count": 14,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    }
+  ]
+}

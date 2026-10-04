@@ -321,6 +321,9 @@ class Alert:
         row.pop("id", None)
         return row
 
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
     @classmethod
     def from_row(cls, row: Mapping[str, Any]) -> "Alert":
         data = dict(row)
@@ -357,6 +360,9 @@ class BuildRecord:
         row["published"] = 1 if row["published"] else 0
         row["fallback"] = 1 if row["fallback"] else 0
         return row
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
 
     @classmethod
     def from_row(cls, row: Mapping[str, Any]) -> "BuildRecord":

@@ -22,6 +22,7 @@ from ..logging_setup import get_logger
 from ..models import BuildRecord, Event, Source, SourceEvent, Status, Tier
 from ..utils.http_client import HttpClient
 from ..utils.timeutil import age_days, to_iso, utcnow
+from ..checks.jar_check import EVIDENCE_FILE, has_jar_sites, load_evidence, passes as android_passes
 from .mirror import SOURCES_DIR, ConfigMirror, MirrorPlan
 from .validator import ValidationResult, validate_output
 
@@ -72,6 +73,22 @@ class BuildResult:
         }
 
 
+@dataclass
+class ContentProfile:
+    """What a config actually contains, fetched once per build.
+
+    ``api_hosts`` plus ``csp_keys`` are the identity used for content
+    de-duplication; ``has_jar`` says whether judging it needs Android code
+    execution (the L6 gate).  A csp_* site has no API hostname, so ignoring
+    its class name lets a small jar config look like a subset of a large
+    aggregator and get wrongly dropped as a mirror.
+    """
+
+    api_hosts: set[str] = field(default_factory=set)
+    csp_keys: set[str] = field(default_factory=set)
+    has_jar: bool = False
+
+
 class ConfigBuilder:
     def __init__(self, cfg, store, git_sha: str = "", client: HttpClient | None = None):
         self.cfg = cfg
@@ -81,6 +98,8 @@ class ConfigBuilder:
         self.git_sha = git_sha
         self.client = client or HttpClient(cfg.section("http"))
         self.mirror = ConfigMirror(cfg, self.dist_dir, self.client)
+        self._profiles: dict[str, ContentProfile] = {}
+        self._android_evidence: dict[str, Any] | None = None
 
     # -- selection ---------------------------------------------------------
     def eligible(self) -> tuple[list[Source], dict[str, int]]:
@@ -93,6 +112,8 @@ class ConfigBuilder:
             source for source in candidates
             if not source.paused and self._passes_quality_gate(source)
         ]
+        if self._android_gate_enabled():
+            eligible = [source for source in eligible if self._passes_android_gate(source)]
         eligible = self._dedupe_by_content(eligible)
         rejected = len(candidates) - len(eligible)
         if rejected:
@@ -106,16 +127,22 @@ class ConfigBuilder:
         return eligible, counts
 
     # -- content-level de-duplication --------------------------------------
-    def _domain_fingerprint(self, source: Source) -> set[str]:
-        """The set of API hosts a config points at - its real identity.
+    def _content_profile(self, source: Source) -> ContentProfile:
+        """Fetch a config once and describe what it holds.
 
-        Two config files that expose the same 80 CMS sites through different
-        raw URLs are one source, not two.  A failed fetch yields an empty set
-        so a network blip never silently drops a source.
+        The API-host set is the source's real identity: two config files that
+        expose the same 80 CMS sites through different raw URLs are one source,
+        not two.  ``has_jar`` feeds the L6 Android gate.  A failed fetch yields
+        an empty profile so a network blip never silently drops a source.
         """
+        cached = self._profiles.get(source.id)
+        if cached is not None:
+            return cached
+        profile = ContentProfile()
         url = source.raw_url or source.url
         if not url:
-            return set()
+            self._profiles[source.id] = profile
+            return profile
         try:
             result = self.client.get_json(
                 url,
@@ -127,26 +154,94 @@ class ConfigBuilder:
                 "stage": "build", "check": "content_dedup",
                 "source_id": source.id, "error": str(exc)[:200],
             })
-            return set()
+            self._profiles[source.id] = profile
+            return profile
         if not result.ok:
-            return set()
+            self._profiles[source.id] = profile
+            return profile
         try:
             payload = json.loads(result.text)
         except (TypeError, ValueError):
-            return set()
+            self._profiles[source.id] = profile
+            return profile
         if not isinstance(payload, dict):
-            return set()
+            self._profiles[source.id] = profile
+            return profile
         hosts: set[str] = set()
+        csp_keys: set[str] = set()
         for site in payload.get("sites") or []:
             if not isinstance(site, dict):
                 continue
             api = site.get("api")
             if not isinstance(api, str):
                 continue
+            if api.strip().lower().startswith("csp_"):
+                csp_keys.add(api.strip().lower())
+                continue
             hostname = urlparse(api).hostname
             if hostname:
                 hosts.add(hostname.lower())
-        return hosts
+        profile.api_hosts = hosts
+        profile.csp_keys = csp_keys
+        profile.has_jar = has_jar_sites(payload)
+        self._profiles[source.id] = profile
+        return profile
+
+    def _domain_fingerprint(self, source: Source) -> set[str]:
+        profile = self._content_profile(source)
+        return profile.api_hosts | {f"csp:{key}" for key in profile.csp_keys}
+
+    # -- L6 Android gate ---------------------------------------------------
+    def _android_gate_enabled(self) -> bool:
+        gate = self.output_cfg.get("quality_gate") or {}
+        return bool(gate.get("require_android_jar", False))
+
+    def _android_evidence_map(self) -> dict[str, Any]:
+        if self._android_evidence is None:
+            gate = self.output_cfg.get("quality_gate") or {}
+            name = str(gate.get("android_evidence_file") or EVIDENCE_FILE)
+            self._android_evidence = load_evidence(self.cfg.path("app.data_dir", "data") / name)
+        return self._android_evidence
+
+    def _passes_android_gate(self, source: Source) -> bool:
+        """A jar config must have a fresh, real-device verdict on record.
+
+        Only configs that actually contain a ``csp_*`` / jar site are held to
+        it: a pure CMS config has nothing for DexClassLoader to fail on.  A
+        config we could not fetch is let through, matching the dedup policy.
+        """
+        if source.whitelisted:
+            return True
+        gate = self.output_cfg.get("quality_gate") or {}
+        if not self._content_profile(source).has_jar:
+            return True
+        return android_passes(
+            source.id,
+            self._android_evidence_map(),
+            max_age_days=float(gate.get("android_evidence_max_age_days", 30)),
+            require_playable=bool(gate.get("require_android_playable", True)),
+        )
+
+    def _android_substitutes_playback(self, source: Source, gate: dict[str, Any]) -> bool:
+        """True when fresh real-device playback evidence can replace L5.
+
+        The publication runner sees an HTTP path that a mainland client does
+        not.  When the Android device already streamed bytes from a media URL,
+        that is stronger evidence than the runner's failed probe, but only for
+        configs that actually contain a jar/csp site.
+        """
+        if not bool(gate.get("android_satisfies_playback", False)):
+            return False
+        if not self._android_gate_enabled():
+            return False
+        if not self._content_profile(source).has_jar:
+            return False
+        return android_passes(
+            source.id,
+            self._android_evidence_map(),
+            max_age_days=float(gate.get("android_evidence_max_age_days", 30)),
+            require_playable=True,
+        )
 
     def _dedupe_by_content(self, sources: list[Source]) -> list[Source]:
         """Keep one config per distinct API-host fingerprint.
@@ -231,10 +326,15 @@ class ConfigBuilder:
             latest_playback_score = (
                 100 if latest.playback_url_obtained and latest.playback_probe_success else 0
             )
-            if not _score_at_least(latest_playback_score, gate.get("min_playback_score", 100)):
-                return False
             accepted = gate.get("accepted_playback_content_types") or []
-            if not _content_type_allowed(latest.playback_content_type, accepted):
+            playback_ok = _score_at_least(latest_playback_score, gate.get("min_playback_score", 100))
+            content_ok = _content_type_allowed(latest.playback_content_type, accepted)
+            if not (playback_ok and content_ok) and self._android_substitutes_playback(source, gate):
+                playback_ok = True
+                content_ok = True
+            if not playback_ok:
+                return False
+            if not content_ok:
                 return False
         return True
 

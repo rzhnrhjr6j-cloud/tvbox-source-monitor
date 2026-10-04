@@ -1,70 +1,29 @@
 {
-  "generated_at": "2026-10-04T11:21:53Z",
-  "build_id": "20261004-112153",
+  "generated_at": "2026-10-04T13:01:47Z",
+  "build_id": "20261004-130147",
   "summary": {
     "sources": {
-      "active": 120,
-      "degraded": 87,
+      "active": 125,
+      "candidate": 1,
+      "degraded": 91,
       "failed": 1
     },
-    "candidates": 0,
+    "candidates": 1,
     "tiers": {
       "primary": 0,
       "backup": 0,
-      "experimental": 4
+      "experimental": 3
     },
-    "output_items": 4
+    "output_items": 3
   },
   "regions": {
     "CN": {
-      "checks": 1216,
-      "successes": 1206,
-      "availability_percent": 99.18
+      "checks": 1431,
+      "successes": 1420,
+      "availability_percent": 99.23
     }
   },
   "sources": [
-    {
-      "id": "1cb1bfdf5195d634d0db5a083fc41c5adecf5a2ffe3053a616a3dff94bb0136d",
-      "name": "fun.json",
-      "url": "https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 95.0,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-04T11:13:04Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 152.5,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "0f39a529a704ad371ae34ca75f27d0ec7ac305fd5e193fd00d1f6e7baa91e9c8",
-      "name": "jsm.json",
-      "url": "https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/PG/jsm.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 95.0,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-04T11:13:00Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 223.0,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
     {
       "id": "e5e22b7e79834be5f8f9f9d48bc1f8b7b746fd466ac42300038de2a46d1c91b3",
       "name": "jj.json",
@@ -76,15 +35,36 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-04T11:14:14Z",
+      "last_success_at": "2026-10-04T12:05:26Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 370.0851063829787,
+      "avg_response_ms": 375.2083333333333,
       "consecutive_failure": 0,
       "whitelisted": true
+    },
+    {
+      "id": "5a29dc258ba183a7edcdc8ce5f019b75b4d4cb85231dfe60ccb0ede462532e86",
+      "name": "box.json",
+      "url": "https://raw.githubusercontent.com/AndroidSoftwares/box/main/box.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 75.833,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-04T12:03:55Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 290.3125,
+      "consecutive_failure": 0,
+      "whitelisted": false
     },
     {
       "id": "745561a3739c9b0c759e443e7bee2ffeee9488f9a7c4709f69066cfa851187f8",
@@ -93,22 +73,32 @@
       "status": "active",
       "tier": "experimental",
       "type": "single",
-      "score": 56.319,
-      "stability_score": 98.298,
-      "availability_7d": 97.872,
-      "availability_30d": 97.872,
-      "last_success_at": "2026-10-04T11:13:09Z",
+      "score": 56.334,
+      "stability_score": 98.334,
+      "availability_7d": 97.917,
+      "availability_30d": 97.917,
+      "last_success_at": "2026-10-04T12:04:16Z",
       "last_failure_at": "2026-09-30T14:04:27Z",
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 957.8723404255319,
+      "avg_response_ms": 943.6666666666666,
       "consecutive_failure": 0,
       "whitelisted": true
     }
   ],
   "alerts": [
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-04T12:05:39Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
     {
       "kind": "source_failed",
       "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
@@ -598,19 +588,37 @@
       "resolved_at": null,
       "severity": "info",
       "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "da84f015e8928b0e9d61b1b0622c1ce5c64235cdb8dc481e68c296449e03f22d",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / HCGA.json",
-      "created_at": "2026-09-30T08:52:16Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
     }
   ],
   "build_history": [
+    {
+      "build_id": "20261004-124353",
+      "generated_at": "2026-10-04T12:43:53Z",
+      "published": true,
+      "fallback": false,
+      "items": 2,
+      "active": 125,
+      "degraded": 91,
+      "failed": 1,
+      "new": 0,
+      "recovered": 0,
+      "removed": 2,
+      "blocked_reason": ""
+    },
+    {
+      "build_id": "20261004-112153",
+      "generated_at": "2026-10-04T11:21:53Z",
+      "published": true,
+      "fallback": false,
+      "items": 4,
+      "active": 120,
+      "degraded": 87,
+      "failed": 1,
+      "new": 0,
+      "recovered": 0,
+      "removed": 12,
+      "blocked_reason": ""
+    },
     {
       "build_id": "20261004-111706",
       "generated_at": "2026-10-04T11:17:06Z",
@@ -998,34 +1006,6 @@
       "active": 24,
       "degraded": 73,
       "failed": 1,
-      "new": 0,
-      "recovered": 0,
-      "removed": 0,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20260930-083217",
-      "generated_at": "2026-09-30T08:32:17Z",
-      "published": true,
-      "fallback": false,
-      "items": 24,
-      "active": 24,
-      "degraded": 74,
-      "failed": 0,
-      "new": 0,
-      "recovered": 0,
-      "removed": 0,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20260930-081153",
-      "generated_at": "2026-09-30T08:11:53Z",
-      "published": true,
-      "fallback": false,
-      "items": 24,
-      "active": 24,
-      "degraded": 74,
-      "failed": 0,
       "new": 0,
       "recovered": 0,
       "removed": 0,

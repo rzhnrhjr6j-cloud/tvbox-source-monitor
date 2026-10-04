@@ -23,6 +23,26 @@ discovery:
       - "filename:fun.json 影视"
       - "filename:api.json tvbox"
       - "filename:jsm.json"
+      # 社区里同一批作者常用的短文件名配置；只搜 tvbox.json 会整批漏掉。
+      - "filename:pg.json"
+      - "filename:aa.json"
+      - "filename:bb.json"
+      - "filename:mx.json"
+      - "filename:jj.json"
+      - "filename:m.json tvbox"
+      # JAR/csp configs are the ones a TVBox client can fail on with
+      # "jar解析失败"; search the class namespace directly instead of relying
+      # on file names alone.
+      - "csp_ extension:json"
+      - "csp_AppYsV2 extension:json"
+      - "csp_XYQHiker extension:json"
+      - "com.github.catvod.spider extension:json"
+      - "spider jar sites in:file extension:json"
+      - "filename:ck.json tvbox"
+      - "filename:dm.json tvbox"
+      - "filename:ys.json tvbox"
+      - "filename:zb.json tvbox"
+      - "filename:duo.json tvbox"
       - "tvbox.json in:path"
       - "影视仓 in:file extension:json"
       - "tvbox api in:file extension:json"
@@ -36,6 +56,7 @@ discovery:
       - "tvbox 接口 in:name,description,readme"
       - "影视仓 in:name,description,readme"
       - "影视仓 多仓 in:name,description,readme"
+      - "影视仓 多仓 接口 in:readme"
       - "tvbox spider in:name,description,readme"
     per_page: 30
     max_pages: 2

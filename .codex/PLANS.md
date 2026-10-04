@@ -45,3 +45,34 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
 8. Exit criteria and handoff
    - 测试通过，严格入口由真实 DB 生成 2 个源：“精东（24站）”和“豆了（159站）”。
    - 待办：提交并发布新产物后，由用户在手机上复测固定入口，确认这两个源仍可播。
+
+## T-006 - Android 真机门禁补齐
+
+1. Objective and non-goals
+   - Objective: JAR/csp 源必须先在 Android 真机上完成 DexClassLoader 并真实拉到媒体字节，才允许发布；同时修复内容去重只比较 CMS 主机、会误砍 csp 源的问题。
+   - Non-goals: 不放开自动播放门槛凑数量，不伪造真机证据，不保证所有手机/网络环境都能播放。
+2. Current state / constraints
+   - L1-L5 只能证明 HTTP 配置可下载，无法解释手机端 `jar解析失败`。
+   - 设备：`emulator-5554`，Android 7.1 API25 arm64。
+   - 真机播放证据写入 `data/android_verified.json`，CI 无模拟器但会读取已提交证据。
+3. Requirements and acceptance criteria
+   - REQ-601 / AC-601：`require_android_jar=true` 时，带 `csp_*`/jar 站点且无新鲜真机可播证据的源不发布。
+   - REQ-602 / AC-602：JAR 源的真机可播证据可替代 runner 侧失败的 L5 播放探针，但搜索证据仍必须单独成立。
+   - REQ-603 / AC-603：内容去重指纹包含 `csp_*` 类名，内容不同的 JAR 源不再因 CMS 主机子集被误判为镜像。
+   - REQ-604 / AC-604：配置未下载成功（`site_count=0`）的真机结果不写入证据文件。
+4. Design / architecture impact
+   - `app/build/builder.py`：`_android_substitutes_playback`、`ContentProfile.csp_keys`、`_domain_fingerprint`。
+   - `config/app.yaml`：`require_android_jar=true`，新增 `android_satisfies_playback=true`。
+   - `tools/android_verify.py`：证据记录用原始源 URL，跳过零站点结果。
+5. Implementation steps with task IDs
+   - T-006：接入 L6 门禁、真机替代规则和 csp 去重修复。已完成。
+   - CR-007：清理 `android_verified.json` 的零记录，补测精东并记录真实媒体首字节。已完成。
+6. Validation strategy and evidence IDs
+   - `tests/test_android_gate.py` 12 项通过；全量测试 213 项通过。
+   - 证据：E-012 精东真机播放（`csp_XMVideo`，媒体 200 + `application/vnd.apple.mpegurl`）；E-013 AndroidSoftwares box 真机播放（`动漫巴士`）；E-014 L6 构建由 2 源变 3 源。
+7. Rollback / recovery plan
+   - `require_android_jar=false` 可恢复只看 L1-L5；`android_satisfies_playback=false` 可关闭真机替代。
+   - `content_overlap_threshold=0` 可临时关闭内容去重。
+8. Exit criteria and handoff
+   - 本地 `make build` 发布 3 个源：“精东（24站）”“豆瓣（39站）”“豆了（159站）”。
+   - 待办：提交推送并触发线上工作流后，核对线上 `tvbox.json` 三项均可下载；由用户手机复测三个源。

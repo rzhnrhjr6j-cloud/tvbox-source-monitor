@@ -4,6 +4,7 @@
 #   make discover   find new candidate sources
 #   make check      probe every known source (L1-L5)
 #   make build      score, retire, revive and regenerate dist/tvbox.json
+#   make verify-android  load every csp_* jar on a real device/emulator
 #   make report     print the current state
 #   make test       run the test suite
 #   make pipeline   the whole chain in one shot (spec §36)
@@ -21,7 +22,7 @@ endif
 
 ARGS ?=
 
-.PHONY: help install discover check build report test pipeline doctor bootstrap demo serve-demo clean fmt
+.PHONY: help install discover check build report test pipeline doctor bootstrap demo serve-demo verify-android clean fmt
 
 help:
 	@sed -n '2,12p' Makefile | sed 's/^# \?//'
@@ -41,6 +42,9 @@ check:
 
 build:
 	$(PY) -m app.main build $(ARGS)
+
+verify-android:
+	$(PY) tools/android_verify.py $(ARGS)
 
 report:
 	$(PY) -m app.main report $(ARGS)

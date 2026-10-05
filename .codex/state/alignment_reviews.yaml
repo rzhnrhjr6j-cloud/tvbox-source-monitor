@@ -33,3 +33,49 @@ reviews:
   non_goal_tags:
   - regions
   - compatibility
+- task_id: T-006
+  release: 1.1.0
+  status: PASS
+  reviewer: codex
+  timestamp: '2026-10-05T00:00:00+08:00'
+  summary: 真机门禁直接解决“配置可解析但手机 jar 解析失败”的核心缺陷，去重修复不扩大发布范围
+  reason: 只收紧 JAR/csp 源的证据要求和修复误判，不改变地区、客户端格式和发现边界
+  requirement_ids:
+  - REQ-601
+  - REQ-602
+  - REQ-603
+  - REQ-604
+  goal_refs:
+  - GOAL-001
+  - GOAL-002
+  - GOAL-003
+  scope_tags:
+  - data
+  - release
+  - testing
+  non_goal_tags:
+  - regions
+  - compatibility
+- task_id: T-007
+  release: 1.1.0
+  status: PASS
+  reviewer: codex
+  timestamp: '2026-10-05T00:00:00+08:00'
+  summary: 发布入口镜像、防误删和强证据保留都属于现有发布链路的修复，扩源仍受 L6 真机门禁约束
+  reason: 不放宽可播门槛，不伪造证据，不把未验证源当成可播结论
+  requirement_ids:
+  - REQ-701
+  - REQ-702
+  - REQ-703
+  - REQ-704
+  goal_refs:
+  - GOAL-001
+  - GOAL-002
+  - GOAL-003
+  scope_tags:
+  - data
+  - release
+  - testing
+  non_goal_tags:
+  - regions
+  - compatibility

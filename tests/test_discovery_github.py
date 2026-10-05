@@ -242,6 +242,20 @@ def test_seed_repos_rotate_between_runs(cfg):
     assert wrapped == ["o/r9", "o/r0", "o/r1"]
 
 
+def test_seed_repos_persist_rotation_between_adapter_runs(scratch_cfg, tmp_path):
+    state_file = tmp_path / "seed-rotation.json"
+    state_file.write_text('{"offset": 0}', encoding="utf-8")
+
+    adapter = GitHubAdapter(scratch_cfg, client=_FakeClient([]))
+    adapter.seed_repos = [f"o/r{i}" for i in range(10)]
+    adapter.seed_repos_per_run = 3
+    adapter.seed_rotation_file = state_file
+
+    assert adapter._seeds_for_run() == ["o/r0", "o/r1", "o/r2"]
+    assert adapter._seeds_for_run() == ["o/r3", "o/r4", "o/r5"]
+    assert json.loads(state_file.read_text(encoding="utf-8"))["offset"] == 6
+
+
 def test_seed_repos_run_all_when_fewer_than_per_run(cfg):
     adapter = GitHubAdapter(cfg, client=_FakeClient([]))
     adapter.seed_repos = ["o/a", "o/b"]

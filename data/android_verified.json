@@ -5,6 +5,15 @@
   ],
   "verified": [
     {
+      "source_id": "01d8e1259d1daebc3f03e5163030ee17cac466eb45663cde295217dc047292b4",
+      "config_url": "https://raw.githubusercontent.com/xiaobaitulele/xptv/main/main/all_direct.json",
+      "verified_at": "2026-10-05T01:34:23Z",
+      "site_count": 1,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
       "source_id": "02ae88698f53bd31a27fdd98b176317fc061e1a4d579ee789f7cd15bd6d4bbb9",
       "config_url": "https://raw.githubusercontent.com/Honghe-snow/honghetv/main/云朵.json",
       "verified_at": "2026-10-04T18:31:46Z",
@@ -33,6 +42,15 @@
       "verified_at": "2026-10-04T14:26:00Z",
       "site_count": 1,
       "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
+      "source_id": "0f39a529a704ad371ae34ca75f27d0ec7ac305fd5e193fd00d1f6e7baa91e9c8",
+      "config_url": "https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/PG/jsm.json",
+      "verified_at": "2026-10-04T23:49:58Z",
+      "site_count": 4,
+      "loadable_count": 4,
       "playable_count": 0,
       "playable_keys": []
     },
@@ -731,6 +749,15 @@
       ]
     },
     {
+      "source_id": "996f85ca1b19b022deab2fbf6e0f867a0e4bd00cd7a1b7b33fcbe9eccf6199dd",
+      "config_url": "https://raw.githubusercontent.com/adminouyang/231006/main/tvbox/ouge/111.json",
+      "verified_at": "2026-10-05T01:34:20Z",
+      "site_count": 72,
+      "loadable_count": 0,
+      "playable_count": 0,
+      "playable_keys": []
+    },
+    {
       "source_id": "9b8336890147c23d6bf899f91692b89d5bac64f700ad3cfb504e68c0e8591c06",
       "config_url": "https://raw.githubusercontent.com/956065487/zhiboyuan/main/0821.json",
       "verified_at": "2026-10-04T17:45:36Z",
@@ -1178,6 +1205,15 @@
       "playable_keys": [
         "XMVideo"
       ]
+    },
+    {
+      "source_id": "f4ca0bb321d2f018ebb7279e67be7deeb0f6b888e2aa433601e8ad6e9e48d066",
+      "config_url": "https://raw.githubusercontent.com/yw88075/tvbox/main/XYQTVBox/qiaoji/qjtvbox.json",
+      "verified_at": "2026-10-04T23:55:08Z",
+      "site_count": 29,
+      "loadable_count": 29,
+      "playable_count": 0,
+      "playable_keys": []
     },
     {
       "source_id": "f5bd906efdf3510954bd42f32574ecadda0ff0c565f6ecb34087c46766ded1a0",

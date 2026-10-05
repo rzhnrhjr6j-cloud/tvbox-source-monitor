@@ -176,3 +176,88 @@ task_tree:
   - AGENTS.md
   forbidden_paths:
   - .git/
+- id: T-006
+  title: 补齐 Android 真机 JAR 门禁
+  phase: P1
+  release: 1.1.0
+  status: DONE
+  objective: JAR/csp 源必须先在 Android 真机完成 DexClassLoader 并真实拉到媒体字节才允许发布；同时修复 CMS 主机子集误判导致的内容去重误杀。
+  goal_refs:
+  - GOAL-001
+  - GOAL-002
+  - GOAL-003
+  requirement_ids:
+  - REQ-601
+  - REQ-602
+  - REQ-603
+  - REQ-604
+  acceptance_criteria:
+  - AC-601
+  - AC-602
+  - AC-603
+  - AC-604
+  scope_tags:
+  - data
+  - release
+  - testing
+  non_goal_tags:
+  - regions
+  - compatibility
+  change_request_ids:
+  - CR-007
+  dependencies:
+  - T-005
+  allowed_paths:
+  - app/checks/jar_check.py
+  - app/build/builder.py
+  - config/app.yaml
+  - data/
+  - dist/
+  - tests/
+  - .codex/
+  forbidden_paths:
+  - .git/
+- id: T-007
+  title: 发布入口镜像修复、强证据保留与扩源
+  phase: P1
+  release: 1.1.0
+  status: VERIFYING
+  objective: 修复手机端打不开的发布入口，防止窄抽样真机结果覆盖强证据，修复镜像误杀，并继续扩大手机端真正可播的源。
+  goal_refs:
+  - GOAL-001
+  - GOAL-002
+  - GOAL-003
+  requirement_ids:
+  - REQ-701
+  - REQ-702
+  - REQ-703
+  - REQ-704
+  acceptance_criteria:
+  - AC-701
+  - AC-702
+  - AC-703
+  - AC-704
+  scope_tags:
+  - data
+  - release
+  - testing
+  non_goal_tags:
+  - regions
+  - compatibility
+  change_request_ids:
+  - CR-008
+  - CR-009
+  dependencies:
+  - T-006
+  allowed_paths:
+  - app/build/
+  - app/checks/jar_check.py
+  - app/discovery/
+  - config/
+  - data/
+  - dist/
+  - tests/
+  - docs/
+  - .codex/
+  forbidden_paths:
+  - .git/

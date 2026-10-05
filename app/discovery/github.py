@@ -13,10 +13,12 @@ the adapter disables itself instead of hammering the unauthenticated endpoint.
 
 from __future__ import annotations
 
+import json
 import os
 import re
 import time
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import quote
 
@@ -76,8 +78,11 @@ class GitHubAdapter:
         # budget, expanding every seed repo every run would starve the search
         # adapters and freeze on the same files forever, so they rotate.
         self.seed_repos_per_run = int(section.get("seed_repos_per_run", 5))
-        # Tests pin the rotation; production leaves it None and uses the date.
+        # Tests pin the rotation; production persists a rotating offset so
+        # repeated runs on the same day continue through the seed list instead
+        # of reopening the same five repositories.
         self.seed_rotation_offset: int | None = None
+        self.seed_rotation_file = Path(cfg.path("app.data_dir")) / "discovery_seed_rotation.json"
         self.min_stars = max(0, int(section.get("min_stars", 0)))
         raw_age = section.get("max_repo_age_days")
         self.max_repo_age_days = max(0, int(raw_age)) if raw_age not in (None, "") else 0
@@ -422,9 +427,37 @@ class GitHubAdapter:
         repos = self.seed_repos
         if self.seed_repos_per_run <= 0 or len(repos) <= self.seed_repos_per_run:
             return list(repos)
-        offset = self.seed_rotation_offset
-        if offset is None:
-            offset = datetime.now(timezone.utc).toordinal()
+        pinned = self.seed_rotation_offset
+        offset = pinned if pinned is not None else self._load_seed_rotation(len(repos))
         offset %= len(repos)
         doubled = repos + repos
-        return doubled[offset : offset + self.seed_repos_per_run]
+        selected = doubled[offset : offset + self.seed_repos_per_run]
+        if pinned is None:
+            self._save_seed_rotation((offset + self.seed_repos_per_run) % len(repos))
+        return selected
+
+    def _load_seed_rotation(self, repo_count: int) -> int:
+        try:
+            payload = json.loads(self.seed_rotation_file.read_text(encoding="utf-8"))
+            offset = int(payload.get("offset", 0))
+            return offset % repo_count
+        except FileNotFoundError:
+            return datetime.now(timezone.utc).toordinal() % repo_count
+        except (OSError, TypeError, ValueError, json.JSONDecodeError) as exc:
+            LOGGER.warning(
+                "could not read seed rotation state; using date offset",
+                extra={"stage": "discovery", "check": "seed_rotation", "error": str(exc)},
+            )
+            return datetime.now(timezone.utc).toordinal() % repo_count
+
+    def _save_seed_rotation(self, offset: int) -> None:
+        try:
+            self.seed_rotation_file.parent.mkdir(parents=True, exist_ok=True)
+            temp_path = self.seed_rotation_file.with_suffix(".tmp")
+            temp_path.write_text(json.dumps({"offset": offset}, ensure_ascii=True), encoding="utf-8")
+            os.replace(temp_path, self.seed_rotation_file)
+        except OSError as exc:
+            LOGGER.warning(
+                "could not persist seed rotation state",
+                extra={"stage": "discovery", "check": "seed_rotation", "error": str(exc)},
+            )

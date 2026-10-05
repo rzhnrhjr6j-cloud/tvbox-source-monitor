@@ -24,7 +24,7 @@ issues:
     title: "输出源没有 primary/backup 分层"
     severity: MEDIUM
     status: OPEN
-    statement: "当前线上 86 个源全部为 experimental。"
+    statement: "当前 49 个输出源全部为 experimental。"
     source: "dist/health.json"
   - id: ISSUE-005
     title: "发布门槛缺少真实播放证据"
@@ -34,4 +34,4 @@ issues:
     statement: "线上发布只看源状态，导致配置可解析但实际不可播的源继续进入 tvbox.json。"
     source: "2026-10-04 用户手机实测；dist/health.json"
     evidence: [E-008, E-009]
-    mitigation: "构建已增加近期搜索和播放双证据门槛，并用真实数据库生成 3 个可播放候选。"
+    mitigation: "构建已增加近期搜索和播放双证据门槛、Android 真机门禁和镜像保留修复；最新真实数据库构建发布 49 条，精东和豆了保留，360、茅台排除。"

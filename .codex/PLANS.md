@@ -85,8 +85,9 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
 2. Current state / constraints
    - `build` 不带 `GITHUB_REPOSITORY` 时，`dist/tvbox.json` 指向 `raw.githubusercontent.com` 原点，手机端打不开；镜像副本在 `dist/sources/`。
    - 批量真机验证只抽前 N 站，弱结果会覆盖同源全量跑出的强结果，导致可播源被错误撤下。
-   - 数据库：total 341，active 234 / degraded 106 / failed 1。
-   - 真机证据：`data/android_verified.json` 40 条。
+   - 数据库：active 331 / degraded 136 / failed 2。
+   - 真机证据：`data/android_verified.json` 120 条。
+   - 最新重建：`build_id=20261005-043906`，发布 49 条，新增 1、恢复 0、移除 0。
 3. Requirements and acceptance criteria
    - REQ-701 / AC-701：发布命令显式带 `GITHUB_REPOSITORY`，构建产物 URL 全部走可用镜像，主入口与 CDN 条目/文件一致。
    - REQ-702 / AC-702：`write_evidence` 只允许不弱于既有记录的结果覆盖，同强度允许刷新时间戳。
@@ -97,28 +98,28 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
    - `tests/test_android_gate.py`：覆盖弱结果不覆盖、强结果覆盖、同 playable 更多 loadable、同强度刷新时间戳。
    - `config/discovery.yaml`、`config/scoring.yaml`、`app/discovery/aggregator.py`、`app/parsers/json_parser.py`、`data/candidates.json`：扩充发现查询、seed 仓库和候选池。
 5. Implementation steps with task IDs
-   - CR-008：修复发布入口镜像 URL、保留更强真机证据、扩充发现与候选池。进行中。
+   - CR-008：修复发布入口镜像 URL、保留更强真机证据、扩充发现与候选池。已完成。
    - CR-009：修复镜像“取不到即删源”误杀。构建里把「取不到就别再取」的缓存集合
      （`state["unavailable"]` / `dead_hosts`）和「已证实消失」的删除判据
      （`state["gone"]`）拆开：只有 404/410、或 2xx 空 body、或字节证明不是 jar/配置
      才允许删行删源；超时、5xx、连接被拒、预算耗尽一律保留作者原始 URL。
      起因是 `豆了（159站）` 的 spider 在 runner 侧偶发抓取失败被误判为死亡，导致
      发布条数 17→16 反复抖动。已完成。
-   - T-007：对新增可播证据源重建并推送。进行中（本轮已重建，待推送）。
+   - T-007：对新增可播证据源重建并推送。进行中（本轮已重建 49 条，待推送和线上核对）。
 6. Validation strategy and evidence IDs
    - 聚焦测试 86 项通过，全量 `pytest` 通过。
-   - 本地重建发布 11 条，`dist/tvbox.json` 与 `dist/tvbox-cdn.json` 条目一致，`dist/sources/` 与 `dist/cdn/sources/` 文件数一致且 11 条 URL 均走 `gh-proxy.com` 镜像。
-   - CR-009 后重建：候选 273 → 质量门放行 47 → 内容去重 26；`dist/tvbox.json` 26 条，
-     `豆了（159站）`（`745561a3739c9b0c`）回归，`dist/sources/745561a3739c9b0c.json`
-     与 `dist/cdn/sources/` 同款均重新生成。
+   - CR-009 后继续补真机证据并重建：`build_id=20261005-043906`，发布 49 条，
+     `dist/tvbox.json` 与 `dist/tvbox-cdn.json` 条目一致；49 条 URL 全部走 `gh-proxy.com`。
+   - 最新发布集包含`精东（24站）`和`豆了（159站）`；`360`和`茅台`不在发布集。
+     `豆了`对应 `dist/sources/745561a3739c9b0c.json` 与 `dist/cdn/sources/` 同款均存在。
    - 证据：E-015 发布入口镜像核对；E-016 强证据保留单测；E-017 全量测试；E-018 11 源重建；
      E-019 镜像误杀修复单测（预算耗尽不删源、超时不删、404 仍删、已镜像 jar 不受影响）；
-     E-020 CR-009 后 26 源重建。
+     E-020 CR-009 后 26 源重建；E-021 扩展真机证据后 49 源重建。
 7. Rollback / recovery plan
    - 发布失败保留上一版 `tvbox.json`；证据合并不删历史记录，必要时从 Git 历史恢复旧文件。
    - `require_android_jar=false` 或 `android_satisfies_playback=false` 可回退 L6 门禁。
 8. Exit criteria and handoff
-   - 新产物推送并触发 Pages，线上 `tvbox.json` 可下载、URL 指向镜像。
+   - 新产物推送并触发 Pages，线上 `tvbox.json` 可下载、49 条 URL 指向镜像。
    - 用户手机复测新入口；未在设备上验证的源不得预先声称可播。
    - 报障源核对：360 / 茅台 两个用户实测 jar 解析失败的源仍在 `data/blacklist.json` 的
-     `source_ids` / `reason` 中，不进入检测池，未混入 26 条。
+     `source_ids` / `reason` 中，不进入检测池，未混入 49 条。

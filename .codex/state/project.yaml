@@ -8,7 +8,7 @@ control:
   current_code_version: v1.0.0
   current_database_version: DB-3
   current_phase: P1
-  current_task: T-005
+  current_task: T-007
   stable_baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201
   development_baseline: 062fc3af25fd6c41a0cf2e166942f76b40d09201+control
   wip_limit: 2
@@ -26,5 +26,5 @@ progress:
   control_initialized: true
   stable_baseline_recorded: true
 next_action:
-  task_id: T-002
-  objective: "发布新的严格入口后，用真实手机复测 jj.json、tvbox.json、zytvbox.json 的实际可播性。"
+  task_id: T-007
+  objective: "推送 49 条重建产物并核对线上入口；随后继续用 GitHub 搜索扩充候选池，补真机可播证据后再发布。"

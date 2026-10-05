@@ -28,13 +28,13 @@ risks:
     mitigation: "执行 T-004，建立监测、回退和替换方案。"
   - id: RISK-004
     title: "当前输出全部是 experimental"
-    statement: "dist/health.json 显示 primary=0、backup=0、experimental=86。"
+    statement: "dist/health.json 显示 primary=0、backup=0、experimental=49。"
     severity: MEDIUM
     likelihood: HIGH
     impact: "客户端无法获得稳定层和备用层提示，源池整体质量分层没有真正形成。"
     status: OPEN
     evidence: [E-002, E-003]
-    mitigation: "继续积累观测数据，并检查评分阈值、观察期和源稳定性。"
+    mitigation: "继续积累观测数据，并检查评分阈值、观察期和源稳定性；当前至少已排除手机实测不可播源。"
   - id: RISK-005
     title: "把可解析误当成可播放"
     statement: "102 个最近探测源中 101 个 HTTP 和配置解析通过，但只有 4 个真正播放通过；旧构建会把其中大部分发布出去。"

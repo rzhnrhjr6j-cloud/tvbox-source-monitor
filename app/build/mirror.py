@@ -1099,6 +1099,15 @@ class ConfigMirror:
         plan = MirrorPlan()
         if not self.enabled:
             return plan
+        # A whitelisted config is backed by a real-device verdict, while the
+        # shared jar cache below is only as reliable as this runner's network.
+        # A single earlier probe can therefore poison a later config that the
+        # phone already plays.  Spend the clean cache and hosting budget on
+        # user-verified entries first.
+        sources = sorted(
+            sources,
+            key=lambda source: (0 if source.whitelisted else 1, source.id),
+        )
         plan.enabled = True
         base = self.public_base
         budget = self.max_total_bytes
@@ -1117,6 +1126,12 @@ class ConfigMirror:
             result = self.http.get(url, max_bytes=self.max_bytes)
             if not result.ok or not result.content:
                 self._failed(source, url, result.error_code or f"HTTP_{result.status}")
+                if source.whitelisted:
+                    # A real-device verdict outranks a runner-side fetch failure.
+                    # Reuse the last good copy when we have one; otherwise leave
+                    # the original URL in place rather than dropping the source.
+                    self._restore_previous_mirror(source, url, base, plan)
+                    continue
                 if self.on_failure != "keep":
                     plan.dropped.add(source.id)
                 continue
@@ -1124,6 +1139,8 @@ class ConfigMirror:
                 LOGGER.warning("mirror budget exhausted", extra={
                     "stage": "build", "check": "mirror", "source_id": source.id,
                     "error": f"total>{budget}"})
+                if self._keep_whitelisted_source(source, url, base, plan, "BUDGET_EXHAUSTED"):
+                    continue
                 plan.dropped.add(source.id)
                 continue
 
@@ -1142,6 +1159,8 @@ class ConfigMirror:
                 LOGGER.warning("every site had a dead jar", extra={
                     "stage": "build", "check": "mirror", "source_id": source.id,
                     "url": url, "error": "DEAD_JARS_ONLY"})
+                if self._keep_whitelisted_source(source, url, base, plan, "DEAD_JARS_ONLY"):
+                    continue
                 if self.on_failure != "keep":
                     plan.dropped.add(source.id)
                 continue
@@ -1161,6 +1180,10 @@ class ConfigMirror:
                     LOGGER.warning("source dropped for an unreachable spider", extra={
                         "stage": "build", "check": "mirror", "source_id": source.id,
                         "url": url, "error": "SPIDER_UNAVAILABLE"})
+                    if self._keep_whitelisted_source(
+                        source, url, base, plan, "SPIDER_UNAVAILABLE"
+                    ):
+                        continue
                     if self.on_failure != "keep":
                         plan.dropped.add(source.id)
                     continue
@@ -1171,6 +1194,10 @@ class ConfigMirror:
                     LOGGER.warning("every site had an unreachable jar", extra={
                         "stage": "build", "check": "mirror", "source_id": source.id,
                         "url": url, "error": "UNREACHABLE_JARS_ONLY"})
+                    if self._keep_whitelisted_source(
+                        source, url, base, plan, "UNREACHABLE_JARS_ONLY"
+                    ):
+                        continue
                     if self.on_failure != "keep":
                         plan.dropped.add(source.id)
                     continue
@@ -1186,6 +1213,10 @@ class ConfigMirror:
                 LOGGER.warning("source has nothing the client can open", extra={
                     "stage": "build", "check": "mirror", "source_id": source.id,
                     "url": url, "error": "NO_OPENABLE_ROWS"})
+                if self._keep_whitelisted_source(
+                    source, url, base, plan, "NO_OPENABLE_ROWS"
+                ):
+                    continue
                 if self.on_failure != "keep":
                     plan.dropped.add(source.id)
                 continue
@@ -1208,6 +1239,56 @@ class ConfigMirror:
         self._drop_duplicate_content(plan)
         self._dedupe_names(plan)
         return plan
+
+    def _keep_whitelisted_source(
+        self, source: Source, url: str, base: str, plan: MirrorPlan, reason: str
+    ) -> bool:
+        """Never drop a user-verified source for a runner-side mirror failure."""
+        if not source.whitelisted:
+            return False
+        if self._restore_previous_mirror(source, url, base, plan):
+            return True
+        LOGGER.info("mirror kept the original URL for a verified source", extra={
+            "stage": "build", "check": "mirror", "source_id": source.id,
+            "source_name": source.name, "url": url, "error": reason,
+        })
+        return True
+
+    def _restore_previous_mirror(
+        self, source: Source, url: str, base: str, plan: MirrorPlan
+    ) -> bool:
+        """Keep a verified source alive when this run cannot fetch it.
+
+        The phone has already proved the config works, while the runner's
+        failure (TLS, DNS, a flaky proxy) says nothing about the client.  A
+        previously published copy is still the best artifact we can send.
+        """
+        slug = source.id[:16]
+        path = self.dist_dir / SOURCES_DIR / f"{slug}.json"
+        try:
+            content = path.read_bytes()
+        except OSError:
+            return False
+        if not content:
+            return False
+        try:
+            config = _load_config(content.decode("utf-8", "replace"))
+        except ValueError:
+            config = None
+        plan.entries[source.id] = MirrorEntry(
+            source_id=source.id,
+            slug=slug,
+            name=_pick_name(config, url, source),
+            url=f"{base}/{SOURCES_DIR}/{slug}.json",
+            site_count=_site_count(config),
+            content=content,
+            origin=url,
+        )
+        LOGGER.info("mirror kept a verified source from its previous copy", extra={
+            "stage": "build", "check": "mirror", "source_id": source.id,
+            "source_name": source.name, "url": url,
+        })
+        return True
 
     def _failed(self, source: Source, url: str, reason: str) -> None:
         LOGGER.warning("mirror fetch failed", extra={

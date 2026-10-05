@@ -15,6 +15,22 @@ requirements:
   - T-005
   REQ-105:
   - T-005
+  REQ-601:
+  - T-006
+  REQ-602:
+  - T-006
+  REQ-603:
+  - T-006
+  REQ-604:
+  - T-006
+  REQ-701:
+  - T-007
+  REQ-702:
+  - T-007
+  REQ-703:
+  - T-007
+  REQ-704:
+  - T-007
 tasks:
   T-001:
     requirements:
@@ -48,6 +64,32 @@ tasks:
     - E-009
     - E-010
     - E-011
+  T-006:
+    requirements:
+    - REQ-601
+    - REQ-602
+    - REQ-603
+    - REQ-604
+    evidence:
+    - E-012
+    - E-013
+    - E-014
+    - E-022
+    - E-023
+  T-007:
+    requirements:
+    - REQ-701
+    - REQ-702
+    - REQ-703
+    - REQ-704
+    evidence:
+    - E-015
+    - E-016
+    - E-017
+    - E-018
+    - E-019
+    - E-020
+    - E-021
 evidence:
   E-001:
     task_id: T-001
@@ -104,11 +146,76 @@ evidence:
     criterion_ids:
     - AC-105
     status: PASS
+  E-012:
+    task_id: T-006
+    criterion_ids:
+    - AC-602
+    status: PASS
+  E-013:
+    task_id: T-006
+    criterion_ids:
+    - AC-602
+    status: PASS
+  E-014:
+    task_id: T-006
+    criterion_ids:
+    - AC-601
+    status: PASS
+  E-015:
+    task_id: T-007
+    criterion_ids:
+    - AC-701
+    status: PASS
+  E-016:
+    task_id: T-007
+    criterion_ids:
+    - AC-702
+    status: PASS
+  E-017:
+    task_id: T-007
+    criterion_ids:
+    - AC-701
+    - AC-702
+    - AC-703
+    status: PASS
+  E-018:
+    task_id: T-007
+    criterion_ids:
+    - AC-703
+    status: PASS
+  E-019:
+    task_id: T-007
+    criterion_ids:
+    - AC-704
+    status: PASS
+  E-020:
+    task_id: T-007
+    criterion_ids:
+    - AC-704
+    status: PASS
+  E-021:
+    task_id: T-007
+    criterion_ids:
+    - AC-701
+    - AC-704
+    status: PASS
+  E-022:
+    task_id: T-006
+    criterion_ids:
+    - AC-603
+    status: PASS
+  E-023:
+    task_id: T-006
+    criterion_ids:
+    - AC-604
+    status: PASS
 releases:
   1.1.0:
   - T-002
   - T-003
   - T-004
   - T-005
+  - T-006
+  - T-007
   1.0.0:
   - T-001

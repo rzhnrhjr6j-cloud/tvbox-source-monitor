@@ -44,3 +44,27 @@ changes:
     affected_tasks: [T-005]
     impact_analysis: "把手机实测失败的 360 和茅台加入黑名单，同步标记数据库；发布下限从 3 调到 2，只保留精东和豆了两个人工验证可播源。"
     evidence_ids: [E-011]
+  - id: CR-007
+    title: "清理零站点真机记录并补精东证据"
+    status: IMPLEMENTED
+    target_release: 1.1.0
+    requirement_ids: [REQ-604, REQ-602]
+    affected_tasks: [T-006]
+    impact_analysis: "零站点结果不再写入证据文件；精东补录真实媒体首字节，真机证据成为可审计的发布依据。"
+    evidence_ids: [E-012, E-013, E-014]
+  - id: CR-008
+    title: "修复发布入口镜像、保留强证据并扩充候选池"
+    status: IMPLEMENTED
+    target_release: 1.1.0
+    requirement_ids: [REQ-701, REQ-702, REQ-703, REQ-704]
+    affected_tasks: [T-007]
+    impact_analysis: "发布 URL 改走 gh-proxy.com；真机证据按强弱合并；发现查询和候选池扩充，但不会放宽 L6 门禁。"
+    evidence_ids: [E-015, E-016, E-017, E-018, E-021]
+  - id: CR-009
+    title: "修复镜像取不到即删源的误杀"
+    status: IMPLEMENTED
+    target_release: 1.1.0
+    requirement_ids: [REQ-704]
+    affected_tasks: [T-007]
+    impact_analysis: "只有已证实消失的镜像才删除；超时、5xx、连接被拒和预算耗尽保留作者原始 URL，避免豆了等源被偶发失败误删。"
+    evidence_ids: [E-019, E-020, E-021]

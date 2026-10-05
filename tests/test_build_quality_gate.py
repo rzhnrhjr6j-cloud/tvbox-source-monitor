@@ -42,6 +42,7 @@ def seed_source(
     store: Store,
     *,
     source_id: str = "s1",
+    status: Status = Status.ACTIVE,
     search_score: float = 100,
     playback_score: float = 100,
     source_type: str = "single",
@@ -54,7 +55,7 @@ def seed_source(
         raw_url=f"https://example.com/{source_id}.json",
         name=source_id,
         type=source_type,
-        status=Status.ACTIVE,
+        status=status,
         score=100,
         stability_score=100,
         search_score=search_score,
@@ -113,6 +114,25 @@ def test_whitelisted_source_bypasses_playback_gate(tmp_path):
     try:
         seed_source(
             store,
+            search_score=0,
+            playback_score=0,
+            probe=None,
+            whitelisted=True,
+        )
+        eligible, _ = ConfigBuilder(cfg, store).eligible()
+    finally:
+        store.close()
+
+    assert [source.id for source in eligible] == ["s1"]
+
+
+def test_whitelisted_degraded_source_stays_eligible(tmp_path):
+    cfg = build_config(tmp_path)
+    store = Store(cfg.path("app.db_path", ensure_parent=True))
+    try:
+        seed_source(
+            store,
+            status=Status.DEGRADED,
             search_score=0,
             playback_score=0,
             probe=None,

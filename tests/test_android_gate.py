@@ -64,6 +64,7 @@ def build_config(
     require_android_jar: bool,
     android_satisfies_playback: bool = True,
     android_satisfies_search: bool = True,
+    content_overlap_threshold: float = 0,
 ):
     return load_config(
         explicit_root=ROOT,
@@ -82,7 +83,7 @@ def build_config(
                     "require_android_jar": require_android_jar,
                     "android_satisfies_playback": android_satisfies_playback,
                     "android_satisfies_search": android_satisfies_search,
-                    "content_overlap_threshold": 0,
+                    "content_overlap_threshold": content_overlap_threshold,
                 },
             },
         },
@@ -98,6 +99,7 @@ def seed_source(
     playback_url_obtained: bool = True,
     playback_probe_success: bool = True,
     playback_content_type: str = "application/vnd.apple.mpegurl",
+    whitelisted: bool = False,
 ) -> Source:
     source = Source(
         id=source_id,
@@ -109,6 +111,7 @@ def seed_source(
         score=100,
         stability_score=100,
         first_seen_at=to_iso(utcnow() - timedelta(days=30)),
+        whitelisted=whitelisted,
     )
     probe = ProbeResult(
         source_id=source_id,
@@ -380,6 +383,86 @@ def test_dedup_does_not_merge_distinct_csp_keys(tmp_path):
         payloads = {
             "https://example.com/s1.json": first,
             "https://example.com/s2.json": second,
+        }
+        eligible, _ = ConfigBuilder(cfg, store, client=UrlClient(payloads)).eligible()
+    finally:
+        store.close()
+    assert sorted(source.id for source in eligible) == ["s1", "s2"]
+
+
+def test_dedup_keeps_android_verified_subset_alongside_larger_config(tmp_path):
+    cfg = build_config(
+        tmp_path,
+        require_android_jar=False,
+        content_overlap_threshold=0.8,
+    )
+    verified = {
+        "sites": [
+            {"key": "a", "name": "alpha", "type": 3, "api": "csp_Alpha"},
+            {"key": "c1", "name": "c1", "type": 1, "api": "https://one.example.com/api"},
+            {"key": "c2", "name": "c2", "type": 1, "api": "https://two.example.com/api"},
+            {"key": "c3", "name": "c3", "type": 1, "api": "https://three.example.com/api"},
+            {"key": "c4", "name": "c4", "type": 1, "api": "https://four.example.com/api"},
+        ]
+    }
+    larger = {
+        "sites": [
+            {"key": "b", "name": "beta", "type": 3, "api": "csp_Beta"},
+            {"key": "c1", "name": "c1", "type": 1, "api": "https://one.example.com/api"},
+            {"key": "c2", "name": "c2", "type": 1, "api": "https://two.example.com/api"},
+            {"key": "c3", "name": "c3", "type": 1, "api": "https://three.example.com/api"},
+            {"key": "c4", "name": "c4", "type": 1, "api": "https://four.example.com/api"},
+            {"key": "c5", "name": "c5", "type": 1, "api": "https://five.example.com/api"},
+        ]
+    }
+    record(tmp_path, "s1", loadable=4, playable=2)
+    store = Store(cfg.path("app.db_path", ensure_parent=True))
+    try:
+        seed_source(store, "s1")
+        seed_source(store, "s2")
+        payloads = {
+            "https://example.com/s1.json": verified,
+            "https://example.com/s2.json": larger,
+        }
+        eligible, _ = ConfigBuilder(cfg, store, client=UrlClient(payloads)).eligible()
+    finally:
+        store.close()
+    assert sorted(source.id for source in eligible) == ["s1", "s2"]
+
+
+def test_dedup_keeps_android_verified_subset_when_larger_config_comes_first(tmp_path):
+    cfg = build_config(
+        tmp_path,
+        require_android_jar=False,
+        content_overlap_threshold=0.8,
+    )
+    larger = {
+        "sites": [
+            {"key": "a", "name": "alpha", "type": 3, "api": "csp_Alpha"},
+            {"key": "c1", "name": "c1", "type": 1, "api": "https://one.example.com/api"},
+            {"key": "c2", "name": "c2", "type": 1, "api": "https://two.example.com/api"},
+            {"key": "c3", "name": "c3", "type": 1, "api": "https://three.example.com/api"},
+            {"key": "c4", "name": "c4", "type": 1, "api": "https://four.example.com/api"},
+            {"key": "c5", "name": "c5", "type": 1, "api": "https://five.example.com/api"},
+        ]
+    }
+    verified = {
+        "sites": [
+            {"key": "b", "name": "beta", "type": 3, "api": "csp_Beta"},
+            {"key": "c1", "name": "c1", "type": 1, "api": "https://one.example.com/api"},
+            {"key": "c2", "name": "c2", "type": 1, "api": "https://two.example.com/api"},
+            {"key": "c3", "name": "c3", "type": 1, "api": "https://three.example.com/api"},
+            {"key": "c4", "name": "c4", "type": 1, "api": "https://four.example.com/api"},
+        ]
+    }
+    record(tmp_path, "s2", loadable=4, playable=2)
+    store = Store(cfg.path("app.db_path", ensure_parent=True))
+    try:
+        seed_source(store, "s1", whitelisted=True)
+        seed_source(store, "s2")
+        payloads = {
+            "https://example.com/s1.json": larger,
+            "https://example.com/s2.json": verified,
         }
         eligible, _ = ConfigBuilder(cfg, store, client=UrlClient(payloads)).eligible()
     finally:

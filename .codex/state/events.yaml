@@ -17,3 +17,24 @@ events:
   from: IN_PROGRESS
   to: VERIFYING
   reason: 聚焦测试 4 passed，全量 make test 退出码 0，真实数据库构建发布 3 个有搜索和播放证据的源，等待手机复测新入口
+- id: EVT-004
+  date: 2026-10-05
+  type: TASK
+  target_id: T-006
+  from: IN_PROGRESS
+  to: DONE
+  statement: Android 真机 JAR 门禁、csp 去重和真机证据合并已完成，E-012 至 E-014 通过。
+- id: EVT-005
+  date: 2026-10-05
+  type: BUILD
+  target_id: T-007
+  from: IN_PROGRESS
+  to: VERIFYING
+  statement: build_id=20261005-043906 重建发布 49 条，validation.ok=true，等待提交推送和线上核对。
+- id: EVT-006
+  date: 2026-10-05
+  type: CHANGE
+  target_id: CR-009
+  from: DRAFT
+  to: IMPLEMENTED
+  statement: 镜像误杀修复完成，超时、5xx、连接被拒和预算耗尽不再删源。

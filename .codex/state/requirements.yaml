@@ -114,3 +114,91 @@ requirements:
     non_goals: [声称白名单源已通过自动播放探测, 扩大未经验证的源]
     acceptance_criteria: [AC-105]
     source: "2026-10-04 用户要求保留手机实测可播的豆了和精东"
+  - id: REQ-601
+    title: "JAR/csp 源必须通过 Android 真机门禁"
+    statement: "带 csp_* 或 JAR 站点的源，必须先完成 Android DexClassLoader 并真实拉到媒体字节，才允许进入发布集。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-001, GOAL-002, GOAL-003]
+    scope_tags: [data, release, testing]
+    non_goals: [伪造真机结果, 放宽发布门槛凑数量]
+    acceptance_criteria: [AC-601]
+    source: "2026-10-04 用户手机实测 360 / 茅台 jar 解析失败"
+  - id: REQ-602
+    title: "真机播放证据可替代 runner 侧 L5"
+    statement: "JAR 源的真机可播证据可以替代 runner 侧失败的 L5 播放探针，但搜索证据仍必须单独成立。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-001, GOAL-002, GOAL-003]
+    scope_tags: [data, release, testing]
+    non_goals: [跳过搜索验证]
+    acceptance_criteria: [AC-602]
+    source: "2026-10-04 T-006 实现"
+  - id: REQ-603
+    title: "内容去重包含 csp 类名"
+    statement: "内容去重指纹必须包含 csp_* 类名，避免内容不同的 JAR 源因 CMS 主机子集被误判为镜像。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-001, GOAL-002, GOAL-003]
+    scope_tags: [data, release, testing]
+    non_goals: [放宽所有去重]
+    acceptance_criteria: [AC-603]
+    source: "2026-10-04 T-006 实现"
+  - id: REQ-604
+    title: "零站点真机结果不写入证据"
+    statement: "配置未下载成功（site_count=0）的真机结果不得写入 data/android_verified.json。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-001, GOAL-003]
+    scope_tags: [data, testing]
+    non_goals: [用零站点记录凑证据数量]
+    acceptance_criteria: [AC-604]
+    source: "2026-10-04 T-006 实现"
+  - id: REQ-701
+    title: "发布入口必须走可用镜像"
+    statement: "构建命令必须显式提供 GITHUB_REPOSITORY，确保 dist/tvbox.json 与 CDN 条目的 URL 全部走可用镜像，而不是手机打不开的 raw.githubusercontent.com。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-002]
+    scope_tags: [data, release]
+    non_goals: [取消镜像回退]
+    acceptance_criteria: [AC-701]
+    source: "2026-10-04 用户手机端打不开原点入口"
+  - id: REQ-702
+    title: "真机证据只允许不弱结果覆盖"
+    statement: "jar_check.write_evidence 只允许不弱于既有记录的真机结果覆盖，避免窄抽样弱结果冲掉全量强证据；同强度允许刷新时间戳。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-001, GOAL-003]
+    scope_tags: [data, testing]
+    non_goals: [删除历史证据]
+    acceptance_criteria: [AC-702]
+    source: "2026-10-04 T-007 实现"
+  - id: REQ-703
+    title: "已证实可播源不得被弱抽样撤下"
+    statement: "jsm 全量真机跑出的 playable=1 不得再被 20 站窄抽样覆盖，重建后必须回归发布集。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-001, GOAL-002]
+    scope_tags: [data, release, testing]
+    non_goals: [手工写死发布名单]
+    acceptance_criteria: [AC-703]
+    source: "2026-10-04 T-007 回归"
+  - id: REQ-704
+    title: "持续扩充真机可播源"
+    statement: "继续对高产区候选补全量或放宽抽样真机证据，发现更多手机端真正可播的源；未验证源不得预先声称可播。"
+    status: ACTIVE
+    priority: SHOULD
+    release: 1.1.0
+    goal_refs: [GOAL-001, GOAL-002, GOAL-003]
+    scope_tags: [data, testing]
+    non_goals: [伪造真机结果, 用成人源凑数量]
+    acceptance_criteria: [AC-704]
+    source: "2026-10-05 用户要求继续找更多可用源"

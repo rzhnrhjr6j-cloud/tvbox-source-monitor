@@ -63,8 +63,25 @@ def make_mirror(tmp_path: Path, mirror: dict | None = None) -> ConfigMirror:
     return ConfigMirror(cfg, tmp_path / "dist", client)
 
 
-def stub_source(url: str, name: str = "stub", source_id: str = "a" * 64):
-    return types.SimpleNamespace(id=source_id, url=url, raw_url=url, name=name)
+def stub_source(
+    url: str,
+    name: str = "stub",
+    source_id: str = "a" * 64,
+    whitelisted: bool = False,
+):
+    return types.SimpleNamespace(
+        id=source_id,
+        url=url,
+        raw_url=url,
+        name=name,
+        whitelisted=whitelisted,
+    )
+
+
+def write_previous_mirror(tmp_path: Path, source_id: str, content: bytes) -> None:
+    target = tmp_path / "dist" / SOURCES_DIR
+    target.mkdir(parents=True, exist_ok=True)
+    (target / f"{source_id[:16]}.json").write_bytes(content)
 
 
 # ---------------------------------------------------------------------------
@@ -254,6 +271,40 @@ def test_jar_pruning_can_be_switched_off(tmp_path):
         plan = mirror.prepare([stub_source(f"{server.base}/deadjars.json", source_id="b" * 64)])
         body = json.loads(plan.entries["b" * 64].content)
         assert len(body["sites"]) == 4
+
+
+def test_whitelisted_sources_are_prepared_before_the_shared_jar_cache(tmp_path, monkeypatch):
+    """A runner-side verdict must not poison a user-verified source later in the run."""
+    with LocalSourceServer() as server:
+        mirror = make_mirror(tmp_path, {
+            "enabled": True,
+            "public_base": "https://me.github.io/repo",
+            "prune_dead_jars": False,
+            "host_jars": False,
+        })
+        seen: list[str] = []
+        original = mirror._prune_dead_jars
+
+        def recording_prune(text, cache):
+            seen.append("verified" if "dead-jar" not in text else "ordinary")
+            return original(text, cache)
+
+        monkeypatch.setattr(mirror, "_prune_dead_jars", recording_prune)
+        verified = stub_source(
+            f"{server.base}/withjar.json",
+            name="verified",
+            source_id="2" * 64,
+            whitelisted=True,
+        )
+        ordinary = stub_source(
+            f"{server.base}/deadjars.json",
+            name="ordinary",
+            source_id="1" * 64,
+        )
+
+        mirror.prepare([ordinary, verified])
+
+        assert seen == ["verified", "ordinary"]
 
 
 def test_a_proxied_jar_is_published_on_our_own_host(tmp_path):
@@ -910,6 +961,89 @@ def test_unreachable_config_is_dropped_by_default(tmp_path):
     source = stub_source("http://127.0.0.1:1/gone.json", source_id="d" * 64)
     plan = mirror.prepare([source])
     assert source.id in plan.dropped
+    assert source.id not in plan.entries
+
+
+def test_whitelisted_fetch_failure_reuses_the_previous_mirror(tmp_path):
+    base = "https://me.github.io/repo"
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": base})
+    source = stub_source("http://127.0.0.1:1/gone.json", source_id="a1" * 32, whitelisted=True)
+    old = b'{"sites":[{"name":"\\u8c46\\u4e86","api":"csp_X"}]}'
+    target = tmp_path / "dist" / SOURCES_DIR
+    target.mkdir(parents=True)
+    (target / f"{source.id[:16]}.json").write_bytes(old)
+
+    plan = mirror.prepare([source])
+
+    assert source.id not in plan.dropped
+    assert plan.entries[source.id].content == old
+    assert plan.entries[source.id].site_count == 1
+    assert plan.entries[source.id].url == f"{base}/{SOURCES_DIR}/{source.id[:16]}.json"
+
+
+def test_whitelisted_fetch_failure_without_a_previous_mirror_keeps_the_original_url(tmp_path):
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": "https://me.github.io/repo"})
+    source = stub_source("http://127.0.0.1:1/gone.json", source_id="a2" * 32, whitelisted=True)
+
+    plan = mirror.prepare([source])
+
+    assert source.id not in plan.dropped
+    assert source.id not in plan.entries
+
+
+def test_whitelisted_dead_jar_failure_reuses_the_previous_mirror(tmp_path, monkeypatch):
+    base = "https://me.github.io/repo"
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": base})
+    source_id = "b1" * 32
+    old = b'{"sites":[{"name":"\\u8c46\\u4e86","api":"csp_X"}]}'
+    write_previous_mirror(tmp_path, source_id, old)
+    monkeypatch.setattr(
+        mirror, "_prune_dead_jars",
+        lambda text, cache: ('{"sites":[]}', 0, 0),
+    )
+
+    with LocalSourceServer() as server:
+        source = stub_source(server.config_url, source_id=source_id, whitelisted=True)
+        plan = mirror.prepare([source])
+
+    assert source.id not in plan.dropped
+    assert plan.entries[source.id].content == old
+    assert plan.entries[source.id].site_count == 1
+
+
+def test_whitelisted_unreachable_spider_reuses_the_previous_mirror(tmp_path, monkeypatch):
+    base = "https://me.github.io/repo"
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": base})
+    source_id = "b2" * 32
+    old = b'{"sites":[{"name":"old","api":"csp_X"}]}'
+    write_previous_mirror(tmp_path, source_id, old)
+    monkeypatch.setattr(
+        mirror, "_prune_unavailable",
+        lambda text, state: (text, 0, True),
+    )
+
+    with LocalSourceServer() as server:
+        source = stub_source(server.config_url, source_id=source_id, whitelisted=True)
+        plan = mirror.prepare([source])
+
+    assert source.id not in plan.dropped
+    assert plan.entries[source.id].content == old
+
+
+def test_whitelisted_source_with_no_openable_rows_keeps_the_original_url(tmp_path, monkeypatch):
+    base = "https://me.github.io/repo"
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": base})
+    source_id = "b3" * 32
+    monkeypatch.setattr(
+        mirror, "_prune_dead_jars",
+        lambda text, cache: ('{"sites":[]}', 0, None),
+    )
+
+    with LocalSourceServer() as server:
+        source = stub_source(server.config_url, source_id=source_id, whitelisted=True)
+        plan = mirror.prepare([source])
+
+    assert source.id not in plan.dropped
     assert source.id not in plan.entries
 
 

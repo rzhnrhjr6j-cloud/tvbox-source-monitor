@@ -1,26 +1,25 @@
 session:
-  id: SESSION-2026-10-04-PLAYBACK-GATE
-  current_task: T-005
-  status: WAITING_USER_VERIFICATION
-  objective: "把发布门槛从配置可解析提升为真实搜索和播放通过，只保留用户实机验证可播的白名单源，并撤掉手机实测失败的源。"
+  id: SESSION-2026-10-05-EXPAND-VERIFIED
+  current_task: T-007
+  status: IN_PROGRESS
+  objective: "修复手机端发布入口、保留强真机证据并扩大可播源；把 49 条验证过的发布产物推到线上，并继续找更多可用源。"
   completed:
-    - "真实手机测试已登记为 T-002 的 PARTIAL 证据"
-    - "CR-004、REQ-104、AC-104、T-005 已登记"
-    - "CR-005、REQ-105、AC-105 已登记"
-    - "播放级门槛和白名单例外已实现，聚焦测试 5 passed，全量 make test 退出码 0"
-    - "真实数据库镜像构建通过，发布 4 个源，包含精东（24站）和豆了（159站）"
-    - "CR-006、E-011 已登记"
-    - "手机实测失败的 360 和茅台已加入黑名单，发布下限调整为 2"
-    - "重新构建通过，发布 2 个源：精东（24站）和豆了（159站）"
+    - "T-006 Android 真机门禁、csp 去重和真机证据合并已实现并入控制层"
+    - "CR-007、CR-008、CR-009 已登记，E-012 至 E-021 已补齐"
+    - "真实数据库完成最新重建：build_id=20261005-043906，发布 49 条，validation.ok=true"
+    - "发布集保留精东（24站）和豆了（159站），360 和茅台未混入"
+    - "49 条发布 URL 全部走 gh-proxy.com，真机证据 120 条"
   in_progress:
-    - "等待提交、推送和 Pages 更新后只复测精东和豆了"
-  discovered_changes: []
+    - "提交并推送 49 条重建产物，核对线上 tvbox.json"
+    - "继续用 agent-reach 的 GitHub CLI 搜索候选源，补真机可播证据后再发布"
+  discovered_changes:
+    - "高产区候选仍需补全量或放宽抽样真机证据，尤其是 Lightconer、bigtangxi、yw、ewctt、cluntop、菜妮丝等。"
   discovered_issues:
     - "CN 地区检测不是真实大陆节点。"
     - "影视仓 6.1.8 输出格式尚未实机验证。"
     - "发布链路依赖 gh-proxy.com 和 jsdelivr。"
-    - "旧线上 86 个输出源全部为 experimental。"
-    - "配置可解析不等于真实可播，旧发布门槛漏掉了大多数不可播源。"
+    - "当前 49 个输出源仍全部为 experimental。"
+    - "未验证源不得预先声称可播。"
   blockers:
-    - "只含精东和豆了的新产物尚未提交并推送到线上。"
-  next_task: T-005
+    - "49 条新产物尚未提交并推送到线上。"
+  next_task: T-007

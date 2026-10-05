@@ -36,6 +36,26 @@ discovery:
       - "csp_ extension:json"
       - "csp_AppYsV2 extension:json"
       - "csp_XYQHiker extension:json"
+      # 2026-10-05 Android evidence: these classes have produced real media
+      # bytes on the emulator. Search the exact class names, not just `csp_`.
+      - '"csp_XMVideo" extension:json'
+      - '"csp_XBPQ" extension:json'
+      - '"csp_AppRJ" extension:json'
+      - '"csp_Jpys" extension:json'
+      - '"csp_Gz360" extension:json'
+      - '"csp_Dm84" extension:json'
+      # 2026-10-05 second pass: classes seen in currently maintained JARs.
+      - '"csp_SeedHub" extension:json'
+      - '"csp_Market" extension:json'
+      - '"csp_AppDrama" extension:json'
+      - '"csp_New6v" extension:json'
+      - '"csp_FirstAid" extension:json'
+      - '"csp_Ikanbot" extension:json'
+      - '"csp_Douban" extension:json'
+      - '"csp_BiliGuard" extension:json'
+      - '"csp_AppGet" extension:json'
+      - '"csp_PanWebShare" extension:json'
+      - '"csp_Config" extension:json'
       - "com.github.catvod.spider extension:json"
       - "spider jar sites in:file extension:json"
       - "filename:ck.json tvbox"
@@ -53,6 +73,10 @@ discovery:
       - "filename:XBP.json"
       - "668yun.top in:file"
       - "kayyw.com in:file"
+      - '"wp.kayyw.com/f/bobgtv" extension:json'
+      - '"wp.kayyw.com/f/nOjVCX" extension:json'
+      - '"wp.kayyw.com/f/EQ4Mu0" extension:json'
+      - '"wp.kayyw.com/f/Odakcd" extension:json'
       - "kstore.space in:file"
       - "mpimg.cn in:file"
       - "tvbox.json in:path"
@@ -148,6 +172,21 @@ discovery:
       - kukuqi666/TVBoxOS-Mobile
       - yangxiaoge/tvbox_cust
       - 13174771/tvboxlist
+      # Exact csp class searches surfaced these repos on 2026-10-05.
+      - shichuanenhui/TvBox
+      - fish2018/lib
+      - leexuben/BINGO-TV
+      - dalazhi/tvbox
+      - sky4726/sk
+      - yescopys/box
+      - zzq1234567890/tvbox1
+      # 2026-10-05 GitHub 二次验证：最近有推送、仓库可访问。
+      - hl128k/tvbox
+      - adminouyang/231006
+      - mhmdxahmd/mafly
+      - ne7359/tvurl
+      - DodgeZhang/tvbox
+      - xiaobaitulele/xptv
     # only these path shapes are treated as candidate configs
     path_patterns:
       - '\.json$'

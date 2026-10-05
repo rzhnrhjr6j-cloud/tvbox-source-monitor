@@ -107,6 +107,14 @@ class ConfigBuilder:
         if bool(self.output_cfg.get("include_degraded", False)):
             statuses.extend([Status.DEGRADED, Status.RECOVERING])
         candidates = self.store.list_sources(statuses=statuses)
+        seen = {source.id for source in candidates}
+        # A whitelist entry is a manual, user-verified override.  It must stay
+        # eligible even while automated health checks classify it as degraded
+        # or failed; otherwise the quality-gate bypass above is unreachable.
+        candidates.extend(
+            source for source in self.store.list_sources()
+            if source.whitelisted and source.id not in seen
+        )
         if not bool(self.output_cfg.get("include_degraded", False)) and self._android_gate_enabled():
             seen = {source.id for source in candidates}
             candidates.extend(
@@ -235,6 +243,21 @@ class ConfigBuilder:
             require_playable=bool(gate.get("require_android_playable", True)),
         )
 
+    def _android_playable_count(self, source: Source) -> int:
+        """Fresh real-device playback strength used to rank duplicate configs."""
+        record = self._android_evidence_map().get(source.id)
+        if record is None:
+            return 0
+        gate = self.output_cfg.get("quality_gate") or {}
+        if not android_passes(
+            source.id,
+            self._android_evidence_map(),
+            max_age_days=float(gate.get("android_evidence_max_age_days", 30)),
+            require_playable=True,
+        ):
+            return 0
+        return record.playable_count
+
     def _android_substitutes_playback(self, source: Source, gate: dict[str, Any]) -> bool:
         """True when fresh real-device playback evidence can replace L5.
 
@@ -275,12 +298,18 @@ class ConfigBuilder:
         fingerprints = {source.id: self._domain_fingerprint(source) for source in sources}
         ordered = sorted(
             sources,
-            key=lambda item: (0 if item.whitelisted else 1, -len(fingerprints[item.id]), item.id),
+            key=lambda item: (
+                0 if item.whitelisted else 1,
+                -self._android_playable_count(item),
+                -len(fingerprints[item.id]),
+                item.id,
+            ),
         )
         kept: list[Source] = []
         kept_fps: list[set[str]] = []
         for source in ordered:
             fp = fingerprints[source.id]
+            verified_playback = self._android_playable_count(source) > 0
             duplicate = False
             replaced = False
             for index, previous in enumerate(kept_fps):
@@ -289,11 +318,21 @@ class ConfigBuilder:
                 overlap = len(fp & previous) / min(len(fp), len(previous))
                 if overlap < threshold:
                     continue
+                if verified_playback:
+                    # Real-device playback is the strongest admission signal.
+                    # A smaller or differently-mirrored config can still expose
+                    # working sites even when its API-host fingerprint overlaps
+                    # with an already-published larger config.
+                    continue
                 if len(fp) <= len(previous):
                     duplicate = True
                     break
                 if kept[index].whitelisted:
                     # the verified entry stays; this superset still adds sites
+                    continue
+                if self._android_playable_count(source) < self._android_playable_count(kept[index]):
+                    # The larger config has weaker real-device evidence.  Keep
+                    # both: the verified subset stays, the superset may add sites.
                     continue
                 kept[index] = source
                 kept_fps[index] = fp

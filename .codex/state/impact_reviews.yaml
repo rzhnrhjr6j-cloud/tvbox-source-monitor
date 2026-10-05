@@ -10,3 +10,40 @@ reviews:
   requirement_ids:
   - REQ-104
   target_release: 1.1.0
+- change_request_id: CR-007
+  status: PASS
+  risk: MEDIUM
+  summary: 只调整真机证据的写入规则并补录精东证据，不改变发布门槛本身
+  reason: 零站点记录不再污染证据，真机证据成为可审计的 L6 依据
+  timestamp: '2026-10-05T00:00:00+08:00'
+  affected_tasks:
+  - T-006
+  requirement_ids:
+  - REQ-604
+  - REQ-602
+  target_release: 1.1.0
+- change_request_id: CR-008
+  status: PASS
+  risk: MEDIUM
+  summary: 修复发布入口、强证据合并和候选池扩充；不放宽 L6 门禁
+  reason: 新产物已用真实数据库重建并核对 49 条 URL 均走镜像
+  timestamp: '2026-10-05T00:00:00+08:00'
+  affected_tasks:
+  - T-007
+  requirement_ids:
+  - REQ-701
+  - REQ-702
+  - REQ-703
+  - REQ-704
+  target_release: 1.1.0
+- change_request_id: CR-009
+  status: PASS
+  risk: MEDIUM
+  summary: 镜像暂时失败不再删除源，只有已证实消失才删除
+  reason: 单测覆盖预算耗尽、超时、404 和已镜像四类分支，豆了稳定回归
+  timestamp: '2026-10-05T00:00:00+08:00'
+  affected_tasks:
+  - T-007
+  requirement_ids:
+  - REQ-704
+  target_release: 1.1.0

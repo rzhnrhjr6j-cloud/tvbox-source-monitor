@@ -1,19 +1,20 @@
 {
-  "generated_at": "2026-10-05T04:39:06Z",
-  "build_id": "20261005-043906",
+  "generated_at": "2026-10-05T05:39:20Z",
+  "build_id": "20261005-053920",
   "summary": {
     "sources": {
       "active": 331,
+      "candidate": 11,
       "degraded": 136,
       "failed": 2
     },
-    "candidates": 0,
+    "candidates": 11,
     "tiers": {
       "primary": 0,
       "backup": 0,
-      "experimental": 49
+      "experimental": 50
     },
-    "output_items": 49
+    "output_items": 50
   },
   "regions": {
     "CN": {
@@ -356,6 +357,27 @@
       ],
       "regions_failed": [],
       "avg_response_ms": 276.75,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "75baea90f10f4c7ee5a9e54444236f85c46be14ddf4f5dd9c85fe0a5df63648e",
+      "name": "tvbox.json",
+      "url": "https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/main/tvbox.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-05T03:53:40Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 105.83333333333333,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1557,6 +1579,20 @@
   ],
   "build_history": [
     {
+      "build_id": "20261005-043906",
+      "generated_at": "2026-10-05T04:39:06Z",
+      "published": true,
+      "fallback": false,
+      "items": 49,
+      "active": 331,
+      "degraded": 136,
+      "failed": 2,
+      "new": 1,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
+    {
       "build_id": "20261005-041205",
       "generated_at": "2026-10-05T04:12:05Z",
       "published": true,
@@ -1958,20 +1994,6 @@
       "degraded": 1,
       "failed": 1,
       "new": 0,
-      "recovered": 0,
-      "removed": 0,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261004-103359",
-      "generated_at": "2026-10-04T10:33:59Z",
-      "published": true,
-      "fallback": false,
-      "items": 4,
-      "active": 100,
-      "degraded": 1,
-      "failed": 1,
-      "new": 1,
       "recovered": 0,
       "removed": 0,
       "blocked_reason": ""

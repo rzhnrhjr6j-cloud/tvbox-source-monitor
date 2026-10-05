@@ -187,6 +187,8 @@ discovery:
       - ne7359/tvurl
       - DodgeZhang/tvbox
       - xiaobaitulele/xptv
+      # 2026-10-05 真机可播（厂长/比特/热播/Dm84），49 站配置已进候选池
+      - mrgaoshuiquan/tvbox-config
     # only these path shapes are treated as candidate configs
     path_patterns:
       - '\.json$'

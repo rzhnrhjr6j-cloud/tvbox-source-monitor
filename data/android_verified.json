@@ -554,6 +554,20 @@
       ]
     },
     {
+      "source_id": "75baea90f10f4c7ee5a9e54444236f85c46be14ddf4f5dd9c85fe0a5df63648e",
+      "config_url": "https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/main/tvbox.json",
+      "verified_at": "2026-10-05T04:59:04Z",
+      "site_count": 49,
+      "loadable_count": 46,
+      "playable_count": 4,
+      "playable_keys": [
+        "厂长",
+        "比特",
+        "热播",
+        "Dm84"
+      ]
+    },
+    {
       "source_id": "7f851d54c941af745fbb24f7f035cf3091f63c6978639178e1dd8dc224fe4bb5",
       "config_url": "https://raw.githubusercontent.com/cyh92/live/main/lines/my.json",
       "verified_at": "2026-10-04T21:12:04Z",
@@ -1083,6 +1097,15 @@
       "playable_keys": [
         "巴士"
       ]
+    },
+    {
+      "source_id": "d14710de6bd730334e96c09711323b59b06ff89574e64d494c14f9c843ab968c",
+      "config_url": "https://raw.githubusercontent.com/cnnbgo/tvbox/main/2.json",
+      "verified_at": "2026-10-05T05:03:20Z",
+      "site_count": 19,
+      "loadable_count": 19,
+      "playable_count": 0,
+      "playable_keys": []
     },
     {
       "source_id": "da03426545491a938a97066ee3132090749b63ced337c75d517d77e013ae804f",

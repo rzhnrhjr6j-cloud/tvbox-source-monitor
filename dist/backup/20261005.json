@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-05T04:12:05Z",
+  "generated_at": "2026-10-05T04:39:06Z",
   "urls": [
     {
       "name": "精品 | 采集 #2（79站）",
@@ -193,6 +193,10 @@
     {
       "name": "豆瓣 #1（175站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/42a114b4151f986c.json"
+    },
+    {
+      "name": "豆了（159站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/745561a3739c9b0c.json"
     }
   ]
 }

@@ -315,6 +315,10 @@
     {
       "url": "https://raw.githubusercontent.com/ljf0521/tvnew/HEAD/ziyong1.json",
       "name": "ljf0521-ziyong1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/main/tvbox.json",
+      "name": "mrgaoshuiquan"
     }
   ]
 }

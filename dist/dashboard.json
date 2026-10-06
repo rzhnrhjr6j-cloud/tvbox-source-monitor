@@ -1,29 +1,49 @@
 {
-  "generated_at": "2026-10-05T05:39:20Z",
-  "build_id": "20261005-053920",
+  "generated_at": "2026-10-06T01:26:47Z",
+  "build_id": "20261006-012647",
   "summary": {
     "sources": {
-      "active": 331,
-      "candidate": 11,
-      "degraded": 136,
+      "active": 486,
+      "degraded": 73,
       "failed": 2
     },
-    "candidates": 11,
+    "candidates": 0,
     "tiers": {
       "primary": 0,
       "backup": 0,
-      "experimental": 50
+      "experimental": 49
     },
-    "output_items": 50
+    "output_items": 49
   },
   "regions": {
     "CN": {
-      "checks": 3224,
-      "successes": 3205,
-      "availability_percent": 99.41
+      "checks": 3491,
+      "successes": 3472,
+      "availability_percent": 99.46
     }
   },
   "sources": [
+    {
+      "id": "c9c23cd61fe799699c2dde33cb1c03f3e4b3fd28599c9ad4953779a1137f59c5",
+      "name": "woshishiq1-shiba",
+      "url": "https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/%E5%8D%81%E5%85%AB.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:12:44Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 290.625,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
     {
       "id": "8fee3b071d12c36f90910e4c00363aa156e6369844dbbfedd82fa2eb5f71379b",
       "name": "DodgeZhang-huangju",
@@ -35,13 +55,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:20Z",
+      "last_success_at": "2026-10-06T01:12:50Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 621.25,
+      "avg_response_ms": 546.5,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -56,13 +76,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:20Z",
+      "last_success_at": "2026-10-06T01:12:50Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 497.3333333333333,
+      "avg_response_ms": 458.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -77,13 +97,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:20Z",
+      "last_success_at": "2026-10-06T01:12:50Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 550.5555555555555,
+      "avg_response_ms": 525.6923076923077,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -98,13 +118,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:54:11Z",
+      "last_success_at": "2026-10-06T01:13:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 396.35185185185185,
+      "avg_response_ms": 381.2413793103448,
       "consecutive_failure": 0,
       "whitelisted": true
     },
@@ -119,13 +139,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:21Z",
+      "last_success_at": "2026-10-06T01:12:46Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 340.75,
+      "avg_response_ms": 337.25,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -140,55 +160,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:21Z",
+      "last_success_at": "2026-10-06T01:12:46Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 337.5,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "c9c23cd61fe799699c2dde33cb1c03f3e4b3fd28599c9ad4953779a1137f59c5",
-      "name": "woshishiq1-shiba",
-      "url": "https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/%E5%8D%81%E5%85%AB.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 93.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:27Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 401.0,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "f831756121e75819aeafe066897ca8edfdb8042714da9d0699a23d08dde1e1a5",
-      "name": "xvod.json",
-      "url": "https://raw.githubusercontent.com/yescopys/box/main/catvod/xvod.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 93.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:27Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 324.5,
+      "avg_response_ms": 307.125,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -203,13 +181,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:25Z",
+      "last_success_at": "2026-10-06T01:12:53Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 370.25,
+      "avg_response_ms": 317.5,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -224,13 +202,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:27Z",
+      "last_success_at": "2026-10-06T01:12:52Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 393.5,
+      "avg_response_ms": 308.1,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -241,17 +219,17 @@
       "status": "active",
       "tier": "experimental",
       "type": "single",
-      "score": 75.741,
+      "score": 75.69,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:25Z",
+      "last_success_at": "2026-10-06T01:12:52Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 291.5925925925926,
+      "avg_response_ms": 279.7758620689655,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -262,17 +240,17 @@
       "status": "active",
       "tier": "experimental",
       "type": "single",
-      "score": 73.5,
+      "score": 75.0,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:30Z",
+      "last_success_at": "2026-10-06T01:12:56Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 353.5,
+      "avg_response_ms": 278.375,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -283,17 +261,17 @@
       "status": "active",
       "tier": "experimental",
       "type": "single",
-      "score": 73.5,
+      "score": 75.0,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:33Z",
+      "last_success_at": "2026-10-06T01:13:04Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 368.25,
+      "avg_response_ms": 282.5,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -308,13 +286,34 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:34Z",
+      "last_success_at": "2026-10-06T01:12:58Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 393.5,
+      "avg_response_ms": 339.625,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "5b1d2f5ab24fa0b30c3e530503bceffc91f64ca2353f0c701a1faf64f06c158a",
+      "name": "AA999OK-18005",
+      "url": "https://raw.githubusercontent.com/AA999OK/TVBOX/HEAD/CK/18005/jav.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:12:57Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 256.125,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -322,20 +321,125 @@
       "id": "2651a7041e6d9d3ae63e3490401c8c26468bb47627b7086c24c12a18e5a31a07",
       "name": "Lightconer",
       "url": "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/%E5%8D%95%E4%BB%93%E8%81%9A%E5%90%88.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 60.0,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:31Z",
+      "last_success_at": "2026-10-06T01:12:58Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 289.5,
+      "avg_response_ms": 255.875,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "f207435f85a00d747da25bffb023b7feb6705edf8d8cf99a20d8e31dfda2a7c1",
+      "name": "TVBox-PG",
+      "url": "https://raw.githubusercontent.com/13998394872/TVBox/main/PG.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:12:59Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 278.375,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "625dd565aeded047a4e0babe2bedf7acaa4958347333df7bf5f915f548edf60a",
+      "name": "bizhangjie-index18",
+      "url": "https://raw.githubusercontent.com/AlanTse1314/bizhangjieCatVodSpider/main/json/index18.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:02Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 279.375,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "aa9e15287a28b5bc88f14d3e982e1e6727099244b10b58c81f25154d68e9f1dd",
+      "name": "feimao",
+      "url": "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/feimao.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:02Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 195.625,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "b973732f707996ad9cfbb2bd47385e8448a90d6647eaddb8a6489c89804af158",
+      "name": "hkuc-0827",
+      "url": "https://raw.githubusercontent.com/hkuc/tvbox-config/HEAD/tv/6/0827.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:10Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 288.75,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "f5bd906efdf3510954bd42f32574ecadda0ff0c565f6ecb34087c46766ded1a0",
+      "name": "hoheiya",
+      "url": "https://raw.githubusercontent.com/hoheiya9527/TvboxSelf/main/src_backup.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:04Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 265.125,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -343,20 +447,146 @@
       "id": "b805de89511b345c927332960fd978ced1363384c75576cbfbe90b97c71223fc",
       "name": "hz",
       "url": "https://raw.githubusercontent.com/meilipanduola/hz/main/tvbox.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 60.0,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:37Z",
+      "last_success_at": "2026-10-06T01:13:04Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 276.75,
+      "avg_response_ms": 230.875,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "da03426545491a938a97066ee3132090749b63ced337c75d517d77e013ae804f",
+      "name": "jiaoshihao",
+      "url": "https://raw.githubusercontent.com/jiaoshihao/tvboxs/main/000.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:05Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 256.625,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "8bf3ef6827d6611663a06a4ac963db06891d4d4a144ccaa6e6f7cd5b3d2d653a",
+      "name": "jj00780078-fun",
+      "url": "https://raw.githubusercontent.com/jj00780078/jj00780078.github.io/HEAD/fun.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:04Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 282.875,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "9d8d967110c5392515230bee1c3cd4dc6ae600c108ba99653b5a955facd63ee9",
+      "name": "jt-vip",
+      "url": "https://raw.githubusercontent.com/huangxiong1992/jt/main/vip.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:05Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 260.125,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "17a834c4e8c9bc6e1da0f93ee966b8d086df9624b3b8c9c2076f4be81b2146ac",
+      "name": "lubin-moyu",
+      "url": "https://raw.githubusercontent.com/lubin776/tvbox-api-backup/main/tvbox/%E6%91%B8%E9%B1%BC.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:10Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 280.75,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "60fffe616d1e993eef0ba2f3efd187609ea855cb0a4dbf74fa0f2d724a624884",
+      "name": "lubin776-yuanwang18",
+      "url": "https://raw.githubusercontent.com/lubin776/0/main/tvbox/%E6%84%BF%E6%9C%9B18.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:06Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 270.875,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "ce4b40f084eaa627a686151eabfe1b973ddeeac34a357f572671986c1fc62c80",
+      "name": "qist-0827",
+      "url": "https://raw.githubusercontent.com/qist/tvbox/HEAD/0827.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:06Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 256.75,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -371,13 +601,55 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:40Z",
+      "last_success_at": "2026-10-06T01:13:06Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 105.83333333333333,
+      "avg_response_ms": 107.24137931034483,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "3cb4d2deb32481c026018e54e598be05ed973380898021dd5ea651744c5ab233",
+      "name": "zheng197600-0821",
+      "url": "https://raw.githubusercontent.com/zheng197600/tvbox/main/0821.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:10Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 287.75,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "498de39ba7bfc8198a81c76c032f6e2f147187da186522bb7206774660efc399",
+      "name": "哈基米",
+      "url": "https://raw.githubusercontent.com/jenmay01/testtv/main/%E5%93%88%E5%9F%BA%E7%B1%B3.png",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-06T01:13:13Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 278.72727272727275,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -385,62 +657,20 @@
       "id": "5b34c1370113faa44736ca5a2ff95e5a4d592ac2c3dc3ac3f8099f84fba8e85f",
       "name": "菜妮丝",
       "url": "https://raw.githubusercontent.com/kimwang1978/tvbox/main/%E8%8F%9C%E5%A6%AE%E4%B8%9D/api.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 60.0,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:42Z",
+      "last_success_at": "2026-10-06T01:13:08Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 274.75,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "5b1d2f5ab24fa0b30c3e530503bceffc91f64ca2353f0c701a1faf64f06c158a",
-      "name": "AA999OK-18005",
-      "url": "https://raw.githubusercontent.com/AA999OK/TVBOX/HEAD/CK/18005/jav.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:43Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 380.0,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "f207435f85a00d747da25bffb023b7feb6705edf8d8cf99a20d8e31dfda2a7c1",
-      "name": "TVBox-PG",
-      "url": "https://raw.githubusercontent.com/13998394872/TVBox/main/PG.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:46Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 380.75,
+      "avg_response_ms": 217.375,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -455,34 +685,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:47Z",
+      "last_success_at": "2026-10-06T01:13:16Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 423.2857142857143,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "625dd565aeded047a4e0babe2bedf7acaa4958347333df7bf5f915f548edf60a",
-      "name": "bizhangjie-index18",
-      "url": "https://raw.githubusercontent.com/AlanTse1314/bizhangjieCatVodSpider/main/json/index18.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:46Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 417.0,
+      "avg_response_ms": 331.72727272727275,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -490,20 +699,20 @@
       "id": "ac08e3a8dc4d4cff5b77bd48ae5c96f574acda6cb32a75b1f941f274f7346d66",
       "name": "chengxue2020-fan18",
       "url": "https://raw.githubusercontent.com/chengxue2020/Cat-ports/main/18/2/fan18.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:54:12Z",
+      "last_success_at": "2026-10-06T01:13:20Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 482.0,
+      "avg_response_ms": 368.5,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -511,35 +720,35 @@
       "id": "51e5e3f010574b4359e2d7250eded06526a734d67e21f47247fe7695db7fc6d1",
       "name": "cxelva-a",
       "url": "https://raw.githubusercontent.com/cxelva/xpg/main/lib/a.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:46Z",
+      "last_success_at": "2026-10-06T01:13:09Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 412.25,
+      "avg_response_ms": 325.875,
       "consecutive_failure": 0,
       "whitelisted": false
     },
     {
-      "id": "aa9e15287a28b5bc88f14d3e982e1e6727099244b10b58c81f25154d68e9f1dd",
-      "name": "feimao",
-      "url": "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/feimao.json",
-      "status": "degraded",
+      "id": "a90e91094893ca8b80776a3c94138dfcfd066456584af4475c3d9edffe8fae10",
+      "name": "han-fuli",
+      "url": "https://raw.githubusercontent.com/zengjian03/han/master/18/%E7%BA%AF%E7%A6%8F%E5%88%A9.json",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:47Z",
+      "last_success_at": "2026-10-06T01:13:09Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
@@ -550,86 +759,23 @@
       "whitelisted": false
     },
     {
-      "id": "a90e91094893ca8b80776a3c94138dfcfd066456584af4475c3d9edffe8fae10",
-      "name": "han-fuli",
-      "url": "https://raw.githubusercontent.com/zengjian03/han/master/18/%E7%BA%AF%E7%A6%8F%E5%88%A9.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:47Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 458.25,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
       "id": "bb44d7c7145de6e2abdc08825568e8c086058d212437dd97893045486e8cff8b",
       "name": "hjcmcn-921",
       "url": "https://raw.githubusercontent.com/hjcmcn/z/main/921.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:47Z",
+      "last_success_at": "2026-10-06T01:13:10Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 369.25,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "b973732f707996ad9cfbb2bd47385e8448a90d6647eaddb8a6489c89804af158",
-      "name": "hkuc-0827",
-      "url": "https://raw.githubusercontent.com/hkuc/tvbox-config/HEAD/tv/6/0827.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:47Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 409.0,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "f5bd906efdf3510954bd42f32574ecadda0ff0c565f6ecb34087c46766ded1a0",
-      "name": "hoheiya",
-      "url": "https://raw.githubusercontent.com/hoheiya9527/TvboxSelf/main/src_backup.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:47Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 345.0,
+      "avg_response_ms": 302.25,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -637,20 +783,20 @@
       "id": "8233a0b487b35cbf8eb21e6b82eb91f0041874d8e142d0b1298c7f6315d4b7cd",
       "name": "hy5528",
       "url": "https://raw.githubusercontent.com/hy5528/tvbox/main/sub/x.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:47Z",
+      "last_success_at": "2026-10-06T01:13:10Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 359.0,
+      "avg_response_ms": 308.625,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -665,34 +811,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:49Z",
+      "last_success_at": "2026-10-06T01:13:10Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 403.85714285714283,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "da03426545491a938a97066ee3132090749b63ced337c75d517d77e013ae804f",
-      "name": "jiaoshihao",
-      "url": "https://raw.githubusercontent.com/jiaoshihao/tvboxs/main/000.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:49Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 378.75,
+      "avg_response_ms": 311.90909090909093,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -700,41 +825,20 @@
       "id": "8f8896b5d0d2bcb3f42fc685798704e90c45deab603b5771981fff6233d9b0db",
       "name": "jingyi251-aa",
       "url": "https://raw.githubusercontent.com/jingyi251/a/main/lz/aa.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:48Z",
+      "last_success_at": "2026-10-06T01:13:10Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 434.75,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "8bf3ef6827d6611663a06a4ac963db06891d4d4a144ccaa6e6f7cd5b3d2d653a",
-      "name": "jj00780078-fun",
-      "url": "https://raw.githubusercontent.com/jj00780078/jj00780078.github.io/HEAD/fun.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:49Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 407.75,
+      "avg_response_ms": 330.25,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -749,34 +853,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:48Z",
+      "last_success_at": "2026-10-06T01:13:10Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 352.90909090909093,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "9d8d967110c5392515230bee1c3cd4dc6ae600c108ba99653b5a955facd63ee9",
-      "name": "jt-vip",
-      "url": "https://raw.githubusercontent.com/huangxiong1992/jt/main/vip.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:48Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 343.25,
+      "avg_response_ms": 318.46666666666664,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -784,20 +867,20 @@
       "id": "99021c663c4591c7452c0d7fb03b7a5421330f00f2766894a9208eb78c19e53c",
       "name": "kongguojun-pro",
       "url": "https://raw.githubusercontent.com/kongguojun/668/master/pro.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:48Z",
+      "last_success_at": "2026-10-06T01:13:10Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 456.75,
+      "avg_response_ms": 314.375,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -805,83 +888,20 @@
       "id": "f0aebbef65fb47a6159b4a53a5612537c04952b1758edcb51bfb6ee539df4224",
       "name": "liuwei0704-csdy",
       "url": "https://raw.githubusercontent.com/liuwei0704/66/master/csdy.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:48Z",
+      "last_success_at": "2026-10-06T01:13:10Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 445.0,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "17a834c4e8c9bc6e1da0f93ee966b8d086df9624b3b8c9c2076f4be81b2146ac",
-      "name": "lubin-moyu",
-      "url": "https://raw.githubusercontent.com/lubin776/tvbox-api-backup/main/tvbox/%E6%91%B8%E9%B1%BC.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:49Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 385.75,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "60fffe616d1e993eef0ba2f3efd187609ea855cb0a4dbf74fa0f2d724a624884",
-      "name": "lubin776-yuanwang18",
-      "url": "https://raw.githubusercontent.com/lubin776/0/main/tvbox/%E6%84%BF%E6%9C%9B18.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:49Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 421.25,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "ce4b40f084eaa627a686151eabfe1b973ddeeac34a357f572671986c1fc62c80",
-      "name": "qist-0827",
-      "url": "https://raw.githubusercontent.com/qist/tvbox/HEAD/0827.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:49Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 354.25,
+      "avg_response_ms": 303.875,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -889,20 +909,20 @@
       "id": "84df2f9d9ed6af8068f2c6f2434faa49f780e06ddf14a4623ff0d09e1270b172",
       "name": "wen9180-jar",
       "url": "https://raw.githubusercontent.com/wen9180/ziyong/main/jar.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:50Z",
+      "last_success_at": "2026-10-06T01:13:10Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 457.75,
+      "avg_response_ms": 323.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -910,20 +930,20 @@
       "id": "55af5a880fb18c334ea0cd06bc82bf6866e8f6d3cef41471e6e637f400d2a75a",
       "name": "wen9180-py",
       "url": "https://raw.githubusercontent.com/wen9180/ziyong/main/py.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:50Z",
+      "last_success_at": "2026-10-06T01:13:10Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 578.5,
+      "avg_response_ms": 377.5,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -931,20 +951,20 @@
       "id": "c67a8e19e655a9f77d5e616ce0826eace1e2f5089412bca1347fd7a4c7c40306",
       "name": "yigedashu-xwll9",
       "url": "https://raw.githubusercontent.com/yigedashu/xwck/main/xwll9+9.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:50Z",
+      "last_success_at": "2026-10-06T01:13:10Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 453.75,
+      "avg_response_ms": 330.125,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -952,41 +972,20 @@
       "id": "b840d529fd684cdc59776dbc847593f5429d2ef481e95ab0ca989e30e81c12fe",
       "name": "ysczg-onlinejuhe",
       "url": "https://raw.githubusercontent.com/ysczg/ysc/main/lib/onlinejuhe.json",
-      "status": "degraded",
+      "status": "active",
       "tier": "experimental",
       "type": "single",
       "score": 58.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:50Z",
+      "last_success_at": "2026-10-06T01:13:11Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 462.75,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "3cb4d2deb32481c026018e54e598be05ed973380898021dd5ea651744c5ab233",
-      "name": "zheng197600-0821",
-      "url": "https://raw.githubusercontent.com/zheng197600/tvbox/main/0821.json",
-      "status": "degraded",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:50Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 448.0,
+      "avg_response_ms": 348.75,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1001,34 +1000,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:52Z",
+      "last_success_at": "2026-10-06T01:13:12Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 412.7142857142857,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "498de39ba7bfc8198a81c76c032f6e2f147187da186522bb7206774660efc399",
-      "name": "哈基米",
-      "url": "https://raw.githubusercontent.com/jenmay01/testtv/main/%E5%93%88%E5%9F%BA%E7%B1%B3.png",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:52Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 335.85714285714283,
+      "avg_response_ms": 354.1818181818182,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1043,13 +1021,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-05T03:53:54Z",
+      "last_success_at": "2026-10-06T01:13:18Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 432.85714285714283,
+      "avg_response_ms": 411.45454545454544,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1060,22 +1038,452 @@
       "status": "degraded",
       "tier": "experimental",
       "type": "single",
-      "score": 55.532,
-      "stability_score": 95.219,
-      "availability_7d": 96.296,
-      "availability_30d": 96.296,
-      "last_success_at": "2026-10-05T03:25:32Z",
+      "score": 55.468,
+      "stability_score": 94.384,
+      "availability_7d": 96.552,
+      "availability_30d": 96.552,
+      "last_success_at": "2026-10-06T01:13:18Z",
       "last_failure_at": "2026-10-05T03:53:53Z",
-      "regions_ok": [],
-      "regions_failed": [
+      "regions_ok": [
         "CN"
       ],
-      "avg_response_ms": 882.6037735849056,
-      "consecutive_failure": 1,
+      "regions_failed": [],
+      "avg_response_ms": 889.4561403508771,
+      "consecutive_failure": 0,
       "whitelisted": true
     }
   ],
   "alerts": [
+    {
+      "kind": "source_failed",
+      "source_id": "355fb1bcd7f9b19c2457677fadaa4401d83db2efb0179c492fdd7fa9266d5cc4",
+      "region": "CN",
+      "title": "[ALERT] Source failed / niubihu",
+      "created_at": "2026-10-06T01:14:36Z",
+      "resolved_at": null,
+      "severity": "warning",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-06T01:14:36Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "52f04dd18d9f59611922f3ac09cd6cc506f3f74f05ace0841ea56f0760af24cd",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / fun.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "8cd485e66e5d6b644df6611fb9d82e7d8637398252df28085a65c03811b1097e",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 0707.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "58444bddfcbbf281497d1c2095d0951844caa46ed6adc5f1c1bd911f8a04a53d",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 18.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "ffe66e58a7df11ff5609828a2805c3b9139f4e37ad587b9bccb6ad1646149655",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / multi.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "4be313d01b005759f4302d857070775c907a350b8238fb7e4562114de3be565c",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / niuber.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "6ce3cc3264da09a5515f025af13616b76d13743cdc62200079dbdff20fadf89e",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / subscriptions.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "c3e250c1ca757506d3782c77505df9a6994a163fae2205a722b207ad30694764",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 多仓.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "9df4c4d0ecb19d26589d4b427b5a177f574a42aaa5aab548f900c81ec1f8b922",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 多仓adult.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "c55a13f9172ee405d3df6fcec0a166742f3947cfeb9d371cca50d77d6649eb0d",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 18cn.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "a71a246b1f513e35360de3afa12cd3690ff20108637d4d894fa7e3e94519a871",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 18cn.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "27ad96d4b1af6607786d5203cb1ef1b2a17b811e946b032c29c589a2b3015e58",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 0825.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "0057c8085476bd2beac37e69f11e87d6b224eb66d27a5d13d737f5cf800e502e",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 0826.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "c24e0e5205e44314c2b21f35d0594ee46f511917c43f0a4272f02aa969ba65fc",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 0827.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "5f78aff769d7f206f8244a41743fd1d2d131fed8263d841816f9700f9c2189ec",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 1111.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "87ed76c4fc4e4a68d0938d40a545765474242365cb600e78d950a29491daacec",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 18+.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "c5e8997836492ac7d0f6ab6079824b147620075e2a2229f2c3936a396c20f612",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 367.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "d3bd392f62ca24d445008518c8e72e9848674f22a0727d2ab03d24e866015157",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 9918.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "30aee5e362094536e601d14ed53b2323efbab35378e5f4800db2d538cf325564",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 99188.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "ff502f7ff904b67338de3de21b044ed523950493001a1b9eb24a23ff7c7125b2",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / R18.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "04fb0cbe1033c20d012ad254f91ce0ee103eafa4c6856dde39f2697564d6877a",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / aa.json",
+      "created_at": "2026-10-06T00:51:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-05T18:52:33Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "8fee3b071d12c36f90910e4c00363aa156e6369844dbbfedd82fa2eb5f71379b",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / DodgeZhang-huangju",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "3e3a721544a21798a6ec87150e7043de54eb1aac320a4865c980d41abe177018",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / adult2.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "d75531c3943d8a0ec0e7bfca7617d394276c313f34ed29f1ce504adceaaf6105",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / api.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "7e5a11649a409c05b975ca00b41529bf70cbf9e74324c1e58df0f96d1d9739af",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / binge-LuTie",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "b3263164e0d31c99690733c07cd68e29f9dfc5767350e1f84ee6c283e1336218",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / scat.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "8bc4f104f6d8d29c9f352e034c0489199cac623e81da5000407161b9a958d9a8",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / scat.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "c9c23cd61fe799699c2dde33cb1c03f3e4b3fd28599c9ad4953779a1137f59c5",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / woshishiq1-shiba",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "a2637c5b6b9875837c786ae33dd78858e44e9c1ef509d2be4578f88f411a5806",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / zjng-18plus",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "b2b86504aa26221ae476b5211c9c3310186ae3132b2abcf238e099174b051487",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 0707.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "ce1d22a1ce29a8c5785b59a52ab4f3af48fcdd538315061b8f7dbd09f9fd3ced",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 0707.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "f5e03b9908a3ae421ebbcbaae2c158db3ce4d04ee7b8e6644ec2ea44d3478341",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / feimaolive.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "aca0b3559966bd5b17254b51e37b76968ba1b0368eea73963522991b2164b458",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / feimaolive.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "f983c7b66aa9e947f2795653f45d043275cd585d736d088b91993cece3264e36",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / live2mv_data.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "df3aacebe8a44d20524b4da6e2a6eeed6a05f9a0a2c02aa24d77cba154ab9858",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / live2mv_data.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "0cf849a20811d44a11167e0a28b3effa5a588d4bb678ebc0fd0a470a77542308",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / ywxl.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "bf8de4e4915f927dae94bd8cb955c979bd7b526af38995e117b8a8e3de1d11eb",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / cr.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "ec3ca8cb0b68c59a6715221e45c6bd842a109f8244b13fdfa7b6e05186c0eaa3",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / dc.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "2790abbdb2733d458bc39594025a9c1f7d5969d435ce8ac6192eb4294ffed3b9",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / feimaolive.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "c061e5712800a67692153820d3ac3bd3b85615086630582cfb59a559add2d089",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / feimaolive.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "82de65fc2d5c4e5a1b354058bbc76d2e3a36f90eb4348f05d9df7587a8727b94",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / feimaolive.json",
+      "created_at": "2026-10-05T09:39:03Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
     {
       "kind": "source_failed",
       "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
@@ -1145,439 +1553,23 @@
       "resolved_at": null,
       "severity": "info",
       "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "56efd81f2500926ce5ca69525e22add7c3b9aee60d8f1690c4e7333c617419a8",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / easypg.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "46f5d8774c2b6a38624c4bb7040e95e15534fc389814f8b66e5312422e010690",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / feimaolive.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "5fc3fe60dafba5951d95998a48d861b5c9224051ee1582d3fb8b59c738325a50",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / feimaolive.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "30e6c7c958a1ec5126c01cc8f0eed2d2f5ac456642ded0754ad0dfe056999f6c",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / feimaolive.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "3dd694a7aa69acf4ef8829cd0c96f6afb560a3954d44b09e2009d84eb6b0e1b0",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / hiker_offline.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "520901acbc17a7a2dc06f19287255e1584d10a94336910e1f060c2b347244d70",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / live2cms.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "163cf93935c069ad76af7d16add80c515725cdb077110cf3add605d6b04e5cc7",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / live2mv_data.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "5323796aaf0dffcbcfa39b787ff313077b96ccba0429e90620e3687d3f739599",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / xl.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "45690906a7768d960680f193ee23e06116e72f84be9f82d9618d89fb26847f16",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 18.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "b6e4623df6e1fae6581736904eb8a7dca04150a89af650af6c7307b9873472af",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / adult.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "557fb5b54ce7fe40b7199d6bd7c3fe7327e8e0e568b3ad2dab97adb554aa4464",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 0826.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "509d5f1f1a9e24d0f046e06cd6639453a159b89640c61557c201eccca1810e13",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 0827.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "2c9e8af439ff7a7934dc9f4fd61a1c1b00f51c9dac28b49a3b20debc98674ffc",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 4k视界.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "ed00bdc1235b7119fee6e267ee3432500f0adf665ea8da859fc2fb99af84e391",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / aa.json",
-      "created_at": "2026-10-05T03:26:50Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "765b6e8351d9cd53870025878ddaee8e63e3e9e5f6cf48c58d7aad8d8b5605f1",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / tvbox.json",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "dfc7dc060a2e295a36e36d44b8f0b022b2535510ebb939c7d35c7708f304e940",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / tvbox.json",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "c53d1b38657438429f51e3d687844e0f355e12633ed2f8897d666944c953a20b",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / tvbox.json",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "02316078bcd73e56d97985dbdfd5a6634364a893d831f31acbb37ba66228e9ab",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / pandown_tvbox.json",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "a638716507e8750976ede7fb3b0fe7b2363d61017f572e31cf6162b0a86d874e",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 11451",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "49bd1973d7d2f11cd9446d14516ffe28cf85d5a079e599840b964b208b6612bf",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 88",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "99ec6431ba95b9f2c48bd36729c1a3d96f0e731b281012654f25f422ce274537",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / CandyMuj📚拾光仓库",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "b0bba80d9fdb7c1946de284f0fcb6d655e41a9d05a3ec49980739b597faf64a2",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / Huhujun线路",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "79ee931146bcb6202e2d374a3a71cae603e0bb7e4164ca3ccd7bc3fe9600cfdc",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / PG one",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "a93dd4d261ad316e1f380719e9395442c9940ce9e930ddaf577bb715aeaa7ff5",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / WEWA（饭太硬）",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "b63ac8eea01ca1fd822d3d437e207a7e59f4d2cbafa68d884b0577487afaefc4",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / XBP",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "cbb99b26090e1c9b8d13561cff0e3049e0ae45db8a8d2fb770ed3beb65e63d2a",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / alantang1977_api",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "167242b91eaa696a818d6a402cb249566f444c8fa71229d9094104f82cfc8301",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / alantang1977_py",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "8a39fbfc84a8b120d706d2b0518346cdf175a08edfa07f2efe2f6632c6a77954",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / bizhangjie",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "2ce587a6543f5d1c72af914d3f7ec6643a7a92fa86c829fe99c5b1bd4e78bb6e",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / fongmi",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "36622d48d4f698b8c06ae4c3aa6e64b97325326c5383e9b14cda2a1f86704190",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / iahob",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "926efc9d9abb8f811380b54e2e68990e9497a2f31d1513e9072235e8661f429f",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / mcp2016_鹏九",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "f6aa8b2058a1d73f087186c45d723015a8942234340738aa4615458342102e16",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / tvbox.json",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "dfe1c829205ede8e1f5cbfee22e6b897375905d5b15427858ca258dd8f7a78ec",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / tvbox.json",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "8ed83eda7e3625f345a9e58f7d40baeed207457ab7d6a1e4b3eeb47a07acc5b7",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / zhyadc线路",
-      "created_at": "2026-10-05T01:42:26Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-05T00:49:29Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T23:19:02Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T23:18:55Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T23:18:52Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T23:18:51Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T23:18:50Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T23:18:49Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T23:18:48Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
-      "region": "",
-      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
-      "created_at": "2026-10-04T23:18:47Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
     }
   ],
   "build_history": [
+    {
+      "build_id": "20261005-053920",
+      "generated_at": "2026-10-05T05:39:20Z",
+      "published": true,
+      "fallback": false,
+      "items": 50,
+      "active": 331,
+      "degraded": 136,
+      "failed": 2,
+      "new": 1,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
     {
       "build_id": "20261005-043906",
       "generated_at": "2026-10-05T04:39:06Z",
@@ -1982,20 +1974,6 @@
       "new": 0,
       "recovered": 0,
       "removed": 2,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261004-103427",
-      "generated_at": "2026-10-04T10:34:27Z",
-      "published": true,
-      "fallback": false,
-      "items": 4,
-      "active": 100,
-      "degraded": 1,
-      "failed": 1,
-      "new": 0,
-      "recovered": 0,
-      "removed": 0,
       "blocked_reason": ""
     }
   ],

@@ -1,67 +1,88 @@
 {
-  "generated_at": "2026-10-06T23:53:03Z",
-  "build_id": "20261006-235303",
+  "generated_at": "2026-10-08T00:20:01Z",
+  "build_id": "20261008-002001",
   "summary": {
     "sources": {
-      "active": 559,
-      "degraded": 2,
-      "failed": 2
+      "active": 573,
+      "degraded": 28,
+      "failed": 4
     },
     "candidates": 0,
     "tiers": {
-      "primary": 0,
-      "backup": 0,
-      "experimental": 49
+      "primary": 2,
+      "backup": 1,
+      "experimental": 46
     },
     "output_items": 49
   },
   "regions": {
     "CN": {
-      "checks": 5735,
-      "successes": 5708,
-      "availability_percent": 99.53
+      "checks": 2889,
+      "successes": 2873,
+      "availability_percent": 99.45
     }
   },
   "sources": [
     {
-      "id": "8bc4f104f6d8d29c9f352e034c0489199cac623e81da5000407161b9a958d9a8",
-      "name": "scat.json",
-      "url": "https://raw.githubusercontent.com/yescopys/box/main/jack/scat.json",
+      "id": "e5e22b7e79834be5f8f9f9d48bc1f8b7b746fd466ac42300038de2a46d1c91b3",
+      "name": "jj.json",
+      "url": "https://raw.githubusercontent.com/dlgt7/TVbox-interface/main/jj.json",
       "status": "active",
-      "tier": "experimental",
+      "tier": "primary",
       "type": "single",
-      "score": 95.0,
+      "score": 93.5,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:41:16Z",
+      "last_success_at": "2026-10-08T00:06:37Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 299.75,
+      "avg_response_ms": 333.74,
       "consecutive_failure": 0,
-      "whitelisted": false
+      "whitelisted": true
     },
     {
-      "id": "b3263164e0d31c99690733c07cd68e29f9dfc5767350e1f84ee6c283e1336218",
-      "name": "scat.json",
-      "url": "https://raw.githubusercontent.com/yescopys/box/main/scat.json",
+      "id": "745561a3739c9b0c759e443e7bee2ffeee9488f9a7c4709f69066cfa851187f8",
+      "name": "🫘豆包",
+      "url": "https://17264.kstore.space/%E8%B1%86%E5%8C%85.jpg",
       "status": "active",
-      "tier": "experimental",
+      "tier": "primary",
       "type": "single",
-      "score": 95.0,
+      "score": 56.286,
+      "stability_score": 97.907,
+      "availability_7d": 98.0,
+      "availability_30d": 97.015,
+      "last_success_at": "2026-10-08T00:05:54Z",
+      "last_failure_at": "2026-10-05T03:53:53Z",
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 847.0408163265306,
+      "consecutive_failure": 0,
+      "whitelisted": true
+    },
+    {
+      "id": "5a29dc258ba183a7edcdc8ce5f019b75b4d4cb85231dfe60ccb0ede462532e86",
+      "name": "box.json",
+      "url": "https://raw.githubusercontent.com/AndroidSoftwares/box/main/box.json",
+      "status": "active",
+      "tier": "backup",
+      "type": "single",
+      "score": 75.4,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:57Z",
+      "last_success_at": "2026-10-08T00:05:11Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 291.9166666666667,
+      "avg_response_ms": 245.12,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -76,34 +97,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:38Z",
+      "last_success_at": "2026-10-08T00:05:16Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 288.5,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "a2637c5b6b9875837c786ae33dd78858e44e9c1ef509d2be4578f88f411a5806",
-      "name": "zjng-18plus",
-      "url": "https://raw.githubusercontent.com/zjng/TV-API/main/18%2B.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 95.0,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:41Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 293.75,
+      "avg_response_ms": 290.70588235294116,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -118,13 +118,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:37Z",
+      "last_success_at": "2026-10-08T00:05:09Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 510.75,
+      "avg_response_ms": 483.3529411764706,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -139,13 +139,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:38Z",
+      "last_success_at": "2026-10-08T00:05:08Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 451.4117647058824,
+      "avg_response_ms": 430.27272727272725,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -160,20 +160,20 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:37Z",
+      "last_success_at": "2026-10-08T00:05:08Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 513.6470588235294,
+      "avg_response_ms": 484.8636363636364,
       "consecutive_failure": 0,
       "whitelisted": false
     },
     {
-      "id": "e5e22b7e79834be5f8f9f9d48bc1f8b7b746fd466ac42300038de2a46d1c91b3",
-      "name": "jj.json",
-      "url": "https://raw.githubusercontent.com/dlgt7/TVbox-interface/main/jj.json",
+      "id": "8bc4f104f6d8d29c9f352e034c0489199cac623e81da5000407161b9a958d9a8",
+      "name": "scat.json",
+      "url": "https://raw.githubusercontent.com/yescopys/box/main/jack/scat.json",
       "status": "active",
       "tier": "experimental",
       "type": "single",
@@ -181,15 +181,57 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:42:00Z",
+      "last_success_at": "2026-10-08T00:05:08Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 364.14516129032256,
+      "avg_response_ms": 305.7647058823529,
       "consecutive_failure": 0,
-      "whitelisted": true
+      "whitelisted": false
+    },
+    {
+      "id": "b3263164e0d31c99690733c07cd68e29f9dfc5767350e1f84ee6c283e1336218",
+      "name": "scat.json",
+      "url": "https://raw.githubusercontent.com/yescopys/box/main/scat.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 93.5,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-08T00:05:08Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 307.47058823529414,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "a2637c5b6b9875837c786ae33dd78858e44e9c1ef509d2be4578f88f411a5806",
+      "name": "zjng-18plus",
+      "url": "https://raw.githubusercontent.com/zjng/TV-API/main/18%2B.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 93.5,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-08T00:05:07Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 305.88235294117646,
+      "consecutive_failure": 0,
+      "whitelisted": false
     },
     {
       "id": "b9c97ff3dac729bae98730e863f117bee2f12d6051c15a9f838012aa42de190d",
@@ -202,55 +244,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:41Z",
+      "last_success_at": "2026-10-08T00:05:12Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 309.85714285714283,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "5a29dc258ba183a7edcdc8ce5f019b75b4d4cb85231dfe60ccb0ede462532e86",
-      "name": "box.json",
-      "url": "https://raw.githubusercontent.com/AndroidSoftwares/box/main/box.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 75.645,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:41Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 268.88709677419354,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "906b514cd945261a7ebc563d04cb196f5f15cf2f5ba122fcc458b34f164adaf4",
-      "name": "aa123jg-wyykFL",
-      "url": "https://raw.githubusercontent.com/aa123jg/tvbox-FL/main/wyykFL/wyykFL.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 75.0,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:45Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 239.5,
+      "avg_response_ms": 302.7368421052632,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -265,13 +265,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:52Z",
+      "last_success_at": "2026-10-08T00:05:20Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 235.5,
+      "avg_response_ms": 199.7058823529412,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -286,13 +286,34 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:46Z",
+      "last_success_at": "2026-10-08T00:05:17Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 283.5833333333333,
+      "avg_response_ms": 235.76470588235293,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "906b514cd945261a7ebc563d04cb196f5f15cf2f5ba122fcc458b34f164adaf4",
+      "name": "aa123jg-wyykFL",
+      "url": "https://raw.githubusercontent.com/aa123jg/tvbox-FL/main/wyykFL/wyykFL.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 71.471,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-08T00:05:13Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 206.64705882352942,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -307,13 +328,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:45Z",
+      "last_success_at": "2026-10-08T00:05:16Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 237.25,
+      "avg_response_ms": 228.11764705882354,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -328,13 +349,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:46Z",
+      "last_success_at": "2026-10-08T00:05:16Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 211.66666666666666,
+      "avg_response_ms": 229.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -349,13 +370,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:47Z",
+      "last_success_at": "2026-10-08T00:05:18Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 256.4166666666667,
+      "avg_response_ms": 209.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -370,13 +391,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:55Z",
+      "last_success_at": "2026-10-08T00:05:34Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 284.46666666666664,
+      "avg_response_ms": 267.9,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -391,13 +412,34 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:51Z",
+      "last_success_at": "2026-10-08T00:05:20Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 244.08333333333334,
+      "avg_response_ms": 206.35294117647058,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "ac08e3a8dc4d4cff5b77bd48ae5c96f574acda6cb32a75b1f941f274f7346d66",
+      "name": "chengxue2020-fan18",
+      "url": "https://raw.githubusercontent.com/chengxue2020/Cat-ports/main/18/2/fan18.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-08T00:05:31Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 270.11764705882354,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -412,13 +454,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:51Z",
+      "last_success_at": "2026-10-08T00:05:21Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 274.3333333333333,
+      "avg_response_ms": 231.58823529411765,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -433,13 +475,34 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:51Z",
+      "last_success_at": "2026-10-08T00:05:22Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 193.25,
+      "avg_response_ms": 165.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "a90e91094893ca8b80776a3c94138dfcfd066456584af4475c3d9edffe8fae10",
+      "name": "han-fuli",
+      "url": "https://raw.githubusercontent.com/zengjian03/han/master/18/%E7%BA%AF%E7%A6%8F%E5%88%A9.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-08T00:05:24Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 285.94117647058823,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -454,13 +517,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:52Z",
+      "last_success_at": "2026-10-08T00:05:24Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 264.1666666666667,
+      "avg_response_ms": 222.11764705882354,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -475,13 +538,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:52Z",
+      "last_success_at": "2026-10-08T00:05:24Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 241.5,
+      "avg_response_ms": 199.1764705882353,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -496,13 +559,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:53Z",
+      "last_success_at": "2026-10-08T00:05:24Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 228.58333333333334,
+      "avg_response_ms": 197.94117647058823,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -517,13 +580,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:53Z",
+      "last_success_at": "2026-10-08T00:05:24Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 262.1666666666667,
+      "avg_response_ms": 224.7058823529412,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -538,13 +601,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:53Z",
+      "last_success_at": "2026-10-08T00:05:24Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 202.5,
+      "avg_response_ms": 174.76470588235293,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -559,13 +622,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:54Z",
+      "last_success_at": "2026-10-08T00:05:25Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 271.1333333333333,
+      "avg_response_ms": 234.25,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -580,13 +643,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:54Z",
+      "last_success_at": "2026-10-08T00:05:25Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 225.0,
+      "avg_response_ms": 191.64705882352942,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -601,13 +664,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:53Z",
+      "last_success_at": "2026-10-08T00:05:25Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 282.9166666666667,
+      "avg_response_ms": 235.47058823529412,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -622,13 +685,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:54Z",
+      "last_success_at": "2026-10-08T00:05:25Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 234.41666666666666,
+      "avg_response_ms": 197.1764705882353,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -643,13 +706,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:54Z",
+      "last_success_at": "2026-10-08T00:05:25Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 284.4736842105263,
+      "avg_response_ms": 245.58333333333334,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -664,13 +727,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:55Z",
+      "last_success_at": "2026-10-08T00:05:27Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 219.83333333333334,
+      "avg_response_ms": 188.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -685,13 +748,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:55Z",
+      "last_success_at": "2026-10-08T00:05:27Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 271.25,
+      "avg_response_ms": 223.23529411764707,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -706,13 +769,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:55Z",
+      "last_success_at": "2026-10-08T00:05:27Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 251.91666666666666,
+      "avg_response_ms": 217.1764705882353,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -727,13 +790,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:55Z",
+      "last_success_at": "2026-10-08T00:05:27Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 235.66666666666666,
+      "avg_response_ms": 198.1764705882353,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -748,13 +811,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:55Z",
+      "last_success_at": "2026-10-08T00:05:27Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 222.33333333333334,
+      "avg_response_ms": 186.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -769,13 +832,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:55Z",
+      "last_success_at": "2026-10-08T00:05:28Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 215.58333333333334,
+      "avg_response_ms": 191.41176470588235,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -790,13 +853,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:55Z",
+      "last_success_at": "2026-10-08T00:05:28Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 111.6774193548387,
+      "avg_response_ms": 110.26,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -811,13 +874,34 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:56Z",
+      "last_success_at": "2026-10-08T00:05:29Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 282.75,
+      "avg_response_ms": 231.41176470588235,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "55af5a880fb18c334ea0cd06bc82bf6866e8f6d3cef41471e6e637f400d2a75a",
+      "name": "wen9180-py",
+      "url": "https://raw.githubusercontent.com/wen9180/ziyong/main/py.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-08T00:05:29Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 260.4117647058824,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -832,13 +916,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:56Z",
+      "last_success_at": "2026-10-08T00:05:31Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 284.8333333333333,
+      "avg_response_ms": 253.88235294117646,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -853,13 +937,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:56Z",
+      "last_success_at": "2026-10-08T00:05:31Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 287.1666666666667,
+      "avg_response_ms": 236.58823529411765,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -874,13 +958,34 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:57Z",
+      "last_success_at": "2026-10-08T00:05:31Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 240.58333333333334,
+      "avg_response_ms": 199.52941176470588,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "02ae88698f53bd31a27fdd98b176317fc061e1a4d579ee789f7cd15bd6d4bbb9",
+      "name": "云朵.json",
+      "url": "https://raw.githubusercontent.com/Honghe-snow/honghetv/main/%E4%BA%91%E6%9C%B5.json",
+      "status": "active",
+      "tier": "experimental",
+      "type": "single",
+      "score": 60.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-08T00:05:32Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 284.9,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -895,13 +1000,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:41:01Z",
+      "last_success_at": "2026-10-08T00:05:35Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 246.06666666666666,
+      "avg_response_ms": 215.2,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -916,97 +1021,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:58Z",
+      "last_success_at": "2026-10-08T00:05:35Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 190.83333333333334,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "ac08e3a8dc4d4cff5b77bd48ae5c96f574acda6cb32a75b1f941f274f7346d66",
-      "name": "chengxue2020-fan18",
-      "url": "https://raw.githubusercontent.com/chengxue2020/Cat-ports/main/18/2/fan18.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:41:09Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 307.9166666666667,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "a90e91094893ca8b80776a3c94138dfcfd066456584af4475c3d9edffe8fae10",
-      "name": "han-fuli",
-      "url": "https://raw.githubusercontent.com/zengjian03/han/master/18/%E7%BA%AF%E7%A6%8F%E5%88%A9.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:59Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 309.0,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "55af5a880fb18c334ea0cd06bc82bf6866e8f6d3cef41471e6e637f400d2a75a",
-      "name": "wen9180-py",
-      "url": "https://raw.githubusercontent.com/wen9180/ziyong/main/py.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:40:59Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 317.6666666666667,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "02ae88698f53bd31a27fdd98b176317fc061e1a4d579ee789f7cd15bd6d4bbb9",
-      "name": "云朵.json",
-      "url": "https://raw.githubusercontent.com/Honghe-snow/honghetv/main/%E4%BA%91%E6%9C%B5.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 58.5,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:41:01Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 324.4,
+      "avg_response_ms": 172.11764705882354,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1021,39 +1042,138 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-06T23:41:07Z",
+      "last_success_at": "2026-10-08T00:05:47Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 353.4,
+      "avg_response_ms": 306.15,
       "consecutive_failure": 0,
       "whitelisted": false
-    },
-    {
-      "id": "745561a3739c9b0c759e443e7bee2ffeee9488f9a7c4709f69066cfa851187f8",
-      "name": "🫘豆包",
-      "url": "https://17264.kstore.space/%E8%B1%86%E5%8C%85.jpg",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 55.695,
-      "stability_score": 95.601,
-      "availability_7d": 96.774,
-      "availability_30d": 96.774,
-      "last_success_at": "2026-10-06T23:41:08Z",
-      "last_failure_at": "2026-10-05T03:53:53Z",
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 876.983606557377,
-      "consecutive_failure": 0,
-      "whitelisted": true
     }
   ],
   "alerts": [
+    {
+      "kind": "source_failed",
+      "source_id": "355fb1bcd7f9b19c2457677fadaa4401d83db2efb0179c492fdd7fa9266d5cc4",
+      "region": "CN",
+      "title": "[ALERT] Source failed / niubihu",
+      "created_at": "2026-10-08T00:06:55Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-08T00:06:55Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "355fb1bcd7f9b19c2457677fadaa4401d83db2efb0179c492fdd7fa9266d5cc4",
+      "region": "CN",
+      "title": "[ALERT] Source failed / niubihu",
+      "created_at": "2026-10-07T23:52:17Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-07T23:52:17Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "355fb1bcd7f9b19c2457677fadaa4401d83db2efb0179c492fdd7fa9266d5cc4",
+      "region": "CN",
+      "title": "[ALERT] Source failed / niubihu",
+      "created_at": "2026-10-07T19:34:47Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-07T19:34:47Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "355fb1bcd7f9b19c2457677fadaa4401d83db2efb0179c492fdd7fa9266d5cc4",
+      "region": "CN",
+      "title": "[ALERT] Source failed / niubihu",
+      "created_at": "2026-10-07T13:41:58Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-07T13:41:58Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "2b312549a37c11989a66187e330dd17b9f6d0272433d1ff7956b81dfb2e533f0",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / VIP.json",
+      "created_at": "2026-10-07T06:17:00Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_recovered",
+      "source_id": "3e7bad4b908697e1ce5ff4b433aca0e5f88e856542ca9915223a7331596a65ef",
+      "region": "",
+      "title": "[RECOVERED] Source recovered / 紫气.json",
+      "created_at": "2026-10-07T06:17:00Z",
+      "resolved_at": null,
+      "severity": "info",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "355fb1bcd7f9b19c2457677fadaa4401d83db2efb0179c492fdd7fa9266d5cc4",
+      "region": "CN",
+      "title": "[ALERT] Source failed / niubihu",
+      "created_at": "2026-10-07T06:17:00Z",
+      "resolved_at": null,
+      "severity": "warning",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "fdbe0ae03ddc708278c1c9fe764ddf3e3edebe807e2197b1c4685ca5d5911e1e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 🎬 源力forever·完整点播",
+      "created_at": "2026-10-07T06:17:00Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
     {
       "kind": "source_failed",
       "source_id": "355fb1bcd7f9b19c2457677fadaa4401d83db2efb0179c492fdd7fa9266d5cc4",
@@ -1433,129 +1553,23 @@
       "resolved_at": null,
       "severity": "info",
       "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "f04c25b54af88f8376a174934112fbe1dd794eb704884504ad5ac86554eb4d9d",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 0827.json",
-      "created_at": "2026-10-06T14:30:33Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "996f85ca1b19b022deab2fbf6e0f867a0e4bd00cd7a1b7b33fcbe9eccf6199dd",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 111.json",
-      "created_at": "2026-10-06T14:30:33Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "bc9aedb287ac9c57645cbd98bade6f054dfef3dbd2ee363e46dc8e5399625075",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 2hacc_oktv.json",
-      "created_at": "2026-10-06T14:30:33Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "50f34a8b52d71108e716a4e1f1292ee3afd4e5f2cc0438f2afc15cc30da87495",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 2hacc_oktv.json",
-      "created_at": "2026-10-06T14:30:33Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "4f0465971d79ee8731df791e2155246415fce3e5fea1dd6d4df9ebdbe95d1d79",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / omni.json",
-      "created_at": "2026-10-06T07:36:31Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "70b074fd82d6ac374b9701aa136b837850ef87f08561318d79741e99ed8f6998",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / feimaolive.json",
-      "created_at": "2026-10-06T07:36:31Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "8afcc9631ddead6496bad013b826d6fc99c4ae39cc7a6940cde5eb9d02922956",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / feimaolive.json",
-      "created_at": "2026-10-06T07:36:31Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "c0f5fba833b7429ceebd61eef7a2cd47f2066483e86500a8623a34758c6d1f8b",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / flc.json",
-      "created_at": "2026-10-06T07:36:31Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "710cbe03d44e8d55d616a39c8792a265ca5807ecc446b53740920cc6a2505208",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / live2mv_data.json",
-      "created_at": "2026-10-06T07:36:31Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "3b63e6099e1f34a6c5a86038d542c4c0e1a9598a1d5de9c6a6906fba3374deec",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / zb.json",
-      "created_at": "2026-10-06T07:36:31Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "b73417245284c98c3d5788aa118922447a53e795a1b4887ed1fbe442a85f8869",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / 🎠文才༗",
-      "created_at": "2026-10-06T07:36:31Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
-    },
-    {
-      "kind": "source_recovered",
-      "source_id": "0069de2dfcd8ee8e6e9b63daf433ee5738d494c846fbcb1626306e2784e3d1f2",
-      "region": "",
-      "title": "[RECOVERED] Source recovered / fty.json",
-      "created_at": "2026-10-06T07:36:31Z",
-      "resolved_at": null,
-      "severity": "info",
-      "channels": []
     }
   ],
   "build_history": [
+    {
+      "build_id": "20261006-235303",
+      "generated_at": "2026-10-06T23:53:03Z",
+      "published": true,
+      "fallback": false,
+      "items": 49,
+      "active": 559,
+      "degraded": 2,
+      "failed": 2,
+      "new": 0,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
     {
       "build_id": "20261006-012647",
       "generated_at": "2026-10-06T01:26:47Z",
@@ -1960,20 +1974,6 @@
       "new": 0,
       "recovered": 0,
       "removed": 12,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261004-111706",
-      "generated_at": "2026-10-04T11:17:06Z",
-      "published": true,
-      "fallback": false,
-      "items": 16,
-      "active": 120,
-      "degraded": 87,
-      "failed": 1,
-      "new": 14,
-      "recovered": 0,
-      "removed": 0,
       "blocked_reason": ""
     }
   ],

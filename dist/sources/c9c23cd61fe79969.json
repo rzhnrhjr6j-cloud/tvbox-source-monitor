@@ -57,7 +57,7 @@
             "key": "步兵Emby",
             "name": "🔞步兵营地[emby]🪜",
             "type": 3,
-            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/js/步兵Emby.js",
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/5bb26405715e6b8b3bea.js",
             "changeable": 1
         },
         {
@@ -72,7 +72,7 @@
             "name": "🔞海角网[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/海角网.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b913f6f7cba5f8b987ab.json"
         },
         {
             "key": "AVHUB",
@@ -114,7 +114,7 @@
             "name": "🔞擦边[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/擦边.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/e8b4e5fde140aa3095a9.json"
         },
         {
             "key": "降龙十八掌",

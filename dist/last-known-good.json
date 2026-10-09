@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-08T00:20:01Z",
+  "generated_at": "2026-10-09T00:26:08Z",
   "urls": [
     {
       "name": "精东（24站）",
@@ -15,8 +15,24 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5a29dc258ba183a7.json"
     },
     {
+      "name": "影视 | 建安（60站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/f5d4082ca524d142.json"
+    },
+    {
+      "name": "牛牛视频 #2（56站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b3263164e0d31c99.json"
+    },
+    {
       "name": "黄色仓库[采集]（40站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/c9c23cd61fe79969.json"
+    },
+    {
+      "name": "精品资源 #2（59站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/a2637c5b6b987583.json"
+    },
+    {
+      "name": "豆瓣 #6（23站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b9c97ff3dac729ba.json"
     },
     {
       "name": "精品 | 采集 #2（79站）",
@@ -35,23 +51,11 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8bc4f104f6d8d29c.json"
     },
     {
-      "name": "牛牛视频 #2（56站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b3263164e0d31c99.json"
-    },
-    {
-      "name": "精品资源 #2（59站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/a2637c5b6b987583.json"
-    },
-    {
-      "name": "豆瓣 #6（23站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b9c97ff3dac729ba.json"
-    },
-    {
       "name": "丝袜资源1080P（35站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/9517a432613509da.json"
     },
     {
-      "name": "熊猫视频（30站）",
+      "name": "熊猫视频 #1（30站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/0380ba7a3de24907.json"
     },
     {
@@ -83,7 +87,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/ac08e3a8dc4d4cff.json"
     },
     {
-      "name": "黄果短剧（翻墙）（44站）",
+      "name": "熊猫视频 #2（44站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/51e5e3f010574b43.json"
     },
     {
@@ -111,20 +115,16 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8233a0b487b35cbf.json"
     },
     {
-      "name": "温州鼓词（111站）",
+      "name": "温州鼓词（74站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b805de89511b345c.json"
     },
     {
-      "name": "分享本地 #1（169站）",
+      "name": "分享本地 #1（168站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/36622d48d4f698b8.json"
     },
     {
-      "name": "分享本地 #2（168站）",
+      "name": "分享本地 #2（167站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/da03426545491a93.json"
-    },
-    {
-      "name": "豆瓣热榜（373站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8f8896b5d0d2bcb3.json"
     },
     {
       "name": "py_色播聚合（60站）",
@@ -151,7 +151,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/17a834c4e8c9bc6e.json"
     },
     {
-      "name": "豆瓣┃首页 #1（197站）",
+      "name": "豆瓣┃首页 #1（32站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/60fffe616d1e993e.json"
     },
     {
@@ -191,12 +191,12 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/498de39ba7bfc819.json"
     },
     {
-      "name": "豆瓣┃影视（104站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5b34c1370113faa4.json"
-    },
-    {
       "name": "豆瓣 #1（175站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/42a114b4151f986c.json"
+    },
+    {
+      "name": "豆瓣┃影视（104站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5b34c1370113faa4.json"
     }
   ]
 }

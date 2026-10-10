@@ -64,7 +64,7 @@
             "key": "HGEmby",
             "name": "🔞HG[emby]🪜",
             "type": 3,
-            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/js/HGEmby.js",
+            "api": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/f421c0ccc0527a6f55aa.js",
             "changeable": 1
         },
         {
@@ -79,14 +79,14 @@
             "name": "🔞AVHUB[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/AVHUB.json"
+            "ext": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/910ad510a0c1e648e5c7.json"
         },
         {
             "key": "18J",
             "name": "🔞18J[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/18j.json"
+            "ext": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/jars/f99ba653c6d924937855.json"
         },
         {
             "key": "一起草",

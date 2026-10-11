@@ -92,6 +92,12 @@ output:
   include_experimental: true
   pretty: true
   sort_by: score             # score | name
+  # 直播入口：多仓入口只有 urls，影视仓不会把子配置里的 lives 合并出来，
+  # 所以把同一批直播清单（已镜像到 dist/jars）单发一份 {"lives": [...]}。
+  live:
+    enabled: true
+    file: "tvbox-live.json"
+    max_playlists: 0         # 0 = 不限制
   min_score_primary: 85
   min_stability_primary: 80
   min_score_backup: 70

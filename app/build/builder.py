@@ -23,6 +23,7 @@ from ..models import BuildRecord, Event, Source, SourceEvent, Status, Tier
 from ..utils.http_client import HttpClient
 from ..utils.timeutil import age_days, to_iso, utcnow
 from ..checks.jar_check import EVIDENCE_FILE, has_jar_sites, load_evidence, passes as android_passes
+from .live import LIVE_FILE, build_live_entry, configs_from_directory, configs_from_plan, write_live_entry
 from .mirror import SOURCES_DIR, ConfigMirror, MirrorPlan
 from .validator import ValidationResult, validate_output
 
@@ -603,6 +604,7 @@ class ConfigBuilder:
             self.mirror.write(result.mirror)
 
         _atomic_write_json(path, result.output, pretty=bool(self.output_cfg.get("pretty", True)))
+        self._publish_live(result)
         self._publish_alt(path)
         _atomic_write_json(self.dist_dir / HEALTH_FILE, result.health, pretty=True)
         _atomic_write_json(self.dist_dir / DASHBOARD_FILE, result.dashboard, pretty=True)
@@ -657,6 +659,31 @@ class ConfigBuilder:
 
     def record_blocked(self, result: BuildResult) -> None:
         self.store.record_build(result.build)
+
+    def _publish_live(self, result: BuildResult) -> Path | None:
+        """Publish the 直播入口 beside the main one (see :mod:`app.build.live`)."""
+        live_cfg = self.output_cfg.get("live")
+        if not isinstance(live_cfg, dict) or not bool(live_cfg.get("enabled", False)):
+            return None
+        configs = configs_from_plan(result.mirror)
+        if not configs:
+            configs = configs_from_directory(self.dist_dir / SOURCES_DIR)
+        payload = build_live_entry(
+            configs,
+            version=str(self.cfg.get("app.version", "1.0")),
+            max_playlists=int(live_cfg.get("max_playlists", 0) or 0),
+        )
+        if not payload["lives"]:
+            # an empty entry would only give the client a 直播 tab that loads
+            # nothing, and worse, it would overwrite the previous good one
+            LOGGER.warning("no live playlist to publish",
+                           extra={"stage": "build", "check": "live"})
+            return None
+        return write_live_entry(
+            self.dist_dir / str(live_cfg.get("file") or LIVE_FILE),
+            payload,
+            pretty=bool(self.output_cfg.get("pretty", True)),
+        )
 
     def _publish_alt(self, path: Path) -> Path | None:
         """Publish a second entry point whose urls point at a different host.

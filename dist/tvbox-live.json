@@ -1,7 +1,12 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-11T10:03:05Z",
+  "generated_at": "2026-10-11T10:34:40Z",
   "lives": [
+    {
+      "name": "合并直播 · 央视卫视地方（推荐）",
+      "type": 1,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/live.m3u"
+    },
     {
       "name": "大秀直播",
       "type": 0,
@@ -253,11 +258,6 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/7c371e1d0c574d6fb2fe.txt"
     },
     {
-      "name": "没4K",
-      "type": 0,
-      "url": "https://mpimg.cn/text.php?hash=7265d70b6834cefbddb61bcc2d9c99db"
-    },
-    {
       "name": "夜空",
       "type": 0,
       "url": "https://pan.szfx.top/down.php/4f5dad27633e1293d7ef2317ee9c801e.txt"
@@ -381,6 +381,13 @@
       "name": "B站直播",
       "type": 0,
       "url": "https://sub.ottiptv.cc/bililive.m3u",
+      "playerType": 2,
+      "ua": "okHttp/Mod-1.5.0.0"
+    },
+    {
+      "name": "YY轮播",
+      "type": 0,
+      "url": "https://sub.ottiptv.cc/yylunbo.m3u",
       "playerType": 2,
       "ua": "okHttp/Mod-1.5.0.0"
     },
@@ -573,6 +580,11 @@
       "playerType": 2
     },
     {
+      "name": "没4K",
+      "type": 0,
+      "url": "https://mpimg.cn/text.php?hash=7265d70b6834cefbddb61bcc2d9c99db"
+    },
+    {
       "name": "很少",
       "type": 0,
       "url": "https://mpimg.cn/down.php/fa04b02ffac54ac877f5250d3d70e494.txt"
@@ -602,13 +614,6 @@
       "ua": "okhttp/3.15"
     },
     {
-      "name": "YY轮播",
-      "type": 0,
-      "url": "https://sub.ottiptv.cc/yylunbo.m3u",
-      "playerType": 2,
-      "ua": "okHttp/Mod-1.5.0.0"
-    },
-    {
       "name": "央卫视直播",
       "type": 0,
       "url": "http://43.251.226.110:9991/1dek6c",
@@ -633,6 +638,14 @@
       "url": "http://nrvmobil.com:2095/get.php?username=tkn9985&password=vRkBPApGQFGB&type=m3u_plus",
       "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
       "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "Gather.韩国女团",
+      "type": 0,
+      "url": "https://gist.githubusercontent.com/yuanwangokk-1/a661dd0e88466aa22f2a7c1fb375635e/raw/8708d9947be1c64c52bb1610a30aaa1b595848c9/韩国女团直播.m3u",
+      "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "https://epg.112114.xyz/logo/{name}.png",
       "ua": "okhttp/3.15"
     },
     {

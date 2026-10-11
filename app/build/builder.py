@@ -33,6 +33,12 @@ from .live import (
     rank_live_entry,
     write_live_entry,
 )
+from .live_playlist import (
+    CACHE_FILE as LIVE_PROBE_FILE,
+    assemble,
+    load_verdicts,
+    merged_entry,
+)
 from .mirror import SOURCES_DIR, ConfigMirror, MirrorPlan
 from .validator import ValidationResult, validate_output
 
@@ -683,6 +689,7 @@ class ConfigBuilder:
             max_playlists=int(live_cfg.get("max_playlists", 0) or 0),
         )
         payload = self._probe_live(payload, live_cfg)
+        payload = self._publish_merged_live(payload, live_cfg)
         if not payload["lives"]:
             # an empty entry would only give the client a 直播 tab that loads
             # nothing, and worse, it would overwrite the previous good one
@@ -694,6 +701,72 @@ class ConfigBuilder:
             payload,
             pretty=bool(self.output_cfg.get("pretty", True)),
         )
+
+    def _publish_merged_live(self, payload: dict[str, Any], live_cfg: dict[str, Any]) -> dict[str, Any]:
+        """Flatten every playlist into ``dist/live.m3u`` and put it at the top.
+
+        The 直播源 field takes a playlist as happily as a JSON of playlists,
+        and a playlist is the sturdier shape: one dead channel costs one line
+        instead of a whole 「解析失败」 source.  Refreshed from
+        ``config/live.yaml`` on every build, ordered by the last mainland
+        probe (``data/live_probe.json``) - a GitHub runner must not be the one
+        to decide a mainland stream is dead.
+        """
+        merged_cfg = live_cfg.get("merged")
+        if not isinstance(merged_cfg, dict) or not bool(merged_cfg.get("enabled", False)):
+            return payload
+        try:
+            import yaml
+
+            path = Path(str(merged_cfg.get("config") or "config/live.yaml"))
+            settings = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            out_cfg = settings.get("output") or {}
+            prefix = str(settings.get("proxy_prefix") or "")
+            timeout = float(settings.get("fetch_timeout", 20) or 20)
+
+            def fetch(url: str, mode: str) -> str:
+                target = f"{prefix}{url}" if mode == "proxy" and prefix else url
+                result = self.client.get(target, timeout=(5, timeout), max_retries=1)
+                if not result.status or not 200 <= result.status < 300:
+                    raise RuntimeError(f"HTTP {result.status}")
+                return result.text or ""
+
+            cache = Path(str(merged_cfg.get("cache") or "data")) 
+            cache = cache if cache.is_absolute() else self.dist_dir.parent / cache
+            verdicts = load_verdicts(cache / LIVE_PROBE_FILE)
+            merged, failed = assemble(
+                dist_dir=self.dist_dir,
+                out_cfg=out_cfg,
+                verdicts=verdicts,
+                sources=settings.get("sources") or [],
+                fetch=fetch,
+            )
+            if not merged:
+                LOGGER.warning("merged live playlist: no channel fetched", extra={
+                    "stage": "build", "check": "live_merged", "failed": failed,
+                })
+                return payload
+            bases = [str(base) for base in (out_cfg.get("bases") or []) if base]
+            if bases:
+                payload = dict(payload)
+                payload["lives"] = [
+                    merged_entry(
+                        len(merged),
+                        bases[0],
+                        name=str(out_cfg.get("entry_name") or "合并直播"),
+                        filename=str(out_cfg.get("file") or "live.m3u"),
+                    )
+                ] + list(payload.get("lives") or [])
+            LOGGER.info("merged live playlist written", extra={
+                "stage": "build", "check": "live_merged",
+                "channels": len({channel.name for channel in merged}),
+                "lines": len(merged), "failed_sources": len(failed),
+            })
+        except Exception as exc:  # noqa: BLE001 - never fail a build over this
+            LOGGER.warning("merged live playlist skipped", extra={
+                "stage": "build", "check": "live_merged", "error": str(exc)[:200],
+            })
+        return payload
 
     def _probe_live(self, payload: dict[str, Any], live_cfg: dict[str, Any]) -> dict[str, Any]:
         """Fetch every playlist once and demote/踢掉 the ones that are gone.

@@ -1,0 +1,71 @@
+# ===========================================================================
+# 合并直播列表（dist/live.m3u）—— 影视仓「直播源」框里填的那一个地址
+#
+# 之前发布的是 {"lives": [...]}，里面每条又是一个清单文件：客户端要挨个去
+# 拉、挨个解析，一条拉不到就在屏幕上写一行「解析失败」。这里改成把所有清单
+# 拍平成一个真正的播放列表（#EXTM3U ...），一个地址进去就是一份频道表。
+#
+# 单个频道挂了只丢它自己那一行，不会再变成一整个「解析失败」的源。
+# ===========================================================================
+
+# 上游清单。顺序 = 优先级（前面的先入库，同名频道保留前 N 条）。
+#   fetch: proxy  = 走 gh-proxy 前缀（raw.githubusercontent 大陆直连不到）
+#          direct = 直接拉（源本身在大陆，走得通）
+sources:
+  - name: 央视卫视-自用
+    url: https://tv.ywhb.top/iptv4.txt
+    fetch: direct
+  - name: 央视卫视-zbds
+    url: https://live.zbds.top/tv/iptv4.txt
+    fetch: direct
+  - name: aptv
+    url: https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u
+    fetch: proxy
+  - name: yang1989
+    url: https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u
+    fetch: proxy
+  - name: vbskycn
+    url: https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u
+    fetch: proxy
+  - name: suxuang
+    url: https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u
+    fetch: proxy
+  - name: wwb521
+    url: https://raw.githubusercontent.com/wwb521/live/main/tv.m3u
+    fetch: proxy
+  - name: iptv-org
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u
+    fetch: proxy
+
+# 抓上游清单时套的前缀（大陆直连 GitHub 会超时）
+proxy_prefix: "https://gh-proxy.com/"
+fetch_timeout: 20
+
+output:
+  file: live.m3u
+  txt_file: live.txt
+  # 同一个频道名最多留几条线路（客户端里就是「源1/源2/源3」）
+  max_per_name: 3
+  # 分组上限，防止「其他」变成垃圾场（这个是实测里最大的一组）
+  max_per_group:
+    其他: 300
+  # 0 = 全收
+  max_channels: 0
+  # 出问题时给客户端的备选地址：第一个写进 tvbox-live.json
+  bases:
+    - "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist"
+    - "https://ghfast.top/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist"
+    - "https://rzhnrhjr6j-cloud.github.io/tvbox-source-monitor"
+  # 合并条目在 tvbox-live.json 里的名字
+  entry_name: "合并直播 · 央视卫视地方（推荐）"
+
+# 逐条频道实测。只有在本机（大陆网络）跑才有意义：GitHub 构建机够不到大陆
+# 的流，会把好频道判成坏。跑出来的结论落在 data/live_probe.json 里并提交，
+# 构建时按这份结果排序（能播的排前面）。
+probe:
+  enabled: true
+  workers: 64
+  connect_timeout: 4
+  read_timeout: 6
+  # 判死只认 404/410：超时、连接重置、403（大概率是地域封锁）都记 unknown
+  cache: data/live_probe.json

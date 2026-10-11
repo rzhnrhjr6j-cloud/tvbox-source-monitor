@@ -112,6 +112,14 @@ output:
       # 一次构建里超过这个比例的清单判死，说明是构建机断网而不是源死了，
       # 这时只重排序、不删除（跟 output 的 max_drop_ratio 同一个思路）
       max_dead_ratio: 0.6
+    # 合并播放列表：把上游清单拍平成一个 dist/live.m3u，客户端「直播源」框
+    # 直接填它就行。一个频道挂了只丢一行，不会再变成一整个「解析失败」的源。
+    # 清单和分组上限在 config/live.yaml；排序用 data/live_probe.json（本机
+    # 实测的结论，构建机不参与判死）。
+    merged:
+      enabled: true
+      config: config/live.yaml
+      cache: data
   min_score_primary: 85
   min_stability_primary: 80
   min_score_backup: 70

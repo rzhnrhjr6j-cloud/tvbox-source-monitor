@@ -12,36 +12,6 @@
   ],
   "sites": [
     {
-      "key": "fqzy资源",
-      "name": "首页换源",
-      "type": 1,
-      "api": "https://fqzy.me//api.php/provide/vod/?ac=list",
-      "searchable": 1,
-      "changeable": 1,
-      "categories": [
-        "黑料网曝",
-        "国产大制作",
-        "偷拍自拍",
-        "高清无码",
-        "乱伦毁三观",
-        "淫乱学生",
-        "主播女网红",
-        "高清有码",
-        "中文字幕",
-        "动漫精选",
-        "欧美精品"
-      ]
-    },
-    {
-      "key": "didi",
-      "name": "💕滴滴(直连)",
-      "type": 1,
-      "api": "https://api.ddapi.cc/api.php/provide/vod/?ac=list",
-      "searchable": 1,
-      "filterable": 1,
-      "jar": "https://gitee.com/juanxiao/bh/raw/master/o.jar"
-    },
-    {
       "key": "didiz",
       "name": "💕玫瑰(直连)",
       "type": 1,

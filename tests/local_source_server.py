@@ -136,7 +136,12 @@ class _Handler(BaseHTTPRequestHandler):
                             dict(SITE_TEMPLATE, key="adult", name="🔞MD-4K",
                                  api=f"{self.base}/api.php/provide/vod/"),
                         ],
-                        "lives": [],
+                        # the row name is innocent; only the playlist it points
+                        # at says what it is
+                        "lives": [
+                            {"name": "🍓直播(直连)", "type": 0,
+                             "url": f"{self.base}/assets/adult-live.txt"},
+                        ],
                         "parses": [],
                     },
                     ensure_ascii=False,
@@ -371,6 +376,12 @@ class _Handler(BaseHTTPRequestHandler):
         if path == "/assets/live.txt":
             return self._send("#EXTM3U\n#EXTINF:-1,CCTV1\nhttp://live.example.com/1.m3u8\n".encode("utf-8"),
                               content_type="text/plain; charset=utf-8")
+
+        if path == "/assets/adult-live.txt":
+            return self._send(
+                "#EXTM3U\n#EXTINF:-1,俄罗斯成人1台\nhttp://live.example.com/adult.m3u8\n".encode("utf-8"),
+                content_type="text/plain; charset=utf-8",
+            )
 
         if path == "/assets/cfg.json":
             return self._send(b'{"list": []}', content_type="application/json; charset=utf-8")

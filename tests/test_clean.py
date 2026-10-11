@@ -15,7 +15,13 @@ from pathlib import Path
 import pytest
 
 from app.build.builder import TVBOX_FILE, ConfigBuilder
-from app.build.clean import CleanPolicy, build_clean_entry
+from app.build.clean import (
+    CleanPolicy,
+    build_clean_entry,
+    http_fetcher,
+    make_live_scanner,
+    remote_live_urls,
+)
 from app.build.mirror import SOURCES_DIR
 from app.config import load_config
 from app.pipeline import Pipeline
@@ -260,6 +266,119 @@ def test_a_non_mapping_entry_survives():
 
 
 # ---------------------------------------------------------------------------
+# a live row hides behind the remote playlist it points at
+# ---------------------------------------------------------------------------
+ADULT_PLAYLIST = "#EXTM3U\n#EXTINF:-1,俄罗斯成人1台\nhttp://p/x.m3u8\n"
+PLAIN_PLAYLIST = "#EXTM3U\n#EXTINF:-1,CCTV1\nhttp://q/1.m3u8\n"
+
+
+def live_child(*urls: str) -> dict:
+    return {
+        "sites": [{"name": "豆瓣", "api": "https://a/"}],
+        "lives": [{"name": "🍓直播(直连)", "url": url} for url in urls],
+    }
+
+
+def clean_with(read: dict, scan, *entries):
+    return build_clean_entry(
+        {"urls": list(entries)},
+        policy(content_keywords=["成人", "porn"]),
+        lambda slug: read.get(slug),
+        source_prefix=SOURCE_PREFIX,
+        clean_prefix=CLEAN_PREFIX,
+        live_scan=scan,
+    )
+
+
+def test_a_live_row_pointing_at_an_adult_playlist_is_dropped():
+    """The row name reads 🍓直播(直连) and the playlist is never mirrored."""
+    bodies = {"http://bad/live.txt": ADULT_PLAYLIST, "http://good/live.txt": PLAIN_PLAYLIST}
+    scan = make_live_scanner(
+        policy(content_keywords=["成人", "porn"]), lambda url: bodies.get(url)
+    )
+    read = {"b.json": live_child("http://bad/live.txt", "http://good/live.txt")}
+    result = clean_with(read, scan, entry("豆瓣", "b.json"))
+
+    assert [row["url"] for row in result.children["b.json"]["lives"]] == ["http://good/live.txt"]
+    assert result.removed_rows == 1
+    assert scan.stats == {"checked": 2, "failed": 0, "flagged": 1, "skipped": 0}
+
+
+def test_a_playlist_that_cannot_be_read_is_kept_and_counted():
+    """A transient failure must not delete a legitimate live source."""
+    scan = make_live_scanner(policy(content_keywords=["成人"]), lambda url: None)
+    read = {"b.json": live_child("http://gone/live.txt")}
+    result = clean_with(read, scan, entry("豆瓣", "b.json"))
+
+    # nothing was removed, so the child keeps its own url and is not re-written
+    assert result.children == {}
+    assert [row["url"] for row in read["b.json"]["lives"]] == ["http://gone/live.txt"]
+    assert (result.removed_rows, scan.stats["failed"]) == (0, 1)
+
+
+def test_each_playlist_is_fetched_at_most_once():
+    calls: list[str] = []
+
+    def fetch(url: str) -> str:
+        calls.append(url)
+        return PLAIN_PLAYLIST
+
+    scan = make_live_scanner(policy(content_keywords=["成人"]), fetch)
+    scan(live_child("http://a/live.txt", "http://a/live.txt"))
+    scan(live_child("http://a/live.txt"))
+
+    assert calls == ["http://a/live.txt"]
+
+
+def test_the_budget_bounds_how_many_playlists_are_read():
+    calls: list[str] = []
+    scan = make_live_scanner(
+        policy(content_keywords=["成人"]), lambda url: calls.append(url) or "", budget=1
+    )
+    scan(live_child("http://a/live.txt", "http://b/live.txt"))
+
+    assert calls == ["http://a/live.txt"]
+    assert scan.stats["skipped"] == 1
+
+
+def test_a_relative_playlist_url_is_never_fetched():
+    calls: list[str] = []
+    scan = make_live_scanner(policy(content_keywords=["成人"]), lambda url: calls.append(url) or "")
+    child = {"lives": [{"name": "Live", "url": "./assets/live.txt"}]}
+
+    assert remote_live_urls(child) == []
+    assert scan(child) == frozenset()
+    assert calls == []
+
+
+def test_without_content_keywords_nothing_is_fetched():
+    calls: list[str] = []
+    scan = make_live_scanner(policy(content_keywords=[]), lambda url: calls.append(url) or "成人")
+
+    assert scan(live_child("http://a/live.txt")) == frozenset()
+    assert calls == []
+
+
+def test_http_fetcher_returns_the_body_and_swallows_every_failure():
+    class _Client:
+        def __init__(self, result=None, error=None):
+            self.result, self.error = result, error
+
+        def get(self, url, **_kwargs):
+            if self.error:
+                raise self.error
+            return self.result
+
+    class _Result:
+        def __init__(self, ok, text):
+            self.ok, self.text = ok, text
+
+    assert http_fetcher(_Client(_Result(True, "央视")))("http://a") == "央视"
+    assert http_fetcher(_Client(_Result(False, "x")))("http://a") is None
+    assert http_fetcher(_Client(error=RuntimeError("boom")))("http://a") is None
+
+
+# ---------------------------------------------------------------------------
 # the publishing path, against real files
 # ---------------------------------------------------------------------------
 def make_builder(tmp_path: Path, clean: dict | None = None):
@@ -409,7 +528,12 @@ def test_the_pipeline_publishes_both_entries_from_a_real_origin(tmp_path):
                     "observation_days": 0,
                     "include_degraded": False,
                     "mirror": {"enabled": True, "public_base": BASE, "alt_base": "off"},
-                    "clean": {"enabled": True, "block_keywords": ["麻豆"], "block_regex": []},
+                    "clean": {
+                        "enabled": True,
+                        "block_keywords": ["麻豆"],
+                        "content_keywords": ["成人"],
+                        "block_regex": [],
+                    },
                 },
             },
         )
@@ -438,3 +562,4 @@ def test_the_pipeline_publishes_both_entries_from_a_real_origin(tmp_path):
         slug = url.rsplit("/", 1)[-1]
         trimmed = json.loads((dist / "clean" / SOURCES_DIR / slug).read_text(encoding="utf-8"))
         assert [site["key"] for site in trimmed["sites"]] == ["plain"]
+        assert trimmed["lives"] == [], "an adult live playlist must not survive"

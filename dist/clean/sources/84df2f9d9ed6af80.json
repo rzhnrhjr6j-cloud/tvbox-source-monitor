@@ -34,20 +34,6 @@
       }
     },
     {
-      "key": "南┃网盘集合",
-      "name": "南┃网盘集合|4K",
-      "type": 3,
-      "api": "csp_网盘集合",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/294d5fc7ed4a9f50b776.jar;md5;c6aaf6a9498e1e1d07126779c687bdd8",
-      "searchable": 1,
-      "filterable": 0,
-      "switchable": 0,
-      "ext": {
-        "commonConfig": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/fc14e3479ef90090b7c4.json",
-        "share": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/1d70c47e8f560632cdfe.json"
-      }
-    },
-    {
       "key": "南┃115集合",
       "name": "南┃115集合|4K",
       "type": 3,
@@ -1427,16 +1413,6 @@
       "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/fa16ff0f1ef4b30da626.json"
     },
     {
-      "key": "玩偶哥哥",
-      "name": "玩偶｜4K弹幕",
-      "type": 3,
-      "api": "csp_PanWebShare",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/705e7096ac866eb5e369.json"
-    },
-    {
       "key": "木偶",
       "name": "木偶｜4K弹幕",
       "type": 3,
@@ -1445,39 +1421,6 @@
       "quickSearch": 1,
       "filterable": 1,
       "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/bccf29a4cf51989da3c1.json"
-    },
-    {
-      "key": "蜡笔",
-      "name": "蜡笔｜4K弹幕",
-      "type": 3,
-      "api": "csp_PanWebShare",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/1f5f9698035114f84c1d.json"
-    },
-    {
-      "key": "至臻",
-      "name": "至臻｜4K弹幕",
-      "type": 3,
-      "api": "csp_PanWebShare",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/eaa4fccf04c2653245fa.json"
-    },
-    {
-      "key": "多多",
-      "name": "多多｜4K弹幕",
-      "type": 3,
-      "api": "csp_PanWebShare",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/753064d6b09b7a75f203.json"
     },
     {
       "key": "欧哥",
@@ -2000,13 +1943,6 @@
       "ext": "http://zytv.eztv.video/api.php/app/"
     },
     {
-      "key": "天天美剧网（APP）",
-      "name": "APP┃天美",
-      "type": 3,
-      "api": "csp_AppYsV2",
-      "ext": "https://www.ttmja.com/api.php/app/"
-    },
-    {
       "key": "河狸",
       "name": "APP┃河狸",
       "type": 3,
@@ -2032,31 +1968,6 @@
       "quickSearch": 1,
       "filterable": 1,
       "ext": "http://m51.gotto.top/api.php/v1.vod"
-    },
-    {
-      "key": "单┃live-2",
-      "name": "单┃直转点┃电视",
-      "api": "csp_zb",
-      "categories": null,
-      "click": null,
-      "filterable": null,
-      "hide": -1,
-      "playerType": 1,
-      "playerUrl": null,
-      "quickSearch": 0,
-      "searchable": 0,
-      "type": 3,
-      "status": 1,
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/a3cad43f414b3dcabc58.jar",
-      "ext": "ziyong┃本地$./live/ziyong.txt#电台┃本地$./live/电台.txt#MV┃本地$./live/MTV.txt#电台┃在线$https://gh-proxy.com/https://raw.githubusercontent.com/YueChan/Live/main/Radio.m3u#16万•MV$https://gh-proxy.com/https://raw.githubusercontent.com/lystv/short/main/影视/tvb/MTV.txt#live$http://woniuxs.free.nf/live.txt#猫TV直播②$http://rihou.cc:567/gggg.nzk#itvlist$https://gh-proxy.com/https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt#无界$https://www.xn--rgv465a.top/live/live.txt#「体育」订阅$https://smart.pendy.dpdns.org/m3u/judy.m3u#玉兔$http://lzo.xh.sd/lives/玉兔.txt#18+直播$http://lzo.xh.sd/lives/18TV.txt#18+影视$http://lzo.xh.sd/lives/18+.txt#一本道$http://lzo.xh.sd/lives/一本道.txt#一本正经道$http://lzo.xh.sd/lives/一本正经道.txt#大洋马国际$http://lzo.xh.sd/lives/大洋马国际.txt麻豆传媒$https://pan.jl8.top/down.php/882ef80c32c262ebf4c0cfb3e725f459.txt#秒播LIST$https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/refs/heads/main/txt/成人电影.txt#秒播91LIST$https://mpimg.cn/down.php/25da10b0cb7b90d422ae22852bd7d414.txt#岛国 4K$https://www.jsonav.xyz/v.txt#美女直播$https://d.kstore.dev/download/13045/1_%E7%B2%BE%E5%93%81%E5%BF%AB%E9%A4%90%281%29.txt"
-    },
-    {
-      "key": "JS┃直转点┃集合",
-      "name": "JS┃直转点┃集合",
-      "type": 3,
-      "searchable": 0,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/1e466219276587474cfa.js",
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/9b344c3b765aeb4ad7dd.json"
     },
     {
       "key": "单┃MGTV",

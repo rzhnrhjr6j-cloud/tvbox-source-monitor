@@ -23,8 +23,14 @@ from ..models import BuildRecord, Event, Source, SourceEvent, Status, Tier
 from ..utils.http_client import HttpClient
 from ..utils.timeutil import age_days, to_iso, utcnow
 from ..checks.jar_check import EVIDENCE_FILE, has_jar_sites, load_evidence, passes as android_passes
-from .clean import CleanPolicy, build_clean_entry
-from .mirror import SOURCES_DIR, ConfigMirror, MirrorPlan, _load_config
+from .clean import (
+    CleanPolicy,
+    build_clean_entry,
+    http_fetcher,
+    make_live_scanner,
+    scan_unsafe_refs,
+)
+from .mirror import JARS_DIR, SOURCES_DIR, ConfigMirror, MirrorPlan, _load_config
 from .validator import ValidationResult, validate_output
 
 LOGGER = get_logger("build")
@@ -731,6 +737,13 @@ class ConfigBuilder:
             return None
 
         source_dir = self.dist_dir / SOURCES_DIR
+        # A row is unsafe when the file it loads is: the adult configs are
+        # renamed to look innocent (黄果短剧 / 猎奇影视 / 综合) and give
+        # themselves away only inside the mirrored spider or playlist.
+        unsafe_refs = scan_unsafe_refs(self.dist_dir / JARS_DIR, policy)
+        # A live row hides behind the remote playlist it points at, which is
+        # never mirrored - so read those playlists too (see make_live_scanner).
+        live_scan = make_live_scanner(policy, http_fetcher(self.client))
 
         def read_child(slug: str) -> dict[str, Any] | None:
             child_path = source_dir / slug
@@ -750,6 +763,8 @@ class ConfigBuilder:
             read_child,
             source_prefix=f"{base}/{SOURCES_DIR}/",
             clean_prefix=f"{base}/{policy.directory}/{SOURCES_DIR}/",
+            unsafe_refs=unsafe_refs,
+            live_scan=live_scan,
         )
 
         pretty = bool(self.output_cfg.get("pretty", True))
@@ -773,6 +788,8 @@ class ConfigBuilder:
             "dropped": len(result.dropped_sources),
             "rows_removed": result.removed_rows,
             "configs_rewritten": result.rewritten,
+            "unsafe_refs": len(unsafe_refs),
+            "live_playlists": live_scan.stats,
         })
         return out
 

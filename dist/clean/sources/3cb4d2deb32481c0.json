@@ -2,13 +2,7 @@
   "warningText": "网络收集仅自用",
   "wallpaper": "https://imgs.catvod.com/",
   "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/9a742d08c655879c6173.jar",
-  "lives": [
-    {
-      "name": "综合",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/7c371e1d0c574d6fb2fe.txt"
-    }
-  ],
+  "lives": [],
   "sites": [
     {
       "key": "豆瓣",
@@ -575,14 +569,6 @@
       "name": "剧下饭",
       "type": 3,
       "api": "https://mpimg.cn/down.php/ca87da089f336f8e507562ecfe213e25.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "枫叶影院",
-      "name": "枫叶影院",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/318da62b1e1908cd0874.py",
       "searchable": 1,
       "quickSearch": 1
     },
@@ -1379,42 +1365,10 @@
       "quickSearch": 1
     },
     {
-      "key": "番号资源",
-      "name": "番号资源",
-      "type": 1,
-      "api": "http://fhapi9.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
       "key": "鲨鱼资源",
       "name": "鲨鱼资源",
       "type": 1,
       "api": "https://shayuzy.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "小鸡资源",
-      "name": "小鸡资源",
-      "type": 1,
-      "api": "https://api.xjzyapi.com/provide/vod",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "杏吧资源",
-      "name": "杏吧资源",
-      "type": 1,
-      "api": "https://xingba111.com/api.php/provide/vod/?ac=list",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "滴滴资源",
-      "name": "滴滴资源",
-      "type": 1,
-      "api": "https://api.ddapi.cc/api.php/provide/vod/?ac=list",
       "searchable": 1,
       "quickSearch": 1
     },
@@ -1435,26 +1389,10 @@
       "quickSearch": 1
     },
     {
-      "key": "桃花资源",
-      "name": "桃花资源",
-      "type": 1,
-      "api": "https://thzy1.me/api.php/provide/vod/?ac=list",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
       "key": "湿乐园",
       "name": "湿乐园",
       "type": 1,
       "api": "https://xxavs.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "91视频",
-      "name": "91视频",
-      "type": 1,
-      "api": "https://91av.cyou/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1
     },
@@ -1483,38 +1421,12 @@
       "quickSearch": 1
     },
     {
-      "key": "fh资源",
-      "name": "fh资源",
-      "type": 1,
-      "api": "http://fhapi9.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "大奶资源",
-      "name": "大奶资源",
-      "type": 1,
-      "api": "https://apidanaizi.com/api.php/provide/vod/?ac=list/",
-      "playUrl": "",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
       "key": "红桃视频",
       "name": "红桃视频",
       "type": 1,
       "api": "https://apidanaizi.com/api.php/provide/vod/?ac=list",
       "searchable": 1,
       "changeable": 1
-    },
-    {
-      "key": "滴滴资源",
-      "name": "滴滴资源",
-      "type": 1,
-      "api": "https://api.ddapi.cc/api.php/provide/vod",
-      "playUrl": "",
-      "searchable": 1,
-      "quickSearch": 1
     },
     {
       "key": "免费资源",
@@ -1545,14 +1457,6 @@
       "name": "火速资源",
       "type": 1,
       "api": "https://huosuzy.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "天美资源",
-      "name": "天美资源",
-      "type": 1,
-      "api": "https://tmzyz.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1
     },
@@ -1590,114 +1494,10 @@
       "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/ce3946ee288b5f674c86.jar"
     },
     {
-      "key": "xhamster",
-      "name": "xhamster",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/6757aab93f5e29a3baee.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "xhamster怀旧经典",
-      "name": "xhamster怀旧经典",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/9cb5c6b0a0f4e11e1be9.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "fulleroticmovies怀旧经典",
-      "name": "fulleroticmovies怀旧经典",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b90ae5fdda3c6fa47739.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "2048基地",
-      "name": "2048基地",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d6785269af07a16fd305.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "九合一",
-      "name": "九合一",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/6f5008246fb2efe5d8ca.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "93合1",
-      "name": "93合1",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b66df9d3478a811a4471.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "57短剧",
-      "name": "57短剧",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/ad673ededaee904ef37e.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
       "key": "禁果短剧",
       "name": "禁果短剧",
       "type": 3,
       "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d54d32fc3704588a978a.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "91短剧",
-      "name": "91短剧",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/2e66ce23cfb0876739ca.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "夜社短剧",
-      "name": "夜社短剧",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/10d4617062d3c7c7f4f7.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "有声骚麦",
-      "name": "有声骚麦",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/88e403769a7a134e67bc.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "avjoy",
-      "name": "avjoy",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b878a0f043d401370f10.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "UAA",
-      "name": "UAA",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b1142128c88169443f6f.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "草榴社区",
-      "name": "草榴社区",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c5b2f76bd36d347e92c8.py",
       "searchable": 1,
       "quickSearch": 1
     },
@@ -1710,42 +1510,10 @@
       "quickSearch": 1
     },
     {
-      "key": "抖阴",
-      "name": "抖阴",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b08433a96f461439f0b6.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "番茄视频",
-      "name": "番茄视频",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/224849ff4105e7e32f13.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
       "key": "88影视",
       "name": "88影视",
       "type": 3,
       "api": "https://gh-proxy.com/https://github.com/ge6bu6/1/blob/main/py/88影视.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "大哥视频",
-      "name": "大哥视频",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/83291b851928dca720be.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "精仙阁",
-      "name": "精仙阁",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/9a92de66bbc7e07ec0ae.py",
       "searchable": 1,
       "quickSearch": 1
     },
@@ -1758,58 +1526,10 @@
       "quickSearch": 1
     },
     {
-      "key": "吉利猫",
-      "name": "吉利猫",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/e268c1666cb47bec1421.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "lmlgdjr",
-      "name": "lmlgdjr",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/09d42409dee3bd05acf1.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "直播录屏",
-      "name": "直播录屏",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/da1011f1464dc22796e9.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "一牛影视",
-      "name": "一牛影视",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/bd7fb69de46f3fd77800.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
       "key": "hubff",
       "name": "hubff",
       "type": 3,
       "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/5e344303985a30cc8b7b.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "MasexTV",
-      "name": "MasexTV",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/cdb5b6f564e4ce1bf7ea.py",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "花都影院",
-      "name": "花都影院",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/f79c40ca2ae55acb447c.py",
       "searchable": 1,
       "quickSearch": 1
     },
@@ -1823,46 +1543,6 @@
       "ext": {
         "分类url": "https://18.ddzw.cn/;;!H"
       }
-    },
-    {
-      "key": "痴汉队长",
-      "name": "痴汉队长",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "ext": {
-        "分类url": "https://javcaptain.com/zh/{cateId}?sort=online&page={catePg}",
-        "分类": "有码$censored#无码$uncensored#欧美$western#国产$chinese"
-      }
-    },
-    {
-      "key": "1AV",
-      "name": "1AV",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "ext": {
-        "分类url": "https://www.1av.fun/vodtype/{cateId}-{catePg}.html",
-        "分类": "国产$1#自拍$2#偷拍$3#乱伦$13#亚洲$16#日韩$17#欧美$18#字幕$20#三级$21#熟女$25#强奸乱伦$27"
-      }
-    },
-    {
-      "key": "StripChat",
-      "name": "StripChat",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/3968f4bc21268c095e1a.py",
-      "searchable": 0,
-      "quickSearch": 0
-    },
-    {
-      "key": "Pandalive",
-      "name": "Pandalive",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/e849e59d8ad0925b54ba.py",
-      "searchable": 0,
-      "quickSearch": 0
     },
     {
       "key": "myfreecams直播",

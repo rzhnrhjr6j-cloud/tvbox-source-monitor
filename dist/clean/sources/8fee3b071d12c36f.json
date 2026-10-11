@@ -8,11 +8,14 @@
       "ext": "proxy"
     },
     {
-      "key": "py_huangguo",
-      "name": "黄果短剧[py]",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/2eec6c678508fd3532f4.py",
-      "ext": ""
+      "key": "souav",
+      "name": "souav | 采集",
+      "type": 1,
+      "api": "https://api.souavzy.vip/api.php/provide/vod/?ac=list",
+      "playUrl": "https://jiexi.souavzyw.top/m3u8/?url=",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
     },
     {
       "key": "py_huangdou",
@@ -22,188 +25,12 @@
       "ext": ""
     },
     {
-      "key": "py_lsys111",
-      "name": "恋丝影视[py]",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/0cc3ab4eb72f7b13f6bb.py",
-      "ext": ""
-    },
-    {
-      "key": "py_xx01",
-      "name": "猎奇影视[py]",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/064b88f4cb97e0c2e50b.py",
-      "ext": ""
-    },
-    {
-      "key": "py_ybhz51",
-      "name": "玉蚌含珠[py]",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d12d5ea2f4ec1f61a201.py",
-      "ext": ""
-    },
-    {
       "key": "xp天堂",
       "name": "XP天堂[js]",
       "type": 3,
       "filterable": 0,
       "changeable": 0,
       "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/2f89bc901e0603153408.js"
-    },
-    {
-      "key": "Jable",
-      "name": "Jable[js]",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/f811c79cee356c303724.jar",
-      "type": 3,
-      "quickSearch": 1,
-      "searchable": 1,
-      "changeable": 0,
-      "filterable": 1,
-      "timeout": 60,
-      "style": {
-        "type": "rect",
-        "ratio": 1.48
-      },
-      "api": "csp_GM",
-      "ext": {
-        "userScript": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/5ad2032509d4a5851e2b.js",
-        "debug": false,
-        "webViewSettings": {
-          "blockNetworkImage": true,
-          "blockList": [
-            "*.ico*",
-            "*.png*",
-            "*.css*",
-            "https://*.adsco.re/*",
-            "https://*.googleapis.com/*",
-            "https://*.googlesyndication.com/*",
-            "https://*.googletagmanager.com/*",
-            "https://*.hpyjmp.com/*",
-            "https://*.magsrv.com/*",
-            "https://*.mnaspm.com/*",
-            "https://*.shukriya90.com/*",
-            "https://*.tapioni.com/*",
-            "https://*.tsyndicate.com/*",
-            "https://assets.jable.tv/assets/js/player.js"
-          ]
-        },
-        "spider": {
-          "homeContent": {
-            "loadUrl": "https://jable.tv/"
-          },
-          "categoryContent": {
-            "loadUrl": "https://jable.tv/${tid:-latest-updates}/?from=${pg:-1}${sort_by:-}"
-          },
-          "detailContent": {
-            "loadUrl": "https://jable.tv/videos/${id}/"
-          },
-          "searchContent": {
-            "loadUrl": "https://jable.tv/search/${key}/?from=${pg:-1}"
-          }
-        }
-      }
-    },
-    {
-      "key": "123av",
-      "name": "123AV[js]",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/f811c79cee356c303724.jar",
-      "type": 3,
-      "quickSearch": 1,
-      "searchable": 1,
-      "changeable": 0,
-      "filterable": 1,
-      "timeout": 60,
-      "style": {
-        "type": "rect",
-        "ratio": 1.49
-      },
-      "api": "csp_GM",
-      "ext": {
-        "userScript": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/8ecb0440334be1825f4c.js",
-        "debug": false,
-        "webViewSettings": {
-          "blockNetworkImage": true,
-          "blockList": [
-            "*.ico",
-            "*.png",
-            "*.jpg",
-            "*.vtt",
-            "*.css*",
-            "https://*.googleapis.com/*",
-            "https://*.googletagmanager.com/*",
-            "https://*.recombee.com/*",
-            "https://*.google-analytics.com/*",
-            "https://njav.tv/recomm/items/*"
-          ]
-        },
-        "playUrlMatch": [
-          "https://*/v.m3u8"
-        ],
-        "spider": {
-          "homeContent": {
-            "loadUrl": "https://123av.com/zh/dm9"
-          },
-          "categoryContent": {
-            "loadUrl": "https://123av.com/zh/${tid}?page=${pg:-1}${filter:-}${sort:-}"
-          },
-          "detailContent": {
-            "loadUrl": "https://123av.com/zh/${id}"
-          },
-          "playerContent": {
-            "loadUrl": "https://123av.com/zh/${vod_id}"
-          },
-          "searchContent": {
-            "loadUrl": "https://123av.com/zh/search?keyword=${key}&page=${pg:-1}"
-          }
-        }
-      }
-    },
-    {
-      "key": "xojav",
-      "name": "xojav[js]",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/f811c79cee356c303724.jar",
-      "type": 3,
-      "quickSearch": 1,
-      "searchable": 1,
-      "changeable": 0,
-      "filterable": 1,
-      "timeout": 60,
-      "style": {
-        "type": "rect",
-        "ratio": 1.78
-      },
-      "api": "csp_GM",
-      "ext": {
-        "userScript": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d2b5c1b3e9be1cd47edf.js",
-        "debug": false,
-        "webViewSettings": {
-          "blockNetworkImage": true,
-          "blockList": [
-            "*.css*",
-            "*.ico*",
-            "*.png*",
-            "*.svg",
-            "https://*.googleapis.com/*",
-            "https://*.googletagmanager.com/*",
-            "https://*.magsrv.com/*",
-            "https://*.pemsrv.com/*"
-          ]
-        },
-        "spider": {
-          "homeContent": {
-            "loadUrl": "https://xojav.tv/?lang=zh"
-          },
-          "categoryContent": {
-            "loadUrl": "https://xojav.tv/${tid}${sort_by:-}&mode=async&function=get_block&from=${pg:-1}"
-          },
-          "detailContent": {
-            "loadUrl": "https://xojav.tv/videos/${id}"
-          },
-          "searchContent": {
-            "loadUrl": "https://xojav.tv/search/${key}/?mode=async&function=get_block&sort_by=most_relevant&from_videos=${pg:-1}"
-          }
-        }
-      }
     },
     {
       "key": "csp_Sukebei",
@@ -222,13 +49,6 @@
       "ext": "null$$$https://sukebei.nyaa.si$$$proxy"
     },
     {
-      "key": "py_jable",
-      "name": "jable[py]",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b58db8bc25f9dcd0c292.py",
-      "ext": "{\"cf_clearance\":\"q3IUniFy_JqsKbW30QEyQq0RGVFxPjkWYoHekrppFYw-1788373071-1.2.1.1-qltTBsFBWmN5ZrlMA2A5FpL3LG7cSVKveqbbrcg_qN2PpAmVQfx.Cz0jwKKP2d5ggYxb7xCtqbzFimRRA3BIcyT9ke00P_SvFvqpQOT_zyt_52FQGNOeyjTwwVKnwTo0KKDlG6u3AwMKRMDs1ADTPZDq0qfiVmWgHXBkw2._EYqgfGt6JzlH5dUvMKXnc4jIEtLsauBuZY6j9_dTjQX2s.Lw7NM3fJ4F_oDnzmYBpNvzj9M6cqbyktOfxbXFrFUKi93HudtgIwpJ00jmuVNEFlpCwHSUCAh0ty09AjfWdoIPQxdvllhwvLRhl0cru1PdGdAAIPZAfVgDhHwvoGf0f3I9vp8wgQGAMi2U6PXEkTrj_ZBHsVRq__7MtmUVtV.tvvtNU2wtovFyc5fbh7DA.sCPcX0XgYU4Sa4Er9V9HED3nOpVQqhmC_iESuEkA5_mGMmhBOpPf1yP7w6KZNzlK0V5eSAZa1OQxfyB6WvTzKLe_DkVVLuRXO2hOI5_6t7InHNDXagdMiNecA1Ku2lB3g\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"}"
-    },
-    {
       "key": "py_七区",
       "name": "七区[py]",
       "type": 3,
@@ -238,47 +58,12 @@
       "filterable": 1
     },
     {
-      "key": "py_ 小黄书",
-      "name": "小黄书[py]",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/09e2de79e8f1fced1e4f.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
       "key": "美少女",
       "name": "美少女",
       "type": 0,
       "api": "https://www.msnii.com/api/xml.php",
       "searchable": 1,
       "quickSearch": 1
-    },
-    {
-      "key": "AV资源",
-      "name": "AV | 采集",
-      "type": 1,
-      "api": "https://api.souavzy.vip/api.php/provide/vod/at/json",
-      "searchable": 1,
-      "style": {
-        "type": "rect",
-        "ratio": 1.33
-      },
-      "changeable": 1
-    },
-    {
-      "key": "大奶子",
-      "name": "大奶子 | 采集",
-      "type": 1,
-      "api": "https://apidanaizi.com/api.php/provide/vod",
-      "searchable": 1,
-      "style": {
-        "type": "rect",
-        "ratio": 1.33
-      },
-      "changeable": 1
     },
     {
       "key": "AIvin",
@@ -307,23 +92,6 @@
       "type": 1,
       "api": "https://shayuapi.com/api.php/provide/vod/",
       "ext": "proxy"
-    },
-    {
-      "key": "TGYunPan18pan",
-      "name": "TG|涩涩",
-      "searchable": 1,
-      "changeable": 1,
-      "type": 3,
-      "api": "csp_TGYunPan",
-      "timeout": 60,
-      "ext": {
-        "token": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/77ba7585d1fc4a463a63.json",
-        "json": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c38d22fcdae58ad9dc27.json",
-        "keywords": "名称,片名,推荐",
-        "channellist": "CosMM18,avpush,ribenseyuge1,cilitu,cctav,ppg1314,avab01,SeseAnime,AVnew,jpccav,PornXOS,CCCTAV",
-        "proxy": "noproxy",
-        "danmu": true
-      }
     },
     {
       "key": "XMVideo",
@@ -359,61 +127,6 @@
       "ext": "proxy"
     },
     {
-      "key": "csp_xBPQ_超清",
-      "name": "香蕉超清",
-      "type": 3,
-      "api": "csp_xBPQ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "ext": "{\"分类url\":\"https://avhh.vip/cq/{cateId}-{catePg}.html\", \"分类\":\"请勿外传$2k-yazhou#按主页切换源$2k-zipaitoupai#无分类切换VPN$2k-chaoqingchuanmei#或者其他网络$2k-3Ddongman#资源网络共享$2k-oumei#有倒卖贩卖纯属欺诈$2k-luanlunrenqi#请勿相信！$2k-siwazhifu#绝对禁止未成年人观看$2k-zhibolubo#SM另类$2k-SMlinglei#超清三级$2k-chaoqingsanji\",\"副标题\":\"duration\\\">&&</div\",\"链接\": \"href=\\\"/cq/Kplay&&.html\\\"\", \"链接前缀\": \"https://avhh.vip/cq/Kplay\", \"链接后缀\": \".html\", \"直接播放\": \"1\" }",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/cf36f00af41f9f1b1bd0.jar"
-    },
-    {
-      "key": "csp_xBPQ_聚优AV解说",
-      "name": "聚优AV解说",
-      "type": 3,
-      "api": "csp_xBPQ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/72f165302460cb0760b5.txt",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/cf36f00af41f9f1b1bd0.jar"
-    },
-    {
-      "key": "lav",
-      "name": "lav",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/0a5e78de7d93227c79ab.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "ext": "proxy"
-    },
-    {
-      "key": "xhm",
-      "name": "xhm",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/f2b4a4df5e7b37f73fc2.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "ext": "proxy"
-    },
-    {
-      "key": "pornhub",
-      "name": "py_Phb",
-      "type": 3,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/6c55b21b8f98a3a74103.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "ext": "proxy"
-    },
-    {
       "key": "推特",
       "name": "推特",
       "type": 3,
@@ -422,15 +135,6 @@
       "quickSearch": 1,
       "filterable": 0,
       "changeable": 0,
-      "ext": "proxy"
-    },
-    {
-      "key": "淫水机资源站",
-      "name": "水机 | 采集",
-      "type": 0,
-      "api": "https://www.xrbsp.com/api/xml.php",
-      "searchable": 0,
-      "quickSearch": 0,
       "ext": "proxy"
     },
     {
@@ -452,28 +156,10 @@
       "ext": "proxy"
     },
     {
-      "key": "*抖阴视频",
-      "name": "*抖阴 | 采集",
-      "type": 1,
-      "api": "https://www.888dav.com/api.php/provide/vod/",
-      "quickSearch": 0,
-      "ext": "proxy"
-    },
-    {
       "key": "奥斯卡",
       "name": "奥斯卡 | 采集",
       "type": 1,
       "api": "https://aosikazy.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "proxy"
-    },
-    {
-      "key": "白嫖",
-      "name": "白嫖 | 采集",
-      "type": 0,
-      "api": "https://www.kxgav.com/api/xml.php",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
@@ -495,16 +181,6 @@
       "type": 0,
       "api": "https://dadiapi.com/apple_m3u8.php",
       "playUrl": "https://play.dadiapi.com/watch?url=",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "ext": "proxy"
-    },
-    {
-      "key": "番号",
-      "name": "番号 | 采集",
-      "type": 1,
-      "api": "http://fhapi9.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -580,15 +256,6 @@
       "ext": "proxy"
     },
     {
-      "key": "黄AV资源站",
-      "name": "AV | 采集",
-      "type": 0,
-      "api": "https://www.pgxdy.com/api/xml.php",
-      "searchable": 1,
-      "quickSearch": 1,
-      "ext": "proxy"
-    },
-    {
       "key": "奶香香",
       "name": "奶香 | 采集",
       "type": 1,
@@ -609,30 +276,10 @@
       "ext": "proxy"
     },
     {
-      "key": "鸡坤",
-      "name": "鸡坤 | 采集",
-      "type": 1,
-      "api": "https://jkunzyapi.com/api.php/provide/vod/",
-      "quickSearch": 1,
-      "searchable": 1,
-      "changeable": 1,
-      "ext": "proxy"
-    },
-    {
       "key": "乐播",
       "name": "乐播 | 采集",
       "type": 1,
       "api": "https://lbapi9.com/api.php/provide/vod/",
-      "quickSearch": 1,
-      "searchable": 1,
-      "changeable": 1,
-      "ext": "proxy"
-    },
-    {
-      "key": "滴滴",
-      "name": "滴滴 | 采集",
-      "type": 1,
-      "api": "https://api.ddapi.cc/api.php/provide/vod/",
       "quickSearch": 1,
       "searchable": 1,
       "changeable": 1,
@@ -716,208 +363,10 @@
   ],
   "lives": [
     {
-      "name": "大洋马直播",
-      "type": 0,
-      "url": "https://clun.top/lib/deyzb.m3u",
-      "ua": ""
-    },
-    {
-      "name": "大秀直播",
-      "type": 0,
-      "url": "https://clun.top/lib/dxzb.m3u",
-      "ua": ""
-    },
-    {
-      "name": "欧美直播",
-      "type": 0,
-      "url": "https://clun.top/lib/omzb.m3u",
-      "ua": ""
-    },
-    {
-      "name": "国产系列",
-      "type": 0,
-      "url": "https://clun.top/lib/hsck_gc.m3u",
-      "ua": ""
-    },
-    {
-      "name": "日韩系列",
-      "type": 0,
-      "url": "https://clun.top/lib/hsck_rh.m3u",
-      "ua": ""
-    },
-    {
       "name": "test",
       "type": 0,
       "url": "https://clun.top/lib/party.m3u",
       "ua": ""
-    },
-    {
-      "name": "LIVEfl",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/5e00acbf5a7340f6617e.m3u",
-      "playerType": 1,
-      "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
-      "logo": "https://live.fanmingming.com/tv/{name}.png"
-    },
-    {
-      "name": "天美传媒816",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/888163342dcd2475fdad.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "果冻传媒816",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/f451545976aabd2fab27.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "星空传媒816",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d973a93057451478c4c2.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "国产传媒",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/dfc53400c287d0f75865.m3u",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "pron",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/fdfd77ca4a65830a0790.m3u",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "几个传媒",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/112cc7409b316fbf364d.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "181818",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/1b37736d2c8eaf21ab2f.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "live18",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/8fb75b955b29ebd22419.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "花活",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/efff8d1346076508689f.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "18资源丰富",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/7d33ae6f8dd8bfbe33ac.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "至尊",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/8997b72b066fb40c40d1.m3u",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "终极",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d139291bfc88680cbec3.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "Jable嗅探",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d5558cd419c8d46bdc95.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "vip源",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/58738e7dd65b3d5553b6.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "18+",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/e662b4ec1fe6ca577865.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "全球",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/661341ca8ae8b88060a8.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "无敌",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/22b1d4f99e1ed1f5152b.m3u",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "经典",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/041aab825179368a5e94.m3u",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "珍藏",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/9921f0226d1107a731ac.m3u",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
-    },
-    {
-      "name": "绝品",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/9f0a10874954d25d4b1c.txt",
-      "ua": "okhttp/3.15",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png"
     },
     {
       "name": "x315601",
@@ -934,12 +383,6 @@
       "ua": "okhttp/3.15",
       "epg": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/?ch={name}&date={date}",
       "logo": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/logo/{name}.png"
-    },
-    {
-      "name": "zwrt",
-      "url": "https://github.com/zwrt/IPTV/blob/Files/Adult.m3u",
-      "type": 0,
-      "ua": "okhttp/3.15"
     },
     {
       "group": "redirect",

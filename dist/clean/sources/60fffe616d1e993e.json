@@ -25,17 +25,6 @@
       "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/live/live.txt"
     },
     {
-      "key": "好色™ Tv",
-      "name": "✨Aries|好色™ Tv.py✨",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/py/好色™ Tv.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
       "key": "直播转点播1",
       "name": "💃┃佳丽┃直播",
       "type": 3,
@@ -126,127 +115,6 @@
       "quickSearch": 1
     },
     {
-      "key": "lavAPP.py",
-      "name": "lavAPP.py",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/lavAPP.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
-      "key": "Phb.py",
-      "name": "Phb.py",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/Phb.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
-      "key": "DSYS",
-      "name": "DSYS.py",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/DSYS.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
-      "key": "51吸瓜动态版.py",
-      "name": "51吸瓜动态版.py",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/51吸瓜动态版.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
-      "key": "Phb.py",
-      "name": "Phb.py",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/Phb.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
-      "key": "Xhamster.py",
-      "name": "Xhamster.py",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/Xhamster.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
-      "key": "4Kpy",
-      "name": "数逼毛",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/4k.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
-      "key": "九个区.py",
-      "name": "九个区.py",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/九个区.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
-      "key": "香蕉",
-      "name": "香蕉.py",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/香蕉.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
-      "key": "小红薯APP.py",
-      "name": "小红薯APP.py",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/小红薯APP.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
-      "key": "推特APP.py",
-      "name": "推特APP.py",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/plugin/adult/推特APP.py",
-      "order_num": 5,
-      "ext": ""
-    },
-    {
       "key": "py_MrJav",
       "name": "MRJav",
       "type": 4,
@@ -316,37 +184,6 @@
       "searchable": 1,
       "filterable": 1,
       "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/ce3946ee288b5f674c86.jar"
-    },
-    {
-      "key": "幸福加油站",
-      "name": "幸福加油站",
-      "type": 3,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 1,
-      "api": "csp_XBPQ",
-      "jar": "https://12345.kstore.space/6.jar",
-      "ext": {
-        "发布地址": "557888.XYZ",
-        "请求头": "User-Agent$MOBILE_UA",
-        "主页url": "https://887808.xyz",
-        "数组": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/thumb\"&&</span>",
-        "图片": "data-src=\"&&\"",
-        "标题": "title=\"&&\"",
-        "简介": "display: none;\">&&<",
-        "链接": "href=\"&&\"",
-        "影片年代": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/年份：&&</a",
-        "影片地区": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/地区：&&</a",
-        "影片类型": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/分类：</span>&&</span",
-        "状态": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/更新：&&</p",
-        "导演": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/导演：&&</p",
-        "主演": "https://gh-proxy.com/https://raw.githubusercontent.com/yuanwangokk-1/TV-BOX/main/纯福利/主演：&&</p",
-        "搜索模式": "1",
-        "搜索url": "https://887808.xyz/page/{pg}/?s={wd}",
-        "分类url": "https://887808.xyz/{cateId}/page/{catePg}/;;z",
-        "分类": "91大神$91%e5%a4%a7%e7%a5%9e#FC2无码$fc2%e6%97%a0%e7%a0%81#国产传媒$%e5%9b%bd%e4%ba%a7%e4%bc%a0%e5%aa%92#国产自拍$%e5%9b%bd%e4%ba%a7%e8%87%aa%e6%8b%8d#成人动漫$chengrendongman#探花約炮$%e6%8e%a2%e8%8a%b1#无码中字$wumazhongzi#日本有码$ribenyouma#有码中字$youmazhongzi#有码二区$%e6%9c%89%e7%a0%81%e4%ba%8c%e5%8c%ba#欧美中字$%e6%ac%a7%e7%be%8e%e4%b8%ad%e5%ad%97#网曝吃瓜$%e7%bd%91%e6%9b%9d%e5%90%83%e7%93%9c#美女裸聊$%e7%be%8e%e5%a5%b3%e8%a3%b8%e8%81%8a#萝莉少女$%e8%90%9d%e8%8e%89%e5%b0%91%e5%a5%b3"
-      }
     }
   ],
   "parses": [

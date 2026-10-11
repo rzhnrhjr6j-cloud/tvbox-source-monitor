@@ -1,5 +1,5 @@
 {
-  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/7b732f2289236619b791.jar",
+  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/jar/xyqxbpq.jar",
   "sites": [
     {
       "key": "爱看4K",
@@ -46,7 +46,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/猎手短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/1345a07513672eb9a0c9.json"
     },
     {
       "key": "✨安迪短剧✨",
@@ -56,7 +56,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/安迪短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/47b45736ffbe0bf4bff1.json"
     },
     {
       "key": "✨妖狐短剧✨",
@@ -66,7 +66,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/妖狐短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/9297e76a61be251eae68.json"
     },
     {
       "key": "✨555短剧✨",
@@ -76,7 +76,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/555短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b3d7ae7c392132804d43.json"
     },
     {
       "key": "✨PTT短剧✨",
@@ -86,7 +86,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/PTT短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/18a68a656f7eca40aa01.json"
     },
     {
       "key": "✨理理短剧✨",
@@ -96,7 +96,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/理理短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/3c6d95ba6b56df552c3c.json"
     },
     {
       "key": "✨免费电影网✨",
@@ -106,7 +106,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/免费短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/4ae46e68f0715398c0ce.json"
     },
     {
       "key": "✨飞飞短剧✨",
@@ -116,7 +116,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/飞飞短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b9a75ce1f3ce5824857d.json"
     },
     {
       "key": "✨蚂蚁影库✨",
@@ -126,7 +126,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/蚂蚁短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/418c660f8c1e3b2638d6.json"
     },
     {
       "key": "✨荔枝TV✨",
@@ -136,7 +136,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/荔枝短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/aa89fdbf58c4e99c9475.json"
     },
     {
       "key": "✨一起看✨",
@@ -146,7 +146,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/一起看短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d3ccf18c14b8157d6b1e.json"
     },
     {
       "key": "✨首播站✨",
@@ -156,7 +156,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/首播短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/e6f94313d61078f20d3c.json"
     },
     {
       "key": "✨天龙影院✨",
@@ -166,7 +166,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/天龙短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/fbd34f0497ca5963043a.json"
     },
     {
       "key": "csp_XBPQ_红果短剧",
@@ -189,7 +189,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/爱上短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/5e083f27040a78d15ae6.json"
     },
     {
       "key": "✨DJW✨",
@@ -200,7 +200,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/短剧网.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/9a157356c366dc0e0c46.json"
     },
     {
       "key": "✨PPTV✨",
@@ -210,7 +210,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/PP短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c15c98de6c24f7ae752e.json"
     },
     {
       "key": "✨blifun影院✨",
@@ -220,7 +220,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/blifun短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/40c8d3e1e25ea9fe407c.json"
     },
     {
       "key": "✨cms短剧✨",
@@ -230,7 +230,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/cms短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c2b48f71e375f2798a17.json"
     },
     {
       "key": "✨freeOK短剧✨",
@@ -250,17 +250,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/七味短剧.json"
-    },
-    {
-      "key": "✨白嫖者联盟✨",
-      "name": "✨白嫖短剧✨",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/白嫖者.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/e1dda23bab1e3cd0678f.json"
     },
     {
       "key": "✨短剧屋✨",
@@ -270,7 +260,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/短剧屋.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/ceac015ab22e498a5bf6.json"
     },
     {
       "key": "✨电视剧网✨",
@@ -280,7 +270,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/电视剧网.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/35fba509c7f179dae94f.json"
     },
     {
       "key": "✨老王影院✨",
@@ -290,7 +280,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/老王短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/ea1854ec3e06b6ff2c3a.json"
     },
     {
       "key": "✨胖虎影院✨",
@@ -300,7 +290,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/胖虎短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/0ddc748e2d5eaca2232c.json"
     },
     {
       "key": "✨奇优影院✨",
@@ -310,7 +300,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/奇优短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/be4c747eb2620c6adf3d.json"
     },
     {
       "key": "✨大熊短剧✨",
@@ -320,7 +310,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/大熊短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/9108ff894154cb702b73.json"
     },
     {
       "key": "✨毒舌短剧✨",
@@ -330,7 +320,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/毒舌短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c0320e952de5ba286393.json"
     },
     {
       "key": "✨微云影视✨",
@@ -340,7 +330,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/微云短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/1f7dd95ff1c66ed5dbbf.json"
     },
     {
       "key": "✨一个短剧✨",
@@ -350,7 +340,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/一个短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/fb22d3ca0ff6c0e1ef21.json"
     },
     {
       "key": "✨掌心视界✨",
@@ -360,7 +350,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/掌心短剧.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/8491e55897babbd92fa7.json"
     },
     {
       "key": "✨短剧大全✨",
@@ -370,7 +360,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/短剧大全.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/341a9a96312df24ca8c2.json"
     },
     {
       "key": "星芽短剧",
@@ -401,7 +391,7 @@
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/ysczg/ysc/main/lib/bili.json"
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/8592746cec073149e653.json"
     },
     {
       "key": "有声小说js",
@@ -426,17 +416,6 @@
       "quickSearch": 0,
       "changeable": 0,
       "ext": "http://www.meowtv.cn/js/meow.php?file=ysxs"
-    },
-    {
-      "key": "hipy_js_ss直播",
-      "name": "色色直播",
-      "type": 3,
-      "api": "https://47.93.222.173/sjf2024/dz/-/raw/main/drpy_libs/drpy2.min.js",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "order_num": 0,
-      "ext": "https://47.93.222.173/sjf2024/dz/-/raw/main/drpy_js/ss直播.js"
     },
     {
       "key": "💞探探资源💞",
@@ -479,35 +458,10 @@
       "filterable": 1
     },
     {
-      "key": "💞白嫖资源💞",
-      "name": "💞白嫖资源💞",
-      "type": 0,
-      "api": "https://www.kxgav.com/api/xml.php",
-      "searchable": 0,
-      "quickSearch": 0
-    },
-    {
       "key": "*AIvin",
       "name": "💞AIvin💞",
       "type": 0,
       "api": "http://lbapiby.com/api.php/provide/vod/at/xml"
-    },
-    {
-      "key": "番号资源",
-      "name": "💞番号资源(卡切)💞",
-      "type": 1,
-      "api": "http://fhapi9.com/api.php/provide/vod/at/json",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "(18+)S猫资源",
-      "name": "💞色猫资源",
-      "type": 0,
-      "api": "https://api.maozyapi.com/inc/api.php",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0
     },
     {
       "key": "dadiapi.com",
@@ -529,120 +483,12 @@
       "filterable": 0
     },
     {
-      "key": "csp_XYQHiker_300分类",
-      "name": "♥️300分类♥️",
-      "type": 3,
-      "api": "csp_XYQHiker",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/guot55/yg/main/lib/Aoki.jar",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/guot55/yg/main/lib/300分类.json"
-    },
-    {
-      "key": "didizy.com",
-      "name": "💕滴滴(直连)",
-      "type": 1,
-      "api": "https://api.ddapi.cc/api.php/provide/vod/?ac=list",
-      "searchable": 1,
-      "filterable": 1
-    },
-    {
       "key": "didiz",
       "name": "💕玫瑰(直连)",
       "type": 1,
       "api": "https://jipinzyapi.com/api.php/provide/vod/?ac=list",
       "searchable": 1,
       "filterable": 1
-    },
-    {
-      "key": "暴风",
-      "name": "💕骚火┃暴风",
-      "type": 1,
-      "api": "https://bfzyapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "playUrl": "json:http://43.248.187.19:88/jiexi/?url="
-    },
-    {
-      "key": "量子",
-      "name": "💕骚火┃量子",
-      "type": 1,
-      "api": "https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8/at/",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "playUrl": "json:http://43.248.187.19:88/jiexi/?url="
-    },
-    {
-      "key": "鸡坤资源",
-      "name": "👠鸡坤资源",
-      "type": 1,
-      "api": "https://jkunzyapi.com/api.php/provide/vod/",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "滴滴资源",
-      "name": "👠滴滴资源",
-      "type": 0,
-      "api": "https://api.ddapi.cc/api.php/provide/vod/at/xml",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "玉兔资源",
-      "name": "👠玉兔资源",
-      "type": 1,
-      "api": "https://yutuzy3.com/api.php/provide/vod/?ac=list",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "爱爱影视",
-      "name": "👠爱爱影视",
-      "type": 1,
-      "api": "http://22.shaozeyk.top/api.php/provide/vod/",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 1
-    },
-    {
-      "key": "色窝资源",
-      "name": "👠色窝资源",
-      "type": 1,
-      "api": "https://sewozyapi.com/api.php/provide/vod/",
-      "playUrl": "",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0,
-      "categories": [
-        "制服黑丝",
-        "强奸乱伦",
-        "国产情色",
-        "主播直播",
-        "动漫里番",
-        "日韩综合",
-        "欧美性爱",
-        "中文字幕",
-        "强奸乱伦",
-        "巨乳美乳",
-        "变态调教",
-        "自拍偷拍",
-        "熟女人妻",
-        "日本无码",
-        "日本有码",
-        "少女萝莉",
-        "三级伦理",
-        "明星偶像",
-        "美女模特",
-        "AI换脸",
-        "国产传媒"
-      ]
     }
   ],
   "lives": [

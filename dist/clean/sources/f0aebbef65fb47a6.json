@@ -29,17 +29,6 @@
       "timeout": 60
     },
     {
-      "key": "xcys",
-      "name": "星辰｜影视",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/liuwei0704/66/master/lib/XBPQ.jar",
-      "ext": {
-        "分类url": "http://m.disc800.com/species/{cateId}/area/{area}/by/{by}/class/{class}/lang/{lang}/page/{catePg}/year/{year}.html",
-        "分类": "电影$1#连续剧$2#动漫$3#综艺$4#纪录片$5#18禁$6"
-      }
-    },
-    {
       "key": "ssys",
       "name": "三思┃影视",
       "type": 3,
@@ -106,28 +95,6 @@
         "线路标题": "健教专享",
         "分类url": "http://www.7xdy.com/{cateId}/index{catePg}.html[http://www.7xdy.com/{cateId}/index.html];;k",
         "分类": "电影$dianyingpian#电视剧$dianshiju#综艺$zongyi#动漫$dongman"
-      }
-    },
-    {
-      "key": "奇优🏮秒播",
-      "name": "奇优|播",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/liuwei0704/66/master/lib/XBPQ.jar",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": {
-        "简介": "健教提醒您,请勿相信影片中的广告，以免上当受骗！+&&</div>",
-        "导演": "健教TV",
-        "主演": "主演：&&</p>",
-        "线路数组": "健教专享",
-        "线路标题": "健教专享",
-        "播放数组": "stui-content__playlist clearfix&&</ul>",
-        "播放列表": "<li>&&</li>",
-        "播放标题": ">&&</a>",
-        "分类url": "http://www.qiyoudy1.com/list/{cateId}_{catePg}.html[http://www.qiyoudy1.com/list/{cateId}.html];;ak",
-        "分类": "电影$1#电视剧$2#动漫$3#综艺$4#18禁$6"
       }
     },
     {
@@ -307,19 +274,6 @@
       }
     },
     {
-      "key": "白嫖者",
-      "name": "白飘|影视",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/liuwei0704/66/master/lib/XBPQ.jar",
-      "ext": {
-        "分类url": "https://www.qyzf88.com/qyvodshow/{cateId}-{area}-{by}-{class}-----{catePg}---{year}.html",
-        "分类": "电影$1#爱情片$8#电视剧$2#动漫$4#综艺$3",
-        "副标题": "class=\"pic-text text-right\"&&</span>",
-        "简介": "+剧情介绍：&&</p >"
-      }
-    },
-    {
       "key": "XBPQ_电影先生",
       "name": "电影先生|XBPQ",
       "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/liuwei0704/66/master/lib/XBPQ.jar",
@@ -387,27 +341,6 @@
       }
     },
     {
-      "key": "saohuo",
-      "name": "🌙️骚火┃电影",
-      "type": 3,
-      "searchable": 1,
-      "changeable": 1,
-      "jar": "https://gitlab.com/guot55/bh/-/raw/main/pg/yg.jar",
-      "api": "csp_XBPQ",
-      "ext": {
-        "嗅探词": ".m3u8#.mp4#.m3u8?#freeok.mp4",
-        "分类url": "https://shdy2.com/list/{cateId}-{catePg}.html;;vr1au0",
-        "分类": "电影$1#剧情$15#电视剧$2#韩剧$22#美剧$23#动漫$4",
-        "数组二次截取": "class=\"v_list\">&&</ul>",
-        "数组": "\"v_img\"&&/div>",
-        "标题": "title=\"&&\"",
-        "副标题": "v_note\"&&</div",
-        "跳转播放链接": "<iframe*src=\"&&\"",
-        "二次跳转播放链接": "https://hhjx.hhplayer.com/api.php;post;url=+var url*\"&&\"+&t=+var t*\"&&\"+&key=+var key*\"&&\"+&act=0+&play=1",
-        "三次跳转播放链接": "\"url\"*\"&&\""
-      }
-    },
-    {
       "key": "阿里影视",
       "name": "🥤阿里影视(聚)",
       "type": 1,
@@ -423,55 +356,6 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1
-    },
-    {
-      "key": "牛Y",
-      "name": "牛Y",
-      "type": 1,
-      "api": "https://api.niuniuzy.me/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "categories": [
-        "4K电影",
-        "动作片",
-        "喜剧片",
-        "爱情片",
-        "科幻片",
-        "恐怖片",
-        "港台三级",
-        "韩国伦理",
-        "日本伦理",
-        "西方伦理",
-        "剧情片",
-        "战争片",
-        "国产剧",
-        "欧美剧",
-        "韩剧",
-        "日剧",
-        "港剧",
-        "台剧",
-        "泰剧",
-        "海外剧",
-        "纪录片",
-        "大陆综艺",
-        "日韩综艺",
-        "港台综艺",
-        "欧美综艺",
-        "国产动漫",
-        "日韩动漫",
-        "欧美动漫",
-        "动画片",
-        "港台动漫",
-        "海外动漫",
-        "演唱会",
-        "体育赛事",
-        "篮球",
-        "足球",
-        "预告片",
-        "爽文短剧",
-        "影视解说"
-      ]
     },
     {
       "key": "hn",
@@ -808,53 +692,6 @@
       ],
       "searchable": 1,
       "quickSearch": 1
-    },
-    {
-      "key": "乐视采集",
-      "name": "乐视🏜️蓝光",
-      "type": 1,
-      "playerType": 2,
-      "searchable": 1,
-      "api": "https://leshiapi.com/api.php/provide/vod/at/json",
-      "playUrl": "",
-      "categories": [
-        "国产剧",
-        "韩国剧",
-        "泰国剧",
-        "欧美剧",
-        "香港剧",
-        "台湾剧",
-        "短剧",
-        "日剧",
-        "海外剧",
-        "大陆综艺",
-        "港台综艺",
-        "日韩综艺",
-        "欧美综艺",
-        "国产动漫",
-        "日本动漫",
-        "欧美动漫",
-        "电影解说",
-        "动作片",
-        "冒险片",
-        "动画片",
-        "喜剧片",
-        "爱情片",
-        "奇幻片",
-        "灾难片",
-        "悬疑片",
-        "科幻片",
-        "恐怖片",
-        "剧情片",
-        "战争片",
-        "犯罪片",
-        "其他片",
-        "伦理片",
-        "港台三级",
-        "韩国伦理",
-        "日本伦理",
-        "其他伦理"
-      ]
     },
     {
       "key": "IKUN资源",
@@ -1254,15 +1091,6 @@
       "filterable": 1
     },
     {
-      "key": "sesehu",
-      "name": "色色虎",
-      "type": 1,
-      "api": "https://apisesehuzy.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1
-    },
-    {
       "key": "非凡",
       "name": "非凡",
       "type": 0,
@@ -1360,40 +1188,12 @@
       }
     },
     {
-      "key": "csp_xBPQ_香蕉超清",
-      "name": "🏆香蕉超清",
-      "type": 3,
-      "api": "csp_xBPQ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/liuwei0704/66/master/h/%e9%a6%99%e8%95%89%e8%b6%85%e6%b8%85.json",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/liuwei0704/66/master/jar/Yoursmile2.jar"
-    },
-    {
       "key": "雪豹资源",
       "name": "雪豹资源",
       "type": 1,
       "api": "https://api.xbapi.cc/api.php/provide/vod/at/json",
       "searchable": 1,
       "quickSearch": 1
-    },
-    {
-      "key": "滴滴资源",
-      "name": "滴滴资源",
-      "type": 1,
-      "api": "https://api.ddapi.cc/api.php/provide/vod/at/json",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "小AV",
-      "name": "小AV",
-      "type": 0,
-      "searchable": 0,
-      "quickSearch": 0,
-      "api": "https://www.pgxdy.com/api/xml.php",
-      "playUrl": ""
     },
     {
       "key": "美少女资源站",
@@ -1405,28 +1205,10 @@
       "filterable": 0
     },
     {
-      "key": "淫水机资源站",
-      "name": "淫水机资源站",
-      "type": 0,
-      "api": "https://www.xrbsp.com/api/xml.php",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0
-    },
-    {
       "key": "香奶儿资源站",
       "name": "香奶儿资源站",
       "type": 0,
       "api": "https://www.gdlsp.com/api/xml.php",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0
-    },
-    {
-      "key": "白嫖资源站",
-      "name": "白嫖资源站",
-      "type": 0,
-      "api": "https://www.kxgav.com/api/xml.php",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0
@@ -1483,93 +1265,6 @@
       "filterable": 1
     },
     {
-      "key": "色花堂",
-      "name": "色花堂",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/liuwei0704/66/master/a/色花堂.json"
-    },
-    {
-      "key": "didizy.com",
-      "name": "💕滴滴(直连)",
-      "type": 1,
-      "api": "https://api.ddapi.cc/api.php/provide/vod/?ac=list",
-      "searchable": 1,
-      "filterable": 1
-    },
-    {
-      "key": "我爱AV",
-      "name": "我爱AV社区|WO❤️AV",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "jar": "https://gh-proxy.com/https://raw.githubusercontent.com/guot55/yg/main/jar/xyqxbpq.jar",
-      "playerType": 2,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": {
-        "数组": "class=\"stui-vodlist__thumb lazyload\"&&</a",
-        "副标题": "span class=\"pic-text text-right\">&&</p",
-        "线路数组": "<li&&</li>",
-        "线路标题": "✨vip专享✨+<h3> 私密专线 </h3> ",
-        "播放标题": ">&&</a",
-        "搜索模式": "1",
-        "搜索url": "/vodsearch/{wd}----------{pg}---.html",
-        "分类数组": "<li&&</li>",
-        "分类标题": ">&&</a",
-        "分类ID": "/vodtype/&&.html",
-        "分类链接": "https://vip.woaav.online:13097/vodshow/{cateId}--------{catePg}---.html"
-      }
-    },
-    {
-      "key": "老鸭",
-      "name": "👠老鸭采集",
-      "type": 1,
-      "api": "https://api.apilyzy.com/api.php/provide/vod/",
-      "playUrl": "",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 1,
-      "categories": [
-        "日本有码",
-        "日本无码",
-        "中文字幕",
-        "变态另类",
-        "巨乳美乳",
-        "动漫精品",
-        "熟女人妻",
-        "自拍偷拍",
-        "海外明星",
-        "国产传媒"
-      ]
-    },
-    {
-      "key": "AList18+",
-      "name": "👠AList18+",
-      "type": 3,
-      "api": "csp_AList",
-      "searchable": 1,
-      "recordable": 0,
-      "ext": {
-        "drives": [
-          {
-            "name": "9T",
-            "server": "https://drive.upan.ee",
-            "params": [
-              {
-                "path": "/OneDrive",
-                "pass": "upan"
-              },
-              {
-                "path": "/115Cloud",
-                "pass": "upan"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
       "key": "美少女",
       "name": "技巧影视",
       "type": 0,
@@ -1577,29 +1272,6 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1
-    },
-    {
-      "key": "csp_xBPQ_404精品",
-      "name": "👠404精品T",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "jar": "",
-      "ext": {
-        "站名": "404精品",
-        "主页url": "https://404jpz.xyz/",
-        "分类": "精品推荐$27#剧情原创$28#探花约啪$51#主播大秀$52#传媒影像$53#情色节目$59#P站精品$61#抖阴短视频$63#网曝门$70#AV解说$76#国产视频$29#网红主播$30#偷拍自拍$31#国产伦理$77#国产精品$75#日韩视频$1#中文字幕$33#名优写真$35#日本伦理$39#名优综艺$40#韩美眉主播$41#骑兵有码$43#无码专区$6#卡通动漫$8#欧美$34",
-        "数组": "<div class=\"content\">&&</div>",
-        "图片": "src=\"&&\"",
-        "标题": "title=\"&&\"",
-        "链接": "href=\"&&\"",
-        "副标题": "title=\"&&\"",
-        "分类url": "https://404jpz.xyz/index.php/vod/type/id/{cateId}/page/{catePg}.html",
-        "直接播放": "1",
-        "免嗅": "1"
-      }
     },
     {
       "key": "天堂",
@@ -1647,18 +1319,6 @@
       "filterable": 0
     },
     {
-      "key": "花都影视",
-      "name": "花都影视(切片)",
-      "type": 0,
-      "style": {
-        "type": "rect",
-        "ratio": 1.485
-      },
-      "api": "https://apisesehuzy.com/api.php/provide/vod/at/xml",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
       "key": "富二代资源",
       "name": "富二代资源",
       "type": 0,
@@ -1694,32 +1354,6 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1
-    },
-    {
-      "key": "fh资源",
-      "name": "💖FH采集",
-      "type": 1,
-      "api": "http://fhapi9.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1
-    },
-    {
-      "key": "666",
-      "name": "🍆撸网666",
-      "type": 3,
-      "changeable": 1,
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "api": "csp_XBPQ",
-      "jar": "",
-      "ext": {
-        "直接播放": "1",
-        "搜索链接后缀": "-1-1.html",
-        "搜索url": "https://luw666.ink/index.php/vodsearch/----------{pg}---.html?wd={wd}&submit=",
-        "分类": "国产传媒$160#日本$2#国产$1#韩国$4#欧美$5#动画$6",
-        "分类url": "https://luw666.ink/index.php/vodtype/{cateId}-{catePg}.html"
-      }
     },
     {
       "key": "csp_Dm84",

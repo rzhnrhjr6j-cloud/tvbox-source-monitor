@@ -70,10 +70,7 @@ jobs:
             <body>
               <h1>tvbox-source-monitor</h1>
               <p>影视仓配置地址（固定，不需要改）：</p>
-              <ul>
-                <li>完整版：<code>tvbox.json</code></li>
-                <li>过滤版（已去掉精东等儿童不宜内容）：<code>tvbox-clean.json</code></li>
-              </ul>
+              <p><code>tvbox.json</code></p>
               <ul>
                 <li><a href="dashboard/">健康面板 Dashboard</a></li>
                 <li><a href="health.json">health.json</a></li>

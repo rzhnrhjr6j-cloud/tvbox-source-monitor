@@ -121,34 +121,6 @@ class _Handler(BaseHTTPRequestHandler):
                 "application/json; charset=utf-8",
             )
 
-        # A config whose own rows mix ordinary sites with the adult ones that
-        # sit inside every real Chinese aggregator, so the second entry has
-        # something to strip without dropping the whole source.
-        if path == "/adultrows.json":
-            if not state["config_up"]:
-                return self._send_json({"error": "service unavailable"}, status=503)
-            return self._send(
-                json.dumps(
-                    {
-                        "sites": [
-                            dict(SITE_TEMPLATE, key="plain", name="豆瓣电影",
-                                 api=f"{self.base}/api.php/provide/vod/"),
-                            dict(SITE_TEMPLATE, key="adult", name="🔞MD-4K",
-                                 api=f"{self.base}/api.php/provide/vod/"),
-                        ],
-                        # the row name is innocent; only the playlist it points
-                        # at says what it is
-                        "lives": [
-                            {"name": "🍓直播(直连)", "type": 0,
-                             "url": f"{self.base}/assets/adult-live.txt"},
-                        ],
-                        "parses": [],
-                    },
-                    ensure_ascii=False,
-                ).encode("utf-8"),
-                content_type="application/json; charset=utf-8",
-            )
-
         if path == "/api.php/provide/vod/":
             if not state["search_up"]:
                 return self._send_json({"code": 0, "list": [], "total": 0, "msg": "search disabled"})
@@ -376,12 +348,6 @@ class _Handler(BaseHTTPRequestHandler):
         if path == "/assets/live.txt":
             return self._send("#EXTM3U\n#EXTINF:-1,CCTV1\nhttp://live.example.com/1.m3u8\n".encode("utf-8"),
                               content_type="text/plain; charset=utf-8")
-
-        if path == "/assets/adult-live.txt":
-            return self._send(
-                "#EXTM3U\n#EXTINF:-1,俄罗斯成人1台\nhttp://live.example.com/adult.m3u8\n".encode("utf-8"),
-                content_type="text/plain; charset=utf-8",
-            )
 
         if path == "/assets/cfg.json":
             return self._send(b'{"list": []}', content_type="application/json; charset=utf-8")

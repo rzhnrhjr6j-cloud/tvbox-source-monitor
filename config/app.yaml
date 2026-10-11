@@ -98,6 +98,20 @@ output:
     enabled: true
     file: "tvbox-live.json"
     max_playlists: 0         # 0 = 不限制
+    # 直播清单实测：多仓入口合并进来的清单，有些上游文件早已 404，在客户端
+    # 就是「解析失败」。构建时逐条抓一次，能解析放的排前面，确定没了的踢掉。
+    # 判死只认 404/410 或「2xx 但不是清单」；超时 / 连接重置 / 5xx 一律记
+    # unknown 并保留——构建跑在 GitHub 上，够不到大陆源不代表那个源是死的。
+    probe:
+      enabled: true
+      workers: 16
+      connect_timeout: 5
+      read_timeout: 8
+      max_bytes: 1048576     # 只读头部；m3u 到 1MB 足够看出是不是清单
+      drop: dead             # dead | unhealthy | none
+      # 一次构建里超过这个比例的清单判死，说明是构建机断网而不是源死了，
+      # 这时只重排序、不删除（跟 output 的 max_drop_ratio 同一个思路）
+      max_dead_ratio: 0.6
   min_score_primary: 85
   min_stability_primary: 80
   min_score_backup: 70

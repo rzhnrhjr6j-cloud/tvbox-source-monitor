@@ -23,7 +23,16 @@ from ..models import BuildRecord, Event, Source, SourceEvent, Status, Tier
 from ..utils.http_client import HttpClient
 from ..utils.timeutil import age_days, to_iso, utcnow
 from ..checks.jar_check import EVIDENCE_FILE, has_jar_sites, load_evidence, passes as android_passes
-from .live import LIVE_FILE, build_live_entry, configs_from_directory, configs_from_plan, write_live_entry
+from .live import (
+    LIVE_FILE,
+    MIRROR_DIR,
+    build_live_entry,
+    configs_from_directory,
+    configs_from_plan,
+    probe_playlists,
+    rank_live_entry,
+    write_live_entry,
+)
 from .mirror import SOURCES_DIR, ConfigMirror, MirrorPlan
 from .validator import ValidationResult, validate_output
 
@@ -673,6 +682,7 @@ class ConfigBuilder:
             version=str(self.cfg.get("app.version", "1.0")),
             max_playlists=int(live_cfg.get("max_playlists", 0) or 0),
         )
+        payload = self._probe_live(payload, live_cfg)
         if not payload["lives"]:
             # an empty entry would only give the client a 直播 tab that loads
             # nothing, and worse, it would overwrite the previous good one
@@ -684,6 +694,39 @@ class ConfigBuilder:
             payload,
             pretty=bool(self.output_cfg.get("pretty", True)),
         )
+
+    def _probe_live(self, payload: dict[str, Any], live_cfg: dict[str, Any]) -> dict[str, Any]:
+        """Fetch every playlist once and demote/踢掉 the ones that are gone.
+
+        Best-effort by construction: a probe that cannot run leaves the entry
+        exactly as assembled.  See :func:`app.build.live.probe_playlists`.
+        """
+        probe_cfg = live_cfg.get("probe")
+        if not isinstance(probe_cfg, dict) or not bool(probe_cfg.get("enabled", False)):
+            return payload
+        try:
+            report = probe_playlists(
+                payload["lives"],
+                client=self.client,
+                local_root=self.dist_dir / MIRROR_DIR,
+                workers=int(probe_cfg.get("workers", 16) or 16),
+                connect_timeout=float(probe_cfg.get("connect_timeout", 5) or 5),
+                read_timeout=float(probe_cfg.get("read_timeout", 8) or 8),
+                max_bytes=int(probe_cfg.get("max_bytes", 1_048_576) or 1_048_576),
+            )
+            ranked, stats = rank_live_entry(
+                payload,
+                report,
+                drop=str(probe_cfg.get("drop", "dead") or "dead"),
+                max_dead_ratio=float(probe_cfg.get("max_dead_ratio", 0.6) or 0.6),
+            )
+        except Exception as exc:  # noqa: BLE001 - probing must never fail a build
+            LOGGER.warning("live probe skipped", extra={
+                "stage": "build", "check": "live_probe", "error": str(exc)[:200],
+            })
+            return payload
+        LOGGER.info("live entry probed", extra={"stage": "build", "check": "live_probe", **stats})
+        return ranked
 
     def _publish_alt(self, path: Path) -> Path | None:
         """Publish a second entry point whose urls point at a different host.

@@ -23,6 +23,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app.build.live_playlist import (  # noqa: E402
+    ALIVE,
     CACHE_FILE,
     DEAD,
     assemble,
@@ -76,27 +77,50 @@ def main(argv: list[str] | None = None) -> int:
         print("一条频道都没抓到，什么都没写")
         return 1
 
-    def _merged(verdicts: dict[str, str]):
+    def _merged(verdicts: dict[str, str], *, require_alive: bool = True):
         return merge_channels(
             [channels],
             verdicts=verdicts,
             max_per_name=int(out_cfg.get("max_per_name", 3) or 3),
             max_channels=int(out_cfg.get("max_channels", 0) or 0),
             max_per_group=out_cfg.get("max_per_group") or {},
+            require_alive_groups=(out_cfg.get("require_alive_groups") or ()) if require_alive else (),
         )
 
     enabled = bool(probe_cfg.get("enabled", True)) if args.probe is None else args.probe
     if enabled:
-        # 只实测合并后真正要发出去的线路，省掉一大半无用请求
+        workers = int(probe_cfg.get("workers", 24) or 24)
+        connect_timeout = float(probe_cfg.get("connect_timeout", 5) or 5)
+        read_timeout = float(probe_cfg.get("read_timeout", 12) or 12)
+        # 只实测合并后真正要发出去的线路，省掉一大半无用请求。
+        # 注意必须「不套 require_alive_groups」地取候选：一条从没测过的新线路
+        # 在那种规则下会被当成「没有实测能播的线路」提前踢掉，永远轮不到实测。
+        candidates = _merged(verdicts, require_alive=False)
         fresh = probe_channels(
-            _merged(verdicts),
-            workers=int(probe_cfg.get("workers", 64) or 64),
-            connect_timeout=float(probe_cfg.get("connect_timeout", 4) or 4),
-            read_timeout=float(probe_cfg.get("read_timeout", 6) or 6),
+            candidates,
+            workers=workers,
+            connect_timeout=connect_timeout,
+            read_timeout=read_timeout,
         )
+        # 「必须能播」的那两组（港澳台 / 国外）要求连着测两遍都算能播才认。
+        # 这些台大多挂在小 CDN 上，单测一遍会把「2xx 其实是错误页」「清单在、分片
+        # 404」的假活当成活发出去，用户点进去正好是「播放失败」。
+        strict = {str(group) for group in (out_cfg.get("require_alive_groups") or ())}
+        retry = [c for c in candidates if c.group in strict and fresh.get(c.url) == ALIVE]
+        if retry:
+            second = probe_channels(
+                retry,
+                workers=workers,
+                connect_timeout=connect_timeout,
+                read_timeout=read_timeout,
+            )
+            flaky = {url for url, verdict in second.items() if verdict != ALIVE}
+            for url in flaky:
+                fresh[url] = second[url]
+            print(f"复测：严格组里第一遍算能播的 {len(retry)} 条，复测掉 {len(flaky)} 条")
         verdicts.update(fresh)
         save_verdicts(cache, verdicts)
-        alive = sum(1 for value in fresh.values() if value == "alive")
+        alive = sum(1 for value in fresh.values() if value == ALIVE)
         print(f"实测：{len(fresh)} 条地址，能连上 {alive} 条（结论写进 {cache.relative_to(ROOT)}）")
 
     dead = {channel.url for channel in channels if verdicts.get(channel.url) == DEAD}

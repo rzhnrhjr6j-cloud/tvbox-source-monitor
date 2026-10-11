@@ -70,6 +70,16 @@ def test_canonical_group_folds_the_labels_in_the_wild():
     assert canonical_group("随便", "") == "其他"
 
 
+def test_canonical_group_sends_foreign_channels_to_their_own_group():
+    assert canonical_group("NHK World Japan", "国际") == "国外"
+    assert canonical_group("KBS World", "") == "国外"
+    assert canonical_group("BBC News", "News") == "国外"
+    # 大陆自己的台名里常带「国际」，不能因此被划进国外
+    assert canonical_group("CCTV-4 国际频道", "央视") == "央视"
+    # 名字里的国家/品牌词压过上分组标签
+    assert canonical_group("日本 NHK 综合", "央视频道") == "国外"
+
+
 def test_merge_dedupes_caps_and_puts_alive_first():
     channels = [
         Channel("CCTV1", "http://dead.example/1", "央视"),
@@ -101,6 +111,49 @@ def test_merge_keeps_groups_contiguous_and_can_cap_them():
 def test_sort_is_stable_for_unknown_verdicts():
     channels = [Channel("B", "http://b.example", "央视"), Channel("A", "http://a.example", "央视")]
     assert [channel.name for channel in sort_channels(channels)] == ["A", "B"]
+
+
+def test_merge_drops_a_group_channel_with_no_playable_source():
+    """港澳台: a channel whose sources all fail is worse than no channel.
+
+    The user taps it, gets 「播放失败」, and writes off the whole list.
+    """
+    channels = [
+        Channel("东森新闻", "http://dead.example/ds.m3u8", "港澳台"),
+        Channel("东森新闻", "http://slow.example/ds.m3u8", "港澳台"),
+        Channel("凤凰中文", "http://ok.example/fh.m3u8", "港澳台"),
+        Channel("CCTV1", "http://slow.example/cctv1.m3u8", "央视"),
+    ]
+    verdicts = {
+        "http://dead.example/ds.m3u8": DEAD,
+        "http://slow.example/ds.m3u8": "unknown",
+        "http://ok.example/fh.m3u8": ALIVE,
+        "http://slow.example/cctv1.m3u8": "unknown",
+    }
+
+    without = merge_channels([channels], verdicts=verdicts)
+    assert {"东森新闻", "凤凰中文"} <= {channel.name for channel in without}
+
+    merged = merge_channels([channels], verdicts=verdicts, require_alive_groups=["港澳台"])
+    names = {channel.name for channel in merged}
+    assert "东森新闻" not in names  # every source failed
+    assert "凤凰中文" in names
+    assert "CCTV1" in names  # other groups keep their unclear sources
+
+
+def test_drop_without_alive_does_not_let_a_variant_ride_along():
+    """「凤凰中文高清」 is a separate row in the client, so it needs its own proof."""
+    channels = [
+        Channel("凤凰中文", "http://ok.example/fh.m3u8", "港澳台"),
+        Channel("凤凰中文高清", "http://slow.example/fh-hd.m3u8", "港澳台"),
+    ]
+    verdicts = {
+        "http://ok.example/fh.m3u8": ALIVE,
+        "http://slow.example/fh-hd.m3u8": "unknown",
+    }
+
+    merged = merge_channels([channels], verdicts=verdicts, require_alive_groups=["港澳台"])
+    assert [channel.name for channel in merged] == ["凤凰中文"]
 
 
 def test_render_m3u_round_trips():

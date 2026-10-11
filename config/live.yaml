@@ -33,8 +33,79 @@ sources:
   - name: wwb521
     url: https://raw.githubusercontent.com/wwb521/live/main/tv.m3u
     fetch: proxy
+  - name: itv-collect
+    url: https://raw.githubusercontent.com/iTCoffe/Collect-iTV/main/LiTV.m3u
+    fetch: proxy
+  - name: guovin-tv
+    url: https://raw.githubusercontent.com/Guovin/TV/gd/output/result.m3u
+    fetch: proxy
+  - name: hujingguang-cn
+    url: https://raw.githubusercontent.com/hujingguang/ChinaIPTV/main/cnTV_AutoUpdate.m3u8
+    fetch: proxy
   - name: iptv-org
     url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u
+    fetch: proxy
+  - name: iptv-org-hk
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/hk.m3u
+    fetch: proxy
+  - name: iptv-org-tw
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/tw.m3u
+    fetch: proxy
+  # ---- 国外（iptv-org 按国家/地区拆出来的那份，另加 Free-TV 的精选清单）----
+  # 这些台的 CDN 大多在国外，只有一部分大陆能直连；实测能播的会排在各组最前面。
+  - name: free-tv
+    url: https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8
+    fetch: proxy
+  - name: iptv-org-jp
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/jp.m3u
+    fetch: proxy
+  - name: iptv-org-kr
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/kr.m3u
+    fetch: proxy
+  - name: iptv-org-us
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/us.m3u
+    fetch: proxy
+  - name: iptv-org-uk
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/uk.m3u
+    fetch: proxy
+  - name: iptv-org-fr
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/fr.m3u
+    fetch: proxy
+  - name: iptv-org-de
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/de.m3u
+    fetch: proxy
+  - name: iptv-org-ru
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/ru.m3u
+    fetch: proxy
+  - name: iptv-org-es
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/es.m3u
+    fetch: proxy
+  - name: iptv-org-it
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/it.m3u
+    fetch: proxy
+  - name: iptv-org-in
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/in.m3u
+    fetch: proxy
+  - name: iptv-org-th
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/th.m3u
+    fetch: proxy
+  - name: iptv-org-vn
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/vn.m3u
+    fetch: proxy
+  - name: iptv-org-sg
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/sg.m3u
+    fetch: proxy
+  - name: iptv-org-my
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/my.m3u
+    fetch: proxy
+  - name: iptv-org-tr
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/tr.m3u
+    fetch: proxy
+  - name: iptv-org-ca
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/ca.m3u
+    fetch: proxy
+  - name: iptv-org-au
+    url: https://raw.githubusercontent.com/iptv-org/iptv/master/streams/au.m3u
     fetch: proxy
 
 # 抓上游清单时套的前缀（大陆直连 GitHub 会超时）
@@ -49,8 +120,16 @@ output:
   # 分组上限，防止「其他」变成垃圾场（这个是实测里最大的一组）
   max_per_group:
     其他: 300
+    # 国外候选有几千条，先按上限切一批出来实测（能播的排前面）
+    国外: 600
   # 0 = 全收
   max_channels: 0
+  # 这些组里，一个频道要是有实测能播的线路才发；一条都没有就整条不发。
+  # 港澳台上游死链极多（实测 149 条地址只有 16 条能播），全发出去的结果是
+  # 用户点谁谁「播放失败」，比没有还糟。
+  require_alive_groups:
+    - 港澳台
+    - 国外
   # 出问题时给客户端的备选地址：第一个写进 tvbox-live.json
   bases:
     - "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist"
@@ -62,10 +141,16 @@ output:
 # 逐条频道实测。只有在本机（大陆网络）跑才有意义：GitHub 构建机够不到大陆
 # 的流，会把好频道判成坏。跑出来的结论落在 data/live_probe.json 里并提交，
 # 构建时按这份结果排序（能播的排前面）。
+#
+# 判定方式 = 模拟播放器：先拉清单，再拉第一个分片。只有分片也回来才算 alive。
+#   alive   = 分片能拉到
+#   dead    = 404/410/403/451/523，或者 2xx 回来的是 HTML 错误页，或者分片 404
+#   unknown = 超时 / 连接重置 / 其它说不清的（保留，排在后面当「源2/源3」）
 probe:
   enabled: true
-  workers: 64
-  connect_timeout: 4
-  read_timeout: 6
-  # 判死只认 404/410：超时、连接重置、403（大概率是地域封锁）都记 unknown
+  # 别开太大：这些是大站点之外的土服务器，64 并发会被限流，反而把好频道
+  # 判成 unknown。
+  workers: 24
+  connect_timeout: 5
+  read_timeout: 12
   cache: data/live_probe.json

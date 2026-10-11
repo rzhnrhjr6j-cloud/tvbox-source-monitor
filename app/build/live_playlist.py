@@ -15,10 +15,12 @@ So one URL gives the client one list.  A channel that is gone only loses its
 own line, and a channel carried by several upstreams keeps working sources
 first (the client shows them as 源1/源2/源3).
 
-Probing note: only a mainland connection can judge a mainland stream.  A
-GitHub runner that cannot reach one must never be allowed to delete it, so
-only 404/410 counts as dead, and the verdicts that ship are the ones measured
-locally (``data/live_probe.json``).
+Probing note: a stream only counts as playable when it answers like a player
+would ask - fetch the manifest, then fetch the first media segment.  A URL
+that merely opens a socket (a 200 with an HTML error page, an HLS manifest
+whose segments 404) fails the moment the user taps it, so it is dropped.
+Only a mainland connection can judge a mainland stream, so the verdicts that
+ship are the ones measured locally (``data/live_probe.json``).
 """
 
 from __future__ import annotations
@@ -30,6 +32,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping
+from urllib.parse import urljoin
 
 from ..logging_setup import get_logger
 from ..utils.timeutil import to_iso
@@ -42,17 +45,32 @@ UNKNOWN = "unknown"
 CACHE_FILE = "live_probe.json"
 
 # the order the client shows the groups in
-GROUP_ORDER = ("央视", "卫视", "地方", "港澳台", "其他")
+GROUP_ORDER = ("央视", "卫视", "地方", "港澳台", "国外", "其他")
 _GROUP_RANK = {name: index for index, name in enumerate(GROUP_ORDER)}
 
-_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-       "(KHTML, like Gecko) Chrome/120.0 Safari/537.36")
+_UA = "okhttp/3.15"  # what the apps actually send
 _ATTR = re.compile(r'([A-Za-z0-9_-]+)="([^"]*)"')
 _BRACKETED = re.compile(r"[（(][^）)]*[）)]")
-_DEAD_STATUS = frozenset({404, 410})
+# 403/451 are geoblocks, 523 is Cloudflare's "origin unreachable": from the
+# mainland connection the client uses, all of them fail on tap.
+_DEAD_STATUS = frozenset({403, 404, 410, 451, 523})
+_SEGMENT_DEAD = frozenset({404, 410})
 _PLAYABLE = ("http://", "https://")
 # quality markers that differ between upstreams but mean the same channel
 _QUALITY = ("1080P", "720P", "576I", "480P", "4K", "HD", "SD", "高清", "超清", "蓝光", "标清", "流畅")
+# countries upstreams file under every spelling there is
+_FOREIGN = (
+    "国外", "海外", "国际", "日本", "日テレ", "韩国", "韩语", "朝鲜", "美国", "英国", "法国",
+    "德国", "意大利", "西班牙", "葡萄牙", "荷兰", "瑞士", "瑞典", "挪威", "丹麦", "俄罗斯",
+    "乌克兰", "土耳其", "印度", "泰国", "越南", "新加坡", "马来西亚", "印尼", "菲律宾",
+    "加拿大", "澳大利亚", "新西兰", "巴西", "阿根廷", "墨西哥", "南非", "埃及", "阿拉伯",
+    "以色列", "伊朗", "巴基斯坦", "蒙古", "japan", "korea", "usa", "united states",
+    "united kingdom", "europe", "international", "nhk", "wowow", "bbc", "cnn", "nbc",
+    "cbs", "abc news", "fox", "cnbc", "bloomberg", "discovery", "national geographic",
+    "mtv", "hbo", "cartoon", "anime", "tvn", "kbs", "mbc", "sbs", "euro", "italia",
+    "france", "germany", "deutsch", "espana", "españa", "russia", "india", "thai",
+    "vietnam", "arabic", "africa",
+)
 
 
 @dataclass(frozen=True)
@@ -77,14 +95,21 @@ def canonical_group(name: str, group: str = "") -> str:
 
     The channel's own name decides first: upstreams file 凤凰卫视 under
     「央视频道」 often enough that the label alone cannot be trusted.
+
+    Order matters.  央视 and 卫视 are checked before 国外 because the
+    mainland channels are the ones with stray foreign-looking words in
+    their names (``CCTV-4 国际频道``, ``东方卫视``); a Japanese or Korean
+    channel carries a country word and no 卫视 at all.
     """
     for haystack in (str(name or "").lower(), str(group or "").lower()):
         if any(word in haystack for word in ("港澳", "香港", "澳门", "台湾", "hket", "taiwan", "hongkong")):
             return "港澳台"
-        if "卫视" in haystack or "satellite" in haystack:
-            return "卫视"
         if "央视" in haystack or "cctv" in haystack:
             return "央视"
+        if "卫视" in haystack or "satellite" in haystack:
+            return "卫视"
+        if any(word in haystack for word in _FOREIGN):
+            return "国外"
         if any(word in haystack for word in ("地方", "省内", "城市", "本地")):
             return "地方"
     return "其他"
@@ -193,6 +218,7 @@ def merge_channels(
     max_per_name: int = 3,
     max_channels: int = 0,
     max_per_group: Mapping[str, int] | None = None,
+    require_alive_groups: Iterable[str] | None = None,
 ) -> list[Channel]:
     """One list, deduped, working sources first, groups in a stable order."""
     verdicts = verdicts or {}
@@ -209,10 +235,40 @@ def merge_channels(
             seen.add(key)
             kept.append(channel)
     kept = sort_channels(kept, verdicts)
+    kept = _drop_without_alive(kept, require_alive_groups or (), verdicts)
     kept = _cap(kept, max_per_name=max_per_name, max_per_group=group_caps, verdicts=verdicts)
     if max_channels:
         kept = kept[:max_channels]
     return kept
+
+
+def _drop_without_alive(
+    channels: list[Channel],
+    groups: Iterable[str],
+    verdicts: Mapping[str, str],
+) -> list[Channel]:
+    """Whole groups where a channel is only worth showing if one source plays.
+
+    Upstreams carry dozens of dead 港澳台 lines.  Showing 东森新闻 with three
+    sources that all fail is worse than not showing it: the user taps, gets
+    「播放失败」, and concludes the whole list is broken.
+
+    The test is per exact name, not per dedupe key: 「凤凰中文高清」 is its own
+    entry in the client, so it does not get to ride on 「凤凰中文」 having a
+    working line.
+    """
+    wanted = {str(group) for group in groups}
+    if not wanted:
+        return channels
+    playable = {
+        channel.name
+        for channel in channels
+        if channel.group in wanted and verdicts.get(channel.url) == ALIVE
+    }
+    return [
+        channel for channel in channels
+        if channel.group not in wanted or channel.name in playable
+    ]
 
 
 def _cap(
@@ -331,24 +387,113 @@ def save_verdicts(path: Path, verdicts: Mapping[str, str]) -> Path:
     return path
 
 
-def _probe_one(url: str, *, connect_timeout: float, read_timeout: float) -> tuple[str, str]:
-    import requests
+_SESSION: Any = None
+_STREAM_TYPES = ("video", "audio", "octet-stream", "mp2t", "mpegurl")
 
+
+def probe_session() -> Any:
+    """One pooled session for the whole scan; a fresh socket per URL is slow."""
+    global _SESSION
+    if _SESSION is None:
+        import requests
+        from requests.adapters import HTTPAdapter
+
+        session = requests.Session()
+        adapter = HTTPAdapter(pool_connections=64, pool_maxsize=64, max_retries=0)
+        session.mount("http://", adapter)
+        session.mount("https://", adapter)
+        _SESSION = session
+    return _SESSION
+
+
+def _probe_headers(*, ranged: bool = False) -> dict[str, str]:
+    headers = {"User-Agent": _UA, "Accept": "*/*", "Connection": "close"}
+    if ranged:
+        headers["Range"] = "bytes=0-4095"
+    return headers
+
+
+def _read_head(response: Any, limit: int = 4096) -> bytes:
+    chunks: list[bytes] = []
+    total = 0
+    for chunk in response.iter_content(1024):
+        chunks.append(chunk)
+        total += len(chunk)
+        if total >= limit:
+            break
+    return b"".join(chunks)
+
+
+def _looks_like_html(body: bytes) -> bool:
+    head = body[:512].lstrip().lower()
+    return head.startswith(b"<!doctype") or b"<html" in head or b"<head" in head
+
+
+def _hls_verdict(session: Any, url: str, text: str, timeout: tuple[float, float]) -> str:
+    """A manifest is only alive when its first segment answers as well."""
     try:
-        response = requests.get(
-            url,
-            headers={"User-Agent": _UA, "Range": "bytes=0-2047", "Accept": "*/*"},
-            timeout=(connect_timeout, read_timeout),
-            stream=True,
-            allow_redirects=True,
-        )
+        for _ in range(2):  # master -> variant -> media
+            if "#EXT-X-STREAM-INF" not in text:
+                break
+            target = next((line.strip() for line in text.splitlines()
+                           if line.strip() and not line.strip().startswith("#")), "")
+            if not target:
+                return UNKNOWN
+            url = urljoin(url, target)
+            variant = session.get(url, headers=_probe_headers(), timeout=timeout,
+                                  stream=True, allow_redirects=True)
+            text = _read_head(variant, 200_000).decode("utf-8", "ignore")
+            variant.close()
+        segment = next((line.strip() for line in text.splitlines()
+                        if line.strip() and not line.strip().startswith("#")), "")
+        if not segment:
+            return UNKNOWN
+        response = session.get(urljoin(url, segment), headers=_probe_headers(ranged=True),
+                               timeout=timeout, stream=True, allow_redirects=True)
         status = response.status_code
+        body = _read_head(response, 1024)
         response.close()
     except Exception:  # noqa: BLE001 - a probe must never break a build
+        return UNKNOWN
+    if status in _SEGMENT_DEAD or not body:
+        return DEAD
+    return ALIVE if 200 <= status < 400 else UNKNOWN
+
+
+def _probe_one(url: str, *, connect_timeout: float, read_timeout: float) -> tuple[str, str]:
+    """Ask the stream the way a player does, and judge on what comes back."""
+    session = probe_session()
+    timeout = (connect_timeout, read_timeout)
+    try:
+        response = session.get(url, headers=_probe_headers(ranged=True),
+                               timeout=timeout, stream=True, allow_redirects=True)
+    except Exception:  # noqa: BLE001 - a probe must never break a build
         return url, UNKNOWN
+    status = response.status_code
+    content_type = (response.headers.get("Content-Type") or "").lower()
+    final_url = response.url
+    try:
+        body = _read_head(response)
+    except Exception:  # noqa: BLE001
+        body = b""
+    response.close()
+
     if status in _DEAD_STATUS:
         return url, DEAD
-    if 200 <= status < 400:
+    if _looks_like_html(body):
+        return url, DEAD  # a 200 that is really an error page
+    if b"#EXTM3U" in body[:2048]:
+        try:
+            manifest = session.get(final_url, headers=_probe_headers(), timeout=timeout,
+                                   stream=True, allow_redirects=True)
+            text = _read_head(manifest, 200_000).decode("utf-8", "ignore")
+            manifest.close()
+        except Exception:  # noqa: BLE001
+            return url, UNKNOWN
+        return url, _hls_verdict(session, final_url, text, timeout)
+    if body[:3] == b"FLV":
+        return url, ALIVE
+    if 200 <= status < 400 and body and any(kind in content_type for kind in _STREAM_TYPES):
         return url, ALIVE
     return url, UNKNOWN
 
@@ -356,11 +501,16 @@ def _probe_one(url: str, *, connect_timeout: float, read_timeout: float) -> tupl
 def probe_channels(
     channels: Iterable[Channel],
     *,
-    workers: int = 64,
-    connect_timeout: float = 4.0,
-    read_timeout: float = 6.0,
+    workers: int = 24,
+    connect_timeout: float = 5.0,
+    read_timeout: float = 12.0,
 ) -> dict[str, str]:
-    """One ranged fetch per URL: is this stream still answering?"""
+    """Ask every URL whether it plays, then report the tally.
+
+    Keep ``workers`` modest: these are hand-run mainland servers, and a burst
+    of 64 parallel sockets gets throttled into the very "unknown" verdicts the
+    scan is trying to avoid.
+    """
     urls = sorted({channel.url for channel in channels})
     if not urls:
         return {}
@@ -465,6 +615,7 @@ def assemble(
         max_per_name=int(out_cfg.get("max_per_name", 3) or 3),
         max_channels=int(out_cfg.get("max_channels", 0) or 0),
         max_per_group=out_cfg.get("max_per_group") or {},
+        require_alive_groups=out_cfg.get("require_alive_groups") or (),
     )
     if merged:
         write_playlists(

@@ -1,0 +1,31 @@
+{
+  "version": "test",
+  "generated_at": "2026-10-11T10:30:00+08:00",
+  "lives": [
+    {
+      "name": "测试1-代理-自用清单(type0)",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/74378f67d261c8bd3127.txt"
+    },
+    {
+      "name": "测试2-代理-自用清单(type1)",
+      "type": 1,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/74378f67d261c8bd3127.txt"
+    },
+    {
+      "name": "测试3-直连-央视卫视(tv.ywhb.top)",
+      "type": 0,
+      "url": "https://tv.ywhb.top/iptv4.txt"
+    },
+    {
+      "name": "测试4-直连-央视卫视(live.zbds.top)",
+      "type": 0,
+      "url": "https://live.zbds.top/tv/iptv4.txt"
+    },
+    {
+      "name": "测试5-代理-m3u格式(别人仓库)",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/iTCoffe/Collect-iTV/main/LiTV.m3u"
+    }
+  ]
+}

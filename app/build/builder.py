@@ -23,7 +23,8 @@ from ..models import BuildRecord, Event, Source, SourceEvent, Status, Tier
 from ..utils.http_client import HttpClient
 from ..utils.timeutil import age_days, to_iso, utcnow
 from ..checks.jar_check import EVIDENCE_FILE, has_jar_sites, load_evidence, passes as android_passes
-from .mirror import SOURCES_DIR, ConfigMirror, MirrorPlan
+from .clean import CleanPolicy, build_clean_entry
+from .mirror import SOURCES_DIR, ConfigMirror, MirrorPlan, _load_config
 from .validator import ValidationResult, validate_output
 
 LOGGER = get_logger("build")
@@ -604,6 +605,7 @@ class ConfigBuilder:
 
         _atomic_write_json(path, result.output, pretty=bool(self.output_cfg.get("pretty", True)))
         self._publish_alt(path)
+        self._publish_clean(path)
         _atomic_write_json(self.dist_dir / HEALTH_FILE, result.health, pretty=True)
         _atomic_write_json(self.dist_dir / DASHBOARD_FILE, result.dashboard, pretty=True)
 
@@ -707,6 +709,72 @@ class ConfigBuilder:
                 except OSError:
                     pass
         return len(written)
+
+    def _publish_clean(self, path: Path) -> Path | None:
+        """Publish a second entry with the child-unsafe rows removed.
+
+        The adult sites are not separate sources: they sit *inside* otherwise
+        normal configs (a 豆瓣 list also carries 麻豆 / 黄色仓库 / 51吃瓜), so
+        filtering the top-level names alone would leak them.  Every config that
+        actually changed is re-published under its own directory and the clean
+        entry points there, which keeps the two entries independent.
+        """
+        policy = CleanPolicy.from_settings(self.output_cfg.get("clean"))
+        if not policy.enabled:
+            return None
+        base = self.mirror.public_base
+        if not base:
+            return None
+        try:
+            data = _load_config(path.read_text(encoding="utf-8", errors="replace"))
+        except (OSError, ValueError):
+            return None
+
+        source_dir = self.dist_dir / SOURCES_DIR
+
+        def read_child(slug: str) -> dict[str, Any] | None:
+            child_path = source_dir / slug
+            if not child_path.is_file():
+                return None
+            try:
+                # same tolerant parse the mirror used, so a ``//`` header or a
+                # BOM never makes us silently skip filtering a config
+                child = _load_config(child_path.read_text(encoding="utf-8", errors="replace"))
+            except (OSError, ValueError):
+                return None
+            return child if isinstance(child, dict) else None
+
+        result = build_clean_entry(
+            data,
+            policy,
+            read_child,
+            source_prefix=f"{base}/{SOURCES_DIR}/",
+            clean_prefix=f"{base}/{policy.directory}/{SOURCES_DIR}/",
+        )
+
+        pretty = bool(self.output_cfg.get("pretty", True))
+        target = self.dist_dir / policy.directory / SOURCES_DIR
+        target.mkdir(parents=True, exist_ok=True)
+        for stale in target.glob("*.json"):
+            if stale.name not in result.children:
+                try:
+                    stale.unlink()
+                except OSError:
+                    pass
+        for slug, child in result.children.items():
+            _atomic_write_json(target / slug, child, pretty=pretty)
+
+        out = self.dist_dir / policy.output_file
+        _atomic_write_json(out, result.payload, pretty=pretty)
+        LOGGER.info("published the child-safe entry", extra={
+            "stage": "build",
+            "check": "clean",
+            "items": count_output_items(result.payload),
+            "dropped": len(result.dropped_sources),
+            "rows_removed": result.removed_rows,
+            "configs_rewritten": result.rewritten,
+        })
+        return out
 
     # -- artefacts ---------------------------------------------------------
     def _backup(self, path: Path) -> None:

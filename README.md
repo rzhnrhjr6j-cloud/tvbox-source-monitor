@@ -6,8 +6,13 @@
 影视仓里只填一次地址，之后不用再改：
 
 ```text
-https://<你的用户名>.github.io/<你的仓库名>/tvbox.json
+https://<你的用户名>.github.io/<你的仓库名>/tvbox.json          # 完整版
+https://<你的用户名>.github.io/<你的仓库名>/tvbox-clean.json    # 过滤版
 ```
+
+- **完整版** `tvbox.json`：作者发布的原样配置，源最全。
+- **过滤版** `tvbox-clean.json`：同一批源，但已去掉精东、麻豆、黄色仓库等儿童不宜的
+  站点与直播行。规则写在 `config/app.yaml` 的 `output.clean` 里，只改规则不用改代码。
 
 之后系统自己跑完这条链路：
 

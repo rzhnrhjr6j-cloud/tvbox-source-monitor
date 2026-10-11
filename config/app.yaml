@@ -213,3 +213,62 @@ output:
     # https://cdn.jsdelivr.net/gh/<owner>/<repo>@main/dist from GITHUB_REPOSITORY;
     # "off" disables it; anything else is used as the base verbatim.
     alt_base: "auto"
+
+  # -------------------------------------------------------------------------
+  # Child-safe second entry (user request 2026-10-11)
+  #
+  # tvbox.json stays exactly as the authors wrote it.  This block derives a
+  # second entry from it with the adult rows removed, because those rows are
+  # not separate sources: they sit inside otherwise ordinary configs (a 豆瓣
+  # list also carries 麻豆 / 黄色仓库 / 51吃瓜), so filtering top-level names
+  # alone would leak them.  A config that had rows removed is re-published
+  # under <dir>/sources/ and the clean entry points there; a source that had
+  # nothing removed keeps its own URL, so nothing is duplicated needlessly.
+  #
+  # Adding or removing a rule here is the only edit needed - the next build
+  # picks it up.  Set enabled: false to stop producing the second entry.
+  # -------------------------------------------------------------------------
+  clean:
+    enabled: true
+    output_file: tvbox-clean.json
+    dir: clean
+    # a name carrying one of these marks is adult by definition
+    block_emoji: ["🔞", "🈲"]
+    # plain substrings, matched case-insensitively
+    block_keywords:
+      - 精东
+      - 黄色
+      - 黄片
+      - 色播
+      - 色情
+      - 情色
+      - 成人
+      - 麻豆
+      - 吃瓜
+      - 黑料
+      - 少妇
+      - 丝袜
+      - 偷拍
+      - 自拍
+      - 福利姬
+      - 福利社
+      - 天堂福利
+      - 无码
+      - 有码
+      - 里番
+      - 乱伦
+      - 萝莉
+      - 幼女
+      - 未成年
+      - 探花
+      - 蜜桃
+      - 蜜臀
+      - 巨乳
+      - 约炮
+      - 一夜情
+      - 三级片
+      - 尤物
+      - 风月
+    # regular expressions, for names a plain substring would mis-hit
+    block_regex:
+      - "(?i)(porn|xxx|hentai|javdb|javbus|missav|supjav|netflav|souav|youavhub|owoav|18av|sextb|xvideo|hanime)"

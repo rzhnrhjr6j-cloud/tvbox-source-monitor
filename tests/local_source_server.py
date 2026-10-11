@@ -121,6 +121,29 @@ class _Handler(BaseHTTPRequestHandler):
                 "application/json; charset=utf-8",
             )
 
+        # A config whose own rows mix ordinary sites with the adult ones that
+        # sit inside every real Chinese aggregator, so the second entry has
+        # something to strip without dropping the whole source.
+        if path == "/adultrows.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "sites": [
+                            dict(SITE_TEMPLATE, key="plain", name="豆瓣电影",
+                                 api=f"{self.base}/api.php/provide/vod/"),
+                            dict(SITE_TEMPLATE, key="adult", name="🔞MD-4K",
+                                 api=f"{self.base}/api.php/provide/vod/"),
+                        ],
+                        "lives": [],
+                        "parses": [],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
         if path == "/api.php/provide/vod/":
             if not state["search_up"]:
                 return self._send_json({"code": 0, "list": [], "total": 0, "msg": "search disabled"})

@@ -29,7 +29,7 @@ import json
 import os
 import re
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping
 from urllib.parse import urljoin
@@ -58,19 +58,61 @@ _SEGMENT_DEAD = frozenset({404, 410})
 _PLAYABLE = ("http://", "https://")
 # quality markers that differ between upstreams but mean the same channel
 _QUALITY = ("1080P", "720P", "576I", "480P", "4K", "HD", "SD", "高清", "超清", "蓝光", "标清", "流畅")
-# countries upstreams file under every spelling there is
-_FOREIGN = (
-    "国外", "海外", "国际", "日本", "日テレ", "韩国", "韩语", "朝鲜", "美国", "英国", "法国",
-    "德国", "意大利", "西班牙", "葡萄牙", "荷兰", "瑞士", "瑞典", "挪威", "丹麦", "俄罗斯",
+
+# 港澳（含澳门）台名。上游把这些台塞进「央视频道」「其他」是常事，靠分组标签
+# 归不了档，名字里带这些词的一律算港澳台 - 用户点开的大头就是这几个大台。
+_HK_MO = (
+    "港澳", "香港", "澳门", "澳門", "港视", "港視", "hkstv", "hket", "hongkong",
+    "tvb", "翡翠", "明珠", "无线", "無綫", "無线", "viutv", "viu tv", "hoy tv", "hoy",
+    "rthk", "港台电视", "港台電視", "凤凰", "鳳凰", "莲花卫视", "蓮花衛視", "澳视", "澳視",
+)
+
+# 真正的外国台：一家一家的品牌，而不是「沾了外国词」。
+_FOREIGN_BRANDS = (
+    "hbo", "cinemax", "star movies", "starmovies", "axn", "discovery", "动物星球",
+    "animal planet", "national geographic", "国家地理", "nat geo", "bbc", "cnn", "cnbc",
+    "bloomberg", "fox", "abc news", "nbc", "cbs", "espn", "sky", "mtv", "cartoon network",
+    "nickelodeon", "disney", "history", "tlc", "eurosport", "dazn", "nhk", "wowow",
+    "tv asahi", "fuji", "tv tokyo", "kbs", "mbc", "sbs", "tvn", "jtbc", "arirang",
+    "france 24", "dw ", "euronews", "al jazeera", "rai", "zdf", "ard", "rtl",
+    "abc australia", "cbc", "anime",
+)
+
+# 国家/地区词，名字里带着它基本就是外国台
+_FOREIGN_PLACES = (
+    "日本", "日テレ", "韩国", "韩语", "韩国语", "朝鲜", "美国", "英国", "法国", "德国",
+    "意大利", "西班牙", "葡萄牙", "荷兰", "瑞士", "瑞典", "挪威", "丹麦", "俄罗斯",
     "乌克兰", "土耳其", "印度", "泰国", "越南", "新加坡", "马来西亚", "印尼", "菲律宾",
     "加拿大", "澳大利亚", "新西兰", "巴西", "阿根廷", "墨西哥", "南非", "埃及", "阿拉伯",
     "以色列", "伊朗", "巴基斯坦", "蒙古", "japan", "korea", "usa", "united states",
-    "united kingdom", "europe", "international", "nhk", "wowow", "bbc", "cnn", "nbc",
-    "cbs", "abc news", "fox", "cnbc", "bloomberg", "discovery", "national geographic",
-    "mtv", "hbo", "cartoon", "anime", "tvn", "kbs", "mbc", "sbs", "euro", "italia",
-    "france", "germany", "deutsch", "espana", "españa", "russia", "india", "thai",
-    "vietnam", "arabic", "africa",
+    "united kingdom", "europe", "italia", "france", "germany", "deutsch", "espana",
+    "españa", "russia", "india", "thai", "vietnam", "arabic", "africa", "euro",
 )
+
+# 上游用来装外国台的分组标签
+_FOREIGN_LABEL = ("国外", "海外", "国际", "international", "foreign", "overseas")
+
+# 「沾了外国词」的全集：名字或分组标签命中它就算外国台 —— 但大陆台名除外，
+# 见 canonical_group 里的 _is_mainland。
+_FOREIGN = _FOREIGN_BRANDS + _FOREIGN_PLACES + _FOREIGN_LABEL
+
+# 大陆台的招牌词。上游给这些台起名常带「国际」（广西国际、浙江国际、
+# 中国国际教育1），不加这道闸它们全被划进「国外」，用户点开一片大陆台。
+_MAINLAND = (
+    "cctv", "央视", "中国", "中華", "中华", "china", "chinese", "cgtn",
+    "浙江", "东方", "东方卫视", "湖南", "北京", "上海", "广东", "廣東", "江苏", "深圳",
+    "广西", "河南", "山东", "湖北", "安徽", "福建", "四川", "天津", "重庆", "陕西",
+    "辽宁", "吉林", "黑龙江", "云南", "贵州", "江西", "山西", "河北", "内蒙古", "新疆",
+    "西藏", "甘肃", "青海", "宁夏", "海南", "厦门", "大连", "青岛", "苏州", "无锡",
+    "芒果", "东南", "海峡", "延边", "兵团", "三沙", "中教", "教育台", "zhejiang", "hunan",
+    "guangdong", "jiangsu", "shanghai", "beijing", "shenzhen", "guangxi", "henan",
+    "shandong", "hubei", "anhui", "fujian", "sichuan", "tianjin",
+)
+
+
+def _is_mainland(name: str) -> bool:
+    """名字读起来像大陆台吗（大陆台名里的「国际」不算外国台）。"""
+    return any(word in name for word in _MAINLAND)
 
 
 @dataclass(frozen=True)
@@ -79,6 +121,8 @@ class Channel:
     url: str
     group: str = "其他"
     logo: str = ""
+    # 1 = 随仓库一起发、人工实测过的线路（``fetch: local``）；见 _cap。
+    priority: int = 0
 
 
 # ---------------------------------------------------------------------------
@@ -101,17 +145,30 @@ def canonical_group(name: str, group: str = "") -> str:
     their names (``CCTV-4 国际频道``, ``东方卫视``); a Japanese or Korean
     channel carries a country word and no 卫视 at all.
     """
-    for haystack in (str(name or "").lower(), str(group or "").lower()):
-        if any(word in haystack for word in ("港澳", "香港", "澳门", "台湾", "hket", "taiwan", "hongkong")):
+    name_l = str(name or "").lower()
+    group_l = str(group or "").lower()
+    mainland = _is_mainland(name_l)
+
+    def foreign(haystack: str) -> bool:
+        # 大陆台名里带「国际」的一律不算外国台：广西国际 / 浙江国际 / 中国国际教育1
+        return not mainland and any(word in haystack for word in _FOREIGN)
+
+    for haystack in (name_l, group_l):
+        if any(word in haystack for word in _HK_MO) or any(
+            word in haystack for word in ("台湾", "台灣", "taiwan")
+        ):
             return "港澳台"
         if "央视" in haystack or "cctv" in haystack:
             return "央视"
         if "卫视" in haystack or "satellite" in haystack:
             return "卫视"
-        if any(word in haystack for word in _FOREIGN):
+        if foreign(haystack):
             return "国外"
         if any(word in haystack for word in ("地方", "省内", "城市", "本地")):
             return "地方"
+    if mainland:
+        # 大陆台名带「国际」的（广西国际、浙江国际）该回地方组，不该占着国外
+        return "地方"
     return "其他"
 
 
@@ -283,6 +340,12 @@ def _cap(
     The list arrives sorted (group, name, alive first), so a plain walk keeps
     the first ``max_per_name`` sources of every channel - the reachable ones -
     and the first ``cap`` channels of a group.
+
+    Channels we shipped ourselves (``priority``) ignore both caps.  A crowded
+    group like 国外 runs to a thousand lines and the cap sits at 600: without
+    this, a curated line that happens to sort late is cut before it is ever
+    probed - and stays cut on every later build, since it never earns a
+    verdict that would move it up.
     """
     per_name: dict[str, int] = {}
     per_group: dict[str, int] = {}
@@ -290,10 +353,11 @@ def _cap(
     for channel in channels:
         key = name_key(channel.name)
         cap = max_per_group.get(channel.group, 0)
-        if max_per_name and per_name.get(key, 0) >= max_per_name:
-            continue
-        if cap and per_group.get(channel.group, 0) >= cap:
-            continue
+        if not channel.priority:
+            if max_per_name and per_name.get(key, 0) >= max_per_name:
+                continue
+            if cap and per_group.get(channel.group, 0) >= cap:
+                continue
         per_name[key] = per_name.get(key, 0) + 1
         per_group[channel.group] = per_group.get(channel.group, 0) + 1
         kept.append(channel)
@@ -316,6 +380,7 @@ def sort_channels(channels: Iterable[Channel], verdicts: Mapping[str, str] | Non
             channel.group,
             name_key(channel.name),
             alive,
+            -channel.priority,
             channel.url,
         )
 
@@ -538,7 +603,13 @@ def fetch_channels(
     sources: Iterable[Mapping[str, Any]],
     fetch: Callable[[str, str], str],
 ) -> tuple[list[Channel], list[str]]:
-    """Every upstream list, in order.  A broken one is skipped, never fatal."""
+    """Every upstream list, in order.  A broken one is skipped, never fatal.
+
+    ``fetch: local`` reads a file that ships with the repo instead of a URL.
+    Those are the channels we hand-verified from a mainland connection and
+    that no public list carries reliably (the 翡翠台/明珠台 lines, for
+    instance): a curated file beats hoping an upstream keeps them.
+    """
     channels: list[Channel] = []
     failed: list[str] = []
     for source in sources:
@@ -548,7 +619,7 @@ def fetch_channels(
         mode = str(source.get("fetch") or "direct")
         name = str(source.get("name") or url)
         try:
-            text = fetch(url, mode)
+            text = Path(url).read_text(encoding="utf-8") if mode == "local" else fetch(url, mode)
         except Exception as exc:  # noqa: BLE001
             failed.append(f"{name}: {type(exc).__name__}")
             continue
@@ -556,6 +627,8 @@ def fetch_channels(
         if not parsed:
             failed.append(f"{name}: not a playlist")
             continue
+        if mode == "local":
+            parsed = [replace(channel, priority=1) for channel in parsed]
         channels.extend(parsed)
     return channels, failed
 

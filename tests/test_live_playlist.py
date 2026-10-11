@@ -9,6 +9,7 @@ from app.build.live_playlist import (
     DEAD,
     Channel,
     canonical_group,
+    fetch_channels,
     load_verdicts,
     merge_channels,
     name_key,
@@ -32,7 +33,7 @@ http://c.example/fh.m3u8
 TXT = """央视频道,#genre#
 CCTV1,http://a.example/cctv1.m3u8
 CCTV2,http://a.example/cctv2.m3u8#http://b.example/cctv2.m3u8
-凤凰卫视,http://c.example/fh.m3u8
+东方卫视,http://c.example/df.m3u8
 """
 
 
@@ -78,6 +79,104 @@ def test_canonical_group_sends_foreign_channels_to_their_own_group():
     assert canonical_group("CCTV-4 国际频道", "央视") == "央视"
     # 名字里的国家/品牌词压过上分组标签
     assert canonical_group("日本 NHK 综合", "央视频道") == "国外"
+
+
+def test_canonical_group_keeps_mainland_international_feeds_off_the_foreign_group():
+    """用户报的「伪国外」：广西国际 / 浙江国际 / 中国国际教育 摆进了国外组。"""
+    for name in ("广西国际", "浙江国际", "浙江国际[1920*1080]", "湖南国际"):
+        assert canonical_group(name, "") == "地方"
+        assert canonical_group(name, "国际频道") == "地方"
+    assert canonical_group("中国国际教育1[768*576]", "") == "地方"
+    assert canonical_group("内蒙古农牧频道[1920*1080]", "") == "地方"
+    # 上游爱用拼音，也要挡住
+    assert canonical_group("Zhejiang TV International", "") == "地方"
+    # 真外国台不许被这道闸误伤
+    assert canonical_group("Africa 24 English (1080p)", "") == "国外"
+    assert canonical_group("Carousel International (576p)", "") == "国外"
+
+
+def test_canonical_group_files_hk_stations_by_name_not_by_upstream_label():
+    """港澳台上游把它塞进哪个标签都不算数，名字说了算。"""
+    assert canonical_group("翡翠台", "") == "港澳台"
+    assert canonical_group("明珠台", "其他") == "港澳台"
+    assert canonical_group("无线新闻台", "央视频道") == "港澳台"
+    assert canonical_group("ViuTV", "") == "港澳台"
+    assert canonical_group("HOY TV 77", "") == "港澳台"
+    assert canonical_group("港台电视31", "") == "港澳台"
+    assert canonical_group("凤凰中文", "央视频道") == "港澳台"
+    assert canonical_group("莲花卫视（澳门）", "") == "港澳台"
+
+
+def test_premium_foreign_channels_land_in_the_foreign_group():
+    """HBO / STAR Movies / AXN 这种是用户点名要的真国外台。"""
+    assert canonical_group("HBO", "") == "国外"
+    assert canonical_group("HBO（美）[768*576]", "") == "国外"
+    assert canonical_group("STAR Movies", "国外") == "国外"
+    assert canonical_group("AXN", "") == "国外"
+    assert canonical_group("Cinemax", "") == "国外"
+    assert canonical_group("国家地理（港）", "") == "国外"
+
+
+def test_local_source_reads_a_file_that_ships_with_the_repo(tmp_path):
+    """港澳台精选跟着仓库走：不指望任何公开列表还留着这几条。"""
+    curated = tmp_path / "live_hk.txt"
+    curated.write_text(
+        '#EXTM3U\n#EXTINF:-1 tvg-name="翡翠台" group-title="港澳台",翡翠台\n'
+        "http://hk.example/jade.ts\n",
+        encoding="utf-8",
+    )
+
+    def never_called(url: str, mode: str) -> str:
+        raise AssertionError("fetch: local 不该走网络")
+
+    channels, failed = fetch_channels(
+        [{"name": "精选", "url": str(curated), "fetch": "local"}], never_called
+    )
+    assert failed == []
+    assert [(channel.name, channel.group, channel.url) for channel in channels] == [
+        ("翡翠台", "港澳台", "http://hk.example/jade.ts")
+    ]
+    assert [channel.priority for channel in channels] == [1]
+
+
+def test_a_missing_local_source_is_skipped_not_fatal():
+    channels, failed = fetch_channels(
+        [{"name": "精选", "url": "config/does-not-exist.txt", "fetch": "local"}], lambda u, m: ""
+    )
+    assert channels == []
+    assert failed and "精选" in failed[0]
+
+
+def test_a_curated_line_survives_the_per_name_cap():
+    """上游同名线路一多就把精选那条挤出上限 —— 它恰恰是唯一能播的那条。"""
+    channels = [
+        Channel("STAR Movies", "http://aaa.example/1", "国外"),
+        Channel("Star Movies HD (1080p)", "http://aab.example/2", "国外"),
+        Channel("Star Movies HD (1080p)", "http://aac.example/3", "国外"),
+        Channel("STAR Movies", "http://zzz.example/hk.ts", "国外", priority=1),
+    ]
+
+    merged = merge_channels([channels], max_per_name=3, require_alive_groups=())
+
+    assert [channel.url for channel in merged][0] == "http://zzz.example/hk.ts"
+    assert len(merged) == 3
+
+
+def test_a_curated_line_survives_a_group_that_is_already_over_its_cap():
+    """国外组上千条、上限 600：排序靠后的精选线路不许在实测之前就被砍掉。"""
+    foreign = [Channel(f"外国台{i:03d}", f"http://f{i}.example/1", "国外") for i in range(600)]
+    curated = Channel("HBO", "http://hk.example/hbo.ts", "国外", priority=1)
+
+    merged = merge_channels(
+        [foreign + [curated]],
+        max_per_name=3,
+        max_per_group={"国外": 600},
+        require_alive_groups=(),
+    )
+
+    urls = [channel.url for channel in merged]
+    assert "http://hk.example/hbo.ts" in urls
+    assert len(urls) == 600
 
 
 def test_merge_dedupes_caps_and_puts_alive_first():

@@ -11,7 +11,13 @@
 # 上游清单。顺序 = 优先级（前面的先入库，同名频道保留前 N 条）。
 #   fetch: proxy  = 走 gh-proxy 前缀（raw.githubusercontent 大陆直连不到）
 #          direct = 直接拉（源本身在大陆，走得通）
+#          local  = 读仓库里的文件（url 就是相对仓库根的路径）
 sources:
+  # 港澳台 + 真·国外大台的精选，本机逐条实测过（见该文件头部的实测记录）。
+  # 放第一位：同名频道里它的线路排最前，用户点开就是这条。
+  - name: 港澳台精选-实测
+    url: config/live_hk.txt
+    fetch: local
   - name: 央视卫视-自用
     url: https://tv.ywhb.top/iptv4.txt
     fetch: direct

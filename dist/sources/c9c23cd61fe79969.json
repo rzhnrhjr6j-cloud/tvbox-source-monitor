@@ -64,7 +64,7 @@
             "key": "HGEmby",
             "name": "🔞HG[emby]🪜",
             "type": 3,
-            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/js/HGEmby.js",
+            "api": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/f421c0ccc0527a6f55aa.js",
             "changeable": 1
         },
         {
@@ -79,35 +79,35 @@
             "name": "🔞AVHUB[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/AVHUB.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/910ad510a0c1e648e5c7.json"
         },
         {
             "key": "18J",
             "name": "🔞18J[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/18j.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/f99ba653c6d924937855.json"
         },
         {
             "key": "一起草",
             "name": "🔞一起草[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/一起草.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/bf87cb4394cd52e66cbe.json"
         },
         {
             "key": "91黑料网",
             "name": "🔞91黑料网[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/91黑料网.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/739589af97aa1fced4fe.json"
         },
         {
             "key": "多杏",
             "name": "🔞多杏tv[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/多杏tv.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c25b24450ed91f4a40ef.json"
         },
         {
             "key": "擦边",
@@ -128,21 +128,21 @@
             "name": "🔞蜜桃[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/蜜桃.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/28090d66bb05205c98fb.json"
         },
         {
             "key": "91吃瓜",
             "name": "🔞91吃瓜[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/91吃瓜.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c31f09ab758bc34c7f7f.json"
         },
         {
             "key": "51吃瓜",
             "name": "🔞51吃瓜[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/51吃瓜.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/a28543e73e71d9fa65a6.json"
         },
         {
             "key": "熊猫xbpq",
@@ -156,7 +156,7 @@
             "name": "🔞MonTV[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/montv.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/42a44d2df7699c17251b.json"
         },
         {
             "key": "熄灯",
@@ -167,28 +167,28 @@
             "filterable": 1,
             "changeable": 1,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/熄灯.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/8f3d014efe8d2bbdfd26.json"
         },
         {
             "key": "小土豆",
             "name": "🔞小土豆[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/小土豆.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/add7c8913506f6ad0d5f.json"
         },
         {
             "key": "X采集",
             "name": "🔞X采集[xbpq]🪜",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/X采集.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/53ebae219f98443b9da4.json"
         },
         {
             "key": "青禾午夜",
             "name": "🔞青禾午夜[xbpq]🪜",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/青禾午夜.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/a03305dc087a6d70b1ca.json"
         },
         {
             "key": "91情报局",
@@ -203,14 +203,14 @@
             "name": "🔞拼多多[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/拼多多.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/1c15df9bf62d3d7bfcdc.json"
         },
         {
             "key": "天天",
             "name": "🔞天天[xbpq]",
             "type": 3,
             "api": "csp_XBPQ",
-            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/ycc1195835265/%E5%8D%81%E5%85%AB/json/天天.json"
+            "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/996f761fbecdcbc57cf5.json"
         },
         {
             "key": "十九岁",

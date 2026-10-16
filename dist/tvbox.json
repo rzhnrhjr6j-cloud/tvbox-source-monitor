@@ -1,14 +1,10 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-15T23:08:29Z",
+  "generated_at": "2026-10-16T22:52:10Z",
   "urls": [
     {
       "name": "精东（24站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/e5e22b7e79834be5.json"
-    },
-    {
-      "name": "牛牛视频 #1（57站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8bc4f104f6d8d29c.json"
     },
     {
       "name": "牛牛视频 #2（56站）",
@@ -19,7 +15,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/c9c23cd61fe79969.json"
     },
     {
-      "name": "精品资源 #2（59站）",
+      "name": "精品资源 #2（57站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/a2637c5b6b987583.json"
     },
     {
@@ -31,12 +27,16 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8fee3b071d12c36f.json"
     },
     {
-      "name": "精品 | 采集 #1（84站）",
+      "name": "精品 | 采集 #1（82站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/1cb1bfdf5195d634.json"
     },
     {
       "name": "精品资源 #1（66站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/2d5efc1a45b27830.json"
+    },
+    {
+      "name": "牛牛视频 #1（57站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8bc4f104f6d8d29c.json"
     },
     {
       "name": "豆了（155站）",
@@ -59,7 +59,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5b1d2f5ab24fa0b3.json"
     },
     {
-      "name": "┃QQ频道：肥猫宝贝┃ #1（166站）",
+      "name": "┃QQ频道：肥猫宝贝┃ #1（407站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/2651a7041e6d9d3a.json"
     },
     {
@@ -123,7 +123,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/da03426545491a93.json"
     },
     {
-      "name": "py_色播聚合（60站）",
+      "name": "py_色播聚合（58站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8bf3ef6827d66116.json"
     },
     {
@@ -143,7 +143,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/f0aebbef65fb47a6.json"
     },
     {
-      "name": "┆片单┆精选（100站）",
+      "name": "┆片单┆精选（97站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/17a834c4e8c9bc6e.json"
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-19T23:39:23Z",
+  "generated_at": "2026-10-20T23:12:02Z",
   "urls": [
     {
       "name": "精品资源 #1（66站）",
@@ -27,16 +27,16 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/1cb1bfdf5195d634.json"
     },
     {
+      "name": "豆瓣 #6（23站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b9c97ff3dac729ba.json"
+    },
+    {
       "name": "牛牛视频 #1（57站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/8bc4f104f6d8d29c.json"
     },
     {
       "name": "牛牛视频 #2（56站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b3263164e0d31c99.json"
-    },
-    {
-      "name": "豆瓣 #6（23站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b9c97ff3dac729ba.json"
     },
     {
       "name": "豆了（154站）",

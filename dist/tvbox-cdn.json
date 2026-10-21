@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-20T23:12:02Z",
+  "generated_at": "2026-10-21T23:17:45Z",
   "urls": [
     {
       "name": "精品资源 #1（66站）",
@@ -39,10 +39,6 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b3263164e0d31c99.json"
     },
     {
-      "name": "豆了（154站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/745561a3739c9b0c.json"
-    },
-    {
       "name": "豆瓣 #3（39站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/5a29dc258ba183a7.json"
     },
@@ -63,7 +59,7 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/5b1d2f5ab24fa0b3.json"
     },
     {
-      "name": "【免费分享】（408站）",
+      "name": "【免费分享】（406站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/2651a7041e6d9d3a.json"
     },
     {
@@ -193,6 +189,10 @@
     {
       "name": "豆瓣┃影视（104站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/5b34c1370113faa4.json"
+    },
+    {
+      "name": "豆了（155站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/745561a3739c9b0c.json"
     }
   ]
 }

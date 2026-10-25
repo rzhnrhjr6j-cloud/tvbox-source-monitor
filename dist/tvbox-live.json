@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-24T22:31:16Z",
+  "generated_at": "2026-10-25T22:33:46Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -77,7 +77,7 @@
     {
       "name": "色播聚合",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/16aacfa974e5670ff035.m3u"
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c1aa70f0fa604761a4ee.m3u"
     },
     {
       "name": "麻豆视频",
@@ -263,7 +263,7 @@
     {
       "name": "速度源",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/6b4f739a1b272c38e0a4.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/51a6e0421716efdc91bd.txt",
       "epg": "https://epg.112114.eu.org/?ch={name}&date={date}"
     },
     {
@@ -281,13 +281,13 @@
     {
       "name": "XPB源5",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/1f36977992a83abb197a.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/8185cb62e266c799bd1b.txt",
       "epg": "https://epg.112114.eu.org/?ch={name}&date={date}"
     },
     {
       "name": "XPB源6",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d01125c59471bbb09810.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/7d388d810953308bc31f.txt",
       "epg": "https://epg.112114.eu.org/?ch={name}&date={date}"
     },
     {
@@ -311,7 +311,7 @@
     {
       "name": "ssili源",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/306396dd6ae73fbd017d.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c56d1d8b862027ca9a28.txt",
       "epg": "https://epg.112114.eu.org/?ch={name}&date={date}"
     },
     {
@@ -329,13 +329,13 @@
     {
       "name": "migu720",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/33eebd3e0958023cdb70.m3u",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/5bf9bf476e5aa8cb9733.m3u",
       "playerType": 2
     },
     {
       "name": "iTV",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/b9544efe327f5b87dc29.m3u",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/3d23783edae8118b9231.m3u",
       "playerType": 2
     },
     {
@@ -353,7 +353,7 @@
     {
       "name": "💖分享者直播",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/dd879b49e3a6491dc153.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/a267d933dbed9fbe0345.txt",
       "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
       "logo": "https://epg.112114.xyz/logo/{name}.png"
     },

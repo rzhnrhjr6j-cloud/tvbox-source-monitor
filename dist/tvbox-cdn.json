@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-24T22:31:16Z",
+  "generated_at": "2026-10-25T22:33:46Z",
   "urls": [
     {
       "name": "精东（24站）",
@@ -19,8 +19,12 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/a2637c5b6b987583.json"
     },
     {
-      "name": "豆瓣 #6（23站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b9c97ff3dac729ba.json"
+      "name": "牛牛视频 #1（57站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/8bc4f104f6d8d29c.json"
+    },
+    {
+      "name": "牛牛视频 #2（56站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b3263164e0d31c99.json"
     },
     {
       "name": "精品 | 采集 #1（85站）",
@@ -31,15 +35,11 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/2d5efc1a45b27830.json"
     },
     {
-      "name": "牛牛视频 #1（57站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/8bc4f104f6d8d29c.json"
+      "name": "豆瓣 #6（23站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b9c97ff3dac729ba.json"
     },
     {
-      "name": "牛牛视频 #2（56站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b3263164e0d31c99.json"
-    },
-    {
-      "name": "豆了（158站）",
+      "name": "豆了（160站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/745561a3739c9b0c.json"
     },
     {
@@ -55,15 +55,11 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/0380ba7a3de24907.json"
     },
     {
-      "name": "网络电视（24站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/906b514cd945261a.json"
-    },
-    {
       "name": "推荐┃豆瓣（127站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/5b1d2f5ab24fa0b3.json"
     },
     {
-      "name": "┃QQ频道：肥猫宝贝┃ #1（407站）",
+      "name": "┃QQ频道：肥猫宝贝┃ #1（405站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/2651a7041e6d9d3a.json"
     },
     {
@@ -73,6 +69,10 @@
     {
       "name": "豆瓣 #5（242站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b63ac8eea01ca1fd.json"
+    },
+    {
+      "name": "网络电视（24站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/906b514cd945261a.json"
     },
     {
       "name": "熊猫视频 | 珍惜（117站）",

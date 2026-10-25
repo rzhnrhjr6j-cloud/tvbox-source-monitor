@@ -4,7 +4,7 @@ http://198.204.240.250:82/live/cctv4k.m3u8
 #EXTINF:-1 tvg-name="CCTV-4K" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV4K.png" group-title="央视",CCTV-4K
 http://www.tszhgjj.cn:7000/rtp/239.253.93.134:6631
 #EXTINF:-1 tvg-name="CCTV-4K 高清" tvg-logo="https://logo.ifanr.dedyn.io/tv/CCTV-4K 高清.png" group-title="央视",CCTV-4K 高清
-https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1792933200-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-4311cc79a54f98dfad5f12333cdce426&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
+https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1793019600-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-5b2d8053a28d44400f94e519c0a7c7de&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
 #EXTINF:-1 tvg-name="CCTV-1HD" group-title="央视",CCTV-1HD
 http://107.150.60.122/live/cctv1hd.m3u8
 #EXTINF:-1 tvg-name="CCTV1" group-title="央视",CCTV1
@@ -110,7 +110,7 @@ http://74.91.26.218:82/live/cctv4hd.m3u8
 #EXTINF:-1 tvg-name="CCTV-4 中文国际（欧）" tvg-logo="https://i.imgur.com/kx8metk.png" group-title="央视",CCTV-4 中文国际（欧）
 https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8
 #EXTINF:-1 tvg-name="CCTV-4 中文国际" tvg-logo="https://logo.ifanr.dedyn.io/tv/CCTV-4 中文国际.png" group-title="央视",CCTV-4 中文国际
-https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4_mbd.m3u8?auth_key=1792933200-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-c9c6533e20b97bf2d86885feec7bde1a&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
+https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4_mbd.m3u8?auth_key=1793019600-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-51701bc730ddc79dc7a48713eb3a3a2f&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
 #EXTINF:-1 tvg-name="CCTV-4 中文国际（美） Ⓢ" tvg-logo="https://i.imgur.com/1TPiRqR.png" group-title="央视",CCTV-4 中文国际（美） Ⓢ
 https://global.cgtn.cicc.media.caton.cloud/master/cgtn-america.m3u8
 #EXTINF:-1 tvg-name="CCTV4欧洲" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV4欧洲.png" group-title="央视",CCTV4欧洲
@@ -172,7 +172,7 @@ http://198.204.228.26/live/cctv9hd.m3u8
 #EXTINF:-1 tvg-name="CCTV-9 纪录" tvg-logo="https://i.imgur.com/Ruyzhu5.png" group-title="央视",CCTV-9 纪录
 http://74.91.26.218:82/live/cctv9hd.m3u8
 #EXTINF:-1 tvg-name="CCTV-9 纪录" tvg-logo="https://logo.ifanr.dedyn.io/tv/CCTV-9 纪录.png" group-title="央视",CCTV-9 纪录
-https://v4-702cae17a28d6e4f0c0002bba021d934.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=c72ee5c1521486b7f54df8f63fa341b7
+https://v4-702cae17a28d6e4f0c0002bba021d934.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=8f2169a8499d5cb1e4597aaf944b0457
 #EXTINF:-1 tvg-name="CCTV-世界地理" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/世界地理.png" group-title="央视",CCTV-世界地理
 http://www.lizhinas.top:1009/rtp/239.252.219.93:5140
 #EXTINF:-1 tvg-name="CCTV中学生" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV中学生.png" group-title="央视",CCTV中学生
@@ -1102,8 +1102,6 @@ http://liveout.btzx.com.cn/3pyc0h/dbfvwu.m3u8
 #EXTINF:-1 tvg-name="兵团五师双河影" group-title="地方",兵团五师双河影
 https://liveout.btzx.com.cn/62ds9e/6o77s4.m3u8?zxinjd
 #EXTINF:-1 tvg-name="兵团五师双河新闻综合" group-title="地方",兵团五师双河新闻综合
-http://liveout.btzx.com.cn/62ds9e/4nxdih.m3u8?fbl=
-#EXTINF:-1 tvg-name="兵团五师双河新闻综合" group-title="地方",兵团五师双河新闻综合
 https://liveout.btzx.com.cn/62ds9e/4nxdih.m3u8?zxinjd
 #EXTINF:-1 tvg-name="兵团五师综合频道[720*576]" group-title="地方",兵团五师综合频道[720*576]
 http://liveout.btzx.com.cn/62ds9e/4nxdih.m3u8
@@ -1741,8 +1739,6 @@ https://console.rkzrm.cn:20323/8.m3u8
 https://consolestream.rkzrm.cn:20323/8.m3u8
 #EXTINF:-1 tvg-name="旺苍新闻综合" group-title="地方",旺苍新闻综合
 http://channel.wcrmt.cn/nmip-media/channellive/channel105268/playlist.m3u8
-#EXTINF:-1 tvg-name="旺苍新闻综合" group-title="地方",旺苍新闻综合
-http://channel.wcrmt.cn:80/nmip-media/channellive/channel105268/playlist.m3u8
 #EXTINF:-1 tvg-name="旺苍新闻综合" group-title="地方",旺苍新闻综合
 http://live.spccmc.com:90/live/spxwzh.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
 #EXTINF:-1 tvg-name="昌黎综合" group-title="地方",昌黎综合
@@ -3331,8 +3327,6 @@ https://n18syndication.akamaized.net/bpk-tv/CNBC_TV18_NW18_MOB/output01/index.m3
 https://n18syndication.akamaized.net/bpk-tv/CNBC_Tv18_Prime_HD_NW18_MOB/output01/index.m3u8
 #EXTINF:-1 tvg-name="CNBC (720p) [Geo-blocked]" group-title="国外",CNBC (720p) [Geo-blocked]
 http://41.205.93.154/CNBC/index.m3u8
-#EXTINF:-1 tvg-name="CNN International" group-title="国外",CNN International
-http://88.212.15.17/live/test_cnn_1200_atk/playlist.m3u8
 #EXTINF:-1 tvg-name="CNN Originals (1080p)" group-title="国外",CNN Originals (1080p)
 https://amg01918-cnnus-amg01918c2-vizio-us-9192.playouts.now.amagi.tv/playlist/amg01918-cnnus-cnnoriginals-vizious/playlist.m3u8
 #EXTINF:-1 tvg-name="CNN Portugal" tvg-logo="https://i.imgur.com/NYH39xs.png" group-title="国外",CNN Portugal
@@ -3463,12 +3457,8 @@ https://cdn-euronews.akamaized.net/live/eds/euronews-es/25053/index.m3u8
 http://stream.mcquack.net/184/index.m3u8
 #EXTINF:-1 tvg-name="Europa Plus TV Belarus (576p)" group-title="国外",Europa Plus TV Belarus (576p)
 http://46.53.200.153:7777/play/EuropaPlus/index.m3u8
-#EXTINF:-1 tvg-name="Eurosport 1 Hungary" group-title="国外",Eurosport 1 Hungary
-http://88.212.15.17/live/esp1_hun/index.m3u8
 #EXTINF:-1 tvg-name="Eurosport 1 Russia (1080p)" group-title="国外",Eurosport 1 Russia (1080p)
 http://stream.mcquack.net/176/index.m3u8
-#EXTINF:-1 tvg-name="Eurosport 2 Hungary" group-title="国外",Eurosport 2 Hungary
-http://88.212.15.17/live/esp2_hun/index.m3u8
 #EXTINF:-1 tvg-name="Eurosport 2 Russia (1080p)" group-title="国外",Eurosport 2 Russia (1080p)
 http://stream.mcquack.net/192/index.m3u8
 #EXTINF:-1 tvg-name="Euro Tv" tvg-logo="https://i.imgur.com/HCl5Zbu.png" group-title="国外",Euro Tv
@@ -3565,8 +3555,6 @@ https://streaming.aurora.enhanced.live/live/mpc/enl0eG1mLmVncmVzcy5mZDJ2eHI=/out
 http://138.121.15.230:9002/HISTORY-CHANNEL/index.m3u8
 #EXTINF:-1 tvg-name="History Latin America (1080p)" group-title="国外",History Latin America (1080p)
 http://190.93.224.42/HISTORY/index.m3u8
-#EXTINF:-1 tvg-name="History TV18 (576p)" group-title="国外",History TV18 (576p)
-http://103.151.60.162:2122/play/a00y/index.m3u8?hls
 #EXTINF:-1 tvg-name="Hope Channel India (576p)" group-title="国外",Hope Channel India (576p)
 https://cdn.pishow.tv/ott/live/1385/master.m3u8
 #EXTINF:-1 tvg-name="Hope Channel India (576p)" group-title="国外",Hope Channel India (576p)
@@ -3641,6 +3629,8 @@ https://lifetv.bitflip.ee/live/stream1.m3u8
 https://brightstar-arabic-pull-secure.akamaized.net/brightstararabic/stream.m3u8
 #EXTINF:-1 tvg-name="LiveNOW from FOX" tvg-logo="https://i.imgur.com/1JnyzHv.png" group-title="国外",LiveNOW from FOX
 https://fox-foxnewsnow-vizio.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-name="LiveNOW from FOX" group-title="国外",LiveNOW from FOX
+https://vid.hls.protv.ro/liveibu5/liveibu5_highw/index.m3u8?1
 #EXTINF:-1 tvg-name="LiveNOW from FOX (720p) [Geo-blocked]" group-title="国外",LiveNOW from FOX (720p) [Geo-blocked]
 https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00488-foxdigital-livenowbyfox-lgus/playlist.m3u8
 #EXTINF:-1 tvg-name="Living India News (576p)" group-title="国外",Living India News (576p)
@@ -3757,10 +3747,6 @@ http://198.58.104.90:8989/natgeo/index.m3u8
 http://45.173.231.22:8000/play/a05z/index.m3u8
 #EXTINF:-1 tvg-name="National Geographic Latin America (1080p)" group-title="国外",National Geographic Latin America (1080p)
 https://barinaslive1.boldmss.com/NATGEO/NATGEO.isml/NATGEO.m3u8
-#EXTINF:-1 tvg-name="National Geographic Wild HD (1080p)" group-title="国外",National Geographic Wild HD (1080p)
-http://103.151.60.162:2122/play/a01f/index.m3u8?hls
-#EXTINF:-1 tvg-name="National Geographic Wild HD (1080p)" group-title="国外",National Geographic Wild HD (1080p)
-http://103.185.24.134:3001/NATGEO-WILD-HD/index.m3u8
 #EXTINF:-1 tvg-name="National Geographic Wild HD East (720p)" group-title="国外",National Geographic Wild HD East (720p)
 http://198.58.104.90:8989/natgeowild/index.m3u8
 #EXTINF:-1 tvg-name="NBC 5 Chicago Live News (1080p)" group-title="国外",NBC 5 Chicago Live News (1080p)
@@ -3811,8 +3797,6 @@ https://cdn.pishow.tv/ott/live/273/master.m3u8
 http://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
 #EXTINF:-1 tvg-name="Newsmax TV" tvg-logo="https://graph.facebook.com/newsmax/picture?width=200&height=200" group-title="国外",Newsmax TV
 https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
-#EXTINF:-1 tvg-name="NHK General TV (720p)" group-title="国外",NHK General TV (720p)
-https://nhk4.mov3.co/hls/nhk.m3u8
 #EXTINF:-1 tvg-name="NHK World-Japan HD (720p)" group-title="国外",NHK World-Japan HD (720p)
 http://170.83.16.50/NHK_WORLD/index.m3u8
 #EXTINF:-1 tvg-name="NHK World Premium (720p)" group-title="国外",NHK World Premium (720p)
@@ -4067,7 +4051,7 @@ https://svip.high24-playback.com/20250129/17159_7bca93c4/2000k/hls/mixed.m3u8
 https://svipsvip.ffzyread1.com/20250129/35458_c988286f/index.m3u8
 #EXTINF:-1 tvg-name="2026-08-27 14:06:22" tvg-logo="https://www.xn--rgv465a.top/tvlogo/CCTV-1.png" group-title="其他",2026-08-27 14:06:22
 http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv1hd
-#EXTINF:-1 tvg-name="2026-10-25 06:26:04" group-title="其他",2026-10-25 06:26:04
+#EXTINF:-1 tvg-name="2026-10-26 06:26:40" group-title="其他",2026-10-26 06:26:40
 https://vd2.bdstatic.com/mda-sctj0f6r4u1bpebc/1080p/cae_h264/1774706523506678171/mda-sctj0f6r4u1bpebc.mp4
 #EXTINF:-1 tvg-name="20 Mediaset [Geo-blocked]" group-title="其他",20 Mediaset [Geo-blocked]
 https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(lb)/index.m3u8

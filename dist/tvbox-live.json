@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-30T00:04:38Z",
+  "generated_at": "2026-10-30T23:42:53Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -77,7 +77,7 @@
     {
       "name": "色播聚合",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/58bec8940573a281be34.m3u"
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/0ba026752e275c981181.m3u"
     },
     {
       "name": "麻豆视频",
@@ -254,7 +254,7 @@
     {
       "name": "速度源",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/313d4ecdbb3c6d6f184b.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/30c789fe255ba56fca87.txt",
       "epg": "https://epg.112114.eu.org/?ch={name}&date={date}"
     },
     {
@@ -272,13 +272,13 @@
     {
       "name": "XPB源5",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/fff49f99ea8d5e6aecbd.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d586e95ebf4141b542ee.txt",
       "epg": "https://epg.112114.eu.org/?ch={name}&date={date}"
     },
     {
       "name": "XPB源6",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/5991ac4591adde4c3498.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/e8f7aea9851db274dd37.txt",
       "epg": "https://epg.112114.eu.org/?ch={name}&date={date}"
     },
     {
@@ -320,13 +320,13 @@
     {
       "name": "migu720",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/062ecdcf2a8ef74f5c8c.m3u",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/598edbc675a49bf2c267.m3u",
       "playerType": 2
     },
     {
       "name": "iTV",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/f9f2fb8d8a2430636713.m3u",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/a33553770eab4d90a9b9.m3u",
       "playerType": 2
     },
     {

@@ -1,24 +1,25 @@
 {
-  "generated_at": "2026-10-29T00:09:29Z",
-  "build_id": "20261029-000929",
+  "generated_at": "2026-10-30T00:04:38Z",
+  "build_id": "20261030-000438",
   "summary": {
     "sources": {
-      "active": 649,
+      "active": 639,
+      "degraded": 10,
       "failed": 69
     },
     "candidates": 0,
     "tiers": {
-      "primary": 10,
+      "primary": 11,
       "backup": 4,
-      "experimental": 37
+      "experimental": 34
     },
-    "output_items": 51
+    "output_items": 49
   },
   "regions": {
     "CN": {
-      "checks": 3579,
-      "successes": 3234,
-      "availability_percent": 90.36
+      "checks": 3580,
+      "successes": 3214,
+      "availability_percent": 89.78
     }
   },
   "sources": [
@@ -33,13 +34,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:28Z",
+      "last_success_at": "2026-10-29T23:52:57Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 254.6153846153846,
+      "avg_response_ms": 233.28205128205127,
       "consecutive_failure": 0,
       "whitelisted": true
     },
@@ -54,13 +55,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:20Z",
+      "last_success_at": "2026-10-29T23:52:44Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 247.51282051282053,
+      "avg_response_ms": 226.64102564102564,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -75,13 +76,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:18Z",
+      "last_success_at": "2026-10-29T23:52:41Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 189.4102564102564,
+      "avg_response_ms": 196.64102564102564,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -96,13 +97,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:17Z",
+      "last_success_at": "2026-10-29T23:52:40Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 216.7948717948718,
+      "avg_response_ms": 220.7948717948718,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -117,13 +118,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:17Z",
+      "last_success_at": "2026-10-29T23:52:40Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 275.02564102564105,
+      "avg_response_ms": 255.10256410256412,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -138,13 +139,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:17Z",
+      "last_success_at": "2026-10-29T23:52:40Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 276.35897435897436,
+      "avg_response_ms": 245.66666666666666,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -159,13 +160,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:24Z",
+      "last_success_at": "2026-10-29T23:52:47Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 155.51282051282053,
+      "avg_response_ms": 154.92307692307693,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -180,13 +181,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:24Z",
+      "last_success_at": "2026-10-29T23:52:47Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 161.02564102564102,
+      "avg_response_ms": 163.4102564102564,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -201,13 +202,34 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:21Z",
+      "last_success_at": "2026-10-29T23:52:44Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 234.12820512820514,
+      "avg_response_ms": 211.05128205128204,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "5201f9c51d51ddc2f5818714dff7b299dddd552a187cdffe9f41ce75c003614a",
+      "name": "caiji.json",
+      "url": "https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/Tomorrow/caiji.json",
+      "status": "active",
+      "tier": "primary",
+      "type": "single",
+      "score": 86.282,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-10-29T23:52:46Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 124.35897435897436,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -218,40 +240,19 @@
       "status": "active",
       "tier": "primary",
       "type": "single",
-      "score": 57.821,
-      "stability_score": 98.507,
+      "score": 58.382,
+      "stability_score": 99.21,
       "availability_7d": 100.0,
-      "availability_30d": 98.378,
-      "last_success_at": "2026-10-28T23:57:56Z",
+      "availability_30d": 98.421,
+      "last_success_at": "2026-10-29T23:53:16Z",
       "last_failure_at": "2026-10-21T20:40:54Z",
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 731.5128205128206,
+      "avg_response_ms": 747.974358974359,
       "consecutive_failure": 0,
       "whitelisted": true
-    },
-    {
-      "id": "5201f9c51d51ddc2f5818714dff7b299dddd552a187cdffe9f41ce75c003614a",
-      "name": "caiji.json",
-      "url": "https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/Tomorrow/caiji.json",
-      "status": "active",
-      "tier": "backup",
-      "type": "single",
-      "score": 83.718,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:24Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 126.17948717948718,
-      "consecutive_failure": 0,
-      "whitelisted": false
     },
     {
       "id": "5a29dc258ba183a7edcdc8ce5f019b75b4d4cb85231dfe60ccb0ede462532e86",
@@ -264,13 +265,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:22Z",
+      "last_success_at": "2026-10-29T23:52:45Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 111.23076923076923,
+      "avg_response_ms": 112.12820512820512,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -285,13 +286,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:33Z",
+      "last_success_at": "2026-10-29T23:52:56Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 159.3846153846154,
+      "avg_response_ms": 159.84615384615384,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -306,34 +307,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:27Z",
+      "last_success_at": "2026-10-29T23:52:49Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 152.69230769230768,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "2a9e14082eb52ac086b2dc575aeccd67af37a3b84ed0de89e3c8fd02e47d5c39",
-      "name": "tvbox18.json",
-      "url": "https://raw.githubusercontent.com/ZHOUYU86/tvbox-sources/main/tvbox18.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 69.872,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:30Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 167.23076923076923,
+      "avg_response_ms": 159.56410256410257,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -342,19 +322,19 @@
       "name": "xvod.json",
       "url": "https://raw.githubusercontent.com/yescopys/box/main/catvod/xvod.json",
       "status": "active",
-      "tier": "experimental",
+      "tier": "backup",
       "type": "single",
-      "score": 69.872,
+      "score": 74.359,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:30Z",
+      "last_success_at": "2026-10-29T23:52:52Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 117.43589743589743,
+      "avg_response_ms": 114.76923076923077,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -369,13 +349,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:30Z",
+      "last_success_at": "2026-10-29T23:52:52Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 154.84615384615384,
+      "avg_response_ms": 162.66666666666666,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -390,13 +370,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:31Z",
+      "last_success_at": "2026-10-29T23:52:53Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 146.05128205128204,
+      "avg_response_ms": 148.02564102564102,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -411,13 +391,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:32Z",
+      "last_success_at": "2026-10-29T23:52:54Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 134.66666666666666,
+      "avg_response_ms": 137.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -432,13 +412,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:38Z",
+      "last_success_at": "2026-10-29T23:53:00Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 141.43589743589743,
+      "avg_response_ms": 145.94871794871796,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -453,13 +433,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:32Z",
+      "last_success_at": "2026-10-29T23:52:54Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 122.7948717948718,
+      "avg_response_ms": 127.1025641025641,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -474,13 +454,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:35Z",
+      "last_success_at": "2026-10-29T23:52:57Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 152.94871794871796,
+      "avg_response_ms": 153.28205128205127,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -495,13 +475,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:45Z",
+      "last_success_at": "2026-10-29T23:53:08Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 150.94871794871796,
+      "avg_response_ms": 154.56410256410257,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -516,13 +496,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:35Z",
+      "last_success_at": "2026-10-29T23:52:58Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 125.07692307692308,
+      "avg_response_ms": 128.3846153846154,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -537,13 +517,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:36Z",
+      "last_success_at": "2026-10-29T23:52:59Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 98.35897435897436,
+      "avg_response_ms": 104.43589743589743,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -558,13 +538,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:37Z",
+      "last_success_at": "2026-10-29T23:53:00Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 164.48717948717947,
+      "avg_response_ms": 171.74358974358975,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -579,13 +559,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:37Z",
+      "last_success_at": "2026-10-29T23:53:00Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 142.2051282051282,
+      "avg_response_ms": 146.35897435897436,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -600,13 +580,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:37Z",
+      "last_success_at": "2026-10-29T23:53:01Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 131.02564102564102,
+      "avg_response_ms": 139.89743589743588,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -621,13 +601,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:37Z",
+      "last_success_at": "2026-10-29T23:53:00Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 137.02564102564102,
+      "avg_response_ms": 139.2051282051282,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -642,13 +622,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:37Z",
+      "last_success_at": "2026-10-29T23:53:01Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 142.92307692307693,
+      "avg_response_ms": 160.2051282051282,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -663,13 +643,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:37Z",
+      "last_success_at": "2026-10-29T23:53:01Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 141.53846153846155,
+      "avg_response_ms": 145.07692307692307,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -684,13 +664,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:38Z",
+      "last_success_at": "2026-10-29T23:53:01Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 147.51282051282053,
+      "avg_response_ms": 151.64102564102564,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -705,13 +685,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:38Z",
+      "last_success_at": "2026-10-29T23:53:01Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 145.76923076923077,
+      "avg_response_ms": 151.87179487179486,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -726,13 +706,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:38Z",
+      "last_success_at": "2026-10-29T23:53:02Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 140.74358974358975,
+      "avg_response_ms": 149.53846153846155,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -747,13 +727,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:38Z",
+      "last_success_at": "2026-10-29T23:53:01Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 105.58974358974359,
+      "avg_response_ms": 108.38461538461539,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -768,13 +748,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:39Z",
+      "last_success_at": "2026-10-29T23:53:02Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 125.56410256410257,
+      "avg_response_ms": 133.35897435897436,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -789,13 +769,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:39Z",
+      "last_success_at": "2026-10-29T23:53:02Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 168.15384615384616,
+      "avg_response_ms": 173.3846153846154,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -810,13 +790,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:39Z",
+      "last_success_at": "2026-10-29T23:53:02Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 149.7948717948718,
+      "avg_response_ms": 151.5897435897436,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -831,34 +811,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:39Z",
+      "last_success_at": "2026-10-29T23:53:02Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 113.07692307692308,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "60fffe616d1e993eef0ba2f3efd187609ea855cb0a4dbf74fa0f2d724a624884",
-      "name": "lubin776-yuanwang18",
-      "url": "https://raw.githubusercontent.com/lubin776/0/main/tvbox/%E6%84%BF%E6%9C%9B18.json",
-      "status": "active",
-      "tier": "experimental",
-      "type": "single",
-      "score": 60.0,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:40Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 183.5897435897436,
+      "avg_response_ms": 115.8974358974359,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -873,13 +832,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:40Z",
+      "last_success_at": "2026-10-29T23:53:03Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 107.05128205128206,
+      "avg_response_ms": 108.71794871794872,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -894,13 +853,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:40Z",
+      "last_success_at": "2026-10-29T23:53:03Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 90.61538461538461,
+      "avg_response_ms": 92.2051282051282,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -915,13 +874,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:41Z",
+      "last_success_at": "2026-10-29T23:53:04Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 145.6153846153846,
+      "avg_response_ms": 155.5897435897436,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -936,13 +895,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:42Z",
+      "last_success_at": "2026-10-29T23:53:04Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 152.92307692307693,
+      "avg_response_ms": 156.69230769230768,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -957,13 +916,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:43Z",
+      "last_success_at": "2026-10-29T23:53:06Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 137.6153846153846,
+      "avg_response_ms": 139.23076923076923,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -978,13 +937,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:44Z",
+      "last_success_at": "2026-10-29T23:53:06Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 169.6153846153846,
+      "avg_response_ms": 165.69230769230768,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -999,13 +958,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:44Z",
+      "last_success_at": "2026-10-29T23:53:06Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 128.43589743589743,
+      "avg_response_ms": 131.51282051282053,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1020,13 +979,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:45Z",
+      "last_success_at": "2026-10-29T23:53:07Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 138.0,
+      "avg_response_ms": 143.97435897435898,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1041,13 +1000,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:49Z",
+      "last_success_at": "2026-10-29T23:53:11Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 144.66666666666666,
+      "avg_response_ms": 144.48717948717947,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1062,13 +1021,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:51Z",
+      "last_success_at": "2026-10-29T23:53:12Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 146.07692307692307,
+      "avg_response_ms": 147.15384615384616,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -1083,13 +1042,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-10-28T23:57:47Z",
+      "last_success_at": "2026-10-29T23:53:08Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 121.07692307692308,
+      "avg_response_ms": 125.15384615384616,
       "consecutive_failure": 0,
       "whitelisted": false
     }
@@ -1100,7 +1059,7 @@
       "source_id": "0754ebbc3f2938ba024e16b4b14a9bb0bfdd43756074b8f1f5e52e75960e12b0",
       "region": "CN",
       "title": "[ALERT] Source failed / fun.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1110,7 +1069,7 @@
       "source_id": "70b074fd82d6ac374b9701aa136b837850ef87f08561318d79741e99ed8f6998",
       "region": "CN",
       "title": "[ALERT] Source failed / feimaolive.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1120,17 +1079,7 @@
       "source_id": "710cbe03d44e8d55d616a39c8792a265ca5807ecc446b53740920cc6a2505208",
       "region": "CN",
       "title": "[ALERT] Source failed / live2mv_data.json",
-      "created_at": "2026-10-28T23:59:12Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "dc9985d1e2a5dc2703f5584b3f4658cf1ca49c97f24debb44683be368b1f857b",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1140,7 +1089,17 @@
       "source_id": "ecbd7d7164f5ecefaa88d69c027b6f522006a6622cc939566cea10e5721e8284",
       "region": "CN",
       "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "dc9985d1e2a5dc2703f5584b3f4658cf1ca49c97f24debb44683be368b1f857b",
+      "region": "CN",
+      "title": "[ALERT] Source failed / api.json",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1150,7 +1109,7 @@
       "source_id": "d0fe4d242a9f22734e77beb3fec12d87fad15823286402025be39062d2da9a3e",
       "region": "CN",
       "title": "[ALERT] Source failed / dc.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1160,7 +1119,7 @@
       "source_id": "d2cb8344451331f3c5bdf090478c8491b77f2a276a33bb4fd045d546cb33435f",
       "region": "CN",
       "title": "[ALERT] Source failed / lmw.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1170,7 +1129,7 @@
       "source_id": "c41f060078422e323b38a9681c932867250841a23306b213d8057b2fe6af5ab4",
       "region": "CN",
       "title": "[ALERT] Source failed / source.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1180,7 +1139,7 @@
       "source_id": "80f64d31b1b86ce0a0e2fe6d0cc64e3b1b3d5878548cf914657677f949443745",
       "region": "CN",
       "title": "[ALERT] Source failed / sources.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1190,7 +1149,7 @@
       "source_id": "d066cf5bc06932062a5c3b8898ed72221d37596a962d8f913b23430c23721420",
       "region": "CN",
       "title": "[ALERT] Source failed / urls.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1200,7 +1159,7 @@
       "source_id": "8294679cff217c3a3334091bc27f436aead6110364fadbbbd5305ad03175aafe",
       "region": "CN",
       "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1210,7 +1169,7 @@
       "source_id": "99e01587c577fc15f588a872bae65064b7247d0514296ddade42a3192f19eaf2",
       "region": "CN",
       "title": "[ALERT] Source failed / index.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1220,7 +1179,7 @@
       "source_id": "7de5ac9472b7497423445b37161e110b320d5ec63913a29d5fc5e369b9db8248",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1230,7 +1189,7 @@
       "source_id": "0f61de6937254691f27c940f1b6fa8acb55f2994aabb967f9394c63c0d35c0c5",
       "region": "CN",
       "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1240,7 +1199,7 @@
       "source_id": "660602a070b66081245359236f55ef49a85d99c6ac487dc25ae391be14a5747c",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1250,7 +1209,7 @@
       "source_id": "83abf45907e4fd50732355caa2be5355baa322a81a8151782142e39899047c76",
       "region": "CN",
       "title": "[ALERT] Source failed / 9zyfun.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1260,7 +1219,7 @@
       "source_id": "3038e96b71b9901adbf701edf05ec4446489a0f6e38dde829a54f7f346d8f301",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1270,7 +1229,7 @@
       "source_id": "740814d40d976392a98d0cd56ebd83774e5a51644347bc67d90fd13b347d4b17",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1280,7 +1239,7 @@
       "source_id": "b7cf8d08a30808cb806c825464a2902c695b8912c33dc87bd8d7f89c46fb6df3",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1290,7 +1249,7 @@
       "source_id": "f80f14fc0d145b2f84a48e811da53d2a7630b65e4229793b5b67792f309f99a9",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1300,7 +1259,7 @@
       "source_id": "abfab8bc0bccd33bce585a69216a9e8c05b87212d3915ac46b9bfaf35da5229f",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1310,7 +1269,7 @@
       "source_id": "dc7b8ce0e26064233460ec594ea55dda7fed3327d391193c880c6125116bea81",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1320,7 +1279,7 @@
       "source_id": "450970f97f11d88e45aaf43d42cb9500cd1f037a5cce8eebfc6e8cd9959b884b",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1330,7 +1289,7 @@
       "source_id": "97e90df7f55446d6c1952367a65f3e1b4bdfc1cbf48eb659b3159710fd2276ce",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1340,7 +1299,7 @@
       "source_id": "02e77226baed8c4fd2278b3c0474f53f8f8596676916e0cf488ca1bc3f4ee6b9",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1350,7 +1309,7 @@
       "source_id": "12cd2ff0c477f2f830b180f42b31c680b14c08e0d815f6c87e5284e4dd8a30e1",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1360,7 +1319,7 @@
       "source_id": "d960ef571cb4d94e17909fd5d7510c1d597a10cfecf05a6af25560cb138135c8",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1370,7 +1329,7 @@
       "source_id": "73c7bfbdb2f9454b601d753c021504330bafa1a5a48cfa8dd21f444ab3363fdd",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1380,7 +1339,7 @@
       "source_id": "30e0eb3537df5a9205141eeb57b5a841b1a867b115367bcbf9d94689d643ee60",
       "region": "CN",
       "title": "[ALERT] Source failed / fun.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1390,7 +1349,7 @@
       "source_id": "696f4b35f0e3783a6912df529a69f6f734da4c470eebf3533b1eac08b9ff5727",
       "region": "CN",
       "title": "[ALERT] Source failed / fun.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1400,7 +1359,7 @@
       "source_id": "b6ae412672f4be13c4f701ef06ea7abd2672beae007fa6df7020e861ac6b7eca",
       "region": "CN",
       "title": "[ALERT] Source failed / fun.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1410,7 +1369,7 @@
       "source_id": "afb3e907667a15d3886c938d99d8ad6910e8c2b6be5921ae0765f3cb9e4e7a67",
       "region": "CN",
       "title": "[ALERT] Source failed / fun.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1420,7 +1379,7 @@
       "source_id": "63b681b8cc553c2a8cc41187fd76e8e0ac5d64dcb6527d939cad34a7eb938ec0",
       "region": "CN",
       "title": "[ALERT] Source failed / fun.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1430,7 +1389,7 @@
       "source_id": "0f39a529a704ad371ae34ca75f27d0ec7ac305fd5e193fd00d1f6e7baa91e9c8",
       "region": "CN",
       "title": "[ALERT] Source failed / jsm.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1440,7 +1399,7 @@
       "source_id": "07d3045a509cada68f4248f376d2a1598a0668e3e54e488c656aade1284dd41e",
       "region": "CN",
       "title": "[ALERT] Source failed / jsm.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1450,7 +1409,7 @@
       "source_id": "09244911ec559ed360c82ef73dbe6e2cb3fb81ca4bffc0ad4fdc2795685800bb",
       "region": "CN",
       "title": "[ALERT] Source failed / jsm.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1460,7 +1419,7 @@
       "source_id": "60b84e56796d9fdb6e55352a543c13cdf5f68da20cd4ce30a8bcd676dc9f3480",
       "region": "CN",
       "title": "[ALERT] Source failed / jsm.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1470,7 +1429,7 @@
       "source_id": "f3d49314be85b50f6096f55d2f38753ad98a92f1c0bbb3322c5c92b111c14b19",
       "region": "CN",
       "title": "[ALERT] Source failed / zyfun.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1480,7 +1439,7 @@
       "source_id": "a638716507e8750976ede7fb3b0fe7b2363d61017f572e31cf6162b0a86d874e",
       "region": "CN",
       "title": "[ALERT] Source failed / 11451",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1490,7 +1449,7 @@
       "source_id": "3a663f3ad53cca2a4b7194f1a483024e1c9eaf916f51236a41a7fd6685991eb2",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1500,7 +1459,7 @@
       "source_id": "efc782124ff19288f920b87544a18df3025147ea0d0be77603c72c8fdf7d5b11",
       "region": "CN",
       "title": "[ALERT] Source failed / example.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1510,7 +1469,7 @@
       "source_id": "bd1561dfe61f5ee42790b5d047217154b7af2e86d7b52dfdc8ec020627265359",
       "region": "CN",
       "title": "[ALERT] Source failed / hk.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1520,7 +1479,7 @@
       "source_id": "fd2f59f81729cc038da4038fc5140bec2cb9921bd5b65cd6496cdfeb8f258f59",
       "region": "CN",
       "title": "[ALERT] Source failed / tvbox2.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1530,7 +1489,7 @@
       "source_id": "04159b187c3c95754e3b1d02106e93364ff807df761af65a7c8ad2c98509b51d",
       "region": "CN",
       "title": "[ALERT] Source failed / 纯福利.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1540,7 +1499,7 @@
       "source_id": "c45f5a94aea0842fd1c43fab93a19be8f5ea6c49d6a6c7efac7c3e74373dfed7",
       "region": "CN",
       "title": "[ALERT] Source failed / heroaku-7080",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1550,7 +1509,7 @@
       "source_id": "8f8896b5d0d2bcb3f42fc685798704e90c45deab603b5771981fff6233d9b0db",
       "region": "CN",
       "title": "[ALERT] Source failed / jingyi251-aa",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1560,7 +1519,7 @@
       "source_id": "041940210f5de399550b8d1ce6dbe08620981ff61de998fdaaba262760f0d168",
       "region": "CN",
       "title": "[ALERT] Source failed / yuanwangokk-api",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1570,7 +1529,7 @@
       "source_id": "3826c7e36b61b8c81a34cef96781c3b2db626ba01c1381e01ab4f3ef77b583d7",
       "region": "CN",
       "title": "[ALERT] Source failed / config.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1580,7 +1539,7 @@
       "source_id": "eb0f6256a1861e02fbd0b404661f1b53193e94c4d4f2dad667c2532d100f0031",
       "region": "CN",
       "title": "[ALERT] Source failed / config.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -1590,13 +1549,27 @@
       "source_id": "12b36bab9042cd4ed9d7ad01d3372d0bf370e2dcb60d1dd1fcda58557a2a6c03",
       "region": "CN",
       "title": "[ALERT] Source failed / config.json",
-      "created_at": "2026-10-28T23:59:12Z",
+      "created_at": "2026-10-29T23:54:32Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     }
   ],
   "build_history": [
+    {
+      "build_id": "20261029-000929",
+      "generated_at": "2026-10-29T00:09:29Z",
+      "published": true,
+      "fallback": false,
+      "items": 51,
+      "active": 649,
+      "degraded": 0,
+      "failed": 69,
+      "new": 0,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
     {
       "build_id": "20261027-234815",
       "generated_at": "2026-10-27T23:48:15Z",
@@ -2001,20 +1974,6 @@
       "new": 1,
       "recovered": 5,
       "removed": 0,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261005-015923",
-      "generated_at": "2026-10-05T01:59:23Z",
-      "published": true,
-      "fallback": false,
-      "items": 48,
-      "active": 284,
-      "degraded": 137,
-      "failed": 1,
-      "new": 20,
-      "recovered": 5,
-      "removed": 1,
       "blocked_reason": ""
     }
   ],

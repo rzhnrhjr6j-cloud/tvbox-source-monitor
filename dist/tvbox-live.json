@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-10-30T23:42:53Z",
+  "generated_at": "2026-10-31T23:23:49Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -35,7 +35,7 @@
     {
       "name": "应该能看",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d9f31e99935e7ca70072.txt"
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/8a3d3423b2d0ba689d77.txt"
     },
     {
       "name": "直播",
@@ -77,7 +77,7 @@
     {
       "name": "色播聚合",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/0ba026752e275c981181.m3u"
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/1d744ca947ee98a66383.m3u"
     },
     {
       "name": "麻豆视频",
@@ -254,7 +254,7 @@
     {
       "name": "速度源",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/30c789fe255ba56fca87.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/7f199c83325612e52129.txt",
       "epg": "https://epg.112114.eu.org/?ch={name}&date={date}"
     },
     {
@@ -272,13 +272,13 @@
     {
       "name": "XPB源5",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/d586e95ebf4141b542ee.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c609bc94c6f11cedfa7b.txt",
       "epg": "https://epg.112114.eu.org/?ch={name}&date={date}"
     },
     {
       "name": "XPB源6",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/e8f7aea9851db274dd37.txt",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/fe02cdf1840e39802569.txt",
       "epg": "https://epg.112114.eu.org/?ch={name}&date={date}"
     },
     {
@@ -320,13 +320,13 @@
     {
       "name": "migu720",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/598edbc675a49bf2c267.m3u",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/5c35af718ef9b556b1a8.m3u",
       "playerType": 2
     },
     {
       "name": "iTV",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/a33553770eab4d90a9b9.m3u",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/e1a57737bc22f262c736.m3u",
       "playerType": 2
     },
     {
@@ -409,11 +409,6 @@
       "name": "风云试看",
       "type": 0,
       "url": "http://iptv.4666888.xyz/FYTV.txt"
-    },
-    {
-      "name": "尘墨",
-      "type": 0,
-      "url": "https://52xiaobai.cn/ceshi/zb.php"
     },
     {
       "name": "冰茶",

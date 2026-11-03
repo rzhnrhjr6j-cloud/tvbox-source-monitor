@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-01T23:37:19Z",
+  "generated_at": "2026-11-03T02:15:46Z",
   "urls": [
     {
       "name": "精品 | 采集 #2（79站）",
@@ -15,8 +15,16 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/2d5efc1a45b27830.json"
     },
     {
-      "name": "精东（24站）",
+      "name": "精东（23站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/e5e22b7e79834be5.json"
+    },
+    {
+      "name": "牛牛视频 #1（57站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/8bc4f104f6d8d29c.json"
+    },
+    {
+      "name": "牛牛视频 #2（56站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b3263164e0d31c99.json"
     },
     {
       "name": "黄色仓库[采集]（40站）",
@@ -31,19 +39,11 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b9c97ff3dac729ba.json"
     },
     {
-      "name": "牛牛视频 #1（57站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/8bc4f104f6d8d29c.json"
-    },
-    {
-      "name": "牛牛视频 #2（56站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b3263164e0d31c99.json"
-    },
-    {
       "name": "X细胞资源（2站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f831756121e75819.json"
     },
     {
-      "name": "豆了（155站）",
+      "name": "Q群807916734（156站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/745561a3739c9b0c.json"
     },
     {
@@ -87,7 +87,7 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/ac08e3a8dc4d4cff.json"
     },
     {
-      "name": "熊猫视频 #2（45站）",
+      "name": "熊猫视频 #2（46站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/51e5e3f010574b43.json"
     },
     {
@@ -119,7 +119,7 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b805de89511b345c.json"
     },
     {
-      "name": "分享本地 #1（166站）",
+      "name": "分享本地 #1（168站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/36622d48d4f698b8.json"
     },
     {
@@ -145,10 +145,6 @@
     {
       "name": "健教中心,全接口AI过滤广告（144站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f0aebbef65fb47a6.json"
-    },
-    {
-      "name": "┆片单┆精选（103站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/17a834c4e8c9bc6e.json"
     },
     {
       "name": "商店 #2（33站）",
@@ -193,6 +189,10 @@
     {
       "name": "豆瓣┃影视（104站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/5b34c1370113faa4.json"
+    },
+    {
+      "name": "┆片单┆精选（103站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/17a834c4e8c9bc6e.json"
     }
   ]
 }

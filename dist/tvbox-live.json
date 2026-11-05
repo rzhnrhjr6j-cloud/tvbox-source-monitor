@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-04T00:31:30Z",
+  "generated_at": "2026-11-05T00:51:09Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -35,7 +35,7 @@
     {
       "name": "应该能看",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/40e402cb7101af27afd9.txt"
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/455d9ff4993973f010ef.txt"
     },
     {
       "name": "直播",
@@ -47,44 +47,28 @@
       "ua": "okhttp/3.15"
     },
     {
-      "name": "切换直播源(1)",
+      "name": "央视卫视地方港澳台·自动更新",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/6bca02295ddf75141988.m3u",
+      "url": "https://zhouyu86-bh1.pages.dev/lives_tv.txt",
       "playerType": 2
     },
     {
-      "name": "范明明（需开启V6网络）",
+      "name": "手动不知何时更新",
       "type": 0,
-      "url": "https://nos.netease.com/ysf/3d75a78a0fc7ede372c03598d6d10367.m3u",
+      "url": "https://szyyds.cn/tv/live/x.txt",
       "playerType": 2
     },
     {
-      "name": "虎牙一起看",
+      "name": "有效期27年7月",
       "type": 0,
-      "url": "https://sub.ottiptv.cc/huyayqk.m3u",
-      "playerType": 2,
-      "ua": "okHttp/Mod-1.5.0.0"
+      "url": "http://m.szyyds.cn/api.php?token=8664f352657e8b13585bcf0f84fc3512",
+      "playerType": 2
     },
     {
-      "name": "斗鱼一起看",
+      "name": "音乐所",
       "type": 0,
-      "url": "https://sub.ottiptv.cc/douyuyqk.m3u",
-      "playerType": 2,
-      "ua": "okHttp/Mod-1.5.0.0"
-    },
-    {
-      "name": "B站直播",
-      "type": 0,
-      "url": "https://sub.ottiptv.cc/bililive.m3u",
-      "playerType": 2,
-      "ua": "okHttp/Mod-1.5.0.0"
-    },
-    {
-      "name": "YY轮播",
-      "type": 0,
-      "url": "https://sub.ottiptv.cc/yylunbo.m3u",
-      "playerType": 2,
-      "ua": "okHttp/Mod-1.5.0.0"
+      "url": "https://szyyds.cn/tv/live/yy.txt",
+      "playerType": 2
     },
     {
       "name": "夜空",
@@ -105,6 +89,12 @@
       "name": "尘墨",
       "type": 0,
       "url": "https://52xiaobai.cn/ceshi/zb.php"
+    },
+    {
+      "name": "自动更新",
+      "type": 0,
+      "url": "https://z.szyyds.cn/iptv",
+      "playerType": 2
     }
   ]
 }

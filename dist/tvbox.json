@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-04T00:31:29Z",
+  "generated_at": "2026-11-05T00:51:09Z",
   "urls": [
     {
       "name": "玉兔（16站）",
@@ -27,8 +27,8 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/745561a3739c9b0c.json"
     },
     {
-      "name": "首页｜热播（52站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/75baea90f10f4c7e.json"
+      "name": "瓜子影视（49站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/f5d4082ca524d142.json"
     }
   ]
 }

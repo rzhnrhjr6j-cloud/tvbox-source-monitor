@@ -305,8 +305,8 @@ evidence:
     criterion_ids: [AC-705]
     status: PASS
     level: INTEGRATION
-    title: "Release 快照脚本通过真实数据库校验"
-    statement: "真实 data/monitor.db 通过 SQLite backup API 生成一致性快照，quick_check 通过，VACUUM 后以 gzip -9 压缩为 4,181,232 字节；全量 pytest 退出码 0，三个工作流 YAML 均可解析。"
+    title: "Release 快照在线上完成保存与恢复"
+    statement: "Run 43336784367 首次从 f65d6b8 引导成功并上传 20,771,294 字节快照；Run 43337154755 日志确认下载该资产恢复数据库，再上传 20,878,455 字节快照（SHA-256 79d001cfd3c74612a1672fb72d74773235aaca44b41278e85d3510d2247f9f56）。automation-state-v1 当前保留 2 个 uploaded 资产；本地 HEAD 与 origin/main 均为 e22d5ebc6b76abbbb3ae90525b3597d756bb84b6，远端 main 文件树不含 monitor.db/WAL/SHM/journal，全量 pytest 通过。"
     command: "./scripts/actions-state.sh save --dry-run && .venv/bin/python -m pytest -q"
     artifacts:
       - scripts/actions-state.sh

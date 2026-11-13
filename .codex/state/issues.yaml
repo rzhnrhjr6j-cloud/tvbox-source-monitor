@@ -38,9 +38,9 @@ issues:
   - id: ISSUE-006
     title: "SQLite 数据库超过 Git 单文件限制导致定时任务反复失败"
     severity: HIGH
-    status: MITIGATED
+    status: RESOLVED
     task_id: T-007
     statement: "health-check run 43294694846 的健康检查成功，但提交结果时 data/monitor.db 为 104,800,256 字节，被 GitHub 以超过 100 MB 单文件限制拒绝；每 30 分钟调度持续产生失败通知。"
     source: "https://github.com/rzhnrhjr6j-cloud/tvbox-source-monitor/actions/runs/43294694846"
     evidence: [E-024]
-    mitigation: "数据库退出 Git 索引，三个定时工作流改从 automation-state-v1 Release 资产恢复和保存压缩 SQLite 快照；首次迁移从 f65d6b8 引导，Git 只提交 JSON 与 dist。"
+    mitigation: "数据库退出 Git 索引，三个定时工作流改从 automation-state-v1 Release 资产恢复和保存压缩 SQLite 快照；首次迁移从 f65d6b8 引导，Git 只提交 JSON 与 dist。Run 43336784367 保存成功，Run 43337154755 已从 Release 下载快照恢复并再次保存，失败通知链路已消除。"

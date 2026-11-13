@@ -11,8 +11,10 @@ session:
     - "49 条发布 URL 全部走 gh-proxy.com，真机证据 120 条"
     - "CR-010 已实现：monitor.db 退出 Git，三个工作流改用 Release 压缩快照"
     - "E-024 已记录：真实数据库快照校验和全量测试通过"
+    - "Run 43336784367 和 Run 43337154755 均成功；第二次已从 automation-state-v1 下载快照恢复后再次保存"
+    - "本地 HEAD 与 origin/main 同为 e22d5ebc6b76abbbb3ae90525b3597d756bb84b6，远端 main 不含 monitor.db/WAL/SHM/journal"
   in_progress:
-    - "提交并推送 49 条重建产物，核对线上 tvbox.json"
+    - "用户手机复测线上 tvbox.json，必要时继续补真机可播证据"
     - "继续用 agent-reach 的 GitHub CLI 搜索候选源，补真机可播证据后再发布"
   discovered_changes:
     - "高产区候选仍需补全量或放宽抽样真机证据，尤其是 Lightconer、bigtangxi、yw、ewctt、cluntop、菜妮丝等。"
@@ -23,6 +25,5 @@ session:
     - "当前 49 个输出源仍全部为 experimental。"
     - "未验证源不得预先声称可播。"
     - "health-check 曾因 monitor.db 超过 100 MB 每 30 分钟推送失败，现已改为 Release 资产持久化。"
-  blockers:
-    - "49 条新产物尚未提交并推送到线上。"
+  blockers: []
   next_task: T-007

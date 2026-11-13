@@ -96,6 +96,7 @@ tasks:
     - E-024
     - E-025
     - E-026
+    - E-027
 evidence:
   E-001:
     task_id: T-001
@@ -226,6 +227,11 @@ evidence:
     - AC-704
     status: PASS
   E-026:
+    task_id: T-007
+    criterion_ids:
+    - AC-704
+    status: PASS
+  E-027:
     task_id: T-007
     criterion_ids:
     - AC-704

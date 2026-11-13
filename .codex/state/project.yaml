@@ -27,4 +27,4 @@ progress:
   stable_baseline_recorded: true
 next_action:
   task_id: T-007
-  objective: "提交并推送 9 个入口的重建产物，触发 Pages / 发布工作流，核对线上 tvbox.json、9 个源配置和直播入口均返回 HTTP 200；随后由用户手机复测新增入口。"
+  objective: "线上 9 个入口和直播链路已核对为 HTTP 200；剩余动作是由用户手机复测新增入口，并继续等待 ASM-002 的真实中国大陆镜像稳定性证据。"

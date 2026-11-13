@@ -123,12 +123,13 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
      E-019 镜像误杀修复单测（预算耗尽不删源、超时不删、404 仍删、已镜像 jar 不受影响）；
      E-020 CR-009 后 26 源重建；E-021 扩展真机证据后 49 源重建；
      E-024 Release 快照脚本在真实数据库上完成压缩和校验；E-025 纳入成人源后 9 源重建；
-     E-026 聚焦测试和项目完整校验通过。
+     E-026 聚焦测试和项目完整校验通过；E-027 线上 9 个源、CDN、直播清单和 live.m3u 均 HTTP 200。
 7. Rollback / recovery plan
    - 发布失败保留上一版 `tvbox.json`；证据合并不删历史记录，必要时从 Git 历史恢复旧文件。
    - `require_android_jar=false` 或 `android_satisfies_playback=false` 可回退 L6 门禁。
 8. Exit criteria and handoff
-   - 新产物推送并触发 Pages，线上 `tvbox.json` 可下载、9 条 URL 指向镜像。
+   - 新产物推送并触发 Pages，线上 `tvbox.json` 可下载、9 条 URL 指向镜像。已完成（提交 `e8957a6`，
+     Pages Run `43364492832`，E-027）。
    - 用户手机复测新入口；未在设备上验证的源不得预先声称可播。
    - 报障源核对：360 / 茅台 两个用户实测 jar 解析失败的源仍在 `data/blacklist.json` 的
      `source_ids` / `reason` 中，不进入检测池，未混入 49 条。

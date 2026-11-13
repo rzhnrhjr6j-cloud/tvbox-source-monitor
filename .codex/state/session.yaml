@@ -17,9 +17,9 @@ session:
     - "新增 4 条真机证据后，真实数据库重建发布 9 个入口；build_id=20261113-041352，validation.ok=true"
     - "新增精品资源（59站）和瓜子影视（49站）；私下用，分享必删（52站）替换内容重复的旧玉兔入口"
     - "E-025、E-026 已记录：真机证据 124 条，聚焦测试和 scripts/validate-project.sh 均通过"
+    - "提交 e8957a6 已推送到 origin/main；Pages Run 43364492832 部署成功"
+    - "E-027 已记录：线上 9 个 gh-proxy 源、9 个 jsDelivr CDN 源、直播清单和 live.m3u 全部 HTTP 200"
   in_progress:
-    - "提交并推送 9 个入口的发布产物，触发 Pages / 发布工作流"
-    - "线上核对 tvbox.json、9 个源配置和直播入口均返回 HTTP 200"
     - "由用户手机复测新增入口；未验证源不得预先声称可播"
   discovered_changes:
     - "高产区候选仍需补全量或放宽抽样真机证据，尤其是 Lightconer、bigtangxi、yw、ewctt、cluntop、菜妮丝等。"
@@ -31,4 +31,4 @@ session:
     - "未验证源不得预先声称可播。"
     - "health-check 曾因 monitor.db 超过 100 MB 每 30 分钟推送失败，现已改为 Release 资产持久化。"
   blockers: []
-  next_task: T-007
+  next_task: "T-007 手机复测；ASM-002 继续等待真实中国大陆客户端证据"

@@ -346,3 +346,18 @@ evidence:
       - tests/test_mirror.py
       - scripts/validate-project.sh
     recorded_at: 2026-11-13
+  - id: E-027
+    task_id: T-007
+    requirement_ids: [REQ-704]
+    criterion_ids: [AC-704]
+    status: PASS
+    level: PRODUCTION
+    title: "线上 9 个入口和直播链路均返回 HTTP 200"
+    statement: "提交 e8957a6 已推送到 origin/main，Pages Run 43364492832 部署成功（34 秒）。线上 tvbox.json 的 generated_at=2026-11-13T04:13:52Z、入口数=9，内容与本地一致；9 个 gh-proxy 源配置和 9 个 jsDelivr CDN 源配置全部返回 HTTP 200。gh-proxy 主清单、CDN 清单、tvbox-live.json、live.m3u，以及 Pages tvbox.json 和 jsDelivr tvbox-cdn.json 也全部返回 HTTP 200。"
+    command: "gh run watch 43364492832 --exit-status && curl -L -sS --max-time 30 -o /dev/null -w '%{http_code}' <manifest-and-source-urls>"
+    artifacts:
+      - dist/tvbox.json
+      - dist/tvbox-cdn.json
+      - dist/tvbox-live.json
+      - dist/live.m3u
+    recorded_at: 2026-11-13

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-05T00:51:09Z",
+  "generated_at": "2026-11-13T01:03:49Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -11,11 +11,6 @@
       "name": "没4K",
       "type": 0,
       "url": "https://mpimg.cn/text.php?hash=7265d70b6834cefbddb61bcc2d9c99db"
-    },
-    {
-      "name": "经典电视剧",
-      "type": 0,
-      "url": "https://wp.kayyw.com/f/XOpgIZ/%E7%BB%8F%E5%85%B8%E7%94%B5%E8%A7%86%E5%89%A7.txt"
     },
     {
       "name": "夜空1",
@@ -35,7 +30,7 @@
     {
       "name": "应该能看",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/455d9ff4993973f010ef.txt"
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/81d4a9ca45f9f832b3d2.txt"
     },
     {
       "name": "直播",
@@ -47,28 +42,9 @@
       "ua": "okhttp/3.15"
     },
     {
-      "name": "央视卫视地方港澳台·自动更新",
+      "name": "经典电视剧",
       "type": 0,
-      "url": "https://zhouyu86-bh1.pages.dev/lives_tv.txt",
-      "playerType": 2
-    },
-    {
-      "name": "手动不知何时更新",
-      "type": 0,
-      "url": "https://szyyds.cn/tv/live/x.txt",
-      "playerType": 2
-    },
-    {
-      "name": "有效期27年7月",
-      "type": 0,
-      "url": "http://m.szyyds.cn/api.php?token=8664f352657e8b13585bcf0f84fc3512",
-      "playerType": 2
-    },
-    {
-      "name": "音乐所",
-      "type": 0,
-      "url": "https://szyyds.cn/tv/live/yy.txt",
-      "playerType": 2
+      "url": "https://wp.kayyw.com/f/XOpgIZ/%E7%BB%8F%E5%85%B8%E7%94%B5%E8%A7%86%E5%89%A7.txt"
     },
     {
       "name": "夜空",
@@ -89,12 +65,6 @@
       "name": "尘墨",
       "type": 0,
       "url": "https://52xiaobai.cn/ceshi/zb.php"
-    },
-    {
-      "name": "自动更新",
-      "type": 0,
-      "url": "https://z.szyyds.cn/iptv",
-      "playerType": 2
     }
   ]
 }

@@ -45,3 +45,10 @@ events:
   from: DRAFT
   to: IMPLEMENTED
   statement: SQLite 状态迁移到 GitHub Release 压缩快照，monitor.db 退出 Git 索引，三个定时工作流统一恢复和保存。
+- id: EVT-008
+  date: 2026-11-13
+  type: BUILD
+  target_id: T-007
+  from: VERIFYING
+  to: VERIFYING
+  statement: build_id=20261113-041352 在纳入成人源且保留 L6 门禁的前提下发布 9 个入口，validation.ok=true；E-025、E-026 通过，待提交推送、线上核对和手机复测。

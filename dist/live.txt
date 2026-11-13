@@ -69,7 +69,6 @@ CCTV6,http://74.91.26.218:82/live/cctv6hd.m3u8
 CCTV6,https://ldocctvwbcdbd.a.bdydns.com/ldocctvwbcd/cdrmldcctv6_1/index.m3u8?b=200-1200
 CCTV-6 电影,http://69.30.245.50/live/cctv6.m3u8
 CCTV-6电影,http://8.138.7.223/tv/1905.php?id=LIVE3YPYZ30E7V1R0
-CCTV-6 电影频道,https://piccpndks.v.kcdnvip.com/audio/cctv6_2/index.m3u8
 CCTV-7HD,http://107.150.60.122/live/cctv7hd.m3u8
 CCTV7,http://198.204.228.26/live/cctv7hd.m3u8
 CCTV7,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv7hd
@@ -87,7 +86,7 @@ CCTV9,http://192.151.150.154/live/cctv9hd.m3u8
 CCTV9,http://198.204.228.26/live/cctv9hd.m3u8
 CCTV-9 纪录,http://74.91.26.218:82/live/cctv9hd.m3u8
 CCTV-9 纪录,https://v4-702cae17a28d6e4f0c0002bba021d934.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=4df9903470e731ab363e50f6e4910dd6
-CCTV-9 纪录,https://v4-702cae17a28d6e4f0c0002bba021d934.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=d57d527cf8a8d3d1ca12dd9fa9e3f0fd
+CCTV-9 纪录,https://v4-e6b1c5baf4e240fe63adbf68dda23435.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=3ed7041e26fd0244f8c37198c6035d0c
 CCTV-世界地理,http://www.lizhinas.top:1009/rtp/239.252.219.93:5140
 CCTV中学生,http://t.061899.xyz/tl/tl.php?id=zxs
 CCTV-兵器科技,http://www.lizhinas.top:1009/rtp/239.252.219.98:5140

@@ -85,9 +85,9 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
 2. Current state / constraints
    - `build` 不带 `GITHUB_REPOSITORY` 时，`dist/tvbox.json` 指向 `raw.githubusercontent.com` 原点，手机端打不开；镜像副本在 `dist/sources/`。
    - 批量真机验证只抽前 N 站，弱结果会覆盖同源全量跑出的强结果，导致可播源被错误撤下。
-   - 数据库：active 331 / degraded 136 / failed 2。
-   - 真机证据：`data/android_verified.json` 120 条。
-   - 最新重建：`build_id=20261005-043906`，发布 49 条，新增 1、恢复 0、移除 0。
+   - 数据库：active 626 / degraded 12 / failed 94。
+   - 真机证据：`data/android_verified.json` 124 条。
+   - 最新重建：`build_id=20261113-041352`，发布 9 条，新增 3、移除 1；成人源纳入候选，但 L6 / Android 门禁不放宽。
 3. Requirements and acceptance criteria
    - REQ-701 / AC-701：发布命令显式带 `GITHUB_REPOSITORY`，构建产物 URL 全部走可用镜像，主入口与 CDN 条目/文件一致。
    - REQ-702 / AC-702：`write_evidence` 只允许不弱于既有记录的结果覆盖，同强度允许刷新时间戳。
@@ -110,22 +110,25 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
      `health-check` 每 30 分钟推送失败。新增 `scripts/actions-state.sh`，用 SQLite backup API
      生成一致性快照，`quick_check` + `VACUUM` + gzip 后上传到 `automation-state-v1`；
      三个写数据工作流统一恢复/保存，Git 只提交 JSON 和 `dist/`。已完成。
-   - T-007：对新增可播证据源重建并推送。进行中（本轮已重建 49 条，待推送和线上核对）。
+   - T-007：对新增可播证据源重建并推送。进行中（本轮已重建 9 条，待提交推送和线上核对）。
 6. Validation strategy and evidence IDs
    - 聚焦测试 86 项通过，全量 `pytest` 通过。
-   - CR-009 后继续补真机证据并重建：`build_id=20261005-043906`，发布 49 条，
-     `dist/tvbox.json` 与 `dist/tvbox-cdn.json` 条目一致；49 条 URL 全部走 `gh-proxy.com`。
-   - 最新发布集包含`精东（24站）`和`豆了（159站）`；`360`和`茅台`不在发布集。
+   - 纳入成人源并补真机证据后重建：`build_id=20261113-041352`，624 个候选，质量门放行 9 个，
+     发布 9 条，`validation.ok=true`。
+   - 最新发布集新增`精品资源（59站）`和`瓜子影视（49站）`；`私下用，分享必删（52站）`
+     替换内容重复的旧玉兔入口。
+   - 最新发布集包含`精东（23站）`和`豆了（159站）`；`360`和`茅台`不在发布集。
      `豆了`对应 `dist/sources/745561a3739c9b0c.json` 与 `dist/cdn/sources/` 同款均存在。
    - 证据：E-015 发布入口镜像核对；E-016 强证据保留单测；E-017 全量测试；E-018 11 源重建；
      E-019 镜像误杀修复单测（预算耗尽不删源、超时不删、404 仍删、已镜像 jar 不受影响）；
      E-020 CR-009 后 26 源重建；E-021 扩展真机证据后 49 源重建；
-     E-024 Release 快照脚本在真实数据库上完成压缩和校验。
+     E-024 Release 快照脚本在真实数据库上完成压缩和校验；E-025 纳入成人源后 9 源重建；
+     E-026 聚焦测试和项目完整校验通过。
 7. Rollback / recovery plan
    - 发布失败保留上一版 `tvbox.json`；证据合并不删历史记录，必要时从 Git 历史恢复旧文件。
    - `require_android_jar=false` 或 `android_satisfies_playback=false` 可回退 L6 门禁。
 8. Exit criteria and handoff
-   - 新产物推送并触发 Pages，线上 `tvbox.json` 可下载、49 条 URL 指向镜像。
+   - 新产物推送并触发 Pages，线上 `tvbox.json` 可下载、9 条 URL 指向镜像。
    - 用户手机复测新入口；未在设备上验证的源不得预先声称可播。
    - 报障源核对：360 / 茅台 两个用户实测 jar 解析失败的源仍在 `data/blacklist.json` 的
      `source_ids` / `reason` 中，不进入检测池，未混入 49 条。

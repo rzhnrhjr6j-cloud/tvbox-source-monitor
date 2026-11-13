@@ -568,6 +568,19 @@
       ]
     },
     {
+      "source_id": "7e5a11649a409c05b975ca00b41529bf70cbf9e74324c1e58df0f96d1d9739af",
+      "config_url": "https://raw.githubusercontent.com/793641910/binge/main/json/LuTie.json",
+      "verified_at": "2026-11-13T04:04:52Z",
+      "site_count": 15,
+      "loadable_count": 14,
+      "playable_count": 3,
+      "playable_keys": [
+        "无敌",
+        "XMVideo",
+        "狗熊"
+      ]
+    },
+    {
       "source_id": "7f851d54c941af745fbb24f7f035cf3091f63c6978639178e1dd8dc224fe4bb5",
       "config_url": "https://raw.githubusercontent.com/cyh92/live/main/lines/my.json",
       "verified_at": "2026-10-04T21:12:04Z",
@@ -813,9 +826,9 @@
     {
       "source_id": "a2637c5b6b9875837c786ae33dd78858e44e9c1ef509d2be4578f88f411a5806",
       "config_url": "https://raw.githubusercontent.com/zjng/TV-API/main/18%2B.json",
-      "verified_at": "2026-10-04T20:21:57Z",
-      "site_count": 8,
-      "loadable_count": 2,
+      "verified_at": "2026-11-13T04:04:52Z",
+      "site_count": 18,
+      "loadable_count": 3,
       "playable_count": 1,
       "playable_keys": [
         "XMVideo"
@@ -981,7 +994,7 @@
     {
       "source_id": "b9c97ff3dac729bae98730e863f117bee2f12d6051c15a9f838012aa42de190d",
       "config_url": "https://raw.githubusercontent.com/Honghe-snow/honghetv/main/%E6%99%BA%E9%A9%BE.json",
-      "verified_at": "2026-10-04T16:11:46Z",
+      "verified_at": "2026-11-13T03:36:22Z",
       "site_count": 13,
       "loadable_count": 4,
       "playable_count": 3,
@@ -1250,6 +1263,23 @@
         "蔬菜",
         "荐片",
         "csp_Gz360"
+      ]
+    },
+    {
+      "source_id": "f5d4082ca524d142e97593600adf9176a9d435c970d99783e4fc54a75946ce4a",
+      "config_url": "https://raw.githubusercontent.com/ZHOUYU86/tvbox-sources/main/b.json",
+      "verified_at": "2026-11-13T04:04:52Z",
+      "site_count": 11,
+      "loadable_count": 11,
+      "playable_count": 7,
+      "playable_keys": [
+        "Gqc",
+        "Feikuai",
+        "Cupfox",
+        "Www555",
+        "Qqys",
+        "Keke",
+        "Fdz"
       ]
     },
     {

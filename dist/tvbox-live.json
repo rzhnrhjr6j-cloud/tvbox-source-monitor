@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-13T01:03:49Z",
+  "generated_at": "2026-11-13T04:13:52Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -13,6 +13,11 @@
       "url": "https://mpimg.cn/text.php?hash=7265d70b6834cefbddb61bcc2d9c99db"
     },
     {
+      "name": "夜空",
+      "type": 0,
+      "url": "https://pan.szfx.top/down.php/4f5dad27633e1293d7ef2317ee9c801e.txt"
+    },
+    {
       "name": "夜空1",
       "type": 0,
       "url": "https://pan.29o.cn/down.php/aa846bceb7a1b4adb0385b1f61b192e8.txt"
@@ -23,14 +28,19 @@
       "url": "https://mpimg.cn/down.php/fa04b02ffac54ac877f5250d3d70e494.txt"
     },
     {
-      "name": "yuan",
+      "name": "划了",
       "type": 0,
-      "url": "http://wangziduoqing.com/yuan/zb.txt"
+      "url": "https://pan.szfx.top/down.php/dcb0cc6a6935b5e62b2659eba6718471.txt"
     },
     {
       "name": "应该能看",
       "type": 0,
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/81d4a9ca45f9f832b3d2.txt"
+    },
+    {
+      "name": "风云试看",
+      "type": 0,
+      "url": "http://iptv.4666888.xyz/FYTV.txt"
     },
     {
       "name": "直播",
@@ -42,29 +52,313 @@
       "ua": "okhttp/3.15"
     },
     {
+      "name": "LIVEfl",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/5e00acbf5a7340f6617e.m3u",
+      "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
+      "logo": "https://live.fanmingming.com/tv/{name}.png",
+      "playerType": 1
+    },
+    {
+      "name": "央视卫视地方港澳台·自动更新",
+      "type": 0,
+      "url": "https://zhouyu86-bh1.pages.dev/lives_tv.txt",
+      "playerType": 2
+    },
+    {
+      "name": "手动不知何时更新",
+      "type": 0,
+      "url": "https://szyyds.cn/tv/live/x.txt",
+      "playerType": 2
+    },
+    {
+      "name": "有效期27年7月",
+      "type": 0,
+      "url": "http://m.szyyds.cn/api.php?token=8664f352657e8b13585bcf0f84fc3512",
+      "playerType": 2
+    },
+    {
+      "name": "音乐所",
+      "type": 0,
+      "url": "https://szyyds.cn/tv/live/yy.txt",
+      "playerType": 2
+    },
+    {
       "name": "经典电视剧",
       "type": 0,
       "url": "https://wp.kayyw.com/f/XOpgIZ/%E7%BB%8F%E5%85%B8%E7%94%B5%E8%A7%86%E5%89%A7.txt"
     },
     {
-      "name": "夜空",
+      "name": "yuan",
       "type": 0,
-      "url": "https://pan.szfx.top/down.php/4f5dad27633e1293d7ef2317ee9c801e.txt"
-    },
-    {
-      "name": "划了",
-      "type": 0,
-      "url": "https://pan.szfx.top/down.php/dcb0cc6a6935b5e62b2659eba6718471.txt"
-    },
-    {
-      "name": "风云试看",
-      "type": 0,
-      "url": "http://iptv.4666888.xyz/FYTV.txt"
+      "url": "http://wangziduoqing.com/yuan/zb.txt"
     },
     {
       "name": "尘墨",
       "type": 0,
       "url": "https://52xiaobai.cn/ceshi/zb.php"
+    },
+    {
+      "name": "crzb",
+      "type": 0,
+      "url": "http://bwind.fr.to/m3u/crzb.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "自动更新",
+      "type": 0,
+      "url": "https://z.szyyds.cn/iptv",
+      "playerType": 2
+    },
+    {
+      "name": "全球",
+      "type": 0,
+      "url": "http://xingioe.top/down.php/82d0754d79de3be03e9b63e4d2d96818.jpg"
+    },
+    {
+      "name": "天美传媒816",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/天美传媒816.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "果冻传媒816",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/果冻传媒816.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "麻豆传媒816",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/麻豆传媒816.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "星空传媒816",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/星空传媒816.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "精东影业816",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/精东影业816.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "国产传媒",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/国产传媒.m3u",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "pron",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/pron.m3u",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "几个传媒",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/几个传媒.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "成人传媒",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/成人传媒.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "181818",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/181818.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "live18",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/live18.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "花活",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/花活.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "18资源丰富",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/18资源丰富.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "至尊",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/至尊.m3u",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "终极",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/终极.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "Jable嗅探",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/Jable嗅探.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "vip源",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/vip源.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "成人",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/维护成人.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "18+",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/18+.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "无敌",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/无敌.m3u",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "经典",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/经典.m3u",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "成人电影",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/成人电影.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "珍藏",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/珍藏.m3u",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "绝品",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/绝品.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "美腿丝袜",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/美腿丝袜.txt",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "x315601",
+      "type": 0,
+      "url": "http://x315601.serv00.net/10.php",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "zwrt",
+      "type": 0,
+      "url": "https://github.com/zwrt/IPTV/blob/Files/Adult.m3u",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "极限IPTV",
+      "type": 0,
+      "url": "https://chuxinya.top/f/OMpoFv/CRR.txt"
+    },
+    {
+      "name": "彩虹",
+      "type": 0,
+      "url": "https://chuxinya.top/f/2xxgH8/cr.txt",
+      "epg": "https://diyp8.112114.xyz/?ch={name}&date={date}",
+      "logo": "https://epg.112114.xyz/logo/{name}.png",
+      "playerType": 1,
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "联系抖音群699303084684",
+      "type": 0,
+      "url": "https://gitee.com/yuan301/tv/raw/master/A/tv.png",
+      "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
+      "logo": "https://epg.iill.top/logo/{name}.png",
+      "playerType": 2,
+      "ua": "okhttp/3.15,AptvPlayer/1.4.0"
+    },
+    {
+      "name": "咪咕",
+      "type": 0,
+      "url": "https://develop202.github.io/migu_video/interface.txt",
+      "playerType": 2
     }
   ]
 }

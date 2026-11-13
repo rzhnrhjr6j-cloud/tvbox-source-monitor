@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13T01:03:49Z",
-  "build_id": "20261113-010349",
+  "generated_at": "2026-11-13T04:13:52Z",
+  "build_id": "20261113-041352",
   "summary": {
     "sources": {
       "active": 626,
@@ -10,24 +10,24 @@
     },
     "candidates": 0,
     "tiers": {
-      "primary": 6,
+      "primary": 9,
       "backup": 0,
       "experimental": 0
     },
-    "output_items": 6
+    "output_items": 9
   },
   "regions": {
     "CN": {
-      "checks": 2193,
-      "successes": 1908,
+      "checks": 2924,
+      "successes": 2544,
       "availability_percent": 87.0
     }
   },
   "sources": [
     {
-      "id": "3e3a721544a21798a6ec87150e7043de54eb1aac320a4865c980d41abe177018",
-      "name": "adult2.json",
-      "url": "https://raw.githubusercontent.com/zzq1234567890/tvbox1/main/adult2.json",
+      "id": "7e5a11649a409c05b975ca00b41529bf70cbf9e74324c1e58df0f96d1d9739af",
+      "name": "binge-LuTie",
+      "url": "https://raw.githubusercontent.com/793641910/binge/main/json/LuTie.json",
       "status": "active",
       "tier": "primary",
       "type": "single",
@@ -35,13 +35,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-13T00:59:15Z",
+      "last_success_at": "2026-11-13T01:04:45Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 183.33333333333334,
+      "avg_response_ms": 203.0,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -56,13 +56,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-13T00:59:00Z",
+      "last_success_at": "2026-11-13T01:04:47Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 158.0,
+      "avg_response_ms": 157.25,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -77,13 +77,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-13T00:59:10Z",
+      "last_success_at": "2026-11-13T01:04:49Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 118.66666666666667,
+      "avg_response_ms": 114.75,
       "consecutive_failure": 0,
       "whitelisted": true
     },
@@ -98,13 +98,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-13T00:59:05Z",
+      "last_success_at": "2026-11-13T01:04:54Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 121.33333333333333,
+      "avg_response_ms": 124.5,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -119,13 +119,76 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-13T00:59:04Z",
+      "last_success_at": "2026-11-13T01:04:53Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 100.66666666666667,
+      "avg_response_ms": 103.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "a2637c5b6b9875837c786ae33dd78858e44e9c1ef509d2be4578f88f411a5806",
+      "name": "zjng-18plus",
+      "url": "https://raw.githubusercontent.com/zjng/TV-API/main/18%2B.json",
+      "status": "active",
+      "tier": "primary",
+      "type": "single",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-11-13T01:04:51Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 93.25,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "b9c97ff3dac729bae98730e863f117bee2f12d6051c15a9f838012aa42de190d",
+      "name": "智驾.json",
+      "url": "https://raw.githubusercontent.com/Honghe-snow/honghetv/main/%E6%99%BA%E9%A9%BE.json",
+      "status": "active",
+      "tier": "primary",
+      "type": "single",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-11-13T01:04:50Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 140.0,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "f5d4082ca524d142e97593600adf9176a9d435c970d99783e4fc54a75946ce4a",
+      "name": "b.json",
+      "url": "https://raw.githubusercontent.com/ZHOUYU86/tvbox-sources/main/b.json",
+      "status": "active",
+      "tier": "primary",
+      "type": "single",
+      "score": 94.943,
+      "stability_score": 99.621,
+      "availability_7d": 100.0,
+      "availability_30d": 99.242,
+      "last_success_at": "2026-11-13T01:04:54Z",
+      "last_failure_at": "2026-11-01T02:14:01Z",
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 135.25,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -137,16 +200,16 @@
       "tier": "primary",
       "type": "single",
       "score": 58.386,
-      "stability_score": 99.237,
+      "stability_score": 99.243,
       "availability_7d": 100.0,
-      "availability_30d": 98.473,
-      "last_success_at": "2026-11-13T00:59:55Z",
+      "availability_30d": 98.485,
+      "last_success_at": "2026-11-13T01:05:27Z",
       "last_failure_at": "2026-10-30T13:37:09Z",
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 792.0,
+      "avg_response_ms": 728.75,
       "consecutive_failure": 0,
       "whitelisted": true
     }
@@ -154,460 +217,170 @@
   "alerts": [
     {
       "kind": "source_failed",
-      "source_id": "9ad9f469ee036bfc931a76533ac46c177f2cac23d308373ca9056aa2f001c6d7",
-      "region": "CN",
-      "title": "[ALERT] Source failed / FuLi.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "d44db29fa4feb2188cfb72be8f4fc3d0fdb629caa311770936e6b6c62559a21c",
-      "region": "CN",
-      "title": "[ALERT] Source failed / FuLi🔞.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "7addc1688ed8a37c4e8391282c63ce15178c74aba9e15f768fc98342a9472402",
-      "region": "CN",
-      "title": "[ALERT] Source failed / T4.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "2c9f9af5408ae1e8b52d3e120825b7db79afe69b194e52ed7a79e89332cedb43",
-      "region": "CN",
-      "title": "[ALERT] Source failed / TV.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "7de5ac9472b7497423445b37161e110b320d5ec63913a29d5fc5e369b9db8248",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "3038e96b71b9901adbf701edf05ec4446489a0f6e38dde829a54f7f346d8f301",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "740814d40d976392a98d0cd56ebd83774e5a51644347bc67d90fd13b347d4b17",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "b7cf8d08a30808cb806c825464a2902c695b8912c33dc87bd8d7f89c46fb6df3",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "f80f14fc0d145b2f84a48e811da53d2a7630b65e4229793b5b67792f309f99a9",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "abfab8bc0bccd33bce585a69216a9e8c05b87212d3915ac46b9bfaf35da5229f",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "dc7b8ce0e26064233460ec594ea55dda7fed3327d391193c880c6125116bea81",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:25Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "d3a5a0d751ed22dbb9578bb36c4d069ead097c1145bf27d74498034a1edb0ced",
-      "region": "CN",
-      "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "warning",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "70b074fd82d6ac374b9701aa136b837850ef87f08561318d79741e99ed8f6998",
-      "region": "CN",
-      "title": "[ALERT] Source failed / feimaolive.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "710cbe03d44e8d55d616a39c8792a265ca5807ecc446b53740920cc6a2505208",
-      "region": "CN",
-      "title": "[ALERT] Source failed / live2mv_data.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "f1e209e2f8fb9b848732e13a9ec55c81459fcd6b19392681aad8b9585dc06db1",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "023989f57ab52a7dce60fba192eda111dd2d10bebc2b9adae312bbe1337fb89a",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "2aef9a70884111af85009ba1e334029e7e5ca8365bb9baefc949ee5dfd854605",
-      "region": "CN",
-      "title": "[ALERT] Source failed / X4少儿频道.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "6753274b9ed16e400af04c0c207a563d9f7ede75870994ebf83d311817f64116",
-      "region": "CN",
-      "title": "[ALERT] Source failed / X4更新专用接口.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "f1f99d4ed9aa2439a077f094ecc6b2c3495059cc0e9839e07ded9d4820ffca41",
-      "region": "CN",
-      "title": "[ALERT] Source failed / X4菠菜园",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "a9e3d3e834198e6dbfc39917ff0f112ce13502fc232b9d1de80f9ae4d85bf9da",
-      "region": "CN",
-      "title": "[ALERT] Source failed / lubin-X4pro",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "50b8b7395c3444188aba5f51c60f79d8839b886c3398c1dd2f812dcf7207d841",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 6.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "9849d82ead1167466447549262ee91d98970e88ae86505c61179acd8d2bca659",
-      "region": "CN",
-      "title": "[ALERT] Source failed / A_18_1.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "96b6a8e6ce34cf7b179f0c31755369579e85b92381ec94c26a23f91b4371ef76",
-      "region": "CN",
-      "title": "[ALERT] Source failed / kpkuang_看片狂人.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "warning",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "0b6e78ca3890a1382d789706bc125ab2ac8b26a6163ba8c5fe660fe523288b88",
-      "region": "CN",
-      "title": "[ALERT] Source failed / ok海豚常规882.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "d0fe4d242a9f22734e77beb3fec12d87fad15823286402025be39062d2da9a3e",
-      "region": "CN",
-      "title": "[ALERT] Source failed / dc.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "d2cb8344451331f3c5bdf090478c8491b77f2a276a33bb4fd045d546cb33435f",
-      "region": "CN",
-      "title": "[ALERT] Source failed / lmw.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "c41f060078422e323b38a9681c932867250841a23306b213d8057b2fe6af5ab4",
-      "region": "CN",
-      "title": "[ALERT] Source failed / source.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "80f64d31b1b86ce0a0e2fe6d0cc64e3b1b3d5878548cf914657677f949443745",
-      "region": "CN",
-      "title": "[ALERT] Source failed / sources.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "ecbd7d7164f5ecefaa88d69c027b6f522006a6622cc939566cea10e5721e8284",
-      "region": "CN",
-      "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "d066cf5bc06932062a5c3b8898ed72221d37596a962d8f913b23430c23721420",
-      "region": "CN",
-      "title": "[ALERT] Source failed / urls.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "9ceafef01fcb2032642034ada1ff72d1f9fd60e8888a8bd1b6fb8d86cd478d32",
-      "region": "CN",
-      "title": "[ALERT] Source failed / bb.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "88090513d47e3bbb803cbdd9093e4663d8b4dcf67fe7bda1fc3a20ab08b5589b",
-      "region": "CN",
-      "title": "[ALERT] Source failed / bb.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "8f8f4b19f4816269e9a477276ff8289cb9a566787956d9c7edf8f87852022b03",
-      "region": "CN",
-      "title": "[ALERT] Source failed / lubin-jiduo",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "60fffe616d1e993eef0ba2f3efd187609ea855cb0a4dbf74fa0f2d724a624884",
-      "region": "CN",
-      "title": "[ALERT] Source failed / lubin776-yuanwang18",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "556d72d9e6ee799e69eed1f965fef24442243ec44716a7c59b5649e282d053fe",
-      "region": "CN",
-      "title": "[ALERT] Source failed / yt.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "913416b9e132267c63299dce7059f40c386fb6fb982417676cf40507eea59c6f",
-      "region": "CN",
-      "title": "[ALERT] Source failed / yt.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "dc9985d1e2a5dc2703f5584b3f4658cf1ca49c97f24debb44683be368b1f857b",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "53fa6a08a3fc2b4b0362b50a5348679da9b092dc14771b2996e3fb311b2b90fb",
-      "region": "CN",
-      "title": "[ALERT] Source failed / gua.json",
-      "created_at": "2026-11-13T01:01:24Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "0754ebbc3f2938ba024e16b4b14a9bb0bfdd43756074b8f1f5e52e75960e12b0",
+      "source_id": "afb3e907667a15d3886c938d99d8ad6910e8c2b6be5921ae0765f3cb9e4e7a67",
       "region": "CN",
       "title": "[ALERT] Source failed / fun.json",
-      "created_at": "2026-11-13T01:01:24Z",
+      "created_at": "2026-11-13T01:06:40Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     },
     {
       "kind": "source_failed",
-      "source_id": "8294679cff217c3a3334091bc27f436aead6110364fadbbbd5305ad03175aafe",
+      "source_id": "63b681b8cc553c2a8cc41187fd76e8e0ac5d64dcb6527d939cad34a7eb938ec0",
       "region": "CN",
-      "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-11-13T01:01:24Z",
+      "title": "[ALERT] Source failed / fun.json",
+      "created_at": "2026-11-13T01:06:40Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     },
     {
       "kind": "source_failed",
-      "source_id": "99e01587c577fc15f588a872bae65064b7247d0514296ddade42a3192f19eaf2",
+      "source_id": "c45f5a94aea0842fd1c43fab93a19be8f5ea6c49d6a6c7efac7c3e74373dfed7",
       "region": "CN",
-      "title": "[ALERT] Source failed / index.json",
-      "created_at": "2026-11-13T01:01:24Z",
+      "title": "[ALERT] Source failed / heroaku-7080",
+      "created_at": "2026-11-13T01:06:40Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     },
     {
       "kind": "source_failed",
-      "source_id": "0f61de6937254691f27c940f1b6fa8acb55f2994aabb967f9394c63c0d35c0c5",
+      "source_id": "bd1561dfe61f5ee42790b5d047217154b7af2e86d7b52dfdc8ec020627265359",
       "region": "CN",
-      "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-11-13T01:01:24Z",
+      "title": "[ALERT] Source failed / hk.json",
+      "created_at": "2026-11-13T01:06:40Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     },
     {
       "kind": "source_failed",
-      "source_id": "660602a070b66081245359236f55ef49a85d99c6ac487dc25ae391be14a5747c",
+      "source_id": "3826c7e36b61b8c81a34cef96781c3b2db626ba01c1381e01ab4f3ef77b583d7",
+      "region": "CN",
+      "title": "[ALERT] Source failed / config.json",
+      "created_at": "2026-11-13T01:06:39Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "a57016c558c5e9aa5d8749ccf77704550c5603c779873f2c78cdb492319c8917",
+      "region": "CN",
+      "title": "[ALERT] Source failed / demo.json",
+      "created_at": "2026-11-13T01:06:39Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "066123d9b2e7720c67200ca08c62eb57f9bc6effedf6711d791972e64f669104",
+      "region": "CN",
+      "title": "[ALERT] Source failed / demo1.json",
+      "created_at": "2026-11-13T01:06:39Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "efc782124ff19288f920b87544a18df3025147ea0d0be77603c72c8fdf7d5b11",
+      "region": "CN",
+      "title": "[ALERT] Source failed / example.json",
+      "created_at": "2026-11-13T01:06:39Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "30e0eb3537df5a9205141eeb57b5a841b1a867b115367bcbf9d94689d643ee60",
+      "region": "CN",
+      "title": "[ALERT] Source failed / fun.json",
+      "created_at": "2026-11-13T01:06:39Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "696f4b35f0e3783a6912df529a69f6f734da4c470eebf3533b1eac08b9ff5727",
+      "region": "CN",
+      "title": "[ALERT] Source failed / fun.json",
+      "created_at": "2026-11-13T01:06:39Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "b6ae412672f4be13c4f701ef06ea7abd2672beae007fa6df7020e861ac6b7eca",
+      "region": "CN",
+      "title": "[ALERT] Source failed / fun.json",
+      "created_at": "2026-11-13T01:06:39Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "12cd2ff0c477f2f830b180f42b31c680b14c08e0d815f6c87e5284e4dd8a30e1",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T01:01:24Z",
+      "created_at": "2026-11-13T01:06:38Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     },
     {
       "kind": "source_failed",
-      "source_id": "a638716507e8750976ede7fb3b0fe7b2363d61017f572e31cf6162b0a86d874e",
+      "source_id": "d960ef571cb4d94e17909fd5d7510c1d597a10cfecf05a6af25560cb138135c8",
       "region": "CN",
-      "title": "[ALERT] Source failed / 11451",
-      "created_at": "2026-11-13T01:01:24Z",
+      "title": "[ALERT] Source failed / api.json",
+      "created_at": "2026-11-13T01:06:38Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     },
     {
       "kind": "source_failed",
-      "source_id": "83abf45907e4fd50732355caa2be5355baa322a81a8151782142e39899047c76",
+      "source_id": "73c7bfbdb2f9454b601d753c021504330bafa1a5a48cfa8dd21f444ab3363fdd",
       "region": "CN",
-      "title": "[ALERT] Source failed / 9zyfun.json",
-      "created_at": "2026-11-13T01:01:24Z",
+      "title": "[ALERT] Source failed / api.json",
+      "created_at": "2026-11-13T01:06:38Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     },
     {
       "kind": "source_failed",
-      "source_id": "138bf31ac206e96e16446e99bbb679b967ea8b3292eac50d0eb0b657e5a063df",
+      "source_id": "3a663f3ad53cca2a4b7194f1a483024e1c9eaf916f51236a41a7fd6685991eb2",
       "region": "CN",
-      "title": "[ALERT] Source failed / C.json",
-      "created_at": "2026-11-13T01:01:24Z",
+      "title": "[ALERT] Source failed / api.json",
+      "created_at": "2026-11-13T01:06:38Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "6b12517468fdf56fb289091156d397b442aef72693a4927b19e41a156b05f85e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / api.json",
+      "created_at": "2026-11-13T01:06:38Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "1ad2373c1918f09b710df2f58c66639b302c3d49309cef2244fcdb0263998e86",
+      "region": "CN",
+      "title": "[ALERT] Source failed / caiji.json",
+      "created_at": "2026-11-13T01:06:38Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -617,17 +390,207 @@
       "source_id": "ac493d7ea4758fb1c45ee5b1b529f01e58430310979a410c7496fce9f00ef7ad",
       "region": "CN",
       "title": "[ALERT] Source failed / lmw_new.json",
-      "created_at": "2026-11-13T01:01:23Z",
+      "created_at": "2026-11-13T01:06:37Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     },
     {
       "kind": "source_failed",
-      "source_id": "dc9985d1e2a5dc2703f5584b3f4658cf1ca49c97f24debb44683be368b1f857b",
+      "source_id": "d3a5a0d751ed22dbb9578bb36c4d069ead097c1145bf27d74498034a1edb0ced",
+      "region": "CN",
+      "title": "[ALERT] Source failed / tvbox.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "warning",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "70b074fd82d6ac374b9701aa136b837850ef87f08561318d79741e99ed8f6998",
+      "region": "CN",
+      "title": "[ALERT] Source failed / feimaolive.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "710cbe03d44e8d55d616a39c8792a265ca5807ecc446b53740920cc6a2505208",
+      "region": "CN",
+      "title": "[ALERT] Source failed / live2mv_data.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "f1e209e2f8fb9b848732e13a9ec55c81459fcd6b19392681aad8b9585dc06db1",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-13T00:29:16Z",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "023989f57ab52a7dce60fba192eda111dd2d10bebc2b9adae312bbe1337fb89a",
+      "region": "CN",
+      "title": "[ALERT] Source failed / api.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "2aef9a70884111af85009ba1e334029e7e5ca8365bb9baefc949ee5dfd854605",
+      "region": "CN",
+      "title": "[ALERT] Source failed / X4少儿频道.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "6753274b9ed16e400af04c0c207a563d9f7ede75870994ebf83d311817f64116",
+      "region": "CN",
+      "title": "[ALERT] Source failed / X4更新专用接口.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "f1f99d4ed9aa2439a077f094ecc6b2c3495059cc0e9839e07ded9d4820ffca41",
+      "region": "CN",
+      "title": "[ALERT] Source failed / X4菠菜园",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "a9e3d3e834198e6dbfc39917ff0f112ce13502fc232b9d1de80f9ae4d85bf9da",
+      "region": "CN",
+      "title": "[ALERT] Source failed / lubin-X4pro",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "50b8b7395c3444188aba5f51c60f79d8839b886c3398c1dd2f812dcf7207d841",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 6.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "9849d82ead1167466447549262ee91d98970e88ae86505c61179acd8d2bca659",
+      "region": "CN",
+      "title": "[ALERT] Source failed / A_18_1.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "0b6e78ca3890a1382d789706bc125ab2ac8b26a6163ba8c5fe660fe523288b88",
+      "region": "CN",
+      "title": "[ALERT] Source failed / ok海豚常规882.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "96b6a8e6ce34cf7b179f0c31755369579e85b92381ec94c26a23f91b4371ef76",
+      "region": "CN",
+      "title": "[ALERT] Source failed / kpkuang_看片狂人.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "warning",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "d0fe4d242a9f22734e77beb3fec12d87fad15823286402025be39062d2da9a3e",
+      "region": "CN",
+      "title": "[ALERT] Source failed / dc.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "d2cb8344451331f3c5bdf090478c8491b77f2a276a33bb4fd045d546cb33435f",
+      "region": "CN",
+      "title": "[ALERT] Source failed / lmw.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "c41f060078422e323b38a9681c932867250841a23306b213d8057b2fe6af5ab4",
+      "region": "CN",
+      "title": "[ALERT] Source failed / source.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "80f64d31b1b86ce0a0e2fe6d0cc64e3b1b3d5878548cf914657677f949443745",
+      "region": "CN",
+      "title": "[ALERT] Source failed / sources.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "ecbd7d7164f5ecefaa88d69c027b6f522006a6622cc939566cea10e5721e8284",
+      "region": "CN",
+      "title": "[ALERT] Source failed / tvbox.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "d066cf5bc06932062a5c3b8898ed72221d37596a962d8f913b23430c23721420",
+      "region": "CN",
+      "title": "[ALERT] Source failed / urls.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "9ceafef01fcb2032642034ada1ff72d1f9fd60e8888a8bd1b6fb8d86cd478d32",
+      "region": "CN",
+      "title": "[ALERT] Source failed / bb.json",
+      "created_at": "2026-11-13T01:06:37Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -637,7 +600,7 @@
       "source_id": "88090513d47e3bbb803cbdd9093e4663d8b4dcf67fe7bda1fc3a20ab08b5589b",
       "region": "CN",
       "title": "[ALERT] Source failed / bb.json",
-      "created_at": "2026-11-13T00:29:15Z",
+      "created_at": "2026-11-13T01:06:37Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -647,13 +610,141 @@
       "source_id": "8f8f4b19f4816269e9a477276ff8289cb9a566787956d9c7edf8f87852022b03",
       "region": "CN",
       "title": "[ALERT] Source failed / lubin-jiduo",
-      "created_at": "2026-11-13T00:29:15Z",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "60fffe616d1e993eef0ba2f3efd187609ea855cb0a4dbf74fa0f2d724a624884",
+      "region": "CN",
+      "title": "[ALERT] Source failed / lubin776-yuanwang18",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "556d72d9e6ee799e69eed1f965fef24442243ec44716a7c59b5649e282d053fe",
+      "region": "CN",
+      "title": "[ALERT] Source failed / yt.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "913416b9e132267c63299dce7059f40c386fb6fb982417676cf40507eea59c6f",
+      "region": "CN",
+      "title": "[ALERT] Source failed / yt.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "dc9985d1e2a5dc2703f5584b3f4658cf1ca49c97f24debb44683be368b1f857b",
+      "region": "CN",
+      "title": "[ALERT] Source failed / api.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "53fa6a08a3fc2b4b0362b50a5348679da9b092dc14771b2996e3fb311b2b90fb",
+      "region": "CN",
+      "title": "[ALERT] Source failed / gua.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "0754ebbc3f2938ba024e16b4b14a9bb0bfdd43756074b8f1f5e52e75960e12b0",
+      "region": "CN",
+      "title": "[ALERT] Source failed / fun.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "8294679cff217c3a3334091bc27f436aead6110364fadbbbd5305ad03175aafe",
+      "region": "CN",
+      "title": "[ALERT] Source failed / tvbox.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "99e01587c577fc15f588a872bae65064b7247d0514296ddade42a3192f19eaf2",
+      "region": "CN",
+      "title": "[ALERT] Source failed / index.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "0f61de6937254691f27c940f1b6fa8acb55f2994aabb967f9394c63c0d35c0c5",
+      "region": "CN",
+      "title": "[ALERT] Source failed / tvbox.json",
+      "created_at": "2026-11-13T01:06:37Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "660602a070b66081245359236f55ef49a85d99c6ac487dc25ae391be14a5747c",
+      "region": "CN",
+      "title": "[ALERT] Source failed / api.json",
+      "created_at": "2026-11-13T01:06:37Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     }
   ],
   "build_history": [
+    {
+      "build_id": "20261113-034430",
+      "generated_at": "2026-11-13T03:44:30Z",
+      "published": true,
+      "fallback": false,
+      "items": 7,
+      "active": 626,
+      "degraded": 12,
+      "failed": 94,
+      "new": 1,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
+    {
+      "build_id": "20261113-010349",
+      "generated_at": "2026-11-13T01:03:49Z",
+      "published": true,
+      "fallback": false,
+      "items": 6,
+      "active": 626,
+      "degraded": 12,
+      "failed": 94,
+      "new": 1,
+      "recovered": 0,
+      "removed": 2,
+      "blocked_reason": ""
+    },
     {
       "build_id": "20261105-005109",
       "generated_at": "2026-11-05T00:51:09Z",
@@ -1041,34 +1132,6 @@
       "active": 595,
       "degraded": 42,
       "failed": 21,
-      "new": 0,
-      "recovered": 0,
-      "removed": 0,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261009-002608",
-      "generated_at": "2026-10-09T00:26:08Z",
-      "published": true,
-      "fallback": false,
-      "items": 49,
-      "active": 559,
-      "degraded": 77,
-      "failed": 21,
-      "new": 1,
-      "recovered": 0,
-      "removed": 1,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261008-002001",
-      "generated_at": "2026-10-08T00:20:01Z",
-      "published": true,
-      "fallback": false,
-      "items": 49,
-      "active": 573,
-      "degraded": 28,
-      "failed": 4,
       "new": 0,
       "recovered": 0,
       "removed": 0,

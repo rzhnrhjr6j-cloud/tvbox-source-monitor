@@ -25,7 +25,7 @@
 - T-005 已把发布门槛从“配置解析成功”提升为“搜索和真实播放都通过”；用户实机验证过的“精东（24站）”和“豆了（159站）”通过人工白名单保留。手机实测 jar 解析失败的“360”和“茅台”已加入黑名单，发布下限调整为 2。
 - T-006 补齐 Android 真机 JAR 门禁：`require_android_jar=true`，无新鲜真机可播证据的 JAR/csp 源不发布；真机播放证据可替代 runner 侧失败的 L5 播放探针。内容去重指纹加入 `csp_*` 类名，修复把 AndroidSoftwares box 误判为“豆了”镜像的问题。精东和 AndroidSoftwares box 均已记录真实媒体首字节证据。
 - T-007 修复发布入口、真机证据合并和镜像误杀。`build` 必须显式带 `GITHUB_REPOSITORY`，否则 `dist/tvbox.json` 会指向手机打不开的 `raw.githubusercontent.com` 原点；`jar_check.write_evidence` 只允许不弱于既有记录的真机结果覆盖；`app/build/mirror.py` 把「暂时取不到」和「已证实消失」拆开，超时、5xx、连接被拒和预算耗尽不再删源，只有 404/410、2xx 空 body、或字节证明不是 jar/配置才删除。`豆了（159站）`（`745561a3739c9b0c`）因此稳定回归。
-- T-007 最新重建：`build_id=20261005-043906`，数据库 active 331 / degraded 136 / failed 2，真机证据 120 条，新增 1、恢复 0、移除 0；最终发布 49 条，`validation.ok=true`。`精东（24站）`和`豆了（159站）`均在顶层入口，手机实测 jar 解析失败的`360`和`茅台`未混入；`dist/tvbox.json` 的 49 条 URL 全部走 `gh-proxy.com`。待提交推送、线上核对和手机复测；继续用 GitHub `gh search repos` / `gh search code` 找更多候选并补真机可播证据。
+- T-007 最新重建：用户确认不排除成人源。`build_id=20261113-041352` 在保留 L6 / Android 可播门禁的前提下，从 624 个候选中放行并发布 9 个入口；数据库 active 626 / degraded 12 / failed 94，真机证据 124 条，`validation.ok=true`。新增`精品资源（59站）`和`瓜子影视（49站）`，`私下用，分享必删（52站）`替换内容重复的旧玉兔入口。聚焦测试和 `scripts/validate-project.sh` 均通过；待提交推送、线上核对和手机复测。
 
 ## Hard Rule
 

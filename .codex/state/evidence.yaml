@@ -315,3 +315,34 @@ evidence:
       - .github/workflows/discover.yml
       - .github/workflows/nightly-build.yml
     recorded_at: 2026-11-13
+  - id: E-025
+    task_id: T-007
+    requirement_ids: [REQ-704]
+    criterion_ids: [AC-704]
+    status: PASS
+    level: INTEGRATION
+    title: "纳入成人源并补真机证据后发布 9 个入口"
+    statement: "在纳入成人源且不放宽 L6 / Android 可播门禁的前提下，使用 124 条真机证据完成真实数据库重建：624 个候选，质量门放行 9 个，发布 9 个；build_id=20261113-041352，validation.ok=true，上一版 7 个、当前 9 个。新增精品资源（59站）和瓜子影视（49站），私下用，分享必删（52站）替换内容重复的旧玉兔入口。日志中成人源仅在实际 JAR 已证实 404/410 或不可用时剔除。"
+    command: "PATH=\"$PWD/.venv/bin:$PATH\" GITHUB_REPOSITORY=rzhnrhjr6j-cloud/tvbox-source-monitor TVBOX_DB_PATH=/tmp/tvbox-source-monitor-latest/monitor.db python3 -m app.main build --json"
+    artifacts:
+      - data/android_verified.json
+      - dist/tvbox.json
+      - dist/sources/a2637c5b6b987583.json
+      - dist/sources/f5d4082ca524d142.json
+      - dist/sources/7e5a11649a409c05.json
+    recorded_at: 2026-11-13
+  - id: E-026
+    task_id: T-007
+    requirement_ids: [REQ-704]
+    criterion_ids: [AC-704]
+    status: PASS
+    level: TEST
+    title: "扩源回归测试与项目校验通过"
+    statement: "Android 门禁、质量门禁和镜像回归测试全部通过，退出码 0；scripts/validate-project.sh 在项目虚拟环境中返回 VALIDATION PASS。唯一提示是 ASM-002：尚未取得真实中国大陆客户端对 gh-proxy.com / jsdelivr 的稳定性证据。"
+    command: "PATH=\"$PWD/.venv/bin:$PATH\" pytest -q tests/test_android_gate.py tests/test_build_quality_gate.py tests/test_mirror.py && PATH=\"$PWD/.venv/bin:$PATH\" ./scripts/validate-project.sh"
+    artifacts:
+      - tests/test_android_gate.py
+      - tests/test_build_quality_gate.py
+      - tests/test_mirror.py
+      - scripts/validate-project.sh
+    recorded_at: 2026-11-13

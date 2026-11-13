@@ -2,7 +2,7 @@ session:
   id: SESSION-2026-10-05-EXPAND-VERIFIED
   current_task: T-007
   status: IN_PROGRESS
-  objective: "修复手机端发布入口、保留强真机证据并扩大可播源；把 49 条验证过的发布产物推到线上，并继续找更多可用源。"
+  objective: "修复手机端发布入口、保留强真机证据并扩大可播源；把本轮 9 个验证过的发布入口推到线上并完成线上核对。"
   completed:
     - "T-006 Android 真机门禁、csp 去重和真机证据合并已实现并入控制层"
     - "CR-007、CR-008、CR-009 已登记，E-012 至 E-021 已补齐"
@@ -13,16 +13,21 @@ session:
     - "E-024 已记录：真实数据库快照校验和全量测试通过"
     - "Run 43336784367 和 Run 43337154755 均成功；第二次已从 automation-state-v1 下载快照恢复后再次保存"
     - "本地 HEAD 与 origin/main 同为 e22d5ebc6b76abbbb3ae90525b3597d756bb84b6，远端 main 不含 monitor.db/WAL/SHM/journal"
+    - "用户确认不排除成人源；重建仍按真实 JAR 可用性和 Android L6 门禁筛选"
+    - "新增 4 条真机证据后，真实数据库重建发布 9 个入口；build_id=20261113-041352，validation.ok=true"
+    - "新增精品资源（59站）和瓜子影视（49站）；私下用，分享必删（52站）替换内容重复的旧玉兔入口"
+    - "E-025、E-026 已记录：真机证据 124 条，聚焦测试和 scripts/validate-project.sh 均通过"
   in_progress:
-    - "用户手机复测线上 tvbox.json，必要时继续补真机可播证据"
-    - "继续用 agent-reach 的 GitHub CLI 搜索候选源，补真机可播证据后再发布"
+    - "提交并推送 9 个入口的发布产物，触发 Pages / 发布工作流"
+    - "线上核对 tvbox.json、9 个源配置和直播入口均返回 HTTP 200"
+    - "由用户手机复测新增入口；未验证源不得预先声称可播"
   discovered_changes:
     - "高产区候选仍需补全量或放宽抽样真机证据，尤其是 Lightconer、bigtangxi、yw、ewctt、cluntop、菜妮丝等。"
   discovered_issues:
     - "CN 地区检测不是真实大陆节点。"
     - "影视仓 6.1.8 输出格式尚未实机验证。"
     - "发布链路依赖 gh-proxy.com 和 jsdelivr。"
-    - "当前 49 个输出源仍全部为 experimental。"
+    - "当前 9 个输出源仍全部为 experimental。"
     - "未验证源不得预先声称可播。"
     - "health-check 曾因 monitor.db 超过 100 MB 每 30 分钟推送失败，现已改为 Release 资产持久化。"
   blockers: []

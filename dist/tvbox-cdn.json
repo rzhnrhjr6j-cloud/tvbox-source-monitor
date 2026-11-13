@@ -1,10 +1,10 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-13T01:03:49Z",
+  "generated_at": "2026-11-13T04:13:52Z",
   "urls": [
     {
-      "name": "玉兔（16站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/3e3a721544a21798.json"
+      "name": "私下用，分享必删（52站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/7e5a11649a409c05.json"
     },
     {
       "name": "采集影视（47站）",
@@ -21,6 +21,18 @@
     {
       "name": "牛牛视频 #2（56站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b3263164e0d31c99.json"
+    },
+    {
+      "name": "精品资源（59站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/a2637c5b6b987583.json"
+    },
+    {
+      "name": "豆瓣（23站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b9c97ff3dac729ba.json"
+    },
+    {
+      "name": "瓜子影视（49站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f5d4082ca524d142.json"
     },
     {
       "name": "豆了（159站）",

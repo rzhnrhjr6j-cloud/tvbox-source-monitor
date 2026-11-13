@@ -27,4 +27,4 @@ progress:
   stable_baseline_recorded: true
 next_action:
   task_id: T-007
-  objective: "推送 49 条重建产物并核对线上入口；随后继续用 GitHub 搜索扩充候选池，补真机可播证据后再发布。"
+  objective: "提交并推送 9 个入口的重建产物，触发 Pages / 发布工作流，核对线上 tvbox.json、9 个源配置和直播入口均返回 HTTP 200；随后由用户手机复测新增入口。"

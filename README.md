@@ -82,6 +82,10 @@ make report      # 打印当前状态
 
 脚本会建仓库、推代码、设置 Secrets、开 Pages。详见 `docs/部署指南.md`。
 
+定时任务不会把 `data/monitor.db` 提交进 Git。工作流从 `automation-state-v1`
+Release 恢复最新压缩快照，运行结束后再上传新快照；Git 只提交 `data/*.json`
+和 `dist/`。这样数据库增长不会触发 GitHub 的 100 MB 单文件限制。
+
 ## 配置
 
 所有阈值都在 `config/*.yaml`，代码里没有硬编码阈值。
@@ -141,7 +145,7 @@ make report      # 打印当前状态
 ```text
 app/        业务代码（discovery / parsers / checks / regions / scoring / build / alerts / storage）
 config/     全部阈值
-data/       候选池、黑白名单、别名、SQLite 数据库
+data/       候选池、黑白名单、别名；monitor.db 是本地运行文件，不进 Git
 dist/       发布产物 tvbox.json / health.json / dashboard.json + 备份
 dashboard/  只读面板
 node/       独立探针节点（--once / --serve）

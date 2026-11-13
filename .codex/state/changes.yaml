@@ -68,3 +68,11 @@ changes:
     affected_tasks: [T-007]
     impact_analysis: "只有已证实消失的镜像才删除；超时、5xx、连接被拒和预算耗尽保留作者原始 URL，避免豆了等源被偶发失败误删。"
     evidence_ids: [E-019, E-020, E-021]
+  - id: CR-010
+    title: "把 SQLite 状态迁移到 Release 资产"
+    status: IMPLEMENTED
+    target_release: 1.1.0
+    requirement_ids: [REQ-705]
+    affected_tasks: [T-007]
+    impact_analysis: "数据库退出 Git 索引，三个定时工作流在业务步骤前后恢复和保存压缩快照；JSON 与 dist 仍走 Git，首次运行从旧提交数据库引导。"
+    evidence_ids: [E-024]

@@ -202,3 +202,14 @@ requirements:
     non_goals: [伪造真机结果, 用成人源凑数量]
     acceptance_criteria: [AC-704]
     source: "2026-10-05 用户要求继续找更多可用源"
+  - id: REQ-705
+    title: "SQLite 自动化状态不得阻塞 Git"
+    statement: "定时工作流必须通过 GitHub Release 压缩快照恢复和保存 SQLite 数据库，不得把 monitor.db 或 WAL/SHM 文件提交到 Git；没有 Release 资产时允许从最后一次可用的旧提交数据库引导一次。"
+    status: ACTIVE
+    priority: MUST
+    release: 1.1.0
+    goal_refs: [GOAL-001, GOAL-002]
+    scope_tags: [data, resilience, testing]
+    non_goals: [使用 Git LFS 保存高频数据库, 删除本地或线上数据库]
+    acceptance_criteria: [AC-705]
+    source: "2026-11-13 GitHub Actions run 43294694846 连续失败：data/monitor.db 超过 100 MB 被拒绝推送"

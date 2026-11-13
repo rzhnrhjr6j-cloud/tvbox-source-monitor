@@ -28,6 +28,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Restore persistent SQLite state
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/actions-state.sh restore
+
       - name: Run discovery
         env:
           # a token raises the GitHub search rate limit and is required by the
@@ -39,6 +44,12 @@ jobs:
       - name: Record the run
         if: always()
         run: python -m app.main report --limit 10 || true
+
+      - name: Save persistent SQLite state
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/actions-state.sh save
 
       - name: Commit results back to the repository
         run: |
@@ -52,7 +63,7 @@ jobs:
             exit 0
           fi
           git commit -m "chore(discover): update candidate pool and discovery history"
-          # the DB is a shared artifact: rebase before pushing and retry
+          # JSON and dist outputs are still committed on the shared branch.
           for attempt in 1 2 3; do
             if git push; then
               echo "pushed on attempt $attempt"

@@ -17,7 +17,8 @@
 
 ## Baseline Notes
 
-- 当前产品版本代码仍在 `main` 上由自动化提交 `data/` 与 `dist/`。
+- 当前产品版本代码仍在 `main` 上由自动化提交 `data/*.json` 与 `dist/`；
+  `data/monitor.db` 已退出 Git，改由 `automation-state-v1` Release 压缩快照持久化。
 - Git 没有对应 `1.0.0` 的 tag，因此该提交只记为稳定基线，不标记为 RELEASED。
 - 接管审计报告见 `.codex/ADOPTION_AUDIT.md`。
 - T-002 已由真实手机测试证明“入口可加载”，但旧输出大量源不可播，因此按 `PARTIAL` 处理。

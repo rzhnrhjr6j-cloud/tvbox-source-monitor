@@ -9,6 +9,8 @@ session:
     - "真实数据库完成最新重建：build_id=20261005-043906，发布 49 条，validation.ok=true"
     - "发布集保留精东（24站）和豆了（159站），360 和茅台未混入"
     - "49 条发布 URL 全部走 gh-proxy.com，真机证据 120 条"
+    - "CR-010 已实现：monitor.db 退出 Git，三个工作流改用 Release 压缩快照"
+    - "E-024 已记录：真实数据库快照校验和全量测试通过"
   in_progress:
     - "提交并推送 49 条重建产物，核对线上 tvbox.json"
     - "继续用 agent-reach 的 GitHub CLI 搜索候选源，补真机可播证据后再发布"
@@ -20,6 +22,7 @@ session:
     - "发布链路依赖 gh-proxy.com 和 jsdelivr。"
     - "当前 49 个输出源仍全部为 experimental。"
     - "未验证源不得预先声称可播。"
+    - "health-check 曾因 monitor.db 超过 100 MB 每 30 分钟推送失败，现已改为 Release 资产持久化。"
   blockers:
     - "49 条新产物尚未提交并推送到线上。"
   next_task: T-007

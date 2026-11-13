@@ -38,3 +38,10 @@ events:
   from: DRAFT
   to: IMPLEMENTED
   statement: 镜像误杀修复完成，超时、5xx、连接被拒和预算耗尽不再删源。
+- id: EVT-007
+  date: 2026-11-13
+  type: CHANGE
+  target_id: CR-010
+  from: DRAFT
+  to: IMPLEMENTED
+  statement: SQLite 状态迁移到 GitHub Release 压缩快照，monitor.db 退出 Git 索引，三个定时工作流统一恢复和保存。

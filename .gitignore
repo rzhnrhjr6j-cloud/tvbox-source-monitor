@@ -12,8 +12,11 @@ venv/
 .DS_Store
 
 # runtime artifacts that must NOT be committed
+data/*.db
+data/*.db-journal
 data/*.db-wal
 data/*.db-shm
+data/*.db.invalid.*
 data/rejected_candidates.json
 /logs/
 /pages_build/

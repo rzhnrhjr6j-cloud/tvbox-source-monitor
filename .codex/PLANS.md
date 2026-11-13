@@ -93,6 +93,7 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
    - REQ-702 / AC-702：`write_evidence` 只允许不弱于既有记录的结果覆盖，同强度允许刷新时间戳。
    - REQ-703 / AC-703：`jsm` 全量真机跑出的 `playable=1` 不再被 20 站窄抽样覆盖，重建后回归发布。
    - REQ-704 / AC-704：继续对高产区候选（Lightconer、bigtangxi、yw、ewctt、cluntop、菜妮丝等）补全量或放宽抽样真机证据。
+   - REQ-705 / AC-705：SQLite 数据库不得再提交进 Git；工作流从 Release 压缩快照恢复和保存，首次迁移从 `f65d6b8` 引导。
 4. Design / architecture impact
    - `app/checks/jar_check.py`：新增 `_at_least_as_strong`，`write_evidence` 按 playable/loadable 强弱合并。
    - `tests/test_android_gate.py`：覆盖弱结果不覆盖、强结果覆盖、同 playable 更多 loadable、同强度刷新时间戳。
@@ -105,6 +106,10 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
      才允许删行删源；超时、5xx、连接被拒、预算耗尽一律保留作者原始 URL。
      起因是 `豆了（159站）` 的 spider 在 runner 侧偶发抓取失败被误判为死亡，导致
      发布条数 17→16 反复抖动。已完成。
+   - CR-010：`data/monitor.db` 已达到 104,800,256 字节，GitHub 拒绝超过 100 MB 的新文件，
+     `health-check` 每 30 分钟推送失败。新增 `scripts/actions-state.sh`，用 SQLite backup API
+     生成一致性快照，`quick_check` + `VACUUM` + gzip 后上传到 `automation-state-v1`；
+     三个写数据工作流统一恢复/保存，Git 只提交 JSON 和 `dist/`。已完成。
    - T-007：对新增可播证据源重建并推送。进行中（本轮已重建 49 条，待推送和线上核对）。
 6. Validation strategy and evidence IDs
    - 聚焦测试 86 项通过，全量 `pytest` 通过。
@@ -114,7 +119,8 @@ Treat the plan as a living document. Update it when scope, design, dependencies,
      `豆了`对应 `dist/sources/745561a3739c9b0c.json` 与 `dist/cdn/sources/` 同款均存在。
    - 证据：E-015 发布入口镜像核对；E-016 强证据保留单测；E-017 全量测试；E-018 11 源重建；
      E-019 镜像误杀修复单测（预算耗尽不删源、超时不删、404 仍删、已镜像 jar 不受影响）；
-     E-020 CR-009 后 26 源重建；E-021 扩展真机证据后 49 源重建。
+     E-020 CR-009 后 26 源重建；E-021 扩展真机证据后 49 源重建；
+     E-024 Release 快照脚本在真实数据库上完成压缩和校验。
 7. Rollback / recovery plan
    - 发布失败保留上一版 `tvbox.json`；证据合并不删历史记录，必要时从 Git 历史恢复旧文件。
    - `require_android_jar=false` 或 `android_satisfies_playback=false` 可回退 L6 门禁。

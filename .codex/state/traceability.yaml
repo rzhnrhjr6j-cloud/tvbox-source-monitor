@@ -31,6 +31,8 @@ requirements:
   - T-007
   REQ-704:
   - T-007
+  REQ-705:
+  - T-007
 tasks:
   T-001:
     requirements:
@@ -82,6 +84,7 @@ tasks:
     - REQ-702
     - REQ-703
     - REQ-704
+    - REQ-705
     evidence:
     - E-015
     - E-016
@@ -90,6 +93,7 @@ tasks:
     - E-019
     - E-020
     - E-021
+    - E-024
 evidence:
   E-001:
     task_id: T-001
@@ -208,6 +212,11 @@ evidence:
     task_id: T-006
     criterion_ids:
     - AC-604
+    status: PASS
+  E-024:
+    task_id: T-007
+    criterion_ids:
+    - AC-705
     status: PASS
 releases:
   1.1.0:

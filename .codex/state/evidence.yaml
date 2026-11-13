@@ -299,3 +299,19 @@ evidence:
       - tools/android_verify.py
       - tests/test_android_gate.py
     recorded_at: 2026-10-05
+  - id: E-024
+    task_id: T-007
+    requirement_ids: [REQ-705]
+    criterion_ids: [AC-705]
+    status: PASS
+    level: INTEGRATION
+    title: "Release 快照脚本通过真实数据库校验"
+    statement: "真实 data/monitor.db 通过 SQLite backup API 生成一致性快照，quick_check 通过，VACUUM 后以 gzip -9 压缩为 4,181,232 字节；全量 pytest 退出码 0，三个工作流 YAML 均可解析。"
+    command: "./scripts/actions-state.sh save --dry-run && .venv/bin/python -m pytest -q"
+    artifacts:
+      - scripts/actions-state.sh
+      - tests/test_actions_state.py
+      - .github/workflows/health-check.yml
+      - .github/workflows/discover.yml
+      - .github/workflows/nightly-build.yml
+    recorded_at: 2026-11-13

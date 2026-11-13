@@ -29,6 +29,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt "pytest>=8.0"
 
+      - name: Restore persistent SQLite state
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/actions-state.sh restore
+
       - name: Tests
         run: python -m pytest -q
 
@@ -62,6 +67,12 @@ jobs:
           path: dist/
           retention-days: 14
 
+      - name: Save persistent SQLite state
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/actions-state.sh save
+
       - name: Commit results back to the repository
         run: |
           set -euo pipefail
@@ -74,7 +85,7 @@ jobs:
             exit 0
           fi
           git commit -m "chore(build): refresh tvbox.json and health reports"
-          # the DB is a shared artifact: rebase before pushing and retry
+          # JSON and dist outputs are still committed on the shared branch.
           for attempt in 1 2 3; do
             if git push; then
               echo "pushed on attempt $attempt"

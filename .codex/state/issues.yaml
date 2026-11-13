@@ -35,3 +35,12 @@ issues:
     source: "2026-10-04 用户手机实测；dist/health.json"
     evidence: [E-008, E-009]
     mitigation: "构建已增加近期搜索和播放双证据门槛、Android 真机门禁和镜像保留修复；最新真实数据库构建发布 49 条，精东和豆了保留，360、茅台排除。"
+  - id: ISSUE-006
+    title: "SQLite 数据库超过 Git 单文件限制导致定时任务反复失败"
+    severity: HIGH
+    status: MITIGATED
+    task_id: T-007
+    statement: "health-check run 43294694846 的健康检查成功，但提交结果时 data/monitor.db 为 104,800,256 字节，被 GitHub 以超过 100 MB 单文件限制拒绝；每 30 分钟调度持续产生失败通知。"
+    source: "https://github.com/rzhnrhjr6j-cloud/tvbox-source-monitor/actions/runs/43294694846"
+    evidence: [E-024]
+    mitigation: "数据库退出 Git 索引，三个定时工作流改从 automation-state-v1 Release 资产恢复和保存压缩 SQLite 快照；首次迁移从 f65d6b8 引导，Git 只提交 JSON 与 dist。"

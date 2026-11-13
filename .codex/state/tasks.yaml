@@ -232,11 +232,13 @@ task_tree:
   - REQ-702
   - REQ-703
   - REQ-704
+  - REQ-705
   acceptance_criteria:
   - AC-701
   - AC-702
   - AC-703
   - AC-704
+  - AC-705
   scope_tags:
   - data
   - release
@@ -247,6 +249,7 @@ task_tree:
   change_request_ids:
   - CR-008
   - CR-009
+  - CR-010
   dependencies:
   - T-006
   allowed_paths:
@@ -259,5 +262,9 @@ task_tree:
   - tests/
   - docs/
   - .codex/
+  - .github/
+  - .gitignore
+  - README.md
+  - scripts/actions-state.sh
   forbidden_paths:
   - .git/

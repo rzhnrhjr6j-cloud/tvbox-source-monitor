@@ -1,7 +1,11 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-13T04:13:52Z",
+  "generated_at": "2026-11-13T05:41:02Z",
   "urls": [
+    {
+      "name": "玉兔（16站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/3e3a721544a21798.json"
+    },
     {
       "name": "私下用，分享必删（52站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/7e5a11649a409c05.json"
@@ -11,7 +15,7 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5201f9c51d51ddc2.json"
     },
     {
-      "name": "精东（23站）",
+      "name": "精东（24站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/e5e22b7e79834be5.json"
     },
     {

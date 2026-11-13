@@ -11,6 +11,7 @@ tests/local_source_server.py - spec §35-10 forbids mocks on the final link.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import types
 from pathlib import Path
@@ -1028,6 +1029,62 @@ def test_whitelisted_unreachable_spider_reuses_the_previous_mirror(tmp_path, mon
 
     assert source.id not in plan.dropped
     assert plan.entries[source.id].content == old
+
+
+def test_whitelisted_dead_spider_restores_a_local_md5_jar(tmp_path):
+    base = "https://me.github.io/repo"
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": base})
+    source_id = "b4" * 32
+    name = "cached-spider.jar"
+    jdir = tmp_path / "dist" / "jars"
+    jdir.mkdir(parents=True)
+    (jdir / name).write_bytes(MIRRORED_JAR)
+
+    with LocalSourceServer() as server:
+        source = stub_source(
+            f"{server.base}/deadspiderlocal.json",
+            source_id=source_id,
+            whitelisted=True,
+        )
+        plan = mirror.prepare([source])
+
+    body = json.loads(plan.entries[source_id].content)
+    assert body["spider"] == (
+        f"{base}/jars/{name};md5;{hashlib.md5(MIRRORED_JAR).hexdigest()}"
+    )
+    assert [site["key"] for site in body["sites"]] == ["csp", "plain"]
+    assert plan.entries[source_id].site_count == 2
+    assert plan.jars[name] == MIRRORED_JAR
+
+
+def test_whitelisted_dead_spiders_falls_back_and_keeps_the_old_jar(tmp_path):
+    base = "https://me.github.io/repo"
+    mirror = make_mirror(tmp_path, {"enabled": True, "public_base": base})
+    source_id = "b5" * 32
+    old = json.dumps(
+        {
+            "spider": f"{base}/jars/old-spider.jar;md5;deadbeef",
+            "sites": [{"key": "old", "name": "Old", "api": "csp_XMVideo"}],
+        },
+        ensure_ascii=False,
+    ).encode("utf-8")
+    write_previous_mirror(tmp_path, source_id, old)
+    jdir = tmp_path / "dist" / "jars"
+    jdir.mkdir(parents=True)
+    (jdir / "old-spider.jar").write_bytes(MIRRORED_JAR)
+
+    with LocalSourceServer() as server:
+        source = stub_source(
+            f"{server.base}/deadspiderfallback.json",
+            source_id=source_id,
+            whitelisted=True,
+        )
+        plan = mirror.prepare([source])
+
+    assert source.id not in plan.dropped
+    assert plan.entries[source.id].content == old
+    assert plan.entries[source.id].site_count == 1
+    assert plan.jars["old-spider.jar"] == MIRRORED_JAR
 
 
 def test_whitelisted_source_with_no_openable_rows_keeps_the_original_url(tmp_path, monkeypatch):

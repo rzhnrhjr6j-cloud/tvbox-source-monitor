@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13T04:13:52Z",
-  "build_id": "20261113-041352",
+  "generated_at": "2026-11-13T05:41:02Z",
+  "build_id": "20261113-054102",
   "summary": {
     "sources": {
       "active": 626,
@@ -10,11 +10,11 @@
     },
     "candidates": 0,
     "tiers": {
-      "primary": 9,
+      "primary": 10,
       "backup": 0,
       "experimental": 0
     },
-    "output_items": 9
+    "output_items": 10
   },
   "regions": {
     "CN": {
@@ -24,6 +24,27 @@
     }
   },
   "sources": [
+    {
+      "id": "3e3a721544a21798a6ec87150e7043de54eb1aac320a4865c980d41abe177018",
+      "name": "adult2.json",
+      "url": "https://raw.githubusercontent.com/zzq1234567890/tvbox1/main/adult2.json",
+      "status": "active",
+      "tier": "primary",
+      "type": "single",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "last_success_at": "2026-11-13T01:04:44Z",
+      "last_failure_at": null,
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 180.75,
+      "consecutive_failure": 0,
+      "whitelisted": true
+    },
     {
       "id": "7e5a11649a409c05b975ca00b41529bf70cbf9e74324c1e58df0f96d1d9739af",
       "name": "binge-LuTie",
@@ -718,6 +739,34 @@
   ],
   "build_history": [
     {
+      "build_id": "20261113-052620",
+      "generated_at": "2026-11-13T05:26:20Z",
+      "published": true,
+      "fallback": false,
+      "items": 9,
+      "active": 626,
+      "degraded": 12,
+      "failed": 94,
+      "new": 0,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
+    {
+      "build_id": "20261113-041352",
+      "generated_at": "2026-11-13T04:13:52Z",
+      "published": true,
+      "fallback": false,
+      "items": 9,
+      "active": 626,
+      "degraded": 12,
+      "failed": 94,
+      "new": 3,
+      "recovered": 0,
+      "removed": 1,
+      "blocked_reason": ""
+    },
+    {
       "build_id": "20261113-034430",
       "generated_at": "2026-11-13T03:44:30Z",
       "published": true,
@@ -1107,34 +1156,6 @@
       "new": 0,
       "recovered": 0,
       "removed": 2,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261010-233303",
-      "generated_at": "2026-10-10T23:33:04Z",
-      "published": true,
-      "fallback": false,
-      "items": 51,
-      "active": 596,
-      "degraded": 5,
-      "failed": 61,
-      "new": 2,
-      "recovered": 0,
-      "removed": 0,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261010-000455",
-      "generated_at": "2026-10-10T00:04:55Z",
-      "published": true,
-      "fallback": false,
-      "items": 49,
-      "active": 595,
-      "degraded": 42,
-      "failed": 21,
-      "new": 0,
-      "recovered": 0,
-      "removed": 0,
       "blocked_reason": ""
     }
   ],

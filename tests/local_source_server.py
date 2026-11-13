@@ -7,6 +7,7 @@ to "down" so tests exercise real failures over real sockets.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import threading
@@ -454,6 +455,46 @@ class _Handler(BaseHTTPRequestHandler):
                     {
                         "spider": "./assets/spider.jar;md5;deadbeef",
                         "sites": [dict(SITE_TEMPLATE, api=f"{self.base}/api.php/provide/vod/")],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        if path == "/deadspiderlocal.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            digest = hashlib.md5(MIRRORED_JAR).hexdigest()
+            return self._send(
+                json.dumps(
+                    {
+                        "spider": f"{self.base}/assets/missing.jar;md5;{digest}",
+                        "sites": [
+                            dict(SITE_TEMPLATE, key="csp", name="Csp",
+                                 api="csp_XMVideo"),
+                            dict(SITE_TEMPLATE, key="plain", name="Plain",
+                                 api=f"{self.base}/api.php/provide/vod/"),
+                        ],
+                    },
+                    ensure_ascii=False,
+                ).encode("utf-8"),
+                content_type="application/json; charset=utf-8",
+            )
+
+        if path == "/deadspiderfallback.json":
+            if not state["config_up"]:
+                return self._send_json({"error": "service unavailable"}, status=503)
+            return self._send(
+                json.dumps(
+                    {
+                        "spider": (
+                            f"{self.base}/assets/missing.jar;md5;"
+                            "00000000000000000000000000000000"
+                        ),
+                        "sites": [
+                            dict(SITE_TEMPLATE, key="csp", name="Csp",
+                                 api="csp_XMVideo"),
+                        ],
                     },
                     ensure_ascii=False,
                 ).encode("utf-8"),

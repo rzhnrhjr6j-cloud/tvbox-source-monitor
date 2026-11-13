@@ -7,6 +7,7 @@ gate and its rollback switch.
 
 from __future__ import annotations
 
+import json
 from datetime import timedelta
 from pathlib import Path
 
@@ -19,14 +20,22 @@ from app.utils.timeutil import to_iso, utcnow
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def build_config(tmp_path: Path, *, quality_gate_enabled: bool = True):
+def build_config(
+    tmp_path: Path,
+    *,
+    quality_gate_enabled: bool = True,
+    data_dir: Path | None = None,
+):
+    app_overrides = {
+        "db_path": str(tmp_path / "monitor.db"),
+        "dist_dir": str(tmp_path / "dist"),
+    }
+    if data_dir is not None:
+        app_overrides["data_dir"] = str(data_dir)
     return load_config(
         explicit_root=ROOT,
         overrides={
-            "app": {
-                "db_path": str(tmp_path / "monitor.db"),
-                "dist_dir": str(tmp_path / "dist"),
-            },
+            "app": app_overrides,
             "output": {
                 "min_sources": 1,
                 "observation_days": 0,
@@ -137,6 +146,30 @@ def test_whitelisted_degraded_source_stays_eligible(tmp_path):
             playback_score=0,
             probe=None,
             whitelisted=True,
+        )
+        eligible, _ = ConfigBuilder(cfg, store).eligible()
+    finally:
+        store.close()
+
+    assert [source.id for source in eligible] == ["s1"]
+
+
+def test_policy_file_whitelist_is_applied_to_degraded_sources(tmp_path):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    (data_dir / "whitelist.json").write_text(
+        json.dumps({"source_ids": ["s1"]}), encoding="utf-8"
+    )
+    cfg = build_config(tmp_path, data_dir=data_dir)
+    store = Store(cfg.path("app.db_path", ensure_parent=True))
+    try:
+        seed_source(
+            store,
+            status=Status.DEGRADED,
+            search_score=0,
+            playback_score=0,
+            probe=None,
+            whitelisted=False,
         )
         eligible, _ = ConfigBuilder(cfg, store).eligible()
     finally:

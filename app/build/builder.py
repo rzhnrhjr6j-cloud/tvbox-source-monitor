@@ -20,6 +20,7 @@ from urllib.parse import urlparse
 
 from ..logging_setup import get_logger
 from ..models import BuildRecord, Event, Source, SourceEvent, Status, Tier
+from ..policy import PolicySet
 from ..utils.http_client import HttpClient
 from ..utils.timeutil import age_days, to_iso, utcnow
 from ..checks.jar_check import EVIDENCE_FILE, has_jar_sites, load_evidence, passes as android_passes
@@ -113,6 +114,7 @@ class ConfigBuilder:
         self.dist_dir = cfg.path("app.dist_dir", "dist")
         self.git_sha = git_sha
         self.client = client or HttpClient(cfg.section("http"))
+        self.policy = PolicySet(cfg)
         self.mirror = ConfigMirror(cfg, self.dist_dir, self.client)
         self._profiles: dict[str, ContentProfile] = {}
         self._android_evidence: dict[str, Any] | None = None
@@ -122,19 +124,25 @@ class ConfigBuilder:
         statuses = [Status.ACTIVE]
         if bool(self.output_cfg.get("include_degraded", False)):
             statuses.extend([Status.DEGRADED, Status.RECOVERING])
-        candidates = self.store.list_sources(statuses=statuses)
+        all_sources = self.store.list_sources()
+        for source in all_sources:
+            if not source.whitelisted:
+                source.whitelisted = self.policy.whitelist.matches(
+                    source.url, source.url, source.id
+                )
+        candidates = [source for source in all_sources if source.status in statuses]
         seen = {source.id for source in candidates}
         # A whitelist entry is a manual, user-verified override.  It must stay
         # eligible even while automated health checks classify it as degraded
         # or failed; otherwise the quality-gate bypass above is unreachable.
         candidates.extend(
-            source for source in self.store.list_sources()
+            source for source in all_sources
             if source.whitelisted and source.id not in seen
         )
         if not bool(self.output_cfg.get("include_degraded", False)) and self._android_gate_enabled():
             seen = {source.id for source in candidates}
             candidates.extend(
-                source for source in self.store.list_sources(statuses=[Status.DEGRADED])
+                source for source in all_sources if source.status == Status.DEGRADED
                 if source.id not in seen and self._android_playback_verified(source)
             )
         counts = self.store.count_by_status()

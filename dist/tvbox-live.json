@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-13T04:13:52Z",
+  "generated_at": "2026-11-13T05:41:02Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -104,6 +104,12 @@
       "url": "http://bwind.fr.to/m3u/crzb.txt",
       "epg": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/?ch={name}&date={date}",
       "logo": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "zwrt",
+      "type": 0,
+      "url": "https://github.com/zwrt/IPTV/blob/Files/Adult.m3u",
       "ua": "okhttp/3.15"
     },
     {
@@ -323,12 +329,6 @@
       "url": "http://x315601.serv00.net/10.php",
       "epg": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/?ch={name}&date={date}",
       "logo": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/logo/{name}.png",
-      "ua": "okhttp/3.15"
-    },
-    {
-      "name": "zwrt",
-      "type": 0,
-      "url": "https://github.com/zwrt/IPTV/blob/Files/Adult.m3u",
       "ua": "okhttp/3.15"
     },
     {

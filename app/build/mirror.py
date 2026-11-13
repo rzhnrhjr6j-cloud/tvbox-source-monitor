@@ -572,6 +572,95 @@ class ConfigMirror:
                 "status": result.status})
         return alive
 
+    def _local_jar_by_md5(
+        self, digest: str, state: dict[str, Any]
+    ) -> tuple[str, bytes] | None:
+        """Find a previously published jar whose bytes satisfy ``digest``."""
+        cache: dict[str, tuple[str, bytes] | None] = state.setdefault("local_md5_jars", {})
+        digest = digest.lower()
+        if digest in cache:
+            return cache[digest]
+        found = None
+        jdir = self.dist_dir / JARS_DIR
+        if jdir.exists():
+            for path in sorted(jdir.glob("*.jar")):
+                try:
+                    blob = path.read_bytes()
+                except OSError:
+                    continue
+                if _looks_like_a_jar(blob) and hashlib.md5(blob).hexdigest() == digest:
+                    found = (path.name, blob)
+                    break
+        cache[digest] = found
+        return found
+
+    def _restore_dead_spider_from_cache(
+        self,
+        text: str,
+        plan: MirrorPlan,
+        state: dict[str, Any],
+        jar_cache: dict[str, bool],
+    ) -> tuple[str, str | None]:
+        """Replace a dead top-level spider with a byte-identical local copy."""
+        if not self.host_jars or not self.public_base:
+            return text, None
+        try:
+            config = _load_config(text)
+        except ValueError:
+            return text, None
+        if not isinstance(config, dict):
+            return text, None
+        spider = config.get("spider")
+        if not isinstance(spider, str):
+            return text, None
+        head, tail = spider, ""
+        found = _REF_TAIL.search(spider)
+        if found:
+            head, tail = spider[:found.start()], found.group(0)
+        url = head.strip()
+        if not url.startswith(("http://", "https://")):
+            return text, None
+        if self._jar_alive(spider, jar_cache):
+            return text, None
+        digest_match = re.search(
+            r"(?:^|;)md5;([0-9a-fA-F]{32})(?=$|;|\$)", tail
+        )
+        if not digest_match:
+            return text, None
+        local = self._local_jar_by_md5(digest_match.group(1), state)
+        if not local:
+            return text, None
+        name, blob = local
+        if name not in plan.jars:
+            if state["used"] + len(blob) > self.jar_total_bytes:
+                return text, None
+            plan.jars[name] = blob
+            state["used"] += len(blob)
+        hosted = f"{self.public_base}/{JARS_DIR}/{name}"
+        config["spider"] = f"{hosted}{tail}"
+        LOGGER.info("dead spider restored from local jar", extra={
+            "stage": "build", "check": "mirror", "jar": url,
+            "replacement": hosted,
+        })
+        return json.dumps(config, ensure_ascii=False, separators=(",", ":")), hosted
+
+    def _has_dead_top_level_spider(
+        self, text: str, cache: dict[str, bool]
+    ) -> bool:
+        """Whether this config's top-level spider is definitively unavailable."""
+        try:
+            config = _load_config(text)
+        except ValueError:
+            return False
+        if not isinstance(config, dict):
+            return False
+        spider = config.get("spider")
+        return (
+            isinstance(spider, str)
+            and spider.strip().startswith(("http://", "https://"))
+            and not self._jar_alive(spider, cache)
+        )
+
     def _prune_dead_jars(
         self, text: str, cache: dict[str, bool]
     ) -> tuple[str, int, int | None]:
@@ -1130,7 +1219,7 @@ class ConfigMirror:
                     # A real-device verdict outranks a runner-side fetch failure.
                     # Reuse the last good copy when we have one; otherwise leave
                     # the original URL in place rather than dropping the source.
-                    self._restore_previous_mirror(source, url, base, plan)
+                    self._restore_previous_mirror(source, url, base, plan, jar_state)
                     continue
                 if self.on_failure != "keep":
                     plan.dropped.add(source.id)
@@ -1139,7 +1228,9 @@ class ConfigMirror:
                 LOGGER.warning("mirror budget exhausted", extra={
                     "stage": "build", "check": "mirror", "source_id": source.id,
                     "error": f"total>{budget}"})
-                if self._keep_whitelisted_source(source, url, base, plan, "BUDGET_EXHAUSTED"):
+                if self._keep_whitelisted_source(
+                    source, url, base, plan, "BUDGET_EXHAUSTED", jar_state
+                ):
                     continue
                 plan.dropped.add(source.id)
                 continue
@@ -1154,12 +1245,29 @@ class ConfigMirror:
             # its sibling references resolved, then proxied
             text, resolved = rewrite_relative(text, url)
             text, rewrites = rewrite_inner(text, self.inner_proxy)
+            if source.whitelisted:
+                text, recovered_spider = self._restore_dead_spider_from_cache(
+                    text, plan, jar_state, jar_cache
+                )
+                if recovered_spider:
+                    jar_cache[recovered_spider] = True
+                if self._has_dead_top_level_spider(text, jar_cache):
+                    LOGGER.warning("verified source has no usable top-level spider", extra={
+                        "stage": "build", "check": "mirror", "source_id": source.id,
+                        "url": url, "error": "SPIDER_UNAVAILABLE",
+                    })
+                    if self._keep_whitelisted_source(
+                        source, url, base, plan, "SPIDER_UNAVAILABLE", jar_state
+                    ):
+                        continue
             text, pruned, remaining = self._prune_dead_jars(text, jar_cache)
             if remaining == 0:
                 LOGGER.warning("every site had a dead jar", extra={
                     "stage": "build", "check": "mirror", "source_id": source.id,
                     "url": url, "error": "DEAD_JARS_ONLY"})
-                if self._keep_whitelisted_source(source, url, base, plan, "DEAD_JARS_ONLY"):
+                if self._keep_whitelisted_source(
+                    source, url, base, plan, "DEAD_JARS_ONLY", jar_state
+                ):
                     continue
                 if self.on_failure != "keep":
                     plan.dropped.add(source.id)
@@ -1181,7 +1289,7 @@ class ConfigMirror:
                         "stage": "build", "check": "mirror", "source_id": source.id,
                         "url": url, "error": "SPIDER_UNAVAILABLE"})
                     if self._keep_whitelisted_source(
-                        source, url, base, plan, "SPIDER_UNAVAILABLE"
+                        source, url, base, plan, "SPIDER_UNAVAILABLE", jar_state
                     ):
                         continue
                     if self.on_failure != "keep":
@@ -1195,7 +1303,7 @@ class ConfigMirror:
                         "stage": "build", "check": "mirror", "source_id": source.id,
                         "url": url, "error": "UNREACHABLE_JARS_ONLY"})
                     if self._keep_whitelisted_source(
-                        source, url, base, plan, "UNREACHABLE_JARS_ONLY"
+                        source, url, base, plan, "UNREACHABLE_JARS_ONLY", jar_state
                     ):
                         continue
                     if self.on_failure != "keep":
@@ -1214,7 +1322,7 @@ class ConfigMirror:
                     "stage": "build", "check": "mirror", "source_id": source.id,
                     "url": url, "error": "NO_OPENABLE_ROWS"})
                 if self._keep_whitelisted_source(
-                    source, url, base, plan, "NO_OPENABLE_ROWS"
+                    source, url, base, plan, "NO_OPENABLE_ROWS", jar_state
                 ):
                     continue
                 if self.on_failure != "keep":
@@ -1241,12 +1349,18 @@ class ConfigMirror:
         return plan
 
     def _keep_whitelisted_source(
-        self, source: Source, url: str, base: str, plan: MirrorPlan, reason: str
+        self,
+        source: Source,
+        url: str,
+        base: str,
+        plan: MirrorPlan,
+        reason: str,
+        state: dict[str, Any],
     ) -> bool:
         """Never drop a user-verified source for a runner-side mirror failure."""
         if not source.whitelisted:
             return False
-        if self._restore_previous_mirror(source, url, base, plan):
+        if self._restore_previous_mirror(source, url, base, plan, state):
             return True
         LOGGER.info("mirror kept the original URL for a verified source", extra={
             "stage": "build", "check": "mirror", "source_id": source.id,
@@ -1255,7 +1369,12 @@ class ConfigMirror:
         return True
 
     def _restore_previous_mirror(
-        self, source: Source, url: str, base: str, plan: MirrorPlan
+        self,
+        source: Source,
+        url: str,
+        base: str,
+        plan: MirrorPlan,
+        state: dict[str, Any],
     ) -> bool:
         """Keep a verified source alive when this run cannot fetch it.
 
@@ -1284,11 +1403,57 @@ class ConfigMirror:
             content=content,
             origin=url,
         )
+        self._retain_published_jars(config, base, plan, state)
         LOGGER.info("mirror kept a verified source from its previous copy", extra={
             "stage": "build", "check": "mirror", "source_id": source.id,
             "source_name": source.name, "url": url,
         })
         return True
+
+    def _retain_published_jars(
+        self,
+        value: Any,
+        base: str,
+        plan: MirrorPlan,
+        state: dict[str, Any],
+    ) -> None:
+        """Keep local jars referenced by a fallback mirror from being pruned."""
+        prefix = f"{base}/{JARS_DIR}/"
+        jdir = self.dist_dir / JARS_DIR
+
+        def walk(node: Any) -> None:
+            if isinstance(node, dict):
+                for child in node.values():
+                    walk(child)
+                return
+            if isinstance(node, list):
+                for child in node:
+                    walk(child)
+                return
+            if not isinstance(node, str):
+                return
+            head = node
+            found = _REF_TAIL.search(head)
+            if found:
+                head = head[:found.start()]
+            if not head.startswith(prefix):
+                return
+            name = Path(urlsplit(head).path).name
+            if not name or name in plan.jars:
+                return
+            path = jdir / name
+            try:
+                blob = path.read_bytes()
+            except OSError:
+                return
+            if not _looks_like_a_jar(blob):
+                return
+            if state["used"] + len(blob) > self.jar_total_bytes:
+                return
+            plan.jars[name] = blob
+            state["used"] += len(blob)
+
+        walk(value)
 
     def _failed(self, source: Source, url: str, reason: str) -> None:
         LOGGER.warning("mirror fetch failed", extra={

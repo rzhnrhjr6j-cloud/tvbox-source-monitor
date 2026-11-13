@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13T04:13:52Z",
-  "build_id": "20261113-041352",
+  "generated_at": "2026-11-13T05:41:02Z",
+  "build_id": "20261113-054102",
   "summary": {
     "sources": {
       "active": 626,
@@ -8,15 +8,15 @@
       "failed": 94,
       "recovering": 1
     },
-    "output_items": 9,
+    "output_items": 10,
     "tiers": {
-      "primary": 9,
+      "primary": 10,
       "backup": 0,
       "experimental": 0
     },
     "checks": {
-      "drop_ratio": -0.2857,
-      "items": 9,
+      "drop_ratio": -0.1111,
+      "items": 10,
       "min_sources": 2,
       "max_drop_ratio": 1.0
     }
@@ -29,15 +29,15 @@
     }
   },
   "last_build": {
-    "build_id": "20261113-041352",
-    "generated_at": "2026-11-13T04:13:52Z",
+    "build_id": "20261113-054102",
+    "generated_at": "2026-11-13T05:41:02Z",
     "git_sha": "",
     "active": 626,
     "degraded": 12,
     "failed": 94,
-    "new": 3,
+    "new": 1,
     "recovered": 0,
-    "removed": 1
+    "removed": 0
   },
   "last_alert": {
     "kind": "source_failed",
@@ -50,6 +50,37 @@
     "channels": []
   },
   "sources": [
+    {
+      "id": "3e3a721544a21798a6ec87150e7043de54eb1aac320a4865c980d41abe177018",
+      "name": "adult2.json",
+      "url": "https://raw.githubusercontent.com/zzq1234567890/tvbox1/main/adult2.json",
+      "type": "single",
+      "status": "active",
+      "tier": "primary",
+      "score": 95.0,
+      "stability_score": 100.0,
+      "search_score": 100.0,
+      "playback_score": 100.0,
+      "latency_score": 100.0,
+      "regional_score": 50.0,
+      "freshness_score": 100.0,
+      "availability_7d": 100.0,
+      "availability_30d": 100.0,
+      "avg_response_ms": 180.75,
+      "last_success_at": "2026-11-13T01:04:44Z",
+      "last_failure_at": null,
+      "last_check_at": "2026-11-13T01:04:44Z",
+      "consecutive_failure": 0,
+      "consecutive_success": 176,
+      "global_status": "UNKNOWN",
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "whitelisted": true,
+      "error_code": null,
+      "error_stage": ""
+    },
     {
       "id": "7e5a11649a409c05b975ca00b41529bf70cbf9e74324c1e58df0f96d1d9739af",
       "name": "binge-LuTie",

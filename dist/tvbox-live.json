@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-13T05:41:02Z",
+  "generated_at": "2026-11-14T00:50:24Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -13,9 +13,9 @@
       "url": "https://mpimg.cn/text.php?hash=7265d70b6834cefbddb61bcc2d9c99db"
     },
     {
-      "name": "夜空",
+      "name": "经典电视剧",
       "type": 0,
-      "url": "https://pan.szfx.top/down.php/4f5dad27633e1293d7ef2317ee9c801e.txt"
+      "url": "https://wp.kayyw.com/f/XOpgIZ/%E7%BB%8F%E5%85%B8%E7%94%B5%E8%A7%86%E5%89%A7.txt"
     },
     {
       "name": "夜空1",
@@ -28,19 +28,14 @@
       "url": "https://mpimg.cn/down.php/fa04b02ffac54ac877f5250d3d70e494.txt"
     },
     {
-      "name": "划了",
+      "name": "yuan",
       "type": 0,
-      "url": "https://pan.szfx.top/down.php/dcb0cc6a6935b5e62b2659eba6718471.txt"
+      "url": "http://wangziduoqing.com/yuan/zb.txt"
     },
     {
       "name": "应该能看",
       "type": 0,
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/81d4a9ca45f9f832b3d2.txt"
-    },
-    {
-      "name": "风云试看",
-      "type": 0,
-      "url": "http://iptv.4666888.xyz/FYTV.txt"
     },
     {
       "name": "直播",
@@ -84,14 +79,19 @@
       "playerType": 2
     },
     {
-      "name": "经典电视剧",
+      "name": "夜空",
       "type": 0,
-      "url": "https://wp.kayyw.com/f/XOpgIZ/%E7%BB%8F%E5%85%B8%E7%94%B5%E8%A7%86%E5%89%A7.txt"
+      "url": "https://pan.szfx.top/down.php/4f5dad27633e1293d7ef2317ee9c801e.txt"
     },
     {
-      "name": "yuan",
+      "name": "划了",
       "type": 0,
-      "url": "http://wangziduoqing.com/yuan/zb.txt"
+      "url": "https://pan.szfx.top/down.php/dcb0cc6a6935b5e62b2659eba6718471.txt"
+    },
+    {
+      "name": "风云试看",
+      "type": 0,
+      "url": "http://iptv.4666888.xyz/FYTV.txt"
     },
     {
       "name": "尘墨",
@@ -104,12 +104,6 @@
       "url": "http://bwind.fr.to/m3u/crzb.txt",
       "epg": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/?ch={name}&date={date}",
       "logo": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/logo/{name}.png",
-      "ua": "okhttp/3.15"
-    },
-    {
-      "name": "zwrt",
-      "type": 0,
-      "url": "https://github.com/zwrt/IPTV/blob/Files/Adult.m3u",
       "ua": "okhttp/3.15"
     },
     {
@@ -329,6 +323,12 @@
       "url": "http://x315601.serv00.net/10.php",
       "epg": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/?ch={name}&date={date}",
       "logo": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "zwrt",
+      "type": 0,
+      "url": "https://github.com/zwrt/IPTV/blob/Files/Adult.m3u",
       "ua": "okhttp/3.15"
     },
     {

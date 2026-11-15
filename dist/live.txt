@@ -1,7 +1,7 @@
 央视,#genre#
 CCTV-4K (1080p),http://198.204.240.250:82/live/cctv4k.m3u8
 CCTV-4K,http://www.tszhgjj.cn:7000/rtp/239.253.93.134:6631
-CCTV-4K 高清,https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1794729600-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-92b61641a174f2d3a55eb3aada2d84f5&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
+CCTV-4K 高清,https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1794819600-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-183f9978b42e7a9a2fe880b7ee39a2bf&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
 CCTV-1HD,http://107.150.60.122/live/cctv1hd.m3u8
 CCTV1,http://198.204.228.26/live/cctv1hd.m3u8
 CCTV1,http://204.12.221.218:8181/3m1080p/cctv1.m3u8
@@ -30,7 +30,6 @@ CCTV-15HD,http://107.150.60.122/live/cctv15hd.m3u8
 CCTV15,http://222.134.245.16:9901/tsfile/live/0015_1.m3u8
 CCTV15,http://61.136.172.236:9901/tsfile/live/0015_1.m3u8
 CCTV-15 音乐,http://74.91.26.218:82/live/cctv15hd.m3u8
-CCTV-15 音乐,https://piccpndks.v.kcdnvip.com/audio/cctv15_2/index.m3u8
 CCTV-16HD,http://107.150.60.122/live/cctv16hd.m3u8
 CCTV16,http://198.204.228.26/live/cctv16hd.m3u8
 CCTV16,http://204.12.221.218:8181/3m1080p/cctv16.m3u8
@@ -55,7 +54,7 @@ CCTV4,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv4hd
 CCTV-4 Asia (720p),http://74.91.26.218:82/live/cctv4hd.m3u8
 CCTV-4 中文国际（亚）,http://74.91.26.218:82/live/cctv4hd.m3u8
 CCTV-4 中文国际（欧）,https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8
-CCTV-4 中文国际,https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4_mbd.m3u8?auth_key=1794729600-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-717a5e580414355da8bdbb767182b32b&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
+CCTV-4 中文国际,https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4_mbd.m3u8?auth_key=1794819600-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-b795f233d714800a2f60e370b4659bc7&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
 CCTV-4 中文国际（美） Ⓢ,https://global.cgtn.cicc.media.caton.cloud/master/cgtn-america.m3u8
 CCTV4欧洲,http://t.061899.xyz/tl/tl.php?id=cctv4o
 CCTV4美洲,http://t.061899.xyz/tl/tl.php?id=cctv4m
@@ -87,8 +86,8 @@ CCTV-9HD,http://107.150.60.122/live/cctv9hd.m3u8
 CCTV9,http://192.151.150.154/live/cctv9hd.m3u8
 CCTV9,http://198.204.228.26/live/cctv9hd.m3u8
 CCTV-9 纪录,http://74.91.26.218:82/live/cctv9hd.m3u8
-CCTV-9 纪录,https://v4-702cae17a28d6e4f0c0002bba021d934.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=ee30b7e06da0d0398c4a890a92ee36f4
-CCTV-9 纪录,https://v4-e6b1c5baf4e240fe63adbf68dda23435.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=3c19e649cec922581b8014eeb18e1c1e
+CCTV-9 纪录,https://v4-702cae17a28d6e4f0c0002bba021d934.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=d7c704fae0a49ee59593d37d02d5eaeb
+CCTV-9 纪录,https://v4-e6b1c5baf4e240fe63adbf68dda23435.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=2ade7cff551288af4e4aa202d54b8033
 CCTV-世界地理,http://www.lizhinas.top:1009/rtp/239.252.219.93:5140
 CCTV中学生,http://t.061899.xyz/tl/tl.php?id=zxs
 CCTV-兵器科技,http://www.lizhinas.top:1009/rtp/239.252.219.98:5140
@@ -132,7 +131,6 @@ CETV4,https://piccpndali.v.myalicdn.com/audio/cetv4_2.m3u8
 CETV4,https://satellitepull.cnr.cn/live/wx32nmgyygb/playlist.m3u8
 CETV-4,http://gslbmgsplive.miguvideo.com/migu/kailu/cetv4/51/20240709/index.m3u8?msisdn=b637d3083747642f29b310fc5ba99367&mdspid=&spid=699004&netType=0&sid=5910022154&pid=2028597139&timestamp=20260827062127&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=923287339&ParentNodeID=-99&assertID=5910022154&client_ip=47.92.23.141&SecurityKey=20260827062127&promotionId=&mvid=5900006640&mcid=500020&playurlVersion=WX-A1-9.8.1-SNAPSHOT&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&puData=960f499360818845510385e0e5605573&ddCalcu=3976v50a5fb04a6959e306e0588138081455&sv=10004&ct=android
 CETV-4 职业教育,http://rrs01.hw.gmcc.net:8088/PLTV/81/224/3221226724/1.m3u8
-CGNT 新闻频道,https://english-livebkali.cgtn.com/live/encgtn_0.m3u8
 CGTN,http://english-livetx.cgtn.com/hls/yypdyyctzb_hd.m3u8
 CGTN,http://t.061899.xyz/tl/tl.php?id=cgtn
 CGTN,https://0472.org/hls/cgtn.m3u8
@@ -226,7 +224,6 @@ BRTV 北京卫视 [Not 24/7],http://ivi.bupt.edu.cn/hls/btv1.m3u8
 云南卫视 (576p) [Not 24/7],http://183.207.248.71/cntv/live1/yunnanstv/yunnanstv
 亚洲卫视频道,http://rihou.cc:555/tv/NTD
 人间卫视,http://61.216.67.119:1935/bltvhd/bltv1/chunklist_w1266569526.m3u
-人间卫视,https://5ddce30eb4b55.streamlock.net/bltvhd/bltv1/chunklist_w511254805.m3u8
 人间卫视4Gtv,http://nmk.ioapk.com:5050/4gtv-live008/index.m3u8?proxy=true
 兵团卫视 (540p) [Not 24/7],http://112.25.48.68/live/program/live/btws/1300000/mnf.m3u8
 兵团卫视咪咕,http://175.17.83.114:1234/956923145
@@ -465,7 +462,6 @@ Zhejiang TV International,https://ali-m-l.cztv.com/channels/lantian/channel10/10
 中国国际教育3[768*576],http://play.cec-tv.com.cn/channel/cec-tv3.m3u8
 中国国际教育4[768*576],http://play.cec-tv.com.cn/channel/cec-tv4.m3u8
 中国教育3,http://107.150.60.122/live/cetv3.m3u8
-中国村庄,http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/93fc12dbf14241c18c23da104fbade23/4000.m3u8
 中国气象 (576p) [Not 24/7],http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8
 中国电影频道,https://live.tvfix.org/live/cmc/index.m3u8
 中国蓝新闻,http://ali-m-l.cztv.com/channels/lantian/channel009/1080p.m3u8
@@ -687,7 +683,6 @@ Zhejiang TV International,https://ali-m-l.cztv.com/channels/lantian/channel10/10
 四师可克达拉综合,http://test5.btzx.com.cn/live/kkdl.stream/playlist.m3u8
 固镇影视[720*576],http://www.guzhenm.com:7004/hls/hd-live.m3u8
 固镇新闻,http://www.guzhenm.com:7001/hls/hd-live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
-地理中国,http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/c6baf6f74bb944aeacee1065ea72c798/1200.m3u8
 塔城一套[1920*1080],http://218.84.35.38:3000/m3u8/live/tctv-1/index.m3u8
 塔城哈萨克语广播[1920*1080],http://218.84.35.38:3000/m3u8/live/tctvgb-2/index.m3u8
 塔河综合频道[1920*1080],https://masterpull.hljtv.com/live/qXrATpGj.m3u8
@@ -761,6 +756,7 @@ Zhejiang TV International,https://ali-m-l.cztv.com/channels/lantian/channel10/10
 平湖新闻综合,http://l.cztvcloud.com/channels/lantian/SXpinghu1/720p.m3u8?zzhed
 平湖民生休闲,http://l.cztvcloud.com/channels/lantian/SXpinghu2/720p.m3u8
 平湖民生休闲,http://l.cztvcloud.com/channels/lantian/SXpinghu2/720p.m3u8?zzhed
+平遥新闻综合,https://tntgjhjb.live.sxmty.com/live/hls/3a4585ac11ec4e1bb07b419101b370c3/baf63e2b313440c2a25d7859f9b73b05-1.m3u8?zshanxd
 平顶山教育电视台[1280*720],http://219.150.204.175:81/hls/live1.m3u8
 平顺综合广播[1920*1080],http://player4.juyun.tv/tv/149466149.m3u8
 平鲁综合频道[1920*1080],http://player4.juyun.tv/tv/167019161.m3u8
@@ -832,6 +828,7 @@ Zhejiang TV International,https://ali-m-l.cztv.com/channels/lantian/channel10/10
 德格综合频道[1280*720],http://dgfile.ganzitv.com/nmip-media/channellive/channel101955/playlist.m3u8
 忠县综合广播[785*576],https://yypull.cbg.cn/applive/zxtv1/playlist.m3u8
 忠县综合频道[1920*1080],https://yypull.cbg.cn/applive/zxtv2/playlist.m3u8
+怀仁综合,https://1yp7hc5p.live.sxmty.com/live/hls/bff8529922344209985b6e49baa9555a/efa2543628fc4a7ea93d3d6c975f77dc-1.m3u8
 拜泉综合频道[1920*1080],https://rmplive.hljtv.com/live/baiquan.m3u8
 敦化一套,http://stream8.jlntv.cn/dhtv/playlist.m3u8
 文山州公共,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel8/playlist.m3u8
@@ -1252,7 +1249,6 @@ Zhejiang TV International,https://ali-m-l.cztv.com/channels/lantian/channel10/10
 舒兰新闻综合,http://stream8.jlntv.cn/shulan/sd/live.m3u8?_upt=332db6421699196585
 舒兰新闻综合,http://stream8.jlntv.cn/shulan/sd/live.m3u8?zjild
 舟山新闻综合频道[1920*1080],https://ali-xwl.cztv.com/live/zhoushands.m3u8
-航拍中国第二季,http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/2bdfdad540b342f592f9817cb7f3b79a/4000.m3u8
 花垣综合频道[1920*1080],https://liveplay-srs.voc.com.cn/hls/tv/134_180adf.m3u8
 苍南新闻综合,https://l.cztvcloud.com/channels/lantian/SXcangnan1/720p.m3u8
 苏州4k,https://live-auth.51kandianshi.com/szgd/csztv1.m3u8
@@ -1503,7 +1499,7 @@ ViuTV6,http://120.234.44.98:18180/TV00000000000000000084@HHZT
 凤凰电影,http://221.7.175.154:85/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0
 凤凰资讯,http://43.152.224.209/qctv.fengshows.cn/live/0701pin72.flv
 凤凰资讯,http://api.kkitv.itv888.vip:8080/streams/wzt3qbit80m/index.m3u8
-凤凰资讯,http://api.mg.itv888.cn:8080/hls/11ef1dc70d8/index.m3u8
+凤凰资讯,http://php.jdshipin.com/TVOD/iptv.php?id=fhzx
 凤凰香港,http://120.234.44.98:18180/TV00000000000000000024@HHZT
 凤凰香港,http://43.152.224.209/qctv.fengshows.cn/live/0701phk72.flv
 凤凰香港,http://api.kkitv.itv888.vip:8080/streams/mty4v56ud39/index.m3u8
@@ -1582,6 +1578,7 @@ Arirang TV UN (1080p),https://amdlive-ch02-ctnd-com.akamaized.net/arirang_2ch/sm
 Arirang World,http://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/chunklist_b2256000_sleng.m3u8
 Awaaz India TV (720p) [Not 24/7],https://awaazindia.livebox.co.in/AwaazIndaTVhls/Live.m3u8
 AXN,http://120.234.44.98:18180/TV00000000000000000076@HHZT
+AXN,http://sultanios.alwaysdata.net/vavo.php?ID=4238619703
 AXN Adria,http://5.57.74.130:8000/play/a0at/index.m3u8
 AXN Black Poland (576p),http://185.227.34.179:8080/axn-black/index.m3u8
 AXN Black (United States) Poland (576p) Ⓢ,http://185.227.34.179:8080/axn-black/index.m3u8
@@ -1607,7 +1604,6 @@ Cartoon Network Asia (720p),https://cdn4.skygo.mn/live/disk1/Cartoon_Network/HLS
 Cartoon Network Latin America South Atlantic (1080p),http://158.172.217.18:8000/play/a03a/index.m3u8
 Casa Italia 53,https://ovp-live.akamaized.net/ac115_live/canale3.smil/playlist.m3u8
 CGNTV Japan (1080p),https://d2p4mrcwl6ly4.cloudfront.net/out/v1/8d50f69fdbbf411a8d302743e4263716/CGNWebLiveJP.m3u8
-Channel 5 International (576p),http://178.134.1.158:8081/5channel/index.m3u8
 Channel 5 International (576i),https://cdn4.skygo.mn/live/disk1/Channel_5/HLSv3-FTA/Channel_5.m3u8
 Channel 8 International (576p) [Geo-blocked],http://live-11cinema.cdnvideo.net/11cinemanet/11cinemanet/playlist.m3u8
 Channel One Europa (480p),https://streaming.thestream.cyou/live/210-req_offset_28000000-req_window_0-1k_v5.m3u8
@@ -1695,6 +1691,7 @@ Euronews Portuguese (720p),https://cdn-euronews.akamaized.net/live/eds/euronews-
 Euronews Russian (720p),https://cdn-euronews.akamaized.net/live/eds/euronews-ru/25071/index.m3u8
 Euronews Russian,https://stream8.cinerama.uz/1024/tracks-v1a1/mono.m3u8
 Euronews Spanish (720p),https://cdn-euronews.akamaized.net/live/eds/euronews-es/25053/index.m3u8
+Euronews Spanish (1080p),https://euronews-live-spa-es.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6571/bitok/eyJzdGlkIjoiMDA0YjY0NTMtYjY2MC00ZTZkLTlkNzEtMTk3YTM3ZDZhZWIxIiwibWt0IjoiZXMiLCJjaCI6NjU3MSwicHRmIjoxfQ==/26034/euronews-es.m3u8
 Europa Plus TV SD (576p),http://stream.mcquack.net/184/index.m3u8
 Europa Plus TV Belarus (576p),http://46.53.200.153:7777/play/EuropaPlus/index.m3u8
 Euro Tv,https://5f22d76e220e1.streamlock.net/eurotv/eurotv/playlist.m3u8
@@ -1832,6 +1829,7 @@ MTA4 Africa (1080p),https://chlivemta.akamaized.net/hls/live/2010555/mtaafrica1/
 MTA5 Africa (1080p),https://chlivemta.akamaized.net/hls/live/2010555/mtaafrica2/playlist.m3u8
 MTV (720p),http://198.58.104.90:8989/mtv/index.m3u8
 MTV (1080p),http://23.237.104.106:8080/USA_MTV/index.m3u8
+MTV (720p),https://r.eu.cdn-redge.media/livehls/oeu/mt/live/mtv/live.livx/playlist.m3u8
 MTV2 (720p),http://198.58.104.90:8989/mtv2/index.m3u8
 MTV3,https://live-fi.tvkaista.net/mtv3/live.m3u8?src=freetv
 MTV Ava,https://live-fi.tvkaista.net/ava/live.m3u8?src=freetv
@@ -1845,6 +1843,7 @@ Music India (576p),https://fta.ektv.in/live/158/master.m3u8
 National Geographic (576p),http://stream.mcquack.net/116/index.m3u8
 National Geographic HD East (720p),http://198.58.104.90:8989/natgeo/index.m3u8
 National Geographic Latin America (1080p),http://45.173.231.22:8000/play/a05z/index.m3u8
+National Geographic Latin America (1080p),http://181.78.12.119:16123/play/ch30
 National Geographic Latin America (1080p),https://barinaslive1.boldmss.com/NATGEO/NATGEO.isml/NATGEO.m3u8
 National Geographic Wild HD East (720p),http://198.58.104.90:8989/natgeowild/index.m3u8
 NBC 5 Chicago Live News (1080p),https://d368vp0qqzvkid.cloudfront.net/11603/88889704/hls/master.m3u8?ads.xumo_channelId=88889704a&ads.xumo_ifaType=&ads.xumo_providerId=3818&ads.xumo_providerName=NBCNCHI
@@ -2002,7 +2001,7 @@ WionNews,https://d7x8z4yuq42qn.cloudfront.net/index_7.m3u8
 2025年春晚,https://svip.high24-playback.com/20250129/17159_7bca93c4/2000k/hls/mixed.m3u8
 2025年春晚,https://svipsvip.ffzyread1.com/20250129/35458_c988286f/index.m3u8
 2026-08-27 14:06:22,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv1hd
-2026-11-15 06:26:00,https://vd2.bdstatic.com/mda-sctj0f6r4u1bpebc/1080p/cae_h264/1774706523506678171/mda-sctj0f6r4u1bpebc.mp4
+2026-11-16 06:26:13,https://vd2.bdstatic.com/mda-sctj0f6r4u1bpebc/1080p/cae_h264/1774706523506678171/mda-sctj0f6r4u1bpebc.mp4
 20 Mediaset [Geo-blocked],https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(lb)/index.m3u8
 20 Minutes TV (1080p),https://live-20minutestv.digiteka.com/1961167769/index.m3u8
 22Scope News (1080p),https://thelegitpro.in/HDlive/22scope/index.fmp4.m3u8
@@ -2045,7 +2044,7 @@ WionNews,https://d7x8z4yuq42qn.cloudfront.net/index_7.m3u8
 5AAB TV (720p) [Not 24/7],http://158.69.124.9:1935/5aabtv/5aabtv/playlist.m3u8
 5 minut tishiny (1080p),https://cdn-dvr.ntv.ru/5_minut_tishiny/index.m3u8
 6PR Perth (1080p),https://6prlive.akamaized.net/hls/live/2033806/6PR/index.m3u8
-6ter (1080p),http://149.62.177.107:9999/6ter/index.m3u8
+6ter (720p),https://r.eu.cdn-redge.media/livehls/oeu/mt/live/6ter_fr/live.livx/playlist.m3u8
 6 TV Gorlovka (720p) [Geo-blocked],http://91.214.48.158:4022/udp/224.2.2.4:10000
 6 TV Telugu (576p),https://mumbai-edge.smartplaytv.in/6TVTelugu/index.m3u8
 6 TV Telugu (576p),https://yuppparoriglin.akamaized.net/181224/smil:6tv.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b

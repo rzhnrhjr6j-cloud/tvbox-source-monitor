@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-14T23:48:22Z",
+  "generated_at": "2026-11-15T23:55:18Z",
   "urls": [
     {
       "name": "玉兔（16站）",
@@ -9,10 +9,6 @@
     {
       "name": "私下用，分享必删（52站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/7e5a11649a409c05.json"
-    },
-    {
-      "name": "采集影视（47站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/5201f9c51d51ddc2.json"
     },
     {
       "name": "精东（24站）",

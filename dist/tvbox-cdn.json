@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-17T02:55:23Z",
+  "generated_at": "2026-11-18T02:17:33Z",
   "urls": [
     {
       "name": "玉兔（16站）",
@@ -15,40 +15,28 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/e5e22b7e79834be5.json"
     },
     {
-      "name": "牛牛视频 #1（57站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/8bc4f104f6d8d29c.json"
-    },
-    {
-      "name": "牛牛视频 #2（56站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b3263164e0d31c99.json"
-    },
-    {
       "name": "精品资源（59站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/a2637c5b6b987583.json"
     },
     {
-      "name": "豆瓣 #2（23站）",
+      "name": "豆瓣（23站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b9c97ff3dac729ba.json"
-    },
-    {
-      "name": "瓜子影视（49站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f5d4082ca524d142.json"
     },
     {
       "name": "豆了（159站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/745561a3739c9b0c.json"
     },
     {
-      "name": "爱壹帆 (海外)（8站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/4c797849c754f8a8.json"
+      "name": "1-艾旦（77站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/38cbe3c0b35e754f.json"
     },
     {
-      "name": "牛牛视频 #3（5站）",
+      "name": "瓜子影视（49站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f5d4082ca524d142.json"
+    },
+    {
+      "name": "牛牛视频（5站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/e4b83efdb42d80a7.json"
-    },
-    {
-      "name": "豆瓣 #1（54站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/61f7b4d715f5be1d.json"
     }
   ]
 }

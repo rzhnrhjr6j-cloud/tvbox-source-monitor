@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-11-17T02:55:23Z",
-  "build_id": "20261117-025523",
+  "generated_at": "2026-11-18T02:17:33Z",
+  "build_id": "20261118-021733",
   "summary": {
     "sources": {
-      "active": 644,
-      "degraded": 2,
-      "failed": 94
+      "active": 648,
+      "degraded": 1,
+      "failed": 92
     },
     "candidates": 0,
     "tiers": {
-      "primary": 9,
+      "primary": 6,
       "backup": 3,
       "experimental": 0
     },
-    "output_items": 12
+    "output_items": 9
   },
   "regions": {
     "CN": {
-      "checks": 3685,
-      "successes": 3225,
-      "availability_percent": 87.52
+      "checks": 4430,
+      "successes": 3878,
+      "availability_percent": 87.54
     }
   },
   "sources": [
@@ -34,13 +34,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-17T02:51:10Z",
+      "last_success_at": "2026-11-18T02:13:42Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 179.47826086956522,
+      "avg_response_ms": 175.62962962962962,
       "consecutive_failure": 0,
       "whitelisted": true
     },
@@ -55,13 +55,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-17T02:51:07Z",
+      "last_success_at": "2026-11-18T02:13:25Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 197.04347826086956,
+      "avg_response_ms": 202.03703703703704,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -76,57 +76,15 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-17T02:51:22Z",
+      "last_success_at": "2026-11-18T02:13:47Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 103.0,
+      "avg_response_ms": 101.22222222222223,
       "consecutive_failure": 0,
       "whitelisted": true
-    },
-    {
-      "id": "8bc4f104f6d8d29c9f352e034c0489199cac623e81da5000407161b9a958d9a8",
-      "name": "scat.json",
-      "url": "https://raw.githubusercontent.com/yescopys/box/main/jack/scat.json",
-      "status": "active",
-      "tier": "primary",
-      "type": "single",
-      "score": 95.0,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-11-17T02:51:15Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 103.17391304347827,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "b3263164e0d31c99690733c07cd68e29f9dfc5767350e1f84ee6c283e1336218",
-      "name": "scat.json",
-      "url": "https://raw.githubusercontent.com/yescopys/box/main/scat.json",
-      "status": "active",
-      "tier": "primary",
-      "type": "single",
-      "score": 95.0,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-11-17T02:51:15Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 103.26086956521739,
-      "consecutive_failure": 0,
-      "whitelisted": false
     },
     {
       "id": "a2637c5b6b9875837c786ae33dd78858e44e9c1ef509d2be4578f88f411a5806",
@@ -139,13 +97,13 @@
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-17T02:51:11Z",
+      "last_success_at": "2026-11-18T02:13:29Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 104.3913043478261,
+      "avg_response_ms": 104.96296296296296,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -156,38 +114,17 @@
       "status": "active",
       "tier": "primary",
       "type": "single",
-      "score": 91.522,
+      "score": 89.074,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-17T02:51:12Z",
+      "last_success_at": "2026-11-18T02:13:30Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 128.82608695652175,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "f5d4082ca524d142e97593600adf9176a9d435c970d99783e4fc54a75946ce4a",
-      "name": "b.json",
-      "url": "https://raw.githubusercontent.com/ZHOUYU86/tvbox-sources/main/b.json",
-      "status": "active",
-      "tier": "primary",
-      "type": "single",
-      "score": 85.373,
-      "stability_score": 99.59,
-      "availability_7d": 100.0,
-      "availability_30d": 99.18,
-      "last_success_at": "2026-11-17T02:51:17Z",
-      "last_failure_at": "2026-11-01T02:14:01Z",
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 118.04347826086956,
+      "avg_response_ms": 134.62962962962962,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -198,38 +135,59 @@
       "status": "active",
       "tier": "primary",
       "type": "single",
-      "score": 56.877,
-      "stability_score": 99.18,
+      "score": 56.874,
+      "stability_score": 99.16,
       "availability_7d": 100.0,
-      "availability_30d": 98.361,
-      "last_success_at": "2026-11-17T02:51:54Z",
+      "availability_30d": 98.319,
+      "last_success_at": "2026-11-18T02:14:12Z",
       "last_failure_at": "2026-10-30T13:37:09Z",
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 802.3478260869565,
+      "avg_response_ms": 800.8148148148148,
       "consecutive_failure": 0,
       "whitelisted": true
     },
     {
-      "id": "4c797849c754f8a81fa6eec1f432ad2de91c4dbd944c06cd789ae705b1dbb5c5",
-      "name": "tvbox.json",
-      "url": "https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json",
+      "id": "38cbe3c0b35e754f1dc7922f29706f3f24dd30357ed5739a3be63697c3926dcb",
+      "name": "anaer_meow.json",
+      "url": "https://raw.githubusercontent.com/hl128k/tvbox/main/tv/1/anaer_meow.json",
       "status": "active",
       "tier": "backup",
       "type": "single",
-      "score": 80.217,
+      "score": 84.63,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-17T02:51:15Z",
+      "last_success_at": "2026-11-18T02:13:33Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 93.47826086956522,
+      "avg_response_ms": 117.62962962962963,
+      "consecutive_failure": 0,
+      "whitelisted": false
+    },
+    {
+      "id": "f5d4082ca524d142e97593600adf9176a9d435c970d99783e4fc54a75946ce4a",
+      "name": "b.json",
+      "url": "https://raw.githubusercontent.com/ZHOUYU86/tvbox-sources/main/b.json",
+      "status": "active",
+      "tier": "backup",
+      "type": "single",
+      "score": 84.567,
+      "stability_score": 99.58,
+      "availability_7d": 100.0,
+      "availability_30d": 99.16,
+      "last_success_at": "2026-11-18T02:13:41Z",
+      "last_failure_at": "2026-11-01T02:14:01Z",
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "avg_response_ms": 115.18518518518519,
       "consecutive_failure": 0,
       "whitelisted": false
     },
@@ -240,38 +198,17 @@
       "status": "active",
       "tier": "backup",
       "type": "single",
-      "score": 80.217,
+      "score": 82.407,
       "stability_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "last_success_at": "2026-11-17T02:51:15Z",
+      "last_success_at": "2026-11-18T02:13:30Z",
       "last_failure_at": null,
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
-      "avg_response_ms": 122.82608695652173,
-      "consecutive_failure": 0,
-      "whitelisted": false
-    },
-    {
-      "id": "61f7b4d715f5be1d62d4e58e464331e0e320349b082c70e595d5e56530da3676",
-      "name": "qdyd1.json",
-      "url": "https://raw.githubusercontent.com/woshishiq1/hipy-drpy2/main/jaychouqq/qdyd1.json",
-      "status": "active",
-      "tier": "backup",
-      "type": "single",
-      "score": 78.478,
-      "stability_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 100.0,
-      "last_success_at": "2026-11-17T02:51:15Z",
-      "last_failure_at": null,
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "avg_response_ms": 102.56521739130434,
+      "avg_response_ms": 116.70370370370371,
       "consecutive_failure": 0,
       "whitelisted": false
     }
@@ -282,57 +219,7 @@
       "source_id": "ac493d7ea4758fb1c45ee5b1b529f01e58430310979a410c7496fce9f00ef7ad",
       "region": "CN",
       "title": "[ALERT] Source failed / lmw_new.json",
-      "created_at": "2026-11-17T02:53:54Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "5e02946be7dfb699e095a6d5e410c957358b00da35bcecfd7f216c2c049301c3",
-      "region": "CN",
-      "title": "[ALERT] Source failed / box.json",
-      "created_at": "2026-11-17T02:53:54Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "32f3a8cb282066cb0933d8189121cd1891e0cdf427422347ea3a7bf755fbf81f",
-      "region": "CN",
-      "title": "[ALERT] Source failed / box.json",
-      "created_at": "2026-11-17T02:53:54Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "faa07983f167c48902c84e41dcdec8543eb7c27c34d2ab215bb00c2677979df4",
-      "region": "CN",
-      "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-11-17T02:53:54Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "5b005ad6c64f65d3e2e453ca6e2776cae92ea422323c5d4eb1c065edd462fbd1",
-      "region": "CN",
-      "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-11-17T02:53:54Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "b3edb508d62abea6e12ac85955a7487d18fdcf7c534e9200e34631ab8372b757",
-      "region": "CN",
-      "title": "[ALERT] Source failed / 😹玄珠",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -342,7 +229,7 @@
       "source_id": "70b074fd82d6ac374b9701aa136b837850ef87f08561318d79741e99ed8f6998",
       "region": "CN",
       "title": "[ALERT] Source failed / feimaolive.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -352,7 +239,57 @@
       "source_id": "710cbe03d44e8d55d616a39c8792a265ca5807ecc446b53740920cc6a2505208",
       "region": "CN",
       "title": "[ALERT] Source failed / live2mv_data.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "5e02946be7dfb699e095a6d5e410c957358b00da35bcecfd7f216c2c049301c3",
+      "region": "CN",
+      "title": "[ALERT] Source failed / box.json",
+      "created_at": "2026-11-18T02:15:21Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "32f3a8cb282066cb0933d8189121cd1891e0cdf427422347ea3a7bf755fbf81f",
+      "region": "CN",
+      "title": "[ALERT] Source failed / box.json",
+      "created_at": "2026-11-18T02:15:21Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "faa07983f167c48902c84e41dcdec8543eb7c27c34d2ab215bb00c2677979df4",
+      "region": "CN",
+      "title": "[ALERT] Source failed / tvbox.json",
+      "created_at": "2026-11-18T02:15:21Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "5b005ad6c64f65d3e2e453ca6e2776cae92ea422323c5d4eb1c065edd462fbd1",
+      "region": "CN",
+      "title": "[ALERT] Source failed / tvbox.json",
+      "created_at": "2026-11-18T02:15:21Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "b3edb508d62abea6e12ac85955a7487d18fdcf7c534e9200e34631ab8372b757",
+      "region": "CN",
+      "title": "[ALERT] Source failed / 😹玄珠",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -362,17 +299,7 @@
       "source_id": "d3a5a0d751ed22dbb9578bb36c4d069ead097c1145bf27d74498034a1edb0ced",
       "region": "CN",
       "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-11-17T02:53:54Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "f1e209e2f8fb9b848732e13a9ec55c81459fcd6b19392681aad8b9585dc06db1",
-      "region": "CN",
-      "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -382,7 +309,7 @@
       "source_id": "d0fe4d242a9f22734e77beb3fec12d87fad15823286402025be39062d2da9a3e",
       "region": "CN",
       "title": "[ALERT] Source failed / dc.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -392,7 +319,7 @@
       "source_id": "d2cb8344451331f3c5bdf090478c8491b77f2a276a33bb4fd045d546cb33435f",
       "region": "CN",
       "title": "[ALERT] Source failed / lmw.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -402,7 +329,7 @@
       "source_id": "c41f060078422e323b38a9681c932867250841a23306b213d8057b2fe6af5ab4",
       "region": "CN",
       "title": "[ALERT] Source failed / source.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -412,7 +339,7 @@
       "source_id": "80f64d31b1b86ce0a0e2fe6d0cc64e3b1b3d5878548cf914657677f949443745",
       "region": "CN",
       "title": "[ALERT] Source failed / sources.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -422,7 +349,7 @@
       "source_id": "ecbd7d7164f5ecefaa88d69c027b6f522006a6622cc939566cea10e5721e8284",
       "region": "CN",
       "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -432,7 +359,17 @@
       "source_id": "d066cf5bc06932062a5c3b8898ed72221d37596a962d8f913b23430c23721420",
       "region": "CN",
       "title": "[ALERT] Source failed / urls.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "f1e209e2f8fb9b848732e13a9ec55c81459fcd6b19392681aad8b9585dc06db1",
+      "region": "CN",
+      "title": "[ALERT] Source failed / api.json",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -442,7 +379,7 @@
       "source_id": "023989f57ab52a7dce60fba192eda111dd2d10bebc2b9adae312bbe1337fb89a",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -452,7 +389,7 @@
       "source_id": "2aef9a70884111af85009ba1e334029e7e5ca8365bb9baefc949ee5dfd854605",
       "region": "CN",
       "title": "[ALERT] Source failed / X4少儿频道.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -462,7 +399,7 @@
       "source_id": "6753274b9ed16e400af04c0c207a563d9f7ede75870994ebf83d311817f64116",
       "region": "CN",
       "title": "[ALERT] Source failed / X4更新专用接口.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -472,7 +409,7 @@
       "source_id": "f1f99d4ed9aa2439a077f094ecc6b2c3495059cc0e9839e07ded9d4820ffca41",
       "region": "CN",
       "title": "[ALERT] Source failed / X4菠菜园",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -482,7 +419,7 @@
       "source_id": "a9e3d3e834198e6dbfc39917ff0f112ce13502fc232b9d1de80f9ae4d85bf9da",
       "region": "CN",
       "title": "[ALERT] Source failed / lubin-X4pro",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -492,17 +429,7 @@
       "source_id": "50b8b7395c3444188aba5f51c60f79d8839b886c3398c1dd2f812dcf7207d841",
       "region": "CN",
       "title": "[ALERT] Source failed / 6.json",
-      "created_at": "2026-11-17T02:53:54Z",
-      "resolved_at": null,
-      "severity": "critical",
-      "channels": []
-    },
-    {
-      "kind": "source_failed",
-      "source_id": "9849d82ead1167466447549262ee91d98970e88ae86505c61179acd8d2bca659",
-      "region": "CN",
-      "title": "[ALERT] Source failed / A_18_1.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -512,7 +439,17 @@
       "source_id": "0b6e78ca3890a1382d789706bc125ab2ac8b26a6163ba8c5fe660fe523288b88",
       "region": "CN",
       "title": "[ALERT] Source failed / ok海豚常规882.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
+      "resolved_at": null,
+      "severity": "critical",
+      "channels": []
+    },
+    {
+      "kind": "source_failed",
+      "source_id": "9849d82ead1167466447549262ee91d98970e88ae86505c61179acd8d2bca659",
+      "region": "CN",
+      "title": "[ALERT] Source failed / A_18_1.json",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -522,7 +459,7 @@
       "source_id": "9ceafef01fcb2032642034ada1ff72d1f9fd60e8888a8bd1b6fb8d86cd478d32",
       "region": "CN",
       "title": "[ALERT] Source failed / bb.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -532,7 +469,7 @@
       "source_id": "88090513d47e3bbb803cbdd9093e4663d8b4dcf67fe7bda1fc3a20ab08b5589b",
       "region": "CN",
       "title": "[ALERT] Source failed / bb.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -542,7 +479,7 @@
       "source_id": "8f8f4b19f4816269e9a477276ff8289cb9a566787956d9c7edf8f87852022b03",
       "region": "CN",
       "title": "[ALERT] Source failed / lubin-jiduo",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -552,7 +489,7 @@
       "source_id": "60fffe616d1e993eef0ba2f3efd187609ea855cb0a4dbf74fa0f2d724a624884",
       "region": "CN",
       "title": "[ALERT] Source failed / lubin776-yuanwang18",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -562,7 +499,7 @@
       "source_id": "556d72d9e6ee799e69eed1f965fef24442243ec44716a7c59b5649e282d053fe",
       "region": "CN",
       "title": "[ALERT] Source failed / yt.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -572,7 +509,7 @@
       "source_id": "913416b9e132267c63299dce7059f40c386fb6fb982417676cf40507eea59c6f",
       "region": "CN",
       "title": "[ALERT] Source failed / yt.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -582,7 +519,7 @@
       "source_id": "96b6a8e6ce34cf7b179f0c31755369579e85b92381ec94c26a23f91b4371ef76",
       "region": "CN",
       "title": "[ALERT] Source failed / kpkuang_看片狂人.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -592,7 +529,7 @@
       "source_id": "53fa6a08a3fc2b4b0362b50a5348679da9b092dc14771b2996e3fb311b2b90fb",
       "region": "CN",
       "title": "[ALERT] Source failed / gua.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -602,7 +539,7 @@
       "source_id": "dc9985d1e2a5dc2703f5584b3f4658cf1ca49c97f24debb44683be368b1f857b",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -612,7 +549,7 @@
       "source_id": "0754ebbc3f2938ba024e16b4b14a9bb0bfdd43756074b8f1f5e52e75960e12b0",
       "region": "CN",
       "title": "[ALERT] Source failed / fun.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -622,7 +559,7 @@
       "source_id": "8294679cff217c3a3334091bc27f436aead6110364fadbbbd5305ad03175aafe",
       "region": "CN",
       "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -632,7 +569,7 @@
       "source_id": "99e01587c577fc15f588a872bae65064b7247d0514296ddade42a3192f19eaf2",
       "region": "CN",
       "title": "[ALERT] Source failed / index.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -642,7 +579,7 @@
       "source_id": "0f61de6937254691f27c940f1b6fa8acb55f2994aabb967f9394c63c0d35c0c5",
       "region": "CN",
       "title": "[ALERT] Source failed / tvbox.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -652,7 +589,7 @@
       "source_id": "660602a070b66081245359236f55ef49a85d99c6ac487dc25ae391be14a5747c",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -662,7 +599,7 @@
       "source_id": "a638716507e8750976ede7fb3b0fe7b2363d61017f572e31cf6162b0a86d874e",
       "region": "CN",
       "title": "[ALERT] Source failed / 11451",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -672,7 +609,7 @@
       "source_id": "83abf45907e4fd50732355caa2be5355baa322a81a8151782142e39899047c76",
       "region": "CN",
       "title": "[ALERT] Source failed / 9zyfun.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -682,7 +619,7 @@
       "source_id": "138bf31ac206e96e16446e99bbb679b967ea8b3292eac50d0eb0b657e5a063df",
       "region": "CN",
       "title": "[ALERT] Source failed / C.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -692,7 +629,7 @@
       "source_id": "9ad9f469ee036bfc931a76533ac46c177f2cac23d308373ca9056aa2f001c6d7",
       "region": "CN",
       "title": "[ALERT] Source failed / FuLi.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -702,7 +639,7 @@
       "source_id": "d44db29fa4feb2188cfb72be8f4fc3d0fdb629caa311770936e6b6c62559a21c",
       "region": "CN",
       "title": "[ALERT] Source failed / FuLi🔞.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -712,7 +649,7 @@
       "source_id": "7addc1688ed8a37c4e8391282c63ce15178c74aba9e15f768fc98342a9472402",
       "region": "CN",
       "title": "[ALERT] Source failed / T4.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -722,7 +659,7 @@
       "source_id": "2c9f9af5408ae1e8b52d3e120825b7db79afe69b194e52ed7a79e89332cedb43",
       "region": "CN",
       "title": "[ALERT] Source failed / TV.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -732,7 +669,7 @@
       "source_id": "7de5ac9472b7497423445b37161e110b320d5ec63913a29d5fc5e369b9db8248",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -742,7 +679,7 @@
       "source_id": "3038e96b71b9901adbf701edf05ec4446489a0f6e38dde829a54f7f346d8f301",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -752,7 +689,7 @@
       "source_id": "740814d40d976392a98d0cd56ebd83774e5a51644347bc67d90fd13b347d4b17",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -762,7 +699,7 @@
       "source_id": "b7cf8d08a30808cb806c825464a2902c695b8912c33dc87bd8d7f89c46fb6df3",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
@@ -772,13 +709,27 @@
       "source_id": "f80f14fc0d145b2f84a48e811da53d2a7630b65e4229793b5b67792f309f99a9",
       "region": "CN",
       "title": "[ALERT] Source failed / api.json",
-      "created_at": "2026-11-17T02:53:54Z",
+      "created_at": "2026-11-18T02:15:21Z",
       "resolved_at": null,
       "severity": "critical",
       "channels": []
     }
   ],
   "build_history": [
+    {
+      "build_id": "20261117-025523",
+      "generated_at": "2026-11-17T02:55:23Z",
+      "published": true,
+      "fallback": false,
+      "items": 12,
+      "active": 644,
+      "degraded": 2,
+      "failed": 94,
+      "new": 3,
+      "recovered": 0,
+      "removed": 0,
+      "blocked_reason": ""
+    },
     {
       "build_id": "20261115-235518",
       "generated_at": "2026-11-15T23:55:18Z",
@@ -1183,20 +1134,6 @@
       "new": 0,
       "recovered": 0,
       "removed": 0,
-      "blocked_reason": ""
-    },
-    {
-      "build_id": "20261011-081106",
-      "generated_at": "2026-10-11T08:11:06Z",
-      "published": true,
-      "fallback": false,
-      "items": 49,
-      "active": 603,
-      "degraded": 20,
-      "failed": 62,
-      "new": 0,
-      "recovered": 0,
-      "removed": 2,
       "blocked_reason": ""
     }
   ],

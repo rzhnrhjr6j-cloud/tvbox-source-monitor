@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-18T02:17:33Z",
+  "generated_at": "2026-11-19T01:52:30Z",
   "urls": [
     {
       "name": "玉兔（16站）",
@@ -19,6 +19,14 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/a2637c5b6b987583.json"
     },
     {
+      "name": "牛牛视频 #1（57站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/8bc4f104f6d8d29c.json"
+    },
+    {
+      "name": "牛牛视频 #2（56站）",
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b3263164e0d31c99.json"
+    },
+    {
       "name": "豆瓣（23站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/b9c97ff3dac729ba.json"
     },
@@ -27,16 +35,8 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/745561a3739c9b0c.json"
     },
     {
-      "name": "1-艾旦（77站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/38cbe3c0b35e754f.json"
-    },
-    {
       "name": "瓜子影视（49站）",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/f5d4082ca524d142.json"
-    },
-    {
-      "name": "牛牛视频（5站）",
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/sources/e4b83efdb42d80a7.json"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-18T02:17:33Z",
+  "generated_at": "2026-11-19T01:52:30Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -35,7 +35,7 @@
     {
       "name": "应该能看",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/7c25a0377b05b1689996.txt"
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/308708e7ac927587a158.txt"
     },
     {
       "name": "直播",
@@ -97,14 +97,6 @@
       "name": "尘墨",
       "type": 0,
       "url": "https://52xiaobai.cn/ceshi/zb.php"
-    },
-    {
-      "name": "x315601",
-      "type": 0,
-      "url": "http://x315601.serv00.net/10.php",
-      "epg": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/?ch={name}&date={date}",
-      "logo": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/logo/{name}.png",
-      "ua": "okhttp/3.15"
     },
     {
       "name": "crzb",
@@ -323,6 +315,14 @@
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/fish2018/lib/main/txt/美腿丝袜.txt",
       "epg": "http://127.0.0.1:10079/p/0/proxy/http://epg.112114.xyz/?ch={name}&date={date}",
       "logo": "http://127.0.0.1:10079/p/0/proxy/https://epg.112114.xyz/logo/{name}.png",
+      "ua": "okhttp/3.15"
+    },
+    {
+      "name": "x315601",
+      "type": 0,
+      "url": "http://x315601.serv00.net/10.php",
+      "epg": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/?ch={name}&date={date}",
+      "logo": "http://127.0.0.1:10079/p/0/proxy/http://content.stream-link.org/epg/guide.xml/logo/{name}.png",
       "ua": "okhttp/3.15"
     },
     {

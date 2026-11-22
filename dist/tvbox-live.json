@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-21T01:13:55Z",
+  "generated_at": "2026-11-22T00:14:33Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -35,7 +35,7 @@
     {
       "name": "应该能看",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/ab49885bc6776295ac53.txt"
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/46b5befa4de341ff8a1f.txt"
     },
     {
       "name": "直播",
@@ -79,16 +79,6 @@
       "playerType": 2
     },
     {
-      "name": "夜空",
-      "type": 0,
-      "url": "https://pan.szfx.top/down.php/4f5dad27633e1293d7ef2317ee9c801e.txt"
-    },
-    {
-      "name": "划了",
-      "type": 0,
-      "url": "https://pan.szfx.top/down.php/dcb0cc6a6935b5e62b2659eba6718471.txt"
-    },
-    {
       "name": "风云试看",
       "type": 0,
       "url": "http://iptv.4666888.xyz/FYTV.txt"
@@ -111,6 +101,16 @@
       "type": 0,
       "url": "https://z.szyyds.cn/iptv",
       "playerType": 2
+    },
+    {
+      "name": "夜空",
+      "type": 0,
+      "url": "https://pan.szfx.top/down.php/4f5dad27633e1293d7ef2317ee9c801e.txt"
+    },
+    {
+      "name": "划了",
+      "type": 0,
+      "url": "https://pan.szfx.top/down.php/dcb0cc6a6935b5e62b2659eba6718471.txt"
     },
     {
       "name": "全球",

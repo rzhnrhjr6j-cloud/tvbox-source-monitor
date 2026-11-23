@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-22T00:14:32Z",
+  "generated_at": "2026-11-23T00:43:30Z",
   "urls": [
     {
       "name": "玉兔（16站）",
@@ -29,6 +29,14 @@
     {
       "name": "配置中心（161站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/745561a3739c9b0c.json"
+    },
+    {
+      "name": "爱壹帆 (海外)（8站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/4c797849c754f8a8.json"
+    },
+    {
+      "name": "牛牛视频 #3（5站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/e4b83efdb42d80a7.json"
     },
     {
       "name": "豆瓣（23站）",

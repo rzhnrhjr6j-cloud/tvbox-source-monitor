@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-23T00:43:30Z",
+  "generated_at": "2026-11-24T04:45:23Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -35,7 +35,7 @@
     {
       "name": "应该能看",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/244003cf20038de9a387.txt"
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/c6b9cc86f08fba187ae5.txt"
     },
     {
       "name": "直播",
@@ -137,6 +137,11 @@
       "name": "风云试看",
       "type": 0,
       "url": "http://iptv.4666888.xyz/FYTV.txt"
+    },
+    {
+      "name": "尘墨",
+      "type": 0,
+      "url": "https://52xiaobai.cn/ceshi/zb.php"
     },
     {
       "name": "crzb",

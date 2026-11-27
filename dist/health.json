@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-26T02:47:27Z",
-  "build_id": "20261126-024727",
+  "generated_at": "2026-11-27T02:48:27Z",
+  "build_id": "20261127-024827",
   "summary": {
     "sources": {
       "active": 665,
-      "degraded": 1,
+      "degraded": 2,
       "failed": 99
     },
     "output_items": 9,
     "tiers": {
-      "primary": 7,
+      "primary": 6,
       "backup": 1,
-      "experimental": 1
+      "experimental": 2
     },
     "checks": {
-      "drop_ratio": 0.3077,
+      "drop_ratio": 0.0,
       "items": 9,
       "min_sources": 2,
       "max_drop_ratio": 1.0
@@ -22,28 +22,28 @@
   },
   "regions": {
     "CN": {
-      "checks": 3812,
-      "successes": 3317,
-      "availability_percent": 87.01
+      "checks": 3818,
+      "successes": 3321,
+      "availability_percent": 86.98
     }
   },
   "last_build": {
-    "build_id": "20261126-024727",
-    "generated_at": "2026-11-26T02:47:27Z",
+    "build_id": "20261127-024827",
+    "generated_at": "2026-11-27T02:48:27Z",
     "git_sha": "",
     "active": 665,
-    "degraded": 1,
+    "degraded": 2,
     "failed": 99,
     "new": 0,
     "recovered": 0,
-    "removed": 4
+    "removed": 0
   },
   "last_alert": {
     "kind": "source_failed",
     "source_id": "6ce3cc3264da09a5515f025af13616b76d13743cdc62200079dbdff20fadf89e",
     "region": "CN",
     "title": "[ALERT] Source failed / subscriptions.json",
-    "created_at": "2026-11-26T02:46:24Z",
+    "created_at": "2026-11-27T02:45:42Z",
     "resolved_at": null,
     "severity": "critical",
     "channels": []
@@ -65,12 +65,12 @@
       "freshness_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "avg_response_ms": 198.71428571428572,
-      "last_success_at": "2026-11-26T02:43:43Z",
+      "avg_response_ms": 190.67857142857142,
+      "last_success_at": "2026-11-27T02:44:04Z",
       "last_failure_at": null,
-      "last_check_at": "2026-11-26T02:43:43Z",
+      "last_check_at": "2026-11-27T02:44:04Z",
       "consecutive_failure": 0,
-      "consecutive_success": 231,
+      "consecutive_success": 235,
       "global_status": "UNKNOWN",
       "regions_ok": [
         "CN"
@@ -96,12 +96,12 @@
       "freshness_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "avg_response_ms": 207.92857142857142,
-      "last_success_at": "2026-11-26T02:43:37Z",
+      "avg_response_ms": 206.32142857142858,
+      "last_success_at": "2026-11-27T02:43:47Z",
       "last_failure_at": null,
-      "last_check_at": "2026-11-26T02:43:37Z",
+      "last_check_at": "2026-11-27T02:43:47Z",
       "consecutive_failure": 0,
-      "consecutive_success": 231,
+      "consecutive_success": 235,
       "global_status": "UNKNOWN",
       "regions_ok": [
         "CN"
@@ -127,12 +127,12 @@
       "freshness_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "avg_response_ms": 107.0,
-      "last_success_at": "2026-11-26T02:43:45Z",
+      "avg_response_ms": 107.5,
+      "last_success_at": "2026-11-27T02:43:58Z",
       "last_failure_at": null,
-      "last_check_at": "2026-11-26T02:43:45Z",
+      "last_check_at": "2026-11-27T02:43:58Z",
       "consecutive_failure": 0,
-      "consecutive_success": 281,
+      "consecutive_success": 285,
       "global_status": "UNKNOWN",
       "regions_ok": [
         "CN"
@@ -158,12 +158,12 @@
       "freshness_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "avg_response_ms": 123.82142857142857,
-      "last_success_at": "2026-11-26T02:43:44Z",
+      "avg_response_ms": 122.46428571428571,
+      "last_success_at": "2026-11-27T02:43:57Z",
       "last_failure_at": null,
-      "last_check_at": "2026-11-26T02:43:44Z",
+      "last_check_at": "2026-11-27T02:43:57Z",
       "consecutive_failure": 0,
-      "consecutive_success": 231,
+      "consecutive_success": 235,
       "global_status": "UNKNOWN",
       "regions_ok": [
         "CN"
@@ -189,12 +189,12 @@
       "freshness_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "avg_response_ms": 124.03571428571429,
-      "last_success_at": "2026-11-26T02:43:44Z",
+      "avg_response_ms": 127.89285714285714,
+      "last_success_at": "2026-11-27T02:43:57Z",
       "last_failure_at": null,
-      "last_check_at": "2026-11-26T02:43:44Z",
+      "last_check_at": "2026-11-27T02:43:57Z",
       "consecutive_failure": 0,
-      "consecutive_success": 231,
+      "consecutive_success": 235,
       "global_status": "UNKNOWN",
       "regions_ok": [
         "CN"
@@ -220,12 +220,12 @@
       "freshness_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "avg_response_ms": 116.96428571428571,
-      "last_success_at": "2026-11-26T02:43:38Z",
+      "avg_response_ms": 115.85714285714286,
+      "last_success_at": "2026-11-27T02:43:52Z",
       "last_failure_at": null,
-      "last_check_at": "2026-11-26T02:43:38Z",
+      "last_check_at": "2026-11-27T02:43:52Z",
       "consecutive_failure": 0,
-      "consecutive_success": 231,
+      "consecutive_success": 235,
       "global_status": "UNKNOWN",
       "regions_ok": [
         "CN"
@@ -236,66 +236,35 @@
       "error_stage": ""
     },
     {
-      "id": "745561a3739c9b0c759e443e7bee2ffeee9488f9a7c4709f69066cfa851187f8",
-      "name": "🫘豆包",
-      "url": "https://17264.kstore.space/%E8%B1%86%E5%8C%85.jpg",
-      "type": "single",
-      "status": "active",
-      "tier": "primary",
-      "score": 58.429,
-      "stability_score": 99.529,
-      "search_score": 0.0,
-      "playback_score": 0.0,
-      "latency_score": 85.0,
-      "regional_score": 50.0,
-      "freshness_score": 100.0,
-      "availability_7d": 100.0,
-      "availability_30d": 99.057,
-      "avg_response_ms": 716.4285714285714,
-      "last_success_at": "2026-11-26T02:44:17Z",
-      "last_failure_at": "2026-10-30T13:37:09Z",
-      "last_check_at": "2026-11-26T02:44:17Z",
-      "consecutive_failure": 0,
-      "consecutive_success": 88,
-      "global_status": "UNKNOWN",
-      "regions_ok": [
-        "CN"
-      ],
-      "regions_failed": [],
-      "whitelisted": true,
-      "error_code": "HTTP_567",
-      "error_stage": "L3_search"
-    },
-    {
       "id": "b9c97ff3dac729bae98730e863f117bee2f12d6051c15a9f838012aa42de190d",
       "name": "智驾.json",
       "url": "https://raw.githubusercontent.com/Honghe-snow/honghetv/main/%E6%99%BA%E9%A9%BE.json",
       "type": "single",
       "status": "active",
       "tier": "backup",
-      "score": 74.464,
+      "score": 75.893,
       "stability_score": 100.0,
       "search_score": 96.429,
-      "playback_score": 0.0,
+      "playback_score": 7.143,
       "latency_score": 100.0,
       "regional_score": 50.0,
       "freshness_score": 100.0,
       "availability_7d": 100.0,
       "availability_30d": 100.0,
-      "avg_response_ms": 143.28571428571428,
-      "last_success_at": "2026-11-26T02:43:49Z",
+      "avg_response_ms": 140.67857142857142,
+      "last_success_at": "2026-11-27T02:43:58Z",
       "last_failure_at": null,
-      "last_check_at": "2026-11-26T02:43:49Z",
+      "last_check_at": "2026-11-27T02:43:58Z",
       "consecutive_failure": 0,
-      "consecutive_success": 233,
+      "consecutive_success": 237,
       "global_status": "UNKNOWN",
       "regions_ok": [
         "CN"
       ],
       "regions_failed": [],
       "whitelisted": false,
-      "error_code": "DNS_ERROR",
-      "error_stage": "L5_playback"
+      "error_code": null,
+      "error_stage": ""
     },
     {
       "id": "f5d4082ca524d142e97593600adf9176a9d435c970d99783e4fc54a75946ce4a",
@@ -304,21 +273,21 @@
       "type": "single",
       "status": "active",
       "tier": "experimental",
-      "score": 62.072,
-      "stability_score": 99.529,
-      "search_score": 14.286,
+      "score": 60.464,
+      "stability_score": 99.524,
+      "search_score": 3.571,
       "playback_score": 0.0,
       "latency_score": 100.0,
       "regional_score": 50.0,
       "freshness_score": 100.0,
       "availability_7d": 100.0,
-      "availability_30d": 99.057,
-      "avg_response_ms": 99.0,
-      "last_success_at": "2026-11-26T02:43:59Z",
+      "availability_30d": 99.048,
+      "avg_response_ms": 97.64285714285714,
+      "last_success_at": "2026-11-27T02:44:11Z",
       "last_failure_at": "2026-11-01T02:14:01Z",
-      "last_check_at": "2026-11-26T02:43:59Z",
+      "last_check_at": "2026-11-27T02:44:11Z",
       "consecutive_failure": 0,
-      "consecutive_success": 78,
+      "consecutive_success": 82,
       "global_status": "UNKNOWN",
       "regions_ok": [
         "CN"
@@ -326,6 +295,37 @@
       "regions_failed": [],
       "whitelisted": false,
       "error_code": "DNS_ERROR",
+      "error_stage": "L3_search"
+    },
+    {
+      "id": "745561a3739c9b0c759e443e7bee2ffeee9488f9a7c4709f69066cfa851187f8",
+      "name": "🫘豆包",
+      "url": "https://17264.kstore.space/%E8%B1%86%E5%8C%85.jpg",
+      "type": "single",
+      "status": "degraded",
+      "tier": "experimental",
+      "score": 56.912,
+      "stability_score": 94.013,
+      "search_score": 0.0,
+      "playback_score": 0.0,
+      "latency_score": 85.0,
+      "regional_score": 50.0,
+      "freshness_score": 100.0,
+      "availability_7d": 96.552,
+      "availability_30d": 98.095,
+      "avg_response_ms": 728.2962962962963,
+      "last_success_at": "2026-11-27T02:44:30Z",
+      "last_failure_at": "2026-11-26T14:31:11Z",
+      "last_check_at": "2026-11-27T02:44:30Z",
+      "consecutive_failure": 0,
+      "consecutive_success": 2,
+      "global_status": "UNKNOWN",
+      "regions_ok": [
+        "CN"
+      ],
+      "regions_failed": [],
+      "whitelisted": true,
+      "error_code": "SEARCH_NO_JSON",
       "error_stage": "L3_search"
     }
   ]

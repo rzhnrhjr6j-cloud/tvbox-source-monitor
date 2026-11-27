@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-26T02:47:27Z",
+  "generated_at": "2026-11-27T02:48:27Z",
   "lives": [
     {
       "name": "合并直播 · 央视卫视地方（推荐）",
@@ -31,15 +31,6 @@
       "name": "应该能看",
       "type": 0,
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/2da0ce63f8c27a38911f.txt"
-    },
-    {
-      "name": "直播",
-      "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/rzhnrhjr6j-cloud/tvbox-source-monitor/main/dist/jars/f6676cfac7fc6845b07d.txt",
-      "epg": "https://www.realfansleaked.shop/index.php?https://epg.112114.xyz/?ch={name}&date={date}",
-      "logo": "https://epg.112114.xyz/logo/{name}.png",
-      "playerType": 1,
-      "ua": "okhttp/3.15"
     },
     {
       "name": "LIVEfl",
@@ -116,6 +107,15 @@
       "name": "全球",
       "type": 0,
       "url": "http://xingioe.top/down.php/82d0754d79de3be03e9b63e4d2d96818.jpg"
+    },
+    {
+      "name": "直播",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/dlgt7/TVbox-interface/main/1234.txt",
+      "epg": "https://www.realfansleaked.shop/index.php?https://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "https://epg.112114.xyz/logo/{name}.png",
+      "playerType": 1,
+      "ua": "okhttp/3.15"
     },
     {
       "name": "天美传媒816",

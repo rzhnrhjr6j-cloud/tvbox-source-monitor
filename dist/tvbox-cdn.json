@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-11-26T02:47:27Z",
+  "generated_at": "2026-11-27T02:48:27Z",
   "urls": [
     {
       "name": "玉兔（16站）",
@@ -27,16 +27,16 @@
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/a2637c5b6b987583.json"
     },
     {
-      "name": "配置中心（161站）",
-      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/745561a3739c9b0c.json"
-    },
-    {
       "name": "豆瓣（23站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/b9c97ff3dac729ba.json"
     },
     {
       "name": "瓜子影视（49站）",
       "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/f5d4082ca524d142.json"
+    },
+    {
+      "name": "豆了（161站）",
+      "url": "https://fastly.jsdelivr.net/gh/rzhnrhjr6j-cloud/tvbox-source-monitor@main/dist/cdn/sources/745561a3739c9b0c.json"
     }
   ]
 }
